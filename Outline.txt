@@ -1,0 +1,75 @@
+PLAYER MOUVEMENTS : 
+	1. Horizontal movement	-- done
+	2. Jump					-- done
+		2.1 Jump buffer		-- done
+		2.2 Double jump		-- done
+		2.3 Jump hold speed	-- done
+		2.4 Coyote Time
+	3. BackDash				-- done
+		3.1 BackDash Timer
+	4. Slide on slopes
+	5. Slippery running		-- done [maybe need to change the place of the variable - For now it's in oPlayer Create]
+
+PLAYER ANIMATIONS : 
+	1. IDLE
+	2. RUN
+	3. JUMP
+	4. SLIDE
+
+UI : 
+	1. Controls : keyboard + GamePad (see MyFunctions script) -- done
+	2. Camera				-- done
+
+ENEMIES : 
+	1. Buzzard / Owl
+	2. Cats
+
+ENVIRONMENT TRAPS: 
+	1. holes
+	2. spikes : stalagmites/stalagtites
+	3. Big snowballs
+
+
+MECANICS
+	1. HP Bar
+	2. Temperature Bar
+	3. Death system + respawn
+
+COLLECTIBLES
+	1. Cheese
+	2. HP
+
+ENVIRONMENT 
+- snowing
+- snow on the ground
+
+
+
+
+
+
+
+
+INPUT : 
+switch (keyboard_key)
+{
+    case vk_left:
+    case ord("A"):
+        x -= 4;
+    break;
+
+    case vk_right:
+    case ord("D"):
+        x += 4;
+    break;
+
+    case vk_up:
+    case ord("W"):
+        y -= 4;
+    break;
+
+    case vk_down:
+    case ord("S"):
+        y += 4;
+    break;
+}

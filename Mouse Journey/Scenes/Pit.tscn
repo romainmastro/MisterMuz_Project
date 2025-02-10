@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://cio7kt6jhsgrs"]
+
+[ext_resource type="Script" uid="uid://ch45tahbqad8l" path="res://Scripts/pit.gd" id="1_8cg6q"]
+[ext_resource type="Texture2D" uid="uid://b5elep4g4upl0" path="res://Assets/hit.png" id="1_j75ti"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ngqx"]
+size = Vector2(16, 16)
+
+[node name="Pit" type="Area2D"]
+script = ExtResource("1_8cg6q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_4ngqx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_j75ti")

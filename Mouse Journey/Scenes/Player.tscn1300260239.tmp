@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://dtlxte6rijv77"]
+
+[ext_resource type="Script" uid="uid://v6kgu5fottyv" path="res://Scripts/player.gd" id="1_kyqiw"]
+[ext_resource type="Texture2D" uid="uid://bjvvqwofs3s" path="res://Sprites/sPlayer.png" id="1_rpqav"]
+[ext_resource type="Script" uid="uid://bfwsfae4hlg7a" path="res://Scripts/DEBUG/label_debug_states.gd" id="3_gntrk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kyqiw"]
+size = Vector2(16, 16)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_kyqiw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_rpqav")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_kyqiw")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+process_callback = 0
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+
+[node name="DEBUG_STATES" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("3_gntrk")
+metadata/_edit_use_anchors_ = true

@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://b5vt1jvxrv0fi"]
+
+[ext_resource type="Script" uid="uid://iagn7xdncj0a" path="res://Scripts/Components/hurtbox_component.gd" id="1_leg2g"]
+
+[node name="hurtbox_component" type="Node" node_paths=PackedStringArray("grace_timer")]
+script = ExtResource("1_leg2g")
+grace_timer = NodePath("grace_timer")
+
+[node name="grace_timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="grace_timer" to="." method="_on_grace_timer_timeout"]

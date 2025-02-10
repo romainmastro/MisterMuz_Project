@@ -1,0 +1,123 @@
+{
+	"categories": [
+		{
+			"uuid": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"title": "Task",
+			"color": "70bafa"
+		}
+	],
+	"stages": [
+		{
+			"uuid": "62dca9c9-52f1-4b12-be5f-b6452adc036e",
+			"title": "Todo",
+			"tasks": [
+				"9724578c-7454-4d2c-b796-df7093123b79",
+				"acc35c25-13b8-46a3-8d60-26a04606842a",
+				"0fc84707-c563-4773-8a6f-21b5e50cf96a",
+				"0942ac7d-6ff3-4bfc-acd8-c409752e4a83",
+				"4b2d206f-31d2-4c04-bd95-ee026178d450",
+				"79ad663c-8479-4f81-ad9e-e6093d5abd3b"
+			]
+		},
+		{
+			"uuid": "ef4e123f-f6ea-4e30-8896-4ddd7167fd59",
+			"title": "Doing",
+			"tasks": []
+		},
+		{
+			"uuid": "a590c45f-f6e0-4df4-a178-2596b3213350",
+			"title": "Done",
+			"tasks": [
+				"35c387fc-4a7d-4c52-8913-7ef4c5b6f20e",
+				"874b06ed-716f-40ba-8f20-960ebb9fc5d0",
+				"196e9307-7d96-4344-9559-7f008371794b",
+				"cd204d35-b606-4a0c-b45d-509b197a0013"
+			]
+		}
+	],
+	"tasks": [
+		{
+			"uuid": "35c387fc-4a7d-4c52-8913-7ef4c5b6f20e",
+			"title": "ASSET HUD : Player HP bar",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "0fc84707-c563-4773-8a6f-21b5e50cf96a",
+			"title": "ASSET collectible : Cheese",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "9724578c-7454-4d2c-b796-df7093123b79",
+			"title": "ASSET HUD : Snowflake",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "acc35c25-13b8-46a3-8d60-26a04606842a",
+			"title": "HUD : Meter bar for cold",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "874b06ed-716f-40ba-8f20-960ebb9fc5d0",
+			"title": "CODE : Invincibility frame",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "196e9307-7d96-4344-9559-7f008371794b",
+			"title": "ASSET : Snow Forest Tileset (with slopes)",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "cd204d35-b606-4a0c-b45d-509b197a0013",
+			"title": "ASSET : shrink HP heart by two",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "0942ac7d-6ff3-4bfc-acd8-c409752e4a83",
+			"title": "CAMERA : define values for the map in order to constraint the camera",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "79ad663c-8479-4f81-ad9e-e6093d5abd3b",
+			"title": "ASSET TRAP : Stalagtites",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "4b2d206f-31d2-4c04-bd95-ee026178d450",
+			"title": "ASSET TRAP : Stalagmites",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		}
+	],
+	"layout": {
+		"columns": [
+			[
+				"62dca9c9-52f1-4b12-be5f-b6452adc036e"
+			],
+			[
+				"ef4e123f-f6ea-4e30-8896-4ddd7167fd59"
+			],
+			[
+				"a590c45f-f6e0-4df4-a178-2596b3213350"
+			]
+		]
+	}
+}
