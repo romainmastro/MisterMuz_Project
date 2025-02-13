@@ -4,6 +4,7 @@ extends Node
 @export_group("Nodes")
 @export var sprite : AnimatedSprite2D
 
+
 func handle_flip_sprite(direction : float) -> void : 
 	if direction == 0 :
 		return 
@@ -20,3 +21,16 @@ func handle_jump_animation(is_jumping : bool, is_falling : bool) :
 		sprite.play("jump") 
 	elif is_falling : 
 		sprite.play("fall")
+
+func handle_slide_animation (body : CharacterBody2D, is_sliding : bool, is_jumping : bool, is_falling : bool) : 
+	#var floor_normal = body.get_floor_normal()
+	#var tangent = Vector2(-floor_normal.y, floor_normal.x)
+	if is_jumping or is_falling : 
+		return
+		
+	if is_sliding : 
+		if sprite.animation != "slide" : 
+			sprite.play("slide")
+	else : 
+		return
+		

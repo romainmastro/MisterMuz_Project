@@ -1,3 +1,4 @@
+Node
 TileMapLayer
 Parallax2D
 Timer
@@ -8,7 +9,6 @@ CanvasLayer
 TextureRect
 HBoxContainer
 ProgressBar
-Node
 AnimatedSprite2D
 Label
 Camera2D

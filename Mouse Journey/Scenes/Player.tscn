@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://dtlxte6rijv77"]
+[gd_scene load_steps=33 format=3 uid="uid://dtlxte6rijv77"]
 
 [ext_resource type="Script" uid="uid://v6kgu5fottyv" path="res://Scripts/player.gd" id="1_kyqiw"]
 [ext_resource type="Texture2D" uid="uid://bl388umk28hx6" path="res://Assets/Muz/Muz_JUMP.png" id="2_glx4g"]
@@ -8,7 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://bi7lk15xk624v" path="res://Scenes/Components/gravity_component.tscn" id="5_5ixxa"]
 [ext_resource type="PackedScene" uid="uid://doooxpud87nj2" path="res://Scenes/hurt_box.tscn" id="6_miouo"]
 [ext_resource type="PackedScene" uid="uid://dmltd84vx4tiq" path="res://Scenes/Components/input_component.tscn" id="6_nn08x"]
-[ext_resource type="PackedScene" uid="uid://cidf4gjyonx2t" path="res://Scenes/Components/movement_component.tscn" id="7_52ee3"]
+[ext_resource type="Texture2D" uid="uid://b1apqiygffyj3" path="res://Assets/Muz/Muz_SLIDE.png" id="6_o3h8g"]
+[ext_resource type="PackedScene" uid="uid://c28j3nq07emlu" path="res://Scenes/Components/movement_component_with_slide.tscn" id="8_miouo"]
 [ext_resource type="PackedScene" uid="uid://b0uxrbejuk3ug" path="res://Scenes/Components/animation_component.tscn" id="10_yoq75"]
 [ext_resource type="PackedScene" uid="uid://b7gls8nvptfou" path="res://Scenes/Components/health_component.tscn" id="11_ksbbd"]
 [ext_resource type="PackedScene" uid="uid://blltvlkj6lskc" path="res://Scenes/Components/advanced_jump_component.tscn" id="12_glx4g"]
@@ -73,6 +74,10 @@ region = Rect2(64, 0, 16, 16)
 [sub_resource type="AtlasTexture" id="AtlasTexture_x63xi"]
 atlas = ExtResource("3_yoq75")
 region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8flut"]
+atlas = ExtResource("6_o3h8g")
+region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dewec"]
 animations = [{
@@ -145,36 +150,44 @@ animations = [{
 "loop": true,
 "name": &"run",
 "speed": 13.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8flut")
+}],
+"loop": true,
+"name": &"slide",
+"speed": 6.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dewec"]
 radius = 2.0
 height = 10.0
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("gravity_component", "input_component", "movement_component", "advanced_jump_component", "animation_component", "health_component", "camera")]
-floor_stop_on_slope = false
-floor_max_angle = 0.523599
-floor_snap_length = 6.0
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("gravity_component", "input_component", "movement_component_slide", "advanced_jump_component", "animation_component", "health_component", "hurtbox_component", "camera")]
+floor_max_angle = 0.872665
+floor_snap_length = 10.0
 script = ExtResource("1_kyqiw")
 gravity_component = NodePath("gravity_component")
 input_component = NodePath("Input_component")
-movement_component = NodePath("movement_component")
+movement_component_slide = NodePath("movement_component_with_slide")
 advanced_jump_component = NodePath("advanced_jump_component")
 animation_component = NodePath("animation_component")
 health_component = NodePath("health_component")
+hurtbox_component = NodePath("hurtbox_component")
 camera = NodePath("Camera2D")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -2)
 sprite_frames = SubResource("SpriteFrames_dewec")
-animation = &"idle"
+animation = &"slide"
 autoplay = "idle"
+frame_progress = 0.977349
+
+[node name="HurtBox" parent="." instance=ExtResource("6_miouo")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_dewec")
-
-[node name="HurtBox" parent="." instance=ExtResource("6_miouo")]
-visible = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
 process_callback = 0
@@ -185,14 +198,12 @@ drag_vertical_enabled = true
 [node name="gravity_component" parent="." instance=ExtResource("5_5ixxa")]
 gravity = 500.0
 
+[node name="movement_component_with_slide" parent="." instance=ExtResource("8_miouo")]
+
 [node name="animation_component" parent="." node_paths=PackedStringArray("sprite") instance=ExtResource("10_yoq75")]
 sprite = NodePath("../Sprite2D")
 
 [node name="Input_component" parent="." instance=ExtResource("6_nn08x")]
-
-[node name="movement_component" parent="." instance=ExtResource("7_52ee3")]
-speed = 55.0
-air_accel = 2
 
 [node name="advanced_jump_component" parent="." instance=ExtResource("12_glx4g")]
 jump_speed = -180.0

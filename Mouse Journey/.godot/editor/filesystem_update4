@@ -1,2 +1,4 @@
 res://Scenes/main.tscn
 res://Scenes/Player.tscn
+res://Scenes/Components/movement_component_with_slide.tscn
+res://Scripts/Components/input_component.gd

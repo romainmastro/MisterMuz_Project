@@ -15,7 +15,7 @@ var last_frame_on_floor : bool
 
 
 func is_allowed_to_jump(body : CharacterBody2D, jump_button_pressed : bool) : 
-	return jump_button_pressed and (body.is_on_floor() or not coyote_timer.is_stopped())
+	return jump_button_pressed and (body.is_on_floor() or not coyote_timer.is_stopped() or (body.is_on_wall_only() and body.velocity.y > 0))
 	
 	
 func handle_jump(body : CharacterBody2D, jump_button_pressed : bool, jump_released : bool) : 
@@ -60,7 +60,15 @@ func handle_variable_jump_height(body : CharacterBody2D, jump_released : bool) :
 		body.velocity.y = 0
 
 func jump(body : CharacterBody2D) : 
-	body.velocity.y = jump_speed
-	jumpbuffer_timer.stop()
-	coyote_timer.stop()
-	is_jumping = true
+	if body.is_on_floor() : 
+		body.velocity.y = jump_speed
+		jumpbuffer_timer.stop()
+		coyote_timer.stop()
+		is_jumping = true
+	#elif body.is_on_wall_only() and body.velocity.y > 0 : 
+		#print("I'm on a slope")
+		#print(rad_to_deg(body.velocity.angle()))
+		#print(rad_to_deg(body.velocity.angle_to(body.get_wall_normal())))
+		#body.velocity.x = 100
+		#body.velocity.y = jump_speed
+		
