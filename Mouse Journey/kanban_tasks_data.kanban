@@ -14,9 +14,7 @@
 				"9724578c-7454-4d2c-b796-df7093123b79",
 				"acc35c25-13b8-46a3-8d60-26a04606842a",
 				"0fc84707-c563-4773-8a6f-21b5e50cf96a",
-				"0942ac7d-6ff3-4bfc-acd8-c409752e4a83",
-				"4b2d206f-31d2-4c04-bd95-ee026178d450",
-				"79ad663c-8479-4f81-ad9e-e6093d5abd3b"
+				"0942ac7d-6ff3-4bfc-acd8-c409752e4a83"
 			]
 		},
 		{
@@ -31,7 +29,12 @@
 				"35c387fc-4a7d-4c52-8913-7ef4c5b6f20e",
 				"874b06ed-716f-40ba-8f20-960ebb9fc5d0",
 				"196e9307-7d96-4344-9559-7f008371794b",
-				"cd204d35-b606-4a0c-b45d-509b197a0013"
+				"cd204d35-b606-4a0c-b45d-509b197a0013",
+				"2564e2f8-0e47-4e11-8fb8-3f02d818f32a",
+				"7b5f98ab-da4c-4032-a098-b93c51fc56de",
+				"e26c5c03-6565-4734-a649-5b5e44c94863",
+				"79ad663c-8479-4f81-ad9e-e6093d5abd3b",
+				"4b2d206f-31d2-4c04-bd95-ee026178d450"
 			]
 		}
 	],
@@ -102,6 +105,27 @@
 		{
 			"uuid": "4b2d206f-31d2-4c04-bd95-ee026178d450",
 			"title": "ASSET TRAP : Stalagmites",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "7b5f98ab-da4c-4032-a098-b93c51fc56de",
+			"title": "Jump when sliding",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "2564e2f8-0e47-4e11-8fb8-3f02d818f32a",
+			"title": "Sliding",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "e26c5c03-6565-4734-a649-5b5e44c94863",
+			"title": "PARTICLES : Running / Sliding / Jumping / Landing",
 			"description": "",
 			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []

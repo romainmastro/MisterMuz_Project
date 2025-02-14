@@ -1,3 +1,9 @@
+res://Scenes/Particles
+res://Scripts/Components
+res://Scenes/Components
+res://Scripts/Particles2D
+res://Assets/Muz
+res://Assets/TileSet
 res://Resources
 res://Scripts/Collectibles
 res://Scenes/Collectibles
@@ -5,8 +11,6 @@ res://Scripts/HUD
 res://Scenes/HUD
 res://Scripts
 res://Scenes
-res://Scripts/Components
-res://Scenes/Components
 res://Assets
 res://Scripts/DEBUG
 res://

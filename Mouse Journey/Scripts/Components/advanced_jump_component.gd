@@ -13,6 +13,7 @@ var is_going_up : bool = false
 var is_jumping : bool
 var last_frame_on_floor : bool
 
+signal landed
 
 func is_allowed_to_jump(body : CharacterBody2D, jump_button_pressed : bool) : 
 	return jump_button_pressed and (body.is_on_floor() or not coyote_timer.is_stopped())
@@ -21,6 +22,9 @@ func is_allowed_to_jump(body : CharacterBody2D, jump_button_pressed : bool) :
 func handle_jump(body : CharacterBody2D, jump_button_pressed : bool, jump_released : bool) : 
 	
 	if has_just_landed(body) : 
+		landed.emit()
+		
+	if has_just_landed_after_jump(body) : 
 		is_jumping = false
 	
 	if is_allowed_to_jump(body, jump_button_pressed) :  
@@ -34,9 +38,12 @@ func handle_jump(body : CharacterBody2D, jump_button_pressed : bool, jump_releas
 	
 	last_frame_on_floor = body.is_on_floor()
 
-func has_just_landed(body : CharacterBody2D) -> bool : 
+func has_just_landed_after_jump(body : CharacterBody2D) -> bool : 
 	return body.is_on_floor() and not last_frame_on_floor and is_jumping
 
+func has_just_landed(body : CharacterBody2D) -> bool : 
+	return body.is_on_floor() and not last_frame_on_floor
+	
 func has_just_stepped_off_a_ledge(body : CharacterBody2D) : 
 	return not body.is_on_floor() and last_frame_on_floor and not is_jumping 
 
@@ -60,7 +67,12 @@ func handle_variable_jump_height(body : CharacterBody2D, jump_released : bool) :
 		body.velocity.y = 0
 
 func jump(body : CharacterBody2D) : 
-	body.velocity.y = jump_speed
-	jumpbuffer_timer.stop()
-	coyote_timer.stop()
-	is_jumping = true
+	if body.is_on_floor() : 
+		body.velocity.y = jump_speed
+		jumpbuffer_timer.stop()
+		coyote_timer.stop()
+		is_jumping = true
+		
+
+	
+		

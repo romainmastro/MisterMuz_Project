@@ -11,3 +11,6 @@ func get_jump_input() -> bool :
 
 func get_jump_released_input() -> bool : 
 	return Input.is_action_just_released("jump")
+
+func get_slide_input() -> bool : 
+	return Input.is_action_pressed("slide")
