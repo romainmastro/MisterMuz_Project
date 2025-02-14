@@ -1,5 +1,6 @@
 ea4bc82a6ad023ab7ee23ee620429895
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 ::res://::1739545456
 icon.svg::CompressedTexture2D/CompressedTexture2D::8956417342466084194::1737715813::1739544625::1::::<><><>0<>0<>044cc3d3dabc3ffcd7f8060323c55f5c<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 ::res://addons/::1739215338
@@ -163,6 +164,8 @@ hp_bar.gd::GDScript/GDScript::140003696251969857::1738433447::0::1::::<>HBoxCont
 sPlayer.png::CompressedTexture2D/CompressedTexture2D::2649461086690778::1737718977::1739544625::1::::<><><>0<>0<>fffc3e89c86543d59d7bd5be1eb57bfc<>res://.godot/imported/sPlayer.png-06fa55aa90563f8287f3e9fab6814332.ctex::
 sWall.png::CompressedTexture2D/CompressedTexture2D::6692701286543028980::1737718997::1739544625::1::::<><><>0<>0<>f6fc0a13935d8f6026dada990c5b54bd<>res://.godot/imported/sWall.png-28dbc17121b2b448d90fe949917dc1b0.ctex::
 =======
+=======
+>>>>>>> Stashed changes
 ::res://::1739544622
 icon.svg::CompressedTexture2D::8956417342466084194::1737715813::1739544625::1::::<><><>0<>0<>044cc3d3dabc3ffcd7f8060323c55f5c<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 ::res://addons/::1739215338
@@ -311,4 +314,7 @@ hp_bar.gd::GDScript::140003696251969857::1738433447::0::1::::<>HBoxContainer<><>
 ::res://Sprites/::1739272263
 sPlayer.png::CompressedTexture2D::2649461086690778::1737718977::1739544625::1::::<><><>0<>0<>fffc3e89c86543d59d7bd5be1eb57bfc<>res://.godot/imported/sPlayer.png-06fa55aa90563f8287f3e9fab6814332.ctex::
 sWall.png::CompressedTexture2D::6692701286543028980::1737718997::1739544625::1::::<><><>0<>0<>f6fc0a13935d8f6026dada990c5b54bd<>res://.godot/imported/sWall.png-28dbc17121b2b448d90fe949917dc1b0.ctex::
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
