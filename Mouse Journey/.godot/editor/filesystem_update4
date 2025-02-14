@@ -1,2 +1,4 @@
-res://Scenes/main.tscn
-res://Scenes/Player.tscn
+res://Scenes/Traps/stalagmite_1_3.tscn
+res://Scenes/Traps/stalagmites_2.tscn
+res://Scenes/Traps/stalagmites_2_2.tscn
+res://Scenes/Traps/stalagmite_1_2.tscn

@@ -36,7 +36,7 @@ func is_on_downward_slope(body: CharacterBody2D, direction : float) -> bool:
 	var floor_angle = floor_normal.angle_to(Vector2.UP)
 	
 	# A negative floor_angle means the floor is angled downward relative to the up vector.
-	if floor_angle >= -0.1:
+	if abs(floor_normal.x) < 0.1:
 		return false
 	
 	# player is on floor and the direction of the slope is the same as player so positive

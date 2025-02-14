@@ -14,7 +14,8 @@
 				"9724578c-7454-4d2c-b796-df7093123b79",
 				"acc35c25-13b8-46a3-8d60-26a04606842a",
 				"0fc84707-c563-4773-8a6f-21b5e50cf96a",
-				"0942ac7d-6ff3-4bfc-acd8-c409752e4a83"
+				"0942ac7d-6ff3-4bfc-acd8-c409752e4a83",
+				"4c305654-38e5-4c5c-8094-87b8a377be7a"
 			]
 		},
 		{
@@ -126,6 +127,13 @@
 		{
 			"uuid": "e26c5c03-6565-4734-a649-5b5e44c94863",
 			"title": "PARTICLES : Running / Sliding / Jumping / Landing",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "4c305654-38e5-4c5c-8094-87b8a377be7a",
+			"title": "TILESET : long slope : review the physics layer and move the sprite!",
 			"description": "",
 			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []

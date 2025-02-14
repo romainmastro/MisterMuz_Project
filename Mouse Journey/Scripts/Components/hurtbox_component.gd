@@ -28,6 +28,8 @@ func area_entered(area : Area2D) :
 			if area is PitClass: 
 				damage.emit(area.damage_amount)
 				is_invincible = true
+			if area is ClassStalagmite : 
+				damage.emit(area.damage_amount)
 			
 		
 func _on_grace_timer_timeout() -> void:
