@@ -4,6 +4,8 @@ extends Node
 @export_group("Nodes")
 @export var sprite : AnimatedSprite2D
 
+func facing_direction() -> float : 
+	return 1 if sprite.flip_h else -1
 
 func handle_flip_sprite(direction : float) -> void : 
 	if direction == 0 :

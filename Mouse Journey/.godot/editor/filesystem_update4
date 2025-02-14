@@ -1,4 +1,11 @@
 res://Scenes/main.tscn
 res://Scenes/Player.tscn
 res://Scenes/Components/movement_component_with_slide.tscn
-res://Scripts/Components/input_component.gd
+res://Scenes/Components/snow_trail_component.tscn
+res://Scenes/Particles/snow_trail_particles.tscn
+res://Scenes/Particles/sliding_particles.tscn
+res://Scripts/Components/snow_trail_component.gd
+res://Scripts/player.gd
+res://Scripts/Components/advanced_jump_component.gd
+res://Scenes/Particles/jumping_particle.tscn
+res://Scenes/Particles/landing_particles.tscn

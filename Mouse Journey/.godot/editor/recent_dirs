@@ -1,6 +1,8 @@
-res://Assets/Muz
-res://Scenes/Components
+res://Scenes/Particles
 res://Scripts/Components
+res://Scenes/Components
+res://Scripts/Particles2D
+res://Assets/Muz
 res://Assets/TileSet
 res://Resources
 res://Scripts/Collectibles
