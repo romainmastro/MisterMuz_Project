@@ -226,10 +226,9 @@ jump_speed = -180.0
 hurtbox_component = NodePath("../hurtbox_component")
 player = NodePath("../..")
 
-[node name="hurtbox_component" parent="COMPONENTS" node_paths=PackedStringArray("hurtbox", "player", "health_component") instance=ExtResource("12_miouo")]
+[node name="hurtbox_component" parent="COMPONENTS" node_paths=PackedStringArray("hurtbox", "player") instance=ExtResource("12_miouo")]
 hurtbox = NodePath("../../HurtBox")
 player = NodePath("../..")
-health_component = NodePath("../health_component")
 
 [node name="snowTrail_component" parent="COMPONENTS" node_paths=PackedStringArray("running_particles", "sliding_particles", "jumping_particles", "landing_particles", "marker", "sprite", "advanced_jump_component") instance=ExtResource("15_1e7my")]
 running_particles = NodePath("../../PARTICLES/SnowTrailParticles")

@@ -15,7 +15,6 @@ extends CharacterBody2D
 
 func _ready() -> void:
 	health_component.init_health()
-	
 	camera.limit_left = 0
 	
 
@@ -33,7 +32,7 @@ func _physics_process(delta: float) -> void:
 	animation_component.handle_flip_sprite(input_component.x_input)
 	animation_component.handle_run_animation(velocity.x)
 	animation_component.handle_jump_animation(advanced_jump_component.is_going_up, gravity_component.is_falling)
-	animation_component.handle_slide_animation(self, movement_component_slide.is_sliding, advanced_jump_component.is_going_up, gravity_component.is_falling)
+	animation_component.handle_slide_animation(movement_component_slide.is_sliding, advanced_jump_component.is_going_up, gravity_component.is_falling)
 	
 	#PARTICLES
 	snow_trail_component.handle_snow_particles(self, velocity.x != 0 and is_on_floor() and not movement_component_slide.is_sliding, movement_component_slide.is_sliding, advanced_jump_component.is_jumping, animation_component.facing_direction())
@@ -42,4 +41,13 @@ func _physics_process(delta: float) -> void:
 	# when the player dies i.e. current_HP <= 0
 	health_component.call_deferred("on_death")
 	
+	store_last_walking_frame()
+	
 	move_and_slide()
+
+func store_last_walking_frame() -> void:
+	if is_on_floor() and velocity.x != 0:
+		GlobalPlayerStats.last_safe_position = Vector2(
+			global_position.x - GlobalPlayerStats.safe_position_offset * sign(velocity.x),
+			global_position.y
+		)

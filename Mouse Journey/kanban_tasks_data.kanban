@@ -25,7 +25,21 @@
 		},
 		{
 			"uuid": "a590c45f-f6e0-4df4-a178-2596b3213350",
-			"title": "Done",
+			"title": "Done on the current Branch",
+			"tasks": [
+				"7572ee20-a304-4b0a-b228-c47959e25390",
+				"0abb60cb-6cc0-443b-b542-b86ea178f35e",
+				"79ad663c-8479-4f81-ad9e-e6093d5abd3b",
+				"4b2d206f-31d2-4c04-bd95-ee026178d450",
+				"506e5da3-ff98-4e99-bbdc-f9b7006885a3",
+				"3cfadb07-08f7-424f-a447-be4394e2414c",
+				"373293ec-0393-465b-9665-7c3525b90376",
+				"fa52e74f-6f62-4330-9d2b-5662cf848669"
+			]
+		},
+		{
+			"uuid": "9573ce0a-9b5d-4fd9-bb69-4b68a3540b99",
+			"title": "DONE => Main Branch",
 			"tasks": [
 				"35c387fc-4a7d-4c52-8913-7ef4c5b6f20e",
 				"874b06ed-716f-40ba-8f20-960ebb9fc5d0",
@@ -34,8 +48,7 @@
 				"2564e2f8-0e47-4e11-8fb8-3f02d818f32a",
 				"7b5f98ab-da4c-4032-a098-b93c51fc56de",
 				"e26c5c03-6565-4734-a649-5b5e44c94863",
-				"79ad663c-8479-4f81-ad9e-e6093d5abd3b",
-				"4b2d206f-31d2-4c04-bd95-ee026178d450"
+				"c0fc68f7-63a3-4ded-8feb-a019f41a3f64"
 			]
 		}
 	],
@@ -137,6 +150,55 @@
 			"description": "",
 			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
+		},
+		{
+			"uuid": "c0fc68f7-63a3-4ded-8feb-a019f41a3f64",
+			"title": "HURT MECANIC : retain the last position? Necessary?",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "7572ee20-a304-4b0a-b228-c47959e25390",
+			"title": "Checkpoint System",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "fa52e74f-6f62-4330-9d2b-5662cf848669",
+			"title": "Knockback effect : smooth it out with a tween?",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "0abb60cb-6cc0-443b-b542-b86ea178f35e",
+			"title": "ANIMATION : Hurt",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "506e5da3-ff98-4e99-bbdc-f9b7006885a3",
+			"title": "BUG : when dying - respawn doesn't work",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "373293ec-0393-465b-9665-7c3525b90376",
+			"title": "Respawn after falling pit",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "3cfadb07-08f7-424f-a447-be4394e2414c",
+			"title": "ASSET : Hot Chocolate Mug for Checkpoint",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
 		}
 	],
 	"layout": {
@@ -149,6 +211,9 @@
 			],
 			[
 				"a590c45f-f6e0-4df4-a178-2596b3213350"
+			],
+			[
+				"9573ce0a-9b5d-4fd9-bb69-4b68a3540b99"
 			]
 		]
 	}
