@@ -2,3 +2,9 @@ res://Scenes/main.tscn
 res://Scenes/Player.tscn
 res://Scenes/trap_respawn.tscn
 res://Scenes/trap_knock_back.tscn
+res://Scenes/Environment/checkpoint.tscn
+res://Scenes/trap_respawn_vertical.tscn
+res://Scenes/trap_respawn_Horizontal.tscn
+res://Scenes/trap_knock_back_Horizontal.tscn
+res://Scenes/trap_knock_back_vertical.tscn
+res://Scenes/trap_respawn_Verticlal.tscn

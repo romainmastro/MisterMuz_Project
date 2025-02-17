@@ -1,5 +1,6 @@
 CollisionShape2D
 Area2D
+AnimatedSprite2D
 Sprite2D
 TextureRect
 Node
@@ -11,4 +12,3 @@ Parallax2D
 Timer
 CanvasLayer
 HBoxContainer
-ProgressBar

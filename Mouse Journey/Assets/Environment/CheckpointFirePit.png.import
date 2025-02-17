@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3tlg5kg14vhb"
-path="res://.godot/imported/CheckpointFire.png-2b5786ffc8f34dd2ff6f1caccc2a01dd.ctex"
+uid="uid://cq3bo3fc7jugx"
+path="res://.godot/imported/CheckpointFirePit.png-292267588bc5a224f3b8c4dcb8dbf687.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/CheckpointFire.png"
-dest_files=["res://.godot/imported/CheckpointFire.png-2b5786ffc8f34dd2ff6f1caccc2a01dd.ctex"]
+source_file="res://Assets/Environment/CheckpointFirePit.png"
+dest_files=["res://.godot/imported/CheckpointFirePit.png-292267588bc5a224f3b8c4dcb8dbf687.ctex"]
 
 [params]
 

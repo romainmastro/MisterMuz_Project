@@ -1,0 +1,65 @@
+[gd_scene load_steps=10 format=3 uid="uid://bjgf62qew141r"]
+
+[ext_resource type="Script" uid="uid://5cf2f02106ph" path="res://Scripts/Environment/checkpoint.gd" id="1_fdi15"]
+[ext_resource type="Texture2D" uid="uid://cq3bo3fc7jugx" path="res://Assets/Environment/CheckpointFirePit.png" id="2_f4jfi"]
+[ext_resource type="Texture2D" uid="uid://c3tlg5kg14vhb" path="res://Assets/Environment/CheckpointFire.png" id="3_f4jfi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2cwi7"]
+size = Vector2(16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4e0ln"]
+atlas = ExtResource("3_f4jfi")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pwp6q"]
+atlas = ExtResource("3_f4jfi")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5na80"]
+atlas = ExtResource("3_f4jfi")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_al8ou"]
+atlas = ExtResource("3_f4jfi")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_75o51"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4e0ln")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pwp6q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5na80")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_al8ou")
+}],
+"loop": true,
+"name": &"fire",
+"speed": 8.0
+}]
+
+[node name="Checkpoint" type="Area2D" node_paths=PackedStringArray("fire")]
+script = ExtResource("1_fdi15")
+fire = NodePath("AnimatedSprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -8)
+texture = ExtResource("2_f4jfi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_2cwi7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_75o51")
+animation = &"fire"
+autoplay = "fire"
+frame_progress = 0.906043
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
