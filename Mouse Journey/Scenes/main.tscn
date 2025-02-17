@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://ci35s5hiav38j"]
+[gd_scene load_steps=21 format=4 uid="uid://ci35s5hiav38j"]
 
 [ext_resource type="Script" uid="uid://c6hv8hqxmhb5a" path="res://Scripts/main.gd" id="1_8gbba"]
 [ext_resource type="PackedScene" uid="uid://dtlxte6rijv77" path="res://Scenes/Player.tscn" id="1_jjgbg"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bxtc6pxpoyfte" path="res://Scenes/Traps/stalagmites_2_2.tscn" id="10_wsu2k"]
 [ext_resource type="PackedScene" uid="uid://bjgf62qew141r" path="res://Scenes/checkpoint.tscn" id="11_fdnlq"]
 [ext_resource type="PackedScene" uid="uid://b68no25ghsi7e" path="res://Scenes/trap_knock_back.tscn" id="11_jkdf5"]
+[ext_resource type="Texture2D" uid="uid://brc6vqvvgic3e" path="res://Assets/Collectibles/Collectible - Mug.png" id="14_jkdf5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_344ge"]
 texture = ExtResource("5_6bp64")
@@ -500,5 +501,9 @@ position = Vector2(464, 64)
 [node name="HUD" type="CanvasLayer" parent="."]
 
 [node name="HP_Bar" parent="HUD" instance=ExtResource("5_kry3j")]
+
+[node name="Collectible-Mug" type="Sprite2D" parent="."]
+position = Vector2(272, 16)
+texture = ExtResource("14_jkdf5")
 
 [connection signal="body_entered" from="Level1/TileMapLevel/Checkpoint" to="Level1/TileMapLevel/Checkpoint" method="_on_body_entered"]

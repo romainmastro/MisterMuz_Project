@@ -15,7 +15,9 @@
 				"acc35c25-13b8-46a3-8d60-26a04606842a",
 				"0fc84707-c563-4773-8a6f-21b5e50cf96a",
 				"0942ac7d-6ff3-4bfc-acd8-c409752e4a83",
-				"4c305654-38e5-4c5c-8094-87b8a377be7a"
+				"4c305654-38e5-4c5c-8094-87b8a377be7a",
+				"eb493282-215b-426c-be68-82456c28be0c",
+				"90e659e0-bc90-4de5-b690-88fc18381f31"
 			]
 		},
 		{
@@ -26,16 +28,7 @@
 		{
 			"uuid": "a590c45f-f6e0-4df4-a178-2596b3213350",
 			"title": "Done on the current Branch",
-			"tasks": [
-				"7572ee20-a304-4b0a-b228-c47959e25390",
-				"0abb60cb-6cc0-443b-b542-b86ea178f35e",
-				"79ad663c-8479-4f81-ad9e-e6093d5abd3b",
-				"4b2d206f-31d2-4c04-bd95-ee026178d450",
-				"506e5da3-ff98-4e99-bbdc-f9b7006885a3",
-				"3cfadb07-08f7-424f-a447-be4394e2414c",
-				"373293ec-0393-465b-9665-7c3525b90376",
-				"fa52e74f-6f62-4330-9d2b-5662cf848669"
-			]
+			"tasks": []
 		},
 		{
 			"uuid": "9573ce0a-9b5d-4fd9-bb69-4b68a3540b99",
@@ -48,7 +41,15 @@
 				"2564e2f8-0e47-4e11-8fb8-3f02d818f32a",
 				"7b5f98ab-da4c-4032-a098-b93c51fc56de",
 				"e26c5c03-6565-4734-a649-5b5e44c94863",
-				"c0fc68f7-63a3-4ded-8feb-a019f41a3f64"
+				"c0fc68f7-63a3-4ded-8feb-a019f41a3f64",
+				"7572ee20-a304-4b0a-b228-c47959e25390",
+				"0abb60cb-6cc0-443b-b542-b86ea178f35e",
+				"79ad663c-8479-4f81-ad9e-e6093d5abd3b",
+				"4b2d206f-31d2-4c04-bd95-ee026178d450",
+				"506e5da3-ff98-4e99-bbdc-f9b7006885a3",
+				"3cfadb07-08f7-424f-a447-be4394e2414c",
+				"373293ec-0393-465b-9665-7c3525b90376",
+				"fa52e74f-6f62-4330-9d2b-5662cf848669"
 			]
 		}
 	],
@@ -196,6 +197,20 @@
 		{
 			"uuid": "3cfadb07-08f7-424f-a447-be4394e2414c",
 			"title": "ASSET : Hot Chocolate Mug for Checkpoint",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "eb493282-215b-426c-be68-82456c28be0c",
+			"title": "ORGA : add the collectibles to tilemapLayer",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "90e659e0-bc90-4de5-b690-88fc18381f31",
+			"title": "BUG : slide when falling from platform",
 			"description": "",
 			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
