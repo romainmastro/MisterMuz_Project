@@ -44,7 +44,10 @@ func _physics_process(delta: float) -> void:
 	store_last_walking_frame()
 	
 	move_and_slide()
-
+	
+	if is_on_floor() : 
+		apply_floor_snap()
+	
 func store_last_walking_frame() -> void:
 	if is_on_floor() and velocity.x != 0:
 		GlobalPlayerStats.last_safe_position = Vector2(
