@@ -21,7 +21,9 @@ func handle_x_movement(body : CharacterBody2D, direction : float, slide_button_p
 	if body.is_on_floor() : 
 		want_to_slide(body, slide_button_pressed, direction)
 		velocity_change_speed = ground_accel if direction != 0 else ground_decel
-	else : 
+	else : # Body is in the air
+		can_slide = false
+		is_sliding = false
 		velocity_change_speed = air_accel if direction != 0 else air_decel
 	
 	speed = sliding_speed if can_slide else running_speed
@@ -35,7 +37,7 @@ func is_on_downward_slope(body: CharacterBody2D, direction : float) -> bool:
 	var floor_normal = body.get_floor_normal()
 	
 	# A negative floor_angle means the floor is angled downward relative to the up vector.
-	if abs(floor_normal.x) < 0.1:
+	if abs(floor_normal.x) < 0.1 :
 		return false
 	
 	# player is on floor and the direction of the slope is the same as player so positive

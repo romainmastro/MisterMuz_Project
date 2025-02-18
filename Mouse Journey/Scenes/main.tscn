@@ -510,8 +510,8 @@ script = ExtResource("1_8gbba")
 
 [node name="Player" parent="." instance=ExtResource("1_jjgbg")]
 z_index = 10
-position = Vector2(48, 104)
-floor_max_angle = 0.785398
+position = Vector2(459, 88)
+floor_max_angle = 1.22173
 
 [node name="Level1" type="Node" parent="."]
 

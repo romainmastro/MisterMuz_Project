@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1739833102
+::res://::1739873925
 icon.svg::CompressedTexture2D/CompressedTexture2D::8956417342466084194::1737715813::1739544625::1::::<><><>0<>0<>044cc3d3dabc3ffcd7f8060323c55f5c<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 ::res://addons/::1739663464
 ::res://addons/health_hitbox_hurtbox/::1739663464
@@ -138,12 +138,14 @@ HealthBar_empty.png::CompressedTexture2D/CompressedTexture2D::318141472486573490
 HealthBar_full.png::CompressedTexture2D/CompressedTexture2D::6112094505390200238::1738444950::1739544625::1::::<><><>0<>0<>22f8bf849954fa7c0896b8a1981a1313<>res://.godot/imported/HealthBar_full.png-b671506dca23a74a48f25d78391c4670.ctex::
 ::res://Resources/::1739215339
 Snow_Props_tileset.tres::TileSet/TileSet::9202347324889137864::1739124585::0::1::::<><><>0<>0<><>::uid://bskec58c5stx0::::res://Assets/TileSet/Tileset_Winter.png
-::res://Scenes/::1739833102
+::res://Scenes/::1739873889
 hurt_box.tscn::PackedScene/PackedScene::8171699080655155441::1738419519::0::1::::<><><>0<>0<><>::
-main.tscn::PackedScene::5394009934555894467::1739833115::0::1::::<><><>0<>0<><>::uid://c6hv8hqxmhb5a::::res://Scripts/main.gd<>uid://dtlxte6rijv77::::res://Scenes/Player.tscn<>uid://cio7kt6jhsgrs::::res://Scenes/trap_respawn.tscn<>uid://bskec58c5stx0::::res://Assets/TileSet/Tileset_Winter.png<>uid://byc7401bsh3cc::::res://Scenes/Collectibles/Collect_Heart.tscn<>uid://ltwdjfevci88::::res://Scenes/HUD/HP_bar.tscn<>uid://cj5ak6ls1l0nq::::res://Scenes/Traps/stalagmite_1_2.tscn<>uid://cqsgkagwskqrc::::res://Scenes/Traps/stalagmite_1.tscn<>uid://c3uslq3etdg44::::res://Scenes/Traps/stalagmite_1_3.tscn<>uid://bv5pvnbf4bqtw::::res://Scenes/Traps/stalagmites_2.tscn<>uid://bxtc6pxpoyfte::::res://Scenes/Traps/stalagmites_2_2.tscn<>uid://bjgf62qew141r::::res://Scenes/Environment/checkpoint.tscn<>uid://b68no25ghsi7e::::res://Scenes/trap_knock_back_Horizontal.tscn
-Player.tscn::PackedScene::8516988915180207196::1739831976::0::1::::<><><>0<>0<><>::uid://v6kgu5fottyv::::res://Scripts/player.gd<>uid://bl388umk28hx6::::res://Assets/Muz/Muz_JUMP.png<>uid://btpbpewrm561::::res://Assets/Muz/Muz_IDLE.png<>uid://5qhbsv78fxcn::::res://Assets/Muz/Muz_HURT.png<>uid://du2j1yp66woh6::::res://Assets/Muz/Muz_RUN.png<>uid://bi7lk15xk624v::::res://Scenes/Components/gravity_component.tscn<>uid://doooxpud87nj2::::res://Scenes/hurt_box.tscn<>uid://dmltd84vx4tiq::::res://Scenes/Components/input_component.tscn<>uid://b1apqiygffyj3::::res://Assets/Muz/Muz_SLIDE.png<>uid://c28j3nq07emlu::::res://Scenes/Components/movement_component_with_slide.tscn<>uid://b0uxrbejuk3ug::::res://Scenes/Components/animation_component.tscn<>uid://b7gls8nvptfou::::res://Scenes/Components/health_component.tscn<>uid://blltvlkj6lskc::::res://Scenes/Components/advanced_jump_component.tscn<>uid://b5vt1jvxrv0fi::::res://Scenes/Components/hurtbox_component.tscn<>uid://cve4owe16cpik::::res://Scenes/Components/snow_trail_component.tscn<>uid://c1hvsrlq1580c::::res://Scenes/Particles/snow_trail_particles.tscn<>uid://1asc7ato1afb::::res://Scenes/Particles/sliding_particles.tscn<>uid://bwvsn2f5kkyb4::::res://Scenes/Particles/jumping_particle.tscn<>uid://bx4glml3yfsoj::::res://Scenes/Particles/landing_particles.tscn
-trap_knock_back_Horizontal.tscn::PackedScene::4631215089133981220::1739831976::0::1::::<><><>0<>0<><>::uid://da5g2tgmvj2m1::::res://Scripts/trap_knock_back.gd
-trap_respawn.tscn::PackedScene::5365215253006451660::1739831976::0::1::::<><><>0<>0<><>::uid://ch45tahbqad8l::::res://Scripts/trap_respawn.gd
+main.tscn::PackedScene::5394009934555894467::1739873889::0::1::::<><><>0<>0<><>::uid://c6hv8hqxmhb5a::::res://Scripts/main.gd<>uid://dtlxte6rijv77::::res://Scenes/Player.tscn<>uid://cio7kt6jhsgrs::::res://Scenes/trap_respawn_Horizontal.tscn<>uid://bskec58c5stx0::::res://Assets/TileSet/Tileset_Winter.png<>uid://byc7401bsh3cc::::res://Scenes/Collectibles/Collect_Heart.tscn<>uid://ltwdjfevci88::::res://Scenes/HUD/HP_bar.tscn<>uid://cj5ak6ls1l0nq::::res://Scenes/Traps/stalagmite_1_2.tscn<>uid://cqsgkagwskqrc::::res://Scenes/Traps/stalagmite_1.tscn<>uid://c3uslq3etdg44::::res://Scenes/Traps/stalagmite_1_3.tscn<>uid://bv5pvnbf4bqtw::::res://Scenes/Traps/stalagmites_2.tscn<>uid://bxtc6pxpoyfte::::res://Scenes/Traps/stalagmites_2_2.tscn<>uid://bjgf62qew141r::::res://Scenes/Environment/checkpoint.tscn<>uid://b68no25ghsi7e::::res://Scenes/trap_knock_back_Horizontal.tscn<>uid://b8fk7sgakytuy::::res://Scenes/trap_knock_back_vertical.tscn<>uid://vnt08m2nd56v::::res://Scenes/trap_respawn_Verticlal.tscn
+Player.tscn::PackedScene::8516988915180207196::1739873879::0::1::::<><><>0<>0<><>::uid://v6kgu5fottyv::::res://Scripts/player.gd<>uid://bl388umk28hx6::::res://Assets/Muz/Muz_JUMP.png<>uid://btpbpewrm561::::res://Assets/Muz/Muz_IDLE.png<>uid://5qhbsv78fxcn::::res://Assets/Muz/Muz_HURT.png<>uid://du2j1yp66woh6::::res://Assets/Muz/Muz_RUN.png<>uid://bi7lk15xk624v::::res://Scenes/Components/gravity_component.tscn<>uid://doooxpud87nj2::::res://Scenes/hurt_box.tscn<>uid://dmltd84vx4tiq::::res://Scenes/Components/input_component.tscn<>uid://b1apqiygffyj3::::res://Assets/Muz/Muz_SLIDE.png<>uid://c28j3nq07emlu::::res://Scenes/Components/movement_component_with_slide.tscn<>uid://b0uxrbejuk3ug::::res://Scenes/Components/animation_component.tscn<>uid://b7gls8nvptfou::::res://Scenes/Components/health_component.tscn<>uid://blltvlkj6lskc::::res://Scenes/Components/advanced_jump_component.tscn<>uid://b5vt1jvxrv0fi::::res://Scenes/Components/hurtbox_component.tscn<>uid://cve4owe16cpik::::res://Scenes/Components/snow_trail_component.tscn<>uid://c1hvsrlq1580c::::res://Scenes/Particles/snow_trail_particles.tscn<>uid://1asc7ato1afb::::res://Scenes/Particles/sliding_particles.tscn<>uid://bwvsn2f5kkyb4::::res://Scenes/Particles/jumping_particle.tscn<>uid://bx4glml3yfsoj::::res://Scenes/Particles/landing_particles.tscn
+trap_knock_back_Horizontal.tscn::PackedScene/PackedScene::4631215089133981220::1739834663::0::1::::<><><>0<>0<><>::uid://da5g2tgmvj2m1::::res://Scripts/trap_knock_back.gd
+trap_knock_back_vertical.tscn::PackedScene::4713639682554548332::1739870376::0::1::::<><><>0<>0<><>::uid://da5g2tgmvj2m1::::res://Scripts/trap_knock_back.gd
+trap_respawn_Horizontal.tscn::PackedScene/PackedScene::5365215253006451660::1739834663::0::1::::<><><>0<>0<><>::uid://ch45tahbqad8l::::res://Scripts/trap_respawn.gd
+trap_respawn_Verticlal.tscn::PackedScene::1502002647964132595::1739870376::0::1::::<><><>0<>0<><>::uid://ch45tahbqad8l::::res://Scripts/trap_respawn.gd
 Wall.tscn::PackedScene/PackedScene::7502387475164557434::1738356377::0::1::::<><><>0<>0<><>::uid://c2l82vdr58l85::::res://Sprites/sWall.png
 ::res://Scenes/Collectibles/::1739215339
 Collect_Heart.tscn::PackedScene/PackedScene::4077077771624232110::1739187998::0::1::::<><><>0<>0<><>::uid://bki8yfkjvf7n1::::res://Scripts/Collectibles/collect_heart.gd<>uid://nt7vwvsqg4w6::::res://Assets/Collectibles/Collectible - Heart.png
@@ -159,8 +161,8 @@ movement_component.tscn::PackedScene/PackedScene::5340900952892752781::173833113
 movement_component_with_slide.tscn::PackedScene/PackedScene::6736661775360526714::1739544762::0::1::::<><><>0<>0<><>::uid://ikqd58nmboh2::::res://Scripts/Components/movement_component_with_slide.gd
 slide_component.tscn::PackedScene/PackedScene::7738818980747345939::1739544762::0::1::::<><><>0<>0<><>::uid://byxslr5twf2mx::::res://Scripts/Components/slide_component.gd
 snow_trail_component.tscn::PackedScene/PackedScene::6256851551621781782::1739544762::0::1::::<><><>0<>0<><>::uid://b1bm8asaeonpd::::res://Scripts/Components/snow_trail_component.gd
-::res://Scenes/Environment/::1739831977
-checkpoint.tscn::PackedScene::3030866930594157225::1739831976::0::1::::<><><>0<>0<><>::uid://5cf2f02106ph::::res://Scripts/Environment/checkpoint.gd<>uid://cq3bo3fc7jugx::::res://Assets/Environment/CheckpointFirePit.png<>uid://c3tlg5kg14vhb::::res://Assets/Environment/CheckpointFire.png
+::res://Scenes/Environment/::1739834663
+checkpoint.tscn::PackedScene/PackedScene::3030866930594157225::1739834663::0::1::::<><><>0<>0<><>::uid://5cf2f02106ph::::res://Scripts/Environment/checkpoint.gd<>uid://cq3bo3fc7jugx::::res://Assets/Environment/CheckpointFirePit.png<>uid://c3tlg5kg14vhb::::res://Assets/Environment/CheckpointFire.png
 ::res://Scenes/HUD/::1739215339
 HP_bar.tscn::PackedScene/PackedScene::812642069212136003::1739028760::0::1::::<><><>0<>0<><>::uid://b823tr72pbcr::::res://Scripts/HUD/hp_bar.gd<>uid://ctc0kk4m2xlkg::::res://Assets/UI/HP Bar/HealthBar_full.png
 ::res://Scenes/Particles/::1739544762
@@ -182,7 +184,7 @@ trap_knock_back.gd::GDScript/GDScript::7221606909879280182::1739663464::0::1::::
 trap_respawn.gd::GDScript/GDScript::5325885678467801561::1739663464::0::1::::ClassTrapRespawn<>Area2D<><>0<>0<><>::
 ::res://Scripts/Collectibles/::1739215339
 collect_heart.gd::GDScript/GDScript::3106870940422924652::1739133663::0::1::::<>Area2D<><>0<>0<><>::
-::res://Scripts/Components/::1739663464
+::res://Scripts/Components/::1739871092
 advanced_jump_component.gd::GDScript/GDScript::4997244223269708431::1739663464::0::1::::ClassAdvancedJumpComponent<>Node<><>0<>0<><>::
 animation_component.gd::GDScript/GDScript::5083838554717202545::1739663464::0::1::::ClassAnimationComponent<>Node<><>0<>0<><>::
 gravity_component.gd::GDScript/GDScript::4364123478051338195::1738334728::0::1::::ClassGravityComponent<>Node<><>0<>0<><>::
@@ -191,7 +193,7 @@ hurtbox_component.gd::GDScript/GDScript::561899982813096182::1739663464::0::1:::
 input_component.gd::GDScript/GDScript::3240732934142938953::1739544762::0::1::::ClassInputComponent<>Node<><>0<>0<><>::
 jump_component.gd::GDScript/GDScript::2788636609966694306::1738248767::0::1::::ClassJumpComponent<>Node<><>0<>0<><>::
 movement_component.gd::GDScript/GDScript::2483545583362493666::1739544762::0::1::::ClassMovementComponent<>Node<><>0<>0<><>::
-movement_component_with_slide.gd::GDScript/GDScript::583132983196637289::1739663464::0::1::::ClassMovement_SlideComponent<>Node<><>0<>0<><>::
+movement_component_with_slide.gd::GDScript::583132983196637289::1739871092::0::1::::ClassMovement_SlideComponent<>Node<><>0<>0<><>::
 slide_component.gd::GDScript/GDScript::4119547109085988867::1739544762::0::1::::ClassSlideComponent<>Node<><>0<>0<><>::
 snow_trail_component.gd::GDScript/GDScript::4214182558960452581::1739544762::0::1::::ClassSnowTrailParticles<>Node<><>0<>0<><>::
 ::res://Scripts/DEBUG/::1739215339

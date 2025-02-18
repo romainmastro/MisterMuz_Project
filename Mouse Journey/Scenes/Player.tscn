@@ -176,8 +176,9 @@ radius = 2.0
 height = 10.0
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("gravity_component", "input_component", "movement_component_slide", "advanced_jump_component", "animation_component", "health_component", "hurtbox_component", "snow_trail_component", "camera")]
-floor_max_angle = 0.872665
-floor_snap_length = 10.0
+floor_stop_on_slope = false
+floor_max_angle = 0.523599
+floor_snap_length = 5.0
 script = ExtResource("1_kyqiw")
 gravity_component = NodePath("COMPONENTS/gravity_component")
 input_component = NodePath("COMPONENTS/Input_component")

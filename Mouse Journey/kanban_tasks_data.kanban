@@ -16,7 +16,6 @@
 				"0fc84707-c563-4773-8a6f-21b5e50cf96a",
 				"0942ac7d-6ff3-4bfc-acd8-c409752e4a83",
 				"eb493282-215b-426c-be68-82456c28be0c",
-				"90e659e0-bc90-4de5-b690-88fc18381f31",
 				"350f3b4f-1d45-4202-974f-f3ffc719d704",
 				"108ba309-9640-4730-823e-c8b87a439d62",
 				"17a8f500-0e84-42e4-a214-49137367e69e"
@@ -25,16 +24,16 @@
 		{
 			"uuid": "ef4e123f-f6ea-4e30-8896-4ddd7167fd59",
 			"title": "Doing",
-			"tasks": [
-				"f946c95c-6c3e-4efe-b293-93b2c7df05f9"
-			]
+			"tasks": []
 		},
 		{
 			"uuid": "a590c45f-f6e0-4df4-a178-2596b3213350",
 			"title": "Done on the current Branch",
 			"tasks": [
 				"ed715546-90c9-4ad6-84a6-1a0d42bea220",
-				"4c305654-38e5-4c5c-8094-87b8a377be7a"
+				"4c305654-38e5-4c5c-8094-87b8a377be7a",
+				"f946c95c-6c3e-4efe-b293-93b2c7df05f9",
+				"90e659e0-bc90-4de5-b690-88fc18381f31"
 			]
 		},
 		{
