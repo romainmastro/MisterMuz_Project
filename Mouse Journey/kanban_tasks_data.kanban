@@ -22,14 +22,14 @@
 		{
 			"uuid": "ef4e123f-f6ea-4e30-8896-4ddd7167fd59",
 			"title": "Doing",
-			"tasks": [
-				"350f3b4f-1d45-4202-974f-f3ffc719d704"
-			]
+			"tasks": []
 		},
 		{
 			"uuid": "a590c45f-f6e0-4df4-a178-2596b3213350",
 			"title": "Done on the current Branch",
-			"tasks": []
+			"tasks": [
+				"350f3b4f-1d45-4202-974f-f3ffc719d704"
+			]
 		},
 		{
 			"uuid": "9573ce0a-9b5d-4fd9-bb69-4b68a3540b99",

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cm6k6cw4nuqf2"]
+
+[ext_resource type="Script" uid="uid://dx5kgq74vspio" path="res://Scripts/hovering_component.gd" id="1_ewn67"]
+
+[node name="HoveringComponent" type="Node"]
+script = ExtResource("1_ewn67")
