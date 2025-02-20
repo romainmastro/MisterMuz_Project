@@ -175,7 +175,7 @@ animations = [{
 radius = 2.0
 height = 10.0
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("gravity_component", "input_component", "movement_component_slide", "advanced_jump_component", "animation_component", "health_component", "hurtbox_component", "snow_trail_component", "camera")]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("gravity_component", "input_component", "movement_component_slide", "advanced_jump_component", "animation_component", "health_component", "hurtbox_component", "snow_trail_component")]
 floor_stop_on_slope = false
 floor_max_angle = 1.5708
 floor_snap_length = 10.0
@@ -188,7 +188,6 @@ animation_component = NodePath("COMPONENTS/animation_component")
 health_component = NodePath("COMPONENTS/health_component")
 hurtbox_component = NodePath("COMPONENTS/hurtbox_component")
 snow_trail_component = NodePath("COMPONENTS/snowTrail_component")
-camera = NodePath("")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_dewec")

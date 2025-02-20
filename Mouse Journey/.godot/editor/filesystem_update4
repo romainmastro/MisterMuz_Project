@@ -1,13 +1,4 @@
 res://Scenes/main.tscn
 res://Scenes/Player.tscn
-res://Scenes/Traps/falling_stalagtite.tscn
-res://Scenes/Traps/V_stalagmite_1_kb.tscn
-res://Scenes/Traps/H_stalagmite1_KB.tscn
-res://Scenes/Traps/v_r_stalagmite_1_kb.tscn
-res://Scenes/Traps/V_L_stalagmite_1_kb.tscn
 res://Scenes/Traps/pit.tscn
-res://Scripts/Components/hurtbox_component.gd
-res://Scripts/camera_2d.gd
 res://Scenes/hovering_component.tscn
-res://Scripts/global_player_stats.gd
-res://Scripts/player.gd
