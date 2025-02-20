@@ -217,7 +217,8 @@ hurtbox_component = NodePath("../hurtbox_component")
 
 [node name="Input_component" parent="COMPONENTS" instance=ExtResource("6_nn08x")]
 
-[node name="advanced_jump_component" parent="COMPONENTS" instance=ExtResource("12_glx4g")]
+[node name="advanced_jump_component" parent="COMPONENTS" node_paths=PackedStringArray("movement_component") instance=ExtResource("12_glx4g")]
+movement_component = NodePath("../movement_component_with_slide")
 jump_speed = -180.0
 
 [node name="health_component" parent="COMPONENTS" node_paths=PackedStringArray("hurtbox_component", "player") instance=ExtResource("11_ksbbd")]

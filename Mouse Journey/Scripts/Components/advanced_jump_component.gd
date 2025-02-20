@@ -4,9 +4,12 @@ extends Node
 @export_group("Nodes") 
 @export var jumpbuffer_timer : Timer
 @export var coyote_timer : Timer
+@export var movement_component : ClassMovement_SlideComponent
 
 @export_group("Settings")
 @export var jump_speed : float = -250.0
+@export var slide_jump_factor : float = 1.2
+@export var slide_jump_force : float = 200.0
 
 
 var is_going_up : bool = false
@@ -71,7 +74,16 @@ func handle_variable_jump_height(body : CharacterBody2D, jump_released : bool) :
 func jump(body : CharacterBody2D) : 
 	if body.is_on_floor() : 
 		# Jump
-		body.velocity.y = jump_speed
-		jumpbuffer_timer.stop()
-		coyote_timer.stop()
-		is_jumping = true
+		if movement_component.is_sliding :
+			# goes slightly higher when jumping from a slide 
+			body.velocity.y = jump_speed * slide_jump_factor
+			# add a push - sign(velocity.x) gives the direction
+			body.velocity.x += slide_jump_force * sign(body.velocity.x)
+			jumpbuffer_timer.stop()
+			coyote_timer.stop()
+			is_jumping = true
+		else : 
+			body.velocity.y = jump_speed
+			jumpbuffer_timer.stop()
+			coyote_timer.stop()
+			is_jumping = true

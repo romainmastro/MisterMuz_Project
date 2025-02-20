@@ -1,6 +1,0 @@
-res://Scenes/main.tscn
-res://Scenes/Player.tscn
-res://Scenes/Collectibles/Collect_Heart.tscn
-res://Scripts/Collectibles/collect_heart.gd
-res://Scenes/hovering_component.tscn
-res://Scripts/hovering_component.gd

@@ -15,20 +15,27 @@
 				"acc35c25-13b8-46a3-8d60-26a04606842a",
 				"0fc84707-c563-4773-8a6f-21b5e50cf96a",
 				"0942ac7d-6ff3-4bfc-acd8-c409752e4a83",
-				"eb493282-215b-426c-be68-82456c28be0c",
-				"17a8f500-0e84-42e4-a214-49137367e69e"
+				"17a8f500-0e84-42e4-a214-49137367e69e",
+				"104a5ade-7259-4faa-9986-714c99388e7c"
 			]
 		},
 		{
 			"uuid": "ef4e123f-f6ea-4e30-8896-4ddd7167fd59",
 			"title": "Doing",
-			"tasks": []
+			"tasks": [
+				"f294d3cd-dd16-422f-8059-97eee7ad8449",
+				"ed285062-a716-4b1d-b7d2-db939c56e31d"
+			]
 		},
 		{
 			"uuid": "a590c45f-f6e0-4df4-a178-2596b3213350",
 			"title": "Done on the current Branch",
 			"tasks": [
-				"350f3b4f-1d45-4202-974f-f3ffc719d704"
+				"350f3b4f-1d45-4202-974f-f3ffc719d704",
+				"eb493282-215b-426c-be68-82456c28be0c",
+				"587c9cd2-2eb2-447b-8941-1b10411b13de",
+				"76cf4dd4-ff46-49fc-83a3-cc2f0cf0d5ed",
+				"5d66446b-aa83-4c93-a193-90fabc4d31d0"
 			]
 		},
 		{
@@ -251,6 +258,48 @@
 		{
 			"uuid": "f946c95c-6c3e-4efe-b293-93b2c7df05f9",
 			"title": "Stalagmites collision shapes",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "587c9cd2-2eb2-447b-8941-1b10411b13de",
+			"title": "IDEA : Jump force bigger when sliding",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "76cf4dd4-ff46-49fc-83a3-cc2f0cf0d5ed",
+			"title": "TRAP : Stalagtite falling",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "5d66446b-aa83-4c93-a193-90fabc4d31d0",
+			"title": "Review the way Traps are organised : stalagmites should inherited from KnockBackClass, etc and I can add them in the hurt_component",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "f294d3cd-dd16-422f-8059-97eee7ad8449",
+			"title": "Falling Stalatite  : review the sprite to cover",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "104a5ade-7259-4faa-9986-714c99388e7c",
+			"title": "ASSET : Snowboots item",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "ed285062-a716-4b1d-b7d2-db939c56e31d",
+			"title": "Make another layer for traps",
 			"description": "",
 			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
