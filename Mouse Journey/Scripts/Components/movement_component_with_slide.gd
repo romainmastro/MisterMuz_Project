@@ -3,7 +3,7 @@ extends Node
 
 @export_subgroup("Settings")
 @export var running_speed : float = 45
-@export var sliding_speed : float = 90
+@export var sliding_speed : float = 450
 
 @export var ground_accel := 4
 @export var ground_decel := 7
@@ -27,9 +27,12 @@ func handle_x_movement(body : CharacterBody2D, direction : float, slide_button_p
 		velocity_change_speed = air_accel if direction != 0 else air_decel
 	
 	speed = sliding_speed if can_slide else running_speed
-		
-	body.velocity.x = move_toward(body.velocity.x, direction * speed, velocity_change_speed)
+	
 
+	body.velocity.x = move_toward(body.velocity.x, direction * speed, velocity_change_speed)
+	clamp(body.velocity.x, -body.velocity.x, sliding_speed)
+	
+	
 func is_on_downward_slope(body: CharacterBody2D, direction : float) -> bool:
 	if not body.is_on_floor() or direction == 0 :
 		return false

@@ -17,7 +17,7 @@ signal hurt_animation
 @export var knockback_force = 120 
 @export var vertical_knockback = -100
 @export var time_knockback = 0.15
-@export var time_respawn = 0.2
+@export var time_respawn = 0.3
 
 var is_invincible : bool = false
 
@@ -38,10 +38,10 @@ func knockback(body: CharacterBody2D) -> void:
 	#body.velocity.y = vertical_knockback
 	tween_KB.parallel().tween_property(body, "velocity:y", vertical_knockback, time_knockback)
 
-func respawn_to_last_safe_position(body : CharacterBody2D) : 
+func respawn_to_last_safe_position(body : CharacterBody2D) :
 	tween_RS = create_tween()
 	tween_RS.tween_property(body, "global_position", GlobalPlayerStats.last_safe_position, time_respawn)
-	
+
 	
 func area_entered(area : Area2D) : 
 	grace_timer.start()

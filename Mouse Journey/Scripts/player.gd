@@ -15,8 +15,6 @@ extends CharacterBody2D
 
 func _ready() -> void:
 	health_component.init_health()
-	camera.limit_left = 0
-	
 
 func _physics_process(delta: float) -> void:
 	

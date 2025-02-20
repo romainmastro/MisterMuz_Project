@@ -9,4 +9,7 @@ var invincible_frame : bool = false
 
 # store the current position 
 @export var last_safe_position : Vector2 = Vector2.ZERO
-var safe_position_offset : int = 5
+var safe_position_offset : int = 8
+
+# store the current Level
+@export var current_level : TileMapLayer

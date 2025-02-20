@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://itb374sasgaa"]
+
+[ext_resource type="Texture2D" uid="uid://b5elep4g4upl0" path="res://Assets/hit.png" id="1_jci11"]
+[ext_resource type="Script" uid="uid://ch45tahbqad8l" path="res://Scripts/trap_respawn.gd" id="1_y6crs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nh764"]
+size = Vector2(16, 16)
+
+[node name="Pit" type="Area2D"]
+script = ExtResource("1_y6crs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_nh764")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_jci11")

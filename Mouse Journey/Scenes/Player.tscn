@@ -188,7 +188,7 @@ animation_component = NodePath("COMPONENTS/animation_component")
 health_component = NodePath("COMPONENTS/health_component")
 hurtbox_component = NodePath("COMPONENTS/hurtbox_component")
 snow_trail_component = NodePath("COMPONENTS/snowTrail_component")
-camera = NodePath("Camera2D")
+camera = NodePath("")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_dewec")
@@ -201,15 +201,14 @@ offset = Vector2(0, -2)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_dewec")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-process_callback = 0
-
 [node name="COMPONENTS" type="Node" parent="."]
 
 [node name="gravity_component" parent="COMPONENTS" instance=ExtResource("5_5ixxa")]
 gravity = 500.0
 
 [node name="movement_component_with_slide" parent="COMPONENTS" instance=ExtResource("8_miouo")]
+running_speed = 65.0
+sliding_speed = 200.0
 
 [node name="animation_component" parent="COMPONENTS" node_paths=PackedStringArray("sprite", "hurtbox_component") instance=ExtResource("10_yoq75")]
 sprite = NodePath("../../AnimatedSprite2D")
