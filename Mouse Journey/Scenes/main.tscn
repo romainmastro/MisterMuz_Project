@@ -549,7 +549,7 @@ level = NodePath("../../Level1/TileMapLevel1")
 
 [connection signal="body_entered" from="Level1/TileMapLevel1/collectible_heart" to="Level1/TileMapLevel1/collectible_heart" method="_on_body_entered"]
 [connection signal="body_entered" from="Level1/TileMapLevel1/Checkpoint" to="Level1/TileMapLevel1/Checkpoint" method="_on_body_entered"]
-[connection signal="body_entered" from="Level1/TileMapLevel1/@Area2D@23890" to="Level1/TileMapLevel1/@Area2D@23890" method="_on_body_entered"]
+[connection signal="body_entered" from="Level1/TileMapLevel1/@Area2D@23915" to="Level1/TileMapLevel1/@Area2D@23915" method="_on_body_entered"]
 [connection signal="body_entered" from="Level1/Traps/FallingStalagtite" to="Level1/Traps/FallingStalagtite" method="_on_body_entered"]
-[connection signal="body_entered" from="Level1/Traps/@Area2D@23891" to="Level1/Traps/@Area2D@23891" method="_on_body_entered"]
-[connection signal="body_entered" from="Level1/Traps/@Area2D@23892" to="Level1/Traps/@Area2D@23892" method="_on_body_entered"]
+[connection signal="body_entered" from="Level1/Traps/@Area2D@23916" to="Level1/Traps/@Area2D@23916" method="_on_body_entered"]
+[connection signal="body_entered" from="Level1/Traps/@Area2D@23917" to="Level1/Traps/@Area2D@23917" method="_on_body_entered"]
