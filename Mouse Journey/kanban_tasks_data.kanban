@@ -29,37 +29,43 @@
 				"9724578c-7454-4d2c-b796-df7093123b79",
 				"acc35c25-13b8-46a3-8d60-26a04606842a",
 				"0fc84707-c563-4773-8a6f-21b5e50cf96a",
-				"84b9f004-1a0f-42d3-a36d-d53df954b048"
+				"84b9f004-1a0f-42d3-a36d-d53df954b048",
+				"58ff42ce-3cee-4c14-9c08-6882dc5dc134",
+				"833c5c32-74fe-4923-9304-2c5719e493cd",
+				"104a5ade-7259-4faa-9986-714c99388e7c",
+				"a897facb-f36a-4938-b0b9-81fce0bdac38"
 			]
 		},
 		{
 			"uuid": "ef4e123f-f6ea-4e30-8896-4ddd7167fd59",
 			"title": "Doing",
-			"tasks": [
-				"104a5ade-7259-4faa-9986-714c99388e7c"
-			]
+			"tasks": []
 		},
 		{
 			"uuid": "a590c45f-f6e0-4df4-a178-2596b3213350",
 			"title": "Done on the current Branch",
 			"tasks": [
-				"8c6dfec4-eedd-42ea-9f48-199dcbb3e629",
-				"fa890a03-de62-4f8e-be8b-e65caa650d09",
-				"0942ac7d-6ff3-4bfc-acd8-c409752e4a83",
-				"17a8f500-0e84-42e4-a214-49137367e69e",
-				"f294d3cd-dd16-422f-8059-97eee7ad8449",
-				"ed285062-a716-4b1d-b7d2-db939c56e31d",
-				"350f3b4f-1d45-4202-974f-f3ffc719d704",
-				"eb493282-215b-426c-be68-82456c28be0c",
-				"587c9cd2-2eb2-447b-8941-1b10411b13de",
-				"76cf4dd4-ff46-49fc-83a3-cc2f0cf0d5ed",
-				"5d66446b-aa83-4c93-a193-90fabc4d31d0"
+				"ddc4f679-bdbb-4623-afbf-0c6bc26916ea",
+				"5e68202c-5365-4a2f-b1da-4ec353380f90",
+				"03a0943d-ef71-4cf5-8a74-04136b72877b",
+				"c5f9bd8a-f068-44b4-87ce-d5ed4e948c52"
 			]
 		},
 		{
 			"uuid": "9573ce0a-9b5d-4fd9-bb69-4b68a3540b99",
 			"title": "DONE => Main Branch",
 			"tasks": [
+				"5d66446b-aa83-4c93-a193-90fabc4d31d0",
+				"76cf4dd4-ff46-49fc-83a3-cc2f0cf0d5ed",
+				"587c9cd2-2eb2-447b-8941-1b10411b13de",
+				"eb493282-215b-426c-be68-82456c28be0c",
+				"350f3b4f-1d45-4202-974f-f3ffc719d704",
+				"ed285062-a716-4b1d-b7d2-db939c56e31d",
+				"f294d3cd-dd16-422f-8059-97eee7ad8449",
+				"17a8f500-0e84-42e4-a214-49137367e69e",
+				"0942ac7d-6ff3-4bfc-acd8-c409752e4a83",
+				"fa890a03-de62-4f8e-be8b-e65caa650d09",
+				"8c6dfec4-eedd-42ea-9f48-199dcbb3e629",
 				"35c387fc-4a7d-4c52-8913-7ef4c5b6f20e",
 				"ed715546-90c9-4ad6-84a6-1a0d42bea220",
 				"874b06ed-716f-40ba-8f20-960ebb9fc5d0",
@@ -137,7 +143,7 @@
 			"uuid": "0942ac7d-6ff3-4bfc-acd8-c409752e4a83",
 			"title": "CAMERA : define values for the map in order to constraint the camera",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
@@ -235,7 +241,7 @@
 			"uuid": "eb493282-215b-426c-be68-82456c28be0c",
 			"title": "ORGA : add the collectibles to tilemapLayer",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
@@ -256,7 +262,7 @@
 			"uuid": "350f3b4f-1d45-4202-974f-f3ffc719d704",
 			"title": "Animation to collectibles",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
@@ -270,7 +276,7 @@
 			"uuid": "17a8f500-0e84-42e4-a214-49137367e69e",
 			"title": "IDEA : speed increases as sliding",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
@@ -284,28 +290,28 @@
 			"uuid": "587c9cd2-2eb2-447b-8941-1b10411b13de",
 			"title": "IDEA : Jump force bigger when sliding",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "76cf4dd4-ff46-49fc-83a3-cc2f0cf0d5ed",
 			"title": "TRAP : Stalagtite falling",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "5d66446b-aa83-4c93-a193-90fabc4d31d0",
 			"title": "Review the way Traps are organised : stalagmites should inherited from KnockBackClass, etc and I can add them in the hurt_component",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "f294d3cd-dd16-422f-8059-97eee7ad8449",
 			"title": "Falling Stalatite  : review the sprite to cover",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
@@ -319,14 +325,14 @@
 			"uuid": "ed285062-a716-4b1d-b7d2-db939c56e31d",
 			"title": "Make another layer for traps",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "fa890a03-de62-4f8e-be8b-e65caa650d09",
 			"title": "Prepare Stalagmite Vertical",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
@@ -340,7 +346,56 @@
 			"uuid": "8c6dfec4-eedd-42ea-9f48-199dcbb3e629",
 			"title": "Pit",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "58ff42ce-3cee-4c14-9c08-6882dc5dc134",
+			"title": "Platforms",
+			"description": "",
+			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
+			"steps": []
+		},
+		{
+			"uuid": "833c5c32-74fe-4923-9304-2c5719e493cd",
+			"title": "Moving Platforms component? H and V",
+			"description": "",
+			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
+			"steps": []
+		},
+		{
+			"uuid": "5e68202c-5365-4a2f-b1da-4ec353380f90",
+			"title": "Sliding without boots",
+			"description": "",
+			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"steps": []
+		},
+		{
+			"uuid": "ddc4f679-bdbb-4623-afbf-0c6bc26916ea",
+			"title": "Trap : snowballs",
+			"description": "",
+			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"steps": []
+		},
+		{
+			"uuid": "03a0943d-ef71-4cf5-8a74-04136b72877b",
+			"title": "Another Layer for Embelishment",
+			"description": "",
+			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"steps": []
+		},
+		{
+			"uuid": "c5f9bd8a-f068-44b4-87ce-d5ed4e948c52",
+			"title": "Review : respawn initialisation",
+			"description": "",
+			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"steps": []
+		},
+		{
+			"uuid": "a897facb-f36a-4938-b0b9-81fce0bdac38",
+			"title": "BUG : Respawn after spikes",
+			"description": "",
+			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
 			"steps": []
 		}
 	],

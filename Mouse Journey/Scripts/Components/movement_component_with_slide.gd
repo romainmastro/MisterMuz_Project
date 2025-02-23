@@ -4,15 +4,26 @@ extends Node
 @export_subgroup("Settings")
 @export var running_speed : float = 45
 @export var sliding_speed : float = 450
+@export var sliding_accel : float = 5.0
+@export var sliding_decel : float = 2.0
 
-@export var ground_accel := 4
-@export var ground_decel := 7
-@export var air_accel := 10
-@export var air_decel := 3
+@export var ground_accel : float = 4.0
+@export var ground_decel : float = 7.0
+@export var air_accel : float = 10.0
+@export var air_decel : float = 3.0
+
+# NOT has boots : 
+@export var ice_ground_accel : float = 0.7
+@export var ice_ground_decel : float = 0.7
 
 
 var can_slide : bool = false
 var is_sliding : bool = false
+
+func init_movement_component() : 
+	if not GlobalPlayerStats.has_boots : 
+		ground_accel = ice_ground_accel
+		ground_decel = ice_ground_decel
 
 func handle_x_movement(body : CharacterBody2D, direction : float, slide_button_pressed : bool) -> void : 
 	var velocity_change_speed : float
@@ -20,7 +31,10 @@ func handle_x_movement(body : CharacterBody2D, direction : float, slide_button_p
 	
 	if body.is_on_floor() : 
 		want_to_slide(body, slide_button_pressed, direction)
-		velocity_change_speed = ground_accel if direction != 0 else ground_decel
+		if is_sliding : 
+			velocity_change_speed = sliding_accel if direction != 0 else sliding_decel
+		else : 
+			velocity_change_speed = ground_accel if direction != 0 else ground_decel
 	else : # Body is in the air
 		can_slide = false
 		is_sliding = false

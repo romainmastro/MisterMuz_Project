@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://2hmxu0xv675o"]
+
+[ext_resource type="Script" uid="uid://48k3sahlbncn" path="res://Scripts/Traps/snowball.gd" id="1_1tcfs"]
+[ext_resource type="Texture2D" uid="uid://cjmupqnxj6sek" path="res://Assets/Traps/Snowball.png" id="1_dl2js"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_1tcfs"]
+bounce = 0.2
+absorbent = true
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1tcfs"]
+radius = 7.0
+
+[node name="Snowball" type="RigidBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_1tcfs")
+gravity_scale = 0.353
+script = ExtResource("1_1tcfs")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_dl2js")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_1tcfs")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

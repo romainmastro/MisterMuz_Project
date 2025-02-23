@@ -1,4 +1,6 @@
 res://Scenes/main.tscn
 res://Scenes/Player.tscn
-res://Scenes/Traps/pit.tscn
-res://Scenes/hovering_component.tscn
+res://Scenes/Traps/Snowball.tscn
+res://Scenes/Traps/snowball_spawner.tscn
+res://Scenes/Components/hurtbox_component.tscn
+res://Scripts/camera_2d.gd

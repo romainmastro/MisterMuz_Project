@@ -1,14 +1,14 @@
 Sprite2D
+Timer
 CollisionShape2D
+RigidBody2D
+TileMapLayer
 Area2D
 Camera2D
 Node2D
-TileMapLayer
 AnimationPlayer
 VisibleOnScreenNotifier2D
 ClassTrapKnockBack
 RayCast2D
 Node
 PathFollow2D
-Path2D
-AnimatedSprite2D

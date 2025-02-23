@@ -11,9 +11,11 @@ extends Node
 var dmg : int
 
 var is_dead : bool = false
+signal just_died # sent to hurt_component
 
 func _ready() -> void:
 	hurtbox_component.damage.connect(take_damage)
+
 
 func init_health() : 
 	GlobalPlayerStats.player_current_HP = GlobalPlayerStats.player_max_HP
@@ -35,14 +37,15 @@ func take_damage(damage_amount : int) :
 	await tween.finished
 
 func respawn_to_checkpoint(body : CharacterBody2D) :
-	var tween_RS = create_tween()
-	tween_RS.tween_property(body, "global_position", GlobalPlayerStats.current_checkpoint, time_tween_respawn)
-
+	await get_tree().create_timer(0.7).timeout
+	body.global_position = GlobalPlayerStats.current_checkpoint
 
 func on_death() : 
 	if is_dead : 
 		print("Muz Died")
-		is_dead = false
+		just_died.emit()
+		is_dead = false	
+		player.velocity = Vector2.ZERO
 		respawn_to_checkpoint(player)
 		init_health()
 		

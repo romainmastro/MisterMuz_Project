@@ -12,7 +12,8 @@ func _physics_process(_delta: float) -> void:
 	center_camera_player()
 	
 func center_camera_player() : 
-	position = player.position
+	position.x = player.position.x
+	position.y = player.position.y - 16
 
 func camera_limits() : 
 	var used_rect : Rect2i = level.get_used_rect()

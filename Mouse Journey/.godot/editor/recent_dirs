@@ -1,10 +1,10 @@
 res://Scenes/Traps
-res://Scripts
 res://Scripts/Traps
+res://Assets/TileSet
+res://Scripts
 res://Scenes
 res://Assets/Environment
 res://Scenes/Environment
-res://Assets/TileSet
 res://Scenes/Particles
 res://Scripts/Components
 res://Scenes/Components

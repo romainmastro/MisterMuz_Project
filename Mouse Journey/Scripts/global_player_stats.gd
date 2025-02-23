@@ -3,6 +3,7 @@ extends Node
 @export var player_current_HP : float = 0
 @export var player_max_HP : float = 3
 
+var has_boots : bool = false
 var invincible_frame : bool = false
 
 @export var current_checkpoint : Vector2 = Vector2.ZERO

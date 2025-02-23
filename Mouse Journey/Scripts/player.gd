@@ -13,11 +13,19 @@ extends CharacterBody2D
 
 @export var camera : Camera2D
 
+var input_disabled = false
+
 func _ready() -> void:
 	health_component.init_health()
+	movement_component_slide.init_movement_component()
+	
+	health_component.just_died.connect(disable_input)
 
 func _physics_process(delta: float) -> void:
 	
+	if input_disabled : # when dies : useful for respawn to disable weird spawn movement
+		return
+
 	gravity_component.handle_gravity(self, delta)
 	
 	#HORIZONTAL INPUT + MOVEMENT + SLIDE
@@ -46,9 +54,15 @@ func _physics_process(delta: float) -> void:
 	if is_on_floor() : 
 		apply_floor_snap()
 	
+	
 func store_last_walking_frame() -> void:
 	if is_on_floor() and velocity.x != 0:
 		GlobalPlayerStats.last_safe_position = Vector2(
 			global_position.x - GlobalPlayerStats.safe_position_offset * sign(velocity.x),
 			global_position.y
 		)
+
+func disable_input() : 
+	input_disabled = true
+	await get_tree().create_timer(0.5).timeout
+	input_disabled = false
