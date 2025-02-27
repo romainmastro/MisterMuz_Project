@@ -43,8 +43,8 @@ func respawn_to_checkpoint(body : CharacterBody2D) :
 func on_death() : 
 	if is_dead : 
 		print("Muz Died")
-		just_died.emit()
-		is_dead = false	
+		just_died.emit() # see hurtbox_component
+		is_dead = false
 		player.velocity = Vector2.ZERO
 		respawn_to_checkpoint(player)
 		init_health()

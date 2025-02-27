@@ -1,0 +1,12 @@
+[gd_resource type="TileSet" load_steps=4 format=3 uid="uid://d34uj80lo1ml4"]
+
+[ext_resource type="PackedScene" uid="uid://byc7401bsh3cc" path="res://Scenes/Collectibles/Collect_Heart.tscn" id="1_kgskm"]
+[ext_resource type="PackedScene" uid="uid://bjgf62qew141r" path="res://Scenes/Environment/checkpoint.tscn" id="2_0lc3b"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_pdsj5"]
+resource_name = "Objets"
+scenes/1/scene = ExtResource("1_kgskm")
+scenes/2/scene = ExtResource("2_0lc3b")
+
+[resource]
+sources/0 = SubResource("TileSetScenesCollectionSource_pdsj5")

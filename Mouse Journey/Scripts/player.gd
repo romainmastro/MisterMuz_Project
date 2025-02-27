@@ -20,6 +20,7 @@ func _ready() -> void:
 	movement_component_slide.init_movement_component()
 	
 	health_component.just_died.connect(disable_input)
+	
 
 func _physics_process(delta: float) -> void:
 	
@@ -53,14 +54,11 @@ func _physics_process(delta: float) -> void:
 	
 	if is_on_floor() : 
 		apply_floor_snap()
-	
+
 	
 func store_last_walking_frame() -> void:
 	if is_on_floor() and velocity.x != 0:
-		GlobalPlayerStats.last_safe_position = Vector2(
-			global_position.x - GlobalPlayerStats.safe_position_offset * sign(velocity.x),
-			global_position.y
-		)
+		GlobalPlayerStats.last_safe_position = Vector2(	global_position.x - GlobalPlayerStats.safe_position_offset * sign(velocity.x), global_position.y)
 
 func disable_input() : 
 	input_disabled = true

@@ -30,10 +30,8 @@
 				"acc35c25-13b8-46a3-8d60-26a04606842a",
 				"0fc84707-c563-4773-8a6f-21b5e50cf96a",
 				"84b9f004-1a0f-42d3-a36d-d53df954b048",
-				"58ff42ce-3cee-4c14-9c08-6882dc5dc134",
-				"833c5c32-74fe-4923-9304-2c5719e493cd",
 				"104a5ade-7259-4faa-9986-714c99388e7c",
-				"a897facb-f36a-4938-b0b9-81fce0bdac38"
+				"57c873ff-f5d6-4792-87f7-1b8e1d1b8c1a"
 			]
 		},
 		{
@@ -48,7 +46,14 @@
 				"ddc4f679-bdbb-4623-afbf-0c6bc26916ea",
 				"5e68202c-5365-4a2f-b1da-4ec353380f90",
 				"03a0943d-ef71-4cf5-8a74-04136b72877b",
-				"c5f9bd8a-f068-44b4-87ce-d5ed4e948c52"
+				"c5f9bd8a-f068-44b4-87ce-d5ed4e948c52",
+				"693a7a71-deb9-4d93-9039-dcafd67f1151",
+				"833c5c32-74fe-4923-9304-2c5719e493cd",
+				"c4845e7c-0d33-407e-bdca-a56c510e8c3b",
+				"19733752-458f-498b-9cc7-c9775811fb40",
+				"a897facb-f36a-4938-b0b9-81fce0bdac38",
+				"930c95ae-7e4f-40e6-bdcf-f369328fa44e",
+				"67bb8bdd-e408-4301-89a0-f7ff8e74fd76"
 			]
 		},
 		{
@@ -360,7 +365,7 @@
 			"uuid": "833c5c32-74fe-4923-9304-2c5719e493cd",
 			"title": "Moving Platforms component? H and V",
 			"description": "",
-			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
+			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
 			"steps": []
 		},
 		{
@@ -379,7 +384,7 @@
 		},
 		{
 			"uuid": "03a0943d-ef71-4cf5-8a74-04136b72877b",
-			"title": "Another Layer for Embelishment",
+			"title": "Another Layer for Embelishment/Decor",
 			"description": "",
 			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
 			"steps": []
@@ -395,7 +400,49 @@
 			"uuid": "a897facb-f36a-4938-b0b9-81fce0bdac38",
 			"title": "BUG : Respawn after spikes",
 			"description": "",
+			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"steps": []
+		},
+		{
+			"uuid": "693a7a71-deb9-4d93-9039-dcafd67f1151",
+			"title": "able to move camera up and down : it's bugging : go with 2 STATES",
+			"description": "",
+			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"steps": []
+		},
+		{
+			"uuid": "57c873ff-f5d6-4792-87f7-1b8e1d1b8c1a",
+			"title": "Start Screen",
+			"description": "",
 			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
+			"steps": []
+		},
+		{
+			"uuid": "c4845e7c-0d33-407e-bdca-a56c510e8c3b",
+			"title": "Easily editable moving platforms",
+			"description": "",
+			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"steps": []
+		},
+		{
+			"uuid": "19733752-458f-498b-9cc7-c9775811fb40",
+			"title": "Vertical / Horizontal Moving Platforms",
+			"description": "",
+			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"steps": []
+		},
+		{
+			"uuid": "930c95ae-7e4f-40e6-bdcf-f369328fa44e",
+			"title": "BUG : tween when hurt => I must stop tween before changing the position",
+			"description": "",
+			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"steps": []
+		},
+		{
+			"uuid": "67bb8bdd-e408-4301-89a0-f7ff8e74fd76",
+			"title": "ORGA : rearrange the Level System",
+			"description": "",
+			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
 			"steps": []
 		}
 	],

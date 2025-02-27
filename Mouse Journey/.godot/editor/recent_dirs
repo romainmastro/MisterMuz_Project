@@ -1,3 +1,6 @@
+res://Resources
+res://Scenes/MovingPlatforms
+res://Scripts/Platform
 res://Scenes/Traps
 res://Scripts/Traps
 res://Assets/TileSet
@@ -10,7 +13,6 @@ res://Scripts/Components
 res://Scenes/Components
 res://Scripts/Particles2D
 res://Assets/Muz
-res://Resources
 res://Scripts/Collectibles
 res://Scenes/Collectibles
 res://Scripts/HUD
@@ -18,4 +20,3 @@ res://Scenes/HUD
 res://Assets
 res://Scripts/DEBUG
 res://
-res://Sprites

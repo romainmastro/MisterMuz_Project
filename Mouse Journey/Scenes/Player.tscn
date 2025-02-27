@@ -178,7 +178,8 @@ height = 10.0
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("gravity_component", "input_component", "movement_component_slide", "advanced_jump_component", "animation_component", "health_component", "hurtbox_component", "snow_trail_component")]
 floor_stop_on_slope = false
 floor_max_angle = 1.5708
-floor_snap_length = 10.0
+floor_snap_length = 16.8
+platform_floor_layers = 4294962690
 script = ExtResource("1_kyqiw")
 gravity_component = NodePath("COMPONENTS/gravity_component")
 input_component = NodePath("COMPONENTS/Input_component")
@@ -196,6 +197,7 @@ autoplay = "idle"
 offset = Vector2(0, -2)
 
 [node name="HurtBox" parent="." instance=ExtResource("6_miouo")]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_dewec")
@@ -208,6 +210,8 @@ gravity = 500.0
 [node name="movement_component_with_slide" parent="COMPONENTS" instance=ExtResource("8_miouo")]
 running_speed = 65.0
 sliding_speed = 200.0
+ice_ground_accel = 1.2
+ice_ground_decel = 1.4
 
 [node name="animation_component" parent="COMPONENTS" node_paths=PackedStringArray("sprite", "hurtbox_component") instance=ExtResource("10_yoq75")]
 sprite = NodePath("../../AnimatedSprite2D")

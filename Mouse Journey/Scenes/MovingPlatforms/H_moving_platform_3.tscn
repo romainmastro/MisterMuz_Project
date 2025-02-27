@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://cej17ro141iai"]
+
+[ext_resource type="Script" uid="uid://l566lmcthgph" path="res://Scripts/Platform/H_movingPlatformClass.gd" id="1_dmaj2"]
+[ext_resource type="Texture2D" uid="uid://dhs30netgjc4j" path="res://Assets/Platforms/Platform3_H.png" id="2_duinn"]
+[ext_resource type="PackedScene" uid="uid://bdrcf621wwmls" path="res://Scenes/MovingPlatforms/H_moving_platform_component.tscn" id="3_dmaj2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tks4c"]
+size = Vector2(48, 12.5)
+
+[node name="H_MovingPlatform3" type="CharacterBody2D"]
+platform_on_leave = 1
+safe_margin = 0.5
+script = ExtResource("1_dmaj2")
+metadata/_custom_type_script = "uid://l566lmcthgph"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(24, 6.25)
+shape = SubResource("RectangleShape2D_tks4c")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_duinn")
+centered = false
+
+[node name="MovingPlatformComponent" parent="." node_paths=PackedStringArray("me") instance=ExtResource("3_dmaj2")]
+me = NodePath("..")
