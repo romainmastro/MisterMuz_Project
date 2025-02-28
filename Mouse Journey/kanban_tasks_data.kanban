@@ -42,6 +42,11 @@
 		{
 			"uuid": "a590c45f-f6e0-4df4-a178-2596b3213350",
 			"title": "Done on the current Branch",
+			"tasks": []
+		},
+		{
+			"uuid": "9573ce0a-9b5d-4fd9-bb69-4b68a3540b99",
+			"title": "DONE => Main Branch",
 			"tasks": [
 				"ddc4f679-bdbb-4623-afbf-0c6bc26916ea",
 				"5e68202c-5365-4a2f-b1da-4ec353380f90",
@@ -53,13 +58,7 @@
 				"19733752-458f-498b-9cc7-c9775811fb40",
 				"a897facb-f36a-4938-b0b9-81fce0bdac38",
 				"930c95ae-7e4f-40e6-bdcf-f369328fa44e",
-				"67bb8bdd-e408-4301-89a0-f7ff8e74fd76"
-			]
-		},
-		{
-			"uuid": "9573ce0a-9b5d-4fd9-bb69-4b68a3540b99",
-			"title": "DONE => Main Branch",
-			"tasks": [
+				"67bb8bdd-e408-4301-89a0-f7ff8e74fd76",
 				"5d66446b-aa83-4c93-a193-90fabc4d31d0",
 				"76cf4dd4-ff46-49fc-83a3-cc2f0cf0d5ed",
 				"587c9cd2-2eb2-447b-8941-1b10411b13de",
@@ -365,49 +364,49 @@
 			"uuid": "833c5c32-74fe-4923-9304-2c5719e493cd",
 			"title": "Moving Platforms component? H and V",
 			"description": "",
-			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "5e68202c-5365-4a2f-b1da-4ec353380f90",
 			"title": "Sliding without boots",
 			"description": "",
-			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "ddc4f679-bdbb-4623-afbf-0c6bc26916ea",
 			"title": "Trap : snowballs",
 			"description": "",
-			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "03a0943d-ef71-4cf5-8a74-04136b72877b",
 			"title": "Another Layer for Embelishment/Decor",
 			"description": "",
-			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "c5f9bd8a-f068-44b4-87ce-d5ed4e948c52",
 			"title": "Review : respawn initialisation",
 			"description": "",
-			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "a897facb-f36a-4938-b0b9-81fce0bdac38",
 			"title": "BUG : Respawn after spikes",
 			"description": "",
-			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "693a7a71-deb9-4d93-9039-dcafd67f1151",
 			"title": "able to move camera up and down : it's bugging : go with 2 STATES",
 			"description": "",
-			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
@@ -421,28 +420,28 @@
 			"uuid": "c4845e7c-0d33-407e-bdca-a56c510e8c3b",
 			"title": "Easily editable moving platforms",
 			"description": "",
-			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "19733752-458f-498b-9cc7-c9775811fb40",
 			"title": "Vertical / Horizontal Moving Platforms",
 			"description": "",
-			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "930c95ae-7e4f-40e6-bdcf-f369328fa44e",
 			"title": "BUG : tween when hurt => I must stop tween before changing the position",
 			"description": "",
-			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "67bb8bdd-e408-4301-89a0-f7ff8e74fd76",
 			"title": "ORGA : rearrange the Level System",
 			"description": "",
-			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		}
 	],

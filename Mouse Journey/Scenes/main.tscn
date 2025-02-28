@@ -39,6 +39,7 @@ tile_set = ExtResource("5_hptm8")
 tile_set = ExtResource("6_d1ilt")
 
 [node name="Level_Sophie" type="Node2D" parent="WORLD"]
+visible = false
 
 [node name="Level2" type="TileMapLayer" parent="WORLD/Level_Sophie"]
 z_index = 9
