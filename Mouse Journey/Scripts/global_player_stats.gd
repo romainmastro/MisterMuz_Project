@@ -3,7 +3,6 @@ extends Node
 @export var player_current_HP : float = 0
 @export var player_max_HP : float = 3
 
-var has_boots : bool = false
 var invincible_frame : bool = false
 
 @export var current_checkpoint : Vector2 = Vector2.ZERO
@@ -14,3 +13,7 @@ var safe_position_offset : int = 8
 
 # store the current Level
 @export var current_level : TileMapLayer
+
+# signal and variable for treasures : 
+@warning_ignore("unused_signal") signal has_boots_gloves_signal
+@export var has_boots_gloves : bool = false

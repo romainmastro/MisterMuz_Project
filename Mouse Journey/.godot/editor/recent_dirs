@@ -1,3 +1,7 @@
+res://Assets/Muz/Boots and gloves
+res://Resources/light
+res://Scripts/Environment
+res://Scenes/Environment
 res://Resources
 res://Scenes/MovingPlatforms
 res://Scripts/Platform
@@ -7,7 +11,6 @@ res://Assets/TileSet
 res://Scripts
 res://Scenes
 res://Assets/Environment
-res://Scenes/Environment
 res://Scenes/Particles
 res://Scripts/Components
 res://Scenes/Components
@@ -17,6 +20,3 @@ res://Scripts/Collectibles
 res://Scenes/Collectibles
 res://Scripts/HUD
 res://Scenes/HUD
-res://Assets
-res://Scripts/DEBUG
-res://

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://ci35s5hiav38j"]
+[gd_scene load_steps=10 format=4 uid="uid://ci35s5hiav38j"]
 
 [ext_resource type="Script" uid="uid://c6hv8hqxmhb5a" path="res://Scripts/main.gd" id="1_8gbba"]
 [ext_resource type="PackedScene" uid="uid://dtlxte6rijv77" path="res://Scenes/Player.tscn" id="1_jjgbg"]
@@ -7,6 +7,7 @@
 [ext_resource type="TileSet" uid="uid://cvxyb7jcx6hel" path="res://Resources/Pièges.tres" id="5_hptm8"]
 [ext_resource type="PackedScene" uid="uid://ltwdjfevci88" path="res://Scenes/HUD/HP_bar.tscn" id="5_kry3j"]
 [ext_resource type="TileSet" uid="uid://1x1qpe81qufy" path="res://Resources/Décor.tres" id="6_d1ilt"]
+[ext_resource type="PackedScene" uid="uid://bs6jgygl6od08" path="res://Scenes/Environment/treasure_chest.tscn" id="7_ynf5e"]
 [ext_resource type="Script" uid="uid://5btxhk0r3gsc" path="res://Scripts/camera_2d.gd" id="14_jkdf5"]
 
 [node name="Main" type="Node2D"]
@@ -43,18 +44,25 @@ visible = false
 
 [node name="Level2" type="TileMapLayer" parent="WORLD/Level_Sophie"]
 z_index = 9
+enabled = false
 tile_set = ExtResource("3_344ge")
 
 [node name="Object2" type="TileMapLayer" parent="WORLD/Level_Sophie"]
+enabled = false
 tile_set = ExtResource("4_ynf5e")
 
 [node name="Pièges2" type="TileMapLayer" parent="WORLD/Level_Sophie"]
 z_index = 10
 tile_map_data = PackedByteArray("AAD//yYAAAAAAAAACgAAACYAAAAAAAAACgABACYAAAAAAAAACgACACYAAAAAAAAACgADACYAAAAAAAAACgAEACYAAAAAAAAACgAFACYAAAAAAAAACgAGACYAAAAAAAAACgAHACYAAAAAAAAACgAIACYAAAAAAAAACgAJACYAAAAAAAAACgAKACYAAAAAAAAACgALACYAAAAAAAAACgAMACYAAAAAAAAACgANACYAAAAAAAAACgAOACYAAAAAAAAACgAPACYAAAAAAAAACgAQACYAAAAAAAAACgARACYAAAAAAAAACgASACYAAAAAAAAACgATACYAAAAAAAAACgAUACYAAAAAAAAACgAVACYAAAAAAAAACgAWACYAAAAAAAAACgAXACYAAAAAAAAACgAYACYAAAAAAAAACgAZACYAAAAAAAAACgAaACYAAAAAAAAACgAbACYAAAAAAAAACgAcACYAAAAAAAAACgAdACYAAAAAAAAACgAeACYAAAAAAAAACgAfACYAAAAAAAAACgAgACYAAAAAAAAACgAhACYAAAAAAAAACgAiACYAAAAAAAAACgAjACYAAAAAAAAACgAkACYAAAAAAAAACgAlACYAAAAAAAAACgAmACYAAAAAAAAACgAnACYAAAAAAAAACgAoACYAAAAAAAAACgApACYAAAAAAAAACgAqACYAAAAAAAAACgArACYAAAAAAAAACgAsACYAAAAAAAAACgAtACYAAAAAAAAACgAuACYAAAAAAAAACgAvACYAAAAAAAAACgAwACYAAAAAAAAACgAxACYAAAAAAAAACgAyACYAAAAAAAAACgAzACYAAAAAAAAACgA0ACYAAAAAAAAACgA1ACYAAAAAAAAACgA2ACYAAAAAAAAACgA3ACYAAAAAAAAACgA4ACYAAAAAAAAACgA5ACYAAAAAAAAACgA6ACYAAAAAAAAACgA7ACYAAAAAAAAACgA8ACYAAAAAAAAACgA9ACYAAAAAAAAACgA+ACYAAAAAAAAACgA/ACYAAAAAAAAACgBAACYAAAAAAAAACgBBACYAAAAAAAAACgBCACYAAAAAAAAACgBDACYAAAAAAAAACgBEACYAAAAAAAAACgBFACYAAAAAAAAACgBGACYAAAAAAAAACgBHACYAAAAAAAAACgBIACYAAAAAAAAACgBJACYAAAAAAAAACgBKACYAAAAAAAAACgBLACYAAAAAAAAACgBMACYAAAAAAAAACgBNACYAAAAAAAAACgBOACYAAAAAAAAACgBPACYAAAAAAAAACgBQACYAAAAAAAAACgBRACYAAAAAAAAACgBSACYAAAAAAAAACgBTACYAAAAAAAAACgBUACYAAAAAAAAACgBVACYAAAAAAAAACgBWACYAAAAAAAAACgBXACYAAAAAAAAACgBYACYAAAAAAAAACgBZACYAAAAAAAAACgBaACYAAAAAAAAACgBbACYAAAAAAAAACgBcACYAAAAAAAAACgBdACYAAAAAAAAACgBeACYAAAAAAAAACgBfACYAAAAAAAAACgBgACYAAAAAAAAACgBhACYAAAAAAAAACgBiACYAAAAAAAAACgBjACYAAAAAAAAACgBkACYAAAAAAAAACgA=")
+enabled = false
 tile_set = ExtResource("5_hptm8")
 
 [node name="Décor2" type="TileMapLayer" parent="WORLD/Level_Sophie"]
+enabled = false
 tile_set = ExtResource("6_d1ilt")
+
+[node name="treasure_chest" parent="WORLD" instance=ExtResource("7_ynf5e")]
+position = Vector2(112, -3)
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
@@ -72,6 +80,3 @@ position_smoothing_speed = 3.0
 script = ExtResource("14_jkdf5")
 player = NodePath("../../Player")
 level = NodePath("../../WORLD/Level_Eline/Level")
-
-[connection signal="body_entered" from="WORLD/Level_Eline/Objets/collectible_heart" to="WORLD/Level_Eline/Objets/collectible_heart" method="_on_body_entered"]
-[connection signal="body_entered" from="WORLD/Level_Eline/Objets/Checkpoint" to="WORLD/Level_Eline/Objets/Checkpoint" method="_on_body_entered"]

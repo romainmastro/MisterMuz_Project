@@ -4,24 +4,31 @@ extends Node
 @export_subgroup("Settings")
 @export var running_speed : float = 45
 @export var sliding_speed : float = 450
+
 @export var sliding_accel : float = 5.0
 @export var sliding_decel : float = 2.0
 
-@export var ground_accel : float = 4.0
-@export var ground_decel : float = 7.0
+@export var ground_accel : float = 4.0 # good values but not used
+@export var ground_decel : float = 7.0 # good values but not used
 @export var air_accel : float = 10.0
 @export var air_decel : float = 3.0
 
-# NOT has boots : 
+# NOT has boots_gloves : 
 @export var ice_ground_accel : float = 0.7
 @export var ice_ground_decel : float = 0.7
 
+# has boots_gloves : 
+@export var boots_ground_accel : float = 4
+@export var boots_ground_decel : float = 4
 
 var can_slide : bool = false
 var is_sliding : bool = false
 
+func _ready() -> void:
+	GlobalPlayerStats.has_boots_gloves_signal.connect(update_accel_decel)
+
 func init_movement_component() : 
-	if not GlobalPlayerStats.has_boots : 
+	if not GlobalPlayerStats.has_boots_gloves : 
 		ground_accel = ice_ground_accel
 		ground_decel = ice_ground_decel
 
@@ -64,3 +71,6 @@ func want_to_slide(body : CharacterBody2D, slide_button_pressed : bool, directio
 	can_slide = slide_button_pressed and is_on_downward_slope(body, direction) 
 	is_sliding = can_slide and body.is_on_floor()
 	
+func update_accel_decel() : 
+	ground_accel = boots_ground_accel
+	ground_decel = boots_ground_decel

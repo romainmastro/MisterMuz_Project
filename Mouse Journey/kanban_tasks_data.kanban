@@ -30,7 +30,6 @@
 				"acc35c25-13b8-46a3-8d60-26a04606842a",
 				"0fc84707-c563-4773-8a6f-21b5e50cf96a",
 				"84b9f004-1a0f-42d3-a36d-d53df954b048",
-				"104a5ade-7259-4faa-9986-714c99388e7c",
 				"57c873ff-f5d6-4792-87f7-1b8e1d1b8c1a"
 			]
 		},
@@ -42,7 +41,18 @@
 		{
 			"uuid": "a590c45f-f6e0-4df4-a178-2596b3213350",
 			"title": "Done on the current Branch",
-			"tasks": []
+			"tasks": [
+				"104a5ade-7259-4faa-9986-714c99388e7c",
+				"ddcccdde-a1b1-45c0-b0be-0e62a9732b32",
+				"977a1a7f-0c5e-46c2-881b-d0832387df0f",
+				"15e58b95-794f-44a9-9bca-e215ab43ad85",
+				"459e4cc5-bdca-45af-8bf7-c5d0f49b9cae",
+				"bcc2ae02-8f77-4383-95a2-4a3c86b86da0",
+				"18dfe191-a2d5-4f60-b70a-56f0c2eff096",
+				"6b8b6c3f-5867-4f6f-9d52-a9d3116de9e8",
+				"43a97e77-7d2a-490d-af59-befdca84019e",
+				"9b30e1d4-4f94-4a1c-964b-f3ef97b937e9"
+			]
 		},
 		{
 			"uuid": "9573ce0a-9b5d-4fd9-bb69-4b68a3540b99",
@@ -322,7 +332,7 @@
 			"uuid": "104a5ade-7259-4faa-9986-714c99388e7c",
 			"title": "ASSET : Snowboots item",
 			"description": "",
-			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
+			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
 			"steps": []
 		},
 		{
@@ -442,6 +452,69 @@
 			"title": "ORGA : rearrange the Level System",
 			"description": "",
 			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "ddcccdde-a1b1-45c0-b0be-0e62a9732b32",
+			"title": "ASSET : Treasure Chest (opened and closed)",
+			"description": "",
+			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"steps": []
+		},
+		{
+			"uuid": "bcc2ae02-8f77-4383-95a2-4a3c86b86da0",
+			"title": "ASSET : Animation for BOOTS and GLOVES",
+			"description": "",
+			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"steps": []
+		},
+		{
+			"uuid": "977a1a7f-0c5e-46c2-881b-d0832387df0f",
+			"title": "ASSET : Animation for SNOWHAT",
+			"description": "",
+			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"steps": []
+		},
+		{
+			"uuid": "15e58b95-794f-44a9-9bca-e215ab43ad85",
+			"title": "ASSET : Animation for SNOWSUIT",
+			"description": "",
+			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"steps": []
+		},
+		{
+			"uuid": "459e4cc5-bdca-45af-8bf7-c5d0f49b9cae",
+			"title": "ASSET : Animation for MUFFLER",
+			"description": "",
+			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"steps": []
+		},
+		{
+			"uuid": "18dfe191-a2d5-4f60-b70a-56f0c2eff096",
+			"title": "Add Treasure Chest to game : Scene created",
+			"description": "",
+			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"steps": []
+		},
+		{
+			"uuid": "6b8b6c3f-5867-4f6f-9d52-a9d3116de9e8",
+			"title": "Chest : open/close",
+			"description": "",
+			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"steps": []
+		},
+		{
+			"uuid": "43a97e77-7d2a-490d-af59-befdca84019e",
+			"title": "Change decel/accel : Global Signal + Global Bool",
+			"description": "",
+			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"steps": []
+		},
+		{
+			"uuid": "9b30e1d4-4f94-4a1c-964b-f3ef97b937e9",
+			"title": "Animation : BOOTS/GLOVES added : Global signal + visibility TRUE in Animation component",
+			"description": "",
+			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
 			"steps": []
 		}
 	],

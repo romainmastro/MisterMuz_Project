@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://bs6jgygl6od08"]
+
+[ext_resource type="Texture2D" uid="uid://bb351c1n2ieyh" path="res://Assets/Environment/closed_chest.png" id="1_2crsg"]
+[ext_resource type="Script" uid="uid://didfjoqvoqhd4" path="res://Scripts/Environment/treasure_chest.gd" id="1_w6mne"]
+[ext_resource type="Texture2D" uid="uid://rs7mwcqucuxq" path="res://Assets/Environment/opened_chest.png" id="2_w6mne"]
+[ext_resource type="Texture2D" uid="uid://rc70enu4xxnm" path="res://Resources/light/2d_lights_and_shadows_neutral_point_light.webp" id="4_ki27y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ki27y"]
+size = Vector2(16, 7)
+
+[node name="treasure_chest" type="Area2D" node_paths=PackedStringArray("closed_chest_sprite", "opened_chest_sprite")]
+script = ExtResource("1_w6mne")
+closed_chest_sprite = NodePath("closed_chest")
+opened_chest_sprite = NodePath("opened_chest")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_ki27y")
+
+[node name="closed_chest" type="Sprite2D" parent="."]
+texture = ExtResource("1_2crsg")
+
+[node name="opened_chest" type="Sprite2D" parent="."]
+position = Vector2(0, -1)
+texture = ExtResource("2_w6mne")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+scale = Vector2(0.4, 0.2)
+color = Color(0.666838, 0.451852, 0.0116099, 1)
+energy = 0.6
+shadow_color = Color(0, 0, 0, 1)
+texture = ExtResource("4_ki27y")
+height = 99.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

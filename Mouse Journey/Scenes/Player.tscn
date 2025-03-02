@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://dtlxte6rijv77"]
+[gd_scene load_steps=60 format=3 uid="uid://dtlxte6rijv77"]
 
 [ext_resource type="Script" uid="uid://v6kgu5fottyv" path="res://Scripts/player.gd" id="1_kyqiw"]
 [ext_resource type="Texture2D" uid="uid://bl388umk28hx6" path="res://Assets/Muz/Muz_JUMP.png" id="2_glx4g"]
@@ -9,9 +9,14 @@
 [ext_resource type="PackedScene" uid="uid://doooxpud87nj2" path="res://Scenes/hurt_box.tscn" id="6_miouo"]
 [ext_resource type="PackedScene" uid="uid://dmltd84vx4tiq" path="res://Scenes/Components/input_component.tscn" id="6_nn08x"]
 [ext_resource type="Texture2D" uid="uid://b1apqiygffyj3" path="res://Assets/Muz/Muz_SLIDE.png" id="6_o3h8g"]
+[ext_resource type="Texture2D" uid="uid://1yqgy2tnpbuq" path="res://Assets/Muz/Boots and gloves/Boots_Gloves_JUMP.png" id="7_i2e8t"]
 [ext_resource type="PackedScene" uid="uid://c28j3nq07emlu" path="res://Scenes/Components/movement_component_with_slide.tscn" id="8_miouo"]
+[ext_resource type="Texture2D" uid="uid://bvaxa4rcc7jwc" path="res://Assets/Muz/Boots and gloves/Boots_Gloves_HURT.png" id="8_qidb7"]
+[ext_resource type="Texture2D" uid="uid://ceksk5y1ki0je" path="res://Assets/Muz/Boots and gloves/Boots_Gloves_IDLE.png" id="9_70hv0"]
+[ext_resource type="Texture2D" uid="uid://biwn56mwq1d28" path="res://Assets/Muz/Boots and gloves/Boots_Gloves_RUN.png" id="10_8flut"]
 [ext_resource type="PackedScene" uid="uid://b0uxrbejuk3ug" path="res://Scenes/Components/animation_component.tscn" id="10_yoq75"]
 [ext_resource type="PackedScene" uid="uid://b7gls8nvptfou" path="res://Scenes/Components/health_component.tscn" id="11_ksbbd"]
+[ext_resource type="Texture2D" uid="uid://b7ec0jeyooph" path="res://Assets/Muz/Boots and gloves/Boots_Gloves_SLIDE.png" id="11_qidb7"]
 [ext_resource type="PackedScene" uid="uid://blltvlkj6lskc" path="res://Scenes/Components/advanced_jump_component.tscn" id="12_glx4g"]
 [ext_resource type="PackedScene" uid="uid://b5vt1jvxrv0fi" path="res://Scenes/Components/hurtbox_component.tscn" id="12_miouo"]
 [ext_resource type="PackedScene" uid="uid://cve4owe16cpik" path="res://Scenes/Components/snow_trail_component.tscn" id="15_1e7my"]
@@ -171,6 +176,156 @@ animations = [{
 "speed": 6.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_u7x0b"]
+atlas = ExtResource("7_i2e8t")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_utwlt"]
+atlas = ExtResource("8_qidb7")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kih0c"]
+atlas = ExtResource("9_70hv0")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lyrkg"]
+atlas = ExtResource("9_70hv0")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c43xd"]
+atlas = ExtResource("9_70hv0")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_avx33"]
+atlas = ExtResource("9_70hv0")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_opqna"]
+atlas = ExtResource("9_70hv0")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_00okb"]
+atlas = ExtResource("9_70hv0")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rxg2u"]
+atlas = ExtResource("7_i2e8t")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xixlo"]
+atlas = ExtResource("10_8flut")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bfbt0"]
+atlas = ExtResource("10_8flut")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wosd6"]
+atlas = ExtResource("10_8flut")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hkrn1"]
+atlas = ExtResource("10_8flut")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wpo1r"]
+atlas = ExtResource("10_8flut")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pqity"]
+atlas = ExtResource("10_8flut")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6hr71"]
+atlas = ExtResource("11_qidb7")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_opqna"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u7x0b")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_utwlt")
+}],
+"loop": false,
+"name": &"hurt",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kih0c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lyrkg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c43xd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_avx33")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_opqna")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_00okb")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rxg2u")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xixlo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bfbt0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wosd6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hkrn1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wpo1r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pqity")
+}],
+"loop": true,
+"name": &"run",
+"speed": 13.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6hr71")
+}],
+"loop": true,
+"name": &"slide",
+"speed": 6.0
+}]
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dewec"]
 radius = 2.0
 height = 10.0
@@ -190,9 +345,15 @@ health_component = NodePath("COMPONENTS/health_component")
 hurtbox_component = NodePath("COMPONENTS/hurtbox_component")
 snow_trail_component = NodePath("COMPONENTS/snowTrail_component")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_dewec")
-animation = &"hurt"
+animation = &"idle"
+autoplay = "idle"
+offset = Vector2(0, -2)
+
+[node name="Boots_and_Gloves" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_opqna")
+animation = &"slide"
 autoplay = "idle"
 offset = Vector2(0, -2)
 
@@ -213,8 +374,9 @@ sliding_speed = 200.0
 ice_ground_accel = 1.2
 ice_ground_decel = 1.4
 
-[node name="animation_component" parent="COMPONENTS" node_paths=PackedStringArray("sprite", "hurtbox_component") instance=ExtResource("10_yoq75")]
-sprite = NodePath("../../AnimatedSprite2D")
+[node name="animation_component" parent="COMPONENTS" node_paths=PackedStringArray("player_sprite", "boots_gloves_sprite", "hurtbox_component") instance=ExtResource("10_yoq75")]
+player_sprite = NodePath("../../PlayerSprite")
+boots_gloves_sprite = NodePath("../../Boots_and_Gloves")
 hurtbox_component = NodePath("../hurtbox_component")
 
 [node name="Input_component" parent="COMPONENTS" instance=ExtResource("6_nn08x")]
@@ -238,7 +400,7 @@ sliding_particles = NodePath("../../PARTICLES/sliding_particles")
 jumping_particles = NodePath("../../PARTICLES/jumpingParticles")
 landing_particles = NodePath("../../PARTICLES/LandingParticles")
 marker = NodePath("../../MARKER/SnowTrailMarker")
-sprite = NodePath("../../AnimatedSprite2D")
+sprite = NodePath("../../PlayerSprite")
 advanced_jump_component = NodePath("../advanced_jump_component")
 
 [node name="PARTICLES" type="Node" parent="."]

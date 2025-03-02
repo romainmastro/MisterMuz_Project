@@ -1,5 +1,11 @@
-res://Scenes/main.tscn
+res://Scenes/Environment/treasure_chest.tscn
 res://Resources/Level_Maker.tres
 res://Resources/Objects.tres
 res://Resources/Pièges.tres
 res://Resources/Décor.tres
+res://Scenes/main.tscn
+res://Scenes/Player.tscn
+res://Scripts/Environment/treasure_chest.gd
+res://Scripts/Components/animation_component.gd
+res://Scripts/global_player_stats.gd
+res://Scripts/Components/movement_component_with_slide.gd
