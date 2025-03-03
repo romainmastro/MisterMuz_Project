@@ -42,6 +42,12 @@
 			"uuid": "a590c45f-f6e0-4df4-a178-2596b3213350",
 			"title": "Done on the current Branch",
 			"tasks": [
+				"90666e2d-746b-454f-8b6e-860193bfe395",
+				"3edc41c8-87e2-416f-afad-64cc11702ba2",
+				"ef08f326-6494-4adb-bb4b-4c6e55fd768d",
+				"ab292ca0-ff5a-46e8-9fa9-f4fca5ddf3d8",
+				"a295d1f6-ceb5-4da7-9794-2205ff0345bf",
+				"6450e2ef-3023-4e71-b482-23a6efbc65d3",
 				"104a5ade-7259-4faa-9986-714c99388e7c",
 				"ddcccdde-a1b1-45c0-b0be-0e62a9732b32",
 				"977a1a7f-0c5e-46c2-881b-d0832387df0f",
@@ -332,7 +338,7 @@
 			"uuid": "104a5ade-7259-4faa-9986-714c99388e7c",
 			"title": "ASSET : Snowboots item",
 			"description": "",
-			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
 			"steps": []
 		},
 		{
@@ -458,63 +464,105 @@
 			"uuid": "ddcccdde-a1b1-45c0-b0be-0e62a9732b32",
 			"title": "ASSET : Treasure Chest (opened and closed)",
 			"description": "",
-			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
 			"steps": []
 		},
 		{
 			"uuid": "bcc2ae02-8f77-4383-95a2-4a3c86b86da0",
 			"title": "ASSET : Animation for BOOTS and GLOVES",
 			"description": "",
-			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
 			"steps": []
 		},
 		{
 			"uuid": "977a1a7f-0c5e-46c2-881b-d0832387df0f",
 			"title": "ASSET : Animation for SNOWHAT",
 			"description": "",
-			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
 			"steps": []
 		},
 		{
 			"uuid": "15e58b95-794f-44a9-9bca-e215ab43ad85",
 			"title": "ASSET : Animation for SNOWSUIT",
 			"description": "",
-			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
 			"steps": []
 		},
 		{
 			"uuid": "459e4cc5-bdca-45af-8bf7-c5d0f49b9cae",
 			"title": "ASSET : Animation for MUFFLER",
 			"description": "",
-			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
 			"steps": []
 		},
 		{
 			"uuid": "18dfe191-a2d5-4f60-b70a-56f0c2eff096",
 			"title": "Add Treasure Chest to game : Scene created",
 			"description": "",
-			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
 			"steps": []
 		},
 		{
 			"uuid": "6b8b6c3f-5867-4f6f-9d52-a9d3116de9e8",
 			"title": "Chest : open/close",
 			"description": "",
-			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
 			"steps": []
 		},
 		{
 			"uuid": "43a97e77-7d2a-490d-af59-befdca84019e",
 			"title": "Change decel/accel : Global Signal + Global Bool",
 			"description": "",
-			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
 			"steps": []
 		},
 		{
 			"uuid": "9b30e1d4-4f94-4a1c-964b-f3ef97b937e9",
 			"title": "Animation : BOOTS/GLOVES added : Global signal + visibility TRUE in Animation component",
 			"description": "",
-			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"steps": []
+		},
+		{
+			"uuid": "3edc41c8-87e2-416f-afad-64cc11702ba2",
+			"title": "Adding AnimSprite : Muffler",
+			"description": "",
+			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"steps": []
+		},
+		{
+			"uuid": "ef08f326-6494-4adb-bb4b-4c6e55fd768d",
+			"title": "Adding AnimSprite : SnowHat",
+			"description": "",
+			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"steps": []
+		},
+		{
+			"uuid": "6450e2ef-3023-4e71-b482-23a6efbc65d3",
+			"title": "Adding AnimSprite : SnowSuit",
+			"description": "",
+			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"steps": []
+		},
+		{
+			"uuid": "a295d1f6-ceb5-4da7-9794-2205ff0345bf",
+			"title": "Treasure : boots/Gloves/Suit ",
+			"description": "",
+			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"steps": []
+		},
+		{
+			"uuid": "ab292ca0-ff5a-46e8-9fa9-f4fca5ddf3d8",
+			"title": "Treasure : SnowHat ",
+			"description": "",
+			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"steps": []
+		},
+		{
+			"uuid": "90666e2d-746b-454f-8b6e-860193bfe395",
+			"title": "Treasure : Muffler",
+			"description": "",
+			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
 			"steps": []
 		}
 	],

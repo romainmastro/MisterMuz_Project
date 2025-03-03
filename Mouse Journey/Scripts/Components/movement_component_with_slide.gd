@@ -25,10 +25,10 @@ var can_slide : bool = false
 var is_sliding : bool = false
 
 func _ready() -> void:
-	GlobalPlayerStats.has_boots_gloves_signal.connect(update_accel_decel)
+	GlobalPlayerStats.has_boots_gloves_suit_signal.connect(update_accel_decel)
 
 func init_movement_component() : 
-	if not GlobalPlayerStats.has_boots_gloves : 
+	if not GlobalPlayerStats.has_boots_gloves_suit : 
 		ground_accel = ice_ground_accel
 		ground_decel = ice_ground_decel
 

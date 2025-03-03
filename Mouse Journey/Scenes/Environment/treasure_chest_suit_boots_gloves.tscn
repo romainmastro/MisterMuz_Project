@@ -1,17 +1,18 @@
 [gd_scene load_steps=6 format=3 uid="uid://bs6jgygl6od08"]
 
 [ext_resource type="Texture2D" uid="uid://bb351c1n2ieyh" path="res://Assets/Environment/closed_chest.png" id="1_2crsg"]
-[ext_resource type="Script" uid="uid://didfjoqvoqhd4" path="res://Scripts/Environment/treasure_chest.gd" id="1_w6mne"]
+[ext_resource type="Script" uid="uid://8fjfhlbmqhvc" path="res://Scripts/Environment/treasure_chest_suit_boots_gloves.gd" id="1_ki27y"]
 [ext_resource type="Texture2D" uid="uid://rs7mwcqucuxq" path="res://Assets/Environment/opened_chest.png" id="2_w6mne"]
 [ext_resource type="Texture2D" uid="uid://rc70enu4xxnm" path="res://Resources/light/2d_lights_and_shadows_neutral_point_light.webp" id="4_ki27y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ki27y"]
 size = Vector2(16, 7)
 
-[node name="treasure_chest" type="Area2D" node_paths=PackedStringArray("closed_chest_sprite", "opened_chest_sprite")]
-script = ExtResource("1_w6mne")
+[node name="treasure_chest_Boots_gloves_suit" type="Area2D" node_paths=PackedStringArray("closed_chest_sprite", "opened_chest_sprite")]
+script = ExtResource("1_ki27y")
 closed_chest_sprite = NodePath("closed_chest")
 opened_chest_sprite = NodePath("opened_chest")
+metadata/_custom_type_script = "uid://didfjoqvoqhd4"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.5)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://ci35s5hiav38j"]
+[gd_scene load_steps=12 format=4 uid="uid://ci35s5hiav38j"]
 
 [ext_resource type="Script" uid="uid://c6hv8hqxmhb5a" path="res://Scripts/main.gd" id="1_8gbba"]
 [ext_resource type="PackedScene" uid="uid://dtlxte6rijv77" path="res://Scenes/Player.tscn" id="1_jjgbg"]
@@ -7,7 +7,9 @@
 [ext_resource type="TileSet" uid="uid://cvxyb7jcx6hel" path="res://Resources/Pièges.tres" id="5_hptm8"]
 [ext_resource type="PackedScene" uid="uid://ltwdjfevci88" path="res://Scenes/HUD/HP_bar.tscn" id="5_kry3j"]
 [ext_resource type="TileSet" uid="uid://1x1qpe81qufy" path="res://Resources/Décor.tres" id="6_d1ilt"]
-[ext_resource type="PackedScene" uid="uid://bs6jgygl6od08" path="res://Scenes/Environment/treasure_chest.tscn" id="7_ynf5e"]
+[ext_resource type="PackedScene" uid="uid://bs6jgygl6od08" path="res://Scenes/Environment/treasure_chest_suit_boots_gloves.tscn" id="7_ynf5e"]
+[ext_resource type="PackedScene" uid="uid://bs425j3t1krem" path="res://Scenes/Environment/treasure_chest_snowhat.tscn" id="10_hptm8"]
+[ext_resource type="PackedScene" uid="uid://bk6nplv6ettgn" path="res://Scenes/Environment/treasure_chest_muffler.tscn" id="11_d1ilt"]
 [ext_resource type="Script" uid="uid://5btxhk0r3gsc" path="res://Scripts/camera_2d.gd" id="14_jkdf5"]
 
 [node name="Main" type="Node2D"]
@@ -15,7 +17,7 @@ script = ExtResource("1_8gbba")
 
 [node name="Player" parent="." instance=ExtResource("1_jjgbg")]
 z_index = 10
-position = Vector2(40, -32)
+position = Vector2(80, -6)
 floor_max_angle = 1.22173
 
 [node name="WORLD" type="Node" parent="."]
@@ -61,9 +63,6 @@ tile_set = ExtResource("5_hptm8")
 enabled = false
 tile_set = ExtResource("6_d1ilt")
 
-[node name="treasure_chest" parent="WORLD" instance=ExtResource("7_ynf5e")]
-position = Vector2(112, -3)
-
 [node name="HUD" type="CanvasLayer" parent="."]
 
 [node name="HP_Bar" parent="HUD" instance=ExtResource("5_kry3j")]
@@ -76,7 +75,17 @@ offset_bottom = -128.0
 
 [node name="Camera2D" type="Camera2D" parent="Camera" node_paths=PackedStringArray("player", "level")]
 position = Vector2(2784, -32)
+zoom = Vector2(2, 2)
 position_smoothing_speed = 3.0
 script = ExtResource("14_jkdf5")
 player = NodePath("../../Player")
 level = NodePath("../../WORLD/Level_Eline/Level")
+
+[node name="treasure_chest_Boots_gloves_suit" parent="." instance=ExtResource("7_ynf5e")]
+position = Vector2(104, -3)
+
+[node name="treasure_chest_snow_hat" parent="." instance=ExtResource("10_hptm8")]
+position = Vector2(136, -3)
+
+[node name="treasure_chest_snow_hat2" parent="." instance=ExtResource("11_d1ilt")]
+position = Vector2(168, -3)

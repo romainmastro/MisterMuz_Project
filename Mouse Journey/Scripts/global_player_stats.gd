@@ -15,5 +15,11 @@ var safe_position_offset : int = 8
 @export var current_level : TileMapLayer
 
 # signal and variable for treasures : 
-@warning_ignore("unused_signal") signal has_boots_gloves_signal
-@export var has_boots_gloves : bool = false
+@warning_ignore("unused_signal") signal has_boots_gloves_suit_signal
+@export var has_boots_gloves_suit : bool = false
+
+@warning_ignore("unused_signal") signal has_snowHat_signal
+@export var has_snow_hat : bool = false
+
+@warning_ignore("unused_signal") signal has_muffler_signal
+@export var has_muffler : bool = false
