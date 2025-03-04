@@ -3,6 +3,8 @@ extends HBoxContainer
 var hp_full = preload("res://Assets/UI/HP Bar/HealthBar_full.png")
 var hp_empty = preload("res://Assets/UI/HP Bar/HealthBar_empty.png")
 
+func _ready() -> void:
+	GlobalPlayerStats.max_hp_changed.connect(add_max_hp)
 
 func update_health(value : float) : 
 	for i in get_child_count() : 
@@ -14,3 +16,9 @@ func update_health(value : float) :
 func _process(_delta: float) -> void:
 	
 	update_health(GlobalPlayerStats.player_current_HP)
+
+func add_max_hp() : 
+	var hp = TextureRect.new()
+	hp.texture = hp_full
+	
+	add_child(hp)

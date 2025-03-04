@@ -1,3 +1,5 @@
+res://Scripts/Collectibles
+res://Scenes/Collectibles
 res://Scenes/Levels
 res://Assets/Muz/Muffler
 res://Scripts/Environment
@@ -18,5 +20,3 @@ res://Assets/Environment
 res://Scenes/Particles
 res://Scripts/Components
 res://Scenes/Components
-res://Scripts/Particles2D
-res://Assets/Muz

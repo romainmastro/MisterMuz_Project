@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://c86yomf2rddmc"]
+
+[ext_resource type="Texture2D" uid="uid://c6tdbr670cgpk" path="res://Assets/Collectibles/Collectible - Cheese.png" id="1_ih4oc"]
+[ext_resource type="Script" uid="uid://clc1ab22c5am7" path="res://Scripts/Collectibles/collect_cheese.gd" id="1_ylebh"]
+[ext_resource type="PackedScene" uid="uid://cm6k6cw4nuqf2" path="res://Scenes/hovering_component.tscn" id="3_od0dg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4vrg2"]
+size = Vector2(12, 10)
+
+[node name="Collect_Cheese" type="Area2D" node_paths=PackedStringArray("hoveringObjectComponent")]
+script = ExtResource("1_ylebh")
+hoveringObjectComponent = NodePath("HoveringComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_4vrg2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ih4oc")
+
+[node name="HoveringComponent" parent="." node_paths=PackedStringArray("object") instance=ExtResource("3_od0dg")]
+object = NodePath("..")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

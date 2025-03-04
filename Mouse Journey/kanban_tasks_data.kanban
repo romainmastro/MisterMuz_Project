@@ -28,9 +28,9 @@
 			"tasks": [
 				"9724578c-7454-4d2c-b796-df7093123b79",
 				"acc35c25-13b8-46a3-8d60-26a04606842a",
-				"0fc84707-c563-4773-8a6f-21b5e50cf96a",
 				"84b9f004-1a0f-42d3-a36d-d53df954b048",
-				"57c873ff-f5d6-4792-87f7-1b8e1d1b8c1a"
+				"57c873ff-f5d6-4792-87f7-1b8e1d1b8c1a",
+				"21fe0f07-d43c-429c-8c31-b7733617d2d3"
 			]
 		},
 		{
@@ -42,6 +42,10 @@
 			"uuid": "a590c45f-f6e0-4df4-a178-2596b3213350",
 			"title": "Done on the current Branch",
 			"tasks": [
+				"0fc84707-c563-4773-8a6f-21b5e50cf96a",
+				"ae46fa57-87b0-4379-93e6-99a72ba51d16",
+				"c5aa95d7-3772-4e78-bd1c-f8ef148864fb",
+				"86223928-6c22-4490-91be-c9d25f8c908a",
 				"9b9bb209-c94b-416b-bc42-c835bf3e3a46",
 				"90666e2d-746b-454f-8b6e-860193bfe395",
 				"3edc41c8-87e2-416f-afad-64cc11702ba2",
@@ -120,10 +124,27 @@
 		},
 		{
 			"uuid": "0fc84707-c563-4773-8a6f-21b5e50cf96a",
-			"title": "ASSET collectible : Cheese",
+			"title": "ASSET collectible : Cheese : collect 3 cheeses / level to gain a max HP",
 			"description": "",
-			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
-			"steps": []
+			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"steps": [
+				{
+					"details": "Create Sprite",
+					"done": true
+				},
+				{
+					"details": "Create Scene",
+					"done": true
+				},
+				{
+					"details": "Add Hovering Component",
+					"done": true
+				},
+				{
+					"details": "Create script for add 1 max HP when 3 are collected",
+					"done": true
+				}
+			]
 		},
 		{
 			"uuid": "9724578c-7454-4d2c-b796-df7093123b79",
@@ -569,6 +590,34 @@
 		{
 			"uuid": "9b9bb209-c94b-416b-bc42-c835bf3e3a46",
 			"title": "Added : Instance Dock Plugin",
+			"description": "",
+			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"steps": []
+		},
+		{
+			"uuid": "21fe0f07-d43c-429c-8c31-b7733617d2d3",
+			"title": "Préparer ASSET fin niveau",
+			"description": "",
+			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
+			"steps": []
+		},
+		{
+			"uuid": "86223928-6c22-4490-91be-c9d25f8c908a",
+			"title": "Vitesse stalagtite tombante paramétrable",
+			"description": "",
+			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"steps": []
+		},
+		{
+			"uuid": "c5aa95d7-3772-4e78-bd1c-f8ef148864fb",
+			"title": "BUG : stalagtite tombante disparaissent quand respawn : Cause : On Screen Notifier. 2 solutions : collision with Tilemap OR Timer",
+			"description": "",
+			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"steps": []
+		},
+		{
+			"uuid": "ae46fa57-87b0-4379-93e6-99a72ba51d16",
+			"title": "Déplacer BouleDeNeige dans Instance Docks pour pouvoir modifier le temps d'apparition",
 			"description": "",
 			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
 			"steps": []

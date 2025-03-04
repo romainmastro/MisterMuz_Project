@@ -11,11 +11,11 @@ radius = 4.0
 script = ExtResource("1_knfgd")
 hoveringObjectComponent = NodePath("HoveringComponent")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_knfgd")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_knfgd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_knfgd")
 
 [node name="HoveringComponent" parent="." node_paths=PackedStringArray("object") instance=ExtResource("3_rlgs7")]
 object = NodePath("..")

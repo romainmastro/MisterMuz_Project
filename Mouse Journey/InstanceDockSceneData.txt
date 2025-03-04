@@ -13,4 +13,11 @@
 }, {
 &"scene": "res://Scenes/MovingPlatforms/V_moving_platform_3.tscn"
 }]
+}, {
+"name": "Pièges",
+"scenes": [{
+&"scene": "res://Scenes/Traps/BouleDeNeige_portail.tscn"
+}, {
+&"scene": "res://Scenes/Traps/stalagtite_Tombante.tscn"
+}]
 }]

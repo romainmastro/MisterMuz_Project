@@ -3,6 +3,10 @@ extends Node
 @export var player_current_HP : float = 0
 @export var player_max_HP : float = 3
 
+var current_cheese_nb : float = 0
+@warning_ignore("unused_signal")signal max_hp_changed
+
+
 var invincible_frame : bool = false
 
 @export var current_checkpoint : Vector2 = Vector2.ZERO
