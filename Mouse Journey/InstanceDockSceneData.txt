@@ -1,0 +1,16 @@
+[{
+"name": "MovingPlatforms",
+"scenes": [{
+&"scene": "res://Scenes/MovingPlatforms/H_moving_platform_1.tscn"
+}, {
+&"scene": "res://Scenes/MovingPlatforms/H_moving_platform_2.tscn"
+}, {
+&"scene": "res://Scenes/MovingPlatforms/H_moving_platform_3.tscn"
+}, {
+&"scene": "res://Scenes/MovingPlatforms/V_moving_platform_1.tscn"
+}, {
+&"scene": "res://Scenes/MovingPlatforms/V_moving_platform_2.tscn"
+}, {
+&"scene": "res://Scenes/MovingPlatforms/V_moving_platform_3.tscn"
+}]
+}]

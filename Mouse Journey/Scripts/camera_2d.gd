@@ -7,6 +7,8 @@ extends Camera2D
 @export_group("Camera Settings")
 @export var bottom_limit := 512
 @export var top_limit := -1024
+@export var left_limit := 0
+@export var right_limit := 6000
 @export var camera_manual_speed : float = 75
 @export var camera_lerp_speed := 0.3
 @export var up_panning_limit := 48
@@ -15,7 +17,11 @@ extends Camera2D
 var is_lerping : bool = true
 
 func _ready() -> void:
-	camera_limits()
+	#camera_limits()
+	limit_bottom = bottom_limit
+	limit_top = top_limit
+	limit_left = left_limit
+	limit_right = right_limit
 
 func _physics_process(delta: float) -> void:
 		
@@ -39,14 +45,14 @@ func _physics_process(delta: float) -> void:
 		position.y = lerp(position.y, player.position.y - 16, camera_lerp_speed)
 
 
-func camera_limits() : 
-	var used_rect : Rect2i = level.get_used_rect()
-	var level_width_px = used_rect.size.x * level.tile_set.tile_size.x
-	
-	limit_left = 0
-	# I only have one tile before 0 so must remove 2 tiles in size 
-	# to display the right limit properly (1 from each side)
-	limit_right = level_width_px - level.tile_set.tile_size.x * 2
-	limit_bottom = bottom_limit
-	limit_top = top_limit
+#func camera_limits() : 
+	##var used_rect : Rect2i = level.get_used_rect()
+	##var level_width_px = used_rect.size.x * level.tile_set.tile_size.x
+	#
+	#limit_left = 0
+	## I only have one tile before 0 so must remove 2 tiles in size 
+	## to display the right limit properly (1 from each side)
+	#limit_right = level_width_px - level.tile_set.tile_size.x * 2
+	#limit_bottom = bottom_limit
+	#limit_top = top_limit
 	

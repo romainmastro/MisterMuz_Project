@@ -1,9 +1,0 @@
-res://Scenes/main.tscn
-res://Resources/Level_Maker.tres
-res://Resources/Objects.tres
-res://Resources/Pièges.tres
-res://Resources/Décor.tres
-res://Scenes/Player.tscn
-res://Scenes/Environment/treasure_chest_snowhat.tscn
-res://Scenes/Environment/treasure_chest_muffler.tscn
-res://Scenes/Levels/level_eline.tscn

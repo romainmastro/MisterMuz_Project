@@ -42,6 +42,7 @@
 			"uuid": "a590c45f-f6e0-4df4-a178-2596b3213350",
 			"title": "Done on the current Branch",
 			"tasks": [
+				"9b9bb209-c94b-416b-bc42-c835bf3e3a46",
 				"90666e2d-746b-454f-8b6e-860193bfe395",
 				"3edc41c8-87e2-416f-afad-64cc11702ba2",
 				"ef08f326-6494-4adb-bb4b-4c6e55fd768d",
@@ -563,6 +564,13 @@
 			"title": "Treasure : Muffler",
 			"description": "",
 			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"steps": []
+		},
+		{
+			"uuid": "9b9bb209-c94b-416b-bc42-c835bf3e3a46",
+			"title": "Added : Instance Dock Plugin",
+			"description": "",
+			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
 			"steps": []
 		}
 	],
