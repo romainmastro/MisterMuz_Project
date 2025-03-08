@@ -15,7 +15,7 @@ script = ExtResource("1_8gbba")
 
 [node name="Player" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("1_jjgbg")]
 z_index = 12
-position = Vector2(42, -31)
+position = Vector2(18, -9)
 floor_max_angle = 1.39626
 floor_snap_length = 5.0
 platform_floor_layers = 4294967295

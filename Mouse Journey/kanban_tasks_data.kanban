@@ -29,8 +29,7 @@
 				"9724578c-7454-4d2c-b796-df7093123b79",
 				"acc35c25-13b8-46a3-8d60-26a04606842a",
 				"84b9f004-1a0f-42d3-a36d-d53df954b048",
-				"57c873ff-f5d6-4792-87f7-1b8e1d1b8c1a",
-				"21fe0f07-d43c-429c-8c31-b7733617d2d3"
+				"57c873ff-f5d6-4792-87f7-1b8e1d1b8c1a"
 			]
 		},
 		{
@@ -42,6 +41,9 @@
 			"uuid": "a590c45f-f6e0-4df4-a178-2596b3213350",
 			"title": "Done on the current Branch",
 			"tasks": [
+				"21fe0f07-d43c-429c-8c31-b7733617d2d3",
+				"84a65f44-d8ba-4afc-8c6c-1744fd364de7",
+				"8249cc4d-f61c-4fd1-ac9f-90a15e14c74c",
 				"0fc84707-c563-4773-8a6f-21b5e50cf96a",
 				"ae46fa57-87b0-4379-93e6-99a72ba51d16",
 				"c5aa95d7-3772-4e78-bd1c-f8ef148864fb",
@@ -126,7 +128,7 @@
 			"uuid": "0fc84707-c563-4773-8a6f-21b5e50cf96a",
 			"title": "ASSET collectible : Cheese : collect 3 cheeses / level to gain a max HP",
 			"description": "",
-			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
 			"steps": [
 				{
 					"details": "Create Sprite",
@@ -598,26 +600,40 @@
 			"uuid": "21fe0f07-d43c-429c-8c31-b7733617d2d3",
 			"title": "Préparer ASSET fin niveau",
 			"description": "",
-			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
+			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
 			"steps": []
 		},
 		{
 			"uuid": "86223928-6c22-4490-91be-c9d25f8c908a",
 			"title": "Vitesse stalagtite tombante paramétrable",
 			"description": "",
-			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
 			"steps": []
 		},
 		{
 			"uuid": "c5aa95d7-3772-4e78-bd1c-f8ef148864fb",
 			"title": "BUG : stalagtite tombante disparaissent quand respawn : Cause : On Screen Notifier. 2 solutions : collision with Tilemap OR Timer",
 			"description": "",
-			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
 			"steps": []
 		},
 		{
 			"uuid": "ae46fa57-87b0-4379-93e6-99a72ba51d16",
 			"title": "Déplacer BouleDeNeige dans Instance Docks pour pouvoir modifier le temps d'apparition",
+			"description": "",
+			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"steps": []
+		},
+		{
+			"uuid": "8249cc4d-f61c-4fd1-ac9f-90a15e14c74c",
+			"title": "Revoir : BouleDeNeige car quand tombe tout droit : pas de movment au sol",
+			"description": "",
+			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"steps": []
+		},
+		{
+			"uuid": "84a65f44-d8ba-4afc-8c6c-1744fd364de7",
+			"title": "REvoir B2Neige : changer les paramètre dans le spawner",
 			"description": "",
 			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
 			"steps": []
