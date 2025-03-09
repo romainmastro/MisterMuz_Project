@@ -16,7 +16,8 @@ var invincible_frame : bool = false
 var safe_position_offset : int = 8
 
 # store the current Level
-@export var current_level : TileMapLayer
+enum Levels {Level1, Level2, Level3, Level4}
+@export var current_level := Levels.Level1 # by default Level1
 
 # signal and variable for treasures : 
 @warning_ignore("unused_signal") signal has_boots_gloves_suit_signal

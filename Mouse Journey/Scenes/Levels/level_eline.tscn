@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://ddjfmqisn40md" path="res://Scenes/Traps/BouleDeNeige_portail.tscn" id="8_qa2b1"]
 
 [node name="Level_Eline" type="Node2D"]
-metadata/_edit_horizontal_guides_ = [-872.0]
 
 [node name="Level" type="TileMapLayer" parent="."]
 z_index = 1
@@ -132,3 +131,11 @@ falling_speed = 160.0
 
 [node name="SnowballSpawner" parent="Pièges_ajoutés" instance=ExtResource("8_qa2b1")]
 position = Vector2(3864, -393)
+
+[connection signal="body_entered" from="Objets/collectible_heart" to="Objets/collectible_heart" method="_on_body_entered"]
+[connection signal="body_entered" from="Objets/Checkpoint" to="Objets/Checkpoint" method="_on_body_entered"]
+[connection signal="body_entered" from="Objets/Collect_Cheese" to="Objets/Collect_Cheese" method="_on_body_entered"]
+[connection signal="body_entered" from="Objets/treasure_chest_Boots_gloves_suit" to="Objets/treasure_chest_Boots_gloves_suit" method="_on_body_entered"]
+[connection signal="body_entered" from="Objets/@Area2D@54657" to="Objets/@Area2D@54657" method="_on_body_entered"]
+[connection signal="body_entered" from="Objets/@Area2D@54658" to="Objets/@Area2D@54658" method="_on_body_entered"]
+[connection signal="body_entered" from="Objets/@Area2D@54659" to="Objets/@Area2D@54659" method="_on_body_entered"]

@@ -1,0 +1,63 @@
+[gd_scene load_steps=10 format=3 uid="uid://dhq03yilhu6wj"]
+
+[ext_resource type="Texture2D" uid="uid://dypl1impvax7h" path="res://Assets/Environment/end_level_no_fire.png" id="1_imorp"]
+[ext_resource type="Script" uid="uid://cs5wj02pbvngm" path="res://Scripts/Environment/end_level_checkpoint.gd" id="1_mrmqi"]
+[ext_resource type="Texture2D" uid="uid://dnb0wxrmnc6rl" path="res://Assets/Environment/end_level lit_fire.png" id="2_53u4k"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mrmqi"]
+atlas = ExtResource("2_53u4k")
+region = Rect2(0, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6vvqi"]
+atlas = ExtResource("2_53u4k")
+region = Rect2(48, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mssoy"]
+atlas = ExtResource("2_53u4k")
+region = Rect2(96, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_05r57"]
+atlas = ExtResource("2_53u4k")
+region = Rect2(144, 0, 48, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jwqhk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mrmqi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6vvqi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mssoy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_05r57")
+}],
+"loop": true,
+"name": &"fire_lit",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_807ni"]
+size = Vector2(32, 26)
+
+[node name="EndLevelCheckpoint" type="Area2D" node_paths=PackedStringArray("fire_lit")]
+script = ExtResource("1_mrmqi")
+fire_lit = NodePath("Fire_Lit")
+
+[node name="No_Fire" type="Sprite2D" parent="."]
+texture = ExtResource("1_imorp")
+region_enabled = true
+region_rect = Rect2(0, 0, 48, 32)
+
+[node name="Fire_Lit" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_jwqhk")
+animation = &"fire_lit"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_807ni")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

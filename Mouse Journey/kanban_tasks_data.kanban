@@ -26,21 +26,26 @@
 			"uuid": "62dca9c9-52f1-4b12-be5f-b6452adc036e",
 			"title": "Todo",
 			"tasks": [
-				"9724578c-7454-4d2c-b796-df7093123b79",
-				"acc35c25-13b8-46a3-8d60-26a04606842a",
-				"84b9f004-1a0f-42d3-a36d-d53df954b048",
-				"57c873ff-f5d6-4792-87f7-1b8e1d1b8c1a"
+				"57c873ff-f5d6-4792-87f7-1b8e1d1b8c1a",
+				"ddf1ca26-4e3e-4352-a9fe-cfff4c150f2f",
+				"04e59212-6cdf-4ea6-ad53-2cd979cff0e7",
+				"f9224b76-3a42-4151-9471-9f46701131a4",
+				"5a2d37d0-8625-4b33-8f37-0de4814360f7"
 			]
 		},
 		{
 			"uuid": "ef4e123f-f6ea-4e30-8896-4ddd7167fd59",
 			"title": "Doing",
-			"tasks": []
+			"tasks": [
+				"ca0714b9-0bd7-4619-b563-1a676e3ea349"
+			]
 		},
 		{
 			"uuid": "a590c45f-f6e0-4df4-a178-2596b3213350",
 			"title": "Done on the current Branch",
 			"tasks": [
+				"ebe1a9ed-d4de-455c-9a7a-f1ba7fbf60c5",
+				"9ee1d74b-39e8-49a4-8951-8ff45fa96470",
 				"21fe0f07-d43c-429c-8c31-b7733617d2d3",
 				"84a65f44-d8ba-4afc-8c6c-1744fd364de7",
 				"8249cc4d-f61c-4fd1-ac9f-90a15e14c74c",
@@ -147,20 +152,6 @@
 					"done": true
 				}
 			]
-		},
-		{
-			"uuid": "9724578c-7454-4d2c-b796-df7093123b79",
-			"title": "ASSET HUD : Snowflake",
-			"description": "",
-			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
-			"steps": []
-		},
-		{
-			"uuid": "acc35c25-13b8-46a3-8d60-26a04606842a",
-			"title": "HUD : Meter bar for cold",
-			"description": "",
-			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
-			"steps": []
 		},
 		{
 			"uuid": "874b06ed-716f-40ba-8f20-960ebb9fc5d0",
@@ -380,13 +371,6 @@
 			"steps": []
 		},
 		{
-			"uuid": "84b9f004-1a0f-42d3-a36d-d53df954b048",
-			"title": "make levels changeable for Limits",
-			"description": "",
-			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
-			"steps": []
-		},
-		{
 			"uuid": "8c6dfec4-eedd-42ea-9f48-199dcbb3e629",
 			"title": "Pit",
 			"description": "",
@@ -600,7 +584,7 @@
 			"uuid": "21fe0f07-d43c-429c-8c31-b7733617d2d3",
 			"title": "Préparer ASSET fin niveau",
 			"description": "",
-			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
 			"steps": []
 		},
 		{
@@ -628,12 +612,61 @@
 			"uuid": "8249cc4d-f61c-4fd1-ac9f-90a15e14c74c",
 			"title": "Revoir : BouleDeNeige car quand tombe tout droit : pas de movment au sol",
 			"description": "",
-			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
 			"steps": []
 		},
 		{
 			"uuid": "84a65f44-d8ba-4afc-8c6c-1744fd364de7",
 			"title": "REvoir B2Neige : changer les paramètre dans le spawner",
+			"description": "",
+			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"steps": []
+		},
+		{
+			"uuid": "9ee1d74b-39e8-49a4-8951-8ff45fa96470",
+			"title": "Intégrer l'ASSET de fin et de début de niveau",
+			"description": "",
+			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"steps": []
+		},
+		{
+			"uuid": "ddf1ca26-4e3e-4352-a9fe-cfff4c150f2f",
+			"title": "Congratulation Menu : go from Level1 to Level2",
+			"description": "",
+			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
+			"steps": []
+		},
+		{
+			"uuid": "04e59212-6cdf-4ea6-ad53-2cd979cff0e7",
+			"title": "Power : hat : can glide",
+			"description": "",
+			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
+			"steps": []
+		},
+		{
+			"uuid": "f9224b76-3a42-4151-9471-9f46701131a4",
+			"title": "Power : suit : can jump walls",
+			"description": "",
+			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
+			"steps": []
+		},
+		{
+			"uuid": "5a2d37d0-8625-4b33-8f37-0de4814360f7",
+			"title": "Power : muffler : ????",
+			"description": "",
+			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
+			"steps": []
+		},
+		{
+			"uuid": "ebe1a9ed-d4de-455c-9a7a-f1ba7fbf60c5",
+			"title": "ASSET : Sign Start Level",
+			"description": "",
+			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"steps": []
+		},
+		{
+			"uuid": "ca0714b9-0bd7-4619-b563-1a676e3ea349",
+			"title": "Integrate Sign Start Level",
 			"description": "",
 			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
 			"steps": []

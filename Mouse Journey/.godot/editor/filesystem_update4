@@ -3,6 +3,9 @@ res://Resources/Level_Maker.tres
 res://Resources/Objects.tres
 res://Resources/Décor.tres
 res://Resources/Pièges.tres
+res://Scripts/Environment/end_level_checkpoint.gd
 res://Scenes/Levels/level_eline.tscn
 res://Scenes/Traps/Snowball.tscn
-res://Scenes/Traps/BouleDeNeige_portail.tscn
+res://Scenes/Environment/checkpoint.tscn
+res://Scenes/Environment/end_level_checkpoint.tscn
+res://Scripts/global_player_stats.gd

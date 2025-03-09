@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c86pfcan33c5s"
-path="res://.godot/imported/end_level.png-4f9653877a44b98c0f0acbc96f85aad8.ctex"
+uid="uid://qstoqqmab380"
+path="res://.godot/imported/Sign_Start_Level.png-81fbb4b13bcb7763561ae1cbcdb318ae.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Environment/end_level.png"
-dest_files=["res://.godot/imported/end_level.png-4f9653877a44b98c0f0acbc96f85aad8.ctex"]
+source_file="res://Assets/Environment/Sign_Start_Level.png"
+dest_files=["res://.godot/imported/Sign_Start_Level.png-81fbb4b13bcb7763561ae1cbcdb318ae.ctex"]
 
 [params]
 

@@ -26,7 +26,6 @@ camera = NodePath("../Camera/Camera2D")
 [node name="Level_Eline" parent="WORLD" instance=ExtResource("3_ynf5e")]
 
 [node name="Level_Sophie" type="Node2D" parent="WORLD"]
-visible = false
 
 [node name="Level2" type="TileMapLayer" parent="WORLD/Level_Sophie"]
 z_index = 9
