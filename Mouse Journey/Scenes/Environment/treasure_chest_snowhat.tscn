@@ -15,15 +15,17 @@ opened_chest_sprite = NodePath("opened_chest")
 metadata/_custom_type_script = "uid://didfjoqvoqhd4"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 0.5)
+position = Vector2(0, 5)
 shape = SubResource("RectangleShape2D_eu2q2")
 
 [node name="closed_chest" type="Sprite2D" parent="."]
 texture = ExtResource("2_7qk7v")
+offset = Vector2(0, 5)
 
 [node name="opened_chest" type="Sprite2D" parent="."]
 position = Vector2(0, -1)
 texture = ExtResource("3_70hih")
+offset = Vector2(0, 5)
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 scale = Vector2(0.4, 0.2)

@@ -1,21 +1,22 @@
-[gd_scene load_steps=10 format=4 uid="uid://ci35s5hiav38j"]
+[gd_scene load_steps=8 format=3 uid="uid://ci35s5hiav38j"]
 
 [ext_resource type="Script" uid="uid://c6hv8hqxmhb5a" path="res://Scripts/main.gd" id="1_8gbba"]
 [ext_resource type="PackedScene" uid="uid://dtlxte6rijv77" path="res://Scenes/Player.tscn" id="1_jjgbg"]
-[ext_resource type="TileSet" uid="uid://cvn6rtpn15ve6" path="res://Resources/Level_Maker.tres" id="3_344ge"]
 [ext_resource type="PackedScene" uid="uid://q2tq0ftt2ixh" path="res://Scenes/Levels/level_eline.tscn" id="3_ynf5e"]
-[ext_resource type="TileSet" uid="uid://d34uj80lo1ml4" path="res://Resources/Objects.tres" id="4_ynf5e"]
-[ext_resource type="TileSet" uid="uid://cvxyb7jcx6hel" path="res://Resources/Pièges.tres" id="5_hptm8"]
+[ext_resource type="PackedScene" uid="uid://b1vi7lh2l2ldh" path="res://Scenes/Environment/sign_Start_Level.tscn" id="4_hptm8"]
+[ext_resource type="PackedScene" uid="uid://dx183gml3tmu7" path="res://Scenes/Levels/level_sophie.tscn" id="5_6bp64"]
 [ext_resource type="PackedScene" uid="uid://ltwdjfevci88" path="res://Scenes/HUD/HP_bar.tscn" id="5_kry3j"]
-[ext_resource type="TileSet" uid="uid://1x1qpe81qufy" path="res://Resources/Décor.tres" id="6_d1ilt"]
 [ext_resource type="Script" uid="uid://5btxhk0r3gsc" path="res://Scripts/camera_2d.gd" id="14_jkdf5"]
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node2D" node_paths=PackedStringArray("player", "sign_start_level1", "sign_start_level2")]
 script = ExtResource("1_8gbba")
+player = NodePath("Player")
+sign_start_level1 = NodePath("WORLD/Level_Eline/Sign_Start_Level1")
+sign_start_level2 = NodePath("WORLD/Level_Sophie/Sign_Start_Level2")
 
 [node name="Player" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("1_jjgbg")]
 z_index = 12
-position = Vector2(18, -9)
+position = Vector2(28, -34)
 floor_max_angle = 1.39626
 floor_snap_length = 5.0
 platform_floor_layers = 4294967295
@@ -25,27 +26,14 @@ camera = NodePath("../Camera/Camera2D")
 
 [node name="Level_Eline" parent="WORLD" instance=ExtResource("3_ynf5e")]
 
-[node name="Level_Sophie" type="Node2D" parent="WORLD"]
+[node name="Sign_Start_Level1" parent="WORLD/Level_Eline" instance=ExtResource("4_hptm8")]
+z_index = 11
+position = Vector2(16, -7)
 
-[node name="Level2" type="TileMapLayer" parent="WORLD/Level_Sophie"]
-z_index = 9
-tile_map_data = PackedByteArray("AAAAAAAAAAANAAAAAAABAAAAAAABAAEAAAACAAAAAAACAAEAAAADAAAAAAAEAAEAAAAEAAAAAAACAAEAAAAFAAAAAAAFAAEAAAAGAAAAAAAEAAEAAAAHAAAAAAAEAAEAAAAIAAAAAAABAAEAAAAJAAAAAAAGAAEAAAAKAAAAAAACAAEAAAALAAAAAAAGAAEAAAAMAAAAAAAFAAEAAAANAAAAAAAGAAEAAAAOAAAAAAABAAEAAAAPAAAAAAAFAAEAAAAQAAAAAAACAAYAAAARAAAAAAAJAAMAAAD//wAAAAANAAAAAAD/////AAAJAAIAAAD///7/AAAJAAIAAAD///3/AAAJAAEAAAD+/wAAAAAAAAMAAAD+////AAAAAAIAAAD+//7/AAAAAAIAAAD+//3/AAAAAAEAAAARAP//AAAJAAIAAAARAP7/AAAJAAIAAAARAP3/AAAJAAIAAAARAPz/AAAAAAUAAAAQAP//AAAAAAIAAAAQAP7/AAAAAAIAAAAQAP3/AAAAAAEAAAAPAAEAAAAEAAMAAAAOAAEAAAABAAMAAAANAAEAAAAGAAMAAAAMAAEAAAAIAAMAAAALAAEAAAAIAAMAAAAKAAEAAAADAAMAAAAJAAEAAAAEAAMAAAAIAAEAAAAFAAMAAAAHAAEAAAAFAAMAAAAGAAEAAAAIAAMAAAAFAAEAAAAEAAMAAAAEAAEAAAAHAAMAAAADAAEAAAAIAAMAAAACAAEAAAAFAAMAAAD//wEAAAAAAAMAAAAAAAEAAAAIAAMAAAABAAEAAAADAAMAAAAQAAEAAAAJAAMAAAA=")
-enabled = false
-tile_set = ExtResource("3_344ge")
+[node name="Level_Sophie" parent="WORLD" instance=ExtResource("5_6bp64")]
+visible = false
 
-[node name="Object2" type="TileMapLayer" parent="WORLD/Level_Sophie"]
-enabled = false
-tile_set = ExtResource("4_ynf5e")
-
-[node name="Pièges2" type="TileMapLayer" parent="WORLD/Level_Sophie"]
-z_index = 10
-tile_map_data = PackedByteArray("AAD//yYAAAAAAAAACgAAACYAAAAAAAAACgABACYAAAAAAAAACgACACYAAAAAAAAACgADACYAAAAAAAAACgAEACYAAAAAAAAACgAFACYAAAAAAAAACgAGACYAAAAAAAAACgAHACYAAAAAAAAACgAIACYAAAAAAAAACgAJACYAAAAAAAAACgAKACYAAAAAAAAACgALACYAAAAAAAAACgAMACYAAAAAAAAACgANACYAAAAAAAAACgAOACYAAAAAAAAACgAPACYAAAAAAAAACgAQACYAAAAAAAAACgARACYAAAAAAAAACgASACYAAAAAAAAACgATACYAAAAAAAAACgAUACYAAAAAAAAACgAVACYAAAAAAAAACgAWACYAAAAAAAAACgAXACYAAAAAAAAACgAYACYAAAAAAAAACgAZACYAAAAAAAAACgAaACYAAAAAAAAACgAbACYAAAAAAAAACgAcACYAAAAAAAAACgAdACYAAAAAAAAACgAeACYAAAAAAAAACgAfACYAAAAAAAAACgAgACYAAAAAAAAACgAhACYAAAAAAAAACgAiACYAAAAAAAAACgAjACYAAAAAAAAACgAkACYAAAAAAAAACgAlACYAAAAAAAAACgAmACYAAAAAAAAACgAnACYAAAAAAAAACgAoACYAAAAAAAAACgApACYAAAAAAAAACgAqACYAAAAAAAAACgArACYAAAAAAAAACgAsACYAAAAAAAAACgAtACYAAAAAAAAACgAuACYAAAAAAAAACgAvACYAAAAAAAAACgAwACYAAAAAAAAACgAxACYAAAAAAAAACgAyACYAAAAAAAAACgAzACYAAAAAAAAACgA0ACYAAAAAAAAACgA1ACYAAAAAAAAACgA2ACYAAAAAAAAACgA3ACYAAAAAAAAACgA4ACYAAAAAAAAACgA5ACYAAAAAAAAACgA6ACYAAAAAAAAACgA7ACYAAAAAAAAACgA8ACYAAAAAAAAACgA9ACYAAAAAAAAACgA+ACYAAAAAAAAACgA/ACYAAAAAAAAACgBAACYAAAAAAAAACgBBACYAAAAAAAAACgBCACYAAAAAAAAACgBDACYAAAAAAAAACgBEACYAAAAAAAAACgBFACYAAAAAAAAACgBGACYAAAAAAAAACgBHACYAAAAAAAAACgBIACYAAAAAAAAACgBJACYAAAAAAAAACgBKACYAAAAAAAAACgBLACYAAAAAAAAACgBMACYAAAAAAAAACgBNACYAAAAAAAAACgBOACYAAAAAAAAACgBPACYAAAAAAAAACgBQACYAAAAAAAAACgBRACYAAAAAAAAACgBSACYAAAAAAAAACgBTACYAAAAAAAAACgBUACYAAAAAAAAACgBVACYAAAAAAAAACgBWACYAAAAAAAAACgBXACYAAAAAAAAACgBYACYAAAAAAAAACgBZACYAAAAAAAAACgBaACYAAAAAAAAACgBbACYAAAAAAAAACgBcACYAAAAAAAAACgBdACYAAAAAAAAACgBeACYAAAAAAAAACgBfACYAAAAAAAAACgBgACYAAAAAAAAACgBhACYAAAAAAAAACgBiACYAAAAAAAAACgBjACYAAAAAAAAACgBkACYAAAAAAAAACgA=")
-enabled = false
-tile_set = ExtResource("5_hptm8")
-
-[node name="Décor2" type="TileMapLayer" parent="WORLD/Level_Sophie"]
-enabled = false
-tile_set = ExtResource("6_d1ilt")
+[node name="Sign_Start_Level2" parent="WORLD/Level_Sophie" instance=ExtResource("4_hptm8")]
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
@@ -61,3 +49,5 @@ offset_bottom = -128.0
 position_smoothing_speed = 3.0
 script = ExtResource("14_jkdf5")
 player = NodePath("../../Player")
+
+[node name="MENU" type="Node" parent="."]

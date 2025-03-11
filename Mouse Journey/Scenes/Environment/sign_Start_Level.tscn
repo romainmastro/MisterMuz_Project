@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://b1vi7lh2l2ldh"]
+
+[ext_resource type="Texture2D" uid="uid://qstoqqmab380" path="res://Assets/Environment/Sign_Start_Level.png" id="1_4sokf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p5liv"]
+size = Vector2(16, 16)
+
+[node name="Sign_Start_Level" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_p5liv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_4sokf")

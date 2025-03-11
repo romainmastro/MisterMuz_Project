@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://rc70enu4xxnm" path="res://Resources/light/2d_lights_and_shadows_neutral_point_light.webp" id="4_ki27y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ki27y"]
-size = Vector2(16, 7)
+size = Vector2(16, 8)
 
 [node name="treasure_chest_Boots_gloves_suit" type="Area2D" node_paths=PackedStringArray("closed_chest_sprite", "opened_chest_sprite")]
 script = ExtResource("1_ki27y")
@@ -15,15 +15,17 @@ opened_chest_sprite = NodePath("opened_chest")
 metadata/_custom_type_script = "uid://didfjoqvoqhd4"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 0.5)
+position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_ki27y")
 
 [node name="closed_chest" type="Sprite2D" parent="."]
 texture = ExtResource("1_2crsg")
+offset = Vector2(0, 5)
 
 [node name="opened_chest" type="Sprite2D" parent="."]
 position = Vector2(0, -1)
 texture = ExtResource("2_w6mne")
+offset = Vector2(0, 5)
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 scale = Vector2(0.4, 0.2)

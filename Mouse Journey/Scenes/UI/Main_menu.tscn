@@ -1,0 +1,185 @@
+[gd_scene load_steps=20 format=4 uid="uid://ddo3mx17axu4k"]
+
+[ext_resource type="Theme" uid="uid://ba6rurgdpqsjr" path="res://Resources/font/main_font_theme.tres" id="1_fxsns"]
+[ext_resource type="Script" uid="uid://bq6fsl6b3usqu" path="res://Scripts/UI/main_menu.gd" id="1_ypja4"]
+[ext_resource type="Texture2D" uid="uid://du2j1yp66woh6" path="res://Assets/Muz/Muz_RUN.png" id="3_dt2kf"]
+[ext_resource type="Texture2D" uid="uid://btpbpewrm561" path="res://Assets/Muz/Muz_IDLE.png" id="3_ysves"]
+[ext_resource type="TileSet" uid="uid://cvn6rtpn15ve6" path="res://Resources/Level_Maker.tres" id="4_w1wd7"]
+[ext_resource type="TileSet" uid="uid://1x1qpe81qufy" path="res://Resources/Décor.tres" id="6_44kub"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i4k7f"]
+atlas = ExtResource("3_ysves")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2tscw"]
+atlas = ExtResource("3_ysves")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uhpec"]
+atlas = ExtResource("3_ysves")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_et2pw"]
+atlas = ExtResource("3_ysves")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gbwy5"]
+atlas = ExtResource("3_ysves")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_llqno"]
+atlas = ExtResource("3_ysves")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w1wd7"]
+atlas = ExtResource("3_dt2kf")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ysves"]
+atlas = ExtResource("3_dt2kf")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_44kub"]
+atlas = ExtResource("3_dt2kf")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nukk0"]
+atlas = ExtResource("3_dt2kf")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mi4od"]
+atlas = ExtResource("3_dt2kf")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cdexa"]
+atlas = ExtResource("3_dt2kf")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i4k7f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i4k7f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2tscw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uhpec")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_et2pw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gbwy5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_llqno")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w1wd7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ysves")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_44kub")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nukk0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mi4od")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cdexa")
+}],
+"loop": true,
+"name": &"run",
+"speed": 12.0
+}]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ypja4")
+
+[node name="Menu" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_top = 64.0
+offset_right = 56.0
+offset_bottom = 104.0
+
+[node name="StartButton" type="Button" parent="Menu"]
+layout_mode = 2
+theme = ExtResource("1_fxsns")
+text = "Start"
+
+[node name="OptionsButton" type="Button" parent="Menu"]
+layout_mode = 2
+theme = ExtResource("1_fxsns")
+text = "Options	"
+
+[node name="QuitButton" type="Button" parent="Menu"]
+layout_mode = 2
+theme = ExtResource("1_fxsns")
+text = "Quit Game"
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 24.0
+offset_right = 205.0
+offset_bottom = 47.0
+theme = ExtResource("1_fxsns")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.835294, 0.929412, 0.929412, 1)
+theme_override_font_sizes/font_size = 15
+text = "MuZ Winter Adventure"
+
+[node name="Muz" type="AnimatedSprite2D" parent="."]
+position = Vector2(8, 120)
+sprite_frames = SubResource("SpriteFrames_i4k7f")
+animation = &"idle"
+autoplay = "run"
+
+[node name="Land" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAAgAAAAAAAAAAAABAAgAAAAIAAAAAAACAAgAAAAKAAAAAAADAAgAAAABAAAAAAAEAAgAAAAIAAAAAAAFAAgAAAAFAAAAAAAGAAgAAAACAAAAAAAHAAgAAAACAAAAAAAIAAgAAAAHAAAAAAAJAAgAAAABAAAAAAAKAAgAAAADAAAAAAALAAgAAAADAAAAAAAMAAgAAAACAAAAAAANAAgAAAAIAAAAAAAOAAgAAAADAAAAAAAPAAgAAAALAAAAAAA=")
+tile_set = ExtResource("4_w1wd7")
+
+[node name="Décor" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAaAAcAAAAcAAIAAAAYAAcAAAAZAAAAAAAbAAcAAAAUAAQAAAANAAcAAAAbAAEAAAAOAAcAAAAZAAEAAAAQAAcAAAAUAAAAAAARAAcAAAAbAAEAAAAUAAcAAAATAAAAAAAVAAcAAAATAAIAAAAXAAcAAAAYAAMAAAAcAAcAAAAWAAEAAAAdAAcAAAAZAAEAAAAfAAcAAAAWAAEAAAAMAAcAAAAbAAAAAAAGAAcAAAAUAAAAAAALAAcAAAASAAAAAAAWAAcAAAAWAAEAAAA=")
+tile_set = ExtResource("6_44kub")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(96, -24)
+amount = 400
+lifetime = 10.0
+preprocess = 7.0
+speed_scale = 0.5
+lifetime_randomness = 0.3
+emission_shape = 3
+emission_rect_extents = Vector2(180, 1)
+direction = Vector2(1, 1)
+spread = 30.0
+gravity = Vector2(0, 10)
+initial_velocity_min = 20.0
+initial_velocity_max = 20.0
+scale_amount_min = 1.1
+scale_amount_max = 1.6
+color = Color(0.835294, 0.929412, 0.929412, 1)
+hue_variation_min = 0.52
+hue_variation_max = 0.52
+
+[connection signal="pressed" from="Menu/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Menu/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="Menu/QuitButton" to="." method="_on_quit_button_pressed"]

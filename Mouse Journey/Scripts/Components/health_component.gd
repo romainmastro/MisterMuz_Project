@@ -46,6 +46,9 @@ func on_death() :
 		just_died.emit() # see hurtbox_component
 		is_dead = false
 		player.velocity = Vector2.ZERO
-		respawn_to_checkpoint(player)
+		if GlobalPlayerStats.current_checkpoint != Vector2.ZERO : 
+			respawn_to_checkpoint(player)
+		else : 
+			pass
 		init_health()
 		

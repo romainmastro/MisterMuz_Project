@@ -1,9 +1,13 @@
+res://Assets/Muz
+res://Scripts/UI
+res://Resources/font
+res://Scenes/UI
+res://Scenes/Levels
+res://Scenes/Environment
 res://Scripts/Environment
 res://Assets/Environment
-res://Scenes/Environment
 res://Scripts/Collectibles
 res://Scenes/Collectibles
-res://Scenes/Levels
 res://Assets/Muz/Muffler
 res://Assets/Muz/Snowhat
 res://Assets/Muz/SnowSuit
@@ -16,7 +20,3 @@ res://Scenes/Traps
 res://Scripts/Traps
 res://Assets/TileSet
 res://Scripts
-res://Scenes
-res://Scenes/Particles
-res://Scripts/Components
-res://Scenes/Components

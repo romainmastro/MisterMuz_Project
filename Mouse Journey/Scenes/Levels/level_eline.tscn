@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=4 uid="uid://q2tq0ftt2ixh"]
+[gd_scene load_steps=9 format=4 uid="uid://q2tq0ftt2ixh"]
 
 [ext_resource type="TileSet" uid="uid://cvn6rtpn15ve6" path="res://Resources/Level_Maker.tres" id="1_71gc5"]
 [ext_resource type="TileSet" uid="uid://d34uj80lo1ml4" path="res://Resources/Objects.tres" id="2_2mb5x"]
+[ext_resource type="TileSet" uid="uid://cvxyb7jcx6hel" path="res://Resources/Pièges.tres" id="3_qa2b1"]
 [ext_resource type="TileSet" uid="uid://1x1qpe81qufy" path="res://Resources/Décor.tres" id="4_6fn2p"]
 [ext_resource type="PackedScene" uid="uid://cej17ro141iai" path="res://Scenes/MovingPlatforms/H_moving_platform_3.tscn" id="5_3lhua"]
 [ext_resource type="PackedScene" uid="uid://ca7deviox6mwd" path="res://Scenes/MovingPlatforms/V_moving_platform_2.tscn" id="6_6fn2p"]
@@ -17,8 +18,11 @@ tile_set = ExtResource("1_71gc5")
 
 [node name="Objets" type="TileMapLayer" parent="."]
 z_index = 2
-tile_map_data = PackedByteArray("AAAFAP3/AAAAAAAAAQACAP//AAAAAAAAAgBGAP//AAAAAAAABgAFAP//AAAAAAAABQCEAPT/AAAAAAAAAgDYAP//AAAAAAAAAgD4AAYAAAAAAAAABgA=")
+tile_map_data = PackedByteArray("AAAFAP3/AAAAAAAAAQBGAP//AAAAAAAABgCEAPT/AAAAAAAAAgDYAP//AAAAAAAAAgD4AAYAAAAAAAAABgAEAP//AAAAAAAABQA=")
 tile_set = ExtResource("2_2mb5x")
+
+[node name="Pièges" type="TileMapLayer" parent="."]
+tile_set = ExtResource("3_qa2b1")
 
 [node name="Décor" type="TileMapLayer" parent="."]
 z_index = 1
@@ -133,9 +137,8 @@ falling_speed = 160.0
 position = Vector2(3864, -393)
 
 [connection signal="body_entered" from="Objets/collectible_heart" to="Objets/collectible_heart" method="_on_body_entered"]
-[connection signal="body_entered" from="Objets/Checkpoint" to="Objets/Checkpoint" method="_on_body_entered"]
 [connection signal="body_entered" from="Objets/Collect_Cheese" to="Objets/Collect_Cheese" method="_on_body_entered"]
+[connection signal="body_entered" from="Objets/Checkpoint" to="Objets/Checkpoint" method="_on_body_entered"]
+[connection signal="body_entered" from="Objets/@Area2D@73368" to="Objets/@Area2D@73368" method="_on_body_entered"]
+[connection signal="body_entered" from="Objets/@Area2D@73369" to="Objets/@Area2D@73369" method="_on_body_entered"]
 [connection signal="body_entered" from="Objets/treasure_chest_Boots_gloves_suit" to="Objets/treasure_chest_Boots_gloves_suit" method="_on_body_entered"]
-[connection signal="body_entered" from="Objets/@Area2D@54657" to="Objets/@Area2D@54657" method="_on_body_entered"]
-[connection signal="body_entered" from="Objets/@Area2D@54658" to="Objets/@Area2D@54658" method="_on_body_entered"]
-[connection signal="body_entered" from="Objets/@Area2D@54659" to="Objets/@Area2D@54659" method="_on_body_entered"]

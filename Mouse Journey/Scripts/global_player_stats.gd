@@ -28,3 +28,5 @@ enum Levels {Level1, Level2, Level3, Level4}
 
 @warning_ignore("unused_signal") signal has_muffler_signal
 @export var has_muffler : bool = false
+
+@warning_ignore("unused_signal") signal change_level
