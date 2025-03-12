@@ -30,15 +30,18 @@
 				"04e59212-6cdf-4ea6-ad53-2cd979cff0e7",
 				"f9224b76-3a42-4151-9471-9f46701131a4",
 				"5a2d37d0-8625-4b33-8f37-0de4814360f7",
-				"90a8a772-7417-46d6-b3fc-2faa4b0aeae6",
 				"50e3d479-db0b-45ef-87fe-fc8f20f67ca5",
-				"df14c301-985a-4287-b3ff-a190f627541f"
+				"df14c301-985a-4287-b3ff-a190f627541f",
+				"6e54cfb2-28e2-4a51-bcd4-164e7b0e74fa",
+				"e6de74ab-da1e-46d2-ad73-418882192b5a"
 			]
 		},
 		{
 			"uuid": "ef4e123f-f6ea-4e30-8896-4ddd7167fd59",
 			"title": "Doing",
-			"tasks": []
+			"tasks": [
+				"90a8a772-7417-46d6-b3fc-2faa4b0aeae6"
+			]
 		},
 		{
 			"uuid": "a590c45f-f6e0-4df4-a178-2596b3213350",
@@ -442,7 +445,7 @@
 			"uuid": "57c873ff-f5d6-4792-87f7-1b8e1d1b8c1a",
 			"title": "Start Screen",
 			"description": "",
-			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
 			"steps": []
 		},
 		{
@@ -673,14 +676,14 @@
 			"uuid": "ca0714b9-0bd7-4619-b563-1a676e3ea349",
 			"title": "Integrate Sign Start Level : handled by Main : spawn the player at the right position",
 			"description": "",
-			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
 			"steps": []
 		},
 		{
 			"uuid": "c754a410-613f-4203-b562-e3c50d53b3ef",
 			"title": "Change level : global signal handled by Main",
 			"description": "",
-			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
 			"steps": []
 		},
 		{
@@ -694,14 +697,14 @@
 			"uuid": "a7e48414-8b57-4efd-a95e-51e9acff4388",
 			"title": "BUG : When player hasn't checked point yet, where does it spawn?",
 			"description": "",
-			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
 			"steps": []
 		},
 		{
 			"uuid": "9f4998dd-edc5-4292-91e6-866468bb3714",
 			"title": "BUG : Chests : float in the air!!",
 			"description": "",
-			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
 			"steps": []
 		},
 		{
@@ -714,6 +717,20 @@
 		{
 			"uuid": "df14c301-985a-4287-b3ff-a190f627541f",
 			"title": "MUSIC",
+			"description": "",
+			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
+			"steps": []
+		},
+		{
+			"uuid": "6e54cfb2-28e2-4a51-bcd4-164e7b0e74fa",
+			"title": "Enemy : Snowman",
+			"description": "",
+			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
+			"steps": []
+		},
+		{
+			"uuid": "e6de74ab-da1e-46d2-ad73-418882192b5a",
+			"title": "Story",
 			"description": "",
 			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
 			"steps": []

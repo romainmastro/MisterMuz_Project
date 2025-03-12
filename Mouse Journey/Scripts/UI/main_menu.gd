@@ -11,7 +11,7 @@ func _ready() -> void:
 	muz.position = Vector2(8, 120 )
 	
 	var tween = create_tween()
-	tween.tween_property(muz, "position", Vector2(240, 120), 2).set_trans(Tween.TRANS_SINE)
+	tween.tween_property(muz, "position", Vector2(240, 120), 2.5).set_trans(Tween.TRANS_SINE)
 	tween.tween_callback(update_animation)
 	tween.parallel().tween_property(title, "position", Vector2(48, 24), 3).set_trans(Tween.TRANS_ELASTIC)
 	tween.parallel().tween_property(menu, "position", Vector2(0, 72), 3).set_trans(Tween.TRANS_ELASTIC)
