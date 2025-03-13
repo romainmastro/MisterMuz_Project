@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=4 uid="uid://dx183gml3tmu7"]
+[gd_scene load_steps=6 format=4 uid="uid://dx183gml3tmu7"]
 
 [ext_resource type="TileSet" uid="uid://cvn6rtpn15ve6" path="res://Resources/Level_Maker.tres" id="1_20cmm"]
 [ext_resource type="TileSet" uid="uid://d34uj80lo1ml4" path="res://Resources/Objects.tres" id="2_7hxj8"]
 [ext_resource type="TileSet" uid="uid://cvxyb7jcx6hel" path="res://Resources/Pièges.tres" id="3_jcojp"]
 [ext_resource type="TileSet" uid="uid://1x1qpe81qufy" path="res://Resources/Décor.tres" id="4_yysw7"]
+[ext_resource type="PackedScene" uid="uid://b1vi7lh2l2ldh" path="res://Scenes/Environment/sign_Start_Level.tscn" id="5_7hxj8"]
 
 [node name="Level_Sophie" type="Node2D"]
 
@@ -22,3 +23,6 @@ tile_set = ExtResource("3_jcojp")
 
 [node name="Décor" type="TileMapLayer" parent="."]
 tile_set = ExtResource("4_yysw7")
+
+[node name="Sign_Start_Level" parent="." instance=ExtResource("5_7hxj8")]
+position = Vector2(16, -8)

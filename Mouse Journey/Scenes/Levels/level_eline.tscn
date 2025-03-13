@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://q2tq0ftt2ixh"]
+[gd_scene load_steps=10 format=4 uid="uid://q2tq0ftt2ixh"]
 
 [ext_resource type="TileSet" uid="uid://cvn6rtpn15ve6" path="res://Resources/Level_Maker.tres" id="1_71gc5"]
 [ext_resource type="TileSet" uid="uid://d34uj80lo1ml4" path="res://Resources/Objects.tres" id="2_2mb5x"]
@@ -8,8 +8,12 @@
 [ext_resource type="PackedScene" uid="uid://ca7deviox6mwd" path="res://Scenes/MovingPlatforms/V_moving_platform_2.tscn" id="6_6fn2p"]
 [ext_resource type="PackedScene" uid="uid://be1o8tb502iun" path="res://Scenes/Traps/stalagtite_Tombante.tscn" id="7_6fn2p"]
 [ext_resource type="PackedScene" uid="uid://ddjfmqisn40md" path="res://Scenes/Traps/BouleDeNeige_portail.tscn" id="8_qa2b1"]
+[ext_resource type="PackedScene" uid="uid://b1vi7lh2l2ldh" path="res://Scenes/Environment/sign_Start_Level.tscn" id="9_1p554"]
 
 [node name="Level_Eline" type="Node2D"]
+
+[node name="Sign_Start_Level" parent="." instance=ExtResource("9_1p554")]
+position = Vector2(16, -8)
 
 [node name="Level" type="TileMapLayer" parent="."]
 z_index = 1
@@ -18,7 +22,7 @@ tile_set = ExtResource("1_71gc5")
 
 [node name="Objets" type="TileMapLayer" parent="."]
 z_index = 2
-tile_map_data = PackedByteArray("AAAFAP3/AAAAAAAAAQBGAP//AAAAAAAABgCEAPT/AAAAAAAAAgDYAP//AAAAAAAAAgD4AAYAAAAAAAAABgAEAP//AAAAAAAABQAMAP//AAAAAAAABwA=")
+tile_map_data = PackedByteArray("AAAFAP3/AAAAAAAAAQBGAP//AAAAAAAABgCEAPT/AAAAAAAAAgDYAP//AAAAAAAAAgD4AAYAAAAAAAAABgAEAP//AAAAAAAABQALAP//AAAAAAAABwA=")
 tile_set = ExtResource("2_2mb5x")
 
 [node name="Pièges" type="TileMapLayer" parent="."]
