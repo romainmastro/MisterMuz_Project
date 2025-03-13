@@ -2,7 +2,6 @@ extends Camera2D
 
 @export_group("Nodes")
 @export var player : CharacterBody2D
-@export var level : TileMapLayer
 
 @export_group("Camera Settings")
 @export var bottom_limit := 512
@@ -43,16 +42,3 @@ func _physics_process(delta: float) -> void:
 	
 	if is_lerping : 
 		position.y = lerp(position.y, player.position.y - 16, camera_lerp_speed)
-
-
-#func camera_limits() : 
-	##var used_rect : Rect2i = level.get_used_rect()
-	##var level_width_px = used_rect.size.x * level.tile_set.tile_size.x
-	#
-	#limit_left = 0
-	## I only have one tile before 0 so must remove 2 tiles in size 
-	## to display the right limit properly (1 from each side)
-	#limit_right = level_width_px - level.tile_set.tile_size.x * 2
-	#limit_bottom = bottom_limit
-	#limit_top = top_limit
-	

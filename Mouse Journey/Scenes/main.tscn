@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ci35s5hiav38j"]
+[gd_scene load_steps=10 format=3 uid="uid://ci35s5hiav38j"]
 
 [ext_resource type="Script" uid="uid://c6hv8hqxmhb5a" path="res://Scripts/main.gd" id="1_8gbba"]
 [ext_resource type="PackedScene" uid="uid://dtlxte6rijv77" path="res://Scenes/Player.tscn" id="1_jjgbg"]
@@ -7,55 +7,75 @@
 [ext_resource type="PackedScene" uid="uid://dx183gml3tmu7" path="res://Scenes/Levels/level_sophie.tscn" id="5_6bp64"]
 [ext_resource type="PackedScene" uid="uid://ltwdjfevci88" path="res://Scenes/HUD/HP_bar.tscn" id="5_kry3j"]
 [ext_resource type="PackedScene" uid="uid://cpgsf5tytoito" path="res://Scenes/HUD/cheese_bar.tscn" id="7_344ge"]
+[ext_resource type="PackedScene" uid="uid://dhl1tsd1e3234" path="res://Scenes/UI/congrats_screen.tscn" id="9_ynf5e"]
 [ext_resource type="Script" uid="uid://5btxhk0r3gsc" path="res://Scripts/camera_2d.gd" id="14_jkdf5"]
 
-[node name="Main" type="Node2D" node_paths=PackedStringArray("player", "sign_start_level1", "sign_start_level2")]
+[node name="Main" type="Node2D" node_paths=PackedStringArray("player", "sign_start_level1", "sign_start_level2", "Level1", "Level2", "congrats_screen", "player_camera", "congrats_camera")]
 script = ExtResource("1_8gbba")
 player = NodePath("Player")
 sign_start_level1 = NodePath("WORLD/Level_Eline/Sign_Start_Level1")
 sign_start_level2 = NodePath("WORLD/Level_Sophie/Sign_Start_Level2")
+Level1 = NodePath("WORLD/Level_Eline")
+Level2 = NodePath("WORLD/Level_Sophie")
+congrats_screen = NodePath("MENU/CongratsScreen")
+player_camera = NodePath("Camera/PlayerCamera")
+congrats_camera = NodePath("MENU/CongratsScreen/CongratsCamera")
 
 [node name="Player" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("1_jjgbg")]
 z_index = 12
-position = Vector2(28, -34)
+position = Vector2(28, -33)
 floor_max_angle = 1.39626
 floor_snap_length = 5.0
 platform_floor_layers = 4294967295
-camera = NodePath("../Camera/Camera2D")
+camera = NodePath("../Camera/PlayerCamera")
 
 [node name="WORLD" type="Node" parent="."]
 
 [node name="Level_Eline" parent="WORLD" instance=ExtResource("3_ynf5e")]
+position = Vector2(0, 1)
 
 [node name="Sign_Start_Level1" parent="WORLD/Level_Eline" instance=ExtResource("4_hptm8")]
 z_index = 11
 position = Vector2(16, -7)
 
 [node name="Level_Sophie" parent="WORLD" instance=ExtResource("5_6bp64")]
-visible = false
 
 [node name="Sign_Start_Level2" parent="WORLD/Level_Sophie" instance=ExtResource("4_hptm8")]
-visible = false
+position = Vector2(16, -6)
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
 [node name="HP_Bar" parent="HUD" instance=ExtResource("5_kry3j")]
 offset_left = 4.0
-offset_top = 4.0
+offset_top = 5.0
 offset_right = -190.0
-offset_bottom = -124.0
+offset_bottom = -123.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Cheese_Bar" parent="HUD" instance=ExtResource("7_344ge")]
 offset_left = 4.0
-offset_top = 16.0
+offset_top = 17.0
 offset_right = 45.0
-offset_bottom = 26.0
+offset_bottom = 27.0
 scale = Vector2(0.8, 0.8)
 theme_override_constants/separation = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="Camera" type="Node2D" parent="."]
 
-[node name="Camera2D" type="Camera2D" parent="Camera" node_paths=PackedStringArray("player")]
+[node name="PlayerCamera" type="Camera2D" parent="Camera" node_paths=PackedStringArray("player")]
 position_smoothing_speed = 3.0
 script = ExtResource("14_jkdf5")
 player = NodePath("../../Player")
+
+[node name="MENU" type="Node" parent="."]
+
+[node name="CongratsScreen" parent="MENU" node_paths=PackedStringArray("Congrats_camera") instance=ExtResource("9_ynf5e")]
+offset_left = -8.0
+offset_top = 685.0
+offset_right = -8.0
+offset_bottom = 685.0
+Congrats_camera = NodePath("CongratsCamera")
+
+[node name="CongratsCamera" type="Camera2D" parent="MENU/CongratsScreen"]
+anchor_mode = 0

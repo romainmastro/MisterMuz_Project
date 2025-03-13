@@ -17,6 +17,7 @@ var safe_position_offset : int = 8
 # store the current Level
 enum Levels {Level1, Level2, Level3, Level4}
 @export var current_level := Levels.Level1 # by default Level1
+@export var future_level := Levels.Level2
 
 # signal and variable for treasures : 
 @warning_ignore("unused_signal") signal has_boots_gloves_suit_signal
@@ -29,6 +30,6 @@ enum Levels {Level1, Level2, Level3, Level4}
 @export var has_muffler : bool = false
 
 
-@warning_ignore("unused_signal") signal level_complete # emitted by end_level_checkpoint
+@warning_ignore("unused_signal") signal show_congrats_screen # emitted by end_level_checkpoint
 @warning_ignore("unused_signal") signal next_level #emitted by CongratsScreen
 @warning_ignore("unused_signal") signal replay #emitted by CongratsScreen

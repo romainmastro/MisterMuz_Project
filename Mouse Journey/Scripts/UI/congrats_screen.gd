@@ -1,10 +1,10 @@
 extends Control
 
-@export var camera : Camera2D
+@export var Congrats_camera : Camera2D
 
 func _ready() -> void:
 	hide()
-	global_position = camera.global_position
+	Congrats_camera.enabled = false
 
 func _on_next_level_pressed() -> void:
 	GlobalPlayerStats.next_level.emit() # listened by main.gd

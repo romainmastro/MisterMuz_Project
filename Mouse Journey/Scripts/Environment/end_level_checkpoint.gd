@@ -7,10 +7,8 @@ func _ready() -> void:
 	fire_lit.hide()
 
 
-#TODO : complete to go to Congrats Screen
 func _on_body_entered(body: Node2D) -> void:
 	if body is PlayerClass : 
 		fire_lit.show()
 		fire_lit.play("fire_lit")
-		GlobalPlayerStats.level_complete.emit()
-		
+		GlobalPlayerStats.show_congrats_screen.emit()

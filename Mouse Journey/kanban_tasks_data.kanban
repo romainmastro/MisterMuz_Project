@@ -38,15 +38,14 @@
 		{
 			"uuid": "ef4e123f-f6ea-4e30-8896-4ddd7167fd59",
 			"title": "Doing",
-			"tasks": [
-				"ddf1ca26-4e3e-4352-a9fe-cfff4c150f2f",
-				"62bcc290-c42a-4316-8649-0177a2e9fae5"
-			]
+			"tasks": []
 		},
 		{
 			"uuid": "a590c45f-f6e0-4df4-a178-2596b3213350",
 			"title": "Done on the current Branch",
 			"tasks": [
+				"ddf1ca26-4e3e-4352-a9fe-cfff4c150f2f",
+				"62bcc290-c42a-4316-8649-0177a2e9fae5",
 				"90a8a772-7417-46d6-b3fc-2faa4b0aeae6",
 				"784ec9ad-ae00-47df-9d60-c5d68ba660e1"
 			]
@@ -643,7 +642,7 @@
 			"uuid": "ddf1ca26-4e3e-4352-a9fe-cfff4c150f2f",
 			"title": "Congratulation Menu : go from Level1 to Level2",
 			"description": "",
-			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
+			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
 			"steps": []
 		},
 		{

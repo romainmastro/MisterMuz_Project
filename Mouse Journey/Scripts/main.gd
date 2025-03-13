@@ -4,16 +4,28 @@ extends Node2D
 @export var sign_start_level1 : Area2D
 @export var sign_start_level2 : Area2D
 
-@onready var congrats_screen: Control = $MENU/CongratsScreen
+@export var Level1 : Node2D
+@export var Level2 : Node2D
+@export var Level3 : Node2D
+@export var Level4 : Node2D
 
-func _unhandled_key_input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_cancel") : 
-		get_tree().quit()
+@export var congrats_screen : Control
+@export var player_camera : Camera2D
+@export var congrats_camera : Camera2D
 
-func _ready() -> void: 
-	
-	GlobalPlayerStats.next_level.connect(update_level)
-	GlobalPlayerStats.level_complete.connect(show_CongratsScreen)
+func show_CongratsScreen() : 
+	congrats_screen.show()
+	camera_on_congrats()
+
+func camera_on_congrats() : 
+	player_camera.enabled = false
+	congrats_camera.enabled = true
+
+func camera_on_player() : 
+	player_camera.enabled = true
+	congrats_camera.enabled = false
+
+func starting_position() : 
 	
 	match GlobalPlayerStats.current_level : 
 		
@@ -25,21 +37,51 @@ func _ready() -> void:
 			player.position = sign_start_level2.position
 			GlobalPlayerStats.current_checkpoint = player.position
 
-func update_level() : 
+func disable_level(level : Node2D) : 
+	# get through the children of the Level Node2D and disable/enable the tilelayers
+	for i in level.get_children() : 
+		if i is TileMapLayer : 
+			i.enabled = false
+
+func enable_level(level : Node2D) : 
+	# get through the children of the Level Node2D and disable/enable the tilelayers
+	for i in level.get_children() : 
+		if i is TileMapLayer : 
+			i.enabled = true
+
+func update_current_level() : 
+		# handle the cameras
+		camera_on_player()
+		
+		# determine next level and add the level to the tree
 		match GlobalPlayerStats.current_level : 
 			
 			GlobalPlayerStats.Levels.Level1 : 
 				GlobalPlayerStats.current_level = GlobalPlayerStats.Levels.Level2
-				get_tree().change_scene_to_file("res://Scenes/Levels/level_sophie.tscn")
+				enable_level(Level2)
+				disable_level(Level1)
+				starting_position()
+				
 			GlobalPlayerStats.Levels.Level2 :
 				GlobalPlayerStats.current_level = GlobalPlayerStats.Levels.Level3
-				#get_tree().change_scene_to_file("res://Scenes/Levels/level_sophie.tscn")
+				enable_level(Level3)
+				disable_level(Level2)
+				starting_position()
+				
 			GlobalPlayerStats.Levels.Level3 :
 				GlobalPlayerStats.current_level = GlobalPlayerStats.Levels.Level4
-				#get_tree().change_scene_to_file("res://Scenes/Levels/level_sophie.tscn")
+				enable_level(Level4)
+				disable_level(Level3)
+				starting_position()
 			_ : 
 				return
 
-func show_CongratsScreen() : 
-	congrats_screen.show()
-	print("yeah")
+func _ready() -> void: 
+	
+	GlobalPlayerStats.show_congrats_screen.connect(show_CongratsScreen)
+	GlobalPlayerStats.next_level.connect(update_current_level)
+	
+	enable_level(Level1)
+	disable_level(Level2)
+	
+	starting_position()
