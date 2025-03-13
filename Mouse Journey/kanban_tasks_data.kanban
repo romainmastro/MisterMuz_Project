@@ -26,7 +26,6 @@
 			"uuid": "62dca9c9-52f1-4b12-be5f-b6452adc036e",
 			"title": "Todo",
 			"tasks": [
-				"ddf1ca26-4e3e-4352-a9fe-cfff4c150f2f",
 				"04e59212-6cdf-4ea6-ad53-2cd979cff0e7",
 				"f9224b76-3a42-4151-9471-9f46701131a4",
 				"5a2d37d0-8625-4b33-8f37-0de4814360f7",
@@ -40,12 +39,21 @@
 			"uuid": "ef4e123f-f6ea-4e30-8896-4ddd7167fd59",
 			"title": "Doing",
 			"tasks": [
-				"90a8a772-7417-46d6-b3fc-2faa4b0aeae6"
+				"ddf1ca26-4e3e-4352-a9fe-cfff4c150f2f",
+				"62bcc290-c42a-4316-8649-0177a2e9fae5"
 			]
 		},
 		{
 			"uuid": "a590c45f-f6e0-4df4-a178-2596b3213350",
 			"title": "Done on the current Branch",
+			"tasks": [
+				"90a8a772-7417-46d6-b3fc-2faa4b0aeae6",
+				"784ec9ad-ae00-47df-9d60-c5d68ba660e1"
+			]
+		},
+		{
+			"uuid": "9573ce0a-9b5d-4fd9-bb69-4b68a3540b99",
+			"title": "DONE => Main Branch",
 			"tasks": [
 				"57c873ff-f5d6-4792-87f7-1b8e1d1b8c1a",
 				"9f4998dd-edc5-4292-91e6-866468bb3714",
@@ -77,13 +85,7 @@
 				"18dfe191-a2d5-4f60-b70a-56f0c2eff096",
 				"6b8b6c3f-5867-4f6f-9d52-a9d3116de9e8",
 				"43a97e77-7d2a-490d-af59-befdca84019e",
-				"9b30e1d4-4f94-4a1c-964b-f3ef97b937e9"
-			]
-		},
-		{
-			"uuid": "9573ce0a-9b5d-4fd9-bb69-4b68a3540b99",
-			"title": "DONE => Main Branch",
-			"tasks": [
+				"9b30e1d4-4f94-4a1c-964b-f3ef97b937e9",
 				"ddc4f679-bdbb-4623-afbf-0c6bc26916ea",
 				"5e68202c-5365-4a2f-b1da-4ec353380f90",
 				"03a0943d-ef71-4cf5-8a74-04136b72877b",
@@ -141,7 +143,7 @@
 			"uuid": "0fc84707-c563-4773-8a6f-21b5e50cf96a",
 			"title": "ASSET collectible : Cheese : collect 3 cheeses / level to gain a max HP",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": [
 				{
 					"details": "Create Sprite",
@@ -361,7 +363,7 @@
 			"uuid": "104a5ade-7259-4faa-9986-714c99388e7c",
 			"title": "ASSET : Snowboots item",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
@@ -445,7 +447,7 @@
 			"uuid": "57c873ff-f5d6-4792-87f7-1b8e1d1b8c1a",
 			"title": "Start Screen",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
@@ -480,161 +482,161 @@
 			"uuid": "ddcccdde-a1b1-45c0-b0be-0e62a9732b32",
 			"title": "ASSET : Treasure Chest (opened and closed)",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "bcc2ae02-8f77-4383-95a2-4a3c86b86da0",
 			"title": "ASSET : Animation for BOOTS and GLOVES",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "977a1a7f-0c5e-46c2-881b-d0832387df0f",
 			"title": "ASSET : Animation for SNOWHAT",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "15e58b95-794f-44a9-9bca-e215ab43ad85",
 			"title": "ASSET : Animation for SNOWSUIT",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "459e4cc5-bdca-45af-8bf7-c5d0f49b9cae",
 			"title": "ASSET : Animation for MUFFLER",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "18dfe191-a2d5-4f60-b70a-56f0c2eff096",
 			"title": "Add Treasure Chest to game : Scene created",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "6b8b6c3f-5867-4f6f-9d52-a9d3116de9e8",
 			"title": "Chest : open/close",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "43a97e77-7d2a-490d-af59-befdca84019e",
 			"title": "Change decel/accel : Global Signal + Global Bool",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "9b30e1d4-4f94-4a1c-964b-f3ef97b937e9",
 			"title": "Animation : BOOTS/GLOVES added : Global signal + visibility TRUE in Animation component",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "3edc41c8-87e2-416f-afad-64cc11702ba2",
 			"title": "Adding AnimSprite : Muffler",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "ef08f326-6494-4adb-bb4b-4c6e55fd768d",
 			"title": "Adding AnimSprite : SnowHat",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "6450e2ef-3023-4e71-b482-23a6efbc65d3",
 			"title": "Adding AnimSprite : SnowSuit",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "a295d1f6-ceb5-4da7-9794-2205ff0345bf",
 			"title": "Treasure : boots/Gloves/Suit ",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "ab292ca0-ff5a-46e8-9fa9-f4fca5ddf3d8",
 			"title": "Treasure : SnowHat ",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "90666e2d-746b-454f-8b6e-860193bfe395",
 			"title": "Treasure : Muffler",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "9b9bb209-c94b-416b-bc42-c835bf3e3a46",
 			"title": "Added : Instance Dock Plugin",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "21fe0f07-d43c-429c-8c31-b7733617d2d3",
 			"title": "Préparer ASSET fin niveau",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "86223928-6c22-4490-91be-c9d25f8c908a",
 			"title": "Vitesse stalagtite tombante paramétrable",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "c5aa95d7-3772-4e78-bd1c-f8ef148864fb",
 			"title": "BUG : stalagtite tombante disparaissent quand respawn : Cause : On Screen Notifier. 2 solutions : collision with Tilemap OR Timer",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "ae46fa57-87b0-4379-93e6-99a72ba51d16",
 			"title": "Déplacer BouleDeNeige dans Instance Docks pour pouvoir modifier le temps d'apparition",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "8249cc4d-f61c-4fd1-ac9f-90a15e14c74c",
 			"title": "Revoir : BouleDeNeige car quand tombe tout droit : pas de movment au sol",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "84a65f44-d8ba-4afc-8c6c-1744fd364de7",
 			"title": "REvoir B2Neige : changer les paramètre dans le spawner",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "9ee1d74b-39e8-49a4-8951-8ff45fa96470",
 			"title": "Intégrer l'ASSET de fin et de début de niveau",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
@@ -669,42 +671,42 @@
 			"uuid": "ebe1a9ed-d4de-455c-9a7a-f1ba7fbf60c5",
 			"title": "ASSET : Sign Start Level",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "ca0714b9-0bd7-4619-b563-1a676e3ea349",
 			"title": "Integrate Sign Start Level : handled by Main : spawn the player at the right position",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "c754a410-613f-4203-b562-e3c50d53b3ef",
 			"title": "Change level : global signal handled by Main",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "90a8a772-7417-46d6-b3fc-2faa4b0aeae6",
 			"title": "HUD : Cheese",
 			"description": "",
-			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
+			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
 			"steps": []
 		},
 		{
 			"uuid": "a7e48414-8b57-4efd-a95e-51e9acff4388",
 			"title": "BUG : When player hasn't checked point yet, where does it spawn?",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "9f4998dd-edc5-4292-91e6-866468bb3714",
 			"title": "BUG : Chests : float in the air!!",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
@@ -733,6 +735,20 @@
 			"title": "Story",
 			"description": "",
 			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
+			"steps": []
+		},
+		{
+			"uuid": "784ec9ad-ae00-47df-9d60-c5d68ba660e1",
+			"title": "Redo : HUD Heart",
+			"description": "",
+			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"steps": []
+		},
+		{
+			"uuid": "62bcc290-c42a-4316-8649-0177a2e9fae5",
+			"title": "BUG : Congrats screen is hidden : need to change camera position?",
+			"description": "",
+			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
 			"steps": []
 		}
 	],

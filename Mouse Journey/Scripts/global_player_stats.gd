@@ -6,7 +6,6 @@ extends Node
 var current_cheese_nb : float = 0
 @warning_ignore("unused_signal")signal max_hp_changed
 
-
 var invincible_frame : bool = false
 
 @export var current_checkpoint : Vector2 = Vector2.ZERO
@@ -29,4 +28,7 @@ enum Levels {Level1, Level2, Level3, Level4}
 @warning_ignore("unused_signal") signal has_muffler_signal
 @export var has_muffler : bool = false
 
-@warning_ignore("unused_signal") signal change_level
+
+@warning_ignore("unused_signal") signal level_complete # emitted by end_level_checkpoint
+@warning_ignore("unused_signal") signal next_level #emitted by CongratsScreen
+@warning_ignore("unused_signal") signal replay #emitted by CongratsScreen

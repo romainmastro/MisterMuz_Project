@@ -12,5 +12,5 @@ func _on_body_entered(body: Node2D) -> void:
 	if body is PlayerClass : 
 		fire_lit.show()
 		fire_lit.play("fire_lit")
-		GlobalPlayerStats.change_level.emit()
+		GlobalPlayerStats.level_complete.emit()
 		

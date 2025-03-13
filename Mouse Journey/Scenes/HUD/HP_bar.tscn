@@ -1,32 +1,30 @@
 [gd_scene load_steps=3 format=3 uid="uid://ltwdjfevci88"]
 
 [ext_resource type="Script" uid="uid://b823tr72pbcr" path="res://Scripts/HUD/hp_bar.gd" id="1_1i06v"]
-[ext_resource type="Texture2D" uid="uid://ctc0kk4m2xlkg" path="res://Assets/UI/HP Bar/HealthBar_full.png" id="1_7mtng"]
+[ext_resource type="Texture2D" uid="uid://nt7vwvsqg4w6" path="res://Assets/Collectibles/Collectible - Heart.png" id="2_1i06v"]
 
 [node name="HP_Bar" type="HBoxContainer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 5.0
-offset_top = 5.0
-offset_right = 4.0
-offset_bottom = -148.0
+offset_right = -182.0
+offset_bottom = -136.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 5
+theme_override_constants/separation = 1
 script = ExtResource("1_1i06v")
 
 [node name="1" type="TextureRect" parent="."]
 layout_mode = 2
-texture = ExtResource("1_7mtng")
-stretch_mode = 4
+texture = ExtResource("2_1i06v")
+stretch_mode = 2
 
 [node name="2" type="TextureRect" parent="."]
 layout_mode = 2
-texture = ExtResource("1_7mtng")
-stretch_mode = 4
+texture = ExtResource("2_1i06v")
+stretch_mode = 2
 
 [node name="3" type="TextureRect" parent="."]
 layout_mode = 2
-texture = ExtResource("1_7mtng")
-stretch_mode = 4
+texture = ExtResource("2_1i06v")
+stretch_mode = 2

@@ -1,8 +1,10 @@
-res://Assets/Muz
 res://Scripts/UI
-res://Resources/font
 res://Scenes/UI
 res://Scenes/Levels
+res://Scripts/HUD
+res://Scenes/HUD
+res://Assets/Muz
+res://Resources/font
 res://Scenes/Environment
 res://Scripts/Environment
 res://Assets/Environment
@@ -18,5 +20,3 @@ res://Scenes/MovingPlatforms
 res://Scripts/Platform
 res://Scenes/Traps
 res://Scripts/Traps
-res://Assets/TileSet
-res://Scripts

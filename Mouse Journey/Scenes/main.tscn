@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://ci35s5hiav38j"]
+[gd_scene load_steps=9 format=3 uid="uid://ci35s5hiav38j"]
 
 [ext_resource type="Script" uid="uid://c6hv8hqxmhb5a" path="res://Scripts/main.gd" id="1_8gbba"]
 [ext_resource type="PackedScene" uid="uid://dtlxte6rijv77" path="res://Scenes/Player.tscn" id="1_jjgbg"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b1vi7lh2l2ldh" path="res://Scenes/Environment/sign_Start_Level.tscn" id="4_hptm8"]
 [ext_resource type="PackedScene" uid="uid://dx183gml3tmu7" path="res://Scenes/Levels/level_sophie.tscn" id="5_6bp64"]
 [ext_resource type="PackedScene" uid="uid://ltwdjfevci88" path="res://Scenes/HUD/HP_bar.tscn" id="5_kry3j"]
+[ext_resource type="PackedScene" uid="uid://cpgsf5tytoito" path="res://Scenes/HUD/cheese_bar.tscn" id="7_344ge"]
 [ext_resource type="Script" uid="uid://5btxhk0r3gsc" path="res://Scripts/camera_2d.gd" id="14_jkdf5"]
 
 [node name="Main" type="Node2D" node_paths=PackedStringArray("player", "sign_start_level1", "sign_start_level2")]
@@ -34,14 +35,23 @@ position = Vector2(16, -7)
 visible = false
 
 [node name="Sign_Start_Level2" parent="WORLD/Level_Sophie" instance=ExtResource("4_hptm8")]
+visible = false
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
 [node name="HP_Bar" parent="HUD" instance=ExtResource("5_kry3j")]
-offset_left = 8.0
-offset_top = 0.0
-offset_right = 7.0
-offset_bottom = -128.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = -190.0
+offset_bottom = -124.0
+
+[node name="Cheese_Bar" parent="HUD" instance=ExtResource("7_344ge")]
+offset_left = 4.0
+offset_top = 16.0
+offset_right = 45.0
+offset_bottom = 26.0
+scale = Vector2(0.8, 0.8)
+theme_override_constants/separation = 2
 
 [node name="Camera" type="Node2D" parent="."]
 
@@ -49,5 +59,3 @@ offset_bottom = -128.0
 position_smoothing_speed = 3.0
 script = ExtResource("14_jkdf5")
 player = NodePath("../../Player")
-
-[node name="MENU" type="Node" parent="."]

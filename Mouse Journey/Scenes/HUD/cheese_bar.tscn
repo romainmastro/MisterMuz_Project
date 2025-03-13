@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://cpgsf5tytoito"]
+
+[ext_resource type="Texture2D" uid="uid://c6tdbr670cgpk" path="res://Assets/Collectibles/Collectible - Cheese.png" id="1_0bn88"]
+[ext_resource type="Script" uid="uid://bkkevbret1kkr" path="res://Scripts/HUD/cheese_bar.gd" id="1_jg6nh"]
+
+[node name="Cheese_Bar" type="HBoxContainer"]
+offset_right = 41.0
+offset_bottom = 10.0
+scale = Vector2(0.9, 0.9)
+theme_override_constants/separation = 1
+script = ExtResource("1_jg6nh")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_0bn88")
+stretch_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_0bn88")
+stretch_mode = 2
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_0bn88")
+stretch_mode = 2
