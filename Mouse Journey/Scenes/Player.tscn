@@ -782,9 +782,10 @@ height = 10.0
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("gravity_component", "input_component", "movement_component_slide", "advanced_jump_component", "animation_component", "health_component", "hurtbox_component", "snow_trail_component")]
 floor_stop_on_slope = false
-floor_max_angle = 1.5708
-floor_snap_length = 16.8
+floor_max_angle = 0.872665
+floor_snap_length = 5.0
 platform_floor_layers = 4294962690
+safe_margin = 0.16
 script = ExtResource("1_kyqiw")
 gravity_component = NodePath("COMPONENTS/gravity_component")
 input_component = NodePath("COMPONENTS/Input_component")
@@ -852,9 +853,13 @@ hurtbox_component = NodePath("../hurtbox_component")
 
 [node name="Input_component" parent="COMPONENTS" instance=ExtResource("6_nn08x")]
 
-[node name="advanced_jump_component" parent="COMPONENTS" node_paths=PackedStringArray("movement_component") instance=ExtResource("12_glx4g")]
+[node name="advanced_jump_component" parent="COMPONENTS" node_paths=PackedStringArray("player", "movement_component", "animation_component") instance=ExtResource("12_glx4g")]
+player = NodePath("../..")
 movement_component = NodePath("../movement_component_with_slide")
+animation_component = NodePath("../animation_component")
 jump_speed = -180.0
+jump_buffer_time = 0.25
+wall_jump_cooldown = 0.4
 
 [node name="health_component" parent="COMPONENTS" node_paths=PackedStringArray("hurtbox_component", "player") instance=ExtResource("11_ksbbd")]
 hurtbox_component = NodePath("../hurtbox_component")

@@ -19,7 +19,6 @@ congrats_camera = NodePath("MENU/CongratsScreen/CongratsCamera")
 z_index = 12
 position = Vector2(28, -33)
 floor_max_angle = 1.39626
-floor_snap_length = 5.0
 platform_floor_layers = 4294967295
 camera = NodePath("../Camera/PlayerCamera")
 

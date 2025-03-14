@@ -27,7 +27,6 @@
 			"title": "Todo",
 			"tasks": [
 				"04e59212-6cdf-4ea6-ad53-2cd979cff0e7",
-				"f9224b76-3a42-4151-9471-9f46701131a4",
 				"5a2d37d0-8625-4b33-8f37-0de4814360f7",
 				"50e3d479-db0b-45ef-87fe-fc8f20f67ca5",
 				"df14c301-985a-4287-b3ff-a190f627541f",
@@ -43,17 +42,17 @@
 		{
 			"uuid": "a590c45f-f6e0-4df4-a178-2596b3213350",
 			"title": "Done on the current Branch",
-			"tasks": [
-				"ddf1ca26-4e3e-4352-a9fe-cfff4c150f2f",
-				"62bcc290-c42a-4316-8649-0177a2e9fae5",
-				"90a8a772-7417-46d6-b3fc-2faa4b0aeae6",
-				"784ec9ad-ae00-47df-9d60-c5d68ba660e1"
-			]
+			"tasks": []
 		},
 		{
 			"uuid": "9573ce0a-9b5d-4fd9-bb69-4b68a3540b99",
 			"title": "DONE => Main Branch",
 			"tasks": [
+				"f9224b76-3a42-4151-9471-9f46701131a4",
+				"ddf1ca26-4e3e-4352-a9fe-cfff4c150f2f",
+				"62bcc290-c42a-4316-8649-0177a2e9fae5",
+				"90a8a772-7417-46d6-b3fc-2faa4b0aeae6",
+				"784ec9ad-ae00-47df-9d60-c5d68ba660e1",
 				"57c873ff-f5d6-4792-87f7-1b8e1d1b8c1a",
 				"9f4998dd-edc5-4292-91e6-866468bb3714",
 				"a7e48414-8b57-4efd-a95e-51e9acff4388",
@@ -642,7 +641,7 @@
 			"uuid": "ddf1ca26-4e3e-4352-a9fe-cfff4c150f2f",
 			"title": "Congratulation Menu : go from Level1 to Level2",
 			"description": "",
-			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
@@ -654,9 +653,9 @@
 		},
 		{
 			"uuid": "f9224b76-3a42-4151-9471-9f46701131a4",
-			"title": "Power : suit : can wall jump",
+			"title": "Power : suit : can wall jump when suit on",
 			"description": "",
-			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
@@ -691,7 +690,7 @@
 			"uuid": "90a8a772-7417-46d6-b3fc-2faa4b0aeae6",
 			"title": "HUD : Cheese",
 			"description": "",
-			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
@@ -740,14 +739,14 @@
 			"uuid": "784ec9ad-ae00-47df-9d60-c5d68ba660e1",
 			"title": "Redo : HUD Heart",
 			"description": "",
-			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "62bcc290-c42a-4316-8649-0177a2e9fae5",
 			"title": "BUG : Congrats screen is hidden : need to change camera position?",
 			"description": "",
-			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		}
 	],

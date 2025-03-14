@@ -1,15 +1,22 @@
 class_name ClassAdvancedJumpComponent
 extends Node
 
+@export var player : PlayerClass
+
 @export_group("Nodes") 
 @export var jumpbuffer_timer : Timer
 @export var coyote_timer : Timer
 @export var movement_component : ClassMovement_SlideComponent
+@export var animation_component : ClassAnimationComponent
+@export var wall_jump_timer : Timer
 
 @export_group("Settings")
 @export var jump_speed : float = -250.0
+@export var jump_buffer_time : float = 0.2
 @export var slide_jump_factor : float = 1.2
 @export var slide_jump_force : float = 200.0
+@export var wall_jump_force : float = 50.0
+@export var wall_jump_cooldown : float = 0.5
 
 
 var is_going_up : bool = false
@@ -18,9 +25,16 @@ var last_frame_on_floor : bool
 
 signal landed
 
+func _ready() -> void:
+	if wall_jump_timer : 
+		wall_jump_timer.wait_time = wall_jump_cooldown
+		wall_jump_timer.timeout.connect(on_wall_jump_timer_timeout)
+	
+	if jumpbuffer_timer : 
+		jumpbuffer_timer.wait_time = jump_buffer_time
 
 func is_allowed_to_jump(body : CharacterBody2D, jump_button_pressed : bool) : 
-	return jump_button_pressed and (body.is_on_floor() or not coyote_timer.is_stopped())
+	return jump_button_pressed and (body.is_on_floor() or not coyote_timer.is_stopped() or body.is_on_wall_only())
 	
 	
 func handle_jump(body : CharacterBody2D, jump_button_pressed : bool, jump_released : bool) : 
@@ -61,7 +75,7 @@ func handle_coyote_time(body : CharacterBody2D) :
 		body.velocity.y = 0
 	
 func handle_jump_buffer(body : CharacterBody2D, jump_button_pressed) : 
-	if jump_button_pressed and not body.is_on_floor() : 
+	if jump_button_pressed and (not body.is_on_floor() or not body.is_on_wall_only()) : 
 		jumpbuffer_timer.start()
 	
 	if body.is_on_floor() and not jumpbuffer_timer.is_stopped(): 
@@ -71,7 +85,11 @@ func handle_variable_jump_height(body : CharacterBody2D, jump_released : bool) :
 	if jump_released and is_going_up : 
 		body.velocity.y = 0
 
+func on_wall_jump_timer_timeout() : 
+	pass
+
 func jump(body : CharacterBody2D) : 
+	
 	if body.is_on_floor() : 
 		# Jump
 		if movement_component.is_sliding :
@@ -87,3 +105,12 @@ func jump(body : CharacterBody2D) :
 			jumpbuffer_timer.stop()
 			coyote_timer.stop()
 			is_jumping = true
+			
+	elif body.is_on_wall_only() and wall_jump_timer.is_stopped() and GlobalPlayerStats.has_boots_gloves_suit :
+		wall_jump_timer.start()
+		# Wall jump: set vertical velocity and push horizontally away from the wall.
+		body.velocity.y = jump_speed
+		body.velocity.x = wall_jump_force * animation_component.facing_direction()
+		jumpbuffer_timer.stop()
+		coyote_timer.stop()
+		is_jumping = true

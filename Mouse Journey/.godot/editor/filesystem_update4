@@ -1,10 +1,9 @@
-res://Scenes/main.tscn
+res://Scenes/Player.tscn
 res://Resources/Level_Maker.tres
 res://Resources/Objects.tres
 res://Resources/Pièges.tres
 res://Resources/Décor.tres
-res://Scripts/main.gd
+res://Scripts/Components/advanced_jump_component.gd
+res://Scenes/main.tscn
 res://Scenes/Levels/level_eline.tscn
-res://Scenes/UI/congrats_screen.tscn
-res://Scenes/Environment/end_level_checkpoint.tscn
-res://Scenes/Levels/level_sophie.tscn
+res://Scenes/Components/advanced_jump_component.tscn
