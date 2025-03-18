@@ -10,6 +10,10 @@ extends Node
 
 @export var hurtbox_component : ClassHurtboxComponent
 
+var normal_offset_hat = -2
+var gliding_offset_hat := -9
+var is_gliding_active : bool = false
+
 var is_hurt : bool = false
 
 func _ready() -> void:
@@ -22,6 +26,9 @@ func _ready() -> void:
 	GlobalPlayerStats.has_boots_gloves_suit_signal.connect(update_boots_gloves_visibility)
 	GlobalPlayerStats.has_snowHat_signal.connect(update_snowHat_visibility)
 	GlobalPlayerStats.has_muffler_signal.connect(update_muffler_visibility)
+	
+	snowHat_sprite.animation_changed.connect(_on_gliding_animation_changed)
+
 	
 func facing_direction() -> float : 
 	return 1 if player_sprite.flip_h else -1
@@ -46,6 +53,9 @@ func handle_flip_sprite(direction : float) -> void :
 func handle_run_animation(x_velocity : float) : 
 	if is_hurt : 
 		return
+	if is_gliding_active : 
+		return
+		
 	if x_velocity != 0 : 
 		player_sprite.play("run")
 		boots_gloves_sprite.play("run")
@@ -62,13 +72,16 @@ func handle_run_animation(x_velocity : float) :
 func handle_jump_animation(is_jumping : bool, is_falling : bool) : 
 	if is_hurt : 
 		return
+	if is_gliding_active : 
+		return
+		
 	if is_jumping :  
 		player_sprite.play("jump") 
 		boots_gloves_sprite.play("jump")
 		snowsuit_sprite.play("jump")
 		snowHat_sprite.play("jump")
 		muffler_sprite.play("jump")
-	elif is_falling : 
+	elif is_falling :
 		player_sprite.play("fall")
 		boots_gloves_sprite.play("fall")
 		snowsuit_sprite.play("fall")
@@ -90,6 +103,23 @@ func handle_slide_animation (is_sliding : bool, is_jumping : bool, is_falling : 
 	else : 
 		return
 		
+func handle_glide_animation(is_gliding: bool) -> void:
+	if is_hurt:
+		return
+		
+	if is_gliding and not is_gliding_active:
+		is_gliding_active = true
+		player_sprite.play("glide")
+		boots_gloves_sprite.play("fall")
+		snowsuit_sprite.play("fall")
+		muffler_sprite.play("fall")
+		snowHat_sprite.play("glide")
+		
+	elif not is_gliding and is_gliding_active:
+		is_gliding_active = false
+		player_sprite.play("fall")
+		snowHat_sprite.play("idle")
+
 func handle_hurt_animation() : 
 	if is_hurt : 
 		return
@@ -114,6 +144,13 @@ func on_hurt_animation_finished() :
 	boots_gloves_sprite.animation_finished.disconnect(on_hurt_animation_finished)
 	snowsuit_sprite.animation_finished.disconnect(on_hurt_animation_finished)
 	muffler_sprite.animation_finished.disconnect(on_hurt_animation_finished)
+	
+
+func _on_gliding_animation_changed() -> void:
+	if snowHat_sprite.animation == "glide":
+		snowHat_sprite.offset.y = gliding_offset_hat
+	else:
+		snowHat_sprite.offset.y = normal_offset_hat
 
 func update_boots_gloves_visibility() : 
 	boots_gloves_sprite.visible = true

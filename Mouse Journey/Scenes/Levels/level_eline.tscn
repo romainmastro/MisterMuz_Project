@@ -22,7 +22,7 @@ tile_set = ExtResource("1_71gc5")
 
 [node name="Objets" type="TileMapLayer" parent="."]
 z_index = 2
-tile_map_data = PackedByteArray("AAAFAP3/AAAAAAAAAQBGAP//AAAAAAAABgCEAPT/AAAAAAAAAgDYAP//AAAAAAAAAgD4AAYAAAAAAAAABgALAP//AAAAAAAABwACAP3/AAAAAAAABQA=")
+tile_map_data = PackedByteArray("AAAFAP3/AAAAAAAAAQBGAP//AAAAAAAABgCEAPT/AAAAAAAAAgDYAP//AAAAAAAAAgD4AAYAAAAAAAAABgALAP//AAAAAAAABwACAP3/AAAAAAAABQAEAP3/AAAAAAAABAA=")
 tile_set = ExtResource("2_2mb5x")
 
 [node name="Pièges" type="TileMapLayer" parent="."]

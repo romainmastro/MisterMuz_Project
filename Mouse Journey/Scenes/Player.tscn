@@ -1,8 +1,9 @@
-[gd_scene load_steps=126 format=3 uid="uid://dtlxte6rijv77"]
+[gd_scene load_steps=132 format=3 uid="uid://dtlxte6rijv77"]
 
 [ext_resource type="Script" uid="uid://v6kgu5fottyv" path="res://Scripts/player.gd" id="1_kyqiw"]
 [ext_resource type="Texture2D" uid="uid://bl388umk28hx6" path="res://Assets/Muz/Muz_JUMP.png" id="2_glx4g"]
 [ext_resource type="Texture2D" uid="uid://btpbpewrm561" path="res://Assets/Muz/Muz_IDLE.png" id="2_megsn"]
+[ext_resource type="Texture2D" uid="uid://b71erexknh6mn" path="res://Assets/Muz/Muz_GLIDE.png" id="3_6hr71"]
 [ext_resource type="Texture2D" uid="uid://5qhbsv78fxcn" path="res://Assets/Muz/Muz_HURT.png" id="3_miouo"]
 [ext_resource type="Texture2D" uid="uid://du2j1yp66woh6" path="res://Assets/Muz/Muz_RUN.png" id="3_yoq75"]
 [ext_resource type="PackedScene" uid="uid://bi7lk15xk624v" path="res://Scenes/Components/gravity_component.tscn" id="5_5ixxa"]
@@ -28,6 +29,7 @@
 [ext_resource type="Texture2D" uid="uid://bm6v15nnj28ys" path="res://Assets/Muz/SnowSuit/SnowSuit_SLIDE.png" id="16_rxg2u"]
 [ext_resource type="PackedScene" uid="uid://1asc7ato1afb" path="res://Scenes/Particles/sliding_particles.tscn" id="17_lslt6"]
 [ext_resource type="Texture2D" uid="uid://cefj7a5bm1wyy" path="res://Assets/Muz/Snowhat/Snowhat_Jump.png" id="17_xixlo"]
+[ext_resource type="Texture2D" uid="uid://dbt7ts6dc5r1k" path="res://Assets/Muz/Snowhat/Snowhat_GLIDE.png" id="18_00okb"]
 [ext_resource type="Texture2D" uid="uid://dnp2fw1ruq48b" path="res://Assets/Muz/Snowhat/Snowhat_HURT.png" id="18_bfbt0"]
 [ext_resource type="PackedScene" uid="uid://bwvsn2f5kkyb4" path="res://Scenes/Particles/jumping_particle.tscn" id="18_ulo2v"]
 [ext_resource type="PackedScene" uid="uid://bx4glml3yfsoj" path="res://Scenes/Particles/landing_particles.tscn" id="19_1iu4k"]
@@ -39,9 +41,18 @@
 [ext_resource type="Texture2D" uid="uid://df4kob1j0y07q" path="res://Assets/Muz/Muffler/Muffler_IDLE.png" id="24_pqity"]
 [ext_resource type="Texture2D" uid="uid://iokx1nipl0is" path="res://Assets/Muz/Muffler/Muffler_RUN.png" id="25_pqity"]
 [ext_resource type="Texture2D" uid="uid://bjbg8uwxgpxet" path="res://Assets/Muz/Muffler/Muffler_SLIDE.png" id="26_opqna"]
+[ext_resource type="PackedScene" uid="uid://dshmep4htu3fu" path="res://Scenes/Components/gliding_component.tscn" id="36_opqna"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i2e8t"]
 atlas = ExtResource("2_glx4g")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ovjwc"]
+atlas = ExtResource("3_6hr71")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jawh0"]
+atlas = ExtResource("3_6hr71")
 region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qidb7"]
@@ -113,6 +124,17 @@ animations = [{
 "loop": true,
 "name": &"fall",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ovjwc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jawh0")
+}],
+"loop": true,
+"name": &"glide",
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -490,6 +512,10 @@ animations = [{
 atlas = ExtResource("17_xixlo")
 region = Rect2(16, 0, 16, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_w1x0d"]
+atlas = ExtResource("18_00okb")
+region = Rect2(0, 0, 13, 10)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_yrofn"]
 atlas = ExtResource("18_bfbt0")
 region = Rect2(0, 0, 16, 16)
@@ -558,6 +584,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w1x0d")
+}],
+"loop": false,
+"name": &"glide",
 "speed": 5.0
 }, {
 "frames": [{
@@ -780,7 +814,7 @@ animations = [{
 radius = 2.0
 height = 10.0
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("gravity_component", "input_component", "movement_component_slide", "advanced_jump_component", "animation_component", "health_component", "hurtbox_component", "snow_trail_component")]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("gravity_component", "input_component", "movement_component_slide", "advanced_jump_component", "animation_component", "health_component", "hurtbox_component", "snow_trail_component", "gliding_component")]
 floor_stop_on_slope = false
 floor_max_angle = 0.872665
 floor_snap_length = 5.0
@@ -795,10 +829,11 @@ animation_component = NodePath("COMPONENTS/animation_component")
 health_component = NodePath("COMPONENTS/health_component")
 hurtbox_component = NodePath("COMPONENTS/hurtbox_component")
 snow_trail_component = NodePath("COMPONENTS/snowTrail_component")
+gliding_component = NodePath("COMPONENTS/GlidingComponent")
 
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_dewec")
-animation = &"hurt"
+animation = &"glide"
 autoplay = "idle"
 offset = Vector2(0, -2)
 
@@ -816,7 +851,7 @@ offset = Vector2(0, -2)
 
 [node name="SnowHat" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_txwsf")
-animation = &"slide"
+animation = &"glide"
 autoplay = "idle"
 offset = Vector2(0, -2)
 
@@ -858,8 +893,7 @@ player = NodePath("../..")
 movement_component = NodePath("../movement_component_with_slide")
 animation_component = NodePath("../animation_component")
 jump_speed = -180.0
-jump_buffer_time = 0.25
-wall_jump_cooldown = 0.4
+jump_buffer_time = 0.35
 
 [node name="health_component" parent="COMPONENTS" node_paths=PackedStringArray("hurtbox_component", "player") instance=ExtResource("11_ksbbd")]
 hurtbox_component = NodePath("../hurtbox_component")
@@ -878,6 +912,8 @@ landing_particles = NodePath("../../PARTICLES/LandingParticles")
 marker = NodePath("../../MARKER/SnowTrailMarker")
 sprite = NodePath("../../PlayerSprite")
 advanced_jump_component = NodePath("../advanced_jump_component")
+
+[node name="GlidingComponent" parent="COMPONENTS" instance=ExtResource("36_opqna")]
 
 [node name="PARTICLES" type="Node" parent="."]
 
