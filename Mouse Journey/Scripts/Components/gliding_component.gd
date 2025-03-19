@@ -10,6 +10,9 @@ func handle_gliding(body : CharacterBody2D, glide_button_pressed : bool) :
 		return
 	if not GlobalPlayerStats.has_snow_hat : 
 		return
+	if not glide_button_pressed : 
+		is_gliding = false
+		return
 	if glide_button_pressed : 
 		is_gliding = true
 		glide(body)

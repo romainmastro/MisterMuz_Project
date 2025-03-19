@@ -36,7 +36,6 @@ func facing_direction() -> float :
 func handle_flip_sprite(direction : float) -> void : 
 	if direction == 0 :
 		return 
-	#player_sprite.flip_h = false if direction > 0 else true
 	if direction > 0 : 
 		player_sprite.flip_h = false
 		boots_gloves_sprite.flip_h = false
@@ -116,6 +115,7 @@ func handle_glide_animation(is_gliding: bool) -> void:
 		snowHat_sprite.play("glide")
 		
 	elif not is_gliding and is_gliding_active:
+		print("falling")
 		is_gliding_active = false
 		player_sprite.play("fall")
 		snowHat_sprite.play("idle")

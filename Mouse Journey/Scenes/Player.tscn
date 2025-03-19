@@ -514,7 +514,7 @@ region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w1x0d"]
 atlas = ExtResource("18_00okb")
-region = Rect2(0, 0, 13, 10)
+region = Rect2(0, 0, 13, 12)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yrofn"]
 atlas = ExtResource("18_bfbt0")
@@ -888,10 +888,11 @@ hurtbox_component = NodePath("../hurtbox_component")
 
 [node name="Input_component" parent="COMPONENTS" instance=ExtResource("6_nn08x")]
 
-[node name="advanced_jump_component" parent="COMPONENTS" node_paths=PackedStringArray("player", "movement_component", "animation_component") instance=ExtResource("12_glx4g")]
+[node name="advanced_jump_component" parent="COMPONENTS" node_paths=PackedStringArray("player", "movement_component", "animation_component", "gliding_component") instance=ExtResource("12_glx4g")]
 player = NodePath("../..")
 movement_component = NodePath("../movement_component_with_slide")
 animation_component = NodePath("../animation_component")
+gliding_component = NodePath("../GlidingComponent")
 jump_speed = -180.0
 jump_buffer_time = 0.35
 

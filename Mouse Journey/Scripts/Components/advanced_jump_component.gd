@@ -8,14 +8,15 @@ extends Node
 @export var coyote_timer : Timer
 @export var movement_component : ClassMovement_SlideComponent
 @export var animation_component : ClassAnimationComponent
+@export var gliding_component : GlidingComponent
 @export var wall_jump_timer : Timer
 
 @export_group("Settings")
 @export var jump_speed : float = -250.0
-@export var jump_buffer_time : float = 0.2
+@export var jump_buffer_time : float = 0.3
 @export var slide_jump_factor : float = 1.2
 @export var slide_jump_force : float = 200.0
-@export var wall_jump_force : float = 50.0
+@export var wall_jump_force : float = 65.0
 @export var wall_jump_cooldown : float = 0.5
 
 
@@ -28,13 +29,13 @@ signal landed
 func _ready() -> void:
 	if wall_jump_timer : 
 		wall_jump_timer.wait_time = wall_jump_cooldown
-		wall_jump_timer.timeout.connect(on_wall_jump_timer_timeout)
+		#wall_jump_timer.timeout.connect(on_wall_jump_timer_timeout)
 	
 	if jumpbuffer_timer : 
 		jumpbuffer_timer.wait_time = jump_buffer_time
 
 func is_allowed_to_jump(body : CharacterBody2D, jump_button_pressed : bool) : 
-	return jump_button_pressed and (body.is_on_floor() or not coyote_timer.is_stopped() or body.is_on_wall_only())
+	return jump_button_pressed and not gliding_component.is_gliding and (body.is_on_floor() or not coyote_timer.is_stopped() or body.is_on_wall_only())
 	
 	
 func handle_jump(body : CharacterBody2D, jump_button_pressed : bool, jump_released : bool) : 
@@ -85,8 +86,6 @@ func handle_variable_jump_height(body : CharacterBody2D, jump_released : bool) :
 	if jump_released and is_going_up : 
 		body.velocity.y = 0
 
-func on_wall_jump_timer_timeout() : 
-	pass
 
 func jump(body : CharacterBody2D) : 
 	
@@ -114,3 +113,36 @@ func jump(body : CharacterBody2D) :
 		jumpbuffer_timer.stop()
 		coyote_timer.stop()
 		is_jumping = true
+
+#func jump(body : CharacterBody2D) : 
+	#if body.is_on_floor() : 
+		## Ground jump
+		#if movement_component.is_sliding :
+			#body.velocity.y = jump_speed * slide_jump_factor
+			#body.velocity.x += slide_jump_force * sign(body.velocity.x)
+			#jumpbuffer_timer.stop()
+			#coyote_timer.stop()
+			#is_jumping = true
+		#else : 
+			#body.velocity.y = jump_speed
+			#jumpbuffer_timer.stop()
+			#coyote_timer.stop()
+			#is_jumping = true
+			#
+	#elif body.is_on_wall_only() and wall_jump_timer.is_stopped() and GlobalPlayerStats.has_boots_gloves_suit:
+		#wall_jump_timer.start()
+		## Determine wall jump direction.
+		## Start with the sprite's facing direction.
+		#var wall_jump_direction = animation_component.facing_direction()
+		## Get player's horizontal input:
+		#var input_direction = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
+		## If the player is pressing a direction, use that to determine the push:
+		#if abs(input_direction) > 0.1:
+			## Push the player away from the wall:
+			#wall_jump_direction = -sign(input_direction)
+		## Apply the jump velocities:
+		#body.velocity.y = jump_speed
+		#body.velocity.x = wall_jump_force * wall_jump_direction
+		#jumpbuffer_timer.stop()
+		#coyote_timer.stop()
+		#is_jumping = true
