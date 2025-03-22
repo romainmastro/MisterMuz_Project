@@ -113,36 +113,3 @@ func jump(body : CharacterBody2D) :
 		jumpbuffer_timer.stop()
 		coyote_timer.stop()
 		is_jumping = true
-
-#func jump(body : CharacterBody2D) : 
-	#if body.is_on_floor() : 
-		## Ground jump
-		#if movement_component.is_sliding :
-			#body.velocity.y = jump_speed * slide_jump_factor
-			#body.velocity.x += slide_jump_force * sign(body.velocity.x)
-			#jumpbuffer_timer.stop()
-			#coyote_timer.stop()
-			#is_jumping = true
-		#else : 
-			#body.velocity.y = jump_speed
-			#jumpbuffer_timer.stop()
-			#coyote_timer.stop()
-			#is_jumping = true
-			#
-	#elif body.is_on_wall_only() and wall_jump_timer.is_stopped() and GlobalPlayerStats.has_boots_gloves_suit:
-		#wall_jump_timer.start()
-		## Determine wall jump direction.
-		## Start with the sprite's facing direction.
-		#var wall_jump_direction = animation_component.facing_direction()
-		## Get player's horizontal input:
-		#var input_direction = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
-		## If the player is pressing a direction, use that to determine the push:
-		#if abs(input_direction) > 0.1:
-			## Push the player away from the wall:
-			#wall_jump_direction = -sign(input_direction)
-		## Apply the jump velocities:
-		#body.velocity.y = jump_speed
-		#body.velocity.x = wall_jump_force * wall_jump_direction
-		#jumpbuffer_timer.stop()
-		#coyote_timer.stop()
-		#is_jumping = true

@@ -31,7 +31,7 @@ func _ready() -> void:
 
 	
 func facing_direction() -> float : 
-	return 1 if player_sprite.flip_h else -1
+	return -1 if player_sprite.flip_h else 1
 
 func handle_flip_sprite(direction : float) -> void : 
 	if direction == 0 :

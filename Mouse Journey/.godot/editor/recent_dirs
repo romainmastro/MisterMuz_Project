@@ -1,3 +1,9 @@
+res://Assets/Enemies/Snowman
+res://Scripts
+res://Scripts/Enemies
+res://Scripts/Enemies/Components
+res://Scenes/Enemies/Components
+res://Scenes/Enemies
 res://Assets/Muz/Snowhat
 res://Assets/Muz
 res://Scenes/Components
@@ -14,9 +20,3 @@ res://Assets/Environment
 res://Scripts/Collectibles
 res://Scenes/Collectibles
 res://Assets/Muz/Muffler
-res://Assets/Muz/SnowSuit
-res://Assets/Muz/Boots and gloves
-res://Resources/light
-res://Resources
-res://Scenes/MovingPlatforms
-res://Scripts/Platform

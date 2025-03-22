@@ -11,14 +11,16 @@ signal hurt_animation
 @export var grace_timer : Timer
 @export var player : CharacterBody2D
 @export var health_component : ClassHealthComponent
+@export var animation_component : ClassAnimationComponent
 
 @export_group("Settings")
 @export var invincible_frame := 0.5
-@export var medium_knockback_force := 120.0
+@export var medium_knockback_force := 100.0
 @export var heavy_knockback_force := 300.0 
 @export var vertical_knockback := -100.0
 @export var time_knockback := 0.15
 @export var time_respawn := 0.3
+@export var rebound_speed := -300
 
 var is_invincible : bool = false
 
@@ -31,13 +33,22 @@ func _ready() -> void:
 	grace_timer.wait_time = invincible_frame
 	health_component.just_died.connect(stop_tween)
 
-
 func knockback(body: CharacterBody2D, knockback_force : float) -> void:
+	
+	var kb_dir = sign(body.velocity.x)
+	
+	if kb_dir == 0 : 
+		kb_dir = sign(animation_component.facing_direction())
+	
 	tween_KB = create_tween()
-	tween_KB.tween_property(body, "velocity:x", body.velocity.x -knockback_force * sign(body.velocity.x), time_knockback)
+	tween_KB.tween_property(body, "velocity:x", body.velocity.x -knockback_force * kb_dir, time_knockback)
 	tween_KB.parallel().tween_property(body, "velocity:y", vertical_knockback, time_knockback)
 	tween_KB.finished.connect(stop_tween)
-	
+
+func rebound() : 
+	if player.velocity.y > 0 : 
+		player.velocity.y += rebound_speed
+
 func respawn_to_last_safe_position(body : CharacterBody2D) :
 	var safe_position = GlobalPlayerStats.last_safe_position
 	await get_tree().create_timer(0.5).timeout
@@ -53,6 +64,9 @@ func area_entered(area : Area2D) :
 		true : 
 			return
 		false : 
+##########################################################################
+#################### ADD TRAPS ###########################################
+###########################################################################
 			if area is ClassTrapRespawn: 
 				damage.emit(area.damage_amount)
 				hurt_animation.emit()
@@ -67,7 +81,20 @@ func area_entered(area : Area2D) :
 				if not health_component.is_dead : 
 					knockback(player, medium_knockback_force)
 					player.velocity = Vector2.ZERO
-
+##########################################################################
+#################### ADD ENEMIES ##########################################
+###########################################################################
+			elif area is EnemyHitboxClass : 
+				damage.emit(area.damage_amount)
+				hurt_animation.emit()
+				is_invincible = true
+				if not health_component.is_dead : 
+					knockback(player, medium_knockback_force)
+					player.velocity = Vector2.ZERO
+				
+			elif area is EnemyDeadZoneClass : 
+				rebound()
+				GlobalEnemy.dead_enemy.emit() # listened by snowman.gd and Enemy animation component
 
 func body_entered(body : Node2D) : 
 	grace_timer.start()

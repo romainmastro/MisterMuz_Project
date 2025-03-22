@@ -29,33 +29,35 @@
 				"5a2d37d0-8625-4b33-8f37-0de4814360f7",
 				"50e3d479-db0b-45ef-87fe-fc8f20f67ca5",
 				"df14c301-985a-4287-b3ff-a190f627541f",
-				"6e54cfb2-28e2-4a51-bcd4-164e7b0e74fa",
 				"6b738e0a-dafc-419f-9e9a-99a2d86368c3",
-				"e6de74ab-da1e-46d2-ad73-418882192b5a"
+				"e6de74ab-da1e-46d2-ad73-418882192b5a",
+				"f1649e68-55c8-4394-a8a8-903669540d44",
+				"ef9a25df-950f-4d92-baca-77688806a127",
+				"845fd582-a06b-4f2d-aa92-1b505f6966bf"
 			]
 		},
 		{
 			"uuid": "ef4e123f-f6ea-4e30-8896-4ddd7167fd59",
 			"title": "Doing",
-			"tasks": [
-				"f1649e68-55c8-4394-a8a8-903669540d44"
-			]
+			"tasks": []
 		},
 		{
 			"uuid": "a590c45f-f6e0-4df4-a178-2596b3213350",
 			"title": "Done on the current Branch",
 			"tasks": [
-				"701dcdc5-9374-4a49-8cb0-96dcc7d0b9bf",
-				"f1adeab5-e417-47c7-8633-5209d94695ad",
-				"92f4227d-d08f-4741-987c-2b30a66542d7",
-				"aef11ba9-db5e-4885-8427-6d7dc692328a",
-				"0851d9b5-bb2d-4c63-909b-fc4f895f52dc"
+				"bb57965b-6154-4d7f-be50-673de688144c",
+				"6e54cfb2-28e2-4a51-bcd4-164e7b0e74fa"
 			]
 		},
 		{
 			"uuid": "9573ce0a-9b5d-4fd9-bb69-4b68a3540b99",
 			"title": "DONE => Main Branch",
 			"tasks": [
+				"701dcdc5-9374-4a49-8cb0-96dcc7d0b9bf",
+				"f1adeab5-e417-47c7-8633-5209d94695ad",
+				"92f4227d-d08f-4741-987c-2b30a66542d7",
+				"aef11ba9-db5e-4885-8427-6d7dc692328a",
+				"0851d9b5-bb2d-4c63-909b-fc4f895f52dc",
 				"8d4b9883-30c8-4b67-a57e-878cd491e94e",
 				"6346eb7a-6639-45d4-9c79-87907c79d812",
 				"04e59212-6cdf-4ea6-ad53-2cd979cff0e7",
@@ -736,8 +738,29 @@
 			"uuid": "6e54cfb2-28e2-4a51-bcd4-164e7b0e74fa",
 			"title": "Enemy : Snowman",
 			"description": "",
-			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
-			"steps": []
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": [
+				{
+					"details": "mouvement - Patrol",
+					"done": true
+				},
+				{
+					"details": "animation",
+					"done": true
+				},
+				{
+					"details": "hurt module",
+					"done": true
+				},
+				{
+					"details": "kill module",
+					"done": true
+				},
+				{
+					"details": "patrol platform",
+					"done": true
+				}
+			]
 		},
 		{
 			"uuid": "e6de74ab-da1e-46d2-ad73-418882192b5a",
@@ -778,21 +801,21 @@
 			"uuid": "f1adeab5-e417-47c7-8633-5209d94695ad",
 			"title": "BUG : can wall jump while gliding",
 			"description": "",
-			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "92f4227d-d08f-4741-987c-2b30a66542d7",
 			"title": "BUG : Ajouter Pompom glide",
 			"description": "",
-			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "aef11ba9-db5e-4885-8427-6d7dc692328a",
 			"title": "Boule de neige disparaissent trop vite",
 			"description": "",
-			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
@@ -813,14 +836,35 @@
 			"uuid": "701dcdc5-9374-4a49-8cb0-96dcc7d0b9bf",
 			"title": "BUG : when releasing up button : should revert to falling animation",
 			"description": "",
-			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "0851d9b5-bb2d-4c63-909b-fc4f895f52dc",
 			"title": "BUG : Improve wall jump",
 			"description": "",
-			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "ef9a25df-950f-4d92-baca-77688806a127",
+			"title": "allow wall_jumps on specific surface?",
+			"description": "",
+			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
+			"steps": []
+		},
+		{
+			"uuid": "bb57965b-6154-4d7f-be50-673de688144c",
+			"title": "revoir Function Knockback",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "845fd582-a06b-4f2d-aa92-1b505f6966bf",
+			"title": "Enemy : Snowman sniper",
+			"description": "",
+			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
 			"steps": []
 		}
 	],

@@ -815,6 +815,7 @@ radius = 2.0
 height = 10.0
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("gravity_component", "input_component", "movement_component_slide", "advanced_jump_component", "animation_component", "health_component", "hurtbox_component", "snow_trail_component", "gliding_component")]
+z_index = 99
 floor_stop_on_slope = false
 floor_max_angle = 0.872665
 floor_snap_length = 5.0
@@ -833,38 +834,43 @@ gliding_component = NodePath("COMPONENTS/GlidingComponent")
 
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_dewec")
-animation = &"glide"
+animation = &"idle"
 autoplay = "idle"
 offset = Vector2(0, -2)
 
 [node name="Boots_and_Gloves" type="AnimatedSprite2D" parent="."]
+visible = false
 sprite_frames = SubResource("SpriteFrames_opqna")
 animation = &"idle"
 autoplay = "idle"
 offset = Vector2(0, -2)
 
 [node name="SnowSuit" type="AnimatedSprite2D" parent="."]
+visible = false
 sprite_frames = SubResource("SpriteFrames_75iyv")
 animation = &"run"
 autoplay = "idle"
 offset = Vector2(0, -2)
 
 [node name="SnowHat" type="AnimatedSprite2D" parent="."]
+visible = false
 sprite_frames = SubResource("SpriteFrames_txwsf")
 animation = &"glide"
 autoplay = "idle"
 offset = Vector2(0, -2)
 
 [node name="Muffler" type="AnimatedSprite2D" parent="."]
+visible = false
 sprite_frames = SubResource("SpriteFrames_dqj3d")
 animation = &"hurt"
 autoplay = "idle"
 offset = Vector2(0, -2)
 
 [node name="HurtBox" parent="." instance=ExtResource("6_miouo")]
-visible = false
+scale = Vector2(1.52, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("CapsuleShape2D_dewec")
 
 [node name="COMPONENTS" type="Node" parent="."]
@@ -900,10 +906,11 @@ jump_buffer_time = 0.35
 hurtbox_component = NodePath("../hurtbox_component")
 player = NodePath("../..")
 
-[node name="hurtbox_component" parent="COMPONENTS" node_paths=PackedStringArray("hurtbox", "player", "health_component") instance=ExtResource("12_miouo")]
+[node name="hurtbox_component" parent="COMPONENTS" node_paths=PackedStringArray("hurtbox", "player", "health_component", "animation_component") instance=ExtResource("12_miouo")]
 hurtbox = NodePath("../../HurtBox")
 player = NodePath("../..")
 health_component = NodePath("../health_component")
+animation_component = NodePath("../animation_component")
 
 [node name="snowTrail_component" parent="COMPONENTS" node_paths=PackedStringArray("running_particles", "sliding_particles", "jumping_particles", "landing_particles", "marker", "sprite", "advanced_jump_component") instance=ExtResource("15_1e7my")]
 running_particles = NodePath("../../PARTICLES/SnowTrailParticles")
