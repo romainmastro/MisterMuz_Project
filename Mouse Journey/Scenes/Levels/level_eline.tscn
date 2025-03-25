@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://q2tq0ftt2ixh"]
+[gd_scene load_steps=12 format=4 uid="uid://q2tq0ftt2ixh"]
 
 [ext_resource type="TileSet" uid="uid://cvn6rtpn15ve6" path="res://Resources/Level_Maker.tres" id="1_71gc5"]
 [ext_resource type="TileSet" uid="uid://d34uj80lo1ml4" path="res://Resources/Objects.tres" id="2_2mb5x"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://ddjfmqisn40md" path="res://Scenes/Traps/BouleDeNeige_portail.tscn" id="8_qa2b1"]
 [ext_resource type="PackedScene" uid="uid://b1vi7lh2l2ldh" path="res://Scenes/Environment/sign_Start_Level.tscn" id="9_1p554"]
 [ext_resource type="PackedScene" uid="uid://drkytl5ykatsd" path="res://Scenes/Enemies/snowman.tscn" id="10_2offt"]
+[ext_resource type="PackedScene" uid="uid://7rd2wku4lem" path="res://Scenes/Enemies/enemy_snow_cannon.tscn" id="11_5vobg"]
 
 [node name="Level_Eline" type="Node2D"]
 
@@ -144,3 +145,15 @@ position = Vector2(3864, -393)
 [node name="Snowman" parent="." instance=ExtResource("10_2offt")]
 position = Vector2(128, -56)
 "direction_départ" = "gauche"
+
+[node name="EnemySnowCannon" parent="." instance=ExtResource("11_5vobg")]
+position = Vector2(104, -40)
+
+[connection signal="body_entered" from="Objets/collectible_heart" to="Objets/collectible_heart" method="_on_body_entered"]
+[connection signal="body_entered" from="Objets/Collect_Cheese" to="Objets/Collect_Cheese" method="_on_body_entered"]
+[connection signal="body_entered" from="Objets/Checkpoint" to="Objets/Checkpoint" method="_on_body_entered"]
+[connection signal="body_entered" from="Objets/@Area2D@71547" to="Objets/@Area2D@71547" method="_on_body_entered"]
+[connection signal="body_entered" from="Objets/@Area2D@71548" to="Objets/@Area2D@71548" method="_on_body_entered"]
+[connection signal="body_entered" from="Objets/EndLevelCheckpoint" to="Objets/EndLevelCheckpoint" method="_on_body_entered"]
+[connection signal="body_entered" from="Objets/treasure_chest_Boots_gloves_suit" to="Objets/treasure_chest_Boots_gloves_suit" method="_on_body_entered"]
+[connection signal="body_entered" from="Objets/treasure_chest_snow_hat" to="Objets/treasure_chest_snow_hat" method="_on_body_entered"]

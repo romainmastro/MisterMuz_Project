@@ -60,6 +60,7 @@ func handle_death() :
 	hitbox.set_deferred("monitoring", false)
 	deadzone.set_deferred("monitorable", false)
 	deadzone.set_deferred("monitoring", false)
+	
 	# flash Red
 	var tween = create_tween()
 	tween.tween_property(self, "modulate", Color.RED, 0.1)

@@ -31,8 +31,8 @@ gdscript/warnings/unused_signal=0
 
 [display]
 
-window/size/viewport_width=256
-window/size/viewport_height=144
+window/size/viewport_width=320
+window/size/viewport_height=180
 window/size/always_on_top=true
 window/stretch/mode="canvas_items"
 window/stretch/scale_mode="integer"
