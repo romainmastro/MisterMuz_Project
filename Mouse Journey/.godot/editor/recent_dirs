@@ -1,6 +1,6 @@
-res://Assets/Enemies/SnowCanon
-res://Scripts/Enemies
 res://Scenes/Enemies
+res://Scripts/Enemies
+res://Assets/Enemies/SnowCanon
 res://Assets/Enemies/Snowman
 res://Scripts
 res://Scenes/Enemies/Components

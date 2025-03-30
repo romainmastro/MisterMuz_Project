@@ -115,39 +115,44 @@ script = ExtResource("1_ypja4")
 
 [node name="Menu" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_top = 64.0
-offset_right = 56.0
-offset_bottom = 104.0
+offset_left = 32.0
+offset_top = 88.0
+offset_right = 88.0
+offset_bottom = 141.0
+theme_override_constants/separation = 4
 
 [node name="StartButton" type="Button" parent="Menu"]
 layout_mode = 2
 theme = ExtResource("1_fxsns")
+theme_override_font_sizes/font_size = 12
 text = "Start"
 
 [node name="OptionsButton" type="Button" parent="Menu"]
 layout_mode = 2
 theme = ExtResource("1_fxsns")
+theme_override_font_sizes/font_size = 12
 text = "Options	"
 
 [node name="QuitButton" type="Button" parent="Menu"]
 layout_mode = 2
 theme = ExtResource("1_fxsns")
+theme_override_font_sizes/font_size = 12
 text = "Quit Game"
 
 [node name="Title" type="Label" parent="."]
 layout_mode = 0
-offset_left = 48.0
+offset_left = 64.0
 offset_top = 24.0
-offset_right = 205.0
+offset_right = 252.0
 offset_bottom = 47.0
 theme = ExtResource("1_fxsns")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0.835294, 0.929412, 0.929412, 1)
-theme_override_font_sizes/font_size = 15
+theme_override_font_sizes/font_size = 18
 text = "MuZ Winter Adventure"
 
 [node name="Muz" type="AnimatedSprite2D" parent="."]
-position = Vector2(8, 120)
+position = Vector2(8, 160)
 sprite_frames = SubResource("SpriteFrames_i4k7f")
 animation = &"idle"
 autoplay = "run"
@@ -156,15 +161,17 @@ autoplay = "run"
 follow_viewport_enabled = true
 
 [node name="Land" type="TileMapLayer" parent="0"]
+position = Vector2(0, 40)
 tile_map_data = PackedByteArray("AAAAAAgAAAAAAAAAAAABAAgAAAAIAAAAAAACAAgAAAAKAAAAAAADAAgAAAABAAAAAAAEAAgAAAAIAAAAAAAFAAgAAAAFAAAAAAAGAAgAAAACAAAAAAAHAAgAAAACAAAAAAAIAAgAAAAHAAAAAAAJAAgAAAABAAAAAAAKAAgAAAADAAAAAAALAAgAAAADAAAAAAAMAAgAAAACAAAAAAANAAgAAAAIAAAAAAAOAAgAAAADAAAAAAAPAAgAAAALAAAAAAA=")
 tile_set = ExtResource("4_w1wd7")
 
 [node name="Décor" type="TileMapLayer" parent="0"]
-tile_map_data = PackedByteArray("AAAaAAcAAAAcAAIAAAAYAAcAAAAZAAAAAAAbAAcAAAAUAAQAAAANAAcAAAAbAAEAAAAOAAcAAAAZAAEAAAAQAAcAAAAUAAAAAAARAAcAAAAbAAEAAAAUAAcAAAATAAAAAAAVAAcAAAATAAIAAAAXAAcAAAAYAAMAAAAcAAcAAAAWAAEAAAAdAAcAAAAZAAEAAAAfAAcAAAAWAAEAAAAMAAcAAAAbAAAAAAAGAAcAAAAUAAAAAAALAAcAAAASAAAAAAAWAAcAAAAWAAEAAAA=")
+position = Vector2(0, 40)
+tile_map_data = PackedByteArray("AAAaAAcAAAAcAAIAAAAYAAcAAAAZAAAAAAAbAAcAAAAUAAQAAAANAAcAAAAbAAEAAAAOAAcAAAAZAAEAAAAQAAcAAAAUAAAAAAARAAcAAAAcAAIAAAAUAAcAAAAUAAQAAAAVAAcAAAATAAIAAAAXAAcAAAAYAAMAAAAcAAcAAAAWAAEAAAAdAAcAAAAZAAEAAAAfAAcAAAAWAAEAAAAMAAcAAAAbAAAAAAAGAAcAAAAUAAAAAAALAAcAAAASAAAAAAAWAAcAAAAWAAEAAAAPAAcAAAAaAAMAAAATAAcAAAAeAAIAAAA=")
 tile_set = ExtResource("6_44kub")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
-position = Vector2(96, -24)
+position = Vector2(96, -64)
 amount = 400
 lifetime = 10.0
 preprocess = 7.0

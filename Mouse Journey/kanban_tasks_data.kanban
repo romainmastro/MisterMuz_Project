@@ -32,21 +32,26 @@
 				"6b738e0a-dafc-419f-9e9a-99a2d86368c3",
 				"e6de74ab-da1e-46d2-ad73-418882192b5a",
 				"f1649e68-55c8-4394-a8a8-903669540d44",
-				"ef9a25df-950f-4d92-baca-77688806a127",
-				"abec2fa3-3772-43d8-89db-ece942c7bc12"
+				"ef9a25df-950f-4d92-baca-77688806a127"
 			]
 		},
 		{
 			"uuid": "ef4e123f-f6ea-4e30-8896-4ddd7167fd59",
 			"title": "Doing",
-			"tasks": [
-				"845fd582-a06b-4f2d-aa92-1b505f6966bf"
-			]
+			"tasks": []
 		},
 		{
 			"uuid": "a590c45f-f6e0-4df4-a178-2596b3213350",
 			"title": "Done on the current Branch",
-			"tasks": []
+			"tasks": [
+				"abec2fa3-3772-43d8-89db-ece942c7bc12",
+				"b95bc8dc-55d2-454a-954b-b97fc0d81552",
+				"3e5fa759-c3bc-4bcf-a47a-04c53ad0c0b0",
+				"ab33a232-fc26-4768-afa2-3a8f6ff43cce",
+				"a6a8e93d-8abf-4a1b-806f-a239de6f6c58",
+				"32dc7578-b58d-4a03-8605-bd90ff90dfe9",
+				"845fd582-a06b-4f2d-aa92-1b505f6966bf"
+			]
 		},
 		{
 			"uuid": "9573ce0a-9b5d-4fd9-bb69-4b68a3540b99",
@@ -140,6 +145,14 @@
 				"90e659e0-bc90-4de5-b690-88fc18381f31",
 				"f946c95c-6c3e-4efe-b293-93b2c7df05f9",
 				"4c305654-38e5-4c5c-8094-87b8a377be7a"
+			]
+		},
+		{
+			"uuid": "2f4f560c-cf56-4687-bdad-86e9f71d5e9f",
+			"title": "CheatSheet",
+			"tasks": [
+				"45bae00e-fa49-4086-b39c-ef1d74825c71",
+				"a8e8d672-e24b-4c2e-bb09-fa20f0cf6849"
 			]
 		}
 	],
@@ -864,8 +877,8 @@
 		{
 			"uuid": "845fd582-a06b-4f2d-aa92-1b505f6966bf",
 			"title": "Enemy : snowcanon",
-			"description": "",
-			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
+			"description": "Revision du système d'élimination des enemies : \n1. Création d'un StompBox dans Player (AREA2D)\n2. Création groupe Player_StompBox\n3. Chaque enemie check sa propre \"deadzone\" avec le Player_StompBox pour déterminer l'élimination.\n\n=> REBOUND now in Player.gd\n",
+			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
 			"steps": [
 				{
 					"details": "Animation : Move RIght and Move Left",
@@ -873,15 +886,15 @@
 				},
 				{
 					"details": "Animation : hurt",
-					"done": false
+					"done": true
 				},
 				{
 					"details": "Animation : shoot",
-					"done": false
+					"done": true
 				},
 				{
 					"details": "Animation : Detect\n",
-					"done": false
+					"done": true
 				},
 				{
 					"details": "Movement : Patrol",
@@ -889,15 +902,80 @@
 				},
 				{
 					"details": "Shoot snowballs : code\n",
-					"done": false
+					"done": true
+				},
+				{
+					"details": "patrol platforms",
+					"done": true
+				},
+				{
+					"details": "Bugs fix",
+					"done": true
+				},
+				{
+					"details": "snowball_proj must hit",
+					"done": true
+				},
+				{
+					"details": "shooting_animation coordonated",
+					"done": true
 				}
 			]
 		},
 		{
 			"uuid": "abec2fa3-3772-43d8-89db-ece942c7bc12",
-			"title": "SEE : Collision Layers",
+			"title": "SEE : Collision Layers (enemies bump into each other)",
 			"description": "",
+			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"steps": []
+		},
+		{
+			"uuid": "45bae00e-fa49-4086-b39c-ef1d74825c71",
+			"title": "Collision Layers",
+			"description": "Cheat Sheet for Collision Layers and Masks. \nPlayer : 2 \nWorld : 1\nEnemies : 3",
 			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
+			"steps": []
+		},
+		{
+			"uuid": "a8e8d672-e24b-4c2e-bb09-fa20f0cf6849",
+			"title": "Visibility Order",
+			"description": "CheatSheet for Visibility Order : \nPlayer : 10\nEnemies : 5\nTilemaps : \n__Level : 1\n__\tObjects : 2\n__Pièges : 0\n__Décor : -1",
+			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
+			"steps": []
+		},
+		{
+			"uuid": "3e5fa759-c3bc-4bcf-a47a-04c53ad0c0b0",
+			"title": "When enemy dies : scale down",
+			"description": "",
+			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"steps": []
+		},
+		{
+			"uuid": "b95bc8dc-55d2-454a-954b-b97fc0d81552",
+			"title": "SEE : Visibility order CheatSheet",
+			"description": "",
+			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"steps": []
+		},
+		{
+			"uuid": "ab33a232-fc26-4768-afa2-3a8f6ff43cce",
+			"title": "BUG : enemies falling from platform when bumping into player",
+			"description": "",
+			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"steps": []
+		},
+		{
+			"uuid": "a6a8e93d-8abf-4a1b-806f-a239de6f6c58",
+			"title": "BUG : Revoir Level Complete Screen",
+			"description": "",
+			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"steps": []
+		},
+		{
+			"uuid": "32dc7578-b58d-4a03-8605-bd90ff90dfe9",
+			"title": "BUG : REvoir Start Screen",
+			"description": "",
+			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
 			"steps": []
 		}
 	],
@@ -914,6 +992,9 @@
 			],
 			[
 				"9573ce0a-9b5d-4fd9-bb69-4b68a3540b99"
+			],
+			[
+				"2f4f560c-cf56-4687-bdad-86e9f71d5e9f"
 			]
 		]
 	}

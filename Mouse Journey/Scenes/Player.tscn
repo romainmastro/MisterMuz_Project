@@ -1,4 +1,4 @@
-[gd_scene load_steps=132 format=3 uid="uid://dtlxte6rijv77"]
+[gd_scene load_steps=133 format=3 uid="uid://dtlxte6rijv77"]
 
 [ext_resource type="Script" uid="uid://v6kgu5fottyv" path="res://Scripts/player.gd" id="1_kyqiw"]
 [ext_resource type="Texture2D" uid="uid://bl388umk28hx6" path="res://Assets/Muz/Muz_JUMP.png" id="2_glx4g"]
@@ -810,12 +810,17 @@ animations = [{
 "speed": 6.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6hr71"]
+size = Vector2(4, 2)
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dewec"]
 radius = 2.0
 height = 10.0
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("gravity_component", "input_component", "movement_component_slide", "advanced_jump_component", "animation_component", "health_component", "hurtbox_component", "snow_trail_component", "gliding_component")]
-z_index = 99
+z_index = 10
+collision_layer = 2
+collision_mask = 13
 floor_stop_on_slope = false
 floor_max_angle = 0.872665
 floor_snap_length = 5.0
@@ -867,7 +872,18 @@ autoplay = "idle"
 offset = Vector2(0, -2)
 
 [node name="HurtBox" parent="." instance=ExtResource("6_miouo")]
-scale = Vector2(1.52, 1)
+position = Vector2(0, -1)
+scale = Vector2(0.960503, 0.976)
+collision_layer = 2
+collision_mask = 12
+
+[node name="StompBox" type="Area2D" parent="." groups=["Player_StompBox"]]
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StompBox"]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_6hr71")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
@@ -934,6 +950,9 @@ advanced_jump_component = NodePath("../advanced_jump_component")
 [node name="LandingParticles" parent="PARTICLES" instance=ExtResource("19_1iu4k")]
 
 [node name="MARKER" type="Node2D" parent="."]
+visible = false
 
 [node name="SnowTrailMarker" type="Marker2D" parent="MARKER"]
 position = Vector2(0, 5)
+
+[connection signal="area_entered" from="StompBox" to="." method="_on_stomp_box_area_entered"]

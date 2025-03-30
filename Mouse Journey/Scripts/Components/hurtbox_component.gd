@@ -20,7 +20,6 @@ signal hurt_animation
 @export var vertical_knockback := -100.0
 @export var time_knockback := 0.15
 @export var time_respawn := 0.3
-@export var rebound_speed := -300
 
 var is_invincible : bool = false
 
@@ -44,10 +43,6 @@ func knockback(body: CharacterBody2D, knockback_force : float) -> void:
 	tween_KB.tween_property(body, "velocity:x", body.velocity.x -knockback_force * kb_dir, time_knockback)
 	tween_KB.parallel().tween_property(body, "velocity:y", vertical_knockback, time_knockback)
 	tween_KB.finished.connect(stop_tween)
-
-func rebound() : 
-	if player.velocity.y > 0 : 
-		player.velocity.y += rebound_speed
 
 func respawn_to_last_safe_position(body : CharacterBody2D) :
 	var safe_position = GlobalPlayerStats.last_safe_position
@@ -91,10 +86,14 @@ func area_entered(area : Area2D) :
 				if not health_component.is_dead : 
 					knockback(player, medium_knockback_force)
 					player.velocity = Vector2.ZERO
-				
-			elif area is EnemyDeadZoneClass : 
-				rebound()
-				GlobalEnemy.dead_enemy.emit() # listened by snowman.gd and Enemy animation component
+					
+			elif area is Snowball_proj2 : 
+				damage.emit(area.damage_amount) # Listened by Health Component
+				hurt_animation.emit()
+				is_invincible = true
+				if not health_component.is_dead : 
+					knockback(player, medium_knockback_force)
+					player.velocity = Vector2.ZERO
 
 func body_entered(body : Node2D) : 
 	grace_timer.start()

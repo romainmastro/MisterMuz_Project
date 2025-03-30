@@ -9,6 +9,7 @@
 size = Vector2(16, 7)
 
 [node name="treasure_chest_snow_hat" type="Area2D" node_paths=PackedStringArray("closed_chest_sprite", "opened_chest_sprite")]
+collision_mask = 2
 script = ExtResource("1_170to")
 closed_chest_sprite = NodePath("closed_chest")
 opened_chest_sprite = NodePath("opened_chest")

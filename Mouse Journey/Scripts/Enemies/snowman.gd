@@ -2,16 +2,17 @@ class_name SnowmanEnemy
 extends CharacterBody2D
 
 
-
 @export var gravity_component : ClassGravityComponent
 @export var animated_sprite : AnimatedSprite2D
 @export var hitbox : Area2D
 @export var deadzone : Area2D
+@export var collision_shape : CollisionShape2D
 @export var ray : RayCast2D
 
 @export_enum("gauche", "droite") var direction_départ = "droite"
 @export var speed : float = 30
 @export var damage_amount : float = 1
+@export var ray_offset : int = 10
 var direction : float = 1
 var is_dead : bool = false
 
@@ -26,8 +27,6 @@ func _ready() -> void:
 			animated_sprite.play("walk_left")
 			ray.position.x *= -1
 	
-	GlobalEnemy.dead_enemy.connect(handle_death) # emitted by HurboxComponent.gd - player
-
 func _physics_process(delta: float) -> void:
 	
 	gravity_component.handle_gravity(self, delta)
@@ -42,6 +41,11 @@ func _physics_process(delta: float) -> void:
 		check_platform_edge()
 		
 		update_animation()
+		
+		update_ray_offset()
+
+func update_ray_offset() : 
+	ray.position.x = ray_offset * direction
 
 func get_direction() -> float : 
 	return direction
@@ -56,6 +60,7 @@ func update_animation() :
 
 func handle_death() : 
 	is_dead = true
+	collision_shape.set_deferred("disabled", true)
 	hitbox.set_deferred("monitorable", false)
 	hitbox.set_deferred("monitoring", false)
 	deadzone.set_deferred("monitorable", false)
@@ -70,13 +75,19 @@ func handle_death() :
 	animated_sprite.play("death")
 
 func _on_animated_sprite_2d_animation_finished() -> void:
-	var tween = create_tween()
-	tween.tween_property(self, "position:y", -35, 0.4).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
-	tween.chain().tween_property(self, "position:y", 50, 0.4).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
-	await tween.finished
-	queue_free()
+	if animated_sprite.animation == "death" :
+		var tween = create_tween()
+		tween.tween_property(self, "position:y", -35, 0.4).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+		tween.chain().tween_property(self, "position:y", 50, 0.4).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+		await tween.finished
+		queue_free()
 
 func check_platform_edge() : 
 	if not ray.is_colliding() : 
 		direction = -direction
 		ray.position.x *= -1
+
+func _on_dead_zone_area_entered(area: Area2D) -> void:
+	if area.is_in_group("Player_StompBox") : 
+		print("snowman is Dead")
+		handle_death()

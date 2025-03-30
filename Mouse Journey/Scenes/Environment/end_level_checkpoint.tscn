@@ -44,6 +44,7 @@ animations = [{
 }]
 
 [node name="EndLevelCheckpoint" type="Area2D" node_paths=PackedStringArray("fire_lit")]
+collision_mask = 2
 script = ExtResource("1_mrmqi")
 fire_lit = NodePath("Fire_Lit")
 

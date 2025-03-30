@@ -1,7 +1,7 @@
 class_name PlayerClass
 extends CharacterBody2D
 
-@export_subgroup("Nodes")
+@export_group("Nodes")
 @export var gravity_component : ClassGravityComponent
 @export var input_component : ClassInputComponent
 @export var movement_component_slide : ClassMovement_SlideComponent
@@ -11,6 +11,10 @@ extends CharacterBody2D
 @export var hurtbox_component : ClassHurtboxComponent
 @export var snow_trail_component : ClassSnowTrailParticles
 @export var gliding_component : GlidingComponent
+
+@export_group("Settings")
+@export var rebound_speed := -300
+
 
 @export var camera : Camera2D
 
@@ -68,3 +72,13 @@ func disable_input() :
 	input_disabled = true
 	await get_tree().create_timer(0.5).timeout
 	input_disabled = false
+
+
+func _on_stomp_box_area_entered(area: Area2D) -> void:
+	if area is EnemyDeadZoneClass : 
+				print("enemy dead so REBOUND")
+				rebound()
+				#GlobalEnemy.dead_enemy.emit(area.name) # listened by snowman.gd and Enemy animation component
+func rebound() : 
+	if velocity.y > 0 : 
+		velocity.y += rebound_speed

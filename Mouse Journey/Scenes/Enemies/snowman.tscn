@@ -133,26 +133,31 @@ size = Vector2(2.5, 12)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x2qtj"]
 size = Vector2(10, 6)
 
-[node name="Snowman" type="CharacterBody2D" node_paths=PackedStringArray("gravity_component", "animated_sprite", "hitbox", "deadzone", "ray")]
-z_index = 10
+[node name="Snowman" type="CharacterBody2D" node_paths=PackedStringArray("gravity_component", "animated_sprite", "hitbox", "deadzone", "collision_shape", "ray")]
+z_index = 5
+collision_layer = 4
+collision_mask = 3
 script = ExtResource("1_xtkee")
 gravity_component = NodePath("gravity_component")
 animated_sprite = NodePath("AnimatedSprite2D")
 hitbox = NodePath("hitbox")
 deadzone = NodePath("DeadZone")
+collision_shape = NodePath("CollisionShape2D")
 ray = NodePath("RayCast2D")
 
 [node name="gravity_component" parent="." instance=ExtResource("7_yqlq2")]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_dvrkf")
-animation = &"death"
+animation = &"walk_right"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 11)
 shape = SubResource("CapsuleShape2D_7lbwb")
 
 [node name="hitbox" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
 script = ExtResource("4_x2qtj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
@@ -166,6 +171,8 @@ shape = SubResource("RectangleShape2D_yoj18")
 debug_color = Color(0.903797, 0.238957, 0.492976, 0.42)
 
 [node name="DeadZone" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
 script = ExtResource("7_x2qtj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeadZone"]
@@ -178,3 +185,4 @@ position = Vector2(8, 16)
 target_position = Vector2(0, 16)
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="area_entered" from="DeadZone" to="." method="_on_dead_zone_area_entered"]
