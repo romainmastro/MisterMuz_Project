@@ -878,7 +878,7 @@
 			"uuid": "845fd582-a06b-4f2d-aa92-1b505f6966bf",
 			"title": "Enemy : snowcanon",
 			"description": "Revision du système d'élimination des enemies : \n1. Création d'un StompBox dans Player (AREA2D)\n2. Création groupe Player_StompBox\n3. Chaque enemie check sa propre \"deadzone\" avec le Player_StompBox pour déterminer l'élimination.\n\n=> REBOUND now in Player.gd\n",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": [
 				{
 					"details": "Animation : Move RIght and Move Left",
@@ -926,7 +926,7 @@
 			"uuid": "abec2fa3-3772-43d8-89db-ece942c7bc12",
 			"title": "SEE : Collision Layers (enemies bump into each other)",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
@@ -947,35 +947,35 @@
 			"uuid": "3e5fa759-c3bc-4bcf-a47a-04c53ad0c0b0",
 			"title": "When enemy dies : scale down",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "b95bc8dc-55d2-454a-954b-b97fc0d81552",
 			"title": "SEE : Visibility order CheatSheet",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "ab33a232-fc26-4768-afa2-3a8f6ff43cce",
 			"title": "BUG : enemies falling from platform when bumping into player",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "a6a8e93d-8abf-4a1b-806f-a239de6f6c58",
 			"title": "BUG : Revoir Level Complete Screen",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "32dc7578-b58d-4a03-8605-bd90ff90dfe9",
 			"title": "BUG : REvoir Start Screen",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		}
 	],
