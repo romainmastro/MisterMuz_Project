@@ -1069,11 +1069,11 @@
 				},
 				{
 					"details": "health system",
-					"done": false
+					"done": true
 				},
 				{
 					"details": "hurt system",
-					"done": false
+					"done": true
 				}
 			]
 		},

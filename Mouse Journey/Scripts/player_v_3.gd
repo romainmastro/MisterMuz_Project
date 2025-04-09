@@ -69,7 +69,16 @@ var gliding_offset_hat := -9
 @export var time_knockback := 0.15
 @export var time_respawn := 0.3
 
-@export_enum("IDLE", "RUN", "JUMP", "COYOTE", "WALL_JUMP","WALL_SLIDE", "SLIDE_JUMP", "FALL", "GLIDE", "SLIDE", "HURT_KNOCKBACK", "HURT_RESPAWN", "DEAD") var STATE = "IDLE"
+@export_enum(
+	# Ground States
+	"IDLE", "RUN", "SLIDE", 
+	# Airborne States
+	"JUMP", "COYOTE", "WALL_JUMP","WALL_SLIDE", "SLIDE_JUMP", "FALL", "GLIDE",
+	# Health/Hurt System 
+	"HURT_KNOCKBACK", "HURT_RESPAWN", "DEAD") 
+
+var STATE = "IDLE"
+
 var previous_state : String = "IDLE"
 
 var input_dir : float
@@ -79,6 +88,9 @@ var is_going_up : bool = false
 var was_on_floor : bool = false
 
 var tween_KB : Tween
+var knockback_started : bool = false
+
+
 
 ############################################ READY #################################################
 func _ready() -> void:
@@ -107,37 +119,58 @@ func _ready() -> void:
 	
 ####################################### PHYSICS PROCESS ###########################################
 func _physics_process(delta: float) -> void:
-	
+		
 	handle_gravity(delta)
-	previous_input_dir = input_dir
-	input_dir = Input.get_axis("move_left", "move_right")
-	previous_state = STATE
-	
+		
 	# Coyote time
 	handle_coyote_time()
 	
-	# Jump Buffer
-	if jump_buffer_time_left > 0 :
-		jump_buffer_time_left -= delta 
-	
+	handle_jump_buffer_timer(delta)
+		
 	handle_buffer_time()
 	
-	# Wall Jump
-	if STATE in ["FALL", "GLIDE", "JUMP", "COYOTE"] and  can_wall_jump() : 
-		STATE = "WALL_JUMP"
-		wall_jump()
-		return
-	
-	if flip_lock_timer > 0 : 
-		flip_lock_timer -= delta
-	
-	if invincible_timer > 0 : 
-		invincible_timer -= delta
-	else : 
-		invincible_timer = 0
+	handle_flip_lock_timer(delta)
 		
-	############# STATE MACHINE ###################
-	if is_on_floor() : # GROUND STATES
+	handle_invincible_timer(delta)
+	
+		
+	process_state_machine(delta)
+	
+	was_on_floor = is_on_floor()
+	
+	move_and_slide()
+	
+	handle_animations()
+	
+	handle_particles()
+	
+	flip_sprites_smooth(input_dir)
+
+
+####################################### ________________ ###########################################
+func process_state_machine(delta : float) : 
+
+	if STATE == "DEAD":
+		print("STATE is now DEAD")
+		on_death()
+		return
+
+	if STATE == "HURT_KNOCKBACK":
+		knockback(medium_knockback_force)
+		return
+
+	if STATE == "HURT_RESPAWN":
+		respawn_to_last_safe_position()
+		return
+
+	
+	if not is_input_locked() : 
+		previous_input_dir = input_dir
+		input_dir = Input.get_axis("move_left", "move_right")
+	
+		previous_state = STATE
+	
+	if is_on_floor() and not is_input_locked(): # GROUND STATES
 		match STATE : 
 			"IDLE" : 
 				velocity.x = lerp(velocity.x, input_dir * speed, ice_decel * delta)
@@ -149,7 +182,6 @@ func _physics_process(delta: float) -> void:
 					STATE = "JUMP"
 				if Input.is_action_pressed("slide") and is_on_downward_slope() : 
 					STATE = "SLIDE"
-					
 					
 			"RUN" : 
 				velocity.x = lerp(velocity.x, input_dir * speed, ice_accel * delta)
@@ -182,7 +214,7 @@ func _physics_process(delta: float) -> void:
 				else : 
 					STATE = "RUN"
 
-	else : # AIRBORNE STATES
+	elif not is_on_floor() and not is_input_locked(): # AIRBORNE STATES
 		match STATE : 
 			"IDLE" : 
 				# TRANSITIONS
@@ -203,6 +235,11 @@ func _physics_process(delta: float) -> void:
 					STATE = "FALL"
 				else : 
 					is_going_up = true
+				
+				if can_wall_jump() : 
+					STATE = "WALL_JUMP"
+					wall_jump()
+				
 			"SLIDE_JUMP" : 
 				if velocity.y >= 0 : 
 					is_going_up = false
@@ -212,6 +249,9 @@ func _physics_process(delta: float) -> void:
 				if not coyote_timer.is_stopped() and Input.is_action_just_pressed("jump") : 
 					jump()
 					STATE = "JUMP"
+				if can_wall_jump() : 
+					STATE = "WALL_JUMP"
+					wall_jump()
 					
 			"FALL" : 
 				if input_dir != 0 : 
@@ -224,6 +264,10 @@ func _physics_process(delta: float) -> void:
 				if Input.is_action_just_pressed("jump") : 
 					buffer_jump_input()
 				
+				if can_wall_jump() : 
+					STATE = "WALL_JUMP"
+					wall_jump()
+				
 				if is_touching_wall() and wall_direction == input_dir : 
 					STATE = "WALL_SLIDE"
 					
@@ -231,7 +275,7 @@ func _physics_process(delta: float) -> void:
 				# TRANSITIONS
 				if velocity.y >= 0 : 
 					STATE = "FALL"
-				
+					
 			"WALL_SLIDE" :
 				wall_slide(delta)
 				
@@ -254,33 +298,12 @@ func _physics_process(delta: float) -> void:
 				
 				if is_touching_wall() : 
 					STATE = "WALL_SLIDE"
+				
+				if can_wall_jump() : 
+					STATE = "WALL_JUMP"
+					wall_jump()
 
-	if STATE in ["HURT_KNOCKBACK", "HURT_RESPAWN"] : 
-		if GlobalPlayerStats.player_current_HP > 0 : 
-			match STATE : 
-				"HURT_KNOCKBACK" : 
-					knockback(medium_knockback_force)
-					velocity = Vector2.ZERO
-					
-				"HURT_RESPAWN" : 
-					respawn_to_last_safe_position()
-		else : 
-			STATE = "DEAD"
-			on_death()
-		
 	###############################################
-	was_on_floor = is_on_floor()
-	
-	move_and_slide()
-	
-	handle_animations()
-	
-	handle_particles()
-	
-	flip_sprites_smooth(input_dir)
-
-
-####################################### ________________ ###########################################
 func handle_gravity(delta : float) : 
 	if STATE not in ["GLIDE", "WALL_SLIDE"] : 
 		velocity.y += gravity * delta
@@ -316,7 +339,19 @@ func smooth_flip(sprite: Node2D, target_scale_x: float):
 	if sprite.scale.x != target_scale_x:
 		var tween := create_tween()
 		tween.tween_property(sprite, "scale:x", target_scale_x, 0.15).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
-
+func handle_flip_lock_timer(delta : float) :
+		if flip_lock_timer > 0 : 
+			flip_lock_timer -= delta
+func handle_invincible_timer(delta : float) : 
+	if invincible_timer > 0 : 
+		invincible_timer -= delta
+	else : 
+		invincible_timer = 0
+func handle_jump_buffer_timer(delta) : 
+	if jump_buffer_time_left > 0 :
+		jump_buffer_time_left -= delta 
+func is_input_locked() -> bool : 
+	return true if STATE in ["HURT_KNOCKBACK", "HURT_RESPAWN", "DEAD"] else false
 ####Jump
 func jump() : 
 	if input_dir != 0 : 
@@ -398,15 +433,15 @@ func init_health() :
 	GlobalPlayerStats.player_current_HP = GlobalPlayerStats.player_max_HP
 	print("Init Health : ", GlobalPlayerStats.player_current_HP)
 	
+	
 func take_damage(damage_amount : int) :
-	if not GlobalPlayerStats.player_current_HP <= 0 : 
-		# Lose 1 HP
-		GlobalPlayerStats.player_current_HP -= damage_amount
-		print("Health Update : ", GlobalPlayerStats.player_current_HP)
-	
-	else : 
+	GlobalPlayerStats.player_current_HP -= damage_amount
+	print("HP reduced to ", GlobalPlayerStats.player_current_HP)
+
+	if GlobalPlayerStats.player_current_HP <= 0:
+		print("PLAYER IS DEAD!")
 		STATE = "DEAD"
-	
+
 	# flash Red
 	var tween = create_tween()
 	tween.tween_property(self, "modulate", Color.RED, 0.2)
@@ -459,8 +494,13 @@ func stop_tween() :
 func _on_hurt_box_area_entered(area: Area2D) -> void:
 	if invincible_timer > 0 : 
 		return
-		
+	
+	if GlobalPlayerStats.player_current_HP <= 0 : return
+	
 	take_damage(area.damage_amount)
+	
+	if STATE == "DEAD":
+		return  # Exit early if we've just died
 	
 	invincible_timer = invincible_frame_sec
 	
@@ -486,8 +526,6 @@ func _on_hurt_box_area_entered(area: Area2D) -> void:
 		# hurt animation
 
 func body_entered(body : Node2D) : 
-	#grace_timer.start()
-	
 		if not invincible_timer > 0 : 
 
 			if body is TrapSnowballClass:
@@ -499,8 +537,6 @@ func body_entered(body : Node2D) :
 
 ##################################### ANIMATIONS SYSTEM #######################################
 func handle_animations() : 
-	#flip_sprites()
-	# RUNNING ANIMATIONS : 
 	match STATE : 
 		"IDLE" : 
 			player_sprite.play("idle")
@@ -544,6 +580,13 @@ func handle_animations() :
 			snowsuit_sprite.play("slide")
 			snowHat_sprite.play("slide")
 			muffler_sprite.play("slide")
+			
+		"HURT_KNOCKBACK", "HURT_RESPAWN" : 
+			player_sprite.play("hurt")
+			boots_gloves_sprite.play("hurt")
+			snowsuit_sprite.play("hurt")
+			snowHat_sprite.play("hurt")
+			muffler_sprite.play("hurt")
 
 ############################# PARTICLES SYSTEM ###############################################
 func handle_particles() : 
@@ -595,3 +638,8 @@ func _on_gliding_animation_changed() -> void:
 		snowHat_sprite.offset.y = gliding_offset_hat
 	else:
 		snowHat_sprite.offset.y = normal_offset_hat
+
+func _on_player_sprite_animation_finished() -> void:
+	print("animation finished")
+	if player_sprite.animation == "hurt" : 
+		STATE = "IDLE"

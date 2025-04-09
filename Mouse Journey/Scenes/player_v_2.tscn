@@ -835,28 +835,28 @@ coyote_grace_sec = 0.2
 
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_dewec")
-animation = &"run"
+animation = &"hurt"
 autoplay = "idle"
 offset = Vector2(0, -2)
 
 [node name="Boots_and_Gloves" type="AnimatedSprite2D" parent="."]
 visible = false
 sprite_frames = SubResource("SpriteFrames_opqna")
-animation = &"run"
+animation = &"hurt"
 autoplay = "idle"
 offset = Vector2(0, -2)
 
 [node name="SnowSuit" type="AnimatedSprite2D" parent="."]
 visible = false
 sprite_frames = SubResource("SpriteFrames_75iyv")
-animation = &"run"
+animation = &"hurt"
 autoplay = "idle"
 offset = Vector2(0, -2)
 
 [node name="SnowHat" type="AnimatedSprite2D" parent="."]
 visible = false
 sprite_frames = SubResource("SpriteFrames_txwsf")
-animation = &"idle"
+animation = &"hurt"
 autoplay = "idle"
 offset = Vector2(0, -2)
 
@@ -915,5 +915,6 @@ target_position = Vector2(10, 0)
 [node name="Wall_ray_Left" type="RayCast2D" parent="Raycasts"]
 target_position = Vector2(-10, 0)
 
+[connection signal="animation_finished" from="PlayerSprite" to="." method="_on_player_sprite_animation_finished"]
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
 [connection signal="area_entered" from="StompBox" to="." method="_on_stomp_box_area_entered"]
