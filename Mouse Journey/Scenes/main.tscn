@@ -1,26 +1,23 @@
-[gd_scene load_steps=7 format=3 uid="uid://ci35s5hiav38j"]
+[gd_scene load_steps=8 format=3 uid="uid://ci35s5hiav38j"]
 
 [ext_resource type="Script" uid="uid://c6hv8hqxmhb5a" path="res://Scripts/main.gd" id="1_8gbba"]
-[ext_resource type="PackedScene" uid="uid://dtlxte6rijv77" path="res://Scenes/Player.tscn" id="1_jjgbg"]
+[ext_resource type="PackedScene" uid="uid://cnedwspxo44l3" path="res://Scenes/player_v_2.tscn" id="2_21xkr"]
 [ext_resource type="PackedScene" uid="uid://ltwdjfevci88" path="res://Scenes/HUD/HP_bar.tscn" id="5_kry3j"]
+[ext_resource type="Script" uid="uid://dr435hwp2gfi2" path="res://debug.gd" id="7_6bp64"]
 [ext_resource type="PackedScene" uid="uid://cpgsf5tytoito" path="res://Scenes/HUD/cheese_bar.tscn" id="7_344ge"]
 [ext_resource type="PackedScene" uid="uid://dhl1tsd1e3234" path="res://Scenes/UI/congrats_screen.tscn" id="9_ynf5e"]
 [ext_resource type="Script" uid="uid://5btxhk0r3gsc" path="res://Scripts/camera_2d.gd" id="14_jkdf5"]
 
 [node name="Main" type="Node2D" node_paths=PackedStringArray("player", "world", "congrats_screen", "player_camera", "congrats_camera")]
 script = ExtResource("1_8gbba")
-player = NodePath("Player")
+player = NodePath("PlayerV2")
 world = NodePath("WORLD")
 congrats_screen = NodePath("MENU/CongratsScreen")
 player_camera = NodePath("Camera/PlayerCamera")
 congrats_camera = NodePath("MENU/CongratsScreen/CongratsCamera")
 
-[node name="Player" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("1_jjgbg")]
-z_index = 12
-position = Vector2(28, -33)
-floor_max_angle = 1.39626
-platform_floor_layers = 4294967295
-camera = NodePath("../Camera/PlayerCamera")
+[node name="PlayerV2" parent="." instance=ExtResource("2_21xkr")]
+position = Vector2(80, -24)
 
 [node name="WORLD" type="Node" parent="."]
 
@@ -47,7 +44,7 @@ metadata/_edit_use_anchors_ = true
 [node name="PlayerCamera" type="Camera2D" parent="Camera" node_paths=PackedStringArray("player")]
 position_smoothing_speed = 3.0
 script = ExtResource("14_jkdf5")
-player = NodePath("../../Player")
+player = NodePath("../../PlayerV2")
 
 [node name="MENU" type="Node" parent="."]
 
@@ -60,3 +57,44 @@ Congrats_camera = NodePath("CongratsCamera")
 
 [node name="CongratsCamera" type="Camera2D" parent="MENU/CongratsScreen"]
 anchor_mode = 0
+
+[node name="DEBUG" type="CanvasLayer" parent="." node_paths=PackedStringArray("player")]
+script = ExtResource("7_6bp64")
+player = NodePath("../PlayerV2")
+
+[node name="Control" type="Control" parent="DEBUG"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DEBUG/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="State" type="Label" parent="DEBUG/Control/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 9
+text = "State"
+
+[node name="Coyote" type="Label" parent="DEBUG/Control/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 9
+text = "Coyote"
+
+[node name="JumpBuffer" type="Label" parent="DEBUG/Control/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 9
+text = "JumpBuffer"
+
+[node name="velocity_x" type="Label" parent="DEBUG/Control/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 9
+text = "velocity_x"

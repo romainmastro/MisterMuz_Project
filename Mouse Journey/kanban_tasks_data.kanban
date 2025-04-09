@@ -32,31 +32,36 @@
 				"6b738e0a-dafc-419f-9e9a-99a2d86368c3",
 				"e6de74ab-da1e-46d2-ad73-418882192b5a",
 				"f1649e68-55c8-4394-a8a8-903669540d44",
-				"ef9a25df-950f-4d92-baca-77688806a127"
+				"ef9a25df-950f-4d92-baca-77688806a127",
+				"00cd1f31-6aea-4faf-be9a-509a0b2c9509"
 			]
 		},
 		{
 			"uuid": "ef4e123f-f6ea-4e30-8896-4ddd7167fd59",
 			"title": "Doing",
-			"tasks": []
+			"tasks": [
+				"15a39291-e009-466b-b404-c158c2685ce8"
+			]
 		},
 		{
 			"uuid": "a590c45f-f6e0-4df4-a178-2596b3213350",
 			"title": "Done on the current Branch",
 			"tasks": [
-				"abec2fa3-3772-43d8-89db-ece942c7bc12",
-				"b95bc8dc-55d2-454a-954b-b97fc0d81552",
-				"3e5fa759-c3bc-4bcf-a47a-04c53ad0c0b0",
-				"ab33a232-fc26-4768-afa2-3a8f6ff43cce",
-				"a6a8e93d-8abf-4a1b-806f-a239de6f6c58",
-				"32dc7578-b58d-4a03-8605-bd90ff90dfe9",
-				"845fd582-a06b-4f2d-aa92-1b505f6966bf"
+				"d51b7aa1-f926-494e-a890-d60158b9b045",
+				"a1f67e75-dce9-4001-b5e1-557fa377917f"
 			]
 		},
 		{
 			"uuid": "9573ce0a-9b5d-4fd9-bb69-4b68a3540b99",
 			"title": "DONE => Main Branch",
 			"tasks": [
+				"845fd582-a06b-4f2d-aa92-1b505f6966bf",
+				"32dc7578-b58d-4a03-8605-bd90ff90dfe9",
+				"a6a8e93d-8abf-4a1b-806f-a239de6f6c58",
+				"ab33a232-fc26-4768-afa2-3a8f6ff43cce",
+				"3e5fa759-c3bc-4bcf-a47a-04c53ad0c0b0",
+				"b95bc8dc-55d2-454a-954b-b97fc0d81552",
+				"abec2fa3-3772-43d8-89db-ece942c7bc12",
 				"6e54cfb2-28e2-4a51-bcd4-164e7b0e74fa",
 				"bb57965b-6154-4d7f-be50-673de688144c",
 				"701dcdc5-9374-4a49-8cb0-96dcc7d0b9bf",
@@ -976,6 +981,107 @@
 			"title": "BUG : REvoir Start Screen",
 			"description": "",
 			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "a1f67e75-dce9-4001-b5e1-557fa377917f",
+			"title": "wall slide",
+			"description": "",
+			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"steps": []
+		},
+		{
+			"uuid": "d51b7aa1-f926-494e-a890-d60158b9b045",
+			"title": "make new collision layers for hurtbox and hitbox",
+			"description": "",
+			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"steps": []
+		},
+		{
+			"uuid": "15a39291-e009-466b-b404-c158c2685ce8",
+			"title": "REWRITE PLAYER SCENE",
+			"description": "",
+			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"steps": [
+				{
+					"details": "Move left / right",
+					"done": true
+				},
+				{
+					"details": "Jump",
+					"done": true
+				},
+				{
+					"details": "Coyote Jump",
+					"done": true
+				},
+				{
+					"details": "Jump Buffer",
+					"done": true
+				},
+				{
+					"details": "Slide",
+					"done": true
+				},
+				{
+					"details": "Glide",
+					"done": true
+				},
+				{
+					"details": "Wall Jump",
+					"done": true
+				},
+				{
+					"details": "Wall slide",
+					"done": true
+				},
+				{
+					"details": "Animation",
+					"done": true
+				},
+				{
+					"details": "gravity",
+					"done": true
+				},
+				{
+					"details": "ice_accel / decel",
+					"done": true
+				},
+				{
+					"details": "boots_accel / decel",
+					"done": true
+				},
+				{
+					"details": "Particles",
+					"done": true
+				},
+				{
+					"details": "wall slide animation",
+					"done": false
+				},
+				{
+					"details": "jumping from slide",
+					"done": true
+				},
+				{
+					"details": "hurt animation to implement",
+					"done": false
+				},
+				{
+					"details": "health system",
+					"done": false
+				},
+				{
+					"details": "hurt system",
+					"done": false
+				}
+			]
+		},
+		{
+			"uuid": "00cd1f31-6aea-4faf-be9a-509a0b2c9509",
+			"title": "GAME OVER Screen",
+			"description": "",
+			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
 			"steps": []
 		}
 	],

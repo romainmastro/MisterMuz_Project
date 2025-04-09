@@ -1,4 +1,4 @@
-class_name ClassHurtboxComponent 
+#class_name ClassHurtboxComponent 
 extends Node
 
 # Register the collision to remove points [see HealthComponent for damage() function]

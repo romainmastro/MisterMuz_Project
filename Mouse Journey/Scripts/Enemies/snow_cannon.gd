@@ -144,7 +144,6 @@ func player_detection() -> void:
 		state = "shooting"
 	else:
 		state = "patroling"
-	print(state)
 
 
 
@@ -160,8 +159,6 @@ func shoot() :
 		sb.speed = snowball_proj_speed
 		
 		get_tree().root.add_child(sb)
-		
-		
 		
 
 ###### DEAD #####

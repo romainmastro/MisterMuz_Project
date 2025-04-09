@@ -839,14 +839,14 @@ gliding_component = NodePath("COMPONENTS/GlidingComponent")
 
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_dewec")
-animation = &"idle"
+animation = &"run"
 autoplay = "idle"
 offset = Vector2(0, -2)
 
 [node name="Boots_and_Gloves" type="AnimatedSprite2D" parent="."]
 visible = false
 sprite_frames = SubResource("SpriteFrames_opqna")
-animation = &"idle"
+animation = &"fall"
 autoplay = "idle"
 offset = Vector2(0, -2)
 
@@ -860,7 +860,7 @@ offset = Vector2(0, -2)
 [node name="SnowHat" type="AnimatedSprite2D" parent="."]
 visible = false
 sprite_frames = SubResource("SpriteFrames_txwsf")
-animation = &"glide"
+animation = &"idle"
 autoplay = "idle"
 offset = Vector2(0, -2)
 
@@ -871,27 +871,29 @@ animation = &"hurt"
 autoplay = "idle"
 offset = Vector2(0, -2)
 
-[node name="HurtBox" parent="." instance=ExtResource("6_miouo")]
+[node name="HurtBox" parent="." groups=["player_hurtbox"] instance=ExtResource("6_miouo")]
+visible = false
 position = Vector2(0, -1)
 scale = Vector2(0.960503, 0.976)
-collision_layer = 2
-collision_mask = 12
+collision_layer = 16
+collision_mask = 72
 
 [node name="StompBox" type="Area2D" parent="." groups=["Player_StompBox"]]
-collision_layer = 2
-collision_mask = 4
+visible = false
+collision_layer = 32
+collision_mask = 128
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StompBox"]
 position = Vector2(0, 5)
 shape = SubResource("RectangleShape2D_6hr71")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource("CapsuleShape2D_dewec")
 
 [node name="COMPONENTS" type="Node" parent="."]
 
-[node name="gravity_component" parent="COMPONENTS" instance=ExtResource("5_5ixxa")]
+[node name="gravity_component" parent="COMPONENTS" node_paths=PackedStringArray("wall_ray") instance=ExtResource("5_5ixxa")]
+wall_ray = NodePath("../../Wall_ray")
 gravity = 500.0
 
 [node name="movement_component_with_slide" parent="COMPONENTS" instance=ExtResource("8_miouo")]
@@ -910,11 +912,12 @@ hurtbox_component = NodePath("../hurtbox_component")
 
 [node name="Input_component" parent="COMPONENTS" instance=ExtResource("6_nn08x")]
 
-[node name="advanced_jump_component" parent="COMPONENTS" node_paths=PackedStringArray("player", "movement_component", "animation_component", "gliding_component") instance=ExtResource("12_glx4g")]
+[node name="advanced_jump_component" parent="COMPONENTS" node_paths=PackedStringArray("player", "movement_component", "animation_component", "gliding_component", "gravity_component") instance=ExtResource("12_glx4g")]
 player = NodePath("../..")
 movement_component = NodePath("../movement_component_with_slide")
 animation_component = NodePath("../animation_component")
 gliding_component = NodePath("../GlidingComponent")
+gravity_component = NodePath("../gravity_component")
 jump_speed = -180.0
 jump_buffer_time = 0.35
 
@@ -954,5 +957,8 @@ visible = false
 
 [node name="SnowTrailMarker" type="Marker2D" parent="MARKER"]
 position = Vector2(0, 5)
+
+[node name="Wall_ray" type="RayCast2D" parent="."]
+target_position = Vector2(15, 0)
 
 [connection signal="area_entered" from="StompBox" to="." method="_on_stomp_box_area_entered"]

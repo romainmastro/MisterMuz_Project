@@ -20,4 +20,11 @@
 }, {
 &"scene": "res://Scenes/Traps/stalagtite_Tombante.tscn"
 }]
+}, {
+"name": "Enemies",
+"scenes": [{
+&"scene": "res://Scenes/Enemies/enemy_snow_cannon.tscn"
+}, {
+&"scene": "res://Scenes/Enemies/snowman.tscn"
+}]
 }]

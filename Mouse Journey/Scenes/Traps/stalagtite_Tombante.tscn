@@ -86,6 +86,8 @@ _data = {
 
 [node name="FallingStalagtite" type="Area2D"]
 z_index = 9
+collision_layer = 64
+collision_mask = 16
 script = ExtResource("1_ta62a")
 metadata/_custom_type_script = "uid://da5g2tgmvj2m1"
 
@@ -97,6 +99,8 @@ shape = SubResource("RectangleShape2D_ta62a")
 texture = ExtResource("2_ta62a")
 
 [node name="Detector" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detector"]
 position = Vector2(0, 156)

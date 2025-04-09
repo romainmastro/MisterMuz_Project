@@ -1,24 +1,30 @@
 extends Node
 
+#########################" HP SYSTEM #############################
+
 @export var player_current_HP : float = 0
 @export var player_max_HP : float = 3
+@export var is_dead : bool = false
 
 var current_cheese_nb : float = 0
 signal max_hp_changed
 
 var invincible_frame : bool = false
 
+######################## CHECKPOINTS ###############################
 @export var current_checkpoint : Vector2 = Vector2.ZERO
 
 # store the current position 
 @export var last_safe_position : Vector2 = Vector2.ZERO
 var safe_position_offset : int = 8
 
+######################### LEVELS ################################
 # store the current Level
 enum Levels {Level1, Level2, Level3, Level4}
 @export var current_level := Levels.Level1 # by default Level1
 @export var future_level := Levels.Level2
 
+######################## SIGNALS #############################
 # signal and variable for treasures : 
 signal has_boots_gloves_suit_signal
 @export var has_boots_gloves_suit : bool = false

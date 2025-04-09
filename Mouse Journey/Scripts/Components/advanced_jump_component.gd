@@ -10,6 +10,7 @@ extends Node
 @export var animation_component : ClassAnimationComponent
 @export var gliding_component : GlidingComponent
 @export var wall_jump_timer : Timer
+@export var gravity_component : ClassGravityComponent
 
 @export_group("Settings")
 @export var jump_speed : float = -250.0
@@ -57,7 +58,6 @@ func handle_jump(body : CharacterBody2D, jump_button_pressed : bool, jump_releas
 	
 	last_frame_on_floor = body.is_on_floor()
 	
-
 func has_just_landed_after_jump(body : CharacterBody2D) -> bool : 
 	return body.is_on_floor() and not last_frame_on_floor and is_jumping
 
@@ -86,7 +86,6 @@ func handle_variable_jump_height(body : CharacterBody2D, jump_released : bool) :
 	if jump_released and is_going_up : 
 		body.velocity.y = 0
 
-
 func jump(body : CharacterBody2D) : 
 	
 	if body.is_on_floor() : 
@@ -105,7 +104,7 @@ func jump(body : CharacterBody2D) :
 			coyote_timer.stop()
 			is_jumping = true
 			
-	elif body.is_on_wall_only() and wall_jump_timer.is_stopped() and GlobalPlayerStats.has_boots_gloves_suit :
+	elif gravity_component.wall_collision() and wall_jump_timer.is_stopped() and GlobalPlayerStats.has_boots_gloves_suit :
 		wall_jump_timer.start()
 		# Wall jump: set vertical velocity and push horizontally away from the wall.
 		body.velocity.y = jump_speed

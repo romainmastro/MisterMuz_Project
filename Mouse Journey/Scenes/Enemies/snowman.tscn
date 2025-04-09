@@ -145,7 +145,8 @@ deadzone = NodePath("DeadZone")
 collision_shape = NodePath("CollisionShape2D")
 ray = NodePath("RayCast2D")
 
-[node name="gravity_component" parent="." instance=ExtResource("7_yqlq2")]
+[node name="gravity_component" parent="." node_paths=PackedStringArray("wall_ray") instance=ExtResource("7_yqlq2")]
+wall_ray = NodePath("../RayCast2D")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_dvrkf")
@@ -156,8 +157,8 @@ position = Vector2(0, 11)
 shape = SubResource("CapsuleShape2D_7lbwb")
 
 [node name="hitbox" type="Area2D" parent="."]
-collision_layer = 4
-collision_mask = 2
+collision_layer = 64
+collision_mask = 16
 script = ExtResource("4_x2qtj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
@@ -171,8 +172,8 @@ shape = SubResource("RectangleShape2D_yoj18")
 debug_color = Color(0.903797, 0.238957, 0.492976, 0.42)
 
 [node name="DeadZone" type="Area2D" parent="."]
-collision_layer = 4
-collision_mask = 2
+collision_layer = 128
+collision_mask = 32
 script = ExtResource("7_x2qtj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeadZone"]

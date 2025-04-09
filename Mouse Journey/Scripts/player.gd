@@ -1,4 +1,4 @@
-class_name PlayerClass
+#class_name PlayerClass
 extends CharacterBody2D
 
 @export_group("Nodes")
@@ -31,8 +31,9 @@ func _physics_process(delta: float) -> void:
 	
 	if input_disabled : # when dies : useful for respawn to disable weird spawn movement
 		return
-
+	
 	gravity_component.handle_gravity(self, delta)
+
 	
 	#HORIZONTAL INPUT + MOVEMENT + SLIDE
 	movement_component_slide.handle_x_movement(self, input_component.x_input, input_component.get_slide_input())
@@ -59,6 +60,11 @@ func _physics_process(delta: float) -> void:
 	store_last_walking_frame()
 	
 	move_and_slide()
+	
+	if animation_component.facing_direction() == 1 : 
+		gravity_component.wall_ray.scale.x = 1
+	else : 
+		gravity_component.wall_ray.scale.x = -1
 	
 	if is_on_floor() : 
 		apply_floor_snap()

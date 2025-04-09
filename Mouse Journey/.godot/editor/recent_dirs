@@ -1,11 +1,14 @@
+res://Scripts
+res://Assets/Muz
+res://Assets/Muz/Boots and gloves
+res://
+res://Scenes
 res://Scenes/Enemies
 res://Scripts/Enemies
 res://Assets/Enemies/SnowCanon
 res://Assets/Enemies/Snowman
-res://Scripts
 res://Scenes/Enemies/Components
 res://Assets/Muz/Snowhat
-res://Assets/Muz
 res://Scenes/Components
 res://Scripts/Components
 res://Scripts/UI
@@ -17,6 +20,3 @@ res://Resources/font
 res://Scenes/Environment
 res://Scripts/Environment
 res://Assets/Environment
-res://Scripts/Collectibles
-res://Scenes/Collectibles
-res://Assets/Muz/Muffler
