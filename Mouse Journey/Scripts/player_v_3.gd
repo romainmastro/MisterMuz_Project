@@ -61,13 +61,18 @@ var normal_offset_hat = -2
 var gliding_offset_hat := -9
 
 @export_group("Hurt and Knockback")
-@export var invincible_frame_sec := 0.5
+@export var invincible_frame_sec := 1
 @export var invincible_timer := 0.0
-@export var medium_knockback_force := 50.0
-@export var heavy_knockback_force := 300.0 
-@export var vertical_knockback := -100.0
-@export var time_knockback := 0.15
+@export var medium_knockback_force := 70.0
+@export var heavy_knockback_force := 50.0 
+@export var vertical_knockback := -60.0
+@export var time_knockback := 0.3
 @export var time_respawn := 0.3
+@export var rebound_speed := -300
+
+var knockback_timer : float = 0.0
+var knockback_velocity : Vector2 = Vector2.ZERO
+
 
 @export_enum(
 	# Ground States
@@ -89,8 +94,6 @@ var was_on_floor : bool = false
 
 var tween_KB : Tween
 var knockback_started : bool = false
-
-
 
 ############################################ READY #################################################
 func _ready() -> void:
@@ -117,9 +120,9 @@ func _ready() -> void:
 	# Particles
 	current_particles = snow_trail_particles
 	
+	
 ####################################### PHYSICS PROCESS ###########################################
 func _physics_process(delta: float) -> void:
-		
 	handle_gravity(delta)
 		
 	# Coyote time
@@ -133,9 +136,20 @@ func _physics_process(delta: float) -> void:
 		
 	handle_invincible_timer(delta)
 	
+	# Process knockback effect if active.
+	if knockback_timer > 0:
+		knockback_timer -= delta
+		# Override the player's velocity with the knockback velocity.
+		velocity = knockback_velocity
+		# Optionally, you could gradually damp the knockback velocity here.
+	else:
+		# Run your normal state machine if not in knockback.
+		process_state_machine(delta)
 		
-	process_state_machine(delta)
-	
+	if knockback_timer <= 0 and STATE == "HURT_KNOCKBACK":
+		print("reset STATE to IDLE after HURT")
+		STATE = "IDLE"  # Only reset after knockback ends
+		
 	was_on_floor = is_on_floor()
 	
 	move_and_slide()
@@ -156,7 +170,7 @@ func process_state_machine(delta : float) :
 		return
 
 	if STATE == "HURT_KNOCKBACK":
-		knockback(medium_knockback_force)
+		#knockback(medium_knockback_force)
 		return
 
 	if STATE == "HURT_RESPAWN":
@@ -166,6 +180,7 @@ func process_state_machine(delta : float) :
 	
 	if not is_input_locked() : 
 		previous_input_dir = input_dir
+		
 		input_dir = Input.get_axis("move_left", "move_right")
 	
 		previous_state = STATE
@@ -175,7 +190,7 @@ func process_state_machine(delta : float) :
 			"IDLE" : 
 				velocity.x = lerp(velocity.x, input_dir * speed, ice_decel * delta)
 				# TRANSITIONS
-				if Input.is_action_pressed("move_left") or Input.is_action_pressed("move_right") : 
+				if input_dir != 0 : 
 					STATE = "RUN"
 				if Input.is_action_just_pressed("jump") : 
 					jump()
@@ -258,8 +273,9 @@ func process_state_machine(delta : float) :
 					velocity.x = speed * input_dir
 					
 				#TRANSITIONS
-				if Input.is_action_pressed("glide") and not is_touching_wall() : 
-					STATE = "GLIDE"
+				if Input.is_action_pressed("glide") and not is_touching_wall() :
+					if GlobalPlayerStats.has_snow_hat :  
+						STATE = "GLIDE"
 					
 				if Input.is_action_just_pressed("jump") : 
 					buffer_jump_input()
@@ -307,23 +323,6 @@ func process_state_machine(delta : float) :
 func handle_gravity(delta : float) : 
 	if STATE not in ["GLIDE", "WALL_SLIDE"] : 
 		velocity.y += gravity * delta
-#func flip_sprites() : 
-	#if flip_lock_timer > 0 : 
-		#return
-	#if input_dir == 0 : 
-		#return
-	#elif input_dir < 0 : 
-		#player_sprite.flip_h = true
-		#boots_gloves_sprite.flip_h = true
-		#snowHat_sprite.flip_h = true
-		#snowsuit_sprite.flip_h = true
-		#muffler_sprite.flip_h = true
-	#else : 
-		#player_sprite.flip_h = false
-		#boots_gloves_sprite.flip_h = false
-		#snowHat_sprite.flip_h = false
-		#snowsuit_sprite.flip_h = false
-		#muffler_sprite.flip_h = false
 func flip_sprites_smooth(direction: float):
 	if direction == 0:
 		return
@@ -347,11 +346,17 @@ func handle_invincible_timer(delta : float) :
 		invincible_timer -= delta
 	else : 
 		invincible_timer = 0
+	
+	if invincible_timer > 0:
+		self.modulate = Color(1, 1, 1, 0.3)  # transparent
+	else:
+		self.modulate = Color(1, 1, 1, 1)    # normal
 func handle_jump_buffer_timer(delta) : 
 	if jump_buffer_time_left > 0 :
 		jump_buffer_time_left -= delta 
 func is_input_locked() -> bool : 
 	return true if STATE in ["HURT_KNOCKBACK", "HURT_RESPAWN", "DEAD"] else false
+
 ####Jump
 func jump() : 
 	if input_dir != 0 : 
@@ -374,7 +379,6 @@ func buffer_jump_input() :
 
 #### Wall_Jump
 func can_wall_jump() -> bool : 
-	
 	if wall_ray_left.is_colliding() : 
 		wall_direction = -1
 		
@@ -432,8 +436,7 @@ func glide(delta : float) :
 func init_health() : 
 	GlobalPlayerStats.player_current_HP = GlobalPlayerStats.player_max_HP
 	print("Init Health : ", GlobalPlayerStats.player_current_HP)
-	
-	
+
 func take_damage(damage_amount : int) :
 	GlobalPlayerStats.player_current_HP -= damage_amount
 	print("HP reduced to ", GlobalPlayerStats.player_current_HP)
@@ -473,24 +476,16 @@ func respawn_to_last_safe_position() :
 	hide()
 	global_position = safe_position
 	show()
-	
-func knockback(knockback_force : float) -> void:
-	
-	var kb_dir = sign(scale.x)
-	
-	if kb_dir == 0 : 
-		kb_dir = sign(scale.x)
-	
-	tween_KB = create_tween()
-	tween_KB.tween_property(self, "velocity:x", velocity.x -knockback_force * kb_dir, time_knockback)
-	tween_KB.parallel().tween_property(self, "velocity:y", vertical_knockback, time_knockback)
-	tween_KB.finished.connect(stop_tween)
 
-func stop_tween() : 
-	if tween_KB and tween_KB.is_valid() : 
-		tween_KB.kill()
-		STATE = "IDLE"
-		
+func start_knockback(knockback_force: float) -> void:
+	# Calculate the knockback direction.
+	var kb_dir = sign(player_sprite.scale.x)
+	
+	knockback_velocity.x = -knockback_force * kb_dir
+	knockback_velocity.y = vertical_knockback 
+	
+	knockback_timer = time_knockback
+
 func _on_hurt_box_area_entered(area: Area2D) -> void:
 	if invincible_timer > 0 : 
 		return
@@ -500,6 +495,7 @@ func _on_hurt_box_area_entered(area: Area2D) -> void:
 	take_damage(area.damage_amount)
 	
 	if STATE == "DEAD":
+		start_knockback(medium_knockback_force)
 		return  # Exit early if we've just died
 	
 	invincible_timer = invincible_frame_sec
@@ -511,19 +507,19 @@ func _on_hurt_box_area_entered(area: Area2D) -> void:
 		
 	elif area is ClassTrapKnockBack : 
 		STATE = "HURT_KNOCKBACK"
+		start_knockback(medium_knockback_force)
 		return
-		# hurt animation
 		
 	elif area is EnemyHitboxClass : 
 		print("HURT by Enemy")
 		STATE = "HURT_KNOCKBACK"
+		start_knockback(medium_knockback_force)
 		return
-		# hurt animation
 			
 	elif area is Snowball_proj2 : 
 		STATE = "HURT_KNOCKBACK"
+		start_knockback(medium_knockback_force)
 		return
-		# hurt animation
 
 func body_entered(body : Node2D) : 
 		if not invincible_timer > 0 : 
@@ -531,8 +527,6 @@ func body_entered(body : Node2D) :
 			if body is TrapSnowballClass:
 				STATE = "HURT_KNOCKBACK"
 				take_damage(body.damage_amount)
-				# hurt animation
-				knockback(heavy_knockback_force)
 				velocity = Vector2.ZERO
 
 ##################################### ANIMATIONS SYSTEM #######################################
@@ -620,7 +614,7 @@ func handle_particles() :
 		current_particles.global_position.x = marker_particles.global_position.x
 		current_particles.global_position.y = marker_particles.global_position.y
 		current_particles.emitting = true
-		
+
 ########################### VISIBILITY and ANIMATIONS #########################################
 
 func update_boots_gloves_visibility() : 
@@ -639,7 +633,11 @@ func _on_gliding_animation_changed() -> void:
 	else:
 		snowHat_sprite.offset.y = normal_offset_hat
 
-func _on_player_sprite_animation_finished() -> void:
-	print("animation finished")
-	if player_sprite.animation == "hurt" : 
-		STATE = "IDLE"
+
+func _on_stomp_box_area_entered(area: Area2D) -> void:
+	if area is EnemyDeadZoneClass : 
+				print("enemy dead so REBOUND")
+				rebound()
+func rebound() : 
+	if velocity.y > 0 : 
+		velocity.y += rebound_speed

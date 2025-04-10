@@ -1065,7 +1065,7 @@
 				},
 				{
 					"details": "hurt animation to implement",
-					"done": false
+					"done": true
 				},
 				{
 					"details": "health system",
@@ -1073,6 +1073,10 @@
 				},
 				{
 					"details": "hurt system",
+					"done": true
+				},
+				{
+					"details": "Invincibility frame after HURT",
 					"done": true
 				}
 			]
