@@ -30,7 +30,7 @@ signal has_boots_gloves_suit_signal
 @export var has_boots_gloves_suit : bool = false
 
 signal has_snowHat_signal
-@export var has_snow_hat : bool = false
+@export var has_snow_hat : bool = false # changed in treasure_chest_snowhat.gd to turn to true
 
 signal has_muffler_signal
 @export var has_muffler : bool = false

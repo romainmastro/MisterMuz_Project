@@ -139,11 +139,3 @@ falling_speed = 160.0
 
 [node name="SnowballSpawner" parent="Pièges_ajoutés" instance=ExtResource("8_qa2b1")]
 position = Vector2(3864, -393)
-
-[connection signal="body_entered" from="Objets/collectible_heart" to="Objets/collectible_heart" method="_on_body_entered"]
-[connection signal="body_entered" from="Objets/Collect_Cheese" to="Objets/Collect_Cheese" method="_on_body_entered"]
-[connection signal="body_entered" from="Objets/Checkpoint" to="Objets/Checkpoint" method="_on_body_entered"]
-[connection signal="body_entered" from="Objets/@Area2D@35118" to="Objets/@Area2D@35118" method="_on_body_entered"]
-[connection signal="body_entered" from="Objets/@Area2D@35119" to="Objets/@Area2D@35119" method="_on_body_entered"]
-[connection signal="body_entered" from="Objets/treasure_chest_Boots_gloves_suit" to="Objets/treasure_chest_Boots_gloves_suit" method="_on_body_entered"]
-[connection signal="body_entered" from="Objets/treasure_chest_snow_hat" to="Objets/treasure_chest_snow_hat" method="_on_body_entered"]

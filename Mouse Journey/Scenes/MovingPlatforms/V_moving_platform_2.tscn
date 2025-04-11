@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://ca7deviox6mwd"]
+[gd_scene load_steps=4 format=3 uid="uid://ca7deviox6mwd"]
 
 [ext_resource type="Script" uid="uid://omfigt0jlq7d" path="res://Scripts/Platform/V_MovingPlatformClass.gd" id="1_ugcev"]
 [ext_resource type="Texture2D" uid="uid://bwrad00un0rna" path="res://Assets/Platforms/Platform2_H.png" id="2_44cpo"]
-[ext_resource type="PackedScene" uid="uid://ctcujjg2387e2" path="res://Scenes/MovingPlatforms/V_moving_platform_component.tscn" id="3_c30bc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6rjoj"]
 size = Vector2(32.024, 13.5)
@@ -20,6 +19,3 @@ shape = SubResource("RectangleShape2D_6rjoj")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_44cpo")
 centered = false
-
-[node name="V_moving_platform_component" parent="." node_paths=PackedStringArray("me") instance=ExtResource("3_c30bc")]
-me = NodePath("..")

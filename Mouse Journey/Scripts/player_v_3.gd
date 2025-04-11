@@ -159,8 +159,7 @@ func _physics_process(delta: float) -> void:
 	handle_particles()
 	
 	flip_sprites_smooth(input_dir)
-
-
+	
 ####################################### ________________ ###########################################
 func process_state_machine(delta : float) : 
 
@@ -273,9 +272,8 @@ func process_state_machine(delta : float) :
 					velocity.x = speed * input_dir
 					
 				#TRANSITIONS
-				if Input.is_action_pressed("glide") and not is_touching_wall() :
-					if GlobalPlayerStats.has_snow_hat :  
-						STATE = "GLIDE"
+				if can_glide() : 
+					STATE = "GLIDE"
 					
 				if Input.is_action_just_pressed("jump") : 
 					buffer_jump_input()
@@ -301,7 +299,7 @@ func process_state_machine(delta : float) :
 					
 				if input_dir != wall_direction : 
 					STATE = "FALL"
-					
+			
 			"GLIDE" :
 				glide(delta)
 				
@@ -398,17 +396,19 @@ func can_wall_jump() -> bool :
 			
 	return false
 func wall_jump() : 
-	velocity.x = wall_jump_speed * input_dir
-	velocity.y = -wall_jump_force
-	flip_lock_timer = flip_lock_duration
+	if GlobalPlayerStats.has_boots_gloves_suit : 
+		velocity.x = wall_jump_speed * input_dir
+		velocity.y = -wall_jump_force
+		flip_lock_timer = flip_lock_duration
+		
 func is_touching_wall() : 
 	return wall_ray_left.is_colliding() or wall_ray_right.is_colliding()
 
 #### Wall slide
 func wall_slide(delta : float) : 
-	velocity.y += gravity * delta * wall_slide_multiplier
-	velocity.y = min(velocity.y, wall_slide_max_speed)
-	print(velocity.y)
+	if not is_on_floor() : 
+		velocity.y += gravity * delta * wall_slide_multiplier
+		velocity.y = min(velocity.y, wall_slide_max_speed)
 
 #### Slope Slide
 func is_on_downward_slope() -> bool : 
@@ -457,9 +457,6 @@ func respawn_to_checkpoint() :
 	global_position = GlobalPlayerStats.current_checkpoint
 
 func on_death() : 
-
-	print("Muz Died")
-	
 	velocity = Vector2.ZERO
 	if GlobalPlayerStats.current_checkpoint != Vector2.ZERO : 
 		respawn_to_checkpoint()
@@ -623,7 +620,9 @@ func update_boots_gloves_visibility() :
 
 func update_snowHat_visibility() : 
 	snowHat_sprite.visible = true
-	
+func can_glide() : 
+	return GlobalPlayerStats.has_snow_hat and Input.is_action_pressed("glide") and not is_touching_wall()
+
 func update_muffler_visibility() : 
 	muffler_sprite.visible = true
 
@@ -633,10 +632,8 @@ func _on_gliding_animation_changed() -> void:
 	else:
 		snowHat_sprite.offset.y = normal_offset_hat
 
-
 func _on_stomp_box_area_entered(area: Area2D) -> void:
 	if area is EnemyDeadZoneClass : 
-				print("enemy dead so REBOUND")
 				rebound()
 func rebound() : 
 	if velocity.y > 0 : 
