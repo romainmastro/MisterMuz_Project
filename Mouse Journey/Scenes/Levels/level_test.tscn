@@ -1,17 +1,13 @@
-[gd_scene load_steps=8 format=4 uid="uid://bk4vquv415c77"]
+[gd_scene load_steps=9 format=4 uid="uid://bk4vquv415c77"]
 
 [ext_resource type="TileSet" uid="uid://cvn6rtpn15ve6" path="res://Resources/Level_Maker.tres" id="1_vflva"]
 [ext_resource type="PackedScene" uid="uid://b1vi7lh2l2ldh" path="res://Scenes/Environment/sign_Start_Level.tscn" id="2_ojicq"]
 [ext_resource type="TileSet" uid="uid://cvxyb7jcx6hel" path="res://Resources/Pièges.tres" id="3_ojicq"]
 [ext_resource type="PackedScene" uid="uid://drkytl5ykatsd" path="res://Scenes/Enemies/snowman.tscn" id="4_qkmes"]
 [ext_resource type="PackedScene" uid="uid://7rd2wku4lem" path="res://Scenes/Enemies/enemy_snow_cannon.tscn" id="5_gm2ak"]
-[ext_resource type="PackedScene" uid="uid://iah2f3d4sy1b" path="res://Scenes/MovingPlatforms/moving_platform_path2D.tscn" id="6_1bsl4"]
-
-[sub_resource type="Curve2D" id="Curve2D_1bsl4"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0, -56.0018, 3.66908, 56.0018, -3.66908, 64, 40, 0, 0, 0, 0, 120, -16, 62.5675, -0.386219, -62.5675, 0.386219, 56, -64, 0, 0, 0, 0, 0, 0)
-}
-point_count = 5
+[ext_resource type="PackedScene" uid="uid://i0orgaj0vukb" path="res://Scenes/MovingPlatforms/moving_platform2.tscn" id="6_1bsl4"]
+[ext_resource type="PackedScene" uid="uid://iah2f3d4sy1b" path="res://Scenes/MovingPlatforms/moving_platform1.tscn" id="6_c3dre"]
+[ext_resource type="PackedScene" uid="uid://c6rs8jj1o6baq" path="res://Scenes/MovingPlatforms/moving_platform_3.tscn" id="8_n7phb"]
 
 [node name="Level_Test" type="Node2D"]
 
@@ -36,7 +32,14 @@ position = Vector2(496, 96)
 
 [node name="MovingPlatforms" type="Node2D" parent="."]
 
-[node name="MovingPlatform_path2D" parent="." instance=ExtResource("6_1bsl4")]
-position = Vector2(56, 40)
-curve = SubResource("Curve2D_1bsl4")
-speed_for_closed_paths = 1.0
+[node name="MovingPlatform2" parent="MovingPlatforms" instance=ExtResource("6_1bsl4")]
+position = Vector2(88, 36)
+vitesse = 50.0
+
+[node name="MovingPlatform3" parent="MovingPlatforms" instance=ExtResource("8_n7phb")]
+position = Vector2(288, 80)
+vitesse = 50.0
+
+[node name="MovingPlatform1" parent="MovingPlatforms" instance=ExtResource("6_c3dre")]
+position = Vector2(216, 24)
+vitesse = 50.0
