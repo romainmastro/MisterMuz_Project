@@ -158,7 +158,8 @@
 			"title": "CheatSheet",
 			"tasks": [
 				"45bae00e-fa49-4086-b39c-ef1d74825c71",
-				"a8e8d672-e24b-4c2e-bb09-fa20f0cf6849"
+				"a8e8d672-e24b-4c2e-bb09-fa20f0cf6849",
+				"9b59f8f2-d054-45d6-bd9a-6a574d9f6983"
 			]
 		}
 	],
@@ -1094,6 +1095,13 @@
 			"title": "Review Moving Platform with Pathfollow",
 			"description": "",
 			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"steps": []
+		},
+		{
+			"uuid": "9b59f8f2-d054-45d6-bd9a-6a574d9f6983",
+			"title": "Upgrades",
+			"description": "❄️ Player Gear & Abilities Reference\n🥾 Snow Boots\nWall Jump: Enables jumping off walls.\n\nIcy Patch Control: Reduces slipperiness on icy surfaces.\n\nOptional (later): Power Stomp – A downward attack to break floors or stun enemies.\n\n🎩 Snow Hat\nGlide: Slows falling, helps cross long gaps.\n\nWind Navigation (Planned): Allows movement through windy areas or wind puzzles.\n\n🧥 Snowsuit\nCold Resistance: Grants access to harsh/freezing zones.\n\nBasic Dash: A short, straight dash (ground or air). No directional control.\n\n🧣 Snow Muffler\nWind Breath:\n\nEnables 8-directional dash (ground or air).\n\nCan push light objects (optional).\n\nSynergy: Upgrades basic dash from Snowsuit into a flexible mobility/combat tool.\n\n",
+			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
 			"steps": []
 		}
 	],
