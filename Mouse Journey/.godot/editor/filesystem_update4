@@ -1,10 +1,9 @@
-res://Scenes/main.tscn
+res://Scenes/Levels/level_test.tscn
 res://Resources/Level_Maker.tres
 res://Resources/Objects.tres
 res://Resources/Pièges.tres
 res://Resources/Décor.tres
-res://Scenes/Levels/level_test.tscn
+res://Scenes/MovingPlatforms/moving_platform_path2D.tscn
+res://Scenes/main.tscn
 res://Scenes/player_v_2.tscn
-res://Scenes/MovingPlatforms/V_moving_platform_1.tscn
-res://Scenes/MovingPlatforms/V_moving_platform_2.tscn
-res://Scenes/MovingPlatforms/V_moving_platform_3.tscn
+res://Scripts/Platform/moving_platform_path_2d.gd
