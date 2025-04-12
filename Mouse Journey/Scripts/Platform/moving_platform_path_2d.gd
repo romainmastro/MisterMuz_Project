@@ -14,5 +14,5 @@ func _ready() -> void:
 		set_physics_process(false)
 		
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	path.progress += speed_for_closed_paths # for closed path
