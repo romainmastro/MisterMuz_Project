@@ -7,7 +7,8 @@
 size = Vector2(16, 8)
 
 [node name="V_MovingPlatform1" type="CharacterBody2D"]
-platform_on_leave = 1
+collision_layer = 256
+collision_mask = 2
 script = ExtResource("1_678gk")
 metadata/_custom_type_script = "uid://omfigt0jlq7d"
 

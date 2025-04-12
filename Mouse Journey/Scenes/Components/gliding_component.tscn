@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dshmep4htu3fu"]
-
-[ext_resource type="Script" uid="uid://bniihgun4lycg" path="res://Scripts/Components/gliding_component.gd" id="1_fd0wr"]
-
-[node name="GlidingComponent" type="Node"]
-script = ExtResource("1_fd0wr")

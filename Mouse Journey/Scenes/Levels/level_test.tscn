@@ -45,9 +45,6 @@ position = Vector2(280, 44)
 
 [node name="V_MovingPlatform1" parent="MovingPlatforms" instance=ExtResource("9_jp6fi")]
 position = Vector2(120, 50.25)
-vitesse_sec = 50.0
-distance_pixel = 64.0
-direction = 0
 
 [node name="V_MovingPlatform2" parent="MovingPlatforms" instance=ExtResource("10_v7c2p")]
 position = Vector2(160, 16)

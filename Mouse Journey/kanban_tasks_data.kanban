@@ -48,7 +48,8 @@
 			"title": "Done on the current Branch",
 			"tasks": [
 				"d51b7aa1-f926-494e-a890-d60158b9b045",
-				"a1f67e75-dce9-4001-b5e1-557fa377917f"
+				"a1f67e75-dce9-4001-b5e1-557fa377917f",
+				"78d5f6d7-33e1-4c09-9fb8-0c3f6ad843fe"
 			]
 		},
 		{
@@ -1086,6 +1087,13 @@
 			"title": "GAME OVER Screen",
 			"description": "",
 			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
+			"steps": []
+		},
+		{
+			"uuid": "78d5f6d7-33e1-4c09-9fb8-0c3f6ad843fe",
+			"title": "Review Moving Platform",
+			"description": "",
+			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
 			"steps": []
 		}
 	],

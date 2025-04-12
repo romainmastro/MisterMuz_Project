@@ -95,7 +95,7 @@ glide={
 
 [layer_names]
 
-2d_physics/layer_1="World"
+2d_physics/layer_1="Ground"
 2d_physics/layer_2="Player"
 2d_physics/layer_3="Enemies"
 2d_physics/layer_4="Projectile"
@@ -103,6 +103,7 @@ glide={
 2d_physics/layer_6="player_stompbox"
 2d_physics/layer_7="enemy_hitbox"
 2d_physics/layer_8="enemy_deadzone"
+2d_physics/layer_9="Moving_platforms"
 
 [rendering]
 

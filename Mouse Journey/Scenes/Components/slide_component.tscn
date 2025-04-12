@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dii0hn7ugudlr"]
-
-[ext_resource type="Script" uid="uid://byxslr5twf2mx" path="res://Scripts/Components/slide_component.gd" id="1_unvra"]
-
-[node name="slide_component" type="Node"]
-script = ExtResource("1_unvra")

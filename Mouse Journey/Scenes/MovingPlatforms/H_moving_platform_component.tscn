@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bdrcf621wwmls"]
-
-[ext_resource type="Script" uid="uid://bu1c03c3yec5q" path="res://Scripts/Platform/H_moving_platform_component.gd" id="1_kk3n2"]
-
-[node name="MovingPlatformComponent" type="Node"]
-script = ExtResource("1_kk3n2")
