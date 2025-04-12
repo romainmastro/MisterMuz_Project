@@ -1,0 +1,78 @@
+[gd_scene load_steps=8 format=3 uid="uid://iah2f3d4sy1b"]
+
+[ext_resource type="Texture2D" uid="uid://btxk3fe3bc0fj" path="res://Assets/Platforms/Platform1_H.png" id="1_bouvf"]
+[ext_resource type="Script" uid="uid://bapvoxd6wybvi" path="res://Scripts/Platform/moving_platform_path_2d.gd" id="1_ug0bw"]
+
+[sub_resource type="Curve2D" id="Curve2D_ug0bw"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 120, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ug0bw"]
+size = Vector2(16, 16)
+
+[sub_resource type="Animation" id="Animation_bouvf"]
+resource_name = "move"
+length = 2.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(-1.55, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_ug0bw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_beky4"]
+_data = {
+&"RESET": SubResource("Animation_ug0bw"),
+&"move": SubResource("Animation_bouvf")
+}
+
+[node name="MovingPlatform_path2D" type="Path2D" node_paths=PackedStringArray("path", "animation_player")]
+curve = SubResource("Curve2D_ug0bw")
+script = ExtResource("1_ug0bw")
+path = NodePath("PathFollow2D")
+animation_player = NodePath("AnimationPlayer")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+rotates = false
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="PathFollow2D"]
+remote_path = NodePath("../../AnimatableBody2D")
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+z_index = 11
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
+texture = ExtResource("1_bouvf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
+shape = SubResource("RectangleShape2D_ug0bw")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+callback_mode_process = 0
+libraries = {
+&"": SubResource("AnimationLibrary_beky4")
+}
