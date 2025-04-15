@@ -39,24 +39,22 @@
 		{
 			"uuid": "ef4e123f-f6ea-4e30-8896-4ddd7167fd59",
 			"title": "Doing",
-			"tasks": [
-				"15a39291-e009-466b-b404-c158c2685ce8"
-			]
+			"tasks": []
 		},
 		{
 			"uuid": "a590c45f-f6e0-4df4-a178-2596b3213350",
 			"title": "Done on the current Branch",
-			"tasks": [
-				"d51b7aa1-f926-494e-a890-d60158b9b045",
-				"a1f67e75-dce9-4001-b5e1-557fa377917f",
-				"78d5f6d7-33e1-4c09-9fb8-0c3f6ad843fe",
-				"a694631a-096b-4d35-8c3c-3aeaf0231ba3"
-			]
+			"tasks": []
 		},
 		{
 			"uuid": "9573ce0a-9b5d-4fd9-bb69-4b68a3540b99",
 			"title": "DONE => Main Branch",
 			"tasks": [
+				"78d5f6d7-33e1-4c09-9fb8-0c3f6ad843fe",
+				"a694631a-096b-4d35-8c3c-3aeaf0231ba3",
+				"a1f67e75-dce9-4001-b5e1-557fa377917f",
+				"15a39291-e009-466b-b404-c158c2685ce8",
+				"d51b7aa1-f926-494e-a890-d60158b9b045",
 				"845fd582-a06b-4f2d-aa92-1b505f6966bf",
 				"32dc7578-b58d-4a03-8605-bd90ff90dfe9",
 				"a6a8e93d-8abf-4a1b-806f-a239de6f6c58",
@@ -990,21 +988,21 @@
 			"uuid": "a1f67e75-dce9-4001-b5e1-557fa377917f",
 			"title": "wall slide",
 			"description": "",
-			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "d51b7aa1-f926-494e-a890-d60158b9b045",
 			"title": "make new collision layers for hurtbox and hitbox",
 			"description": "",
-			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "15a39291-e009-466b-b404-c158c2685ce8",
 			"title": "REWRITE PLAYER SCENE",
 			"description": "",
-			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": [
 				{
 					"details": "Move left / right",
@@ -1060,7 +1058,7 @@
 				},
 				{
 					"details": "wall slide animation",
-					"done": false
+					"done": true
 				},
 				{
 					"details": "jumping from slide",
@@ -1084,7 +1082,7 @@
 				},
 				{
 					"details": "safe_position",
-					"done": false
+					"done": true
 				}
 			]
 		},
@@ -1099,7 +1097,7 @@
 			"uuid": "78d5f6d7-33e1-4c09-9fb8-0c3f6ad843fe",
 			"title": "Review Moving Platform with Pathfollow",
 			"description": "",
-			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
@@ -1113,7 +1111,7 @@
 			"uuid": "a694631a-096b-4d35-8c3c-3aeaf0231ba3",
 			"title": "Ice_patches!",
 			"description": "",
-			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		}
 	],

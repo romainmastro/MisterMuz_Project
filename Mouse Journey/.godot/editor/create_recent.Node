@@ -1,8 +1,10 @@
+Node2D
+Marker2D
+CPUParticles2D
 Timer
 CollisionShape2D
 Area2D
 Sprite2D
-Node2D
 TileMapLayer
 RayCast2D
 AnimationPlayer
@@ -10,6 +12,3 @@ RemoteTransform2D
 AnimatableBody2D
 PathFollow2D
 Path2D
-Node
-VBoxContainer
-Label

@@ -16,10 +16,12 @@ var ice_patch_overlap : int = 0
 
 #Particles
 @export var marker_particles : Marker2D
+@export var marker_wall_sliding : Marker2D
 @export var snow_trail_particles : CPUParticles2D
 @export var sliding_particles : CPUParticles2D
 @export var jumping_particles : CPUParticles2D
 @export var landing_particles : CPUParticles2D
+@export var wall_sliding_particles : CPUParticles2D
 var current_particles : CPUParticles2D
 
 @export_group("General Settings")
@@ -494,12 +496,6 @@ func respawn_to_last_safe_position() :
 	init_player_after_respawn()
 	show()
 
-	
-func store_last_safe_position() : 
-	if STATE != "DEAD" and is_on_floor() and was_on_floor : 
-		GlobalPlayerStats.last_safe_position = global_position
-		
-		
 func start_knockback(knockback_force: float) -> void:
 	# Calculate the knockback direction.
 	var kb_dir = sign(player_sprite.scale.x)
@@ -586,6 +582,12 @@ func handle_animations() :
 			snowHat_sprite.play("fall")
 			snowsuit_sprite.play("fall")
 			muffler_sprite.play("fall")
+		"WALL_SLIDE" : 
+			player_sprite.play("wall_slide")
+			boots_gloves_sprite.play("wall_slide")
+			snowHat_sprite.play("wall_slide")
+			snowsuit_sprite.play("wall_slide")
+			muffler_sprite.play("wall_slide")
 		"GLIDE" : 
 			player_sprite.play("glide")
 			boots_gloves_sprite.play("fall")
@@ -628,6 +630,12 @@ func handle_particles() :
 			current_particles = sliding_particles
 			current_particles.global_position.x = marker_particles.global_position.x
 			current_particles.global_position.y = marker_particles.global_position.y
+			current_particles.emitting = true
+		
+		"WALL_SLIDE" : 
+			current_particles = wall_sliding_particles
+			current_particles.position.x = marker_wall_sliding.position.x * player_sprite.scale.x
+			current_particles.position.y = marker_wall_sliding.position.y
 			current_particles.emitting = true
 			
 		_ : 

@@ -1,9 +1,9 @@
-res://Scripts/player_v_3.gd
 res://Scenes/player_v_2.tscn
 res://Resources/Level_Maker.tres
 res://Resources/Objects.tres
 res://Resources/Pièges.tres
 res://Resources/Décor.tres
+res://Scripts/player_v_3.gd
 res://Scenes/main.tscn
 res://Scenes/Levels/level_test.tscn
 res://Scenes/MovingPlatforms/moving_platform1.tscn
