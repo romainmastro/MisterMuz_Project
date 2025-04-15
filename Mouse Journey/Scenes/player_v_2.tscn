@@ -1,4 +1,4 @@
-[gd_scene load_steps=124 format=3 uid="uid://cnedwspxo44l3"]
+[gd_scene load_steps=125 format=3 uid="uid://cnedwspxo44l3"]
 
 [ext_resource type="Script" uid="uid://bjtw5iph7mhe" path="res://Scripts/player_v_3.gd" id="1_2tjdf"]
 [ext_resource type="Texture2D" uid="uid://bl388umk28hx6" path="res://Assets/Muz/Muz_JUMP.png" id="1_kw5q3"]
@@ -808,7 +808,10 @@ size = Vector2(4, 2)
 radius = 2.0
 height = 10.0
 
-[node name="PlayerV2" type="CharacterBody2D" node_paths=PackedStringArray("player_sprite", "boots_gloves_sprite", "snowsuit_sprite", "snowHat_sprite", "muffler_sprite", "wall_ray_right", "wall_ray_left", "marker_particles", "snow_trail_particles", "sliding_particles", "jumping_particles", "landing_particles", "coyote_timer")]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2tjdf"]
+size = Vector2(4, 2)
+
+[node name="PlayerV2" type="CharacterBody2D" node_paths=PackedStringArray("player_sprite", "boots_gloves_sprite", "snowsuit_sprite", "snowHat_sprite", "muffler_sprite", "wall_ray_right", "wall_ray_left", "terrain_detector", "marker_particles", "snow_trail_particles", "sliding_particles", "jumping_particles", "landing_particles", "coyote_timer") groups=["player"]]
 z_index = 10
 collision_layer = 2
 collision_mask = 13
@@ -825,6 +828,7 @@ snowHat_sprite = NodePath("SnowHat")
 muffler_sprite = NodePath("Muffler")
 wall_ray_right = NodePath("Raycasts/Wall_ray_Right")
 wall_ray_left = NodePath("Raycasts/Wall_ray_Left")
+terrain_detector = NodePath("terrain_detector")
 marker_particles = NodePath("MARKER/SnowTrailMarker")
 snow_trail_particles = NodePath("PARTICLES/SnowTrailParticles")
 sliding_particles = NodePath("PARTICLES/sliding_particles")
@@ -835,8 +839,10 @@ coyote_grace_sec = 0.2
 
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_dewec")
-animation = &"hurt"
+animation = &"run"
 autoplay = "idle"
+frame = 4
+frame_progress = 0.947488
 offset = Vector2(0, -2)
 
 [node name="Boots_and_Gloves" type="AnimatedSprite2D" parent="."]
@@ -877,7 +883,7 @@ collision_mask = 72
 [node name="StompBox" type="Area2D" parent="." groups=["Player_StompBox"]]
 visible = false
 collision_layer = 32
-collision_mask = 128
+collision_mask = 129
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StompBox"]
 position = Vector2(0, 5)
@@ -887,6 +893,13 @@ shape = SubResource("RectangleShape2D_6hr71")
 visible = false
 scale = Vector2(0.999998, 1)
 shape = SubResource("CapsuleShape2D_dewec")
+
+[node name="terrain_detector" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="terrain_detector"]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_2tjdf")
+debug_color = Color(0.664447, 0.511682, 0.0535455, 0.42)
 
 [node name="PARTICLES" type="Node" parent="."]
 
@@ -915,5 +928,18 @@ target_position = Vector2(10, 0)
 [node name="Wall_ray_Left" type="RayCast2D" parent="Raycasts"]
 target_position = Vector2(-10, 0)
 
+[node name="Terrain_checker" type="RayCast2D" parent="Raycasts"]
+visible = false
+target_position = Vector2(0, 8)
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="SafePosition" type="Timer" parent="."]
+autostart = true
+
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
 [connection signal="area_entered" from="StompBox" to="." method="_on_stomp_box_area_entered"]
+[connection signal="area_entered" from="terrain_detector" to="." method="_on_terrain_detector_area_entered"]
+[connection signal="area_exited" from="terrain_detector" to="." method="_on_terrain_detector_area_exited"]
+[connection signal="body_entered" from="terrain_detector" to="." method="_on_terrain_detector_body_entered"]
+[connection signal="timeout" from="SafePosition" to="." method="_on_safe_position_timeout"]

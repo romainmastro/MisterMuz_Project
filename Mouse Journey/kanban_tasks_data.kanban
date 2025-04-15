@@ -49,7 +49,8 @@
 			"tasks": [
 				"d51b7aa1-f926-494e-a890-d60158b9b045",
 				"a1f67e75-dce9-4001-b5e1-557fa377917f",
-				"78d5f6d7-33e1-4c09-9fb8-0c3f6ad843fe"
+				"78d5f6d7-33e1-4c09-9fb8-0c3f6ad843fe",
+				"a694631a-096b-4d35-8c3c-3aeaf0231ba3"
 			]
 		},
 		{
@@ -1080,6 +1081,10 @@
 				{
 					"details": "Invincibility frame after HURT",
 					"done": true
+				},
+				{
+					"details": "safe_position",
+					"done": false
 				}
 			]
 		},
@@ -1102,6 +1107,13 @@
 			"title": "Upgrades",
 			"description": "❄️ Player Gear & Abilities Reference\n🥾 Snow Boots\nWall Jump: Enables jumping off walls.\n\nIcy Patch Control: Reduces slipperiness on icy surfaces.\n\nOptional (later): Power Stomp – A downward attack to break floors or stun enemies.\n\n🎩 Snow Hat\nGlide: Slows falling, helps cross long gaps.\n\nWind Navigation (Planned): Allows movement through windy areas or wind puzzles.\n\n🧥 Snowsuit\nCold Resistance: Grants access to harsh/freezing zones.\n\nBasic Dash: A short, straight dash (ground or air). No directional control.\n\n🧣 Snow Muffler\nWind Breath:\n\nEnables 8-directional dash (ground or air).\n\nCan push light objects (optional).\n\nSynergy: Upgrades basic dash from Snowsuit into a flexible mobility/combat tool.\n\n",
 			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
+			"steps": []
+		},
+		{
+			"uuid": "a694631a-096b-4d35-8c3c-3aeaf0231ba3",
+			"title": "Ice_patches!",
+			"description": "",
+			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
 			"steps": []
 		}
 	],

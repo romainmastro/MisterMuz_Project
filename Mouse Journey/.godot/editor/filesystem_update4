@@ -1,0 +1,13 @@
+res://Scripts/player_v_3.gd
+res://Scenes/player_v_2.tscn
+res://Resources/Level_Maker.tres
+res://Resources/Objects.tres
+res://Resources/Pièges.tres
+res://Resources/Décor.tres
+res://Scenes/main.tscn
+res://Scenes/Levels/level_test.tscn
+res://Scenes/MovingPlatforms/moving_platform1.tscn
+res://Scenes/MovingPlatforms/moving_platform2.tscn
+res://Scenes/MovingPlatforms/moving_platform_3.tscn
+res://Scenes/Traps/ice_cover.tscn
+res://Scenes/Traps/Trou.tscn

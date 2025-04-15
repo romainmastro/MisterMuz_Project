@@ -44,6 +44,9 @@ enabled=PackedStringArray("res://addons/InstanceDock/plugin.cfg", "res://addons/
 
 Player_StompBox="used to access to the player Stomp area2D"
 player_hurtbox=""
+player=""
+ice_cover=""
+snow_cover=""
 
 [input]
 

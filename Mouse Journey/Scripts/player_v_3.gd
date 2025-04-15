@@ -1,7 +1,7 @@
 class_name PlayerClass
 extends CharacterBody2D
 
-@export_group("Sprite Nodes")
+@export_group("Nodes")
 @export var player_sprite : AnimatedSprite2D
 @export var boots_gloves_sprite : AnimatedSprite2D
 @export var snowsuit_sprite : AnimatedSprite2D
@@ -10,6 +10,10 @@ extends CharacterBody2D
 @export var wall_ray_right : RayCast2D
 @export var wall_ray_left : RayCast2D
 @export var wall_ray_length : int = 6
+@export var terrain_detector : Area2D
+var ice_patch_overlap : int = 0
+
+
 #Particles
 @export var marker_particles : Marker2D
 @export var snow_trail_particles : CPUParticles2D
@@ -20,9 +24,19 @@ var current_particles : CPUParticles2D
 
 @export_group("General Settings")
 @export var gravity : float = 600.0
+# speed variables
 @export var speed : float = 55.0
-@export var ice_accel : float = 6.0
-@export var ice_decel : float = 3.0
+@export var current_speed_multiplier : float = 1.0
+@export var default_speed_multiplier : float = 1.0
+@export var snow_speed_multiplier : float = 1.0
+@export var ice_speed_multiplier : float = 1.5
+# accel variables
+@export var accel : float = 6.0
+@export var accel_snow_multiplier : float = 1.0
+@export var accel_ice_multiplier : float = 0.1
+var current_ground_multiplier : float = 1.0
+var default_ground_multiplier : float = 1.0
+var ground_friction : float = 1.0
 
 @export_group("Health System")
 @export var time_tween_respawn : float = 0.3
@@ -72,6 +86,8 @@ var gliding_offset_hat := -9
 
 var knockback_timer : float = 0.0
 var knockback_velocity : Vector2 = Vector2.ZERO
+
+var safe_position_sec : float = 2.0
 
 
 @export_enum(
@@ -159,8 +175,9 @@ func _physics_process(delta: float) -> void:
 	handle_particles()
 	
 	flip_sprites_smooth(input_dir)
-	
-####################################### ________________ ###########################################
+
+
+####################################### MOVEMENT SET ###########################################
 func process_state_machine(delta : float) : 
 
 	if STATE == "DEAD":
@@ -169,7 +186,6 @@ func process_state_machine(delta : float) :
 		return
 
 	if STATE == "HURT_KNOCKBACK":
-		#knockback(medium_knockback_force)
 		return
 
 	if STATE == "HURT_RESPAWN":
@@ -187,7 +203,7 @@ func process_state_machine(delta : float) :
 	if is_on_floor() and not is_input_locked(): # GROUND STATES
 		match STATE : 
 			"IDLE" : 
-				velocity.x = lerp(velocity.x, input_dir * speed, ice_decel * delta)
+				velocity.x = lerp(velocity.x, input_dir * (speed * current_speed_multiplier), accel * current_ground_multiplier * delta)
 				# TRANSITIONS
 				if input_dir != 0 : 
 					STATE = "RUN"
@@ -198,7 +214,7 @@ func process_state_machine(delta : float) :
 					STATE = "SLIDE"
 					
 			"RUN" : 
-				velocity.x = lerp(velocity.x, input_dir * speed, ice_accel * delta)
+				velocity.x = lerp(velocity.x, input_dir * speed * current_speed_multiplier, accel * current_ground_multiplier * delta)
 				
 				# TRANSITIONS
 				if input_dir == 0 : 
@@ -416,7 +432,7 @@ func is_on_downward_slope() -> bool :
 	var facing_dir : float = sign(player_sprite.scale.x)
 	if not floor_direction.is_equal_approx(Vector2(0, -1)) : 
 		if floor_direction.x != 0 and sign(floor_direction.x) == facing_dir : 
-			if abs(rad_to_deg(get_floor_angle())) > 30 : 
+			if abs(rad_to_deg(get_floor_angle())) > 15 : 
 				return true
 	return false
 func slide(delta : float) : 
@@ -456,6 +472,9 @@ func respawn_to_checkpoint() :
 	await get_tree().create_timer(0.7).timeout
 	global_position = GlobalPlayerStats.current_checkpoint
 
+func init_player_after_respawn() : 
+	STATE = "IDLE"
+	
 func on_death() : 
 	velocity = Vector2.ZERO
 	if GlobalPlayerStats.current_checkpoint != Vector2.ZERO : 
@@ -472,8 +491,15 @@ func respawn_to_last_safe_position() :
 	velocity = Vector2.ZERO
 	hide()
 	global_position = safe_position
+	init_player_after_respawn()
 	show()
 
+	
+func store_last_safe_position() : 
+	if STATE != "DEAD" and is_on_floor() and was_on_floor : 
+		GlobalPlayerStats.last_safe_position = global_position
+		
+		
 func start_knockback(knockback_force: float) -> void:
 	# Calculate the knockback direction.
 	var kb_dir = sign(player_sprite.scale.x)
@@ -499,6 +525,7 @@ func _on_hurt_box_area_entered(area: Area2D) -> void:
 	
 	if area is ClassTrapRespawn: 
 		STATE = "HURT_RESPAWN"
+		respawn_to_last_safe_position()
 		return
 		# hurt animation
 		
@@ -634,7 +661,40 @@ func _on_gliding_animation_changed() -> void:
 
 func _on_stomp_box_area_entered(area: Area2D) -> void:
 	if area is EnemyDeadZoneClass : 
-				rebound()
+		rebound()
 func rebound() : 
 	if velocity.y > 0 : 
 		velocity.y += rebound_speed
+
+########################### GROUND DETECTION #########################################
+func _on_terrain_detector_area_entered(area: Area2D) -> void:
+	if area.is_in_group("ice_cover")  : 
+		ice_patch_overlap += 1
+		if ice_patch_overlap == 1 : 
+			print("Player enter ice-patch")
+			current_speed_multiplier = ice_speed_multiplier
+			current_ground_multiplier = accel_ice_multiplier
+
+func _on_terrain_detector_area_exited(area: Area2D) -> void:
+	if area.is_in_group("ice_cover")  : 
+		ice_patch_overlap -= 1 
+		if ice_patch_overlap <= 0 : 
+			ice_patch_overlap = 0
+			current_speed_multiplier = default_speed_multiplier
+			current_ground_multiplier = default_ground_multiplier
+			print("Player exits ice-patch")
+
+
+func _on_terrain_detector_body_entered(body: Node2D) -> void:
+	if body is TileMapLayer and ice_patch_overlap == 0 : 
+		current_ground_multiplier = accel_snow_multiplier
+		current_speed_multiplier = snow_speed_multiplier
+		print("Player walks snow ground")
+
+
+func _on_safe_position_timeout() -> void:
+	if GlobalPlayerStats.last_safe_position == Vector2.ZERO : 
+		GlobalPlayerStats.last_safe_position = GlobalPlayerStats.current_checkpoint
+	if is_on_floor() and velocity.x != 0 : 
+		GlobalPlayerStats.last_safe_position = global_position
+		print(GlobalPlayerStats.last_safe_position)
