@@ -39,12 +39,16 @@
 		{
 			"uuid": "ef4e123f-f6ea-4e30-8896-4ddd7167fd59",
 			"title": "Doing",
-			"tasks": []
+			"tasks": [
+				"fc4904e2-285b-496c-ab4c-0bb839e641fb"
+			]
 		},
 		{
 			"uuid": "a590c45f-f6e0-4df4-a178-2596b3213350",
 			"title": "Done on the current Branch",
-			"tasks": []
+			"tasks": [
+				"5a9b28ae-b2b7-4c42-bbaf-92f9bb29b137"
+			]
 		},
 		{
 			"uuid": "9573ce0a-9b5d-4fd9-bb69-4b68a3540b99",
@@ -1112,6 +1116,20 @@
 			"title": "Ice_patches!",
 			"description": "",
 			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "fc4904e2-285b-496c-ab4c-0bb839e641fb",
+			"title": "Review Enemies",
+			"description": "",
+			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"steps": []
+		},
+		{
+			"uuid": "5a9b28ae-b2b7-4c42-bbaf-92f9bb29b137",
+			"title": "icy dust on icy_patches",
+			"description": "",
+			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
 			"steps": []
 		}
 	],
