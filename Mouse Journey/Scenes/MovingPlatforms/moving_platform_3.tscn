@@ -10,7 +10,7 @@ _data = {
 point_count = 5
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_anusi"]
-size = Vector2(48, 26)
+size = Vector2(48, 25)
 
 [node name="MovingPlatform3" type="Path2D" node_paths=PackedStringArray("path")]
 curve = SubResource("Curve2D_sgnfo")
@@ -30,4 +30,5 @@ z_index = 11
 texture = ExtResource("2_anusi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
+position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_anusi")

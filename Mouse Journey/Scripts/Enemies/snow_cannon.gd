@@ -169,13 +169,17 @@ func _on_dead_zone_area_entered(area: Area2D) -> void:
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if sprite_wheels.animation == "death" :
 		var tween = create_tween()
-		tween.tween_property(self, "modulate", Color.RED, 0.1)
+		tween.tween_property(self, "modulate", Color.AQUA, 0.1)
 		tween.tween_property(self, "modulate", Color.TRANSPARENT, 0.1)
 		tween.tween_property(self, "modulate", Color.WHITE, 0.1)
-		tween.tween_property(self, "position:y", -35, 0.4).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
-		tween.parallel().tween_property(self, "position:y", 50, 0.4).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
-		
 		await tween.finished
+		
+		$CharacterBody2D/DeathParticles.emitting = true
+		sprite_body.visible = false
+		sprite_wheels.visible = false
+		await get_tree().create_timer(0.6).timeout
 		queue_free()
+		
+	
 	elif (sprite_wheels.animation == "wheels_shoot_left" or sprite_wheels.animation == "wheels_shoot_right"): 
 		shoot_anim_activate = false

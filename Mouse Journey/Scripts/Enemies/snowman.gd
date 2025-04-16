@@ -16,6 +16,8 @@ extends CharacterBody2D
 var direction : float = 1
 var is_dead : bool = false
 
+var should_flip : bool = false
+
 func _ready() -> void:
 	
 	match direction_départ : 
@@ -36,13 +38,22 @@ func _physics_process(delta: float) -> void:
 		move_and_slide()
 		
 		if is_on_wall() : 
-			direction = -direction
+			should_flip = true
 		
-		check_platform_edge()
+		if not ray.is_colliding() : 
+			should_flip = true
+		
+		if should_flip : 
+			flip_direction()
 		
 		update_animation()
 		
 		update_ray_offset()
+
+func flip_direction() : 
+	direction *= -1
+	ray.position.x *= -1
+	should_flip = false
 
 func update_ray_offset() : 
 	ray.position.x = ray_offset * direction
@@ -53,22 +64,27 @@ func get_direction() -> float :
 func update_animation() : 
 	direction = get_direction()
 	
-	if direction == 1 : 
+	if direction == 1 and animated_sprite.animation != "walk_right" : 
 		animated_sprite.play("walk_right")
-	else : 
-		animated_sprite.play("walk_left")
+		
+	elif direction == -1 and animated_sprite.animation != "walk_left" : 
+			animated_sprite.play("walk_left")
 
-func handle_death() : 
+	
+func handle_death():
+	if is_dead : 
+		return
 	is_dead = true
 	collision_shape.set_deferred("disabled", true)
 	hitbox.set_deferred("monitorable", false)
 	hitbox.set_deferred("monitoring", false)
 	deadzone.set_deferred("monitorable", false)
 	deadzone.set_deferred("monitoring", false)
-	
-	# flash Red
+
+
+		## flash Red
 	var tween = create_tween()
-	tween.tween_property(self, "modulate", Color.RED, 0.1)
+	tween.tween_property(self, "modulate", Color.AQUA, 0.1)
 	tween.chain().tween_property(self, "modulate", Color.TRANSPARENT, 0.1)
 	tween.chain().tween_property(self, "modulate", Color.WHITE, 0.1)
 	
@@ -76,16 +92,11 @@ func handle_death() :
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if animated_sprite.animation == "death" :
-		var tween = create_tween()
-		tween.tween_property(self, "position:y", -35, 0.4).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
-		tween.chain().tween_property(self, "position:y", 50, 0.4).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
-		await tween.finished
+		$DeathParticles.emitting = true
+		animated_sprite.visible = false
+		await get_tree().create_timer(0.6).timeout
 		queue_free()
 
-func check_platform_edge() : 
-	if not ray.is_colliding() : 
-		direction = -direction
-		ray.position.x *= -1
 
 func _on_dead_zone_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Player_StompBox") : 

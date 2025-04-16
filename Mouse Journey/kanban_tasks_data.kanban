@@ -40,14 +40,16 @@
 			"uuid": "ef4e123f-f6ea-4e30-8896-4ddd7167fd59",
 			"title": "Doing",
 			"tasks": [
-				"fc4904e2-285b-496c-ab4c-0bb839e641fb"
+				"c8c7a597-2d5f-408a-a480-d827360de836"
 			]
 		},
 		{
 			"uuid": "a590c45f-f6e0-4df4-a178-2596b3213350",
 			"title": "Done on the current Branch",
 			"tasks": [
-				"5a9b28ae-b2b7-4c42-bbaf-92f9bb29b137"
+				"5a9b28ae-b2b7-4c42-bbaf-92f9bb29b137",
+				"fc4904e2-285b-496c-ab4c-0bb839e641fb",
+				"d551749a-285e-425f-9d78-79ec14e8f6fe"
 			]
 		},
 		{
@@ -1120,7 +1122,7 @@
 		},
 		{
 			"uuid": "fc4904e2-285b-496c-ab4c-0bb839e641fb",
-			"title": "Review Enemies",
+			"title": "Review SnowMan",
 			"description": "",
 			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
 			"steps": []
@@ -1128,6 +1130,20 @@
 		{
 			"uuid": "5a9b28ae-b2b7-4c42-bbaf-92f9bb29b137",
 			"title": "icy dust on icy_patches",
+			"description": "",
+			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"steps": []
+		},
+		{
+			"uuid": "d551749a-285e-425f-9d78-79ec14e8f6fe",
+			"title": "safe position update doesn't need to happen if don't move",
+			"description": "",
+			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"steps": []
+		},
+		{
+			"uuid": "c8c7a597-2d5f-408a-a480-d827360de836",
+			"title": "review SnowCannon Enemy code",
 			"description": "",
 			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
 			"steps": []

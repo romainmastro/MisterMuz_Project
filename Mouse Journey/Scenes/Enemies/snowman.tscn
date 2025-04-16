@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://drkytl5ykatsd"]
+[gd_scene load_steps=26 format=3 uid="uid://drkytl5ykatsd"]
 
 [ext_resource type="Texture2D" uid="uid://dntnhku08bx6l" path="res://Assets/Enemies/Snowman/snowman_WALK_LEFT.png" id="1_fbkas"]
 [ext_resource type="Script" uid="uid://bvkokp4wj1aq6" path="res://Scripts/Enemies/snowman.gd" id="1_xtkee"]
@@ -71,6 +71,12 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_dvrkf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dvrkf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dvrkf")
 }],
 "loop": false,
 "name": &"death",
@@ -133,6 +139,11 @@ size = Vector2(2.5, 12)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x2qtj"]
 size = Vector2(10, 6)
 
+[sub_resource type="Gradient" id="Gradient_x2qtj"]
+offsets = PackedFloat32Array(0, 0.6, 1)
+colors = PackedColorArray(0.372549, 0.803922, 0.894118, 1, 0.601569, 0.84, 1, 0.8, 0.369757, 0.805801, 0.894329, 0)
+metadata/_snap_count = 5
+
 [node name="Snowman" type="CharacterBody2D" node_paths=PackedStringArray("gravity_component", "animated_sprite", "hitbox", "deadzone", "collision_shape", "ray")]
 z_index = 5
 collision_layer = 4
@@ -150,7 +161,7 @@ wall_ray = NodePath("../RayCast2D")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_dvrkf")
-animation = &"walk_right"
+animation = &"death"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 11)
@@ -184,6 +195,25 @@ debug_color = Color(1.92523e-07, 0.547659, 0.136525, 0.42)
 [node name="RayCast2D" type="RayCast2D" parent="."]
 position = Vector2(8, 16)
 target_position = Vector2(0, 16)
+
+[node name="DeathParticles" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 12
+one_shot = true
+explosiveness = 1.0
+randomness = 0.5
+emission_shape = 2
+emission_sphere_radius = 3.0
+direction = Vector2(0, -1)
+gravity = Vector2(0, 200)
+initial_velocity_max = 150.0
+angular_velocity_min = -64.13
+angular_velocity_max = 99.11
+angle_min = -100.0
+angle_max = 100.0
+scale_amount_min = 2.0
+scale_amount_max = 4.0
+color_ramp = SubResource("Gradient_x2qtj")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="DeadZone" to="." method="_on_dead_zone_area_entered"]
