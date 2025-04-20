@@ -394,11 +394,12 @@ offsets = PackedFloat32Array(0, 0.6, 1)
 colors = PackedColorArray(0.372549, 0.803922, 0.894118, 1, 0.601569, 0.84, 1, 0.8, 0.369757, 0.805801, 0.894329, 0)
 metadata/_snap_count = 5
 
-[node name="CharacterBody2D" type="CharacterBody2D" node_paths=PackedStringArray("ray_right", "ray_left")]
+[node name="CharacterBody2D" type="CharacterBody2D" node_paths=PackedStringArray("ray_right", "ray_left", "platform_check")]
 collision_layer = 4
 script = ExtResource("1_d6xxm")
 ray_right = NodePath("DetectionRight")
 ray_left = NodePath("DetectionLeft")
+platform_check = NodePath("PlatformCheck")
 start_direction = "DROITE"
 
 [node name="AnimatedSprite_Wheels" type="AnimatedSprite2D" parent="."]
