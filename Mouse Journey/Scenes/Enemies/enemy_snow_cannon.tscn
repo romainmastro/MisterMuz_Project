@@ -1,6 +1,6 @@
 [gd_scene load_steps=63 format=3 uid="uid://7rd2wku4lem"]
 
-[ext_resource type="Script" uid="uid://bpw4t855dxc7d" path="res://Scripts/Enemies/snow_cannon.gd" id="1_62m7u"]
+[ext_resource type="Script" uid="uid://da150y1lnvjts" path="res://Scripts/Enemies/snow_cannon_V2.gd" id="1_d6xxm"]
 [ext_resource type="Texture2D" uid="uid://clmyho5pl1q3p" path="res://Assets/Enemies/SnowCanon/SnowCannon_WHEEL_MOVE_RIGHT.png" id="1_pxm4j"]
 [ext_resource type="Texture2D" uid="uid://bfum6ardkyt7h" path="res://Assets/Enemies/SnowCanon/SnowCannon_WHEEL_MOVE_LEFT.png" id="2_27pbr"]
 [ext_resource type="Texture2D" uid="uid://bwvq4ucs5eseg" path="res://Assets/Enemies/SnowCanon/SnowCannon_MOVE_RIGHT.png" id="2_62m7u"]
@@ -394,86 +394,73 @@ offsets = PackedFloat32Array(0, 0.6, 1)
 colors = PackedColorArray(0.372549, 0.803922, 0.894118, 1, 0.601569, 0.84, 1, 0.8, 0.369757, 0.805801, 0.894329, 0)
 metadata/_snap_count = 5
 
-[node name="EnemySnowCannon" type="Node2D" node_paths=PackedStringArray("me", "collision_shape", "sprite_body", "sprite_wheels", "deadzone", "hitbox", "ray", "ray_detectionRight", "ray_detectionLeft", "muzzle", "shooting_timer", "gravity_component")]
-z_index = 5
-script = ExtResource("1_62m7u")
-me = NodePath("CharacterBody2D")
-collision_shape = NodePath("CharacterBody2D/CollisionShape2D")
-sprite_body = NodePath("CharacterBody2D/AnimatedSprite_Body")
-sprite_wheels = NodePath("CharacterBody2D/AnimatedSprite_Wheels")
-deadzone = NodePath("CharacterBody2D/DeadZone")
-hitbox = NodePath("CharacterBody2D/Hitbox")
-ray = NodePath("CharacterBody2D/PlatformCheck")
-ray_detectionRight = NodePath("CharacterBody2D/DetectionRight")
-ray_detectionLeft = NodePath("CharacterBody2D/DetectionLeft")
-muzzle = NodePath("CharacterBody2D/Muzzle")
-shooting_timer = NodePath("CharacterBody2D/shooting_timer")
-gravity_component = NodePath("gravity_component")
-ray_offset = 8
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="CharacterBody2D" type="CharacterBody2D" node_paths=PackedStringArray("ray_right", "ray_left")]
 collision_layer = 4
+script = ExtResource("1_d6xxm")
+ray_right = NodePath("DetectionRight")
+ray_left = NodePath("DetectionLeft")
+start_direction = "DROITE"
 
-[node name="AnimatedSprite_Wheels" type="AnimatedSprite2D" parent="CharacterBody2D"]
+[node name="AnimatedSprite_Wheels" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_gb3tx")
 animation = &"wheels_shoot_left"
 
-[node name="AnimatedSprite_Body" type="AnimatedSprite2D" parent="CharacterBody2D"]
+[node name="AnimatedSprite_Body" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_dgxkx")
 animation = &"shoot_left"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 11)
 shape = SubResource("CapsuleShape2D_gb3tx")
 
-[node name="DeadZone" type="Area2D" parent="CharacterBody2D"]
+[node name="DeadZone" type="Area2D" parent="."]
 visible = false
 collision_layer = 128
 collision_mask = 32
 script = ExtResource("7_6untu")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/DeadZone"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeadZone"]
 position = Vector2(1.5, 1)
 shape = SubResource("RectangleShape2D_r7jm4")
 debug_color = Color(1.92523e-07, 0.547659, 0.136525, 0.42)
 
-[node name="Hitbox" type="Area2D" parent="CharacterBody2D"]
+[node name="Hitbox" type="Area2D" parent="."]
 visible = false
 collision_layer = 64
 collision_mask = 16
 script = ExtResource("8_82chp")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Hitbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2(-6.25, 8)
 shape = SubResource("RectangleShape2D_82chp")
 debug_color = Color(0.996541, 0.0506893, 3.85046e-07, 0.42)
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="CharacterBody2D/Hitbox"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2(9.5, 7.5)
 shape = SubResource("RectangleShape2D_e1cy4")
 debug_color = Color(0.994608, 0, 0.219316, 0.42)
 
-[node name="PlatformCheck" type="RayCast2D" parent="CharacterBody2D"]
+[node name="PlatformCheck" type="RayCast2D" parent="."]
 position = Vector2(9, 9)
 target_position = Vector2(0, 32)
 
-[node name="DetectionRight" type="RayCast2D" parent="CharacterBody2D"]
+[node name="DetectionRight" type="RayCast2D" parent="."]
 position = Vector2(0, 8)
 target_position = Vector2(70, 0)
 collision_mask = 3
 
-[node name="DetectionLeft" type="RayCast2D" parent="CharacterBody2D"]
+[node name="DetectionLeft" type="RayCast2D" parent="."]
 position = Vector2(0, 8)
 target_position = Vector2(-51, 0)
 collision_mask = 3
 
-[node name="Muzzle" type="Node2D" parent="CharacterBody2D"]
+[node name="Muzzle" type="Node2D" parent="."]
 position = Vector2(10, 10)
 
-[node name="shooting_timer" type="Timer" parent="CharacterBody2D"]
+[node name="shooting_timer" type="Timer" parent="."]
 one_shot = true
 
-[node name="DeathParticles" type="CPUParticles2D" parent="CharacterBody2D"]
+[node name="DeathParticles" type="CPUParticles2D" parent="."]
 position = Vector2(0, 8)
 emitting = false
 amount = 12
@@ -494,7 +481,4 @@ scale_amount_max = 4.0
 color_ramp = SubResource("Gradient_d6xxm")
 
 [node name="gravity_component" parent="." node_paths=PackedStringArray("wall_ray") instance=ExtResource("6_rq6ld")]
-wall_ray = NodePath("../CharacterBody2D/PlatformCheck")
-
-[connection signal="animation_finished" from="CharacterBody2D/AnimatedSprite_Wheels" to="." method="_on_animated_sprite_2d_animation_finished"]
-[connection signal="area_entered" from="CharacterBody2D/DeadZone" to="." method="_on_dead_zone_area_entered"]
+wall_ray = NodePath("../PlatformCheck")

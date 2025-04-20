@@ -1,4 +1,4 @@
-class_name SnowCanonEnemy
+#class_name SnowCanonEnemy
 extends Node2D
 
 @export var me : CharacterBody2D
