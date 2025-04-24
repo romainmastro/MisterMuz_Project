@@ -1,9 +1,0 @@
-res://Scenes/Enemies/enemy_snow_cannon.tscn
-res://Resources/Level_Maker.tres
-res://Resources/Objects.tres
-res://Resources/Pièges.tres
-res://Resources/Décor.tres
-res://Scripts/Enemies/snow_cannon_V2.gd
-res://Scenes/main.tscn
-res://Scenes/Levels/level_test.tscn
-res://Scenes/Enemies/snowman.tscn
