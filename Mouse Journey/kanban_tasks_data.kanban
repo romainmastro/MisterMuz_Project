@@ -40,22 +40,22 @@
 			"uuid": "ef4e123f-f6ea-4e30-8896-4ddd7167fd59",
 			"title": "Doing",
 			"tasks": [
-				"c8c7a597-2d5f-408a-a480-d827360de836"
+				"c8c7a597-2d5f-408a-a480-d827360de836",
+				"6c3e228a-cd03-4b8b-9eae-897ec041fa82"
 			]
 		},
 		{
 			"uuid": "a590c45f-f6e0-4df4-a178-2596b3213350",
 			"title": "Done on the current Branch",
-			"tasks": [
-				"5a9b28ae-b2b7-4c42-bbaf-92f9bb29b137",
-				"fc4904e2-285b-496c-ab4c-0bb839e641fb",
-				"d551749a-285e-425f-9d78-79ec14e8f6fe"
-			]
+			"tasks": []
 		},
 		{
 			"uuid": "9573ce0a-9b5d-4fd9-bb69-4b68a3540b99",
 			"title": "DONE => Main Branch",
 			"tasks": [
+				"d551749a-285e-425f-9d78-79ec14e8f6fe",
+				"fc4904e2-285b-496c-ab4c-0bb839e641fb",
+				"5a9b28ae-b2b7-4c42-bbaf-92f9bb29b137",
 				"78d5f6d7-33e1-4c09-9fb8-0c3f6ad843fe",
 				"a694631a-096b-4d35-8c3c-3aeaf0231ba3",
 				"a1f67e75-dce9-4001-b5e1-557fa377917f",
@@ -1124,21 +1124,21 @@
 			"uuid": "fc4904e2-285b-496c-ab4c-0bb839e641fb",
 			"title": "Review SnowMan",
 			"description": "",
-			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "5a9b28ae-b2b7-4c42-bbaf-92f9bb29b137",
 			"title": "icy dust on icy_patches",
 			"description": "",
-			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "d551749a-285e-425f-9d78-79ec14e8f6fe",
 			"title": "safe position update doesn't need to happen if don't move",
 			"description": "",
-			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
@@ -1147,6 +1147,38 @@
 			"description": "",
 			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
 			"steps": []
+		},
+		{
+			"uuid": "6c3e228a-cd03-4b8b-9eae-897ec041fa82",
+			"title": "build SnowMole Enemy",
+			"description": "",
+			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"steps": [
+				{
+					"details": "1. IDLE : switch between 2 mounds",
+					"done": true
+				},
+				{
+					"details": "2. When detect player : jump",
+					"done": true
+				},
+				{
+					"details": "3. Fall back into mound",
+					"done": true
+				},
+				{
+					"details": "random jumps",
+					"done": true
+				},
+				{
+					"details": "random mounds",
+					"done": true
+				},
+				{
+					"details": "particles",
+					"done": true
+				}
+			]
 		}
 	],
 	"layout": {

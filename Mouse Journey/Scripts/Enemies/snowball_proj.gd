@@ -1,7 +1,7 @@
 class_name Snowball_proj2
 extends Area2D
 
-var speed : float = 30.0
+var speed : float = 50.0
 var direction : int = 1
 @export var damage_amount : int = 1
 

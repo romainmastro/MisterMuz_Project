@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5geyp8k0j21u"
-path="res://.godot/imported/mound.png-d55fdedfcdc66778ffb9a353792b2400.ctex"
+uid="uid://l4p5ppxydpy1"
+path="res://.godot/imported/snow_mole_IDLE.png-8b4732f34087653642097948d3a1979d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Enemies/SnowTurret/mound.png"
-dest_files=["res://.godot/imported/mound.png-d55fdedfcdc66778ffb9a353792b2400.ctex"]
+source_file="res://Assets/Enemies/SnowMole/snow_mole_IDLE.png"
+dest_files=["res://.godot/imported/snow_mole_IDLE.png-8b4732f34087653642097948d3a1979d.ctex"]
 
 [params]
 

@@ -1,3 +1,4 @@
+res://Assets/Enemies/SnowMole
 res://Scenes/Enemies
 res://Scripts/Enemies
 res://Assets/Muz/Muffler
@@ -19,4 +20,3 @@ res://Scenes/Enemies/Components
 res://Scenes/Components
 res://Scripts/Components
 res://Scripts/UI
-res://Scenes/UI
