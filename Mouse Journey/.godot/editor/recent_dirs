@@ -1,6 +1,7 @@
-res://Assets/Enemies/SnowMole
-res://Scenes/Enemies
 res://Scripts/Enemies
+res://Scenes/Enemies
+res://Assets/Enemies/SnowMole/SnowMoleV2
+res://Assets/Enemies/SnowMole
 res://Assets/Muz/Muffler
 res://Assets/Muz/Snowhat
 res://Assets/Muz/SnowSuit
@@ -19,4 +20,3 @@ res://Assets/Enemies/Snowman
 res://Scenes/Enemies/Components
 res://Scenes/Components
 res://Scripts/Components
-res://Scripts/UI

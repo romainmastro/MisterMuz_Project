@@ -1,8 +1,9 @@
-res://Scenes/main.tscn
 res://Resources/Level_Maker.tres
 res://Resources/Objects.tres
 res://Resources/Pièges.tres
 res://Resources/Décor.tres
+res://Scenes/Enemies/snow_mole_v_2.tscn
+res://Scripts/Enemies/snow_mole_with_mounds_V2.gd
 res://Scenes/Levels/level_test.tscn
+res://Scenes/main.tscn
 res://Scenes/Enemies/snow_mole_with_mounds_2.tscn
-res://Scripts/Enemies/snow_mole_with_mounds.gd

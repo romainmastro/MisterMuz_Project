@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://b1vi7lh2l2ldh" path="res://Scenes/Environment/sign_Start_Level.tscn" id="2_ojicq"]
 [ext_resource type="TileSet" uid="uid://cvxyb7jcx6hel" path="res://Resources/Pièges.tres" id="3_ojicq"]
 [ext_resource type="PackedScene" uid="uid://drkytl5ykatsd" path="res://Scenes/Enemies/snowman.tscn" id="4_qkmes"]
-[ext_resource type="PackedScene" uid="uid://dh5prvbbds41m" path="res://Scenes/Enemies/snow_mole_with_mounds_2.tscn" id="5_c3dre"]
+[ext_resource type="PackedScene" uid="uid://clfpnmetsqo8h" path="res://Scenes/Enemies/snow_mole_v_2.tscn" id="5_c3dre"]
 [ext_resource type="PackedScene" uid="uid://i0orgaj0vukb" path="res://Scenes/MovingPlatforms/moving_platform2.tscn" id="6_1bsl4"]
 [ext_resource type="PackedScene" uid="uid://iah2f3d4sy1b" path="res://Scenes/MovingPlatforms/moving_platform1.tscn" id="6_c3dre"]
 [ext_resource type="PackedScene" uid="uid://c6rs8jj1o6baq" path="res://Scenes/MovingPlatforms/moving_platform_3.tscn" id="8_n7phb"]
@@ -27,8 +27,8 @@ tile_set = ExtResource("3_ojicq")
 [node name="Snowman" parent="Enemies" instance=ExtResource("4_qkmes")]
 position = Vector2(392, 96)
 
-[node name="SnowMole_with_Mounds2" parent="Enemies" instance=ExtResource("5_c3dre")]
-position = Vector2(512, 109.95)
+[node name="SnowMoleV2" parent="Enemies" instance=ExtResource("5_c3dre")]
+position = Vector2(523.099, 110.017)
 
 [node name="MovingPlatforms" type="Node2D" parent="."]
 

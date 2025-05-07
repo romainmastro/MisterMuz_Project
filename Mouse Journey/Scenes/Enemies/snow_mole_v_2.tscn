@@ -1,0 +1,84 @@
+[gd_scene load_steps=10 format=3 uid="uid://clfpnmetsqo8h"]
+
+[ext_resource type="Script" uid="uid://bgnjxmtlf2ns4" path="res://Scripts/Enemies/snow_mole_with_mounds_V2.gd" id="1_80r1u"]
+[ext_resource type="Texture2D" uid="uid://crio55m60j1ac" path="res://Assets/Enemies/SnowMole/SnowMoleV2/SnowMole_IDLE.png" id="1_ce5q5"]
+[ext_resource type="Texture2D" uid="uid://c7c8t8fs6qfwe" path="res://Assets/Enemies/SnowMole/SnowMoleV2/SnowMole_JUMP.png" id="2_sp11u"]
+[ext_resource type="Texture2D" uid="uid://cawq62ys23tg7" path="res://Assets/Enemies/SnowMole/mound_V2.png" id="4_80r1u"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_80r1u"]
+atlas = ExtResource("1_ce5q5")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7tded"]
+atlas = ExtResource("1_ce5q5")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fw268"]
+atlas = ExtResource("2_sp11u")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_patd1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_80r1u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7tded")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fw268")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ce5q5"]
+radius = 3.93979
+height = 8.07758
+
+[node name="SnowMoleV2" type="Node2D" node_paths=PackedStringArray("snow_mole", "snow_mole_anim_sprite", "MOUNDS", "switch_mound_timer", "underground_timer")]
+script = ExtResource("1_80r1u")
+snow_mole = NodePath("snow_mole")
+snow_mole_anim_sprite = NodePath("snow_mole/AnimatedSprite2D")
+MOUNDS = [NodePath("Mounds/Mound1"), NodePath("Mounds/Mound2")]
+switch_mound_timer = NodePath("switch_mounds_timer")
+underground_timer = NodePath("underground_timer")
+
+[node name="snow_mole" type="CharacterBody2D" parent="."]
+z_index = -1
+collision_layer = 4
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="snow_mole"]
+sprite_frames = SubResource("SpriteFrames_patd1")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="snow_mole"]
+position = Vector2(0.0516853, -2.91225)
+shape = SubResource("CapsuleShape2D_ce5q5")
+
+[node name="Mounds" type="Node2D" parent="."]
+
+[node name="Mound1" type="Sprite2D" parent="Mounds"]
+position = Vector2(-40, 0)
+texture = ExtResource("4_80r1u")
+
+[node name="Mound2" type="Sprite2D" parent="Mounds"]
+position = Vector2(40, 0)
+texture = ExtResource("4_80r1u")
+
+[node name="switch_mounds_timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="underground_timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="switch_mounds_timer" to="." method="_on_switch_mounds_timer_timeout"]
+[connection signal="timeout" from="underground_timer" to="." method="_on_underground_timer_timeout"]

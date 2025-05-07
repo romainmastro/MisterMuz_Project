@@ -39,7 +39,7 @@ func _physics_process(delta: float) -> void:
 	# apply gravity
 	snow_mole.velocity.y += gravity * delta
 	
-	#switch_sprite_scale()
+	switch_sprite_scale()
 	
 	if snow_mole.is_on_floor() : 
 		
@@ -163,9 +163,9 @@ func should_jump() -> bool :
 func switch_sprite_scale() : 
 	match current_state : 
 		"JUMPING", "FALLING" : 
-			snow_mole_anim_sprite.scale = Vector2(1.2, 1.2)
-		_ : 
 			snow_mole_anim_sprite.scale = Vector2(1, 1)
+		_ : 
+			snow_mole_anim_sprite.scale = Vector2(0.7, 0.7)
 ######################"" DEBUG ############################
 func get_debug_state() : 
 	debug_state.text = current_state
