@@ -1,9 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://clfpnmetsqo8h"]
+[gd_scene load_steps=16 format=3 uid="uid://clfpnmetsqo8h"]
 
 [ext_resource type="Script" uid="uid://bgnjxmtlf2ns4" path="res://Scripts/Enemies/snow_mole_with_mounds_V2.gd" id="1_80r1u"]
 [ext_resource type="Texture2D" uid="uid://crio55m60j1ac" path="res://Assets/Enemies/SnowMole/SnowMoleV2/SnowMole_IDLE.png" id="1_ce5q5"]
 [ext_resource type="Texture2D" uid="uid://c7c8t8fs6qfwe" path="res://Assets/Enemies/SnowMole/SnowMoleV2/SnowMole_JUMP.png" id="2_sp11u"]
 [ext_resource type="Texture2D" uid="uid://cawq62ys23tg7" path="res://Assets/Enemies/SnowMole/mound_V2.png" id="4_80r1u"]
+[ext_resource type="Script" uid="uid://c6dcvl7ynfcrq" path="res://Scripts/Enemies/hitbox.gd" id="5_7tded"]
+[ext_resource type="Script" uid="uid://vd7tu4wfujqn" path="res://Scripts/Enemies/dead_zone.gd" id="5_fw268"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fw268"]
 atlas = ExtResource("2_sp11u")
@@ -43,6 +45,18 @@ animations = [{
 radius = 3.93979
 height = 8.07758
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_patd1"]
+size = Vector2(2.3997, 20.3205)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fw268"]
+size = Vector2(2.3997, 20.3205)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xrboh"]
+size = Vector2(13.2906, 1.84592)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_frktr"]
+size = Vector2(8.73735, 3.13806)
+
 [node name="SnowMoleV2" type="Node2D" node_paths=PackedStringArray("snow_mole", "snow_mole_anim_sprite", "MOUNDS", "switch_mound_timer", "underground_timer", "attacking_cooldown", "ray_right", "ray_left")]
 script = ExtResource("1_80r1u")
 snow_mole = NodePath("snow_mole")
@@ -60,7 +74,7 @@ collision_layer = 4
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="snow_mole"]
 sprite_frames = SubResource("SpriteFrames_patd1")
-animation = &"idle"
+animation = &"attack"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="snow_mole"]
 position = Vector2(0.0516853, -2.91225)
@@ -90,6 +104,38 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 7
 text = "snow_state"
 horizontal_alignment = 1
+
+[node name="EnemyHitboxClass" type="Area2D" parent="snow_mole"]
+collision_layer = 64
+collision_mask = 16
+script = ExtResource("5_7tded")
+metadata/_custom_type_script = "uid://c6dcvl7ynfcrq"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="snow_mole/EnemyHitboxClass"]
+position = Vector2(-5.50243, 3.31135)
+shape = SubResource("RectangleShape2D_patd1")
+debug_color = Color(0.897202, 0.158826, 0.673321, 0.42)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="snow_mole/EnemyHitboxClass"]
+position = Vector2(5.32696, 2.85756)
+shape = SubResource("RectangleShape2D_fw268")
+debug_color = Color(0.897202, 0.158826, 0.673321, 0.42)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="snow_mole/EnemyHitboxClass"]
+position = Vector2(0.127625, 13.8792)
+shape = SubResource("RectangleShape2D_xrboh")
+debug_color = Color(0.897202, 0.158826, 0.673321, 0.42)
+
+[node name="EnemyDeadZoneClass" type="Area2D" parent="snow_mole"]
+collision_layer = 128
+collision_mask = 32
+script = ExtResource("5_fw268")
+metadata/_custom_type_script = "uid://vd7tu4wfujqn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="snow_mole/EnemyDeadZoneClass"]
+position = Vector2(-0.1185, -7.9949)
+shape = SubResource("RectangleShape2D_frktr")
+debug_color = Color(1.44392e-07, 0.645657, 0.255219, 0.42)
 
 [node name="Mounds" type="Node2D" parent="."]
 
