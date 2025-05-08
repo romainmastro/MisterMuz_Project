@@ -5,6 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://c7c8t8fs6qfwe" path="res://Assets/Enemies/SnowMole/SnowMoleV2/SnowMole_JUMP.png" id="2_sp11u"]
 [ext_resource type="Texture2D" uid="uid://cawq62ys23tg7" path="res://Assets/Enemies/SnowMole/mound_V2.png" id="4_80r1u"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_fw268"]
+atlas = ExtResource("2_sp11u")
+region = Rect2(0, 0, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_80r1u"]
 atlas = ExtResource("1_ce5q5")
 region = Rect2(0, 0, 32, 32)
@@ -13,12 +17,16 @@ region = Rect2(0, 0, 32, 32)
 atlas = ExtResource("1_ce5q5")
 region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fw268"]
-atlas = ExtResource("2_sp11u")
-region = Rect2(0, 0, 32, 32)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_patd1"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fw268")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_80r1u")
@@ -29,27 +37,22 @@ animations = [{
 "loop": true,
 "name": &"idle",
 "speed": 3.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fw268")
-}],
-"loop": true,
-"name": &"jump",
-"speed": 5.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ce5q5"]
 radius = 3.93979
 height = 8.07758
 
-[node name="SnowMoleV2" type="Node2D" node_paths=PackedStringArray("snow_mole", "snow_mole_anim_sprite", "MOUNDS", "switch_mound_timer", "underground_timer")]
+[node name="SnowMoleV2" type="Node2D" node_paths=PackedStringArray("snow_mole", "snow_mole_anim_sprite", "MOUNDS", "switch_mound_timer", "underground_timer", "attacking_cooldown", "ray_right", "ray_left")]
 script = ExtResource("1_80r1u")
 snow_mole = NodePath("snow_mole")
 snow_mole_anim_sprite = NodePath("snow_mole/AnimatedSprite2D")
 MOUNDS = [NodePath("Mounds/Mound1"), NodePath("Mounds/Mound2")]
 switch_mound_timer = NodePath("switch_mounds_timer")
 underground_timer = NodePath("underground_timer")
+attacking_cooldown = NodePath("attacking_cooldown")
+ray_right = NodePath("snow_mole/RayRight")
+ray_left = NodePath("snow_mole/RayLeft")
 
 [node name="snow_mole" type="CharacterBody2D" parent="."]
 z_index = -1
@@ -62,6 +65,31 @@ animation = &"idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="snow_mole"]
 position = Vector2(0.0516853, -2.91225)
 shape = SubResource("CapsuleShape2D_ce5q5")
+
+[node name="RayRight" type="RayCast2D" parent="snow_mole"]
+target_position = Vector2(24, 0)
+collision_mask = 2
+
+[node name="RayLeft" type="RayCast2D" parent="snow_mole"]
+target_position = Vector2(-24, 0)
+collision_mask = 2
+
+[node name="Control" type="Control" parent="snow_mole"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="snow_mole/Control"]
+layout_mode = 0
+offset_left = -63.0028
+offset_top = -47.1171
+offset_right = 69.9972
+offset_bottom = -24.1171
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 7
+text = "snow_state"
+horizontal_alignment = 1
 
 [node name="Mounds" type="Node2D" parent="."]
 
@@ -78,7 +106,13 @@ wait_time = 2.0
 one_shot = true
 
 [node name="underground_timer" type="Timer" parent="."]
+wait_time = 0.8
+one_shot = true
+
+[node name="attacking_cooldown" type="Timer" parent="."]
+wait_time = 0.8
 one_shot = true
 
 [connection signal="timeout" from="switch_mounds_timer" to="." method="_on_switch_mounds_timer_timeout"]
 [connection signal="timeout" from="underground_timer" to="." method="_on_underground_timer_timeout"]
+[connection signal="timeout" from="attacking_cooldown" to="." method="_on_attacking_cooldown_timeout"]
