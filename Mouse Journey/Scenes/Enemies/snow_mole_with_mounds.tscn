@@ -27,11 +27,8 @@ _data = {
 &"idle": SubResource("Animation_jlh6j")
 }
 
-[node name="SnowMole_with_Mounds" type="Node2D" node_paths=PackedStringArray("mole_visuals_anim_player", "snow_mole_idle", "snow_mole_jumping", "snow_mole", "SNOWMOUNDS", "go_underground_timer", "travel_timer")]
+[node name="SnowMole_with_Mounds" type="Node2D" node_paths=PackedStringArray("snow_mole", "SNOWMOUNDS", "go_underground_timer", "travel_timer")]
 script = ExtResource("1_wjrat")
-mole_visuals_anim_player = NodePath("SnowMole_V2_Jumping/mole_visuals_anim_player")
-snow_mole_idle = NodePath("SnowMole_V2_Jumping/SnowMoleIdle")
-snow_mole_jumping = NodePath("SnowMole_V2_Jumping/SnowMoleJumping")
 snow_mole = NodePath("SnowMole_V2_Jumping")
 SNOWMOUNDS = [NodePath("Mounds/Mound1"), NodePath("Mounds/Mound2")]
 go_underground_timer = NodePath("go_underground_timer")

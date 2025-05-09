@@ -5,5 +5,8 @@ res://Resources/Pièges.tres
 res://Resources/Décor.tres
 res://Scenes/main.tscn
 res://Scenes/Levels/level_test.tscn
-res://Scenes/Enemies/snow_mole_with_mounds_2.tscn
 res://Scenes/Enemies/snowman.tscn
+res://Scripts/Enemies/snow_mole_with_mounds_V2.gd
+res://Scenes/Enemies/snow_mole_with_mounds_2.tscn
+res://Scenes/Enemies/snow_mole_with_mounds.tscn
+res://Scenes/player_v_2.tscn

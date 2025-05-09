@@ -1176,7 +1176,15 @@
 				},
 				{
 					"details": "particles",
+					"done": false
+				},
+				{
+					"details": "create Death animation",
 					"done": true
+				},
+				{
+					"details": "implement death",
+					"done": false
 				}
 			]
 		}

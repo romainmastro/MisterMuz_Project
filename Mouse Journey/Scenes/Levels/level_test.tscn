@@ -30,6 +30,9 @@ position = Vector2(392, 96)
 [node name="SnowMoleV2" parent="Enemies" instance=ExtResource("5_c3dre")]
 position = Vector2(523.099, 110.017)
 
+[node name="SnowMoleV3" parent="Enemies" instance=ExtResource("5_c3dre")]
+position = Vector2(560, 110.017)
+
 [node name="MovingPlatforms" type="Node2D" parent="."]
 
 [node name="MovingPlatform2" parent="MovingPlatforms" instance=ExtResource("6_1bsl4")]
