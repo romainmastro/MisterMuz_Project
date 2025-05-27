@@ -81,8 +81,9 @@ func handle_death():
 	deadzone.set_deferred("monitorable", false)
 	deadzone.set_deferred("monitoring", false)
 
+	await do_hit_stop()
 
-		## flash Red
+		## flash 
 	var tween = create_tween()
 	tween.tween_property(self, "modulate", Color.AQUA, 0.1)
 	tween.chain().tween_property(self, "modulate", Color.TRANSPARENT, 0.1)
@@ -102,3 +103,8 @@ func _on_dead_zone_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Player_StompBox") : 
 		print("snowman is Dead")
 		handle_death()
+
+func do_hit_stop(duration := 0.5, slowdown_factor := 0.5) -> void:
+	Engine.time_scale = slowdown_factor
+	await get_tree().create_timer(duration * slowdown_factor, true).timeout
+	Engine.time_scale = 1.0

@@ -1,3 +1,4 @@
+res://Assets/Enemies/SnowCanon
 res://Assets/Enemies/SnowMole/SnowMoleV2
 res://Scripts/Enemies
 res://Scenes/Enemies
@@ -15,7 +16,6 @@ res://Scripts/Platform
 res://Scripts
 res://
 res://Scenes
-res://Assets/Enemies/SnowCanon
 res://Assets/Enemies/Snowman
 res://Scenes/Enemies/Components
 res://Scenes/Components

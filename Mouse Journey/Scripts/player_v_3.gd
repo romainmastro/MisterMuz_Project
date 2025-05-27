@@ -10,6 +10,7 @@ extends CharacterBody2D
 @export var wall_ray_right : RayCast2D
 @export var wall_ray_left : RayCast2D
 @export var wall_ray_length : int = 6
+@export var stompbox : Area2D
 @export var terrain_detector : Area2D
 var ice_patch_overlap : int = 0
 
@@ -188,9 +189,14 @@ func process_state_machine(delta : float) :
 		return
 
 	if STATE == "HURT_KNOCKBACK":
+		#deactivate collisions with Stompbox
+		stompbox.monitorable = false
+		stompbox.monitoring = false
 		return
 
 	if STATE == "HURT_RESPAWN":
+		stompbox.monitorable = false
+		stompbox.monitoring = false
 		respawn_to_last_safe_position()
 		return
 
@@ -205,6 +211,10 @@ func process_state_machine(delta : float) :
 	if is_on_floor() and not is_input_locked(): # GROUND STATES
 		match STATE : 
 			"IDLE" : 
+				if stompbox.monitorable == false and stompbox.monitoring == false : 
+					stompbox.monitorable = true
+					stompbox.monitoring = true
+					
 				velocity.x = lerp(velocity.x, input_dir * (speed * current_speed_multiplier), accel * current_ground_multiplier * delta)
 				# TRANSITIONS
 				if input_dir != 0 : 

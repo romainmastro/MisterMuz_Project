@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://bk4vquv415c77"]
+[gd_scene load_steps=10 format=4 uid="uid://bk4vquv415c77"]
 
 [ext_resource type="TileSet" uid="uid://cvn6rtpn15ve6" path="res://Resources/Level_Maker.tres" id="1_vflva"]
 [ext_resource type="PackedScene" uid="uid://b1vi7lh2l2ldh" path="res://Scenes/Environment/sign_Start_Level.tscn" id="2_ojicq"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://i0orgaj0vukb" path="res://Scenes/MovingPlatforms/moving_platform2.tscn" id="6_1bsl4"]
 [ext_resource type="PackedScene" uid="uid://iah2f3d4sy1b" path="res://Scenes/MovingPlatforms/moving_platform1.tscn" id="6_c3dre"]
 [ext_resource type="PackedScene" uid="uid://c6rs8jj1o6baq" path="res://Scenes/MovingPlatforms/moving_platform_3.tscn" id="8_n7phb"]
+[ext_resource type="PackedScene" uid="uid://7rd2wku4lem" path="res://Scenes/Enemies/enemy_snow_cannon.tscn" id="9_n7phb"]
 
 [node name="Level_Test" type="Node2D"]
 
@@ -32,6 +33,9 @@ position = Vector2(523.099, 110.017)
 
 [node name="SnowMoleV3" parent="Enemies" instance=ExtResource("5_c3dre")]
 position = Vector2(560, 110.017)
+
+[node name="SnowCanon" parent="Enemies" instance=ExtResource("9_n7phb")]
+position = Vector2(362.848, 96)
 
 [node name="MovingPlatforms" type="Node2D" parent="."]
 

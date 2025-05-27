@@ -40,8 +40,7 @@
 			"uuid": "ef4e123f-f6ea-4e30-8896-4ddd7167fd59",
 			"title": "Doing",
 			"tasks": [
-				"c8c7a597-2d5f-408a-a480-d827360de836",
-				"6c3e228a-cd03-4b8b-9eae-897ec041fa82"
+				"25e39056-f16e-4cb5-88b8-0deaa0e6a02c"
 			]
 		},
 		{
@@ -53,6 +52,8 @@
 			"uuid": "9573ce0a-9b5d-4fd9-bb69-4b68a3540b99",
 			"title": "DONE => Main Branch",
 			"tasks": [
+				"c8c7a597-2d5f-408a-a480-d827360de836",
+				"6c3e228a-cd03-4b8b-9eae-897ec041fa82",
 				"d551749a-285e-425f-9d78-79ec14e8f6fe",
 				"fc4904e2-285b-496c-ab4c-0bb839e641fb",
 				"5a9b28ae-b2b7-4c42-bbaf-92f9bb29b137",
@@ -1145,14 +1146,27 @@
 			"uuid": "c8c7a597-2d5f-408a-a480-d827360de836",
 			"title": "review SnowCannon Enemy code",
 			"description": "",
-			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
-			"steps": []
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": [
+				{
+					"details": "bug death",
+					"done": true
+				},
+				{
+					"details": "redo particles",
+					"done": true
+				},
+				{
+					"details": "do hit stop",
+					"done": true
+				}
+			]
 		},
 		{
 			"uuid": "6c3e228a-cd03-4b8b-9eae-897ec041fa82",
 			"title": "build SnowMole Enemy",
 			"description": "",
-			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": [
 				{
 					"details": "1. IDLE : switch between 2 mounds",
@@ -1176,7 +1190,7 @@
 				},
 				{
 					"details": "particles",
-					"done": false
+					"done": true
 				},
 				{
 					"details": "create Death animation",
@@ -1184,9 +1198,23 @@
 				},
 				{
 					"details": "implement death",
-					"done": false
+					"done": true
 				}
 			]
+		},
+		{
+			"uuid": "25e39056-f16e-4cb5-88b8-0deaa0e6a02c",
+			"title": "deactivate the stompbox when player hit",
+			"description": "",
+			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"steps": []
+		},
+		{
+			"uuid": "7020b763-c45c-43fd-8c31-0938906e67d2",
+			"title": "New task",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
 		}
 	],
 	"layout": {

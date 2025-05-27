@@ -17,10 +17,10 @@
 }, {
 "name": "Enemies",
 "scenes": [{
-&"scene": "res://Scenes/Enemies/enemy_snow_cannon.tscn"
-}, {
 &"scene": "res://Scenes/Enemies/snowman.tscn"
 }, {
-&"scene": "res://Scenes/Enemies/snow_turret_enemy.tscn"
+&"scene": "res://Scenes/Enemies/enemy_snow_cannon.tscn"
+}, {
+&"scene": "res://Scenes/Enemies/snow_mole_v_2.tscn"
 }]
 }]

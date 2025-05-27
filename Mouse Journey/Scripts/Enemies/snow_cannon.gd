@@ -71,8 +71,8 @@ func _physics_process(delta: float) -> void:
 			reverse_direction_on_wall_collision()
 			shoot() 
 		
-		"dead" : 
-			pass
+		#"dead" : 
+			#pass
 
 	if not state == "dead" :
 		update_ray_offsets()
@@ -112,6 +112,7 @@ func update_animations() :
 						sprite_wheels.play("wheels_shoot_right")
 						sprite_body.play("shoot_right")
 		"dead" : 
+			await do_hit_stop()
 			deactivate_collisions()
 			sprite_wheels.play("death")
 			sprite_body.play("death")
@@ -168,13 +169,14 @@ func _on_dead_zone_area_entered(area: Area2D) -> void:
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if sprite_wheels.animation == "death" :
+		
 		var tween = create_tween()
 		tween.tween_property(self, "modulate", Color.AQUA, 0.1)
 		tween.tween_property(self, "modulate", Color.TRANSPARENT, 0.1)
 		tween.tween_property(self, "modulate", Color.WHITE, 0.1)
 		await tween.finished
 		
-		$CharacterBody2D/DeathParticles.emitting = true
+		$DeathParticles.emitting = true
 		sprite_body.visible = false
 		sprite_wheels.visible = false
 		await get_tree().create_timer(0.6).timeout
@@ -183,3 +185,8 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 	
 	elif (sprite_wheels.animation == "wheels_shoot_left" or sprite_wheels.animation == "wheels_shoot_right"): 
 		shoot_anim_activate = false
+
+func do_hit_stop(duration := 0.5, slowdown_factor := 0.5) -> void:
+	Engine.time_scale = slowdown_factor
+	await get_tree().create_timer(duration * slowdown_factor, true).timeout
+	Engine.time_scale = 1.0
