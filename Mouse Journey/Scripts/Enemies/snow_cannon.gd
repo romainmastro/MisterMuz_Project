@@ -70,9 +70,6 @@ func _physics_process(delta: float) -> void:
 		"shooting" :
 			reverse_direction_on_wall_collision()
 			shoot() 
-		
-		#"dead" : 
-			#pass
 
 	if not state == "dead" :
 		update_ray_offsets()

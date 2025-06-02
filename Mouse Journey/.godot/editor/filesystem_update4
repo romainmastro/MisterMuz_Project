@@ -1,5 +1,8 @@
-res://Scenes/player_v_2.tscn
+res://Scenes/Levels/level_1_romain.tscn
 res://Resources/Level_Maker.tres
-res://Resources/Objects.tres
 res://Resources/Pièges.tres
+res://Resources/Objects.tres
 res://Resources/Décor.tres
+res://Scenes/Traps/stalagtite_Tombante.tscn
+res://Scenes/Environment/checkpoint.tscn
+res://Scenes/Traps/Snowball.tscn

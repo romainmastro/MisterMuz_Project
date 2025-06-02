@@ -13,6 +13,8 @@
 &"scene": "res://Scenes/Traps/BouleDeNeige_portail.tscn"
 }, {
 &"scene": "res://Scenes/Traps/stalagtite_Tombante.tscn"
+}, {
+&"scene": "res://Scenes/Traps/modifiable_stalagmite_1_kb.tscn"
 }]
 }, {
 "name": "Enemies",

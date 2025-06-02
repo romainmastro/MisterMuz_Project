@@ -381,7 +381,7 @@ radius = 5.0
 height = 10.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r7jm4"]
-size = Vector2(19, 4)
+size = Vector2(20, 4)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_82chp"]
 size = Vector2(3.5, 13)
@@ -396,6 +396,7 @@ metadata/_snap_count = 5
 
 [node name="SnowCanon" type="CharacterBody2D" node_paths=PackedStringArray("me", "collision_shape", "sprite_body", "sprite_wheels", "deadzone", "hitbox", "ray", "ray_detectionRight", "ray_detectionLeft", "muzzle", "shooting_timer", "gravity_component")]
 collision_layer = 4
+floor_max_angle = 0.523599
 script = ExtResource("1_d6xxm")
 me = NodePath(".")
 collision_shape = NodePath("CollisionShape2D")
@@ -428,7 +429,7 @@ collision_mask = 32
 script = ExtResource("7_6untu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeadZone"]
-position = Vector2(1.5, 1)
+position = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_r7jm4")
 debug_color = Color(1.92523e-07, 0.547659, 0.136525, 0.42)
 
@@ -438,12 +439,12 @@ collision_mask = 16
 script = ExtResource("8_82chp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(-6.25, 8)
+position = Vector2(-6, 9)
 shape = SubResource("RectangleShape2D_82chp")
 debug_color = Color(0.996541, 0.0506893, 3.85046e-07, 0.42)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(9.5, 7.5)
+position = Vector2(8, 9)
 shape = SubResource("RectangleShape2D_e1cy4")
 debug_color = Color(0.994608, 0, 0.219316, 0.42)
 

@@ -2,6 +2,7 @@ extends Node2D
 
 @export var player : PlayerClass
 
+@onready var Level1_romain = preload("res://Scenes/Levels/level_1_romain.tscn")
 @onready var Level1 = preload("res://Scenes/Levels/level_eline.tscn")
 @onready var Level2 = preload("res://Scenes/Levels/level_sophie.tscn")
 @onready var LevelTest = preload("res://Scenes/Levels/level_test.tscn")
@@ -60,7 +61,7 @@ func _ready() -> void:
 	GlobalPlayerStats.show_congrats_screen.connect(show_CongratsScreen)
 	GlobalPlayerStats.next_level.connect(handle_level_change)
 	
-	var level_to_load = LevelTest.instantiate()
+	var level_to_load = Level1_romain.instantiate()
 	world.add_child(level_to_load, true)
 	
 	starting_position(level_to_load)

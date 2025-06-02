@@ -1,3 +1,5 @@
+res://Scenes/Traps
+res://Scenes/Levels
 res://Assets/Enemies/SnowCanon
 res://Assets/Enemies/SnowMole/SnowMoleV2
 res://Scripts/Enemies
@@ -8,7 +10,6 @@ res://Assets/Muz/Snowhat
 res://Assets/Muz/SnowSuit
 res://Assets/Muz/Boots and gloves
 res://Assets/Muz
-res://Scenes/Traps
 res://Scripts/Test
 res://Assets/TileSet
 res://Scenes/MovingPlatforms
@@ -19,4 +20,3 @@ res://Scenes
 res://Assets/Enemies/Snowman
 res://Scenes/Enemies/Components
 res://Scenes/Components
-res://Scripts/Components

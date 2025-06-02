@@ -108,6 +108,10 @@ glide={
 2d_physics/layer_8="enemy_deadzone"
 2d_physics/layer_9="Moving_platforms"
 
+[physics]
+
+2d/default_gravity=450.0
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0

@@ -1024,9 +1024,8 @@ autoplay = "idle"
 offset = Vector2(0, -2)
 
 [node name="HurtBox" parent="." groups=["player_hurtbox"] instance=ExtResource("28_l0oiw")]
-visible = false
 position = Vector2(0, -1)
-scale = Vector2(0.960503, 0.976)
+scale = Vector2(1.1605, 0.976)
 collision_layer = 16
 collision_mask = 72
 
@@ -1108,6 +1107,7 @@ collide_with_bodies = false
 autostart = true
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
+[connection signal="body_entered" from="HurtBox" to="." method="body_entered"]
 [connection signal="area_entered" from="StompBox" to="." method="_on_stomp_box_area_entered"]
 [connection signal="area_entered" from="terrain_detector" to="." method="_on_terrain_detector_area_entered"]
 [connection signal="area_exited" from="terrain_detector" to="." method="_on_terrain_detector_area_exited"]

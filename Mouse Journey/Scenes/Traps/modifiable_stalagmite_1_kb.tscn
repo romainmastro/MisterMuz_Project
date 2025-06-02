@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cqsgkagwskqrc"]
+[gd_scene load_steps=4 format=3 uid="uid://cdgplbix6c2sg"]
 
-[ext_resource type="Script" uid="uid://kj2qaxhiyhow" path="res://Scripts/Traps/stalagmite_KB.gd" id="1_j2n0k"]
-[ext_resource type="Texture2D" uid="uid://be58h5ralkjk6" path="res://Assets/Traps/Stalagmites1x.png" id="2_d623t"]
+[ext_resource type="Script" uid="uid://kj2qaxhiyhow" path="res://Scripts/Traps/stalagmite_KB.gd" id="1_omarw"]
+[ext_resource type="Texture2D" uid="uid://be58h5ralkjk6" path="res://Assets/Traps/Stalagmites1x.png" id="2_qu3nl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s7wn5"]
 size = Vector2(16, 9)
@@ -9,11 +9,11 @@ size = Vector2(16, 9)
 [node name="H_Stalagmite1_KB" type="Area2D"]
 collision_layer = 64
 collision_mask = 16
-script = ExtResource("1_j2n0k")
+script = ExtResource("1_omarw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -8)
-texture = ExtResource("2_d623t")
+texture = ExtResource("2_qu3nl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -4)

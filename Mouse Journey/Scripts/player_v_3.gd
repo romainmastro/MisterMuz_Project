@@ -481,7 +481,7 @@ func take_damage(damage_amount : int) :
 	await tween.finished
 
 func respawn_to_checkpoint() :
-	await get_tree().create_timer(0.7).timeout
+	await get_tree().create_timer(0.2).timeout
 	global_position = GlobalPlayerStats.current_checkpoint
 
 func init_player_after_respawn() : 
@@ -530,18 +530,20 @@ func _on_hurt_box_area_entered(area: Area2D) -> void:
 	invincible_timer = invincible_frame_sec
 	
 	if area is ClassTrapRespawn: 
+		print("HURT by Trap ReSpawn")
 		STATE = "HURT_RESPAWN"
 		respawn_to_last_safe_position()
 		return
 		# hurt animation
 		
 	elif area is ClassTrapKnockBack : 
+		print("HURT by Trap KnockBack")
 		STATE = "HURT_KNOCKBACK"
 		start_knockback(medium_knockback_force)
 		return
 		
 	elif area is EnemyHitboxClass : 
-		print("HURT by Enemy")
+		
 		STATE = "HURT_KNOCKBACK"
 		start_knockback(medium_knockback_force)
 		return
@@ -553,8 +555,8 @@ func _on_hurt_box_area_entered(area: Area2D) -> void:
 
 func body_entered(body : Node2D) : 
 		if not invincible_timer > 0 : 
-
 			if body is TrapSnowballClass:
+				print("HURT by Trap Snowball")
 				STATE = "HURT_KNOCKBACK"
 				take_damage(body.damage_amount)
 				velocity = Vector2.ZERO
