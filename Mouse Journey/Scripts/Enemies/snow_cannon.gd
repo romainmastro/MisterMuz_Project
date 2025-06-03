@@ -1,12 +1,9 @@
 #class_name SnowCanonEnemy
-extends Node2D
+extends enemy_class
 
 @export var me : CharacterBody2D
-@export var collision_shape : CollisionShape2D
 @export var sprite_body : AnimatedSprite2D
 @export var sprite_wheels : AnimatedSprite2D
-@export var deadzone : Area2D
-@export var hitbox : Area2D
 @export var ray : RayCast2D
 @export var ray_detectionRight : RayCast2D
 @export var ray_detectionLeft : RayCast2D
@@ -22,7 +19,6 @@ extends Node2D
 @export_enum("gauche", "droite") var direction_départ = "droite"
 var speed : float = 25.0
 var direction : int = 1
-var is_dead : bool = false
 
 @export_enum("patroling", "shooting", "dead") var state = "patroling"
 
@@ -183,7 +179,7 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 	elif (sprite_wheels.animation == "wheels_shoot_left" or sprite_wheels.animation == "wheels_shoot_right"): 
 		shoot_anim_activate = false
 
-func do_hit_stop(duration := 0.5, slowdown_factor := 0.5) -> void:
-	Engine.time_scale = slowdown_factor
-	await get_tree().create_timer(duration * slowdown_factor, true).timeout
-	Engine.time_scale = 1.0
+
+func _on_hitbox_area_entered(area: Area2D) -> void:
+	if area.is_in_group("traps") : 
+		direction = -direction

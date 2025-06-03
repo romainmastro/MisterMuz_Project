@@ -15,14 +15,18 @@
 &"scene": "res://Scenes/Traps/stalagtite_Tombante.tscn"
 }, {
 &"scene": "res://Scenes/Traps/modifiable_stalagmite_1_kb.tscn"
+}, {
+&"scene": "res://Scenes/Traps/V_L_stalagmite_1_Repousseur.tscn"
+}, {
+&"scene": "res://Scenes/Traps/V_R_stalagmite_1_Repousseur.tscn"
 }]
 }, {
 "name": "Enemies",
 "scenes": [{
-&"scene": "res://Scenes/Enemies/snowman.tscn"
+&"scene": "res://Scenes/Enemies/snowman_spawn_point.tscn"
 }, {
-&"scene": "res://Scenes/Enemies/enemy_snow_cannon.tscn"
+&"scene": "res://Scenes/Enemies/snowcanon_spawn_point.tscn"
 }, {
-&"scene": "res://Scenes/Enemies/snow_mole_v_2.tscn"
+&"scene": "res://Scenes/Enemies/snow_mole_spawn_point.tscn"
 }]
 }]

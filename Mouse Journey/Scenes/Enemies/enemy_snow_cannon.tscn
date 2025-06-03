@@ -394,22 +394,24 @@ offsets = PackedFloat32Array(0, 0.6, 1)
 colors = PackedColorArray(0.372549, 0.803922, 0.894118, 1, 0.601569, 0.84, 1, 0.8, 0.369757, 0.805801, 0.894329, 0)
 metadata/_snap_count = 5
 
-[node name="SnowCanon" type="CharacterBody2D" node_paths=PackedStringArray("me", "collision_shape", "sprite_body", "sprite_wheels", "deadzone", "hitbox", "ray", "ray_detectionRight", "ray_detectionLeft", "muzzle", "shooting_timer", "gravity_component")]
+[node name="SnowCanon" type="CharacterBody2D" node_paths=PackedStringArray("me", "sprite_body", "sprite_wheels", "ray", "ray_detectionRight", "ray_detectionLeft", "muzzle", "shooting_timer", "gravity_component", "collision_shape", "hitbox", "deadzone", "animated_sprite", "death_particles")]
 collision_layer = 4
 floor_max_angle = 0.523599
 script = ExtResource("1_d6xxm")
 me = NodePath(".")
-collision_shape = NodePath("CollisionShape2D")
 sprite_body = NodePath("AnimatedSprite_Body")
 sprite_wheels = NodePath("AnimatedSprite_Wheels")
-deadzone = NodePath("DeadZone")
-hitbox = NodePath("Hitbox")
 ray = NodePath("PlatformCheck")
 ray_detectionRight = NodePath("DetectionRight")
 ray_detectionLeft = NodePath("DetectionLeft")
 muzzle = NodePath("Muzzle")
 shooting_timer = NodePath("shooting_timer")
 gravity_component = NodePath("gravity_component")
+collision_shape = NodePath("CollisionShape2D")
+hitbox = NodePath("Hitbox")
+deadzone = NodePath("DeadZone")
+animated_sprite = NodePath("AnimatedSprite_Wheels")
+death_particles = NodePath("DeathParticles")
 
 [node name="AnimatedSprite_Wheels" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_gb3tx")
@@ -435,7 +437,7 @@ debug_color = Color(1.92523e-07, 0.547659, 0.136525, 0.42)
 
 [node name="Hitbox" type="Area2D" parent="."]
 collision_layer = 64
-collision_mask = 16
+collision_mask = 80
 script = ExtResource("8_82chp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
@@ -493,3 +495,4 @@ wall_ray = NodePath("../PlatformCheck")
 
 [connection signal="animation_finished" from="AnimatedSprite_Wheels" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="DeadZone" to="." method="_on_dead_zone_area_entered"]
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]

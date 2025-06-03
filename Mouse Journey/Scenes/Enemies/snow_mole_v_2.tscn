@@ -129,7 +129,7 @@ offsets = PackedFloat32Array(0, 0.6, 1)
 colors = PackedColorArray(0.372549, 0.803922, 0.894118, 1, 0.601569, 0.84, 1, 0.8, 0.369757, 0.805801, 0.894329, 0)
 metadata/_snap_count = 5
 
-[node name="SnowMoleV2" type="Node2D" node_paths=PackedStringArray("snow_mole", "snow_mole_anim_sprite", "MOUNDS", "switch_mound_timer", "underground_timer", "attacking_cooldown", "ray_right", "ray_left", "collision_shape", "hitbox", "deadzone")]
+[node name="SnowMoleV2" type="CharacterBody2D" node_paths=PackedStringArray("snow_mole", "snow_mole_anim_sprite", "MOUNDS", "switch_mound_timer", "underground_timer", "attacking_cooldown", "ray_right", "ray_left", "collision_shape", "hitbox", "deadzone", "animated_sprite", "death_particles")]
 script = ExtResource("1_80r1u")
 snow_mole = NodePath("snow_mole")
 snow_mole_anim_sprite = NodePath("snow_mole/AnimatedSprite2D")
@@ -142,6 +142,8 @@ ray_left = NodePath("snow_mole/RayLeft")
 collision_shape = NodePath("snow_mole/CollisionShape2D")
 hitbox = NodePath("snow_mole/EnemyHitboxClass")
 deadzone = NodePath("snow_mole/EnemyDeadZoneClass")
+animated_sprite = NodePath("snow_mole/AnimatedSprite2D")
+death_particles = NodePath("snow_mole/DeathParticles")
 
 [node name="snow_mole" type="CharacterBody2D" parent="."]
 z_index = -1
@@ -165,7 +167,7 @@ collision_mask = 2
 
 [node name="EnemyHitboxClass" type="Area2D" parent="snow_mole"]
 collision_layer = 64
-collision_mask = 16
+collision_mask = 80
 script = ExtResource("5_7tded")
 metadata/_custom_type_script = "uid://c6dcvl7ynfcrq"
 

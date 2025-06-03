@@ -65,3 +65,5 @@ func _ready() -> void:
 	world.add_child(level_to_load, true)
 	
 	starting_position(level_to_load)
+	
+	GlobalEnemyManager.spawn()

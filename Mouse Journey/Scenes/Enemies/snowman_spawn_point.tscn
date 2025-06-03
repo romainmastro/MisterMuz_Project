@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwfqouvfqxvk5"]
+
+[ext_resource type="Script" uid="uid://decoekjkdsj3i" path="res://Scripts/Enemies/snowman_enemy_spawn_point.gd" id="1_7maby"]
+[ext_resource type="Texture2D" uid="uid://bkpx3ghw3ric6" path="res://Assets/Enemies/Snowman/snowman_HURT.png" id="2_tbufq"]
+
+[node name="enemy_spawn_point" type="Marker2D" groups=["enemy_spawn_points"]]
+z_index = 3
+gizmo_extents = 16.0
+script = ExtResource("1_7maby")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_tbufq")

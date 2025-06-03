@@ -1,4 +1,4 @@
-extends Node2D
+extends enemy_class
 
 @export var snow_mole : CharacterBody2D
 @export var snow_mole_anim_sprite : AnimatedSprite2D
@@ -9,9 +9,6 @@ var current_mound_index : int = 0
 @export var attacking_cooldown : Timer
 @export var ray_right : RayCast2D
 @export var ray_left : RayCast2D
-@export var collision_shape : CollisionShape2D
-@export var hitbox : Area2D
-@export var deadzone : Area2D
 
 @export_enum("IDLING", "SWITCHING_MOUND","TRAVELING_UNDERGROUND", "ATTACKING", "DEAD") var current_state = "IDLING"
 @export var gravity : float = 600.0
@@ -26,9 +23,6 @@ var has_left_floor : bool = false
 var has_attacked_once : bool = false
 var has_left_floor_to_attack : bool = false
 var snow_mole_collision_enabled : bool = true
-
-
-var is_dead : bool = false
 
 var snow_mole_scale : Vector2 = Vector2(0.8, 0.8)
 
@@ -189,10 +183,6 @@ func enable_snow_mole_collision() :
 	deadzone.set_deferred("monitorable", true)
 	deadzone.set_deferred("monitoring", true)
 
-func do_hit_stop(duration := 0.5, slowdown_factor := 0.5) -> void:
-	Engine.time_scale = slowdown_factor
-	await get_tree().create_timer(duration * slowdown_factor, true).timeout
-	Engine.time_scale = 1.0
 
 func _on_enemy_dead_zone_class_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Player_StompBox") : 

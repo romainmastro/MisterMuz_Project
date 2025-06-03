@@ -483,6 +483,7 @@ func take_damage(damage_amount : int) :
 func respawn_to_checkpoint() :
 	await get_tree().create_timer(0.2).timeout
 	global_position = GlobalPlayerStats.current_checkpoint
+	GlobalEnemyManager.spawn()
 
 func init_player_after_respawn() : 
 	STATE = "IDLE"
