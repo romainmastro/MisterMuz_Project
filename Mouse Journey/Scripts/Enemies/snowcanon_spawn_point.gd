@@ -1,8 +1,8 @@
 extends Marker2D
 
 @export var enemy_type := "SnowCanon"
-@export var get_respawned : bool = true
-var was_killed : bool = false
+@export_enum("gauche", "droite") var direction_départ = "droite"
+@export var speed : float = 25.0
 
 func _ready() -> void:
 	visible = false

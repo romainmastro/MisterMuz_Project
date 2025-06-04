@@ -23,14 +23,22 @@ func spawn() :
 			"SnowMan" : 
 				var snowman = SNOWMAN.instantiate()
 				snowman.global_position = node.global_position
+				snowman.speed = node.speed
+				snowman.direction_départ = node.direction_départ
 				enemy_node_path.add_child(snowman)
 			"SnowCanon" : 
 				var snowcanon = ENEMY_SNOW_CANNON.instantiate()
 				snowcanon.global_position = node.global_position
+				snowcanon.speed = node.speed
+				snowcanon.direction_départ = node.direction_départ
 				enemy_node_path.add_child(snowcanon)
 			"SnowMole" : 
 				var snowmole = SNOW_MOLE_V_2.instantiate()
 				snowmole.global_position = node.global_position
+				snowmole.hop_force = node.hop_force
+				snowmole.attacking_force = node.attacking_force
+				snowmole.switch_mound_wait_time = node.switch_mound_wait_time
+				snowmole.underground_timer_wait_time = node.underground_timer_wait_time
 				enemy_node_path.add_child(snowmole)
 			_ : 
 				printerr("The enemy doesn't exist! See GlobalEnemyManager")

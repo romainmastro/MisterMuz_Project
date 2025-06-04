@@ -35,7 +35,8 @@
 				"f1649e68-55c8-4394-a8a8-903669540d44",
 				"ef9a25df-950f-4d92-baca-77688806a127",
 				"00cd1f31-6aea-4faf-be9a-509a0b2c9509",
-				"25e39056-f16e-4cb5-88b8-0deaa0e6a02c"
+				"25e39056-f16e-4cb5-88b8-0deaa0e6a02c",
+				"f63183d9-b7eb-4ab2-83e5-5cb70f0cd183"
 			]
 		},
 		{
@@ -46,19 +47,18 @@
 		{
 			"uuid": "a590c45f-f6e0-4df4-a178-2596b3213350",
 			"title": "Done on the current Branch",
-			"tasks": [
-				"56829527-f6e3-4e1b-9808-94f29cf22761",
-				"dd6ef053-6c7b-4e81-9a91-9551d4cdf9aa",
-				"1d935cc9-61b4-42f1-821b-457767f1ff27",
-				"6cf91bd4-46a9-4812-8127-1535a474b5e0",
-				"a35cc607-7d29-4f3c-9633-2ecfc0337d04",
-				"21a59a3c-50b0-46fc-858b-4b5a4bbb0202"
-			]
+			"tasks": []
 		},
 		{
 			"uuid": "9573ce0a-9b5d-4fd9-bb69-4b68a3540b99",
 			"title": "DONE => Main Branch",
 			"tasks": [
+				"21a59a3c-50b0-46fc-858b-4b5a4bbb0202",
+				"6cf91bd4-46a9-4812-8127-1535a474b5e0",
+				"a35cc607-7d29-4f3c-9633-2ecfc0337d04",
+				"dd6ef053-6c7b-4e81-9a91-9551d4cdf9aa",
+				"1d935cc9-61b4-42f1-821b-457767f1ff27",
+				"56829527-f6e3-4e1b-9808-94f29cf22761",
 				"c8c7a597-2d5f-408a-a480-d827360de836",
 				"6c3e228a-cd03-4b8b-9eae-897ec041fa82",
 				"d551749a-285e-425f-9d78-79ec14e8f6fe",
@@ -1227,14 +1227,14 @@
 			"uuid": "a35cc607-7d29-4f3c-9633-2ecfc0337d04",
 			"title": "Enemies should collide and turn around when touching stalagmites",
 			"description": "",
-			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "1d935cc9-61b4-42f1-821b-457767f1ff27",
 			"title": "BUG : can be hit while dead so respawn with 2 hearts instead of 3 (FIXED)",
 			"description": "",
-			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
@@ -1248,28 +1248,35 @@
 			"uuid": "56829527-f6e3-4e1b-9808-94f29cf22761",
 			"title": "BUG : snowball don't hit (FIXED)",
 			"description": "",
-			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "dd6ef053-6c7b-4e81-9a91-9551d4cdf9aa",
 			"title": "Modifiable statalgmite (see instances)",
 			"description": "",
-			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "6cf91bd4-46a9-4812-8127-1535a474b5e0",
 			"title": "Problem : enemies don't respawn after the death of the player",
 			"description": "",
-			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "21a59a3c-50b0-46fc-858b-4b5a4bbb0202",
 			"title": "BUG : enemies spawn multiple times when player dies : need to check if the enemy was killed. Yes? respawn. No? don't",
 			"description": "",
-			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "f63183d9-b7eb-4ab2-83e5-5cb70f0cd183",
+			"title": "BUG : Snowballs hits multiple times!",
+			"description": "",
+			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
 			"steps": []
 		}
 	],

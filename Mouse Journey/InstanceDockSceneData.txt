@@ -1,7 +1,7 @@
 [{
 "name": "MovingPlatforms",
 "scenes": [{
-&"scene": "res://Scenes/MovingPlatforms/moving_platform_path2D.tscn"
+&"scene": "res://Scenes/MovingPlatforms/moving_platform1.tscn"
 }, {
 &"scene": "res://Scenes/MovingPlatforms/moving_platform2.tscn"
 }, {
