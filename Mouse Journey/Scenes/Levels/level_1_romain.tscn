@@ -128,6 +128,9 @@ position = Vector2(2080, 96)
 [node name="snow_canon_spawn_point" parent="Enemies" instance=ExtResource("9_5fd2y")]
 position = Vector2(1660, 98)
 
+[node name="snow_canon_spawn_point3" parent="Enemies" instance=ExtResource("9_5fd2y")]
+position = Vector2(122, 96)
+
 [node name="snow_canon_spawn_point2" parent="Enemies" instance=ExtResource("9_5fd2y")]
 position = Vector2(2424, 98)
 

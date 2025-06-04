@@ -129,7 +129,7 @@ offsets = PackedFloat32Array(0, 0.6, 1)
 colors = PackedColorArray(0.372549, 0.803922, 0.894118, 1, 0.601569, 0.84, 1, 0.8, 0.369757, 0.805801, 0.894329, 0)
 metadata/_snap_count = 5
 
-[node name="SnowMoleV2" type="CharacterBody2D" node_paths=PackedStringArray("snow_mole", "snow_mole_anim_sprite", "MOUNDS", "switch_mound_timer", "underground_timer", "attacking_cooldown", "ray_right", "ray_left", "collision_shape", "hitbox", "deadzone", "animated_sprite", "death_particles")]
+[node name="SnowMoleV2" type="CharacterBody2D" node_paths=PackedStringArray("snow_mole", "snow_mole_anim_sprite", "MOUNDS", "switch_mound_timer", "underground_timer", "attacking_cooldown", "ray_right", "ray_left", "collision_shape", "hitbox", "deadzone", "animated_sprite", "death_particles") groups=["enemies"]]
 script = ExtResource("1_80r1u")
 snow_mole = NodePath("snow_mole")
 snow_mole_anim_sprite = NodePath("snow_mole/AnimatedSprite2D")

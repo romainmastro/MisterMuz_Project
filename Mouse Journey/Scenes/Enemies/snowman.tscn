@@ -144,7 +144,7 @@ offsets = PackedFloat32Array(0, 0.6, 1)
 colors = PackedColorArray(0.372549, 0.803922, 0.894118, 1, 0.601569, 0.84, 1, 0.8, 0.369757, 0.805801, 0.894329, 0)
 metadata/_snap_count = 5
 
-[node name="Snowman" type="CharacterBody2D" node_paths=PackedStringArray("gravity_component", "ray", "collision_shape", "hitbox", "deadzone", "animated_sprite", "death_particles")]
+[node name="Snowman" type="CharacterBody2D" node_paths=PackedStringArray("gravity_component", "ray", "collision_shape", "hitbox", "deadzone", "animated_sprite", "death_particles") groups=["enemies"]]
 z_index = 5
 collision_layer = 4
 collision_mask = 3

@@ -50,6 +50,7 @@ ice_cover=""
 snow_cover=""
 enemy_spawn_points=""
 traps=""
+enemies=""
 
 [input]
 
