@@ -41,7 +41,9 @@
 		{
 			"uuid": "ef4e123f-f6ea-4e30-8896-4ddd7167fd59",
 			"title": "Doing",
-			"tasks": []
+			"tasks": [
+				"21a59a3c-50b0-46fc-858b-4b5a4bbb0202"
+			]
 		},
 		{
 			"uuid": "a590c45f-f6e0-4df4-a178-2596b3213350",
@@ -1260,6 +1262,13 @@
 		{
 			"uuid": "6cf91bd4-46a9-4812-8127-1535a474b5e0",
 			"title": "Problem : enemies don't respawn after the death of the player",
+			"description": "",
+			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"steps": []
+		},
+		{
+			"uuid": "21a59a3c-50b0-46fc-858b-4b5a4bbb0202",
+			"title": "BUG : enemies spawn multiple times when player dies : need to check if the enemy was killed. Yes? respawn. No? don't",
 			"description": "",
 			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
 			"steps": []

@@ -13,18 +13,20 @@ func spawn() :
 		push_error("Enemy node path not found. Check scene structure!")
 		
 	for node in get_tree().get_nodes_in_group("enemy_spawn_points") : 
-		match node.enemy_type : 
-			"SnowMan" : 
-				var snowman = SNOWMAN.instantiate()
-				snowman.global_position = node.global_position
-				enemy_node_path.add_child(snowman)
-			"SnowCanon" : 
-				var snowcanon = ENEMY_SNOW_CANNON.instantiate()
-				snowcanon.global_position = node.global_position
-				enemy_node_path.add_child(snowcanon)
-			"SnowMole" : 
-				var snowmole = SNOW_MOLE_V_2.instantiate()
-				snowmole.global_position = node.global_position
-				enemy_node_path.add_child(snowmole)
-			_ : 
-				printerr("The enemy doesn't exist! See GlobalEnemyManager")
+		
+		if node.was_killed and node.get_respawned : 
+			match node.enemy_type : 
+				"SnowMan" : 
+					var snowman = SNOWMAN.instantiate()
+					snowman.global_position = node.global_position
+					enemy_node_path.add_child(snowman)
+				"SnowCanon" : 
+					var snowcanon = ENEMY_SNOW_CANNON.instantiate()
+					snowcanon.global_position = node.global_position
+					enemy_node_path.add_child(snowcanon)
+				"SnowMole" : 
+					var snowmole = SNOW_MOLE_V_2.instantiate()
+					snowmole.global_position = node.global_position
+					enemy_node_path.add_child(snowmole)
+				_ : 
+					printerr("The enemy doesn't exist! See GlobalEnemyManager")

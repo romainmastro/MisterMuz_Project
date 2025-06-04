@@ -105,7 +105,7 @@ position = Vector2(-901, 29)
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="enemy_spawn_point" parent="Enemies" instance=ExtResource("10_5fd2y")]
-position = Vector2(477, 96)
+position = Vector2(474, 95)
 
 [node name="enemy_spawn_point2" parent="Enemies" instance=ExtResource("10_5fd2y")]
 position = Vector2(664, 96)
