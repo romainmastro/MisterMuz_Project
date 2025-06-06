@@ -44,12 +44,16 @@
 		{
 			"uuid": "ef4e123f-f6ea-4e30-8896-4ddd7167fd59",
 			"title": "Doing",
-			"tasks": []
+			"tasks": [
+				"993c7f5a-1780-4dbb-bce5-a8f901c38927"
+			]
 		},
 		{
 			"uuid": "a590c45f-f6e0-4df4-a178-2596b3213350",
 			"title": "Done on the current Branch",
-			"tasks": []
+			"tasks": [
+				"66ed3927-4a0c-483e-b52d-0aae74446177"
+			]
 		},
 		{
 			"uuid": "9573ce0a-9b5d-4fd9-bb69-4b68a3540b99",
@@ -1291,6 +1295,25 @@
 		{
 			"uuid": "898d5b4c-790b-4d4e-8dfc-c984579182f9",
 			"title": "BUG : Snowballs hit several times!",
+			"description": "",
+			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
+			"steps": []
+		},
+		{
+			"uuid": "993c7f5a-1780-4dbb-bce5-a8f901c38927",
+			"title": "Trap : spikes thrower",
+			"description": "",
+			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
+			"steps": [
+				{
+					"details": "Kill Throwing Spikes when jump on it",
+					"done": false
+				}
+			]
+		},
+		{
+			"uuid": "66ed3927-4a0c-483e-b52d-0aae74446177",
+			"title": "bug : Fallingstalagtite + spikes don't disappear when hit player",
 			"description": "",
 			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
 			"steps": []

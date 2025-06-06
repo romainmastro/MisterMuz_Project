@@ -1,6 +1,8 @@
+res://Assets/Enemies/SpikeThrower
+res://Scripts/Traps
+res://Scenes/Traps
 res://Scripts/Enemies
 res://Scenes/Enemies
-res://Scenes/Traps
 res://Scenes/Levels
 res://Assets/Enemies/SnowCanon
 res://Assets/Enemies/SnowMole/SnowMoleV2
@@ -18,5 +20,3 @@ res://Scripts
 res://
 res://Scenes
 res://Assets/Enemies/Snowman
-res://Scenes/Enemies/Components
-res://Scenes/Components

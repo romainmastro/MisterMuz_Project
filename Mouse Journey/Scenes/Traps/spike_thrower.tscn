@@ -1,0 +1,96 @@
+[gd_scene load_steps=10 format=3 uid="uid://c0qusm8c2nny0"]
+
+[ext_resource type="Script" uid="uid://0icsb7agupe5" path="res://Scripts/Traps/spike_thrower.gd" id="1_weejn"]
+[ext_resource type="Texture2D" uid="uid://xmivktsmc30g" path="res://Assets/Enemies/SpikeThrower/spike_thrower_SHOOT_RIGHT.png" id="3_cht3v"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_il0w5"]
+atlas = ExtResource("3_cht3v")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w1c2j"]
+atlas = ExtResource("3_cht3v")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e3gyr"]
+atlas = ExtResource("3_cht3v")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c2nbc"]
+atlas = ExtResource("3_cht3v")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n5c67"]
+atlas = ExtResource("3_cht3v")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c2nbc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_il0w5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w1c2j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e3gyr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c2nbc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n5c67")
+}],
+"loop": false,
+"name": &"shoot",
+"speed": 15.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_5x8wk"]
+offsets = PackedFloat32Array(0.111111, 0.513072, 0.794118)
+colors = PackedColorArray(1, 1, 1, 1, 0.955826, 0.988561, 0.996192, 1, 0.764706, 0.941176, 0.980392, 0)
+metadata/_snap_count = 5
+
+[node name="Spike_Thrower" type="Node2D" node_paths=PackedStringArray("animated_sprite", "marker", "reload_timer", "particles")]
+script = ExtResource("1_weejn")
+animated_sprite = NodePath("AnimatedSprite2D")
+marker = NodePath("Marker2D")
+reload_timer = NodePath("reload_timer")
+particles = NodePath("CPUParticles2D")
+speed = 70.0
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(8, 0)
+
+[node name="reload_timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_c2nbc")
+animation = &"shoot"
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(5, 0)
+emitting = false
+amount = 10
+one_shot = true
+explosiveness = 1.0
+randomness = 0.5
+direction = Vector2(1, -1)
+spread = 91.68
+gravity = Vector2(0, 300)
+initial_velocity_min = 79.37
+initial_velocity_max = 100.53
+angular_velocity_min = 45.77
+angular_velocity_max = 45.78
+angle_min = -100.0
+angle_max = 100.0
+scale_amount_min = 2.0
+scale_amount_max = 4.0
+color_ramp = SubResource("Gradient_5x8wk")
+hue_variation_min = -0.3
+hue_variation_max = 0.36
+
+[connection signal="timeout" from="reload_timer" to="." method="_on_timer_timeout"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

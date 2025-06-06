@@ -199,6 +199,7 @@ position = Vector2(8, 15)
 target_position = Vector2(0, 16)
 
 [node name="DeathParticles" type="CPUParticles2D" parent="."]
+position = Vector2(0, 8)
 emitting = false
 amount = 12
 one_shot = true
