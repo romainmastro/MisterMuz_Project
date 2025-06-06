@@ -36,7 +36,9 @@
 				"ef9a25df-950f-4d92-baca-77688806a127",
 				"00cd1f31-6aea-4faf-be9a-509a0b2c9509",
 				"25e39056-f16e-4cb5-88b8-0deaa0e6a02c",
-				"f63183d9-b7eb-4ab2-83e5-5cb70f0cd183"
+				"f63183d9-b7eb-4ab2-83e5-5cb70f0cd183",
+				"8e82cbd9-e60c-4121-a3dc-1044880655d9",
+				"898d5b4c-790b-4d4e-8dfc-c984579182f9"
 			]
 		},
 		{
@@ -1275,6 +1277,20 @@
 		{
 			"uuid": "f63183d9-b7eb-4ab2-83e5-5cb70f0cd183",
 			"title": "BUG : Snowballs hits multiple times!",
+			"description": "",
+			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
+			"steps": []
+		},
+		{
+			"uuid": "8e82cbd9-e60c-4121-a3dc-1044880655d9",
+			"title": "Trap : ice geyser",
+			"description": "",
+			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
+			"steps": []
+		},
+		{
+			"uuid": "898d5b4c-790b-4d4e-8dfc-c984579182f9",
+			"title": "BUG : Snowballs hit several times!",
 			"description": "",
 			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
 			"steps": []

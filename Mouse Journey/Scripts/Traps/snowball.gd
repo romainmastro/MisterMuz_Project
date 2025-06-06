@@ -13,3 +13,8 @@ func _ready() -> void:
 # disappear after 10 secs
 func _on_timer_timeout() -> void:
 	call_deferred("queue_free")
+
+
+#func _on_body_entered(body: Node) -> void:
+	#if body is PlayerClass : 
+		#call_deferred("queue_free")
