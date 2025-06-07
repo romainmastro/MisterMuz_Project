@@ -1,6 +1,8 @@
-res://Assets/Enemies/SpikeThrower
 res://Scripts/Traps
 res://Scenes/Traps
+res://Assets/Traps/SnowGeyser
+res://Assets/Traps
+res://Assets/Enemies/SpikeThrower
 res://Scripts/Enemies
 res://Scenes/Enemies
 res://Scenes/Levels
@@ -18,5 +20,3 @@ res://Scenes/MovingPlatforms
 res://Scripts/Platform
 res://Scripts
 res://
-res://Scenes
-res://Assets/Enemies/Snowman

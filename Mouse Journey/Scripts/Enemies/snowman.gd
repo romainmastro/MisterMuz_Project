@@ -63,8 +63,6 @@ func update_animation() :
 	elif direction == -1 and animated_sprite.animation != "walk_left" : 
 			animated_sprite.play("walk_left")
 
-
 func _on_hitbox_area_entered(area: Area2D) -> void:
 	if area.is_in_group("traps") : 
-		print("Colliding with TRAPS")
 		should_flip = true

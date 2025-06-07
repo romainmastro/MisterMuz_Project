@@ -28,5 +28,7 @@
 &"scene": "res://Scenes/Enemies/snowcanon_spawn_point.tscn"
 }, {
 &"scene": "res://Scenes/Enemies/snow_mole_spawn_point.tscn"
+}, {
+&"scene": "res://Scenes/Traps/spike_thrower.tscn"
 }]
 }]

@@ -52,6 +52,7 @@ colors = PackedColorArray(1, 1, 1, 1, 0.955826, 0.988561, 0.996192, 1, 0.764706,
 metadata/_snap_count = 5
 
 [node name="Spike_Thrower" type="Node2D" node_paths=PackedStringArray("animated_sprite", "marker", "reload_timer", "particles")]
+z_index = 3
 script = ExtResource("1_weejn")
 animated_sprite = NodePath("AnimatedSprite2D")
 marker = NodePath("Marker2D")

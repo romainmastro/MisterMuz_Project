@@ -130,14 +130,14 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7lbwb"]
-radius = 5.0
+radius = 3.0
 height = 10.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yoj18"]
-size = Vector2(2.5, 12)
+size = Vector2(9, 11)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x2qtj"]
-size = Vector2(10, 6)
+size = Vector2(12, 1)
 
 [sub_resource type="Gradient" id="Gradient_x2qtj"]
 offsets = PackedFloat32Array(0, 0.6, 1)
@@ -163,7 +163,7 @@ wall_ray = NodePath("../RayCast2D")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_dvrkf")
-animation = &"death"
+animation = &"walk_right"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 11)
@@ -175,12 +175,7 @@ collision_mask = 80
 script = ExtResource("4_x2qtj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
-position = Vector2(-6, 10)
-shape = SubResource("RectangleShape2D_yoj18")
-debug_color = Color(0.903797, 0.238957, 0.492976, 0.42)
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="hitbox"]
-position = Vector2(6, 10)
+position = Vector2(0.5, 9.5)
 shape = SubResource("RectangleShape2D_yoj18")
 debug_color = Color(0.903797, 0.238957, 0.492976, 0.42)
 
@@ -190,7 +185,7 @@ collision_mask = 32
 script = ExtResource("7_x2qtj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeadZone"]
-position = Vector2(0, 3)
+position = Vector2(0, -1.5)
 shape = SubResource("RectangleShape2D_x2qtj")
 debug_color = Color(1.92523e-07, 0.547659, 0.136525, 0.42)
 

@@ -44,15 +44,14 @@
 		{
 			"uuid": "ef4e123f-f6ea-4e30-8896-4ddd7167fd59",
 			"title": "Doing",
-			"tasks": [
-				"993c7f5a-1780-4dbb-bce5-a8f901c38927"
-			]
+			"tasks": []
 		},
 		{
 			"uuid": "a590c45f-f6e0-4df4-a178-2596b3213350",
 			"title": "Done on the current Branch",
 			"tasks": [
-				"66ed3927-4a0c-483e-b52d-0aae74446177"
+				"66ed3927-4a0c-483e-b52d-0aae74446177",
+				"993c7f5a-1780-4dbb-bce5-a8f901c38927"
 			]
 		},
 		{
@@ -1307,7 +1306,7 @@
 			"steps": [
 				{
 					"details": "Kill Throwing Spikes when jump on it",
-					"done": false
+					"done": true
 				}
 			]
 		},

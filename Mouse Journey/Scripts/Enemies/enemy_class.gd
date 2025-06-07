@@ -12,14 +12,11 @@ var is_dead : bool = false
 func die() : 
 	queue_free()
 
-#func respawn() : 
-	#activate_collisions()
-
-
 func handle_death():
 	if is_dead : 
 		return
 	is_dead = true
+	print("is dead : ", is_dead)
 	deactivate_collisions()
 	await do_hit_stop()
 
@@ -32,7 +29,9 @@ func handle_death():
 	animated_sprite.play("death")
 	
 func _on_animated_sprite_2d_animation_finished() -> void:
-	if animated_sprite.animation == "death" :
+	print("on animation finished")
+	if animated_sprite.animation == "death":
+		print("FIn de death animation")
 		death_particles.emitting = true
 		animated_sprite.visible = false
 		await get_tree().create_timer(0.6).timeout
@@ -40,7 +39,7 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 
 func _on_dead_zone_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Player_StompBox") : 
-		print("enemy is Dead")
+		print("Muz Stomp the spike 2 / on dead zone - enemy class.gd")
 		handle_death()
 
 func deactivate_collisions() : 
@@ -57,7 +56,7 @@ func deactivate_collisions() :
 	#deadzone.set_deferred("monitorable", true)
 	#deadzone.set_deferred("monitoring", true)
 
-func do_hit_stop(duration := 0.5, slowdown_factor := 0.5) -> void:
+func do_hit_stop(duration := 0.3, slowdown_factor := 0.5) -> void:
 	Engine.time_scale = slowdown_factor
 	await get_tree().create_timer(duration * slowdown_factor, true).timeout
 	Engine.time_scale = 1.0
