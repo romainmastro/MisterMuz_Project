@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://b36u7cojyu2qd"]
+[gd_scene load_steps=16 format=4 uid="uid://b36u7cojyu2qd"]
 
 [ext_resource type="PackedScene" uid="uid://b1vi7lh2l2ldh" path="res://Scenes/Environment/sign_Start_Level.tscn" id="1_silvh"]
 [ext_resource type="TileSet" uid="uid://cvn6rtpn15ve6" path="res://Resources/Level_Maker.tres" id="2_fh3xk"]
@@ -13,7 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://c0qusm8c2nny0" path="res://Scenes/Traps/spike_thrower.tscn" id="10_otrkh"]
 [ext_resource type="PackedScene" uid="uid://bl1owrdhpaf8h" path="res://Scenes/Traps/V_L_stalagmite_1_Repousseur.tscn" id="11_tsdnf"]
 [ext_resource type="PackedScene" uid="uid://iah2f3d4sy1b" path="res://Scenes/MovingPlatforms/moving_platform1.tscn" id="12_gioyd"]
-[ext_resource type="PackedScene" uid="uid://dumaxmxn2amts" path="res://Scenes/Traps/snow_geyser.tscn" id="14_f43ge"]
 
 [sub_resource type="Curve2D" id="Curve2D_gioyd"]
 _data = {
@@ -227,9 +226,3 @@ vitesse = 50.0
 [node name="Spike_Thrower" parent="." instance=ExtResource("10_otrkh")]
 position = Vector2(3600, 8)
 direction_depart = 0
-
-[node name="SnowGeyser" parent="." instance=ExtResource("14_f43ge")]
-position = Vector2(3464, 24)
-
-[connection signal="body_entered" from="Objects/Checkpoint" to="Objects/Checkpoint" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@135387" to="Objects/@Area2D@135387" method="_on_body_entered"]

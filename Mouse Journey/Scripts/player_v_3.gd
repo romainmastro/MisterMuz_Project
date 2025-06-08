@@ -554,13 +554,13 @@ func _on_hurt_box_area_entered(area: Area2D) -> void:
 		start_knockback(medium_knockback_force)
 		return
 
-func body_entered(body : Node2D) : 
-		if not invincible_timer > 0 : 
-			if body is TrapSnowballClass:
-				print("HURT by Trap Snowball")
-				STATE = "HURT_KNOCKBACK"
-				take_damage(body.damage_amount)
-				velocity = Vector2.ZERO
+#func body_entered(body : Node2D) : 
+		#if not invincible_timer > 0 : 
+			#if body is TrapSnowballClass:
+				#print("HURT by Trap Snowball")
+				#STATE = "HURT_KNOCKBACK"
+				#take_damage(body.damage_amount)
+				#velocity = Vector2.ZERO
 
 ##################################### ANIMATIONS SYSTEM #######################################
 func handle_animations() : 

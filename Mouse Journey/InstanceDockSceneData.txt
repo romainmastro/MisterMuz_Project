@@ -19,6 +19,10 @@
 &"scene": "res://Scenes/Traps/V_L_stalagmite_1_Repousseur.tscn"
 }, {
 &"scene": "res://Scenes/Traps/V_R_stalagmite_1_Repousseur.tscn"
+}, {
+&"scene": "res://Scenes/Traps/Vertical_geyser.tscn"
+}, {
+&"scene": "res://Scenes/Traps/Horizontal_geyser.tscn"
 }]
 }, {
 "name": "Enemies",

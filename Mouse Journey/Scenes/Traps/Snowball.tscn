@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://2hmxu0xv675o"]
+[gd_scene load_steps=7 format=3 uid="uid://2hmxu0xv675o"]
 
 [ext_resource type="Script" uid="uid://48k3sahlbncn" path="res://Scripts/Traps/snowball.gd" id="1_1tcfs"]
 [ext_resource type="Texture2D" uid="uid://cjmupqnxj6sek" path="res://Assets/Traps/Snowball.png" id="1_dl2js"]
+[ext_resource type="Script" uid="uid://da5g2tgmvj2m1" path="res://Scripts/trap_knock_back.gd" id="3_n0mi7"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_1tcfs"]
 bounce = 0.13
@@ -9,9 +10,12 @@ bounce = 0.13
 [sub_resource type="CircleShape2D" id="CircleShape2D_1tcfs"]
 radius = 7.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_n0mi7"]
+radius = 8.0
+
 [node name="Snowball" type="RigidBody2D" node_paths=PackedStringArray("timer_life") groups=["traps"]]
 collision_layer = 65
-collision_mask = 19
+collision_mask = 17
 physics_material_override = SubResource("PhysicsMaterial_1tcfs")
 gravity_scale = 0.5
 script = ExtResource("1_1tcfs")
@@ -27,5 +31,15 @@ shape = SubResource("CircleShape2D_1tcfs")
 wait_time = 10.0
 autostart = true
 
+[node name="hitbox" type="Area2D" parent="."]
+collision_layer = 64
+collision_mask = 16
+script = ExtResource("3_n0mi7")
+metadata/_custom_type_script = "uid://da5g2tgmvj2m1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+shape = SubResource("CircleShape2D_n0mi7")
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]

@@ -1,6 +1,7 @@
-extends Node2D
+extends ClassTrapKnockBack
 
 @export var animated_sprite : AnimatedSprite2D
+@export var hitbox : CollisionShape2D
 
 @export var cooldown_timer : Timer
 @export var cooldown_time : float = 1.5
@@ -23,21 +24,27 @@ func _ready() -> void:
 	
 	current_state = STATES.IDLE
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	match current_state : 
 		STATES.IDLE : 
-			
+			#animation
 			if animated_sprite.animation != "idle" : 
 				animated_sprite.play("idle")
-			
+				
+			#visual
 			if geyser_particles.emitting : 
 				geyser_particles.emitting = false
+				
+			#hitbox
+			if not hitbox.disabled : 
+				deactivate_hitbox()
 			
 			# Start Timer
 			if cooldown_timer.is_stopped() : 
 				cooldown_timer.start()
 		
-		STATES.WINDUP : 
+		STATES.WINDUP :
+			#animation 
 			animated_sprite.play("windup")
 			
 			# Start Timer
@@ -45,13 +52,28 @@ func _physics_process(delta: float) -> void:
 				windup_timer.start()
 				
 		STATES.ERUPTION : 
+			#animation
 			animated_sprite.play("idle")
+			
+			#Visual
 			if not geyser_particles.emitting : 
 				geyser_particles.emitting = true
+				
+			#hitbox
+			if hitbox.disabled : 
+				activate_hitbox()
 			
 			# Start Timer
 			if eruption_timer.is_stopped() : 
 				eruption_timer.start()
+
+func deactivate_hitbox()  : 
+	if hitbox.disabled == false : 
+		hitbox.disabled = true
+
+func activate_hitbox(): 
+	if hitbox.disabled == true : 
+		hitbox.disabled = false
 
 func _on_cooldown_timer_timeout() -> void:
 	current_state = STATES.WINDUP

@@ -1,9 +1,7 @@
 class_name TrapSnowballClass
 extends RigidBody2D
 
-@export var damage_amount : float = 1
 @export var lifetime : float = 10.0
-
 @export var timer_life : Timer
 
 
@@ -14,7 +12,6 @@ func _ready() -> void:
 func _on_timer_timeout() -> void:
 	call_deferred("queue_free")
 
-
-#func _on_body_entered(body: Node) -> void:
-	#if body is PlayerClass : 
-		#call_deferred("queue_free")
+func _on_hitbox_area_entered(area: Area2D) -> void:
+	if area.is_in_group("player_hurtbox") : 
+		call_deferred("queue_free")
