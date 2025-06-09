@@ -1,13 +1,5 @@
-res://Scenes/Traps/snow_geyser.tscn
 res://Resources/Level_Maker.tres
 res://Resources/Pièges.tres
 res://Resources/Objects.tres
-res://Scripts/Traps/snow_geyser.gd
-res://Scenes/Levels/level_1_romain.tscn
-res://Scenes/Traps/throwing_spikes.tscn
-res://Scenes/Traps/H_stalagmite1_Repousseur.tscn
-res://Scenes/Traps/Vertical_geyser.tscn
-res://Scenes/Traps/Horizontal_geyser.tscn
-res://Scenes/Traps/Snowball.tscn
-res://Scripts/Traps/snowball.gd
-res://Scripts/player_v_3.gd
+res://Assets/Collectibles/frost_berry.tscn
+res://Scripts/global_player_stats.gd

@@ -1,3 +1,4 @@
+res://Assets/Collectibles
 res://Scenes/Traps
 res://Scripts/Traps
 res://Assets/Traps/SnowGeyser
@@ -19,4 +20,3 @@ res://Assets/TileSet
 res://Scenes/MovingPlatforms
 res://Scripts/Platform
 res://Scripts
-res://

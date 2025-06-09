@@ -11,6 +11,9 @@ signal max_hp_changed
 
 var invincible_frame : bool = false
 
+var max_frostberry_number : int = 100
+var current_frostberry_number : int = 0
+
 ######################## CHECKPOINTS ###############################
 @export var current_checkpoint : Vector2 = Vector2.ZERO
 
