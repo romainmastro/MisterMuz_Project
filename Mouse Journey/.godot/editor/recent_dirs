@@ -1,3 +1,6 @@
+res://Resources/light
+res://Scripts/UI
+res://Scripts/Collectibles
 res://Assets/Collectibles
 res://Scenes/Traps
 res://Scripts/Traps
@@ -17,6 +20,3 @@ res://Assets/Muz/Boots and gloves
 res://Assets/Muz
 res://Scripts/Test
 res://Assets/TileSet
-res://Scenes/MovingPlatforms
-res://Scripts/Platform
-res://Scripts

@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://hs1lm3n2yc8s" path="res://Scripts/Environment/treasure_chest_muffler.gd" id="1_qqrxp"]
 [ext_resource type="Texture2D" uid="uid://bb351c1n2ieyh" path="res://Assets/Environment/closed_chest.png" id="2_e51ha"]
 [ext_resource type="Texture2D" uid="uid://rs7mwcqucuxq" path="res://Assets/Environment/opened_chest.png" id="3_xi8u8"]
-[ext_resource type="Texture2D" uid="uid://rc70enu4xxnm" path="res://Resources/light/2d_lights_and_shadows_neutral_point_light.webp" id="4_ay871"]
+[ext_resource type="Texture2D" uid="uid://dv1kr8b8jyq5t" path="res://Resources/light/point_of_interest_light.tres" id="4_qqrxp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eu2q2"]
 size = Vector2(16, 7)
@@ -33,7 +33,7 @@ scale = Vector2(0.4, 0.2)
 color = Color(0.666838, 0.451852, 0.0116099, 1)
 energy = 0.6
 shadow_color = Color(0, 0, 0, 1)
-texture = ExtResource("4_ay871")
+texture = ExtResource("4_qqrxp")
 height = 99.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

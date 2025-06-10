@@ -8,6 +8,7 @@
 size = Vector2(12, 10)
 
 [node name="Collect_Cheese" type="Area2D" node_paths=PackedStringArray("hoveringObjectComponent")]
+collision_layer = 512
 collision_mask = 2
 script = ExtResource("1_ylebh")
 hoveringObjectComponent = NodePath("HoveringComponent")

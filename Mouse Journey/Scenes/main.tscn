@@ -1,12 +1,40 @@
-[gd_scene load_steps=8 format=3 uid="uid://ci35s5hiav38j"]
+[gd_scene load_steps=20 format=3 uid="uid://ci35s5hiav38j"]
 
 [ext_resource type="Script" uid="uid://c6hv8hqxmhb5a" path="res://Scripts/main.gd" id="1_8gbba"]
 [ext_resource type="PackedScene" uid="uid://cnedwspxo44l3" path="res://Scenes/player_v_2.tscn" id="2_21xkr"]
+[ext_resource type="Texture2D" uid="uid://0a3ptxbf14xd" path="res://Assets/UI/HP Bar/HUD.png" id="3_d1ilt"]
+[ext_resource type="Texture2D" uid="uid://n603lyjurjwn" path="res://Assets/UI/HP Bar/life.png" id="4_ynf5e"]
+[ext_resource type="Theme" uid="uid://ba6rurgdpqsjr" path="res://Resources/font/main_font_theme.tres" id="5_344ge"]
+[ext_resource type="Script" uid="uid://cimnh3ayp2mwo" path="res://Scripts/UI/label_lifes.gd" id="5_hptm8"]
 [ext_resource type="PackedScene" uid="uid://ltwdjfevci88" path="res://Scenes/HUD/HP_bar.tscn" id="5_kry3j"]
 [ext_resource type="Script" uid="uid://dr435hwp2gfi2" path="res://debug.gd" id="7_6bp64"]
 [ext_resource type="PackedScene" uid="uid://cpgsf5tytoito" path="res://Scenes/HUD/cheese_bar.tscn" id="7_344ge"]
+[ext_resource type="FontFile" uid="uid://dl3316dpi5lxs" path="res://Resources/font/SuperBakery-3lXyp.ttf" id="9_6iyac"]
+[ext_resource type="Texture2D" uid="uid://mhf4h5626687" path="res://Assets/Collectibles/Collectible - Frostberry.png" id="9_jkdf5"]
 [ext_resource type="PackedScene" uid="uid://dhl1tsd1e3234" path="res://Scenes/UI/congrats_screen.tscn" id="9_ynf5e"]
+[ext_resource type="Script" uid="uid://cfwllhqikp4k6" path="res://Scripts/UI/label_berry.gd" id="10_fdnlq"]
 [ext_resource type="Script" uid="uid://5btxhk0r3gsc" path="res://Scripts/camera_2d.gd" id="14_jkdf5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h1w1h"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wax0t"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pdrfq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5vlyr"]
+
+[sub_resource type="Theme" id="Theme_fdnlq"]
+default_font = ExtResource("9_6iyac")
+default_font_size = 8
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(0.835294, 0.929412, 0.929412, 1)
+Button/constants/h_separation = 4
+Button/font_sizes/font_size = 8
+Button/fonts/font = ExtResource("9_6iyac")
+Button/styles/focus = SubResource("StyleBoxEmpty_h1w1h")
+Button/styles/hover = SubResource("StyleBoxEmpty_wax0t")
+Button/styles/normal = SubResource("StyleBoxEmpty_pdrfq")
+Button/styles/pressed = SubResource("StyleBoxEmpty_5vlyr")
 
 [node name="Main" type="Node2D" node_paths=PackedStringArray("player", "world", "congrats_screen", "player_camera", "congrats_camera")]
 script = ExtResource("1_8gbba")
@@ -26,21 +54,90 @@ platform_wall_layers = 3
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
+[node name="MarginContainer" type="MarginContainer" parent="HUD"]
+custom_minimum_size = Vector2(100, 24)
+offset_right = 80.0
+offset_bottom = 24.0
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="TextureRect" type="TextureRect" parent="HUD/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("3_d1ilt")
+
 [node name="HP_Bar" parent="HUD" instance=ExtResource("5_kry3j")]
-offset_left = 4.0
-offset_top = 5.0
-offset_right = -190.0
-offset_bottom = -123.0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 13.0
+offset_top = 7.0
+offset_right = 44.0
+offset_bottom = 15.0
+grow_horizontal = 1
+grow_vertical = 1
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/separation = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="Cheese_Bar" parent="HUD" instance=ExtResource("7_344ge")]
-offset_left = 4.0
-offset_top = 17.0
-offset_right = 45.0
-offset_bottom = 27.0
+custom_minimum_size = Vector2(32, 8)
+offset_left = 13.0
+offset_top = 21.0
+offset_right = 50.0
+offset_bottom = 31.0
 scale = Vector2(0.8, 0.8)
+size_flags_horizontal = 8
+size_flags_vertical = 0
 theme_override_constants/separation = 2
 metadata/_edit_use_anchors_ = true
+
+[node name="icon_lifes" type="TextureRect" parent="HUD"]
+custom_minimum_size = Vector2(10, 10)
+offset_left = 62.0
+offset_top = 5.0
+offset_right = 72.0
+offset_bottom = 15.0
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("4_ynf5e")
+stretch_mode = 3
+
+[node name="label_lifes" type="Label" parent="HUD"]
+offset_left = 75.0
+offset_top = 6.0
+offset_right = 104.0
+offset_bottom = 16.0
+size_flags_horizontal = 3
+focus_mode = 2
+mouse_filter = 0
+theme = ExtResource("5_344ge")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "lifes"
+script = ExtResource("5_hptm8")
+
+[node name="label_berry" type="Label" parent="HUD"]
+offset_left = 75.0
+offset_top = 19.0
+offset_right = 104.0
+offset_bottom = 29.0
+size_flags_horizontal = 3
+focus_mode = 2
+mouse_filter = 0
+theme = SubResource("Theme_fdnlq")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Berries"
+script = ExtResource("10_fdnlq")
+
+[node name="icon_berry" type="TextureRect" parent="HUD"]
+custom_minimum_size = Vector2(10, 10)
+offset_left = 17.0
+offset_top = 8.0
+offset_right = 117.0
+offset_bottom = 40.0
+texture = ExtResource("9_jkdf5")
+stretch_mode = 3
 
 [node name="Camera" type="Node2D" parent="."]
 
@@ -62,6 +159,7 @@ Congrats_camera = NodePath("CongratsCamera")
 anchor_mode = 0
 
 [node name="DEBUG" type="CanvasLayer" parent="." node_paths=PackedStringArray("player")]
+visible = false
 script = ExtResource("7_6bp64")
 player = NodePath("../PlayerV2")
 

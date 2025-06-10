@@ -1,14 +1,79 @@
-[gd_scene load_steps=3 format=3 uid="uid://fqh4dqh5t7ln"]
+[gd_scene load_steps=9 format=3 uid="uid://fqh4dqh5t7ln"]
 
 [ext_resource type="Texture2D" uid="uid://mhf4h5626687" path="res://Assets/Collectibles/Collectible - Frostberry.png" id="1_l285l"]
+[ext_resource type="Script" uid="uid://tgbimjgs1fyj" path="res://Scripts/Collectibles/frost_berry.gd" id="1_yef6y"]
+[ext_resource type="PackedScene" uid="uid://cm6k6cw4nuqf2" path="res://Scenes/hovering_component.tscn" id="2_43mx6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_43mx6"]
 radius = 5.0
 
-[node name="FrostBerry" type="Area2D"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yef6y"]
+load_path = "res://.godot/imported/2d_lights_and_shadows_neutral_point_light.webp-90a52a222c53c29b5175d453f1c65e65.ctex"
+
+[sub_resource type="Animation" id="Animation_yef6y"]
+resource_name = "glow"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BerryGlowLight:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.5, 1.0, 0.5]
+}
+
+[sub_resource type="Animation" id="Animation_xr10o"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BerryGlowLight:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xr10o"]
+_data = {
+&"RESET": SubResource("Animation_xr10o"),
+&"glow": SubResource("Animation_yef6y")
+}
+
+[node name="FrostBerry" type="Area2D" node_paths=PackedStringArray("hoveringObjectComponent")]
+collision_layer = 512
+collision_mask = 2
+script = ExtResource("1_yef6y")
+hoveringObjectComponent = NodePath("HoveringComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_43mx6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_l285l")
+
+[node name="HoveringComponent" parent="." node_paths=PackedStringArray("object") instance=ExtResource("2_43mx6")]
+object = NodePath("..")
+
+[node name="BerryGlowLight" type="PointLight2D" parent="."]
+scale = Vector2(0.546875, 0.46875)
+color = Color(0.178785, 0.616919, 0.857382, 1)
+energy = 0.3
+texture = SubResource("CompressedTexture2D_yef6y")
+texture_scale = 0.1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_xr10o")
+}
+autoplay = "glow"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

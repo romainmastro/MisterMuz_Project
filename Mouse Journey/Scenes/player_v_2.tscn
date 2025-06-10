@@ -963,7 +963,7 @@ metadata/_snap_enabled = true
 [node name="PlayerV2" type="CharacterBody2D" node_paths=PackedStringArray("player_sprite", "boots_gloves_sprite", "snowsuit_sprite", "snowHat_sprite", "muffler_sprite", "wall_ray_right", "wall_ray_left", "stompbox", "terrain_detector", "marker_particles", "marker_wall_sliding", "snow_trail_particles", "sliding_particles", "jumping_particles", "landing_particles", "wall_sliding_particles", "coyote_timer") groups=["player"]]
 z_index = 10
 collision_layer = 2
-collision_mask = 13
+collision_mask = 525
 floor_stop_on_slope = false
 floor_max_angle = 0.872665
 floor_snap_length = 5.0

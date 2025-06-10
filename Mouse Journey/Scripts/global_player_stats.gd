@@ -6,6 +6,9 @@ extends Node
 @export var player_max_HP : float = 3
 @export var is_dead : bool = false
 
+@export var current_lives_number : int = 2
+@export var max_lives_number : int = 10
+
 var current_cheese_nb : float = 0
 signal max_hp_changed
 
@@ -13,6 +16,8 @@ var invincible_frame : bool = false
 
 var max_frostberry_number : int = 100
 var current_frostberry_number : int = 0
+signal update_berry_number
+signal gain_one_life
 
 ######################## CHECKPOINTS ###############################
 @export var current_checkpoint : Vector2 = Vector2.ZERO

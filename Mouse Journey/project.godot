@@ -102,6 +102,7 @@ glide={
 
 [layer_names]
 
+2d_render/layer_1="Berries"
 2d_physics/layer_1="Ground"
 2d_physics/layer_2="Player"
 2d_physics/layer_3="Enemies"
@@ -111,6 +112,7 @@ glide={
 2d_physics/layer_7="enemy_hitbox"
 2d_physics/layer_8="enemy_deadzone"
 2d_physics/layer_9="Moving_platforms"
+2d_physics/layer_10="Collectibles"
 
 [physics]
 

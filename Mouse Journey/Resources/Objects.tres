@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=9 format=3 uid="uid://d34uj80lo1ml4"]
+[gd_resource type="TileSet" load_steps=10 format=3 uid="uid://d34uj80lo1ml4"]
 
 [ext_resource type="PackedScene" uid="uid://byc7401bsh3cc" path="res://Scenes/Collectibles/Collect_Heart.tscn" id="1_kgskm"]
 [ext_resource type="PackedScene" uid="uid://bjgf62qew141r" path="res://Scenes/Environment/checkpoint.tscn" id="2_0lc3b"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bs6jgygl6od08" path="res://Scenes/Environment/treasure_chest_suit_boots_gloves.tscn" id="5_34hio"]
 [ext_resource type="PackedScene" uid="uid://c86yomf2rddmc" path="res://Scenes/Collectibles/collect_cheese.tscn" id="6_rp16i"]
 [ext_resource type="PackedScene" uid="uid://dhq03yilhu6wj" path="res://Scenes/Environment/end_level_checkpoint.tscn" id="7_rp16i"]
+[ext_resource type="PackedScene" uid="uid://fqh4dqh5t7ln" path="res://Assets/Collectibles/frost_berry.tscn" id="8_8ex8q"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_pdsj5"]
 resource_name = "Objets"
@@ -17,6 +18,7 @@ scenes/4/scene = ExtResource("4_34hio")
 scenes/5/scene = ExtResource("5_34hio")
 scenes/6/scene = ExtResource("6_rp16i")
 scenes/7/scene = ExtResource("7_rp16i")
+scenes/8/scene = ExtResource("8_8ex8q")
 
 [resource]
 sources/0 = SubResource("TileSetScenesCollectionSource_pdsj5")
