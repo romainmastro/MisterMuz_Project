@@ -3,9 +3,12 @@ extends Area2D
 # COLLECT 3 to gain 1 Max HP
 
 @export var hoveringObjectComponent : ClassHoveringObjectComponent
+var random_start : float
 
 func _ready() -> void:
 	scale = Vector2(1, 1)
+	random_start = randf_range(0.0, 0.7)
+	await get_tree().create_timer(random_start).timeout
 	hoveringObjectComponent.float_up()
 
 func _on_body_entered(body: Node2D) -> void:

@@ -43,14 +43,15 @@
 			"uuid": "ef4e123f-f6ea-4e30-8896-4ddd7167fd59",
 			"title": "Doing",
 			"tasks": [
-				"97c841d5-cd58-4e53-965d-c88ec9f352a8",
-				"ddc4fd00-58cc-4072-b5c8-d1812c1d8f63"
+				"97c841d5-cd58-4e53-965d-c88ec9f352a8"
 			]
 		},
 		{
 			"uuid": "a590c45f-f6e0-4df4-a178-2596b3213350",
 			"title": "Done on the current Branch",
 			"tasks": [
+				"ddc4fd00-58cc-4072-b5c8-d1812c1d8f63",
+				"9aeb20f2-4a55-43bc-bd43-55e334445aae",
 				"8e82cbd9-e60c-4121-a3dc-1044880655d9",
 				"993c7f5a-1780-4dbb-bce5-a8f901c38927",
 				"66ed3927-4a0c-483e-b52d-0aae74446177",
@@ -1381,11 +1382,11 @@
 			"uuid": "ddc4fd00-58cc-4072-b5c8-d1812c1d8f63",
 			"title": "add light effects to objects",
 			"description": "",
-			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
+			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
 			"steps": [
 				{
 					"details": "chests",
-					"done": false
+					"done": true
 				},
 				{
 					"details": "cheese",
@@ -1394,8 +1395,19 @@
 				{
 					"details": "checkpoints",
 					"done": true
+				},
+				{
+					"details": "heart",
+					"done": true
 				}
 			]
+		},
+		{
+			"uuid": "9aeb20f2-4a55-43bc-bd43-55e334445aae",
+			"title": "random floating start for bobbing collectibles",
+			"description": "",
+			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"steps": []
 		}
 	],
 	"layout": {

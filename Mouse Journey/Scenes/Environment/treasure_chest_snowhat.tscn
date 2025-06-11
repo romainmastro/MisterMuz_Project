@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bs425j3t1krem"]
+[gd_scene load_steps=10 format=3 uid="uid://bs425j3t1krem"]
 
 [ext_resource type="Script" uid="uid://dbu2jo50nn41g" path="res://Scripts/Environment/treasure_chest_snowhat.gd" id="1_170to"]
 [ext_resource type="Texture2D" uid="uid://bb351c1n2ieyh" path="res://Assets/Environment/closed_chest.png" id="2_7qk7v"]
@@ -7,6 +7,47 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eu2q2"]
 size = Vector2(16, 7)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_170to"]
+load_path = "res://.godot/imported/raylight_texture.png-16668d796e0c6ce750865d41bb1a5aec.ctex"
+
+[sub_resource type="Animation" id="Animation_170to"]
+resource_name = "glow"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PointLight2D2:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 3.0]
+}
+
+[sub_resource type="Animation" id="Animation_7qk7v"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PointLight2D2:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_70hih"]
+_data = {
+&"RESET": SubResource("Animation_7qk7v"),
+&"glow": SubResource("Animation_170to")
+}
 
 [node name="treasure_chest_snow_hat" type="Area2D" node_paths=PackedStringArray("closed_chest_sprite", "opened_chest_sprite")]
 collision_mask = 2
@@ -29,11 +70,25 @@ texture = ExtResource("3_70hih")
 offset = Vector2(0, 5)
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
+visible = false
 scale = Vector2(0.4, 0.2)
 color = Color(0.666838, 0.451852, 0.0116099, 1)
 energy = 0.6
 shadow_color = Color(0, 0, 0, 1)
 texture = ExtResource("4_ssww3")
 height = 99.0
+
+[node name="PointLight2D2" type="PointLight2D" parent="."]
+position = Vector2(2.84217e-14, 4.23501)
+scale = Vector2(0.0282168, 0.0142723)
+color = Color(0.905608, 0.604982, 0.102581, 1)
+texture = SubResource("CompressedTexture2D_170to")
+texture_scale = 1.06
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_70hih")
+}
+autoplay = "glow"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

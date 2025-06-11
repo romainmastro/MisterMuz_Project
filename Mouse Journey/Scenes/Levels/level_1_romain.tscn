@@ -50,7 +50,7 @@ tile_set = ExtResource("3_silvh")
 
 [node name="Objects" type="TileMapLayer" parent="."]
 z_index = 2
-tile_map_data = PackedByteArray("AABgAAUAAAAAAAAAAgC0AAUAAAAAAAAAAgDZAAEAAAAAAAAAAwDaAAEAAAAAAAAABADbAAEAAAAAAAAABQA=")
+tile_map_data = PackedByteArray("AABgAAUAAAAAAAAAAgC0AAUAAAAAAAAAAgDZAAEAAAAAAAAAAwDaAAEAAAAAAAAABADbAAEAAAAAAAAABQDXAP//AAAAAAAAAQDUAAAAAAAAAAAAAgDYAP//AAAAAAAABgDaAP//AAAAAAAACAA=")
 tile_set = ExtResource("4_2kyff")
 
 [node name="Extra_Traps" type="Node2D" parent="."]
@@ -221,9 +221,3 @@ position = Vector2(-4, 0)
 curve = SubResource("Curve2D_gioyd")
 script = SubResource("GDScript_otrkh")
 vitesse = 50.0
-
-[connection signal="body_entered" from="Objects/Checkpoint" to="Objects/Checkpoint" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@28609" to="Objects/@Area2D@28609" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/treasure_chest_muffler" to="Objects/treasure_chest_muffler" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/treasure_chest_snow_hat" to="Objects/treasure_chest_snow_hat" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/treasure_chest_Boots_gloves_suit" to="Objects/treasure_chest_Boots_gloves_suit" method="_on_body_entered"]

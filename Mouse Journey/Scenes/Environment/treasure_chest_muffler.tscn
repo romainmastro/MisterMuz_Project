@@ -11,8 +11,8 @@
 size = Vector2(16, 7)
 
 [sub_resource type="Animation" id="Animation_ay871"]
-length = 2.0
-loop_mode = 1
+length = 2.5
+loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -20,10 +20,10 @@ tracks/0/path = NodePath("../PointLight2D2:energy")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1, 1.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 1.25),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0, 1.0, 1.5, 2.0]
+"values": [0.0, 4.0]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -35,7 +35,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [1.51]
+"values": [1.0]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -61,14 +61,14 @@ tracks/0/path = NodePath("../PointLight2D2:energy")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1, 1.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0, 1.0, 1.5, 0.5]
+"values": [0.0, 3.0]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
-tracks/1/enabled = true
+tracks/1/enabled = false
 tracks/1/path = NodePath("../PointLight2D2:texture_scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
@@ -80,7 +80,7 @@ tracks/1/keys = {
 }
 tracks/2/type = "value"
 tracks/2/imported = false
-tracks/2/enabled = true
+tracks/2/enabled = false
 tracks/2/path = NodePath("../PointLight2D2:offset")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
@@ -99,7 +99,7 @@ _data = {
 
 [sub_resource type="Animation" id="Animation_fsjbr"]
 resource_name = "Light"
-length = 2.0
+length = 4.0
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -120,10 +120,10 @@ tracks/1/path = NodePath("PointLight2D3:offset")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.333333, 0.633333, 1, 1.36667, 1.7, 1.93333),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(10, 0), Vector2(20, 0), Vector2(30, 0), Vector2(39, 0), Vector2(45, 0), Vector2(50, 0)]
+"times": PackedFloat32Array(0, 0.333333, 0.633333, 1, 1.36667, 1.7, 1.93333, 2.23333, 2.6, 2.96667, 3.3, 3.53333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(0, 0), Vector2(10, 0), Vector2(20, 0), Vector2(30, 0), Vector2(39, 0), Vector2(45, 0), Vector2(40, 0), Vector2(30, 0), Vector2(20, 0), Vector2(15, 0), Vector2(10, 0), Vector2(5, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_qsn8c"]
@@ -189,15 +189,14 @@ texture = ExtResource("4_qqrxp")
 height = 99.0
 
 [node name="PointLight2D2" type="PointLight2D" parent="."]
-visible = false
 position = Vector2(2.84217e-14, 4.23501)
 scale = Vector2(0.0282168, 0.0142723)
 color = Color(0.905608, 0.604982, 0.102581, 1)
 energy = 0.0
 texture = ExtResource("5_e51ha")
-texture_scale = 1.51
 
 [node name="PointLight2D3" type="PointLight2D" parent="."]
+visible = false
 position = Vector2(0, -3)
 scale = Vector2(0.03363, 0.0378143)
 color = Color(0.905608, 0.604982, 0.102581, 1)
@@ -210,7 +209,7 @@ root_node = NodePath("../PointLight2D")
 libraries = {
 &"": SubResource("AnimationLibrary_fsjbr")
 }
-autoplay = "RESET"
+autoplay = "glow"
 
 [node name="AnimationRay_Light" type="AnimationPlayer" parent="."]
 libraries = {
