@@ -7,13 +7,7 @@ res://Scenes/Collectibles/collect_cheese.tscn
 res://Assets/Collectibles/frost_berry.tscn
 res://Scenes/main.tscn
 res://Scenes/UI/congrats_screen.tscn
-res://Scripts/UI/label_lifes.gd
 res://Scenes/HUD/cheese_bar.tscn
-res://Scripts/UI/label_berry.gd
 res://Scenes/player_v_2.tscn
-res://Scripts/global_player_stats.gd
-res://Scripts/Collectibles/frost_berry.gd
 res://Scenes/Environment/treasure_chest_muffler.tscn
-res://Scripts/hovering_component.gd
 res://Scenes/Environment/checkpoint.tscn
-res://Scripts/Environment/checkpoint.gd
