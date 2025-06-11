@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://5cf2f02106ph" path="res://Scripts/Environment/checkpoint.gd" id="1_fdi15"]
 [ext_resource type="Texture2D" uid="uid://cq3bo3fc7jugx" path="res://Assets/Environment/CheckpointFirePit.png" id="2_f4jfi"]
 [ext_resource type="Texture2D" uid="uid://c3tlg5kg14vhb" path="res://Assets/Environment/CheckpointFire.png" id="3_f4jfi"]
-[ext_resource type="Texture2D" uid="uid://dv1kr8b8jyq5t" path="res://Resources/light/point_of_interest_light.tres" id="4_4e0ln"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2cwi7"]
 size = Vector2(16, 20)
@@ -43,6 +42,9 @@ animations = [{
 "name": &"fire",
 "speed": 8.0
 }]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_f4jfi"]
+load_path = "res://.godot/imported/2d_lights_and_shadows_neutral_point_light.webp-90a52a222c53c29b5175d453f1c65e65.ctex"
 
 [sub_resource type="Animation" id="Animation_pwp6q"]
 length = 0.001
@@ -89,7 +91,7 @@ length = 1.2
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
-tracks/0/enabled = true
+tracks/0/enabled = false
 tracks/0/path = NodePath("PointLight2D:energy")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
@@ -101,7 +103,7 @@ tracks/0/keys = {
 }
 tracks/1/type = "value"
 tracks/1/imported = false
-tracks/1/enabled = true
+tracks/1/enabled = false
 tracks/1/path = NodePath("PointLight2D:texture_scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
@@ -113,7 +115,7 @@ tracks/1/keys = {
 }
 tracks/2/type = "value"
 tracks/2/imported = false
-tracks/2/enabled = true
+tracks/2/enabled = false
 tracks/2/path = NodePath("PointLight2D:offset")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
@@ -137,25 +139,25 @@ fire = NodePath("AnimatedSprite2D")
 light_animator = NodePath("AnimationBonfire")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -16)
+position = Vector2(0, -8)
 texture = ExtResource("2_f4jfi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -10)
+position = Vector2(-1, -2)
 shape = SubResource("RectangleShape2D_2cwi7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -16)
+position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_75o51")
 animation = &"fire"
 autoplay = "fire"
 frame_progress = 0.906043
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(-4.76837e-07, -12)
+position = Vector2(0, -6)
 scale = Vector2(0.125, 0.09375)
 color = Color(0.670839, 0.325605, 0.00396068, 1)
-texture = ExtResource("4_4e0ln")
+texture = SubResource("CompressedTexture2D_f4jfi")
 
 [node name="AnimationBonfire" type="AnimationPlayer" parent="."]
 libraries = {

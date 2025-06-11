@@ -7,7 +7,6 @@ res://Scenes/Collectibles/collect_cheese.tscn
 res://Assets/Collectibles/frost_berry.tscn
 res://Scenes/main.tscn
 res://Scenes/UI/congrats_screen.tscn
-res://Scenes/HUD/cheese_bar.tscn
 res://Scenes/player_v_2.tscn
 res://Scenes/Environment/treasure_chest_muffler.tscn
 res://Scenes/Environment/checkpoint.tscn
