@@ -1,5 +1,7 @@
-res://Resources/light
 res://Scripts/UI
+res://Scenes/UI
+res://Resources/light
+res://Resources/shader
 res://Scripts/Collectibles
 res://Assets/Collectibles
 res://Scenes/Traps
@@ -18,4 +20,3 @@ res://Assets/Muz/Snowhat
 res://Assets/Muz/SnowSuit
 res://Assets/Muz/Boots and gloves
 res://Assets/Muz
-res://Assets/TileSet

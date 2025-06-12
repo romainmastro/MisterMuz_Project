@@ -102,7 +102,10 @@ glide={
 
 [layer_names]
 
-2d_render/layer_1="Berries"
+2d_render/layer_1="default"
+2d_render/layer_2="Hearts"
+2d_render/layer_3="Cheeses"
+2d_render/layer_4="Berries"
 2d_physics/layer_1="Ground"
 2d_physics/layer_2="Player"
 2d_physics/layer_3="Enemies"
@@ -121,4 +124,4 @@ glide={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
-environment/defaults/default_clear_color=Color(0.777882, 0.777882, 0.777882, 1)
+environment/defaults/default_clear_color=Color(0.218464, 0.405656, 0.798419, 1)

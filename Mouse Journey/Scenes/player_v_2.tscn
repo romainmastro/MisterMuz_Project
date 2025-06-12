@@ -1,4 +1,4 @@
-[gd_scene load_steps=148 format=3 uid="uid://cnedwspxo44l3"]
+[gd_scene load_steps=149 format=3 uid="uid://cnedwspxo44l3"]
 
 [ext_resource type="Script" uid="uid://bjtw5iph7mhe" path="res://Scripts/player_v_3.gd" id="1_2tjdf"]
 [ext_resource type="Texture2D" uid="uid://bl388umk28hx6" path="res://Assets/Muz/Muz_JUMP.png" id="1_kw5q3"]
@@ -38,6 +38,7 @@
 [ext_resource type="PackedScene" uid="uid://bwvsn2f5kkyb4" path="res://Scenes/Particles/jumping_particle.tscn" id="31_2twrm"]
 [ext_resource type="PackedScene" uid="uid://bx4glml3yfsoj" path="res://Scenes/Particles/landing_particles.tscn" id="32_0ib84"]
 [ext_resource type="Texture2D" uid="uid://dwbqddeq4cdvw" path="res://Assets/Muz/Muffler/Muffler_WALL_SLIDE.png" id="33_xefde"]
+[ext_resource type="Texture2D" uid="uid://dv1kr8b8jyq5t" path="res://Resources/light/point_of_interest_light.tres" id="39_b24wk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i2e8t"]
 atlas = ExtResource("1_kw5q3")
@@ -991,7 +992,7 @@ coyote_grace_sec = 0.2
 
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_dewec")
-animation = &"fall"
+animation = &"idle"
 autoplay = "idle"
 offset = Vector2(0, -2)
 
@@ -1024,12 +1025,14 @@ autoplay = "idle"
 offset = Vector2(0, -2)
 
 [node name="HurtBox" parent="." groups=["player_hurtbox"] instance=ExtResource("28_l0oiw")]
+visible = false
 position = Vector2(0, -1)
 scale = Vector2(1.1605, 0.976)
 collision_layer = 16
 collision_mask = 72
 
 [node name="StompBox" type="Area2D" parent="." groups=["Player_StompBox"]]
+visible = false
 collision_layer = 32
 collision_mask = 129
 
@@ -1090,6 +1093,7 @@ position = Vector2(4, 3)
 one_shot = true
 
 [node name="Raycasts" type="Node2D" parent="."]
+visible = false
 
 [node name="Wall_ray_Right" type="RayCast2D" parent="Raycasts"]
 target_position = Vector2(10, 0)
@@ -1105,6 +1109,13 @@ collide_with_bodies = false
 
 [node name="SafePosition" type="Timer" parent="."]
 autostart = true
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(0, -2.85)
+scale = Vector2(0.96875, 0.847656)
+energy = 0.6
+texture = ExtResource("39_b24wk")
+texture_scale = 0.1
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
 [connection signal="body_entered" from="HurtBox" to="." method="body_entered"]

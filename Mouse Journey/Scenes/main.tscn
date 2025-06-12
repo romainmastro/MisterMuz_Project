@@ -36,9 +36,10 @@ Button/styles/hover = SubResource("StyleBoxEmpty_wax0t")
 Button/styles/normal = SubResource("StyleBoxEmpty_pdrfq")
 Button/styles/pressed = SubResource("StyleBoxEmpty_5vlyr")
 
-[node name="Main" type="Node2D" node_paths=PackedStringArray("player", "world", "congrats_screen", "player_camera", "congrats_camera")]
+[node name="Main" type="Node2D" node_paths=PackedStringArray("player", "HUD", "world", "congrats_screen", "player_camera", "congrats_camera")]
 script = ExtResource("1_8gbba")
 player = NodePath("PlayerV2")
+HUD = NodePath("HUD")
 world = NodePath("WORLD")
 congrats_screen = NodePath("MENU/CongratsScreen")
 player_camera = NodePath("Camera/PlayerCamera")

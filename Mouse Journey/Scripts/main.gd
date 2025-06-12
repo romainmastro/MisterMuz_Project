@@ -1,6 +1,7 @@
 extends Node2D
 
 @export var player : PlayerClass
+@export var HUD : CanvasLayer
 
 @onready var Level1_romain = preload("res://Scenes/Levels/level_1_romain.tscn")
 @onready var Level1 = preload("res://Scenes/Levels/level_eline.tscn")
@@ -14,6 +15,7 @@ extends Node2D
 @export var congrats_camera : Camera2D
 
 func show_CongratsScreen() : 
+	HUD.hide()
 	congrats_screen.show()
 	camera_on_congrats()
 

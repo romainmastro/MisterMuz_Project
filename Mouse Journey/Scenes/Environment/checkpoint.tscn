@@ -91,7 +91,7 @@ length = 1.2
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
-tracks/0/enabled = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("PointLight2D:energy")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
@@ -99,11 +99,11 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.133333, 0.3, 0.4, 0.566667, 0.733333, 0.9, 1.1, 1.16667),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [1.0, 0.5, 0.3, 0.8, 1.5, 0.2, 0.7, 1.0, 1.14274]
+"values": [1.0, 0.8, 1.0, 0.8, 1.5, 0.2, 0.7, 1.0, 1.14274]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
-tracks/1/enabled = false
+tracks/1/enabled = true
 tracks/1/path = NodePath("PointLight2D:texture_scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
@@ -111,11 +111,11 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.133333, 0.5, 0.833333, 1.03333),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [1.0, 0.5, 1.3, 1.6, 0.5]
+"values": [1.0, 0.8, 0.9, 0.7, 1.0]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
-tracks/2/enabled = false
+tracks/2/enabled = true
 tracks/2/path = NodePath("PointLight2D:offset")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
@@ -132,11 +132,12 @@ _data = {
 &"flicker": SubResource("Animation_4e0ln")
 }
 
-[node name="Checkpoint" type="Area2D" node_paths=PackedStringArray("fire", "light_animator")]
+[node name="Checkpoint" type="Area2D" node_paths=PackedStringArray("fire", "light_animator", "light_source")]
 collision_mask = 2
 script = ExtResource("1_fdi15")
 fire = NodePath("AnimatedSprite2D")
 light_animator = NodePath("AnimationBonfire")
+light_source = NodePath("PointLight2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -8)
@@ -154,8 +155,8 @@ autoplay = "fire"
 frame_progress = 0.906043
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(0, -6)
-scale = Vector2(0.125, 0.09375)
+position = Vector2(0, -15)
+scale = Vector2(0.875, 0.320313)
 color = Color(0.670839, 0.325605, 0.00396068, 1)
 texture = SubResource("CompressedTexture2D_f4jfi")
 

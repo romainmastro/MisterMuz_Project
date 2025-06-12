@@ -49,6 +49,7 @@ _data = {
 }
 
 [node name="Collect_Cheese" type="Area2D" node_paths=PackedStringArray("hoveringObjectComponent")]
+light_mask = 4
 collision_layer = 512
 collision_mask = 2
 script = ExtResource("1_ylebh")
@@ -64,6 +65,7 @@ texture = ExtResource("1_ih4oc")
 object = NodePath("..")
 
 [node name="CheeseGlowLight" type="PointLight2D" parent="."]
+light_mask = 4
 position = Vector2(0, 0.5)
 scale = Vector2(0.546875, 0.351562)
 color = Color(0.636582, 0.523595, 0.0884209, 1)

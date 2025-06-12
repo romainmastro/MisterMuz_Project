@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://b36u7cojyu2qd"]
+[gd_scene load_steps=17 format=4 uid="uid://b36u7cojyu2qd"]
 
 [ext_resource type="PackedScene" uid="uid://b1vi7lh2l2ldh" path="res://Scenes/Environment/sign_Start_Level.tscn" id="1_silvh"]
 [ext_resource type="TileSet" uid="uid://cvn6rtpn15ve6" path="res://Resources/Level_Maker.tres" id="2_fh3xk"]
@@ -13,6 +13,18 @@
 [ext_resource type="PackedScene" uid="uid://c0qusm8c2nny0" path="res://Scenes/Traps/spike_thrower.tscn" id="10_otrkh"]
 [ext_resource type="PackedScene" uid="uid://bl1owrdhpaf8h" path="res://Scenes/Traps/V_L_stalagmite_1_Repousseur.tscn" id="11_tsdnf"]
 [ext_resource type="PackedScene" uid="uid://iah2f3d4sy1b" path="res://Scenes/MovingPlatforms/moving_platform1.tscn" id="12_gioyd"]
+
+[sub_resource type="Environment" id="Environment_otrkh"]
+background_mode = 3
+ambient_light_source = 1
+reflected_light_source = 1
+tonemap_mode = 1
+glow_enabled = true
+glow_levels/1 = 1.06
+glow_levels/2 = 1.12
+glow_intensity = 1.1
+glow_bloom = 0.08
+fog_light_energy = 4.44
 
 [sub_resource type="Curve2D" id="Curve2D_gioyd"]
 _data = {
@@ -35,6 +47,12 @@ func _process(delta: float) -> void:
 
 [node name="Level1_R" type="Node2D"]
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_otrkh")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.479445, 0.600842, 0.834705, 1)
+
 [node name="Sign_Start_Level" parent="." instance=ExtResource("1_silvh")]
 position = Vector2(3416, 8)
 
@@ -50,7 +68,7 @@ tile_set = ExtResource("3_silvh")
 
 [node name="Objects" type="TileMapLayer" parent="."]
 z_index = 2
-tile_map_data = PackedByteArray("AABgAAUAAAAAAAAAAgC0AAUAAAAAAAAAAgDZAAEAAAAAAAAAAwDaAAEAAAAAAAAABADbAAEAAAAAAAAABQDXAP//AAAAAAAAAQDUAAAAAAAAAAAAAgDYAP//AAAAAAAABgDaAP//AAAAAAAACAA=")
+tile_map_data = PackedByteArray("AABgAAUAAAAAAAAAAgDVAP7/AAAAAAAACADXAP3/AAAAAAAACADZAP7/AAAAAAAACADaAAEAAAAAAAAAAgDXAP//AAAAAAAAAQDYAP//AAAAAAAABgDYAAEAAAAAAAAAAwA=")
 tile_set = ExtResource("4_2kyff")
 
 [node name="Extra_Traps" type="Node2D" parent="."]
@@ -221,3 +239,12 @@ position = Vector2(-4, 0)
 curve = SubResource("Curve2D_gioyd")
 script = SubResource("GDScript_otrkh")
 vitesse = 50.0
+
+[connection signal="body_entered" from="Objects/Checkpoint" to="Objects/Checkpoint" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/FrostBerry" to="Objects/FrostBerry" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@45612" to="Objects/@Area2D@45612" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@45613" to="Objects/@Area2D@45613" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@45614" to="Objects/@Area2D@45614" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/collectible_heart" to="Objects/collectible_heart" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/Collect_Cheese" to="Objects/Collect_Cheese" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/treasure_chest_muffler" to="Objects/treasure_chest_muffler" method="_on_body_entered"]

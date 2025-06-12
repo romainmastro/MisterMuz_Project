@@ -1,30 +1,30 @@
-[gd_scene load_steps=18 format=4 uid="uid://dhl1tsd1e3234"]
+[gd_scene load_steps=18 format=4 uid="uid://c1dof7qantejk"]
 
-[ext_resource type="Script" uid="uid://duiumda28874d" path="res://Scripts/UI/congrats_screen.gd" id="1_71jre"]
-[ext_resource type="Theme" uid="uid://ba6rurgdpqsjr" path="res://Resources/font/main_font_theme.tres" id="1_up6sh"]
-[ext_resource type="TileSet" uid="uid://cvn6rtpn15ve6" path="res://Resources/Level_Maker.tres" id="3_ayhqs"]
-[ext_resource type="Script" uid="uid://cjcwcwyojc7bn" path="res://Scripts/UI/end_level_checkpoint_forCongratsScreen.gd" id="3_g0osa"]
-[ext_resource type="TileSet" uid="uid://1x1qpe81qufy" path="res://Resources/Décor.tres" id="4_dy31q"]
-[ext_resource type="Texture2D" uid="uid://dypl1impvax7h" path="res://Assets/Environment/end_level_no_fire.png" id="4_st3vl"]
-[ext_resource type="Texture2D" uid="uid://dnb0wxrmnc6rl" path="res://Assets/Environment/end_level lit_fire.png" id="5_cradt"]
+[ext_resource type="Script" uid="uid://nqdc03msyp3w" path="res://Scripts/UI/game_over_screen.gd" id="1_hjimd"]
+[ext_resource type="Theme" uid="uid://ba6rurgdpqsjr" path="res://Resources/font/main_font_theme.tres" id="2_wl0lp"]
+[ext_resource type="Script" uid="uid://cjcwcwyojc7bn" path="res://Scripts/UI/end_level_checkpoint_forCongratsScreen.gd" id="3_xr7rd"]
+[ext_resource type="Texture2D" uid="uid://dypl1impvax7h" path="res://Assets/Environment/end_level_no_fire.png" id="4_1fbis"]
+[ext_resource type="Texture2D" uid="uid://dnb0wxrmnc6rl" path="res://Assets/Environment/end_level lit_fire.png" id="5_is0hg"]
+[ext_resource type="TileSet" uid="uid://cvn6rtpn15ve6" path="res://Resources/Level_Maker.tres" id="6_gglgb"]
+[ext_resource type="TileSet" uid="uid://1x1qpe81qufy" path="res://Resources/Décor.tres" id="7_olh10"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_807ni"]
 size = Vector2(32, 29)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mrmqi"]
-atlas = ExtResource("5_cradt")
+atlas = ExtResource("5_is0hg")
 region = Rect2(0, 0, 48, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6vvqi"]
-atlas = ExtResource("5_cradt")
+atlas = ExtResource("5_is0hg")
 region = Rect2(48, 0, 48, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mssoy"]
-atlas = ExtResource("5_cradt")
+atlas = ExtResource("5_is0hg")
 region = Rect2(96, 0, 48, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_05r57"]
-atlas = ExtResource("5_cradt")
+atlas = ExtResource("5_is0hg")
 region = Rect2(144, 0, 48, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jwqhk"]
@@ -136,29 +136,29 @@ _data = {
 &"flicker": SubResource("Animation_g0osa")
 }
 
-[node name="CongratsScreen" type="Control"]
+[node name="GameOverScreen" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_71jre")
+script = ExtResource("1_hjimd")
 
 [node name="Title" type="Label" parent="."]
 layout_mode = 0
 offset_left = 72.0
 offset_right = 231.0
 offset_bottom = 28.0
-theme = ExtResource("1_up6sh")
+theme = ExtResource("2_wl0lp")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0.835294, 0.929412, 0.929412, 1)
 theme_override_font_sizes/font_size = 22
-text = "Level Complete!"
+text = "Game Over..."
 
 [node name="EndLevelCheckpoint" type="Area2D" parent="." node_paths=PackedStringArray("fire_lit")]
 position = Vector2(128, 120)
-script = ExtResource("3_g0osa")
+script = ExtResource("3_xr7rd")
 fire_lit = NodePath("Fire_Lit")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EndLevelCheckpoint"]
@@ -167,7 +167,7 @@ shape = SubResource("RectangleShape2D_807ni")
 
 [node name="No_Fire" type="Sprite2D" parent="EndLevelCheckpoint"]
 visible = false
-texture = ExtResource("4_st3vl")
+texture = ExtResource("4_1fbis")
 offset = Vector2(0, -8)
 region_enabled = true
 region_rect = Rect2(0, 0, 48, 32)
@@ -191,11 +191,11 @@ autoplay = "flicker"
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAPAAgAAAADAAEAAAAOAAgAAAAFAAEAAAANAAgAAAADAAEAAAAMAAgAAAAIAAEAAAALAAgAAAAFAAEAAAAKAAgAAAACAAEAAAAJAAgAAAAIAAEAAAAIAAgAAAAHAAEAAAAHAAgAAAABAAEAAAAGAAgAAAAFAAEAAAAFAAgAAAAGAAEAAAAEAAgAAAAIAAEAAAADAAgAAAADAAEAAAACAAgAAAACAAEAAAABAAgAAAACAAEAAAAAAAgAAAAFAAEAAAAEAAkAAAANAAAAAAADAAkAAAANAAAAAAACAAkAAAANAAAAAAABAAkAAAANAAAAAAAAAAkAAAANAAAAAAAPAAkAAAANAAAAAAAOAAkAAAANAAAAAAANAAkAAAANAAAAAAAMAAkAAAANAAAAAAALAAkAAAANAAAAAAAKAAkAAAANAAAAAAAJAAkAAAANAAAAAAAIAAkAAAANAAAAAAAHAAkAAAANAAAAAAAGAAkAAAANAAAAAAAFAAkAAAANAAAAAAAQAAgAAAAEAAEAAAARAAgAAAADAAEAAAASAAgAAAADAAEAAAATAAgAAAAJAAEAAAATAAkAAAAJAAIAAAASAAkAAAANAAAAAAARAAkAAAANAAAAAAAQAAkAAAANAAAAAAD+/woAAAAAAAAAAAD//woAAAAAAAIAAAAAAAoAAAANAAAAAAABAAoAAAANAAAAAAACAAoAAAANAAAAAAADAAoAAAANAAAAAAAEAAoAAAANAAAAAAAFAAoAAAANAAAAAAAGAAoAAAANAAAAAAAHAAoAAAANAAAAAAAIAAoAAAANAAAAAAAIAAsAAAACAAMAAAAJAAsAAAAIAAMAAAAKAAsAAAAIAAMAAAALAAsAAAACAAMAAAAMAAsAAAABAAMAAAANAAsAAAABAAMAAAAOAAsAAAACAAMAAAAPAAsAAAAEAAMAAAAQAAsAAAACAAMAAAARAAsAAAAEAAMAAAASAAsAAAAGAAMAAAATAAsAAAAJAAMAAAATAAoAAAAJAAIAAAASAAoAAAANAAAAAAARAAoAAAANAAAAAAAQAAoAAAANAAAAAAAPAAoAAAANAAAAAAAOAAoAAAANAAAAAAANAAoAAAANAAAAAAAMAAoAAAANAAAAAAALAAoAAAANAAAAAAAKAAoAAAANAAAAAAAJAAoAAAANAAAAAAACAAsAAAACAAMAAAABAAsAAAADAAMAAAAAAAsAAAACAAMAAAADAAsAAAAIAAMAAAAEAAsAAAAGAAMAAAAFAAsAAAAIAAMAAAAGAAsAAAAFAAMAAAAHAAsAAAAIAAMAAAD//wkAAAAAAAIAAAD//wgAAAAAAAEAAAD//wsAAAAAAAMAAAA=")
-tile_set = ExtResource("3_ayhqs")
+tile_set = ExtResource("6_gglgb")
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAHAAcAAAAWAAAAAAAJAAcAAAAUAAQAAAAWAAcAAAAXAAEAAAAZAAcAAAASAAQAAAAbAAcAAAASAAQAAAAaAAcAAAASAAIAAAAcAAcAAAAWAAEAAAAAAAcAAAAbAAAAAAABAAcAAAAaAAEAAAACAAcAAAAUAAEAAAAEAAcAAAAYAAEAAAAIAAcAAAATAAAAAAAKAAcAAAAbAAAAAAALAAcAAAAeAAIAAAANAAcAAAASAAAAAAAUAAcAAAAVAAIAAAAXAAcAAAAbAAAAAAAYAAcAAAAWAAAAAAAdAAcAAAASAAAAAAAGAAcAAAAcAAIAAAAVAAcAAAAeAAIAAAATAAcAAAAaAAMAAAAfAAcAAAAaAAEAAAAgAAcAAAAeAAIAAAAhAAcAAAAaAAMAAAAkAAcAAAAaAAEAAAAnAAcAAAAZAAEAAAA=")
-tile_set = ExtResource("4_dy31q")
+tile_set = ExtResource("7_olh10")
 
 [node name="NextLevel" type="Button" parent="."]
 layout_mode = 2
@@ -203,7 +203,7 @@ offset_left = 231.0
 offset_top = 40.0
 offset_right = 271.0
 offset_bottom = 50.0
-theme = ExtResource("1_up6sh")
+theme = ExtResource("2_wl0lp")
 text = "Next Level"
 
 [node name="Replay" type="Button" parent="."]
@@ -212,7 +212,7 @@ offset_left = 32.0
 offset_top = 40.0
 offset_right = 72.0
 offset_bottom = 50.0
-theme = ExtResource("1_up6sh")
+theme = ExtResource("2_wl0lp")
 text = "Replay"
 
 [connection signal="pressed" from="NextLevel" to="." method="_on_next_level_pressed"]
