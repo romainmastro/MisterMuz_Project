@@ -239,3 +239,6 @@ position = Vector2(-4, 0)
 curve = SubResource("Curve2D_gioyd")
 script = SubResource("GDScript_otrkh")
 vitesse = 50.0
+
+[connection signal="body_entered" from="Objects/Checkpoint" to="Objects/Checkpoint" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/EndLevelCheckpoint" to="Objects/EndLevelCheckpoint" method="_on_body_entered"]

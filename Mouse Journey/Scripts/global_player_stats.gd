@@ -44,7 +44,6 @@ signal has_muffler_signal
 @export var has_muffler : bool = false
 
 
-signal show_congrats_screen # emitted by end_level_checkpoint
 signal show_game_over_screen # emitted on death by player.gd
 signal next_level #emitted by CongratsScreen
 signal replay #emitted by CongratsScreen

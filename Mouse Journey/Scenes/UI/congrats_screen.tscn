@@ -233,5 +233,8 @@ environment = SubResource("Environment_g0osa")
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.479445, 0.600842, 0.834705, 1)
 
+[node name="Congrats_camera" type="Camera2D" parent="."]
+anchor_mode = 0
+
 [connection signal="pressed" from="NextLevel" to="." method="_on_next_level_pressed"]
 [connection signal="pressed" from="Replay" to="." method="_on_replay_pressed"]

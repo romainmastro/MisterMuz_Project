@@ -22,6 +22,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+GlobalLevelsManager="*res://Scripts/UI/global_levels_manager.gd"
 GlobalPlayerStats="*res://Scripts/global_player_stats.gd"
 GlobalEnemyManager="*res://Scripts/Enemies/Global_Enemy_Manager.gd"
 

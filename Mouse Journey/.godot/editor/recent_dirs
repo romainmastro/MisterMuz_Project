@@ -1,5 +1,6 @@
-res://Assets/Environment
 res://Scripts/UI
+res://Scenes/Environment
+res://Assets/Environment
 res://Scenes/UI
 res://Resources/light
 res://Resources/shader
@@ -19,4 +20,3 @@ res://Assets/Enemies/SnowMole
 res://Assets/Muz/Muffler
 res://Assets/Muz/Snowhat
 res://Assets/Muz/SnowSuit
-res://Assets/Muz/Boots and gloves
