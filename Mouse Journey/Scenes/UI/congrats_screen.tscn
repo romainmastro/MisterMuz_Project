@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://dhl1tsd1e3234"]
+[gd_scene load_steps=19 format=4 uid="uid://dhl1tsd1e3234"]
 
 [ext_resource type="Script" uid="uid://duiumda28874d" path="res://Scripts/UI/congrats_screen.gd" id="1_71jre"]
 [ext_resource type="Theme" uid="uid://ba6rurgdpqsjr" path="res://Resources/font/main_font_theme.tres" id="1_up6sh"]
@@ -136,6 +136,18 @@ _data = {
 &"flicker": SubResource("Animation_g0osa")
 }
 
+[sub_resource type="Environment" id="Environment_g0osa"]
+background_mode = 3
+ambient_light_source = 1
+reflected_light_source = 1
+tonemap_mode = 1
+glow_enabled = true
+glow_levels/1 = 1.06
+glow_levels/2 = 1.12
+glow_intensity = 1.1
+glow_bloom = 0.08
+fog_light_energy = 4.44
+
 [node name="CongratsScreen" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -214,6 +226,12 @@ offset_right = 72.0
 offset_bottom = 50.0
 theme = ExtResource("1_up6sh")
 text = "Replay"
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_g0osa")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.479445, 0.600842, 0.834705, 1)
 
 [connection signal="pressed" from="NextLevel" to="." method="_on_next_level_pressed"]
 [connection signal="pressed" from="Replay" to="." method="_on_replay_pressed"]

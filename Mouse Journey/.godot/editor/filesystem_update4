@@ -3,12 +3,8 @@ res://Resources/Level_Maker.tres
 res://Resources/Pièges.tres
 res://Resources/Objects.tres
 res://Resources/Décor.tres
-res://Scenes/Collectibles/collect_cheese.tscn
-res://Assets/Collectibles/frost_berry.tscn
-res://Scenes/main.tscn
-res://Scenes/UI/congrats_screen.tscn
-res://Scenes/Collectibles/Collect_Heart.tscn
-res://Scenes/Environment/checkpoint.tscn
-res://Scenes/player_v_2.tscn
 res://Resources/shader/outline_player.gdshader
+res://Scenes/UI/congrats_screen.tscn
+res://Scenes/player_v_2.tscn
 res://Scenes/UI/game_over_screen.tscn
+res://Scenes/main.tscn

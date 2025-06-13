@@ -489,13 +489,18 @@ func init_player_after_respawn() :
 	STATE = "IDLE"
 	
 func on_death() : 
-	velocity = Vector2.ZERO
-	if GlobalPlayerStats.current_checkpoint != Vector2.ZERO : 
-		respawn_to_checkpoint()
+	GlobalPlayerStats.current_lives_number -= 1
+	GlobalPlayerStats.gain_one_life.emit() # to label_lives in main.gd
+	if GlobalPlayerStats.current_lives_number <= 0 : 
+		print("GAME OVER")
 	else : 
-		push_error("ERROR : There isn't any checkpoint available!!")
-	init_health()
-	STATE = "IDLE"
+		velocity = Vector2.ZERO
+		if GlobalPlayerStats.current_checkpoint != Vector2.ZERO : 
+			respawn_to_checkpoint()
+		else : 
+			push_error("ERROR : There isn't any checkpoint available!!")
+		init_health()
+		STATE = "IDLE"
 
 ######################################### HURT SYSTEM ########################################
 func respawn_to_last_safe_position() :

@@ -68,7 +68,7 @@ tile_set = ExtResource("3_silvh")
 
 [node name="Objects" type="TileMapLayer" parent="."]
 z_index = 2
-tile_map_data = PackedByteArray("AABgAAUAAAAAAAAAAgDVAP7/AAAAAAAACADXAP3/AAAAAAAACADZAP7/AAAAAAAACADaAAEAAAAAAAAAAgDXAP//AAAAAAAAAQDYAP//AAAAAAAABgDYAAEAAAAAAAAAAwA=")
+tile_map_data = PackedByteArray("AABgAAUAAAAAAAAAAgDZAAEAAAAAAAAABwA=")
 tile_set = ExtResource("4_2kyff")
 
 [node name="Extra_Traps" type="Node2D" parent="."]
@@ -241,10 +241,4 @@ script = SubResource("GDScript_otrkh")
 vitesse = 50.0
 
 [connection signal="body_entered" from="Objects/Checkpoint" to="Objects/Checkpoint" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/FrostBerry" to="Objects/FrostBerry" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@45612" to="Objects/@Area2D@45612" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@45613" to="Objects/@Area2D@45613" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@45614" to="Objects/@Area2D@45614" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/collectible_heart" to="Objects/collectible_heart" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/Collect_Cheese" to="Objects/Collect_Cheese" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/treasure_chest_muffler" to="Objects/treasure_chest_muffler" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/EndLevelCheckpoint" to="Objects/EndLevelCheckpoint" method="_on_body_entered"]

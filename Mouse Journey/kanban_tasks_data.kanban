@@ -34,7 +34,6 @@
 				"e6de74ab-da1e-46d2-ad73-418882192b5a",
 				"f1649e68-55c8-4394-a8a8-903669540d44",
 				"ef9a25df-950f-4d92-baca-77688806a127",
-				"00cd1f31-6aea-4faf-be9a-509a0b2c9509",
 				"25e39056-f16e-4cb5-88b8-0deaa0e6a02c",
 				"f2df43f3-aab2-4a56-9fa6-798969a50e25"
 			]
@@ -44,13 +43,15 @@
 			"title": "Doing",
 			"tasks": [
 				"97c841d5-cd58-4e53-965d-c88ec9f352a8",
-				"6ca4af24-b6ad-478b-990e-581937db46ad"
+				"34544e9b-5d4b-4895-92e0-de4f74beb8f7",
+				"00cd1f31-6aea-4faf-be9a-509a0b2c9509"
 			]
 		},
 		{
 			"uuid": "a590c45f-f6e0-4df4-a178-2596b3213350",
 			"title": "Done on the current Branch",
 			"tasks": [
+				"6ca4af24-b6ad-478b-990e-581937db46ad",
 				"2c0adc9d-0212-4e6c-ad48-b30a913bef08",
 				"6b0d8fbc-959c-4d57-9603-1dcc46839721",
 				"ddc4fd00-58cc-4072-b5c8-d1812c1d8f63",
@@ -1429,6 +1430,13 @@
 		{
 			"uuid": "6ca4af24-b6ad-478b-990e-581937db46ad",
 			"title": "Reveal HUD on start Level",
+			"description": "",
+			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
+			"steps": []
+		},
+		{
+			"uuid": "34544e9b-5d4b-4895-92e0-de4f74beb8f7",
+			"title": "investigate : CongratsScreen Camera",
 			"description": "",
 			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
 			"steps": []
