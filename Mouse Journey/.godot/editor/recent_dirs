@@ -1,7 +1,8 @@
 res://Scripts/UI
+res://Scenes/UI
+res://
 res://Scenes/Environment
 res://Assets/Environment
-res://Scenes/UI
 res://Resources/light
 res://Resources/shader
 res://Scripts/Collectibles
@@ -19,4 +20,3 @@ res://Assets/Enemies/SnowMole/SnowMoleV2
 res://Assets/Enemies/SnowMole
 res://Assets/Muz/Muffler
 res://Assets/Muz/Snowhat
-res://Assets/Muz/SnowSuit

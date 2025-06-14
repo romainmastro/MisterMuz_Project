@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dcft2jp2kg0p2"]
+
+[ext_resource type="Script" uid="uid://b8kq6obsefjyu" path="res://Scripts/UI/global_levels_manager.gd" id="1_tij55"]
+
+[node name="Menu" type="Node"]
+script = ExtResource("1_tij55")

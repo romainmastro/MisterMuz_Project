@@ -8,7 +8,7 @@ const SNOW_MOLE_V_2 = preload("res://Scenes/Enemies/snow_mole_v_2.tscn")
 var enemy_node_path : Node2D
 
 func spawn() : 
-	enemy_node_path = get_node("/root/Main/WORLD").get_child(0)
+	enemy_node_path = get_tree().get_root().get_node("Game/Main/WORLD").get_child(0)
 	if not enemy_node_path:
 		push_error("Enemy node path not found. Check scene structure!")
 	

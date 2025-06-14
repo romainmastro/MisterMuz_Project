@@ -16,13 +16,13 @@ instance_dock/preview_resolution=Vector2i(64, 64)
 [application]
 
 config/name="Muz Journey"
-run/main_scene="uid://ci35s5hiav38j"
+run/main_scene="uid://b438nvdto6o4s"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
-GlobalLevelsManager="*res://Scripts/UI/global_levels_manager.gd"
+GlobalMenu="*res://Scripts/UI/GlobalMenu.gd"
 GlobalPlayerStats="*res://Scripts/global_player_stats.gd"
 GlobalEnemyManager="*res://Scripts/Enemies/Global_Enemy_Manager.gd"
 

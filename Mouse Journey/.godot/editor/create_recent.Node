@@ -1,3 +1,4 @@
+Node
 Camera2D
 AnimatedSprite2D
 PointLight2D
@@ -12,4 +13,3 @@ Container
 Control
 Sprite2D
 Label
-VBoxContainer
