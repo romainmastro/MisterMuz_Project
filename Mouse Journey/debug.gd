@@ -6,7 +6,10 @@ extends CanvasLayer
 @onready var animation: Label = $Control/VBoxContainer/animation
 
 
-@export var player : CharacterBody2D
+var player : PlayerClass
+
+func _ready() -> void:
+	player = get_node_or_null("WORLD/player_v_2")
 
 
 func _physics_process(_delta: float) -> void:

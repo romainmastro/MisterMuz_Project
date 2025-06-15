@@ -1,4 +1,4 @@
-[gd_scene load_steps=149 format=3 uid="uid://cnedwspxo44l3"]
+[gd_scene load_steps=150 format=3 uid="uid://cnedwspxo44l3"]
 
 [ext_resource type="Script" uid="uid://bjtw5iph7mhe" path="res://Scripts/player_v_3.gd" id="1_2tjdf"]
 [ext_resource type="Texture2D" uid="uid://bl388umk28hx6" path="res://Assets/Muz/Muz_JUMP.png" id="1_kw5q3"]
@@ -39,6 +39,7 @@
 [ext_resource type="PackedScene" uid="uid://bx4glml3yfsoj" path="res://Scenes/Particles/landing_particles.tscn" id="32_0ib84"]
 [ext_resource type="Texture2D" uid="uid://dwbqddeq4cdvw" path="res://Assets/Muz/Muffler/Muffler_WALL_SLIDE.png" id="33_xefde"]
 [ext_resource type="Texture2D" uid="uid://dv1kr8b8jyq5t" path="res://Resources/light/point_of_interest_light.tres" id="39_b24wk"]
+[ext_resource type="Script" uid="uid://5btxhk0r3gsc" path="res://Scripts/camera_2d.gd" id="40_ybkh6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i2e8t"]
 atlas = ExtResource("1_kw5q3")
@@ -1116,6 +1117,10 @@ scale = Vector2(0.96875, 0.847656)
 energy = 0.6
 texture = ExtResource("39_b24wk")
 texture_scale = 0.1
+
+[node name="PlayerCamera" type="Camera2D" parent="."]
+position_smoothing_speed = 3.0
+script = ExtResource("40_ybkh6")
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
 [connection signal="body_entered" from="HurtBox" to="." method="body_entered"]

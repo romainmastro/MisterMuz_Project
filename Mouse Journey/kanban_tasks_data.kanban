@@ -41,16 +41,16 @@
 		{
 			"uuid": "ef4e123f-f6ea-4e30-8896-4ddd7167fd59",
 			"title": "Doing",
-			"tasks": [
-				"97c841d5-cd58-4e53-965d-c88ec9f352a8",
-				"34544e9b-5d4b-4895-92e0-de4f74beb8f7",
-				"00cd1f31-6aea-4faf-be9a-509a0b2c9509"
-			]
+			"tasks": []
 		},
 		{
 			"uuid": "a590c45f-f6e0-4df4-a178-2596b3213350",
 			"title": "Done on the current Branch",
 			"tasks": [
+				"f7f11080-465c-40a8-94cb-5bab8dcf069f",
+				"00cd1f31-6aea-4faf-be9a-509a0b2c9509",
+				"34544e9b-5d4b-4895-92e0-de4f74beb8f7",
+				"97c841d5-cd58-4e53-965d-c88ec9f352a8",
 				"6ca4af24-b6ad-478b-990e-581937db46ad",
 				"2c0adc9d-0212-4e6c-ad48-b30a913bef08",
 				"6b0d8fbc-959c-4d57-9603-1dcc46839721",
@@ -1120,7 +1120,7 @@
 			"uuid": "00cd1f31-6aea-4faf-be9a-509a0b2c9509",
 			"title": "GAME OVER Screen",
 			"description": "",
-			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
+			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
 			"steps": []
 		},
 		{
@@ -1356,7 +1356,7 @@
 			"uuid": "97c841d5-cd58-4e53-965d-c88ec9f352a8",
 			"title": "Number of Lives System",
 			"description": "",
-			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
+			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
 			"steps": [
 				{
 					"details": "HUD",
@@ -1364,7 +1364,7 @@
 				},
 				{
 					"details": "If <= 0 : Game Over Screen",
-					"done": false
+					"done": true
 				}
 			]
 		},
@@ -1424,21 +1424,28 @@
 			"uuid": "2c0adc9d-0212-4e6c-ad48-b30a913bef08",
 			"title": "Hide HUD on congrats Screen",
 			"description": "",
-			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
+			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
 			"steps": []
 		},
 		{
 			"uuid": "6ca4af24-b6ad-478b-990e-581937db46ad",
 			"title": "Reveal HUD on start Level",
 			"description": "",
-			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
+			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
 			"steps": []
 		},
 		{
 			"uuid": "34544e9b-5d4b-4895-92e0-de4f74beb8f7",
 			"title": "investigate : CongratsScreen Camera",
 			"description": "",
-			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
+			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"steps": []
+		},
+		{
+			"uuid": "f7f11080-465c-40a8-94cb-5bab8dcf069f",
+			"title": "REWORKED the whole game loop",
+			"description": "",
+			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
 			"steps": []
 		}
 	],

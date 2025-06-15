@@ -4,14 +4,12 @@ enum GAME_STATES{MAIN_MENU, PLAYING_GAME, LEVEL_COMPLETE_SCREEN, GAMEOVER_SCREEN
 var current_game_state : GAME_STATES = GAME_STATES.UNSET
 
 
-@export var player : PlayerClass
-@export var HUD : CanvasLayer
-
 @onready var start_screen = preload("res://Scenes/UI/Start_Screen.tscn")
 var start_screen_node : Node
 @onready var congrats_screen = preload("res://Scenes/UI/congrats_screen.tscn")
 var congrats_screen_node : Node
 @onready var game_over_screen = preload("res://Scenes/UI/game_over_screen.tscn")
+var game_over_screen_node : Node
 @onready var main = preload("res://Scenes/main.tscn")
 var main_node : Node
 
@@ -43,7 +41,7 @@ func set_game_state(new_state : GAME_STATES) :
 			show_congrats_screen()
 			
 		GAME_STATES.GAMEOVER_SCREEN : 
-			#show game_over_screen
+			show_game_over_screen()
 			print("Game State = gameover_screen")
 		_ : 
 			print("error? : game State not defined /GlobalMenu.gd")
@@ -51,6 +49,9 @@ func set_game_state(new_state : GAME_STATES) :
 func show_main_menu() : 
 	start_screen_node = start_screen.instantiate()
 	add_child(start_screen_node)
+	
+	if game_over_screen_node : 
+		game_over_screen_node.call_deferred("queue_free")
 
 func start_game() : 
 	main_node = main.instantiate()
@@ -60,12 +61,24 @@ func start_game() :
 	if start_screen_node : 
 		start_screen_node.call_deferred("queue_free")
 		
+	if congrats_screen_node : 
+		congrats_screen_node.call_deferred("queue_free")
+		
 func show_congrats_screen() : 
 	#1 add congrats_screen
 	congrats_screen_node = congrats_screen.instantiate()
 	call_deferred("add_child", congrats_screen_node)
 	
 	#2 free main
+	if main_node : 
+		main_node.call_deferred("queue_free")
+		
+func show_game_over_screen() : 
+	# 1 add game_over_screen
+	game_over_screen_node = game_over_screen.instantiate()
+	call_deferred("add_child", game_over_screen_node)
+	
+	# 2 free main
 	if main_node : 
 		main_node.call_deferred("queue_free")
 

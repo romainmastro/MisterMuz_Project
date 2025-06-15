@@ -236,5 +236,25 @@ color = Color(0.479445, 0.600842, 0.834705, 1)
 [node name="Congrats_camera" type="Camera2D" parent="."]
 anchor_mode = 0
 
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(96, -64)
+amount = 400
+lifetime = 10.0
+preprocess = 7.0
+speed_scale = 0.5
+lifetime_randomness = 0.3
+emission_shape = 3
+emission_rect_extents = Vector2(180, 1)
+direction = Vector2(1, 1)
+spread = 30.0
+gravity = Vector2(0, 10)
+initial_velocity_min = 20.0
+initial_velocity_max = 20.0
+scale_amount_min = 1.1
+scale_amount_max = 1.6
+color = Color(0.835294, 0.929412, 0.929412, 1)
+hue_variation_min = 0.52
+hue_variation_max = 0.52
+
 [connection signal="pressed" from="NextLevel" to="." method="_on_next_level_pressed"]
 [connection signal="pressed" from="Replay" to="." method="_on_replay_pressed"]

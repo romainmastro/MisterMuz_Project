@@ -6,7 +6,7 @@ extends Node
 @export var player_max_HP : float = 3
 @export var is_dead : bool = false
 
-@export var current_lives_number : int = 2
+@export var current_lives_number : int = 1
 @export var max_lives_number : int = 10
 
 var current_cheese_nb : float = 0
@@ -42,8 +42,3 @@ signal has_snowHat_signal
 
 signal has_muffler_signal
 @export var has_muffler : bool = false
-
-
-signal show_game_over_screen # emitted on death by player.gd
-signal next_level #emitted by CongratsScreen
-signal replay #emitted by CongratsScreen
