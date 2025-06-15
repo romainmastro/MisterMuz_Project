@@ -41,11 +41,18 @@
 		{
 			"uuid": "ef4e123f-f6ea-4e30-8896-4ddd7167fd59",
 			"title": "Doing",
-			"tasks": []
+			"tasks": [
+				"b23aebfc-e6a5-4d86-8881-6265c6deb40d"
+			]
 		},
 		{
 			"uuid": "a590c45f-f6e0-4df4-a178-2596b3213350",
 			"title": "Done on the current Branch",
+			"tasks": []
+		},
+		{
+			"uuid": "9573ce0a-9b5d-4fd9-bb69-4b68a3540b99",
+			"title": "DONE => Main Branch",
 			"tasks": [
 				"f7f11080-465c-40a8-94cb-5bab8dcf069f",
 				"00cd1f31-6aea-4faf-be9a-509a0b2c9509",
@@ -62,13 +69,7 @@
 				"290d7423-1974-4607-b656-0c64053f503f",
 				"f63183d9-b7eb-4ab2-83e5-5cb70f0cd183",
 				"21b67a85-e919-4d63-8e6c-818fd3386631",
-				"3ed37afa-e300-4409-9813-66428298beb6"
-			]
-		},
-		{
-			"uuid": "9573ce0a-9b5d-4fd9-bb69-4b68a3540b99",
-			"title": "DONE => Main Branch",
-			"tasks": [
+				"3ed37afa-e300-4409-9813-66428298beb6",
 				"21a59a3c-50b0-46fc-858b-4b5a4bbb0202",
 				"6cf91bd4-46a9-4812-8127-1535a474b5e0",
 				"a35cc607-7d29-4f3c-9633-2ecfc0337d04",
@@ -1120,7 +1121,7 @@
 			"uuid": "00cd1f31-6aea-4faf-be9a-509a0b2c9509",
 			"title": "GAME OVER Screen",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
@@ -1292,21 +1293,21 @@
 			"uuid": "f63183d9-b7eb-4ab2-83e5-5cb70f0cd183",
 			"title": "BUG : Snowballs hits multiple times!",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "8e82cbd9-e60c-4121-a3dc-1044880655d9",
 			"title": "Trap : ice geyser",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "993c7f5a-1780-4dbb-bce5-a8f901c38927",
 			"title": "Trap : spikes thrower",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": [
 				{
 					"details": "Kill Throwing Spikes when jump on it",
@@ -1318,21 +1319,21 @@
 			"uuid": "66ed3927-4a0c-483e-b52d-0aae74446177",
 			"title": "bug : Fallingstalagtite + spikes don't disappear when hit player",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "290d7423-1974-4607-b656-0c64053f503f",
 			"title": "Added : Geyser - Horizontal",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "3ed37afa-e300-4409-9813-66428298beb6",
 			"title": "Berries : collectibles",
 			"description": "frostberry don't respawn on death\ncheckpoint : save the current number of frostberry",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": [
 				{
 					"details": "Create AREA2D",
@@ -1356,7 +1357,7 @@
 			"uuid": "97c841d5-cd58-4e53-965d-c88ec9f352a8",
 			"title": "Number of Lives System",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": [
 				{
 					"details": "HUD",
@@ -1379,14 +1380,14 @@
 			"uuid": "21b67a85-e919-4d63-8e6c-818fd3386631",
 			"title": "HUD",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "ddc4fd00-58cc-4072-b5c8-d1812c1d8f63",
 			"title": "add light effects to objects",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": [
 				{
 					"details": "chests",
@@ -1410,43 +1411,59 @@
 			"uuid": "9aeb20f2-4a55-43bc-bd43-55e334445aae",
 			"title": "random floating start for bobbing collectibles",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "6b0d8fbc-959c-4d57-9603-1dcc46839721",
 			"title": "endlevelcheckpoint light",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "2c0adc9d-0212-4e6c-ad48-b30a913bef08",
 			"title": "Hide HUD on congrats Screen",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "6ca4af24-b6ad-478b-990e-581937db46ad",
 			"title": "Reveal HUD on start Level",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "34544e9b-5d4b-4895-92e0-de4f74beb8f7",
 			"title": "investigate : CongratsScreen Camera",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "f7f11080-465c-40a8-94cb-5bab8dcf069f",
 			"title": "REWORKED the whole game loop",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
+		},
+		{
+			"uuid": "b23aebfc-e6a5-4d86-8881-6265c6deb40d",
+			"title": "Transitions between game states",
+			"description": "",
+			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"steps": [
+				{
+					"details": "1. Create transitions + Test",
+					"done": true
+				},
+				{
+					"details": "2. introduce transitions between all the GAME STATES",
+					"done": false
+				}
+			]
 		}
 	],
 	"layout": {

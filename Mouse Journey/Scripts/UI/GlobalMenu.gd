@@ -1,6 +1,6 @@
 extends Node
 
-enum GAME_STATES{MAIN_MENU, PLAYING_GAME, LEVEL_COMPLETE_SCREEN, GAMEOVER_SCREEN, UNSET}
+enum GAME_STATES{MAIN_MENU, PLAYING_GAME, LEVEL_COMPLETE_SCREEN, GAMEOVER_SCREEN, QUIT, UNSET}
 var current_game_state : GAME_STATES = GAME_STATES.UNSET
 
 
@@ -10,6 +10,11 @@ var start_screen_node : Node
 var congrats_screen_node : Node
 @onready var game_over_screen = preload("res://Scenes/UI/game_over_screen.tscn")
 var game_over_screen_node : Node
+@onready var game_states_transition = preload("res://Scenes/UI/transition.tscn")
+var game_states_transition_node = Node
+
+var transition_callback : Callable = Callable()
+
 @onready var main = preload("res://Scenes/main.tscn")
 var main_node : Node
 
@@ -43,6 +48,10 @@ func set_game_state(new_state : GAME_STATES) :
 		GAME_STATES.GAMEOVER_SCREEN : 
 			show_game_over_screen()
 			print("Game State = gameover_screen")
+		
+		GAME_STATES.QUIT : 
+			get_tree().quit()
+			
 		_ : 
 			print("error? : game State not defined /GlobalMenu.gd")
 
@@ -81,6 +90,28 @@ func show_game_over_screen() :
 	# 2 free main
 	if main_node : 
 		main_node.call_deferred("queue_free")
+
+func game_transition(callback : Callable) : 
+	
+	# 1 instantiate the transition_node
+	game_states_transition_node = game_states_transition.instantiate()
+	add_child(game_states_transition_node)
+	
+	game_states_transition_node.set_callback(callback)
+	
+	# 2 get ready to play the transition animation
+	var animator = game_states_transition_node.get_node("CurtainAnimator") as AnimationPlayer
+	
+	# 3 play close animation
+	animator.play("transition")
+	
+	await animator.animation_finished
+	game_states_transition_node.queue_free()
+	
+	
+func _transition_midpoint() : 
+	if transition_callback.is_valid() : 
+		transition_callback.call()
 
 func get_current_level() -> PackedScene : 
 	return levels[current_level_index]

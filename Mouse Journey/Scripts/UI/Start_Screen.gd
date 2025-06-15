@@ -24,13 +24,13 @@ func _ready() -> void:
 	tween.parallel().tween_property(menu, "position", target_menu_pos, 3).set_trans(Tween.TRANS_ELASTIC)
 
 func _on_start_button_pressed() -> void:
-	GlobalMenu.set_game_state(GlobalMenu.GAME_STATES.PLAYING_GAME)
+	GlobalMenu.game_transition(func() : GlobalMenu.set_game_state(GlobalMenu.GAME_STATES.PLAYING_GAME))
 
 func _on_options_button_pressed() -> void:
 	pass
 
 func _on_quit_button_pressed() -> void:
-	get_tree().quit()
+	GlobalMenu.game_transition(func() : GlobalMenu.set_game_state(GlobalMenu.GAME_STATES.QUIT))
 
 func update_animation() : 
 	muz.play("idle")

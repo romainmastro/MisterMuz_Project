@@ -152,6 +152,7 @@ theme_override_font_sizes/font_size = 12
 text = "Quit Game"
 
 [node name="Title" type="Label" parent="."]
+layout_mode = 0
 offset_left = 64.0
 offset_top = 24.0
 offset_right = 252.0
