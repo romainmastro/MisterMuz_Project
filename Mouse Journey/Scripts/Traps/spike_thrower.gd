@@ -18,8 +18,6 @@ const DIRECTION_GAUCHE := 0
 
 func _ready() -> void:
 	handle_flip_sprite()
-	print(direction_depart)
-	print(direction)
 		
 func _on_timer_timeout() -> void:
 	animated_sprite.play("shoot")

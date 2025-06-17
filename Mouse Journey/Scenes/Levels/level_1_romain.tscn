@@ -68,7 +68,7 @@ tile_set = ExtResource("3_silvh")
 
 [node name="Objects" type="TileMapLayer" parent="."]
 z_index = 2
-tile_map_data = PackedByteArray("AABgAAUAAAAAAAAAAgDZAAEAAAAAAAAABwA=")
+tile_map_data = PackedByteArray("AADZAAEAAAAAAAAABwA=")
 tile_set = ExtResource("4_2kyff")
 
 [node name="Extra_Traps" type="Node2D" parent="."]
@@ -239,3 +239,8 @@ position = Vector2(-4, 0)
 curve = SubResource("Curve2D_gioyd")
 script = SubResource("GDScript_otrkh")
 vitesse = 50.0
+
+[node name="Spike_Thrower" parent="." instance=ExtResource("10_otrkh")]
+position = Vector2(3432, 24)
+
+[connection signal="body_entered" from="Objects/EndLevelCheckpoint" to="Objects/EndLevelCheckpoint" method="_on_body_entered"]

@@ -35,7 +35,7 @@
 				"f1649e68-55c8-4394-a8a8-903669540d44",
 				"ef9a25df-950f-4d92-baca-77688806a127",
 				"25e39056-f16e-4cb5-88b8-0deaa0e6a02c",
-				"f2df43f3-aab2-4a56-9fa6-798969a50e25"
+				"43d1bd7a-eb02-49c2-91c3-1c0e569bac76"
 			]
 		},
 		{
@@ -48,7 +48,9 @@
 		{
 			"uuid": "a590c45f-f6e0-4df4-a178-2596b3213350",
 			"title": "Done on the current Branch",
-			"tasks": []
+			"tasks": [
+				"f2df43f3-aab2-4a56-9fa6-798969a50e25"
+			]
 		},
 		{
 			"uuid": "9573ce0a-9b5d-4fd9-bb69-4b68a3540b99",
@@ -1373,7 +1375,7 @@
 			"uuid": "f2df43f3-aab2-4a56-9fa6-798969a50e25",
 			"title": "Modify SpikeThrower design",
 			"description": "",
-			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
+			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
 			"steps": []
 		},
 		{
@@ -1460,10 +1462,37 @@
 					"done": true
 				},
 				{
-					"details": "2. introduce transitions between all the GAME STATES",
+					"details": "2. Create transitions for End_level_chekpoint to CongratsScreen",
+					"done": true
+				},
+				{
+					"details": "3. Create transitions for CongratsScreen to next_level\n",
+					"done": false
+				},
+				{
+					"details": "4. Create transitions for CongratsScreen to retry",
+					"done": false
+				},
+				{
+					"details": "5. Create transitions from death to game_over",
+					"done": false
+				},
+				{
+					"details": "6. Create transitions from  game_over to retry",
+					"done": false
+				},
+				{
+					"details": "7. Create transitions from  game_over to Start Menu",
 					"done": false
 				}
 			]
+		},
+		{
+			"uuid": "43d1bd7a-eb02-49c2-91c3-1c0e569bac76",
+			"title": "BUG : when hurt : slow mo doesn't stop",
+			"description": "",
+			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
+			"steps": []
 		}
 	],
 	"layout": {

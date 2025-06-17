@@ -1,3 +1,4 @@
+res://Assets/Enemies/SpikeThrower
 res://Scripts/UI
 res://Scenes/UI
 res://
@@ -11,7 +12,6 @@ res://Scenes/Traps
 res://Scripts/Traps
 res://Assets/Traps/SnowGeyser
 res://Assets/Traps
-res://Assets/Enemies/SpikeThrower
 res://Scripts/Enemies
 res://Scenes/Enemies
 res://Scenes/Levels

@@ -9,4 +9,6 @@ func _on_body_entered(body: Node2D) -> void:
 	if body is PlayerClass : 
 		fire_lit.show()
 		fire_lit.play("fire_lit")
-		GlobalMenu.set_game_state(GlobalMenu.GAME_STATES.LEVEL_COMPLETE_SCREEN)
+		GlobalMenu.game_transition(func(): GlobalMenu.set_game_state(GlobalMenu.GAME_STATES.LEVEL_COMPLETE_SCREEN)
+)
+		

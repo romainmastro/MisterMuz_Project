@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c6866y8qh0ti5"]
+[gd_scene load_steps=13 format=3 uid="uid://c6866y8qh0ti5"]
 
 [ext_resource type="Script" uid="uid://dlm3d118kg84m" path="res://Scripts/Traps/throwing_spikes.gd" id="1_gnesi"]
 [ext_resource type="Texture2D" uid="uid://bhifx4n78f1ab" path="res://Assets/Traps/throwing_spikes.png" id="1_oe6k5"]
@@ -48,7 +48,7 @@ animations = [{
 size = Vector2(2.9039, 14.927)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gnesi"]
-size = Vector2(14.8515, 1.25)
+size = Vector2(16.1567, 1.63028)
 
 [sub_resource type="Gradient" id="Gradient_xm8g0"]
 offsets = PackedFloat32Array(0, 0.6, 1)
@@ -58,11 +58,16 @@ metadata/_snap_count = 5
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wtxtr"]
 size = Vector2(14.1917, 2.89627)
 
-[node name="Throwing_Spikes" type="CharacterBody2D" node_paths=PackedStringArray("collision_shape", "hitbox", "deadzone", "animated_sprite", "death_particles") groups=["traps"]]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_artop"]
+size = Vector2(0.883095, 1.03871)
+
+[node name="Throwing_Spikes" type="CharacterBody2D" node_paths=PackedStringArray("queue_free_area_right", "queue_free_area_left", "collision_shape", "hitbox", "deadzone", "animated_sprite", "death_particles") groups=["traps"]]
 scale = Vector2(0.8, 0.8)
 collision_layer = 64
 collision_mask = 17
 script = ExtResource("1_gnesi")
+queue_free_area_right = NodePath("Queue_free_area2D_Right")
+queue_free_area_left = NodePath("Queue_free_area2D_Left")
 collision_shape = NodePath("CollisionShape2D")
 hitbox = NodePath("EnemyHitboxClass")
 deadzone = NodePath("DeadZone")
@@ -90,7 +95,7 @@ collision_mask = 33
 script = ExtResource("3_xm8g0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeadZone"]
-position = Vector2(-0.634883, -3.5767)
+position = Vector2(0.0177181, -3.38656)
 scale = Vector2(0.999999, 0.999999)
 shape = SubResource("RectangleShape2D_gnesi")
 debug_color = Color(0.994408, 0, 0.222563, 0.42)
@@ -128,8 +133,26 @@ scale = Vector2(0.999999, 0.999999)
 shape = SubResource("RectangleShape2D_wtxtr")
 debug_color = Color(0.261223, 0.629625, 0.217759, 0.42)
 
+[node name="Queue_free_area2D_Right" type="Area2D" parent="."]
+
+[node name="queue_free_Right" type="CollisionShape2D" parent="Queue_free_area2D_Right"]
+position = Vector2(7.59639, -0.483541)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_artop")
+debug_color = Color(0.508983, 0.577154, 0.0961005, 0.42)
+
+[node name="Queue_free_area2D_Left" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="queue_free_Left" type="CollisionShape2D" parent="Queue_free_area2D_Left"]
+position = Vector2(-7.45905, -0.483541)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_artop")
+debug_color = Color(0.508983, 0.577154, 0.0961005, 0.42)
+
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="area_entered" from="DeadZone" to="." method="_on_dead_zone_area_entered"]
-[connection signal="body_entered" from="DeadZone" to="." method="_on_body_entered"]
 [connection signal="area_entered" from="EnemyHitboxClass" to="." method="_on_area_entered"]
+[connection signal="body_entered" from="Queue_free_area2D_Right" to="." method="_on_queue_free_area_2d_body_entered"]
+[connection signal="body_entered" from="Queue_free_area2D_Left" to="." method="_on_queue_free_area_2d_body_entered"]
