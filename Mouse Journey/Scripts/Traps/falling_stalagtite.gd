@@ -3,6 +3,7 @@ extends ClassTrapKnockBack
 
 @export_group("Settings")
 @export var falling_speed : float = 150
+@export var shaking_timer : Timer
 
 var has_fell : bool = false
 
@@ -18,6 +19,7 @@ func _physics_process(delta: float) -> void:
 	
 func _on_detector_body_entered(body: Node2D) -> void:
 	if body is PlayerClass : 
+		shaking_timer.stop()
 		animation_player.play("shake")
 
 func _on_body_entered(body: Node2D) -> void:
@@ -29,3 +31,7 @@ func _on_body_entered(body: Node2D) -> void:
 func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("player_hurtbox") : 
 		call_deferred("queue_free")
+
+
+func _on_shaking_timer_timeout() -> void:
+	animation_player.play("shake_idle")

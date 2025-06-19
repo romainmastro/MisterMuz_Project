@@ -222,7 +222,7 @@ _data = {
 }
 
 [node name="Transition" type="CanvasLayer"]
-layer = 5
+layer = 6
 script = ExtResource("1_xmgcj")
 
 [node name="LeftCurtain" type="ColorRect" parent="."]

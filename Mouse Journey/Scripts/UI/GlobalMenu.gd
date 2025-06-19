@@ -13,8 +13,6 @@ var game_over_screen_node : Node
 @onready var game_states_transition = preload("res://Scenes/UI/transition.tscn")
 var game_states_transition_node = Node
 
-var transition_callback : Callable = Callable()
-
 @onready var main = preload("res://Scenes/main.tscn")
 var main_node : Node
 
@@ -106,12 +104,8 @@ func game_transition(callback : Callable) :
 	animator.play("transition")
 	
 	await animator.animation_finished
-	game_states_transition_node.queue_free()
-	
-	
-func _transition_midpoint() : 
-	if transition_callback.is_valid() : 
-		transition_callback.call()
+	if game_states_transition_node : 
+		game_states_transition_node.queue_free()
 
 func get_current_level() -> PackedScene : 
 	return levels[current_level_index]

@@ -1,12 +1,11 @@
 extends Control
 
-@onready var title: Label = $Title
-@onready var menu: VBoxContainer = $Menu
-@onready var muz: AnimatedSprite2D = $Muz
+@export var title: Label
+@export var menu: VBoxContainer 
+@export var muz: AnimatedSprite2D
 
 var target_menu_pos : Vector2
 var target_title_pos : Vector2
-
 
 func _ready() -> void:
 	

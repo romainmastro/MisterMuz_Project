@@ -1,10 +1,11 @@
-res://Assets/Enemies/SpikeThrower
-res://Scripts/UI
 res://Scenes/UI
+res://Resources/light
+res://Scripts/UI
 res://
+res://Scenes
+res://Assets/Enemies/SpikeThrower
 res://Scenes/Environment
 res://Assets/Environment
-res://Resources/light
 res://Resources/shader
 res://Scripts/Collectibles
 res://Assets/Collectibles
@@ -19,4 +20,3 @@ res://Assets/Enemies/SnowCanon
 res://Assets/Enemies/SnowMole/SnowMoleV2
 res://Assets/Enemies/SnowMole
 res://Assets/Muz/Muffler
-res://Assets/Muz/Snowhat

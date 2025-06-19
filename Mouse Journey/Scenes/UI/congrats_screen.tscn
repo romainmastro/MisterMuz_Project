@@ -157,8 +157,9 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_71jre")
 
-[node name="Title" type="Label" parent="."]
-layout_mode = 0
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Title" type="Label" parent="UI"]
 offset_left = 72.0
 offset_right = 231.0
 offset_bottom = 28.0
@@ -167,6 +168,22 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0.835294, 0.929412, 0.929412, 1)
 theme_override_font_sizes/font_size = 22
 text = "Level Complete!"
+
+[node name="NextLevel" type="Button" parent="UI"]
+offset_left = 231.0
+offset_top = 40.0
+offset_right = 271.0
+offset_bottom = 50.0
+theme = ExtResource("1_up6sh")
+text = "Next Level"
+
+[node name="Replay" type="Button" parent="UI"]
+offset_left = 32.0
+offset_top = 40.0
+offset_right = 72.0
+offset_bottom = 50.0
+theme = ExtResource("1_up6sh")
+text = "Replay"
 
 [node name="EndLevelCheckpoint" type="Area2D" parent="." node_paths=PackedStringArray("fire_lit")]
 position = Vector2(128, 120)
@@ -209,24 +226,6 @@ tile_set = ExtResource("3_ayhqs")
 tile_map_data = PackedByteArray("AAAHAAcAAAAWAAAAAAAJAAcAAAAUAAQAAAAWAAcAAAAXAAEAAAAZAAcAAAASAAQAAAAbAAcAAAASAAQAAAAaAAcAAAASAAIAAAAcAAcAAAAWAAEAAAAAAAcAAAAbAAAAAAABAAcAAAAaAAEAAAACAAcAAAAUAAEAAAAEAAcAAAAYAAEAAAAIAAcAAAATAAAAAAAKAAcAAAAbAAAAAAALAAcAAAAeAAIAAAANAAcAAAASAAAAAAAUAAcAAAAVAAIAAAAXAAcAAAAbAAAAAAAYAAcAAAAWAAAAAAAdAAcAAAASAAAAAAAGAAcAAAAcAAIAAAAVAAcAAAAeAAIAAAATAAcAAAAaAAMAAAAfAAcAAAAaAAEAAAAgAAcAAAAeAAIAAAAhAAcAAAAaAAMAAAAkAAcAAAAaAAEAAAAnAAcAAAAZAAEAAAA=")
 tile_set = ExtResource("4_dy31q")
 
-[node name="NextLevel" type="Button" parent="."]
-layout_mode = 2
-offset_left = 231.0
-offset_top = 40.0
-offset_right = 271.0
-offset_bottom = 50.0
-theme = ExtResource("1_up6sh")
-text = "Next Level"
-
-[node name="Replay" type="Button" parent="."]
-layout_mode = 2
-offset_left = 32.0
-offset_top = 40.0
-offset_right = 72.0
-offset_bottom = 50.0
-theme = ExtResource("1_up6sh")
-text = "Replay"
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_g0osa")
 
@@ -256,5 +255,5 @@ color = Color(0.835294, 0.929412, 0.929412, 1)
 hue_variation_min = 0.52
 hue_variation_max = 0.52
 
-[connection signal="pressed" from="NextLevel" to="." method="_on_next_level_pressed"]
-[connection signal="pressed" from="Replay" to="." method="_on_replay_pressed"]
+[connection signal="pressed" from="UI/NextLevel" to="." method="_on_next_level_pressed"]
+[connection signal="pressed" from="UI/Replay" to="." method="_on_replay_pressed"]

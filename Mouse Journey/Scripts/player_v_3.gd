@@ -493,7 +493,8 @@ func on_death() :
 	GlobalPlayerStats.gain_one_life.emit() # to label_lives in main.gd
 	if GlobalPlayerStats.current_lives_number <= 0 : 
 		print("GAME OVER")
-		GlobalMenu.set_game_state(GlobalMenu.GAME_STATES.GAMEOVER_SCREEN)
+		GlobalMenu.game_transition(func() : GlobalMenu.set_game_state(GlobalMenu.GAME_STATES.GAMEOVER_SCREEN))
+		
 	else : 
 		velocity = Vector2.ZERO
 		if GlobalPlayerStats.current_checkpoint != Vector2.ZERO : 

@@ -1119,6 +1119,7 @@ texture = ExtResource("39_b24wk")
 texture_scale = 0.1
 
 [node name="PlayerCamera" type="Camera2D" parent="."]
+offset = Vector2(0, -48)
 position_smoothing_speed = 3.0
 script = ExtResource("40_ybkh6")
 
