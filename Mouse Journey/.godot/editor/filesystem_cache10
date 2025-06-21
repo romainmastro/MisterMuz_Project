@@ -1,10 +1,10 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1750338513
+::res://::1750539777
 debug.gd::GDScript/GDScript::8414093399775197567::1750015051::0::1::::<>CanvasLayer<><>0<>0<><>::
 game.gd::GDScript/GDScript::2496968683686185476::1749917194::0::1::::<>Node<><>0<>0<><>::
 game.tscn::PackedScene/PackedScene::4481727710899754524::1749920108::0::1::::<><><>0<>0<><>::uid://bbtsyecujqy17::::res://game.gd
 icon.svg::CompressedTexture2D/CompressedTexture2D::8956417342466084194::1737715813::1739544625::1::::<><><>0<>0<>044cc3d3dabc3ffcd7f8060323c55f5c<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
-InstanceDockSceneData.txt::TextFile/TextFile::-1::1749805400::0::1::::<><><>0<>0<><>::
+InstanceDockSceneData.txt::TextFile/TextFile::-1::1750363733::0::1::::<><><>0<>0<><>::
 ::res://addons/::1744807223
 ::res://addons/InstanceDock/::1741787407
 InstanceDock.gd::GDScript/GDScript::1610214418615507835::1741787407::0::1::::<>Control<><>0<>1<><>::
@@ -105,17 +105,19 @@ signal.svg::Image/Image::3303164025475872126::1737719286::1749841660::1::::<><><
 ::res://addons/script-ide/quickopen/::1739215338
 quick_open_panel.gd::GDScript/GDScript::4501844267707108420::1737719286::0::1::::<>PopupPanel<><>0<>1<><>::
 quick_open_panel.tscn::PackedScene/PackedScene::9086514164982529972::1737719286::0::1::::<><><>0<>0<><>::res://addons/script-ide/quickopen/quick_open_panel.gd
-::res://Assets/::1750194197
+::res://Assets/::1750344124
 CheckpointFirePit.png::CompressedTexture2D/CompressedTexture2D::2865176899640087644::1739874056::1739874085::1::::<><><>0<>0<>7ceea39c954df1854531df771d7fef66<>res://.godot/imported/CheckpointFirePit.png-3da2809830c10f47e90ff0f118f9a62b.ctex::
 hit.png::CompressedTexture2D/CompressedTexture2D::4501019366908112699::1738355742::1739544625::1::::<><><>0<>0<>c28d643ba2e119165be6fe4e0eea9999<>res://.godot/imported/hit.png-8964508fa65bbb953052b33f8bf1d3eb.ctex::
-::res://Assets/Collectibles/::1749805726
+::res://Assets/Collectibles/::1750515995
 Collectible - Cheese.png::CompressedTexture2D/CompressedTexture2D::6988103576537863424::1741787407::1741787485::1::::<><><>0<>0<>9e1d37d1086907e11990ff95a46c17a9<>res://.godot/imported/Collectible - Cheese.png-65b5351e3aa67d78344298d47d65b947.ctex::
 Collectible - Cheese_empty.png::CompressedTexture2D/CompressedTexture2D::5591670811255706279::1741873309::1741873366::1::::<><><>0<>0<>6a04afb0c7da1ce271086d86feba06ca<>res://.godot/imported/Collectible - Cheese_empty.png-400413027f30ed7d5a1adb076e966cf9.ctex::
 Collectible - Frostberry.png::CompressedTexture2D/CompressedTexture2D::857072556375299462::1749805400::1749805726::1::::<><><>0<>0<>afeb235aea246e7795fa9469a030cd4a<>res://.godot/imported/Collectible - Frostberry.png-9b9d42c7a30a2762b4dbff833d11e5dc.ctex::
 Collectible - Heart.png::CompressedTexture2D/CompressedTexture2D::953659778856171439::1741873309::1741789541::1::::<><><>0<>0<>012bb7289650e294357a31c5ea0de862<>res://.godot/imported/Collectible - Heart.png-bd7ec03e52d16ebfcc4f6217db2e4172.ctex::
 Collectible - Heart_empty.png::CompressedTexture2D/CompressedTexture2D::6402036130577214320::1741873309::1741873366::1::::<><><>0<>0<>31211cbebc2dbb0bfd33e7e7f177647c<>res://.godot/imported/Collectible - Heart_empty.png-dd15f5633053daecc25282fd4b929f5f.ctex::
 Collectible - Mug.png::CompressedTexture2D/CompressedTexture2D::3585680383272508996::1739740194::1739740197::1::::<><><>0<>0<>28fd6fedb6af4b7adde87c8b0b3a81d4<>res://.godot/imported/Collectible - Mug.png-bd17be613954332edfa686a46e48578d.ctex::
-frost_berry.tscn::PackedScene/PackedScene::384451251873568859::1749805400::0::1::::<><><>0<>0<><>::uid://mhf4h5626687::::res://Assets/Collectibles/Collectible - Frostberry.png<>uid://tgbimjgs1fyj::::res://Scripts/Collectibles/frost_berry.gd<>uid://cm6k6cw4nuqf2::::res://Scenes/hovering_component.tscn
+Collectible - SuperFrostberry.png::CompressedTexture2D/CompressedTexture2D::8853813660744581617::1750513931::1750513934::1::::<><><>0<>0<>cec7acdb7a4fc7cdd0430ad59e25120d<>res://.godot/imported/Collectible - SuperFrostberry.png-a67d3a427e74721b490cc637edab632b.ctex::
+giftbox_idle.png::CompressedTexture2D/CompressedTexture2D::2493684248061366774::1750511136::1750511167::1::::<><><>0<>0<>944c69fe70c2fe9784f36f4a164e3944<>res://.godot/imported/giftbox_idle.png-4018f3ea58635f203ac7ffee42931632.ctex::
+giftbox_open.png::CompressedTexture2D/CompressedTexture2D::210304456735291218::1750511672::1750511674::1::::<><><>0<>0<>135105f4dff6a5ee8b08b586ec481d21<>res://.godot/imported/giftbox_open.png-de0226abe35565648354f132f04f7bd1.ctex::
 ::res://Assets/Enemies/::1749805400
 ::res://Assets/Enemies/SnowCanon/::1748338377
 SnowCannon_DEATH.png::CompressedTexture2D/CompressedTexture2D::1498506278976516948::1748338377::1747733769::1::::<><><>0<>0<>4e9db9351183b107cbd99ed1b1be09fb<>res://.godot/imported/SnowCannon_DEATH.png-36a5c4fa4fd2f597ae411f0d8acab8ea.ctex::
@@ -146,11 +148,11 @@ snow_turret.png::CompressedTexture2D/CompressedTexture2D::4085261168750488472::1
 SnowMole_DEATH.png::CompressedTexture2D/CompressedTexture2D::2519249229843372983::1748338377::1748338429::1::::<><><>0<>0<>d5ef312b26f0e3671493a05a26513264<>res://.godot/imported/SnowMole_DEATH.png-d57d9bfb812b26e05057fbe44eeecb64.ctex::
 SnowMole_IDLE.png::CompressedTexture2D/CompressedTexture2D::5983471938661555874::1748338377::1748338429::1::::<><><>0<>0<>fa8464ac38b4fae119692a2fb656a6ba<>res://.godot/imported/SnowMole_IDLE.png-e21c4f5f55d39809d8438724902e056e.ctex::
 SnowMole_JUMP.png::CompressedTexture2D/CompressedTexture2D::7025052452011320564::1748338377::1748338429::1::::<><><>0<>0<>6c95b21e6f688bc7a0c9d7ed4427312b<>res://.godot/imported/SnowMole_JUMP.png-c4eb5c4a18ab0ddc7f59a3a0884e1d2a.ctex::
-::res://Assets/Enemies/SpikeThrower/::1750153785
+::res://Assets/Enemies/SpikeThrower/::1750344150
 spike_thrower_SHOOT_LEFT.png::CompressedTexture2D/CompressedTexture2D::4610299969995846995::1749805400::1749805726::1::::<><><>0<>0<>16e64cc21568c2293cb7ff334f4d9894<>res://.godot/imported/spike_thrower_SHOOT_LEFT.png-4a74b26d457f122a8095ccfa0d48fe9a.ctex::
-spike_thrower_SHOOT_LEFT_V2.png::CompressedTexture2D/CompressedTexture2D::1497687823549576920::1750084641::1750153785::1::::<><><>0<>0<>d04624cb79cf3cf9b18d9d441c49b893<>res://.godot/imported/spike_thrower_SHOOT_LEFT_V2.png-b3e33a0c93eb87394dbfeb070a15d57d.ctex::
+spike_thrower_SHOOT_LEFT_V2.png::CompressedTexture2D/CompressedTexture2D::1497687823549576920::1750344124::1750344150::1::::<><><>0<>0<>d04624cb79cf3cf9b18d9d441c49b893<>res://.godot/imported/spike_thrower_SHOOT_LEFT_V2.png-b3e33a0c93eb87394dbfeb070a15d57d.ctex::
 spike_thrower_SHOOT_RIGHT.png::CompressedTexture2D/CompressedTexture2D::1639639729756367512::1749805400::1749805725::1::::<><><>0<>0<>3592e936aa471c627eb5119e1da6c605<>res://.godot/imported/spike_thrower_SHOOT_RIGHT.png-11ddb0b413e6aa58e6443f23fd977650.ctex::
-spike_thrower_SHOOT_RIGHT_V2.png::CompressedTexture2D/CompressedTexture2D::9020916349896664589::1750084574::1750153785::1::::<><><>0<>0<>75945d5d4c67670eb0e786f8512068ef<>res://.godot/imported/spike_thrower_SHOOT_RIGHT_V2.png-7541da4d56c795bf4f31ff9739a4b144.ctex::
+spike_thrower_SHOOT_RIGHT_V2.png::CompressedTexture2D/CompressedTexture2D::9020916349896664589::1750344124::1750344150::1::::<><><>0<>0<>75945d5d4c67670eb0e786f8512068ef<>res://.godot/imported/spike_thrower_SHOOT_RIGHT_V2.png-7541da4d56c795bf4f31ff9739a4b144.ctex::
 ::res://Assets/Environment/::1749805726
 CheckpointFire.png::CompressedTexture2D/CompressedTexture2D::6778032359719175179::1739874056::1739874085::1::::<><><>0<>0<>7776414a7070a73efe42b14d88b48b4e<>res://.godot/imported/CheckpointFire.png-8b309f78e98fd881a651b4574efec940.ctex::
 CheckpointFirePit.png::CompressedTexture2D/CompressedTexture2D::5953752639327665787::1739874056::1739874085::1::::<><><>0<>0<>4478ff54fd7db7e72e7b1e1bcae2c223<>res://.godot/imported/CheckpointFirePit.png-292267588bc5a224f3b8c4dcb8dbf687.ctex::
@@ -160,8 +162,8 @@ end_level_no_fire.png::CompressedTexture2D/CompressedTexture2D::8875474721699011
 opened_chest.png::CompressedTexture2D/CompressedTexture2D::1232334674072120126::1740986116::1741022713::1::::<><><>0<>0<>03bd23c05e0f7313e2a3cba9dc1208f9<>res://.godot/imported/opened_chest.png-7eaf7265eddf8b7e32ece09bbf5bb3f5.ctex::
 Sign_Start_Level.png::CompressedTexture2D/CompressedTexture2D::1161359787394596339::1741787407::1741787485::1::::<><><>0<>0<>dd40292a3ef7049667947b7cd30f3bc5<>res://.godot/imported/Sign_Start_Level.png-81fbb4b13bcb7763561ae1cbcdb318ae.ctex::
 Tomb_Bell.png::CompressedTexture2D/CompressedTexture2D::6714486609707567940::1749805400::1749805725::1::::<><><>0<>0<>d25e8baa3bc958bf0db1f0522f5bea52<>res://.godot/imported/Tomb_Bell.png-6a0271e8e027eada5a158b4b075970e6.ctex::
-::res://Assets/Menus/::1750194228
-moon_start_screen.png::CompressedTexture2D/CompressedTexture2D::3433088357931939049::1750194204::1750194228::1::::<><><>0<>0<>8de4624bdd0edb32879299a81692abf6<>res://.godot/imported/moon_start_screen.png-bbac9ccf78a69919117633c32ee48aab.ctex::
+::res://Assets/Menus/::1750344150
+moon_start_screen.png::CompressedTexture2D/CompressedTexture2D::3433088357931939049::1750344124::1750344150::1::::<><><>0<>0<>8de4624bdd0edb32879299a81692abf6<>res://.godot/imported/moon_start_screen.png-bbac9ccf78a69919117633c32ee48aab.ctex::
 ::res://Assets/Muz/::1744807269
 Muz_GLIDE.png::CompressedTexture2D/CompressedTexture2D::4686410974279080745::1742338800::1742393132::1::::<><><>0<>0<>add51f5e4122b33973161babe07d247c<>res://.godot/imported/Muz_GLIDE.png-699553940fea67f2758a41b843a4fff8.ctex::
 Muz_HURT.png::CompressedTexture2D/CompressedTexture2D::2139123137308649253::1740986116::1740861503::1::::<><><>0<>0<>9d27340a139edf914e54e28c46cae113<>res://.godot/imported/Muz_HURT.png-6b714352e4b593c4200cc18384ec0e6d.ctex::
@@ -210,7 +212,7 @@ ice_cover2.png::CompressedTexture2D/CompressedTexture2D::2899198433497910141::17
 ice_cover.png::CompressedTexture2D/CompressedTexture2D::5648421625488896530::1744807223::1744807269::1::::<><><>0<>0<>0b504dfbe25d732b817467f8d1b45ea1<>res://.godot/imported/ice_cover.png-0eec462a3073db349cca7c23830bb265.ctex::
 Tileset IcyPatches.png::CompressedTexture2D/CompressedTexture2D::8587404852612337203::1744807223::1744807269::1::::<><><>0<>0<>8568d8f2ff36a0e2a2932f2eb8e06b7f<>res://.godot/imported/Tileset IcyPatches.png-f488679951f33067719027ee5c5bdc1d.ctex::
 Tileset_Winter.png::CompressedTexture2D/CompressedTexture2D::3670711713087898595::1739874056::1739831527::1::::<><><>0<>0<>3d358c4a2bb5fbff5df08cd287428d0a<>res://.godot/imported/Tileset_Winter.png-a90e3338f3253301b2458a344c9a0b44.ctex::
-::res://Assets/Traps/::1749805726
+::res://Assets/Traps/::1750344124
 FallingStalagmite1.png::CompressedTexture2D/CompressedTexture2D::4305597839525526346::1740086173::1740086199::1::::<><><>0<>0<>1d4e36c020191c682e7699bc05b350b1<>res://.godot/imported/FallingStalagmite1.png-4e881920583f8a0e41377c01d3021b89.ctex::
 FallingStalagmite2.png::CompressedTexture2D/CompressedTexture2D::5249102591486058813::1740086173::1740086199::1::::<><><>0<>0<>d82c931d417d22296b740f3ab08d0bb2<>res://.godot/imported/FallingStalagmite2.png-f9269a95c9ff8ef4f00014947f0ad22e.ctex::
 FallingStalagmite3.png::CompressedTexture2D/CompressedTexture2D::7422598230734725338::1740086173::1740086199::1::::<><><>0<>0<>bd743d5a848098a6b8d8b001c12f9c70<>res://.godot/imported/FallingStalagmite3.png-b3afec52e52ace2408bfe23bc4b6b6ab.ctex::
@@ -233,11 +235,11 @@ HealthBar_empty.png::CompressedTexture2D/CompressedTexture2D::318141472486573490
 HealthBar_full.png::CompressedTexture2D/CompressedTexture2D::6112094505390200238::1738444950::1739544625::1::::<><><>0<>0<>22f8bf849954fa7c0896b8a1981a1313<>res://.godot/imported/HealthBar_full.png-b671506dca23a74a48f25d78391c4670.ctex::
 HUD.png::CompressedTexture2D/CompressedTexture2D::1756448987184171653::1749805400::1749805726::1::::<><><>0<>0<>d62364f0bfccafd7c6268fe214bbcb37<>res://.godot/imported/HUD.png-9a696b3b2d738e7375242b7687e0cd30.ctex::
 life.png::CompressedTexture2D/CompressedTexture2D::978019219987255173::1749805400::1749805726::1::::<><><>0<>0<>8c9e6fe6babe0b5b7a77bed7f6d2229b<>res://.godot/imported/life.png-ecd11dcc7b46fa16b2154767f87caec8.ctex::
-::res://Resources/::1750277397
-Décor.tres::TileSet::1873998633010858962::1750277397::0::1::::<><><>0<>0<><>::uid://bskec58c5stx0::::res://Assets/TileSet/Tileset_Winter.png
-Level_Maker.tres::TileSet::6275557601602130667::1750277397::0::1::::<><><>0<>0<><>::uid://bskec58c5stx0::::res://Assets/TileSet/Tileset_Winter.png
-Objects.tres::TileSet::9185648812222616467::1750277397::0::1::::<><><>0<>0<><>::uid://byc7401bsh3cc::::res://Scenes/Collectibles/Collect_Heart.tscn<>uid://bjgf62qew141r::::res://Scenes/Environment/checkpoint.tscn<>uid://bk6nplv6ettgn::::res://Scenes/Environment/treasure_chest_muffler.tscn<>uid://bs425j3t1krem::::res://Scenes/Environment/treasure_chest_snowhat.tscn<>uid://bs6jgygl6od08::::res://Scenes/Environment/treasure_chest_suit_boots_gloves.tscn<>uid://c86yomf2rddmc::::res://Scenes/Collectibles/collect_cheese.tscn<>uid://dhq03yilhu6wj::::res://Scenes/Environment/end_level_checkpoint.tscn<>uid://fqh4dqh5t7ln::::res://Assets/Collectibles/frost_berry.tscn
-Pièges.tres::TileSet::6295748460521834647::1750277397::0::1::::<><><>0<>0<><>::uid://cqsgkagwskqrc::::res://Scenes/Traps/H_stalagmite1_Repousseur.tscn<>uid://itb374sasgaa::::res://Scenes/Traps/Trou.tscn<>uid://k3o34hefx5mr::::res://Scenes/Traps/h_stalag_tite_1_kb.tscn<>uid://bl1owrdhpaf8h::::res://Scenes/Traps/V_L_stalagmite_1_Repousseur.tscn<>uid://dmjbvh504bip3::::res://Scenes/Traps/ice_cover.tscn<>uid://b4w7gt12m2681::::res://Scenes/Traps/H_stalagmite1_Teleporteur.tscn<>uid://cj5ak6ls1l0nq::::res://Scenes/Traps/H_stalagmite2_Repousseur.tscn<>uid://2k0pfboadhw::::res://Scenes/Traps/H_stalagmite2_Teleporteur.tscn<>uid://c3uslq3etdg44::::res://Scenes/Traps/H_stalagmite3_Repousseur.tscn<>uid://pb1iv2wvwax5::::res://Scenes/Traps/H_stalagmite3_Teleporteur.tscn<>uid://be1o8tb502iun::::res://Scenes/Traps/stalagtite_Tombante.tscn<>uid://dydbbf3d1aqmb::::res://Scenes/Traps/V_R_stalagmite_1_Repousseur.tscn
+::res://Resources/::1750515995
+Décor.tres::TileSet::1873998633010858962::1750409780::0::1::::<><><>0<>0<><>::uid://bskec58c5stx0::::res://Assets/TileSet/Tileset_Winter.png
+Level_Maker.tres::TileSet::6275557601602130667::1750409780::0::1::::<><><>0<>0<><>::uid://bskec58c5stx0::::res://Assets/TileSet/Tileset_Winter.png
+Objects.tres::TileSet::9185648812222616467::1750515995::0::1::::<><><>0<>0<><>::uid://byc7401bsh3cc::::res://Scenes/Collectibles/Collect_Heart.tscn<>uid://bjgf62qew141r::::res://Scenes/Environment/checkpoint.tscn<>uid://bk6nplv6ettgn::::res://Scenes/Environment/treasure_chest_muffler.tscn<>uid://bs425j3t1krem::::res://Scenes/Environment/treasure_chest_snowhat.tscn<>uid://bs6jgygl6od08::::res://Scenes/Environment/treasure_chest_suit_boots_gloves.tscn<>uid://c86yomf2rddmc::::res://Scenes/Collectibles/collect_cheese.tscn<>uid://dhq03yilhu6wj::::res://Scenes/Environment/end_level_checkpoint.tscn<>uid://fqh4dqh5t7ln::::res://Scenes/Collectibles/frost_berry.tscn<>uid://nq1wmq5jk5gl::::res://Scenes/Collectibles/giftbox.tscn
+Pièges.tres::TileSet::6295748460521834647::1750409780::0::1::::<><><>0<>0<><>::uid://cqsgkagwskqrc::::res://Scenes/Traps/H_BOTTOM_stalag1_Repousseur.tscn<>uid://itb374sasgaa::::res://Scenes/Traps/Trou.tscn<>uid://k3o34hefx5mr::::res://Scenes/Traps/h_stalag_tite_1_kb.tscn<>uid://bl1owrdhpaf8h::::res://Scenes/Traps/V_L_stalagmite_1_Repousseur.tscn<>uid://dmjbvh504bip3::::res://Scenes/Traps/ice_cover.tscn<>uid://dpf8pmvauf1pw::::res://Scenes/Traps/H_TOP_stalag_1_Repousseur.tscn<>uid://b4w7gt12m2681::::res://Scenes/Traps/H_stalagmite1_Teleporteur.tscn<>uid://d13jktpqohu73::::res://Scenes/Traps/H_TOP_stalag_2_Repousseur.tscn<>uid://cx44hwdmb0b1q::::res://Scenes/Traps/H_TOP_stalag_3_repousseur.tscn<>uid://2k0pfboadhw::::res://Scenes/Traps/H_stalagmite2_Teleporteur.tscn<>uid://pb1iv2wvwax5::::res://Scenes/Traps/H_stalagmite3_Teleporteur.tscn<>uid://cj5ak6ls1l0nq::::res://Scenes/Traps/H_BOTTOM_stalag2_Repousseur.tscn<>uid://be1o8tb502iun::::res://Scenes/Traps/stalagtite_Tombante.tscn<>uid://dydbbf3d1aqmb::::res://Scenes/Traps/V_R_stalagmite_1_Repousseur.tscn<>uid://c3uslq3etdg44::::res://Scenes/Traps/H_BOTTOM_stalag3_Repousseur.tscn
 Snow_Props_tileset.tres::TileSet/TileSet::9202347324889137864::1740698513::0::1::::<><><>0<>0<><>::
 ::res://Resources/font/::1741787485
 main_font_theme.tres::Theme/Theme::2451485201146862171::1741787407::0::1::::<><><>0<>0<><>::uid://dl3316dpi5lxs::::res://Resources/font/SuperBakery-3lXyp.ttf
@@ -247,23 +249,26 @@ SuperBakery-3lXyp.ttf::FontFile/FontFile::7990890048202003804::1741787407::17417
 point_of_interest_light.tres::CompressedTexture2D/CompressedTexture2D::8687540853835303295::1749805400::0::1::::<><><>0<>0<><>::
 raylight_texture.png::CompressedTexture2D/CompressedTexture2D::2242269358248666101::1749805400::1749805726::1::::<><><>0<>0<>ed1067a1c431de275f8294fb31539c93<>res://.godot/imported/raylight_texture.png-16668d796e0c6ce750865d41bb1a5aec.ctex::
 ray_light.png::CompressedTexture2D/CompressedTexture2D::8719403056950785674::1749805400::1749805726::1::::<><><>0<>0<>498aaaca94437150a97ef9d3b76a81b0<>res://.godot/imported/ray_light.png-9490165856203de956363ae79e5c35d9.ctex::
-::res://Resources/shader/::1750278640
-outline_player.gdshader::Shader::1339991830875749444::1750278640::0::1::::<><><>0<>0<><>::
+::res://Resources/shader/::1750539746
+outline_player.gdshader::Shader::1339991830875749444::1750539746::0::1::::<><><>0<>0<><>::
 ::res://Resources/texture/::1749805726
 fog.png::CompressedTexture2D/CompressedTexture2D::2099953861821784869::1749805400::1749805726::1::::<><><>0<>0<>bba445a4d4fbd74d366fec925e0ff8ee<>res://.godot/imported/fog.png-80d1d3039f491311053eaec2c1b22441.ctex::
-::res://Scenes/::1750156769
+::res://Scenes/::1750410680
 hovering_component.tscn::PackedScene/PackedScene::5679765871325362069::1740144764::0::1::::<><><>0<>0<><>::uid://dx5kgq74vspio::::res://Scripts/hovering_component.gd
 hurt_box.tscn::PackedScene/PackedScene::8171699080655155441::1743371512::0::1::::<><><>0<>0<><>::
-main.tscn::PackedScene/PackedScene::5394009934555894467::1750156769::0::1::::<><><>0<>0<><>::uid://c6hv8hqxmhb5a::::res://Scripts/main.gd<>uid://0a3ptxbf14xd::::res://Assets/UI/HP Bar/HUD.png<>uid://n603lyjurjwn::::res://Assets/UI/HP Bar/life.png<>uid://ba6rurgdpqsjr::::res://Resources/font/main_font_theme.tres<>uid://cimnh3ayp2mwo::::res://Scripts/UI/label_lifes.gd<>uid://ltwdjfevci88::::res://Scenes/HUD/HP_bar.tscn<>uid://cpgsf5tytoito::::res://Scenes/HUD/cheese_bar.tscn<>uid://dl3316dpi5lxs::::res://Resources/font/SuperBakery-3lXyp.ttf<>uid://mhf4h5626687::::res://Assets/Collectibles/Collectible - Frostberry.png<>uid://cfwllhqikp4k6::::res://Scripts/UI/label_berry.gd
-player_v_2.tscn::PackedScene/PackedScene::5693776253798335342::1750015051::0::1::::<><><>0<>0<><>::uid://bjtw5iph7mhe::::res://Scripts/player_v_3.gd<>uid://bl388umk28hx6::::res://Assets/Muz/Muz_JUMP.png<>uid://b71erexknh6mn::::res://Assets/Muz/Muz_GLIDE.png<>uid://5qhbsv78fxcn::::res://Assets/Muz/Muz_HURT.png<>uid://btpbpewrm561::::res://Assets/Muz/Muz_IDLE.png<>uid://du2j1yp66woh6::::res://Assets/Muz/Muz_RUN.png<>uid://b1apqiygffyj3::::res://Assets/Muz/Muz_SLIDE.png<>uid://1yqgy2tnpbuq::::res://Assets/Muz/Boots and gloves/Boots_Gloves_JUMP.png<>uid://bvaxa4rcc7jwc::::res://Assets/Muz/Boots and gloves/Boots_Gloves_HURT.png<>uid://duteqhk37auis::::res://Assets/Muz/Muz_WALL_SLIDE.png<>uid://ceksk5y1ki0je::::res://Assets/Muz/Boots and gloves/Boots_Gloves_IDLE.png<>uid://biwn56mwq1d28::::res://Assets/Muz/Boots and gloves/Boots_Gloves_RUN.png<>uid://b7ec0jeyooph::::res://Assets/Muz/Boots and gloves/Boots_Gloves_SLIDE.png<>uid://ixbyias82aaw::::res://Assets/Muz/SnowSuit/SnowSuit_JUMP.png<>uid://bj6sfxv55mdis::::res://Assets/Muz/SnowSuit/SnowSuit_HURT.png<>uid://c10k8nggsqshk::::res://Assets/Muz/Boots and gloves/Boots_Gloves_WALL_SLIDE.png<>uid://ce0yfb8r1j1v::::res://Assets/Muz/SnowSuit/SnowSuit_IDLE.png<>uid://d2a8f05fwdat8::::res://Assets/Muz/SnowSuit/SnowSuit_RUN.png<>uid://bm6v15nnj28ys::::res://Assets/Muz/SnowSuit/SnowSuit_SLIDE.png<>uid://cefj7a5bm1wyy::::res://Assets/Muz/Snowhat/Snowhat_Jump.png<>uid://dbt7ts6dc5r1k::::res://Assets/Muz/Snowhat/Snowhat_GLIDE.png<>uid://dnp2fw1ruq48b::::res://Assets/Muz/Snowhat/Snowhat_HURT.png<>uid://dj5v2061ewi0x::::res://Assets/Muz/Snowhat/Snowhat_IDLE.png<>uid://pfmjho7lslnh::::res://Assets/Muz/SnowSuit/SnowSuit_WALL_SLIDE.png<>uid://bceli1f32kknu::::res://Assets/Muz/Snowhat/Snowhat_RUN.png<>uid://cjjjnvmo8vf1e::::res://Assets/Muz/Snowhat/Snowhat_SLIDE.png<>uid://dxrh6etq24pw3::::res://Assets/Muz/Muffler/Muffler_JUMP.png<>uid://dkebu37ysffxk::::res://Assets/Muz/Muffler/Muffler_HURT.png<>uid://df4kob1j0y07q::::res://Assets/Muz/Muffler/Muffler_IDLE.png<>uid://iokx1nipl0is::::res://Assets/Muz/Muffler/Muffler_RUN.png<>uid://ccq6iwv8slb6x::::res://Assets/Muz/Snowhat/Snowhat_WALL_SLIDE.png<>uid://bjbg8uwxgpxet::::res://Assets/Muz/Muffler/Muffler_SLIDE.png<>uid://doooxpud87nj2::::res://Scenes/hurt_box.tscn<>uid://c1hvsrlq1580c::::res://Scenes/Particles/snow_trail_particles.tscn<>uid://1asc7ato1afb::::res://Scenes/Particles/sliding_particles.tscn<>uid://bwvsn2f5kkyb4::::res://Scenes/Particles/jumping_particle.tscn<>uid://bx4glml3yfsoj::::res://Scenes/Particles/landing_particles.tscn<>uid://dwbqddeq4cdvw::::res://Assets/Muz/Muffler/Muffler_WALL_SLIDE.png<>uid://dv1kr8b8jyq5t::::res://Resources/light/point_of_interest_light.tres<>uid://5btxhk0r3gsc::::res://Scripts/camera_2d.gd
+main.tscn::PackedScene::5394009934555894467::1750410680::0::1::::<><><>0<>0<><>::uid://c6hv8hqxmhb5a::::res://Scripts/main.gd<>uid://0a3ptxbf14xd::::res://Assets/UI/HP Bar/HUD.png<>uid://n603lyjurjwn::::res://Assets/UI/HP Bar/life.png<>uid://ba6rurgdpqsjr::::res://Resources/font/main_font_theme.tres<>uid://cimnh3ayp2mwo::::res://Scripts/UI/label_lifes.gd<>uid://ltwdjfevci88::::res://Scenes/HUD/HP_bar.tscn<>uid://cpgsf5tytoito::::res://Scenes/HUD/cheese_bar.tscn<>uid://dl3316dpi5lxs::::res://Resources/font/SuperBakery-3lXyp.ttf<>uid://mhf4h5626687::::res://Assets/Collectibles/Collectible - Frostberry.png<>uid://cfwllhqikp4k6::::res://Scripts/UI/label_berry.gd
+player_v_2.tscn::PackedScene/PackedScene::5693776253798335342::1750364544::0::1::::<><><>0<>0<><>::uid://bjtw5iph7mhe::::res://Scripts/player_v_3.gd<>uid://bl388umk28hx6::::res://Assets/Muz/Muz_JUMP.png<>uid://b71erexknh6mn::::res://Assets/Muz/Muz_GLIDE.png<>uid://5qhbsv78fxcn::::res://Assets/Muz/Muz_HURT.png<>uid://btpbpewrm561::::res://Assets/Muz/Muz_IDLE.png<>uid://du2j1yp66woh6::::res://Assets/Muz/Muz_RUN.png<>uid://b1apqiygffyj3::::res://Assets/Muz/Muz_SLIDE.png<>uid://1yqgy2tnpbuq::::res://Assets/Muz/Boots and gloves/Boots_Gloves_JUMP.png<>uid://bvaxa4rcc7jwc::::res://Assets/Muz/Boots and gloves/Boots_Gloves_HURT.png<>uid://duteqhk37auis::::res://Assets/Muz/Muz_WALL_SLIDE.png<>uid://ceksk5y1ki0je::::res://Assets/Muz/Boots and gloves/Boots_Gloves_IDLE.png<>uid://biwn56mwq1d28::::res://Assets/Muz/Boots and gloves/Boots_Gloves_RUN.png<>uid://b7ec0jeyooph::::res://Assets/Muz/Boots and gloves/Boots_Gloves_SLIDE.png<>uid://ixbyias82aaw::::res://Assets/Muz/SnowSuit/SnowSuit_JUMP.png<>uid://bj6sfxv55mdis::::res://Assets/Muz/SnowSuit/SnowSuit_HURT.png<>uid://c10k8nggsqshk::::res://Assets/Muz/Boots and gloves/Boots_Gloves_WALL_SLIDE.png<>uid://ce0yfb8r1j1v::::res://Assets/Muz/SnowSuit/SnowSuit_IDLE.png<>uid://d2a8f05fwdat8::::res://Assets/Muz/SnowSuit/SnowSuit_RUN.png<>uid://bm6v15nnj28ys::::res://Assets/Muz/SnowSuit/SnowSuit_SLIDE.png<>uid://cefj7a5bm1wyy::::res://Assets/Muz/Snowhat/Snowhat_Jump.png<>uid://dbt7ts6dc5r1k::::res://Assets/Muz/Snowhat/Snowhat_GLIDE.png<>uid://dnp2fw1ruq48b::::res://Assets/Muz/Snowhat/Snowhat_HURT.png<>uid://dj5v2061ewi0x::::res://Assets/Muz/Snowhat/Snowhat_IDLE.png<>uid://pfmjho7lslnh::::res://Assets/Muz/SnowSuit/SnowSuit_WALL_SLIDE.png<>uid://bceli1f32kknu::::res://Assets/Muz/Snowhat/Snowhat_RUN.png<>uid://cjjjnvmo8vf1e::::res://Assets/Muz/Snowhat/Snowhat_SLIDE.png<>uid://dxrh6etq24pw3::::res://Assets/Muz/Muffler/Muffler_JUMP.png<>uid://dkebu37ysffxk::::res://Assets/Muz/Muffler/Muffler_HURT.png<>uid://df4kob1j0y07q::::res://Assets/Muz/Muffler/Muffler_IDLE.png<>uid://iokx1nipl0is::::res://Assets/Muz/Muffler/Muffler_RUN.png<>uid://ccq6iwv8slb6x::::res://Assets/Muz/Snowhat/Snowhat_WALL_SLIDE.png<>uid://bjbg8uwxgpxet::::res://Assets/Muz/Muffler/Muffler_SLIDE.png<>uid://doooxpud87nj2::::res://Scenes/hurt_box.tscn<>uid://c1hvsrlq1580c::::res://Scenes/Particles/snow_trail_particles.tscn<>uid://1asc7ato1afb::::res://Scenes/Particles/sliding_particles.tscn<>uid://bwvsn2f5kkyb4::::res://Scenes/Particles/jumping_particle.tscn<>uid://bx4glml3yfsoj::::res://Scenes/Particles/landing_particles.tscn<>uid://dwbqddeq4cdvw::::res://Assets/Muz/Muffler/Muffler_WALL_SLIDE.png<>uid://dv1kr8b8jyq5t::::res://Resources/light/point_of_interest_light.tres<>uid://5btxhk0r3gsc::::res://Scripts/camera_2d.gd
 trap_knock_back_Horizontal.tscn::PackedScene/PackedScene::4631215089133981220::1739995913::0::1::::<><><>0<>0<><>::uid://da5g2tgmvj2m1::::res://Scripts/trap_knock_back.gd
 trap_knock_back_vertical.tscn::PackedScene/PackedScene::4713639682554548332::1739874056::0::1::::<><><>0<>0<><>::uid://da5g2tgmvj2m1::::res://Scripts/trap_knock_back.gd
 trap_respawn_Horizontal.tscn::PackedScene/PackedScene::5365215253006451660::1739874056::0::1::::<><><>0<>0<><>::uid://ch45tahbqad8l::::res://Scripts/trap_respawn.gd
 trap_respawn_Verticlal.tscn::PackedScene/PackedScene::1502002647964132595::1739874056::0::1::::<><><>0<>0<><>::uid://ch45tahbqad8l::::res://Scripts/trap_respawn.gd
 Wall.tscn::PackedScene/PackedScene::7502387475164557434::1738356377::0::1::::<><><>0<>0<><>::uid://c2l82vdr58l85::::res://Sprites/sWall.png
-::res://Scenes/Collectibles/::1749805400
-collect_cheese.tscn::PackedScene/PackedScene::7154551766012007278::1749805400::0::1::::<><><>0<>0<><>::uid://c6tdbr670cgpk::::res://Assets/Collectibles/Collectible - Cheese.png<>uid://clc1ab22c5am7::::res://Scripts/Collectibles/collect_cheese.gd<>uid://cm6k6cw4nuqf2::::res://Scenes/hovering_component.tscn
-Collect_Heart.tscn::PackedScene/PackedScene::4077077771624232110::1749805400::0::1::::<><><>0<>0<><>::uid://bki8yfkjvf7n1::::res://Scripts/Collectibles/collect_heart.gd<>uid://nt7vwvsqg4w6::::res://Assets/Collectibles/Collectible - Heart.png<>uid://cm6k6cw4nuqf2::::res://Scenes/hovering_component.tscn
+::res://Scenes/Collectibles/::1750539423
+collect_cheese.tscn::PackedScene::7154551766012007278::1750539423::0::1::::<><><>0<>0<><>::uid://c6tdbr670cgpk::::res://Assets/Collectibles/Collectible - Cheese.png<>uid://clc1ab22c5am7::::res://Scripts/Collectibles/collect_cheese.gd<>uid://cm6k6cw4nuqf2::::res://Scenes/hovering_component.tscn
+Collect_Heart.tscn::PackedScene::4077077771624232110::1750539422::0::1::::<><><>0<>0<><>::uid://bki8yfkjvf7n1::::res://Scripts/Collectibles/collect_heart.gd<>uid://nt7vwvsqg4w6::::res://Assets/Collectibles/Collectible - Heart.png<>uid://cm6k6cw4nuqf2::::res://Scenes/hovering_component.tscn
+frost_berry.tscn::PackedScene::384451251873568859::1750539422::0::1::::<><><>0<>0<><>::uid://tgbimjgs1fyj::::res://Scripts/Collectibles/frost_berry.gd<>uid://mhf4h5626687::::res://Assets/Collectibles/Collectible - Frostberry.png<>uid://cm6k6cw4nuqf2::::res://Scenes/hovering_component.tscn
+giftbox.tscn::PackedScene::947103597009803247::1750539422::0::1::::<><><>0<>0<><>::uid://db8ujxx7r6f3u::::res://Scripts/Collectibles/giftbox.gd<>uid://bbr7u6he87hlu::::res://Assets/Collectibles/giftbox_idle.png<>uid://c84xilhuuc3s::::res://Assets/Collectibles/giftbox_open.png<>uid://cm6k6cw4nuqf2::::res://Scenes/hovering_component.tscn
+super_frost_berry.tscn::PackedScene::4107545686551598449::1750539422::0::1::::<><><>0<>0<><>::uid://ckobxan80quie::::res://Scripts/Collectibles/super_frost_berry.gd<>uid://dye4aufh2wn3f::::res://Assets/Collectibles/Collectible - SuperFrostberry.png<>uid://cm6k6cw4nuqf2::::res://Scenes/hovering_component.tscn
 ::res://Scenes/Components/::1744476504
 gravity_component.tscn::PackedScene/PackedScene::3014678678797618003::1744064856::0::1::::<><><>0<>0<><>::uid://b3gaqgly7iomd::::res://Scripts/Components/gravity_component.gd
 ::res://Scenes/Enemies/::1749805400
@@ -286,9 +291,9 @@ treasure_chest_suit_boots_gloves.tscn::PackedScene/PackedScene::3714374017622865
 ::res://Scenes/HUD/::1749584570
 cheese_bar.tscn::PackedScene/PackedScene::5839163729488556308::1749584570::0::1::::<><><>0<>0<><>::uid://c6tdbr670cgpk::::res://Assets/Collectibles/Collectible - Cheese.png<>uid://bkkevbret1kkr::::res://Scripts/HUD/cheese_bar.gd
 HP_bar.tscn::PackedScene/PackedScene::812642069212136003::1741873309::0::1::::<><><>0<>0<><>::uid://b823tr72pbcr::::res://Scripts/HUD/hp_bar.gd<>uid://nt7vwvsqg4w6::::res://Assets/Collectibles/Collectible - Heart.png
-::res://Scenes/Levels/::1750278608
-level_1_romain.tscn::PackedScene::4416975628309917647::1750278608::0::1::::<><><>0<>0<><>::uid://b1vi7lh2l2ldh::::res://Scenes/Environment/sign_Start_Level.tscn<>uid://cvn6rtpn15ve6::::res://Resources/Level_Maker.tres<>uid://cvxyb7jcx6hel::::res://Resources/Pièges.tres<>uid://d34uj80lo1ml4::::res://Resources/Objects.tres<>uid://be1o8tb502iun::::res://Scenes/Traps/stalagtite_Tombante.tscn<>uid://ddjfmqisn40md::::res://Scenes/Traps/BouleDeNeige_portail.tscn<>uid://cdgplbix6c2sg::::res://Scenes/Traps/modifiable_stalagmite_1_kb.tscn<>uid://ccx3tmv3gvfli::::res://Scenes/Enemies/snowcanon_spawn_point.tscn<>uid://bwfqouvfqxvk5::::res://Scenes/Enemies/snowman_spawn_point.tscn<>uid://c0qusm8c2nny0::::res://Scenes/Traps/spike_thrower.tscn<>uid://bl1owrdhpaf8h::::res://Scenes/Traps/V_L_stalagmite_1_Repousseur.tscn<>uid://iah2f3d4sy1b::::res://Scenes/MovingPlatforms/moving_platform1.tscn
-level_eline.tscn::PackedScene::1179943214830683613::1750277397::0::1::::<><><>0<>0<><>::uid://cvn6rtpn15ve6::::res://Resources/Level_Maker.tres<>uid://d34uj80lo1ml4::::res://Resources/Objects.tres<>uid://cvxyb7jcx6hel::::res://Resources/Pièges.tres<>uid://1x1qpe81qufy::::res://Resources/Décor.tres<>uid://be1o8tb502iun::::res://Scenes/Traps/stalagtite_Tombante.tscn<>uid://ddjfmqisn40md::::res://Scenes/Traps/BouleDeNeige_portail.tscn<>uid://b1vi7lh2l2ldh::::res://Scenes/Environment/sign_Start_Level.tscn
+::res://Scenes/Levels/::1750539745
+level_1_romain.tscn::PackedScene::4416975628309917647::1750539745::0::1::::<><><>0<>0<><>::uid://b1vi7lh2l2ldh::::res://Scenes/Environment/sign_Start_Level.tscn<>uid://cvn6rtpn15ve6::::res://Resources/Level_Maker.tres<>uid://cvxyb7jcx6hel::::res://Resources/Pièges.tres<>uid://d34uj80lo1ml4::::res://Resources/Objects.tres<>uid://be1o8tb502iun::::res://Scenes/Traps/stalagtite_Tombante.tscn<>uid://bwfqouvfqxvk5::::res://Scenes/Enemies/snowman_spawn_point.tscn<>uid://cdgplbix6c2sg::::res://Scenes/Traps/modifiable_stalagmite_1_kb.tscn
+level_eline.tscn::PackedScene/PackedScene::1179943214830683613::1750277397::0::1::::<><><>0<>0<><>::uid://cvn6rtpn15ve6::::res://Resources/Level_Maker.tres<>uid://d34uj80lo1ml4::::res://Resources/Objects.tres<>uid://cvxyb7jcx6hel::::res://Resources/Pièges.tres<>uid://1x1qpe81qufy::::res://Resources/Décor.tres<>uid://be1o8tb502iun::::res://Scenes/Traps/stalagtite_Tombante.tscn<>uid://ddjfmqisn40md::::res://Scenes/Traps/BouleDeNeige_portail.tscn<>uid://b1vi7lh2l2ldh::::res://Scenes/Environment/sign_Start_Level.tscn
 level_sophie.tscn::PackedScene/PackedScene::8829333273565954864::1741899783::0::1::::<><><>0<>0<><>::uid://cvn6rtpn15ve6::::res://Resources/Level_Maker.tres<>uid://d34uj80lo1ml4::::res://Resources/Objects.tres<>uid://cvxyb7jcx6hel::::res://Resources/Pièges.tres<>uid://1x1qpe81qufy::::res://Resources/Décor.tres<>uid://b1vi7lh2l2ldh::::res://Scenes/Environment/sign_Start_Level.tscn
 level_test.tscn::PackedScene/PackedScene::3149480788753182680::1748443457::0::1::::<><><>0<>0<><>::uid://cvn6rtpn15ve6::::res://Resources/Level_Maker.tres<>uid://b1vi7lh2l2ldh::::res://Scenes/Environment/sign_Start_Level.tscn<>uid://cvxyb7jcx6hel::::res://Resources/Pièges.tres<>uid://drkytl5ykatsd::::res://Scenes/Enemies/snowman.tscn<>uid://clfpnmetsqo8h::::res://Scenes/Enemies/snow_mole_v_2.tscn<>uid://i0orgaj0vukb::::res://Scenes/MovingPlatforms/moving_platform2.tscn<>uid://iah2f3d4sy1b::::res://Scenes/MovingPlatforms/moving_platform1.tscn<>uid://c6rs8jj1o6baq::::res://Scenes/MovingPlatforms/moving_platform_3.tscn<>uid://7rd2wku4lem::::res://Scenes/Enemies/enemy_snow_cannon.tscn
 ::res://Scenes/MovingPlatforms/::1748338377
@@ -300,45 +305,50 @@ jumping_particle.tscn::PackedScene/PackedScene::3975044724986951695::1739544762:
 landing_particles.tscn::PackedScene/PackedScene::4061015636502664085::1739544762::0::1::::<><><>0<>0<><>::
 sliding_particles.tscn::PackedScene/PackedScene::1826008093676656571::1739544762::0::1::::<><><>0<>0<><>::
 snow_trail_particles.tscn::PackedScene/PackedScene::6613510058044577064::1742543081::0::1::::<><><>0<>0<><>::
-::res://Scenes/Traps/::1750156841
+::res://Scenes/Traps/::1750428907
 BouleDeNeige_portail.tscn::PackedScene/PackedScene::7388733849839046135::1742418595::0::1::::<><><>0<>0<><>::uid://d1dxbqm4hfv6l::::res://Scripts/Traps/snowball_spawner.gd<>uid://d0us5dfihxp67::::res://icon.svg
 Horizontal_geyser.tscn::PackedScene/PackedScene::6029384885752261489::1749805400::0::1::::<><><>0<>0<><>::uid://3g5lkrt4nrtn::::res://Scripts/Traps/snow_geyser.gd<>uid://s6e8kml8ru5::::res://Assets/Traps/SnowGeyser/snow_geyser_IDLE.png<>uid://4vj03vms1kx4::::res://Assets/Traps/SnowGeyser/snow_geyser_WINDUP.png
-H_stalagmite1_Repousseur.tscn::PackedScene/PackedScene::5933403835356315956::1749384891::0::1::::<><><>0<>0<><>::uid://kj2qaxhiyhow::::res://Scripts/Traps/stalagmite_KB.gd<>uid://be58h5ralkjk6::::res://Assets/Traps/Stalagmites1x.png
+H_BOTTOM_stalag1_Repousseur.tscn::PackedScene::5933403835356315956::1750428907::0::1::::<><><>0<>0<><>::uid://kj2qaxhiyhow::::res://Scripts/Traps/stalagmite_KB.gd<>uid://be58h5ralkjk6::::res://Assets/Traps/Stalagmites1x.png
+H_BOTTOM_stalag2_Repousseur.tscn::PackedScene/PackedScene::5466491796759082918::1750364125::0::1::::<><><>0<>0<><>::uid://kj2qaxhiyhow::::res://Scripts/Traps/stalagmite_KB.gd<>uid://bc4acl8bjv56::::res://Assets/Traps/Stalagmites1x_2.png
+H_BOTTOM_stalag3_Repousseur.tscn::PackedScene/PackedScene::6780529977770438487::1750364240::0::1::::<><><>0<>0<><>::uid://kj2qaxhiyhow::::res://Scripts/Traps/stalagmite_KB.gd<>uid://d0can36h58ufu::::res://Assets/Traps/Stalagmites1x_3.png
 H_stalagmite1_Teleporteur.tscn::PackedScene/PackedScene::4469268157669769712::1749805400::0::1::::<><><>0<>0<><>::uid://b6urdkrfmhlja::::res://Scripts/Traps/stalagmite_RS.gd<>uid://be58h5ralkjk6::::res://Assets/Traps/Stalagmites1x.png
-H_stalagmite2_Repousseur.tscn::PackedScene/PackedScene::5466491796759082918::1749805400::0::1::::<><><>0<>0<><>::uid://kj2qaxhiyhow::::res://Scripts/Traps/stalagmite_KB.gd<>uid://bc4acl8bjv56::::res://Assets/Traps/Stalagmites1x_2.png
 H_stalagmite2_Teleporteur.tscn::PackedScene/PackedScene::56390809773323088::1749805400::0::1::::<><><>0<>0<><>::uid://b6urdkrfmhlja::::res://Scripts/Traps/stalagmite_RS.gd<>uid://bc4acl8bjv56::::res://Assets/Traps/Stalagmites1x_2.png
-H_stalagmite3_Repousseur.tscn::PackedScene/PackedScene::6780529977770438487::1749805400::0::1::::<><><>0<>0<><>::uid://kj2qaxhiyhow::::res://Scripts/Traps/stalagmite_KB.gd<>uid://d0can36h58ufu::::res://Assets/Traps/Stalagmites1x_3.png
 H_stalagmite3_Teleporteur.tscn::PackedScene/PackedScene::1056491106216292908::1749805400::0::1::::<><><>0<>0<><>::uid://b6urdkrfmhlja::::res://Scripts/Traps/stalagmite_RS.gd<>uid://d0can36h58ufu::::res://Assets/Traps/Stalagmites1x_3.png
 h_stalag_tite_1_kb.tscn::PackedScene/PackedScene::760592587802212713::1748984664::0::1::::<><><>0<>0<><>::uid://kj2qaxhiyhow::::res://Scripts/Traps/stalagmite_KB.gd<>uid://be58h5ralkjk6::::res://Assets/Traps/Stalagmites1x.png
+H_TOP_stalag_1_Repousseur.tscn::PackedScene/PackedScene::8224447704838002852::1750403295::0::1::::<><><>0<>0<><>::uid://kj2qaxhiyhow::::res://Scripts/Traps/stalagmite_KB.gd<>uid://be58h5ralkjk6::::res://Assets/Traps/Stalagmites1x.png
+H_TOP_stalag_2_Repousseur.tscn::PackedScene/PackedScene::9042539895517459844::1750403295::0::1::::<><><>0<>0<><>::uid://kj2qaxhiyhow::::res://Scripts/Traps/stalagmite_KB.gd<>uid://bc4acl8bjv56::::res://Assets/Traps/Stalagmites1x_2.png
+H_TOP_stalag_3_repousseur.tscn::PackedScene/PackedScene::6448826179971904672::1750403295::0::1::::<><><>0<>0<><>::uid://kj2qaxhiyhow::::res://Scripts/Traps/stalagmite_KB.gd<>uid://d0can36h58ufu::::res://Assets/Traps/Stalagmites1x_3.png
 ice_cover.tscn::PackedScene/PackedScene::8020206208369270962::1748983087::0::1::::<><><>0<>0<><>::uid://cmqexc3sxrey1::::res://Assets/TileSet/ice_cover.png
-modifiable_stalagmite_1_kb.tscn::PackedScene/PackedScene::4996724629417445814::1748984664::0::1::::<><><>0<>0<><>::uid://kj2qaxhiyhow::::res://Scripts/Traps/stalagmite_KB.gd<>uid://be58h5ralkjk6::::res://Assets/Traps/Stalagmites1x.png
+modifiable_stalagmite_1_kb.tscn::PackedScene/PackedScene::4996724629417445814::1750364544::0::1::::<><><>0<>0<><>::uid://kj2qaxhiyhow::::res://Scripts/Traps/stalagmite_KB.gd<>uid://be58h5ralkjk6::::res://Assets/Traps/Stalagmites1x.png
 Snowball.tscn::PackedScene/PackedScene::1910320189839750514::1749805400::0::1::::<><><>0<>0<><>::uid://48k3sahlbncn::::res://Scripts/Traps/snowball.gd<>uid://cjmupqnxj6sek::::res://Assets/Traps/Snowball.png<>uid://da5g2tgmvj2m1::::res://Scripts/trap_knock_back.gd
-spike_thrower.tscn::PackedScene/PackedScene::6561839667933811733::1750156770::0::1::::<><><>0<>0<><>::uid://0icsb7agupe5::::res://Scripts/Traps/spike_thrower.gd<>uid://d1r2f6rdkcfub::::res://Assets/Enemies/SpikeThrower/spike_thrower_SHOOT_RIGHT_V2.png
-stalagtite_Tombante.tscn::PackedScene/PackedScene::2721759849834376253::1749805400::0::1::::<><><>0<>0<><>::uid://b6wttk1jhqvpf::::res://Scripts/Traps/falling_stalagtite.gd<>uid://cpws0vy0xq4au::::res://Assets/Traps/FallingStalagmite5.png
-throwing_spikes.tscn::PackedScene/PackedScene::7018758884712265970::1750156841::0::1::::<><><>0<>0<><>::uid://dlm3d118kg84m::::res://Scripts/Traps/throwing_spikes.gd<>uid://bhifx4n78f1ab::::res://Assets/Traps/throwing_spikes.png<>uid://vd7tu4wfujqn::::res://Scripts/Enemies/dead_zone.gd<>uid://c6dcvl7ynfcrq::::res://Scripts/Enemies/hitbox.gd
+spike_thrower.tscn::PackedScene/PackedScene::6561839667933811733::1750344124::0::1::::<><><>0<>0<><>::uid://0icsb7agupe5::::res://Scripts/Traps/spike_thrower.gd<>uid://d1r2f6rdkcfub::::res://Assets/Enemies/SpikeThrower/spike_thrower_SHOOT_RIGHT_V2.png
+stalagtite_Tombante.tscn::PackedScene/PackedScene::2721759849834376253::1750403295::0::1::::<><><>0<>0<><>::uid://b6wttk1jhqvpf::::res://Scripts/Traps/falling_stalagtite.gd<>uid://cpws0vy0xq4au::::res://Assets/Traps/FallingStalagmite5.png
+throwing_spikes.tscn::PackedScene/PackedScene::7018758884712265970::1750344124::0::1::::<><><>0<>0<><>::uid://dlm3d118kg84m::::res://Scripts/Traps/throwing_spikes.gd<>uid://bhifx4n78f1ab::::res://Assets/Traps/throwing_spikes.png<>uid://vd7tu4wfujqn::::res://Scripts/Enemies/dead_zone.gd<>uid://c6dcvl7ynfcrq::::res://Scripts/Enemies/hitbox.gd
 Trou.tscn::PackedScene/PackedScene::600846372018583080::1744810598::0::1::::<><><>0<>0<><>::uid://b5elep4g4upl0::::res://Assets/hit.png<>uid://ch45tahbqad8l::::res://Scripts/trap_respawn.gd
 Vertical_geyser.tscn::PackedScene/PackedScene::8587853196585940184::1749805400::0::1::::<><><>0<>0<><>::uid://3g5lkrt4nrtn::::res://Scripts/Traps/snow_geyser.gd<>uid://s6e8kml8ru5::::res://Assets/Traps/SnowGeyser/snow_geyser_IDLE.png<>uid://4vj03vms1kx4::::res://Assets/Traps/SnowGeyser/snow_geyser_WINDUP.png
 V_L_stalagmite_1_Repousseur.tscn::PackedScene/PackedScene::3213062008551115277::1748984664::0::1::::<><><>0<>0<><>::uid://kj2qaxhiyhow::::res://Scripts/Traps/stalagmite_KB.gd<>uid://cpws0vy0xq4au::::res://Assets/Traps/FallingStalagmite5.png
 V_R_stalagmite_1_Repousseur.tscn::PackedScene/PackedScene::8850050240483275353::1748984664::0::1::::<><><>0<>0<><>::uid://kj2qaxhiyhow::::res://Scripts/Traps/stalagmite_KB.gd<>uid://cpws0vy0xq4au::::res://Assets/Traps/FallingStalagmite5.png
-::res://Scenes/UI/::1750278608
-congrats_screen.tscn::PackedScene::7674905634978823393::1750277397::0::1::::<><><>0<>0<><>::uid://duiumda28874d::::res://Scripts/UI/congrats_screen.gd<>uid://ba6rurgdpqsjr::::res://Resources/font/main_font_theme.tres<>uid://cvn6rtpn15ve6::::res://Resources/Level_Maker.tres<>uid://cjcwcwyojc7bn::::res://Scripts/UI/end_level_checkpoint_forCongratsScreen.gd<>uid://1x1qpe81qufy::::res://Resources/Décor.tres<>uid://dypl1impvax7h::::res://Assets/Environment/end_level_no_fire.png<>uid://dnb0wxrmnc6rl::::res://Assets/Environment/end_level lit_fire.png
-game_over_screen.tscn::PackedScene::6604805107587677748::1750277397::0::1::::<><><>0<>0<><>::uid://nqdc03msyp3w::::res://Scripts/UI/game_over_screen.gd<>uid://ba6rurgdpqsjr::::res://Resources/font/main_font_theme.tres<>uid://c2wsu4fs3vwae::::res://Assets/Environment/Tomb_Bell.png<>uid://dl3316dpi5lxs::::res://Resources/font/SuperBakery-3lXyp.ttf<>uid://cvn6rtpn15ve6::::res://Resources/Level_Maker.tres<>uid://1x1qpe81qufy::::res://Resources/Décor.tres
-GlobalMenu.tscn::PackedScene::7311163963546264429::1750277397::0::1::::<><><>0<>0<><>::uid://b8kq6obsefjyu::::res://Scripts/UI/GlobalMenu.gd
-moon.tscn::PackedScene::4050220756202482897::1750278608::0::1::::<><><>0<>0<><>::uid://bo6ap1ajepatl::::res://Assets/Menus/moon_start_screen.png<>uid://dv1kr8b8jyq5t::::res://Resources/light/point_of_interest_light.tres
-Start_Screen.tscn::PackedScene::7400452625531386732::1750278608::0::1::::<><><>0<>0<><>::uid://bq6fsl6b3usqu::::res://Scripts/UI/Start_Screen.gd<>uid://ba6rurgdpqsjr::::res://Resources/font/main_font_theme.tres<>uid://kx3srp87dv3p::::res://Scripts/UI/rainbow_start_screen.gd<>uid://btpbpewrm561::::res://Assets/Muz/Muz_IDLE.png<>uid://du2j1yp66woh6::::res://Assets/Muz/Muz_RUN.png<>uid://cvn6rtpn15ve6::::res://Resources/Level_Maker.tres<>uid://1x1qpe81qufy::::res://Resources/Décor.tres<>uid://bxx7sq8x1ny3r::::res://Scenes/UI/moon.tscn
-transition.tscn::PackedScene::6930789785985167321::1750277397::0::1::::<><><>0<>0<><>::uid://daia1h2eibixf::::res://Scripts/UI/transition.gd
-::res://Scripts/::1750166377
+::res://Scenes/UI/::1750410680
+congrats_screen.tscn::PackedScene/PackedScene::7674905634978823393::1750344124::0::1::::<><><>0<>0<><>::uid://duiumda28874d::::res://Scripts/UI/congrats_screen.gd<>uid://ba6rurgdpqsjr::::res://Resources/font/main_font_theme.tres<>uid://cvn6rtpn15ve6::::res://Resources/Level_Maker.tres<>uid://cjcwcwyojc7bn::::res://Scripts/UI/end_level_checkpoint_forCongratsScreen.gd<>uid://1x1qpe81qufy::::res://Resources/Décor.tres<>uid://dypl1impvax7h::::res://Assets/Environment/end_level_no_fire.png<>uid://dnb0wxrmnc6rl::::res://Assets/Environment/end_level lit_fire.png
+game_over_screen.tscn::PackedScene::6604805107587677748::1750410680::0::1::::<><><>0<>0<><>::uid://nqdc03msyp3w::::res://Scripts/UI/game_over_screen.gd<>uid://ba6rurgdpqsjr::::res://Resources/font/main_font_theme.tres<>uid://c2wsu4fs3vwae::::res://Assets/Environment/Tomb_Bell.png<>uid://dl3316dpi5lxs::::res://Resources/font/SuperBakery-3lXyp.ttf<>uid://cvn6rtpn15ve6::::res://Resources/Level_Maker.tres<>uid://1x1qpe81qufy::::res://Resources/Décor.tres
+GlobalMenu.tscn::PackedScene/PackedScene::7311163963546264429::1750277397::0::1::::<><><>0<>0<><>::uid://b8kq6obsefjyu::::res://Scripts/UI/GlobalMenu.gd
+moon.tscn::PackedScene/PackedScene::4050220756202482897::1750344124::0::1::::<><><>0<>0<><>::uid://bo6ap1ajepatl::::res://Assets/Menus/moon_start_screen.png<>uid://dv1kr8b8jyq5t::::res://Resources/light/point_of_interest_light.tres
+Start_Screen.tscn::PackedScene/PackedScene::7400452625531386732::1750344124::0::1::::<><><>0<>0<><>::uid://bq6fsl6b3usqu::::res://Scripts/UI/Start_Screen.gd<>uid://ba6rurgdpqsjr::::res://Resources/font/main_font_theme.tres<>uid://kx3srp87dv3p::::res://Scripts/UI/rainbow_start_screen.gd<>uid://btpbpewrm561::::res://Assets/Muz/Muz_IDLE.png<>uid://du2j1yp66woh6::::res://Assets/Muz/Muz_RUN.png<>uid://cvn6rtpn15ve6::::res://Resources/Level_Maker.tres<>uid://1x1qpe81qufy::::res://Resources/Décor.tres<>uid://bxx7sq8x1ny3r::::res://Scenes/UI/moon.tscn
+transition.tscn::PackedScene/PackedScene::6930789785985167321::1750344124::0::1::::<><><>0<>0<><>::uid://daia1h2eibixf::::res://Scripts/UI/transition.gd
+::res://Scripts/::1750410621
 camera_2d.gd::GDScript/GDScript::2108924767288613262::1750015051::0::1::::<>Camera2D<><>0<>0<><>::
-global_player_stats.gd::GDScript/GDScript::7844891938008025591::1750015051::0::1::::<>Node<><>0<>0<><>::
+global_player_stats.gd::GDScript::7844891938008025591::1750410510::0::1::::<>Node<><>0<>0<><>::
 hovering_component.gd::GDScript/GDScript::8836155563220694362::1749548325::0::1::::ClassHoveringObjectComponent<>Node<><>0<>0<><>::
-main.gd::GDScript/GDScript::6964480545932231512::1750015051::0::1::::<>Node2D<><>0<>0<><>::
-player_v_3.gd::GDScript/GDScript::89962742504138098::1750166377::0::1::::PlayerClass<>CharacterBody2D<><>0<>0<><>::
+main.gd::GDScript::6964480545932231512::1750410552::0::1::::<>Node2D<><>0<>0<><>::
+player_v_3.gd::GDScript::89962742504138098::1750410621::0::1::::PlayerClass<>CharacterBody2D<><>0<>0<><>::
 trap_knock_back.gd::GDScript/GDScript::7221606909879280182::1739985199::0::1::::ClassTrapKnockBack<>Area2D<><>0<>0<><>::
 trap_respawn.gd::GDScript/GDScript::5325885678467801561::1739663464::0::1::::ClassTrapRespawn<>Area2D<><>0<>0<><>::
-::res://Scripts/Collectibles/::1749805400
-collect_cheese.gd::GDScript/GDScript::5550626140188284008::1749805400::0::1::::<>Area2D<><>0<>0<><>::
-collect_heart.gd::GDScript/GDScript::3106870940422924652::1749805400::0::1::::<>Area2D<><>0<>0<><>::
-frost_berry.gd::GDScript/GDScript::1346049943472116157::1749805400::0::1::::<>Area2D<><>0<>0<><>::
+::res://Scripts/Collectibles/::1750539415
+collect_cheese.gd::GDScript::5550626140188284008::1750539387::0::1::::<>Area2D<><>0<>0<><>::
+collect_heart.gd::GDScript::3106870940422924652::1750539332::0::1::::<>Area2D<><>0<>0<><>::
+frost_berry.gd::GDScript::1346049943472116157::1750539302::0::1::::<>Area2D<><>0<>0<><>::
+giftbox.gd::GDScript::7298807017647212840::1750538948::0::1::::<>Area2D<><>0<>0<><>::
+super_frost_berry.gd::GDScript::5503732904191828948::1750539415::0::1::::<>Area2D<><>0<>0<><>::
 ::res://Scripts/Components/::1744476504
 gravity_component.gd::GDScript/GDScript::4364123478051338195::1744476504::0::1::::ClassGravityComponent<>Node<><>0<>0<><>::
 ::res://Scripts/Enemies/::1749917194
@@ -354,9 +364,9 @@ snowman_enemy_spawn_point.gd::GDScript/GDScript::7445003901809725604::1749805400
 snow_cannon.gd::GDScript/GDScript::3486466152709988723::1748984664::0::1::::<>enemy_class<><>0<>0<><>::
 snow_mole_spawn_point.gd::GDScript/GDScript::1300235066773567677::1749805400::0::1::::<>Marker2D<><>0<>0<><>::
 snow_mole_with_mounds_V2.gd::GDScript/GDScript::2834978842657817085::1748984664::0::1::::<>enemy_class<><>0<>0<><>::
-::res://Scripts/Environment/::1750156992
+::res://Scripts/Environment/::1750344124
 checkpoint.gd::GDScript/GDScript::2110146168547736841::1749805400::0::1::::<>Area2D<><>0<>0<><>::
-end_level_checkpoint.gd::GDScript/GDScript::6099525086955765732::1750156992::0::1::::<>Area2D<><>0<>0<><>::
+end_level_checkpoint.gd::GDScript/GDScript::6099525086955765732::1750344124::0::1::::<>Area2D<><>0<>0<><>::
 treasure_chest_class.gd::GDScript/GDScript::7727286351571980319::1740986116::0::1::::TreasureClass<>Area2D<><>0<>0<><>::
 treasure_chest_muffler.gd::GDScript/GDScript::530079664746598284::1749805400::0::1::::<>TreasureClass<><>0<>0<><>::
 treasure_chest_snowhat.gd::GDScript/GDScript::7272394663573207494::1740986116::0::1::::<>TreasureClass<><>0<>0<><>::
@@ -368,25 +378,25 @@ hp_bar.gd::GDScript/GDScript::140003696251969857::1741873309::0::1::::<>HBoxCont
 ::res://Scripts/Platform/::1744807223
 moving_platform_path_2d.gd::GDScript/GDScript::2418687622077071254::1744807223::0::1::::<>Path2D<><>0<>0<><>::
 ::res://Scripts/Test/::1744702430
-::res://Scripts/Traps/::1750156266
-falling_stalagtite.gd::GDScript/GDScript::4608879265825518951::1749805400::0::1::::<>ClassTrapKnockBack<><>0<>0<><>::
+::res://Scripts/Traps/::1750344124
+falling_stalagtite.gd::GDScript/GDScript::4608879265825518951::1750344124::0::1::::<>ClassTrapKnockBack<><>0<>0<><>::
 snowball.gd::GDScript/GDScript::2104259049297018141::1749805400::0::1::::TrapSnowballClass<>RigidBody2D<><>0<>0<><>::
 snowball_spawner.gd::GDScript/GDScript::8991764255796316853::1741787407::0::1::::<>Node2D<><>0<>0<><>::
 snow_geyser.gd::GDScript/GDScript::1979515594302947759::1749805400::0::1::::<>ClassTrapKnockBack<><>0<>0<><>::
-spike_thrower.gd::GDScript/GDScript::1771389793225021922::1750155560::0::1::::Spike_thrower<>Node2D<><>0<>0<><>::
+spike_thrower.gd::GDScript/GDScript::1771389793225021922::1750344124::0::1::::Spike_thrower<>Node2D<><>0<>0<><>::
 stalagmite_KB.gd::GDScript/GDScript::722135803534226798::1740086173::0::1::::ClassStalagmiteKB<>ClassTrapKnockBack<><>0<>0<><>::
 stalagmite_RS.gd::GDScript/GDScript::4604600489550722870::1740086173::0::1::::ClassStalagmiteRS<>ClassTrapRespawn<><>0<>0<><>::
-throwing_spikes.gd::GDScript/GDScript::7957818704610578266::1750156266::0::1::::Throwing_spikes<>enemy_class<><>0<>0<><>::
-::res://Scripts/UI/::1750259013
-congrats_screen.gd::GDScript/GDScript::8580789874096858069::1750166145::0::1::::<>Control<><>0<>0<><>::
+throwing_spikes.gd::GDScript/GDScript::7957818704610578266::1750344124::0::1::::Throwing_spikes<>enemy_class<><>0<>0<><>::
+::res://Scripts/UI/::1750410621
+congrats_screen.gd::GDScript/GDScript::8580789874096858069::1750344124::0::1::::<>Control<><>0<>0<><>::
 end_level_checkpoint_forCongratsScreen.gd::GDScript/GDScript::5410010254302532879::1741887964::0::1::::<>Area2D<><>0<>0<><>::
-game_over_screen.gd::GDScript/GDScript::945672090834004586::1750166259::0::1::::<>Control<><>0<>0<><>::
-GlobalMenu.gd::GDScript/GDScript::4724323870479179856::1750259013::0::1::::<>Node<><>0<>0<><>::
+game_over_screen.gd::GDScript/GDScript::945672090834004586::1750344124::0::1::::<>Control<><>0<>0<><>::
+GlobalMenu.gd::GDScript/GDScript::4724323870479179856::1750404195::0::1::::<>Node<><>0<>0<><>::
 label_berry.gd::GDScript/GDScript::5169889819576855935::1749805400::0::1::::<>Label<><>0<>0<><>::
-label_lifes.gd::GDScript/GDScript::5359927942767851890::1749805400::0::1::::<>Label<><>0<>0<><>::
-rainbow_start_screen.gd::GDScript/GDScript::751102262422741395::1750257899::0::1::::<>ColorRect<><>0<>0<><>::
-Start_Screen.gd::GDScript/GDScript::3573774247261041468::1750191775::0::1::::<>Control<><>0<>0<><>::
-transition.gd::GDScript/GDScript::7175823913318960635::1750021473::0::1::::<>CanvasLayer<><>0<>0<><>::
+label_lifes.gd::GDScript::5359927942767851890::1750410621::0::1::::<>Label<><>0<>0<><>::
+rainbow_start_screen.gd::GDScript/GDScript::751102262422741395::1750344124::0::1::::<>ColorRect<><>0<>0<><>::
+Start_Screen.gd::GDScript/GDScript::3573774247261041468::1750344124::0::1::::<>Control<><>0<>0<><>::
+transition.gd::GDScript/GDScript::7175823913318960635::1750344124::0::1::::<>CanvasLayer<><>0<>0<><>::
 ::res://Sprites/::1739544625
 sPlayer.png::CompressedTexture2D/CompressedTexture2D::2649461086690778::1737718977::1739544625::1::::<><><>0<>0<>fffc3e89c86543d59d7bd5be1eb57bfc<>res://.godot/imported/sPlayer.png-06fa55aa90563f8287f3e9fab6814332.ctex::
 sWall.png::CompressedTexture2D/CompressedTexture2D::6692701286543028980::1737718997::1739544625::1::::<><><>0<>0<>f6fc0a13935d8f6026dada990c5b54bd<>res://.godot/imported/sWall.png-28dbc17121b2b448d90fe949917dc1b0.ctex::

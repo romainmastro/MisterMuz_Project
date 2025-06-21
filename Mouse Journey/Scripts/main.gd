@@ -13,6 +13,9 @@ func _ready() -> void:
 	await get_tree().process_frame
 	# 2 load player at the right position
 	starting_position(current_level)
+	# 3 Player initialisation 
+	init_player()
+	# 4 Spawn enemies on the map
 	GlobalEnemyManager.spawn()
 
 func load_current_level() : 
@@ -31,15 +34,16 @@ func load_current_level() :
 	else:
 		print(" 'Sign_Start_Level' not found in", current_level.name)
 
-#func on_level_completed() : 
-	#if current_level : 
-		#current_level.call_deferred("queue_free")
-		#current_level = null
-	#
-	#if player : 
-		#player.call_deferred("queue_free")
-		#player = null
-
 func starting_position(level) : 
 	player.position = level.get_node("Sign_Start_Level").position
 	GlobalPlayerStats.current_checkpoint = player.position
+
+func init_player() : 
+	GlobalPlayerStats.player_current_HP = GlobalPlayerStats.player_max_HP
+	GlobalPlayerStats.current_cheese_nb = 0
+	GlobalPlayerStats.current_frostberry_number = 0
+	# send signal to update HUD
+	GlobalPlayerStats.update_berry_number.emit()
+	GlobalPlayerStats.current_lives_number = 1
+	# send signal to update HUD
+	GlobalPlayerStats.update_life_number.emit()

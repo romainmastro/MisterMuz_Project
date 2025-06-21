@@ -117,8 +117,10 @@ var knockback_started : bool = false
 ############################################ READY #################################################
 func _ready() -> void:
 	
-	GlobalPlayerStats.player_current_HP = GlobalPlayerStats.player_max_HP
-	print("Init Health : ", GlobalPlayerStats.player_current_HP)
+	#GlobalPlayerStats.player_current_HP = GlobalPlayerStats.player_max_HP
+	#GlobalPlayerStats.current_cheese_nb = 0
+	#GlobalPlayerStats.current_frostberry_number = 0
+	#GlobalPlayerStats.current_lives_number = 1
 	
 	boots_gloves_sprite.visible = false
 	snowsuit_sprite.visible = false 
@@ -490,7 +492,7 @@ func init_player_after_respawn() :
 	
 func on_death() : 
 	GlobalPlayerStats.current_lives_number -= 1
-	GlobalPlayerStats.gain_one_life.emit() # to label_lives in main.gd
+	GlobalPlayerStats.update_life_number.emit() # to label_lives in main.gd
 	if GlobalPlayerStats.current_lives_number <= 0 : 
 		print("GAME OVER")
 		GlobalMenu.game_transition(func() : GlobalMenu.set_game_state(GlobalMenu.GAME_STATES.GAMEOVER_SCREEN))

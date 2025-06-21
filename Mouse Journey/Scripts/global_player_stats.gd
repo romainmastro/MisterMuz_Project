@@ -17,7 +17,7 @@ var invincible_frame : bool = false
 var max_frostberry_number : int = 100
 var current_frostberry_number : int = 0
 signal update_berry_number
-signal gain_one_life
+signal update_life_number
 
 ######################## CHECKPOINTS ###############################
 @export var current_checkpoint : Vector2 = Vector2.ZERO

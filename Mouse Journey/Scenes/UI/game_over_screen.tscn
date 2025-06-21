@@ -177,6 +177,7 @@ autoplay = "default"
 frame_progress = 0.347125
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+z_index = -1
 position = Vector2(96, -64)
 amount = 800
 lifetime = 10.0

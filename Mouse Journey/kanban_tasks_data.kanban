@@ -34,7 +34,10 @@
 				"e6de74ab-da1e-46d2-ad73-418882192b5a",
 				"f1649e68-55c8-4394-a8a8-903669540d44",
 				"ef9a25df-950f-4d92-baca-77688806a127",
-				"25e39056-f16e-4cb5-88b8-0deaa0e6a02c"
+				"25e39056-f16e-4cb5-88b8-0deaa0e6a02c",
+				"354dfdaa-586c-4e54-82d2-9dbf582eed7d",
+				"dc07e369-eed8-4971-90d8-5c5d18055007",
+				"90ab2a3a-7d34-41cb-99f6-704629acedc9"
 			]
 		},
 		{
@@ -42,22 +45,26 @@
 			"title": "Doing",
 			"tasks": [
 				"43d1bd7a-eb02-49c2-91c3-1c0e569bac76",
-				"cc1a824d-9731-4bfe-b783-32a295757f3a"
+				"6c4b6b6c-40cd-4056-8abc-d84540898897"
 			]
 		},
 		{
 			"uuid": "a590c45f-f6e0-4df4-a178-2596b3213350",
 			"title": "Done on the current Branch",
 			"tasks": [
-				"d70debc0-c3c0-4b71-87cd-6f23bb29f8de",
-				"f2df43f3-aab2-4a56-9fa6-798969a50e25",
-				"b23aebfc-e6a5-4d86-8881-6265c6deb40d"
+				"afb7433f-58e1-4ae4-89ae-da1bae51fcc3",
+				"94a0d064-3f76-4b5f-b538-560865fbc6e3",
+				"ddf6a736-c5a5-477c-af7f-b73a930761a8"
 			]
 		},
 		{
 			"uuid": "9573ce0a-9b5d-4fd9-bb69-4b68a3540b99",
 			"title": "DONE => Main Branch",
 			"tasks": [
+				"cc1a824d-9731-4bfe-b783-32a295757f3a",
+				"d70debc0-c3c0-4b71-87cd-6f23bb29f8de",
+				"f2df43f3-aab2-4a56-9fa6-798969a50e25",
+				"b23aebfc-e6a5-4d86-8881-6265c6deb40d",
 				"f7f11080-465c-40a8-94cb-5bab8dcf069f",
 				"00cd1f31-6aea-4faf-be9a-509a0b2c9509",
 				"34544e9b-5d4b-4895-92e0-de4f74beb8f7",
@@ -191,6 +198,8 @@
 			"uuid": "2f4f560c-cf56-4687-bdad-86e9f71d5e9f",
 			"title": "CheatSheet",
 			"tasks": [
+				"a3dbca31-e7bc-44c7-9147-295699869e5d",
+				"37f51636-6211-4f39-b23e-3dd8b8db719d",
 				"45bae00e-fa49-4086-b39c-ef1d74825c71",
 				"a8e8d672-e24b-4c2e-bb09-fa20f0cf6849",
 				"9b59f8f2-d054-45d6-bd9a-6a574d9f6983"
@@ -1377,7 +1386,7 @@
 			"uuid": "f2df43f3-aab2-4a56-9fa6-798969a50e25",
 			"title": "Modify SpikeThrower design",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
@@ -1457,7 +1466,7 @@
 			"uuid": "b23aebfc-e6a5-4d86-8881-6265c6deb40d",
 			"title": "Transitions between game states",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": [
 				{
 					"details": "1. Create transitions + Test",
@@ -1500,12 +1509,130 @@
 			"uuid": "d70debc0-c3c0-4b71-87cd-6f23bb29f8de",
 			"title": "Improvement Start Screen : moon",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "cc1a824d-9731-4bfe-b783-32a295757f3a",
 			"title": "falling icycles : shake",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "37f51636-6211-4f39-b23e-3dd8b8db719d",
+			"title": "LEVEL1 : ",
+			"description": "",
+			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
+			"steps": [
+				{
+					"details": "pits",
+					"done": false
+				},
+				{
+					"details": "spikes",
+					"done": false
+				},
+				{
+					"details": "falling spikes",
+					"done": false
+				},
+				{
+					"details": "Snowball",
+					"done": false
+				},
+				{
+					"details": "ENEMY : Snowman",
+					"done": false
+				},
+				{
+					"details": "ENEMY : Spike Thrower",
+					"done": false
+				},
+				{
+					"details": "Part1 : Introduction - easy",
+					"done": false
+				},
+				{
+					"details": "Part2 - ",
+					"done": false
+				}
+			]
+		},
+		{
+			"uuid": "354dfdaa-586c-4e54-82d2-9dbf582eed7d",
+			"title": "Penguins enemy?",
+			"description": "",
+			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
+			"steps": []
+		},
+		{
+			"uuid": "6c4b6b6c-40cd-4056-8abc-d84540898897",
+			"title": "Level1",
+			"description": "",
+			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
+			"steps": []
+		},
+		{
+			"uuid": "dc07e369-eed8-4971-90d8-5c5d18055007",
+			"title": "Bloc with reward (heart or fruit)",
+			"description": "",
+			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
+			"steps": []
+		},
+		{
+			"uuid": "afb7433f-58e1-4ae4-89ae-da1bae51fcc3",
+			"title": "BUG : Game_over screen / Retry",
+			"description": "",
+			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"steps": []
+		},
+		{
+			"uuid": "ddf6a736-c5a5-477c-af7f-b73a930761a8",
+			"title": "BUG : nb of lives when game_over / StartScreen",
+			"description": "Reset : number of lives + number of Fruits + Cheese on game_over",
+			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"steps": []
+		},
+		{
+			"uuid": "a3dbca31-e7bc-44c7-9147-295699869e5d",
+			"title": "Tutorial",
+			"description": "Create signs for : ",
+			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
+			"steps": [
+				{
+					"details": "Jump",
+					"done": false
+				},
+				{
+					"details": "Slide down Slopes",
+					"done": false
+				},
+				{
+					"details": "Kill enemies",
+					"done": false
+				}
+			]
+		},
+		{
+			"uuid": "94a0d064-3f76-4b5f-b538-560865fbc6e3",
+			"title": "Giftbox polish",
+			"description": "",
+			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"steps": [
+				{
+					"details": "Hoover",
+					"done": true
+				},
+				{
+					"details": "transform heart when full into 5 frostberries",
+					"done": true
+				}
+			]
+		},
+		{
+			"uuid": "90ab2a3a-7d34-41cb-99f6-704629acedc9",
+			"title": "on death enemies give random gift",
 			"description": "",
 			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
 			"steps": []

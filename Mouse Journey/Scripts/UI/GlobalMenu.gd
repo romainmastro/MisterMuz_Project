@@ -70,6 +70,9 @@ func start_game() :
 		
 	if congrats_screen_node : 
 		congrats_screen_node.call_deferred("queue_free")
+	
+	if game_over_screen_node : 
+		game_over_screen_node.call_deferred("queue_free")
 		
 func show_congrats_screen() : 
 	#1 add congrats_screen

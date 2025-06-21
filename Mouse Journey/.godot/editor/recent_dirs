@@ -1,3 +1,7 @@
+res://Scripts/Collectibles
+res://Scenes/Collectibles
+res://Assets/Collectibles
+res://Scenes/Traps
 res://Scenes/UI
 res://Resources/light
 res://Scripts/UI
@@ -7,9 +11,6 @@ res://Assets/Enemies/SpikeThrower
 res://Scenes/Environment
 res://Assets/Environment
 res://Resources/shader
-res://Scripts/Collectibles
-res://Assets/Collectibles
-res://Scenes/Traps
 res://Scripts/Traps
 res://Assets/Traps/SnowGeyser
 res://Assets/Traps
@@ -19,4 +20,3 @@ res://Scenes/Levels
 res://Assets/Enemies/SnowCanon
 res://Assets/Enemies/SnowMole/SnowMoleV2
 res://Assets/Enemies/SnowMole
-res://Assets/Muz/Muffler

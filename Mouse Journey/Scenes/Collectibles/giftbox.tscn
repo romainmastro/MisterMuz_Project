@@ -1,0 +1,63 @@
+[gd_scene load_steps=9 format=3 uid="uid://nq1wmq5jk5gl"]
+
+[ext_resource type="Script" uid="uid://db8ujxx7r6f3u" path="res://Scripts/Collectibles/giftbox.gd" id="1_esbyr"]
+[ext_resource type="Texture2D" uid="uid://bbr7u6he87hlu" path="res://Assets/Collectibles/giftbox_idle.png" id="2_hfnj1"]
+[ext_resource type="Texture2D" uid="uid://c84xilhuuc3s" path="res://Assets/Collectibles/giftbox_open.png" id="3_7kehg"]
+[ext_resource type="PackedScene" uid="uid://cm6k6cw4nuqf2" path="res://Scenes/hovering_component.tscn" id="4_hfnj1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e6lmj"]
+size = Vector2(9.96386, 4.06102)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jkmaa"]
+atlas = ExtResource("2_hfnj1")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iio8u"]
+atlas = ExtResource("3_7kehg")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r77w5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jkmaa")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iio8u")
+}],
+"loop": false,
+"name": &"open",
+"speed": 15.0
+}]
+
+[node name="Gitfbox" type="Area2D" node_paths=PackedStringArray("collision_area", "giftbox_sprite", "spawning_position", "hoveringObjectComponent")]
+script = ExtResource("1_esbyr")
+collision_area = NodePath("CollisionArea")
+giftbox_sprite = NodePath("AnimatedSprite2D")
+spawning_position = NodePath("spawning_position")
+hoveringObjectComponent = NodePath("HoveringComponent")
+
+[node name="CollisionArea" type="Area2D" parent="."]
+collision_layer = 512
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionArea"]
+position = Vector2(0.0274439, 5.98301)
+shape = SubResource("RectangleShape2D_e6lmj")
+debug_color = Color(0.680567, 0.503483, 5.77569e-07, 0.42)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_r77w5")
+animation = &"open"
+
+[node name="spawning_position" type="Marker2D" parent="."]
+
+[node name="HoveringComponent" parent="." node_paths=PackedStringArray("object") instance=ExtResource("4_hfnj1")]
+object = NodePath("..")
+
+[connection signal="body_entered" from="CollisionArea" to="." method="_on_collision_area_body_entered"]
