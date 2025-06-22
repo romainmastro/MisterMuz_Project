@@ -5,6 +5,7 @@ extends enemy_class
 
 @export var gravity_component : ClassGravityComponent
 @export var ray : RayCast2D
+@export var spawn_positions : Array[Marker2D]
 @export_enum("gauche", "droite") var direction_départ = "droite"
 @export var speed : float = 30
 @export var damage_amount : float = 1
@@ -12,6 +13,7 @@ extends enemy_class
 var direction : float = 1
 
 var should_flip : bool = false
+var should_spawn_little_snowmen : bool = true
 
 func _ready() -> void:
 	
@@ -92,7 +94,13 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 		die()
 		
 func spawn_little_snowmen() : 
-	var little_snowman = me.instantiate() as SuperSnowmanEnemy
-	little_snowman.global_position = global_position
-	little_snowman.speed = 60
-	little_snowman.scale = 0.5
+	if should_spawn_little_snowmen : 
+		for i in range(2) : 
+			var little_snowman = me.instantiate() as SuperSnowmanEnemy
+			little_snowman.global_position = spawn_positions[i].global_position
+			little_snowman.speed = randf_range(30.0, 60.0)
+			little_snowman.scale = Vector2(0.7, 0.7)
+			little_snowman.direction_départ = "droite" if i == 0 else "gauche"
+			little_snowman.should_spawn_little_snowmen = false
+			
+			get_parent().add_child(little_snowman, true)

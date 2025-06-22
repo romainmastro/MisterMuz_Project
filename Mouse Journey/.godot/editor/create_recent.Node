@@ -1,8 +1,8 @@
+Marker2D
 AnimationPlayer
 Timer
 Area2D
 Node2D
-Marker2D
 AnimatedSprite2D
 CollisionShape2D
 CanvasLayer

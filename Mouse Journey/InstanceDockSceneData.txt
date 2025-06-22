@@ -35,6 +35,6 @@
 }, {
 &"scene": "res://Scenes/Traps/spike_thrower.tscn"
 }, {
-&"scene": "res://Scenes/Enemies/super_snowman.tscn"
+&"scene": "res://Scenes/Enemies/super_snowman_spawn_point.tscn"
 }]
 }]

@@ -144,7 +144,7 @@ offsets = PackedFloat32Array(0, 0.6, 1)
 colors = PackedColorArray(0.372549, 0.803922, 0.894118, 1, 0.601569, 0.84, 1, 0.8, 0.369757, 0.805801, 0.894329, 0)
 metadata/_snap_count = 5
 
-[node name="SuperSnowman" type="CharacterBody2D" node_paths=PackedStringArray("gravity_component", "ray", "collision_shape", "hitbox", "deadzone", "animated_sprite", "death_particles") groups=["enemies"]]
+[node name="SuperSnowman" type="CharacterBody2D" node_paths=PackedStringArray("gravity_component", "ray", "spawn_positions", "collision_shape", "hitbox", "deadzone", "animated_sprite", "death_particles") groups=["enemies"]]
 z_index = 5
 collision_layer = 4
 collision_mask = 3
@@ -152,6 +152,7 @@ floor_max_angle = 0.523599
 script = ExtResource("1_r7tae")
 gravity_component = NodePath("gravity_component")
 ray = NodePath("RayCast2D")
+spawn_positions = [NodePath("spawn_left"), NodePath("spawn_right")]
 collision_shape = NodePath("CollisionShape2D")
 hitbox = NodePath("hitbox")
 deadzone = NodePath("DeadZone")
@@ -213,6 +214,12 @@ angle_max = 100.0
 scale_amount_min = 2.0
 scale_amount_max = 4.0
 color_ramp = SubResource("Gradient_x2qtj")
+
+[node name="spawn_left" type="Marker2D" parent="."]
+position = Vector2(-5, -4)
+
+[node name="spawn_right" type="Marker2D" parent="."]
+position = Vector2(5, -4)
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]

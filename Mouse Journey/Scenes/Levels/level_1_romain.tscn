@@ -6,7 +6,7 @@
 [ext_resource type="TileSet" uid="uid://d34uj80lo1ml4" path="res://Resources/Objects.tres" id="4_2kyff"]
 [ext_resource type="PackedScene" uid="uid://be1o8tb502iun" path="res://Scenes/Traps/stalagtite_Tombante.tscn" id="6_nscas"]
 [ext_resource type="PackedScene" uid="uid://bwfqouvfqxvk5" path="res://Scenes/Enemies/snowman_spawn_point.tscn" id="7_kaqu4"]
-[ext_resource type="PackedScene" uid="uid://cm6y3b3por0rv" path="res://Scenes/Enemies/super_snowman.tscn" id="8_2kyff"]
+[ext_resource type="PackedScene" uid="uid://bvkxa1n51jsm0" path="res://Scenes/Enemies/super_snowman_spawn_point.tscn" id="8_2kyff"]
 [ext_resource type="PackedScene" uid="uid://cdgplbix6c2sg" path="res://Scenes/Traps/modifiable_stalagmite_1_kb.tscn" id="8_valtc"]
 
 [sub_resource type="Environment" id="Environment_otrkh"]
@@ -195,20 +195,10 @@ position = Vector2(2440, 48)
 position = Vector2(2348, 48)
 "direction_départ" = "gauche"
 
+[node name="super_snowman_spawn_point" parent="Enemies" instance=ExtResource("8_2kyff")]
+position = Vector2(137.729, 142.888)
+
+[node name="super_snowman_spawn_point2" parent="Enemies" instance=ExtResource("8_2kyff")]
+position = Vector2(316.995, 143.347)
+
 [node name="Moving_Platforms" type="Node2D" parent="."]
-
-[node name="SuperSnowman" parent="." instance=ExtResource("8_2kyff")]
-position = Vector2(148.768, 112.036)
-
-[connection signal="body_entered" from="Objects/FrostBerry" to="Objects/FrostBerry" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@103733" to="Objects/@Area2D@103733" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@103734" to="Objects/@Area2D@103734" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@103735" to="Objects/@Area2D@103735" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@103736" to="Objects/@Area2D@103736" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@103737" to="Objects/@Area2D@103737" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@103738" to="Objects/@Area2D@103738" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@103739" to="Objects/@Area2D@103739" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@103740" to="Objects/@Area2D@103740" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@103741" to="Objects/@Area2D@103741" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@103742" to="Objects/@Area2D@103742" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@103743" to="Objects/@Area2D@103743" method="_on_body_entered"]
