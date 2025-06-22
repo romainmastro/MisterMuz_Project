@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://nq1wmq5jk5gl"]
+[gd_scene load_steps=13 format=3 uid="uid://nq1wmq5jk5gl"]
 
 [ext_resource type="Script" uid="uid://db8ujxx7r6f3u" path="res://Scripts/Collectibles/giftbox.gd" id="1_esbyr"]
 [ext_resource type="Texture2D" uid="uid://bbr7u6he87hlu" path="res://Assets/Collectibles/giftbox_idle.png" id="2_hfnj1"]
@@ -35,6 +35,47 @@ animations = [{
 "speed": 15.0
 }]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hfnj1"]
+load_path = "res://.godot/imported/2d_lights_and_shadows_neutral_point_light.webp-90a52a222c53c29b5175d453f1c65e65.ctex"
+
+[sub_resource type="Animation" id="Animation_7kehg"]
+resource_name = "glow"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GiftboxGlowLight:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.5, 2.5]
+}
+
+[sub_resource type="Animation" id="Animation_5y1ko"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GiftboxGlowLight:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k0a45"]
+_data = {
+&"RESET": SubResource("Animation_5y1ko"),
+&"glow": SubResource("Animation_7kehg")
+}
+
 [node name="Gitfbox" type="Area2D" node_paths=PackedStringArray("collision_area", "giftbox_sprite", "spawning_position", "hoveringObjectComponent")]
 script = ExtResource("1_esbyr")
 collision_area = NodePath("CollisionArea")
@@ -59,5 +100,20 @@ animation = &"open"
 
 [node name="HoveringComponent" parent="." node_paths=PackedStringArray("object") instance=ExtResource("4_hfnj1")]
 object = NodePath("..")
+
+[node name="GiftboxGlowLight" type="PointLight2D" parent="."]
+light_mask = 8
+position = Vector2(-0.0694639, 1.02461)
+scale = Vector2(0.649987, 0.548797)
+color = Color(0.629429, 0.339138, 0.0632045, 1)
+energy = 0.3
+texture = SubResource("CompressedTexture2D_hfnj1")
+texture_scale = 0.1
+
+[node name="LightAnimator" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_k0a45")
+}
+autoplay = "glow"
 
 [connection signal="body_entered" from="CollisionArea" to="." method="_on_collision_area_body_entered"]

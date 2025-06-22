@@ -1,3 +1,5 @@
+res://Scripts/Enemies
+res://Scenes/Enemies
 res://Scripts/Collectibles
 res://Scenes/Collectibles
 res://Assets/Collectibles
@@ -14,8 +16,6 @@ res://Resources/shader
 res://Scripts/Traps
 res://Assets/Traps/SnowGeyser
 res://Assets/Traps
-res://Scripts/Enemies
-res://Scenes/Enemies
 res://Scenes/Levels
 res://Assets/Enemies/SnowCanon
 res://Assets/Enemies/SnowMole/SnowMoleV2
