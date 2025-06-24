@@ -12,7 +12,7 @@ var direction : float = 1
 var should_flip : bool = false
 
 func _ready() -> void:
-	
+	super()
 	match direction_départ : 
 		"droite" : 
 			direction = 1

@@ -27,6 +27,8 @@ var snow_mole_collision_enabled : bool = true
 var snow_mole_scale : Vector2 = Vector2(0.8, 0.8)
 
 func _ready() -> void:
+	super()
+	
 	start_idle()
 	snow_mole.global_position = MOUNDS[0].global_position 
 	snow_mole.scale = snow_mole_scale

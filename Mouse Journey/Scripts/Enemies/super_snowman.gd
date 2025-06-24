@@ -16,7 +16,7 @@ var should_flip : bool = false
 var should_spawn_little_snowmen : bool = true
 
 func _ready() -> void:
-	
+	super()
 	match direction_départ : 
 		"droite" : 
 			direction = 1

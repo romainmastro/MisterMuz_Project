@@ -13,11 +13,16 @@ extends CharacterBody2D
 @onready var super_fruit_scene = preload("res://Scenes/Collectibles/super_frost_berry.tscn") # 5%
 
 
-var spawn_node : Node
+var spawn_node_collectible : Node
 
 var roll : int = 0
 
 var is_dead : bool = false
+
+
+func _ready() : 
+	spawn_node_collectible = get_tree().current_scene.get_node("Main/WORLD").get_child(0)
+	print_debug("Current scene root is: ", get_tree().current_scene.name)
 
 func die() : 
 	queue_free()
@@ -81,7 +86,6 @@ func do_hit_stop(duration := 0.3, slowdown_factor := 0.5) -> void:
 func spawn_collectible(collectible_scene : PackedScene) : 
 	var collectible = collectible_scene.instantiate() as Area2D
 	collectible.global_position = global_position
-	spawn_node = get_tree().current_scene
-	spawn_node.add_child(collectible)
+	spawn_node_collectible.add_child(collectible, true)
 
 	

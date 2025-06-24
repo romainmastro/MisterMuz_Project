@@ -1,3 +1,4 @@
+res://Assets/Enemies/SuperSnowman
 res://Scripts/Enemies
 res://Scenes/Enemies
 res://Scripts/Collectibles
@@ -19,4 +20,3 @@ res://Assets/Traps
 res://Scenes/Levels
 res://Assets/Enemies/SnowCanon
 res://Assets/Enemies/SnowMole/SnowMoleV2
-res://Assets/Enemies/SnowMole

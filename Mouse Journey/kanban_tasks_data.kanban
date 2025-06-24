@@ -30,27 +30,27 @@
 				"50e3d479-db0b-45ef-87fe-fc8f20f67ca5",
 				"df14c301-985a-4287-b3ff-a190f627541f",
 				"6b738e0a-dafc-419f-9e9a-99a2d86368c3",
-				"354dfdaa-586c-4e54-82d2-9dbf582eed7d",
 				"e3281c13-dbdd-4301-9903-9eac4a13f67f",
 				"e6de74ab-da1e-46d2-ad73-418882192b5a",
 				"f1649e68-55c8-4394-a8a8-903669540d44",
 				"ef9a25df-950f-4d92-baca-77688806a127",
-				"25e39056-f16e-4cb5-88b8-0deaa0e6a02c"
+				"25e39056-f16e-4cb5-88b8-0deaa0e6a02c",
+				"43d1bd7a-eb02-49c2-91c3-1c0e569bac76"
 			]
 		},
 		{
 			"uuid": "ef4e123f-f6ea-4e30-8896-4ddd7167fd59",
 			"title": "Doing",
 			"tasks": [
-				"43d1bd7a-eb02-49c2-91c3-1c0e569bac76",
 				"6c4b6b6c-40cd-4056-8abc-d84540898897",
-				"23e2a284-4cf7-4d00-bebf-a183f0f2c062"
+				"354dfdaa-586c-4e54-82d2-9dbf582eed7d"
 			]
 		},
 		{
 			"uuid": "a590c45f-f6e0-4df4-a178-2596b3213350",
 			"title": "Done on the current Branch",
 			"tasks": [
+				"23e2a284-4cf7-4d00-bebf-a183f0f2c062",
 				"afb7433f-58e1-4ae4-89ae-da1bae51fcc3",
 				"94a0d064-3f76-4b5f-b538-560865fbc6e3",
 				"ddf6a736-c5a5-477c-af7f-b73a930761a8",
@@ -1563,7 +1563,7 @@
 		{
 			"uuid": "354dfdaa-586c-4e54-82d2-9dbf582eed7d",
 			"title": "Penguins enemy?",
-			"description": "",
+			"description": "Behaviour : \n1.Wait and slide on the ground when the player approaches\n2. Slide down slopes? (but same as snowballs)\n3. jump and slide?",
 			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
 			"steps": []
 		},
@@ -1646,11 +1646,11 @@
 			"uuid": "23e2a284-4cf7-4d00-bebf-a183f0f2c062",
 			"title": "enemy : Angry Snowman",
 			"description": "when jump on head : spawn 2 small snowmen enemies",
-			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
+			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
 			"steps": [
 				{
 					"details": "1. Create SuperSnowman spawning point to test things",
-					"done": false
+					"done": true
 				}
 			]
 		}

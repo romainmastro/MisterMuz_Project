@@ -29,7 +29,7 @@ func load_current_level() :
 	if start : 
 		player = playerScene.instantiate()
 		player.global_position = start.global_position
-		world.add_child(player)
+		add_child(player)
 		GlobalPlayerStats.current_checkpoint = player.global_position
 	else:
 		print(" 'Sign_Start_Level' not found in", current_level.name)

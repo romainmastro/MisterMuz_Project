@@ -31,6 +31,7 @@ var shoot_anim_activate : bool = false
 
 
 func _ready() -> void: 
+	super()
 	
 	scale = Vector2(0.8, 0.8)
 	
