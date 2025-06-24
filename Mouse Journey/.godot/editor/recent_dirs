@@ -1,6 +1,7 @@
-res://Assets/Enemies/SuperSnowman
+res://Assets/Enemies/Penguins
 res://Scripts/Enemies
 res://Scenes/Enemies
+res://Assets/Enemies/SuperSnowman
 res://Scripts/Collectibles
 res://Scenes/Collectibles
 res://Assets/Collectibles
@@ -19,4 +20,3 @@ res://Assets/Traps/SnowGeyser
 res://Assets/Traps
 res://Scenes/Levels
 res://Assets/Enemies/SnowCanon
-res://Assets/Enemies/SnowMole/SnowMoleV2

@@ -1,0 +1,181 @@
+[gd_scene load_steps=19 format=3 uid="uid://bmp3602lw708m"]
+
+[ext_resource type="Texture2D" uid="uid://dihsnsiwendx3" path="res://Assets/Enemies/Penguins/penguins_IDLE.png" id="1_i0r7u"]
+[ext_resource type="Script" uid="uid://de4f343a2cbv3" path="res://Scripts/Enemies/enemy_penguins.gd" id="1_k5jry"]
+[ext_resource type="Texture2D" uid="uid://d0pt5ode2pean" path="res://Assets/Enemies/Penguins/penguins_SLIDE.png" id="2_ajoj1"]
+[ext_resource type="Texture2D" uid="uid://ptmf8vdbsa6o" path="res://Assets/Enemies/Penguins/penguins_HURT.png" id="2_h70wl"]
+[ext_resource type="PackedScene" uid="uid://bi7lk15xk624v" path="res://Scenes/Components/gravity_component.tscn" id="3_ajoj1"]
+[ext_resource type="Script" uid="uid://c6dcvl7ynfcrq" path="res://Scripts/Enemies/hitbox.gd" id="5_57435"]
+[ext_resource type="Script" uid="uid://vd7tu4wfujqn" path="res://Scripts/Enemies/dead_zone.gd" id="6_lfeqr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qllge"]
+atlas = ExtResource("2_h70wl")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k5jry"]
+atlas = ExtResource("1_i0r7u")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_57435"]
+atlas = ExtResource("1_i0r7u")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lfeqr"]
+atlas = ExtResource("2_ajoj1")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h70wl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qllge")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qllge")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qllge")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qllge")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qllge")
+}],
+"loop": true,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k5jry")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_57435")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lfeqr")
+}],
+"loop": true,
+"name": &"slide",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k5jry"]
+radius = 3.0
+height = 6.0
+
+[sub_resource type="Gradient" id="Gradient_ajoj1"]
+offsets = PackedFloat32Array(0, 0.6, 1)
+colors = PackedColorArray(0.372549, 0.803922, 0.894118, 1, 0.601569, 0.84, 1, 0.8, 0.369757, 0.805801, 0.894329, 0)
+metadata/_snap_count = 5
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lfeqr"]
+size = Vector2(6, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h70wl"]
+size = Vector2(16, 3.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qllge"]
+size = Vector2(9, 2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t1wnv"]
+size = Vector2(18, 2)
+
+[node name="enemy_penguins" type="CharacterBody2D" node_paths=PackedStringArray("ray", "detection_right", "detection_left", "sliding_timer", "collision_shape", "hitbox", "deadzone", "animated_sprite", "death_particles") groups=["enemies"]]
+collision_layer = 4
+script = ExtResource("1_k5jry")
+ray = NodePath("RayCast2D")
+detection_right = NodePath("detection_right")
+detection_left = NodePath("detection_left")
+sliding_timer = NodePath("Sliding_timer")
+collision_shape = NodePath("CollisionShape_FLOOR")
+hitbox = NodePath("EnemyHitboxClass")
+deadzone = NodePath("EnemyDeadZoneClass")
+animated_sprite = NodePath("AnimatedSprite2D")
+death_particles = NodePath("DeathParticles")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_h70wl")
+animation = &"death"
+autoplay = "idle"
+
+[node name="CollisionShape_FLOOR" type="CollisionShape2D" parent="."]
+position = Vector2(0, 13)
+shape = SubResource("CapsuleShape2D_k5jry")
+
+[node name="gravity_component" parent="." node_paths=PackedStringArray("wall_ray") instance=ExtResource("3_ajoj1")]
+wall_ray = NodePath("../RayCast2D")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(8, 15)
+target_position = Vector2(0, 16)
+
+[node name="DeathParticles" type="CPUParticles2D" parent="."]
+position = Vector2(0, 8)
+emitting = false
+amount = 12
+one_shot = true
+explosiveness = 1.0
+randomness = 0.5
+emission_shape = 2
+emission_sphere_radius = 3.0
+direction = Vector2(0, -1)
+gravity = Vector2(0, 200)
+initial_velocity_max = 150.0
+angular_velocity_min = -64.13
+angular_velocity_max = 99.11
+angle_min = -100.0
+angle_max = 100.0
+scale_amount_min = 2.0
+scale_amount_max = 4.0
+color_ramp = SubResource("Gradient_ajoj1")
+
+[node name="EnemyHitboxClass" type="Area2D" parent="."]
+script = ExtResource("5_57435")
+metadata/_custom_type_script = "uid://c6dcvl7ynfcrq"
+
+[node name="Hitbox_collision_idle" type="CollisionShape2D" parent="EnemyHitboxClass"]
+visible = false
+position = Vector2(0, 9.5)
+shape = SubResource("RectangleShape2D_lfeqr")
+debug_color = Color(0.991854, 0, 0.260024, 0.42)
+
+[node name="Hitbox_collision_slide" type="CollisionShape2D" parent="EnemyHitboxClass"]
+visible = false
+position = Vector2(1, 12)
+shape = SubResource("RectangleShape2D_h70wl")
+debug_color = Color(0.999173, 0, 0.12142, 0.42)
+
+[node name="EnemyDeadZoneClass" type="Area2D" parent="."]
+script = ExtResource("6_lfeqr")
+metadata/_custom_type_script = "uid://vd7tu4wfujqn"
+
+[node name="DeadZone_collision_idle" type="CollisionShape2D" parent="EnemyDeadZoneClass"]
+visible = false
+position = Vector2(-0.5, 1)
+shape = SubResource("RectangleShape2D_qllge")
+debug_color = Color(0, 0.649767, 0.129053, 0.42)
+
+[node name="DeadZone_collision_slide" type="CollisionShape2D" parent="EnemyDeadZoneClass"]
+visible = false
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_t1wnv")
+debug_color = Color(0, 0.637695, 0.388693, 0.42)
+
+[node name="detection_right" type="RayCast2D" parent="."]
+position = Vector2(0, 8)
+target_position = Vector2(100, 0)
+
+[node name="detection_left" type="RayCast2D" parent="."]
+position = Vector2(0, 8)
+target_position = Vector2(-100, 0)
+
+[node name="Sliding_timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Sliding_timer" to="." method="_on_sliding_timer_timeout"]
