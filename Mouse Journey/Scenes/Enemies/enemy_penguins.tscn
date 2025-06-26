@@ -1,24 +1,64 @@
-[gd_scene load_steps=19 format=3 uid="uid://bmp3602lw708m"]
+[gd_scene load_steps=35 format=3 uid="uid://bmp3602lw708m"]
 
 [ext_resource type="Texture2D" uid="uid://dihsnsiwendx3" path="res://Assets/Enemies/Penguins/penguins_IDLE.png" id="1_i0r7u"]
 [ext_resource type="Script" uid="uid://de4f343a2cbv3" path="res://Scripts/Enemies/enemy_penguins.gd" id="1_k5jry"]
 [ext_resource type="Texture2D" uid="uid://d0pt5ode2pean" path="res://Assets/Enemies/Penguins/penguins_SLIDE.png" id="2_ajoj1"]
 [ext_resource type="Texture2D" uid="uid://ptmf8vdbsa6o" path="res://Assets/Enemies/Penguins/penguins_HURT.png" id="2_h70wl"]
 [ext_resource type="PackedScene" uid="uid://bi7lk15xk624v" path="res://Scenes/Components/gravity_component.tscn" id="3_ajoj1"]
+[ext_resource type="Texture2D" uid="uid://dq55ytgvc03yh" path="res://Assets/Enemies/Penguins/penguins_JUMP.png" id="4_kqget"]
+[ext_resource type="Texture2D" uid="uid://chcair3voyca5" path="res://Assets/Enemies/Penguins/penguins_LOOK_LEFTpng.png" id="4_t1wnv"]
 [ext_resource type="Script" uid="uid://c6dcvl7ynfcrq" path="res://Scripts/Enemies/hitbox.gd" id="5_57435"]
 [ext_resource type="Script" uid="uid://vd7tu4wfujqn" path="res://Scripts/Enemies/dead_zone.gd" id="6_lfeqr"]
+[ext_resource type="PackedScene" uid="uid://1asc7ato1afb" path="res://Scenes/Particles/sliding_particles.tscn" id="10_kqget"]
+[ext_resource type="PackedScene" uid="uid://bwvsn2f5kkyb4" path="res://Scenes/Particles/jumping_particle.tscn" id="11_tu3hd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qllge"]
 atlas = ExtResource("2_h70wl")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_k5jry"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_tu3hd"]
 atlas = ExtResource("1_i0r7u")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_57435"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ld28"]
 atlas = ExtResource("1_i0r7u")
 region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p6i74"]
+atlas = ExtResource("1_i0r7u")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4lges"]
+atlas = ExtResource("4_kqget")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_punc5"]
+atlas = ExtResource("4_kqget")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ja2br"]
+atlas = ExtResource("4_kqget")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4srpt"]
+atlas = ExtResource("4_kqget")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w4024"]
+atlas = ExtResource("4_kqget")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b86qp"]
+atlas = ExtResource("4_kqget")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t1wnv"]
+atlas = ExtResource("1_i0r7u")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kqget"]
+atlas = ExtResource("4_t1wnv")
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lfeqr"]
 atlas = ExtResource("2_ajoj1")
@@ -42,20 +82,66 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_qllge")
 }],
-"loop": true,
+"loop": false,
 "name": &"death",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_k5jry")
+"texture": SubResource("AtlasTexture_tu3hd")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_57435")
+"texture": SubResource("AtlasTexture_4ld28")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p6i74")
 }],
 "loop": true,
 "name": &"idle",
-"speed": 3.0
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4lges")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_punc5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ja2br")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4srpt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w4024")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b86qp")
+}],
+"loop": false,
+"name": &"jump",
+"speed": 11.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t1wnv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kqget")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t1wnv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kqget")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t1wnv")
+}],
+"loop": false,
+"name": &"look_left_right",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -87,9 +173,29 @@ size = Vector2(9, 2)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t1wnv"]
 size = Vector2(18, 2)
 
-[node name="enemy_penguins" type="CharacterBody2D" node_paths=PackedStringArray("ray", "detection_right", "detection_left", "sliding_timer", "collision_shape", "hitbox", "deadzone", "animated_sprite", "death_particles") groups=["enemies"]]
+[sub_resource type="Curve" id="Curve_tu3hd"]
+_limits = [-200.0, 200.0, 0.0, 1.0]
+_data = [Vector2(0.00436682, -118.064), 0.0, 0.0, 0, 0, Vector2(0.980349, 130.973), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_4ld28"]
+_data = [Vector2(0.00218341, 1), 0.0, 0.0, 0, 0, Vector2(0.991266, 0.323269), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_p6i74"]
+_data = [Vector2(0, 0.89849), 0.0, 0.0, 0, 0, Vector2(0.502183, 0.516137), 0.0, 0.0, 0, 0, Vector2(0.973799, 0.248829), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[node name="enemy_penguins" type="CharacterBody2D" node_paths=PackedStringArray("hitbox_idle", "hitbox_slide", "deadzone_idle", "deadzone_slide", "sliding_particles", "jumping_particles", "gravity_component", "ray", "detection_right", "detection_left", "sliding_timer", "collision_shape", "hitbox", "deadzone", "animated_sprite", "death_particles") groups=["enemies"]]
 collision_layer = 4
 script = ExtResource("1_k5jry")
+hitbox_idle = NodePath("EnemyHitboxClass/Hitbox_collision_idle")
+hitbox_slide = NodePath("EnemyHitboxClass/Hitbox_collision_slide")
+deadzone_idle = NodePath("EnemyDeadZoneClass/DeadZone_collision_idle")
+deadzone_slide = NodePath("EnemyDeadZoneClass/DeadZone_collision_slide")
+sliding_particles = NodePath("sliding_particles")
+jumping_particles = NodePath("jumpingParticles")
+gravity_component = NodePath("gravity_component")
 ray = NodePath("RayCast2D")
 detection_right = NodePath("detection_right")
 detection_left = NodePath("detection_left")
@@ -102,7 +208,7 @@ death_particles = NodePath("DeathParticles")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_h70wl")
-animation = &"death"
+animation = &"jump"
 autoplay = "idle"
 
 [node name="CollisionShape_FLOOR" type="CollisionShape2D" parent="."]
@@ -113,6 +219,8 @@ shape = SubResource("CapsuleShape2D_k5jry")
 wall_ray = NodePath("../RayCast2D")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
+modulate = Color(1, 0.17, 0.17, 1)
+z_index = 1
 position = Vector2(8, 15)
 target_position = Vector2(0, 16)
 
@@ -137,33 +245,33 @@ scale_amount_max = 4.0
 color_ramp = SubResource("Gradient_ajoj1")
 
 [node name="EnemyHitboxClass" type="Area2D" parent="."]
+collision_layer = 64
+collision_mask = 16
 script = ExtResource("5_57435")
 metadata/_custom_type_script = "uid://c6dcvl7ynfcrq"
 
 [node name="Hitbox_collision_idle" type="CollisionShape2D" parent="EnemyHitboxClass"]
-visible = false
 position = Vector2(0, 9.5)
 shape = SubResource("RectangleShape2D_lfeqr")
-debug_color = Color(0.991854, 0, 0.260024, 0.42)
+debug_color = Color(0.501022, 0.581003, 5.77569e-07, 0.42)
 
 [node name="Hitbox_collision_slide" type="CollisionShape2D" parent="EnemyHitboxClass"]
-visible = false
 position = Vector2(1, 12)
 shape = SubResource("RectangleShape2D_h70wl")
 debug_color = Color(0.999173, 0, 0.12142, 0.42)
 
 [node name="EnemyDeadZoneClass" type="Area2D" parent="."]
+collision_layer = 128
+collision_mask = 32
 script = ExtResource("6_lfeqr")
 metadata/_custom_type_script = "uid://vd7tu4wfujqn"
 
 [node name="DeadZone_collision_idle" type="CollisionShape2D" parent="EnemyDeadZoneClass"]
-visible = false
 position = Vector2(-0.5, 1)
 shape = SubResource("RectangleShape2D_qllge")
 debug_color = Color(0, 0.649767, 0.129053, 0.42)
 
 [node name="DeadZone_collision_slide" type="CollisionShape2D" parent="EnemyDeadZoneClass"]
-visible = false
 position = Vector2(0, 8)
 shape = SubResource("RectangleShape2D_t1wnv")
 debug_color = Color(0, 0.637695, 0.388693, 0.42)
@@ -171,11 +279,34 @@ debug_color = Color(0, 0.637695, 0.388693, 0.42)
 [node name="detection_right" type="RayCast2D" parent="."]
 position = Vector2(0, 8)
 target_position = Vector2(100, 0)
+collision_mask = 2
 
 [node name="detection_left" type="RayCast2D" parent="."]
 position = Vector2(0, 8)
 target_position = Vector2(-100, 0)
+collision_mask = 2
 
 [node name="Sliding_timer" type="Timer" parent="."]
 
+[node name="recover_timer" type="Timer" parent="."]
+
+[node name="sliding_particles" parent="." instance=ExtResource("10_kqget")]
+radial_accel_curve = SubResource("Curve_tu3hd")
+scale_amount_curve = SubResource("Curve_4ld28")
+
+[node name="jumpingParticles" parent="." instance=ExtResource("11_tu3hd")]
+scale_amount_min = 3.0
+scale_amount_max = 4.0
+scale_amount_curve = SubResource("Curve_p6i74")
+
+[node name="jumping_particles_marker" type="Marker2D" parent="."]
+position = Vector2(0, 15)
+
+[node name="sliding_particles_marker" type="Marker2D" parent="."]
+position = Vector2(3, 15)
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="area_entered" from="EnemyHitboxClass" to="." method="_on_enemy_hitbox_class_area_entered"]
+[connection signal="area_entered" from="EnemyDeadZoneClass" to="." method="_on_enemy_dead_zone_class_area_entered"]
 [connection signal="timeout" from="Sliding_timer" to="." method="_on_sliding_timer_timeout"]
+[connection signal="timeout" from="recover_timer" to="." method="_on_recover_timer_timeout"]

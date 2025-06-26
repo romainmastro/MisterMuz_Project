@@ -22,7 +22,6 @@ var is_dead : bool = false
 
 func _ready() : 
 	spawn_node_collectible = get_tree().current_scene.get_node("Main/WORLD").get_child(0)
-	print_debug("Current scene root is: ", get_tree().current_scene.name)
 
 func die() : 
 	queue_free()

@@ -36,5 +36,7 @@
 &"scene": "res://Scenes/Enemies/snow_mole_spawn_point.tscn"
 }, {
 &"scene": "res://Scenes/Enemies/super_snowman_spawn_point.tscn"
+}, {
+&"scene": "res://Scenes/Enemies/penguins_spawn_point.tscn"
 }]
 }]

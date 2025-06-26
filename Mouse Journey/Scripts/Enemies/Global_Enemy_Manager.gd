@@ -5,6 +5,7 @@ const SNOWMAN = preload("res://Scenes/Enemies/snowman.tscn")
 const ENEMY_SNOW_CANNON = preload("res://Scenes/Enemies/enemy_snow_cannon.tscn")
 const SNOW_MOLE_V_2 = preload("res://Scenes/Enemies/snow_mole_v_2.tscn")
 const SUPER_SNOWMAN = preload("res://Scenes/Enemies/super_snowman.tscn")
+const PENGUINS = preload("res://Scenes/Enemies/enemy_penguins.tscn")
 
 var enemy_node_path : Node2D
 
@@ -47,5 +48,11 @@ func spawn() :
 				super_snowman.speed = node.speed
 				super_snowman.direction_départ = node.direction_départ
 				enemy_node_path.add_child(super_snowman, true)
+			"Penguins" : 
+				var penguin = PENGUINS.instantiate()
+				penguin.global_position = node.global_position
+				penguin.speed = node.speed
+				penguin.direction_départ = node.direction_départ
+				enemy_node_path.add_child(penguin, true)
 			_ : 
 				printerr("The enemy doesn't exist! See GlobalEnemyManager")
