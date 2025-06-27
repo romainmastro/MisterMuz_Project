@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://cqhivr60sag2l"]
+
+[ext_resource type="Texture2D" uid="uid://dacar74v5eubm" path="res://Assets/Muz/MUZ_SLED.png" id="1_ak5ai"]
+[ext_resource type="Script" uid="uid://c7hepddldjw17" path="res://Scripts/player_sled.gd" id="1_h7rx5"]
+[ext_resource type="Script" uid="uid://5btxhk0r3gsc" path="res://Scripts/camera_2d.gd" id="3_mxvrl"]
+[ext_resource type="PackedScene" uid="uid://bi7lk15xk624v" path="res://Scenes/Components/gravity_component.tscn" id="4_7j462"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7j462"]
+size = Vector2(16, 8)
+
+[node name="Player_Sledding" type="CharacterBody2D" node_paths=PackedStringArray("jump_buffer_timer", "coyote_timer")]
+collision_layer = 2
+script = ExtResource("1_h7rx5")
+jump_buffer_timer = NodePath("jump_buffer_timer")
+coyote_timer = NodePath("coyote_timer")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ak5ai")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_7j462")
+
+[node name="PlayerCamera" type="Camera2D" parent="."]
+offset = Vector2(0, -48)
+position_smoothing_speed = 3.0
+script = ExtResource("3_mxvrl")
+
+[node name="gravity_component" parent="." node_paths=PackedStringArray("wall_ray") instance=ExtResource("4_7j462")]
+wall_ray = NodePath("")
+
+[node name="jump_buffer_timer" type="Timer" parent="."]
+
+[node name="coyote_timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="jump_buffer_timer" to="." method="_on_jump_buffer_timer_timeout"]
+[connection signal="timeout" from="coyote_timer" to="." method="_on_coyote_timer_timeout"]

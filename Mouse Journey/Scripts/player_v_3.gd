@@ -117,11 +117,6 @@ var knockback_started : bool = false
 ############################################ READY #################################################
 func _ready() -> void:
 	
-	#GlobalPlayerStats.player_current_HP = GlobalPlayerStats.player_max_HP
-	#GlobalPlayerStats.current_cheese_nb = 0
-	#GlobalPlayerStats.current_frostberry_number = 0
-	#GlobalPlayerStats.current_lives_number = 1
-	
 	boots_gloves_sprite.visible = false
 	snowsuit_sprite.visible = false 
 	snowHat_sprite.visible = false
@@ -351,6 +346,7 @@ func process_state_machine(delta : float) :
 func handle_gravity(delta : float) : 
 	if STATE not in ["GLIDE", "WALL_SLIDE"] : 
 		velocity.y += gravity * delta
+		
 func flip_sprites_smooth(direction: float):
 	if direction == 0:
 		return
@@ -362,6 +358,7 @@ func flip_sprites_smooth(direction: float):
 	smooth_flip(snowHat_sprite, target_scale_x)
 	smooth_flip(snowsuit_sprite, target_scale_x)
 	smooth_flip(muffler_sprite, target_scale_x)
+	
 func smooth_flip(sprite: Node2D, target_scale_x: float):
 	if sprite.scale.x != target_scale_x:
 		var tween := create_tween()
@@ -390,17 +387,20 @@ func jump() :
 	if input_dir != 0 : 
 		velocity.x = speed * input_dir
 	velocity.y = -jump_force
+	
 func handle_coyote_time() -> void:
 	if was_on_floor and not is_on_floor() and STATE == "RUN":
 		coyote_timer.start()
 		STATE = "COYOTE"
 	elif STATE == "COYOTE" and coyote_timer.is_stopped():
 		STATE = "FALL"
+		
 func handle_buffer_time() -> void : 
 	if is_on_floor() and jump_buffer_time_left > 0 : 
 		jump()
 		STATE = "JUMP"
 		jump_buffer_time_left = 0.0
+		
 func buffer_jump_input() : 
 	if not is_on_floor() and STATE not in ["JUMP"] :
 		jump_buffer_time_left = jump_buffer_grace_sec

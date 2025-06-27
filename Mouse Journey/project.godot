@@ -16,7 +16,7 @@ instance_dock/preview_resolution=Vector2i(64, 64)
 [application]
 
 config/name="Muz Journey"
-run/main_scene="uid://b438nvdto6o4s"
+run/main_scene="uid://llcl7nmx1bv7"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 

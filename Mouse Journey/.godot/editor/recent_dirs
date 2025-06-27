@@ -1,3 +1,6 @@
+res://Scenes/TESTS
+res://Scripts
+res://Scenes
 res://Assets/Enemies/Penguins
 res://Scripts/Enemies
 res://Scenes/Enemies
@@ -10,7 +13,6 @@ res://Scenes/UI
 res://Resources/light
 res://Scripts/UI
 res://
-res://Scenes
 res://Assets/Enemies/SpikeThrower
 res://Scenes/Environment
 res://Assets/Environment
@@ -18,5 +20,3 @@ res://Resources/shader
 res://Scripts/Traps
 res://Assets/Traps/SnowGeyser
 res://Assets/Traps
-res://Scenes/Levels
-res://Assets/Enemies/SnowCanon
