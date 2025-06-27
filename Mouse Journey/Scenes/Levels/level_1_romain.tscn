@@ -201,3 +201,16 @@ position = Vector2(158.799, 78.9987)
 "direction_départ" = "gauche"
 
 [node name="Moving_Platforms" type="Node2D" parent="."]
+
+[connection signal="body_entered" from="Objects/FrostBerry" to="Objects/FrostBerry" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@60755" to="Objects/@Area2D@60755" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@60756" to="Objects/@Area2D@60756" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@60757" to="Objects/@Area2D@60757" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@60758" to="Objects/@Area2D@60758" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@60759" to="Objects/@Area2D@60759" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@60760" to="Objects/@Area2D@60760" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@60761" to="Objects/@Area2D@60761" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@60762" to="Objects/@Area2D@60762" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@60763" to="Objects/@Area2D@60763" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@60764" to="Objects/@Area2D@60764" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@60765" to="Objects/@Area2D@60765" method="_on_body_entered"]
