@@ -99,7 +99,9 @@ var safe_position_sec : float = 2.0
 	# Airborne States
 	"JUMP", "COYOTE", "WALL_JUMP","WALL_SLIDE", "SLIDE_JUMP", "FALL", "GLIDE",
 	# Health/Hurt System 
-	"HURT_KNOCKBACK", "HURT_RESPAWN", "DEAD") 
+	"HURT_KNOCKBACK", "HURT_RESPAWN", "DEAD", 
+	# Player Sled
+	"SLEDDING", "JUMPING") 
 
 var STATE = "IDLE"
 

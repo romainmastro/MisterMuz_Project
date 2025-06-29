@@ -1,42 +1,57 @@
 extends Node2D
 
 @onready var playerScene = preload("res://Scenes/player_v_2.tscn")
+const playerSledScene = preload("res://Scenes/player_sled.tscn")
+
 var player : PlayerClass = null
 
-@export var world: Node
+@export var world: Node2D
 
 var current_level : Node = null
 
+#TODO : problem with enemy rotation...
+
 func _ready() -> void: 
-	# 1 load level
+	# 1 load level and Player
 	load_current_level()
 	await get_tree().process_frame
-	# 2 load player at the right position
-	starting_position(current_level)
-	# 3 Player initialisation 
+	# 2 Player initialisation 
 	init_player()
-	# 4 Spawn enemies on the map
+	# 3 Spawn enemies on the map
 	GlobalEnemyManager.spawn()
+	
 
 func load_current_level() : 
 	var level_scene = GlobalMenu.get_current_level()
+	
+	await get_tree().process_frame
+	
+	# Spawn the level
 	current_level = level_scene.instantiate()
+	current_level.rotation = GlobalMenu.get_current_level_rotation()
 	world.add_child(current_level)
 	
 	await get_tree().process_frame
 	
+	# Spawn the player
 	var start = current_level.get_node_or_null("Sign_Start_Level")
 	if start : 
-		player = playerScene.instantiate()
+		if current_level.is_in_group("Sled_Level") : 
+			player = playerSledScene.instantiate()
+			
+		else : 
+			player = playerScene.instantiate()
+		
+		# rotate the player
+		await get_tree().process_frame	
+		player.rotation = GlobalMenu.get_current_level_rotation()
 		player.global_position = start.global_position
+		
 		add_child(player)
 		GlobalPlayerStats.current_checkpoint = player.global_position
 	else:
 		print(" 'Sign_Start_Level' not found in", current_level.name)
 
-func starting_position(level) : 
-	player.position = level.get_node("Sign_Start_Level").position
-	GlobalPlayerStats.current_checkpoint = player.position
 
 func init_player() : 
 	GlobalPlayerStats.player_current_HP = GlobalPlayerStats.player_max_HP

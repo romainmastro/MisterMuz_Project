@@ -7,7 +7,7 @@ extends Camera2D
 @export var down_panning_limit := 32
 
 @export_group("Camera Limit Settings")
-@export var bottom_limit := 512
+@export var bottom_limit := 2048
 @export var top_limit := -1024
 @export var left_limit := 0
 @export var right_limit := 6000

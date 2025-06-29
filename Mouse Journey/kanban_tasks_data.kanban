@@ -1667,7 +1667,32 @@
 			"title": "Sleigh Level!",
 			"description": "",
 			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
-			"steps": []
+			"steps": [
+				{
+					"details": "spawn proper player for levels",
+					"done": true
+				},
+				{
+					"details": "rotate player on spawn\n",
+					"done": true
+				},
+				{
+					"details": "rotate enemies on spawn",
+					"done": true
+				},
+				{
+					"details": "integrate level rotation to system",
+					"done": true
+				},
+				{
+					"details": "player sled : high jump / small jump",
+					"done": false
+				},
+				{
+					"details": "player deadzone not working",
+					"done": false
+				}
+			]
 		}
 	],
 	"layout": {

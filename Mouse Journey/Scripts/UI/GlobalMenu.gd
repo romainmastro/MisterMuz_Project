@@ -1,7 +1,7 @@
 extends Node
 
 enum GAME_STATES{MAIN_MENU, PLAYING_GAME, LEVEL_COMPLETE_SCREEN, GAMEOVER_SCREEN, QUIT, UNSET}
-var current_game_state : GAME_STATES = GAME_STATES.UNSET
+@export var current_game_state : GAME_STATES = GAME_STATES.UNSET
 
 
 @onready var start_screen = preload("res://Scenes/UI/Start_Screen.tscn")
@@ -16,12 +16,37 @@ var game_states_transition_node = Node
 @onready var main = preload("res://Scenes/main.tscn")
 var main_node : Node
 
-var levels : Array[PackedScene] = [
-	preload("res://Scenes/Levels/level_1_romain.tscn"),
-	preload("res://Scenes/Levels/level_eline.tscn"),
-	preload("res://Scenes/Levels/level_sophie.tscn"),
-	]
-var current_level_index : int = 0
+
+
+#var levels : Array[PackedScene] = [
+	#preload("res://Scenes/Levels/level_1_romain.tscn"),
+	#preload("res://Scenes/Levels/level_eline.tscn"),
+	#preload("res://Scenes/Levels/level_sophie.tscn"),
+	#preload("res://Scenes/TESTS/test_sledding_scene.tscn")
+	#]
+
+var levels_info := {
+	"level1" : {
+		"scene" = preload("res://Scenes/Levels/level_1_romain.tscn"),
+		"rotation" = deg_to_rad(0)
+	},
+	"level2" : {
+		"scene" = preload("res://Scenes/Levels/level_eline.tscn"),
+		"rotation" = deg_to_rad(0)
+	}, 
+	"level3" : {
+		"scene" = preload("res://Scenes/Levels/level_sophie.tscn"), 
+		"rotation" = deg_to_rad(0)
+	}, 
+	"level4" : {
+		"scene" = preload("res://Scenes/TESTS/test_sledding_scene.tscn"), 
+		"rotation" = deg_to_rad(15)
+	}
+}
+
+var levels := ["level1", "level2", "level3", "level4"]
+
+@export var current_level_index : int = 3
 
 func set_game_state(new_state : GAME_STATES) : 
 	print("Changing state to:", new_state)
@@ -111,7 +136,14 @@ func game_transition(callback : Callable) :
 		game_states_transition_node.queue_free()
 
 func get_current_level() -> PackedScene : 
-	return levels[current_level_index]
+	var level_name = levels[current_level_index]
+	return levels_info[level_name]["scene"]
+
+func get_current_level_rotation() -> float:
+
+	var level_name = levels[current_level_index]
+
+	return levels_info[level_name]["rotation"]
 
 func go_next_level() : 
 	current_level_index += 1

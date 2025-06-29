@@ -6,31 +6,31 @@
 [ext_resource type="Script" uid="uid://5btxhk0r3gsc" path="res://Scripts/camera_2d.gd" id="3_mxvrl"]
 [ext_resource type="PackedScene" uid="uid://bi7lk15xk624v" path="res://Scenes/Components/gravity_component.tscn" id="4_7j462"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vo50r"]
-atlas = ExtResource("2_tn2qr")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7j462"]
-atlas = ExtResource("1_ak5ai")
-region = Rect2(0, 0, 16, 16)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_tn2qr"]
-atlas = ExtResource("1_ak5ai")
-region = Rect2(16, 0, 16, 16)
+atlas = ExtResource("2_tn2qr")
+region = Rect2(0, 0, 16, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pg7e7"]
 atlas = ExtResource("1_ak5ai")
-region = Rect2(32, 0, 16, 16)
+region = Rect2(0, 0, 16, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6hv18"]
 atlas = ExtResource("1_ak5ai")
-region = Rect2(48, 0, 16, 16)
+region = Rect2(16, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vo50r"]
+atlas = ExtResource("1_ak5ai")
+region = Rect2(32, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_of3ua"]
+atlas = ExtResource("1_ak5ai")
+region = Rect2(48, 0, 16, 24)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vo50r"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_vo50r")
+"texture": SubResource("AtlasTexture_tn2qr")
 }],
 "loop": true,
 "name": &"jumping",
@@ -38,16 +38,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7j462")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tn2qr")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_pg7e7")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_6hv18")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vo50r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_of3ua")
 }],
 "loop": true,
 "name": &"sledding",
@@ -55,7 +55,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7j462"]
-size = Vector2(11.9411, 3.0312)
+size = Vector2(6.5297, 1.06242)
 
 [sub_resource type="Curve" id="Curve_tn2qr"]
 _limits = [-200.0, 200.0, 0.0, 1.0]
@@ -78,22 +78,17 @@ size = Vector2(9.84564, 1.37782)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pg7e7"]
 size = Vector2(8.98451, 9.67341)
 
-[node name="Player_Sledding" type="CharacterBody2D" node_paths=PackedStringArray("animated_sprite", "sledding_particles", "sledding_particles_marker", "jump_buffer_timer", "coyote_timer")]
+[node name="Player_Sledding" type="CharacterBody2D"]
 collision_layer = 2
 script = ExtResource("1_h7rx5")
-animated_sprite = NodePath("AnimatedSprite2D")
-sledding_particles = NodePath("sledding_particles")
-sledding_particles_marker = NodePath("sledding_particles_marker")
-jump_buffer_timer = NodePath("jump_buffer_timer")
-coyote_timer = NodePath("coyote_timer")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="player_sprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -4)
 sprite_frames = SubResource("SpriteFrames_vo50r")
 animation = &"jumping"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(0.0839014, 6.48535)
+position = Vector2(0.431393, 7.48675)
 shape = SubResource("RectangleShape2D_7j462")
 
 [node name="PlayerCamera" type="Camera2D" parent="."]
@@ -136,7 +131,7 @@ collision_layer = 32
 collision_mask = 129
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stompbox"]
-position = Vector2(0.146003, 8.07573)
+position = Vector2(0.15707, 8.44094)
 shape = SubResource("RectangleShape2D_tn2qr")
 debug_color = Color(0, 0.629637, 0.481958, 0.42)
 
@@ -152,3 +147,4 @@ debug_color = Color(0.945308, 0.194628, 0.340541, 0.42)
 [connection signal="timeout" from="jump_buffer_timer" to="." method="_on_jump_buffer_timer_timeout"]
 [connection signal="timeout" from="coyote_timer" to="." method="_on_coyote_timer_timeout"]
 [connection signal="area_entered" from="Stompbox" to="." method="_on_stomp_box_area_entered"]
+[connection signal="area_entered" from="hurtbox" to="." method="_on_hurt_box_area_entered"]
