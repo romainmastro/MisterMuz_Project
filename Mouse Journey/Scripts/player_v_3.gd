@@ -1,6 +1,8 @@
 class_name PlayerClass
 extends CharacterBody2D
 
+@export_enum ("normal", "sled") var current_player_mode = "normal"
+
 @export_group("Nodes")
 @export var player_sprite : AnimatedSprite2D
 @export var boots_gloves_sprite : AnimatedSprite2D
@@ -23,6 +25,8 @@ var ice_patch_overlap : int = 0
 @export var jumping_particles : CPUParticles2D
 @export var landing_particles : CPUParticles2D
 @export var wall_sliding_particles : CPUParticles2D
+@export var sledding_particles : CPUParticles2D
+@export var marker_sledding_particles : Marker2D
 var current_particles : CPUParticles2D
 
 @export_group("General Settings")
@@ -101,7 +105,7 @@ var safe_position_sec : float = 2.0
 	# Health/Hurt System 
 	"HURT_KNOCKBACK", "HURT_RESPAWN", "DEAD", 
 	# Player Sled
-	"SLEDDING", "JUMPING") 
+	"SLEDDING", "SLEDDING_JUMP", "SLEDDING_HURT") 
 
 var STATE = "IDLE"
 
@@ -118,6 +122,10 @@ var knockback_started : bool = false
 
 ############################################ READY #################################################
 func _ready() -> void:
+	
+	current_player_mode = retrieve_player_mode()
+	
+	apply_mode_settings()
 	
 	boots_gloves_sprite.visible = false
 	snowsuit_sprite.visible = false 
@@ -180,6 +188,26 @@ func _physics_process(delta: float) -> void:
 
 
 ####################################### MOVEMENT SET ###########################################
+func apply_mode_settings() : 
+	match current_player_mode :
+		"normal" : 
+			STATE = "IDLE"
+			speed = 55
+			rebound_speed = -300
+			jump_force = 210
+			
+		"sled" : 
+			STATE = "SLEDDING"
+			speed = 100
+			rebound_speed = -200
+			jump_force = 250
+			
+func retrieve_player_mode() : 
+	return GlobalMenu.get_current_level_player_mode()
+	
+func play_animation(base_anim : String) : 
+	player_sprite.play(current_player_mode + "_" + base_anim)
+
 func process_state_machine(delta : float) : 
 
 	if STATE == "DEAD":
@@ -254,6 +282,15 @@ func process_state_machine(delta : float) :
 					STATE = "IDLE"
 				else : 
 					STATE = "RUN"
+				
+			"SLEDDING" : 
+				velocity.x = speed
+				if Input.is_action_just_pressed("jump") :
+					jump() 
+					STATE = "SLEDDING_JUMP"
+				
+				
+
 
 	elif not is_on_floor() and not is_input_locked(): # AIRBORNE STATES
 		match STATE : 
@@ -343,6 +380,9 @@ func process_state_machine(delta : float) :
 				if can_wall_jump() : 
 					STATE = "WALL_JUMP"
 					wall_jump()
+				
+			"SLEDDING_JUMP" : 
+				pass
 
 	###############################################
 func handle_gravity(delta : float) : 
@@ -575,62 +615,66 @@ func _on_hurt_box_area_entered(area: Area2D) -> void:
 
 ##################################### ANIMATIONS SYSTEM #######################################
 func handle_animations() : 
-	match STATE : 
-		"IDLE" : 
-			player_sprite.play("idle")
-			boots_gloves_sprite.play("idle")
-			snowHat_sprite.play("idle")
-			snowsuit_sprite.play("idle")
-			muffler_sprite.play("idle")
-		"RUN" : 
-			player_sprite.play("run")
-			boots_gloves_sprite.play("run")
-			snowHat_sprite.play("run")
-			snowsuit_sprite.play("run")
-			muffler_sprite.play("run")
-		"JUMP", "WALL_JUMP", "SLIDE_JUMP" : 
-			player_sprite.play("jump")
-			boots_gloves_sprite.play("jump")
-			snowHat_sprite.play("jump")
-			snowsuit_sprite.play("jump")
-			muffler_sprite.play("jump")
-		"COYOTE" : 
-			player_sprite.play("fall")
-			boots_gloves_sprite.play("fall")
-			snowHat_sprite.play("fall")
-			snowsuit_sprite.play("fall")
-			muffler_sprite.play("fall")
-		"FALL" : 
-			player_sprite.play("fall")
-			boots_gloves_sprite.play("fall")
-			snowHat_sprite.play("fall")
-			snowsuit_sprite.play("fall")
-			muffler_sprite.play("fall")
-		"WALL_SLIDE" : 
-			player_sprite.play("wall_slide")
-			boots_gloves_sprite.play("wall_slide")
-			snowHat_sprite.play("wall_slide")
-			snowsuit_sprite.play("wall_slide")
-			muffler_sprite.play("wall_slide")
-		"GLIDE" : 
-			player_sprite.play("glide")
-			boots_gloves_sprite.play("fall")
-			snowsuit_sprite.play("fall")
-			muffler_sprite.play("fall")
-			snowHat_sprite.play("glide")
-		"SLIDE" : 
-			player_sprite.play("slide")
-			boots_gloves_sprite.play("slide")
-			snowsuit_sprite.play("slide")
-			snowHat_sprite.play("slide")
-			muffler_sprite.play("slide")
-			
-		"HURT_KNOCKBACK", "HURT_RESPAWN" : 
-			player_sprite.play("hurt")
-			boots_gloves_sprite.play("hurt")
-			snowsuit_sprite.play("hurt")
-			snowHat_sprite.play("hurt")
-			muffler_sprite.play("hurt")
+	if current_player_mode == "normal" : 
+		match STATE : 
+			"IDLE" : 
+				play_animation("idle")
+				boots_gloves_sprite.play("idle")
+				snowHat_sprite.play("idle")
+				snowsuit_sprite.play("idle")
+				muffler_sprite.play("idle")
+			"RUN" : 
+				play_animation("run")
+				boots_gloves_sprite.play("run")
+				snowHat_sprite.play("run")
+				snowsuit_sprite.play("run")
+				muffler_sprite.play("run")
+			"JUMP", "WALL_JUMP", "SLIDE_JUMP" : 
+				play_animation("jump")
+				boots_gloves_sprite.play("jump")
+				snowHat_sprite.play("jump")
+				snowsuit_sprite.play("jump")
+				muffler_sprite.play("jump")
+			"COYOTE" : 
+				play_animation("fall")
+				boots_gloves_sprite.play("fall")
+				snowHat_sprite.play("fall")
+				snowsuit_sprite.play("fall")
+				muffler_sprite.play("fall")
+			"FALL" : 
+				play_animation("fall")
+				boots_gloves_sprite.play("fall")
+				snowHat_sprite.play("fall")
+				snowsuit_sprite.play("fall")
+				muffler_sprite.play("fall")
+			"WALL_SLIDE" : 
+				play_animation("wall_slide")
+				boots_gloves_sprite.play("wall_slide")
+				snowHat_sprite.play("wall_slide")
+				snowsuit_sprite.play("wall_slide")
+				muffler_sprite.play("wall_slide")
+			"GLIDE" : 
+				play_animation("glide")
+				boots_gloves_sprite.play("fall")
+				snowsuit_sprite.play("fall")
+				muffler_sprite.play("fall")
+				snowHat_sprite.play("glide")
+			"SLIDE" : 
+				play_animation("slide")
+				boots_gloves_sprite.play("slide")
+				snowsuit_sprite.play("slide")
+				snowHat_sprite.play("slide")
+				muffler_sprite.play("slide")
+				
+			"HURT_KNOCKBACK", "HURT_RESPAWN" : 
+				play_animation("hurt")
+				boots_gloves_sprite.play("hurt")
+				snowsuit_sprite.play("hurt")
+				snowHat_sprite.play("hurt")
+				muffler_sprite.play("hurt")
+	# TODO
+	elif current_player_mode == "sled" : 
+		pass 
 
 ############################# PARTICLES SYSTEM ###############################################
 func handle_particles() : 
@@ -661,6 +705,13 @@ func handle_particles() :
 			current_particles.position.x = marker_wall_sliding.position.x * player_sprite.scale.x
 			current_particles.position.y = marker_wall_sliding.position.y
 			current_particles.emitting = true
+		
+		"SLEDDING" : 
+			current_particles = sledding_particles
+			current_particles.global_position.x = marker_sledding_particles.global_position.x
+			current_particles.global_position.y = marker_sledding_particles.global_position.y
+			current_particles.emitting = true
+			
 			
 		_ : 
 			current_particles.emitting = false

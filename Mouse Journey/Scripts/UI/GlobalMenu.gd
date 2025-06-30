@@ -17,30 +17,26 @@ var game_states_transition_node = Node
 var main_node : Node
 
 
-
-#var levels : Array[PackedScene] = [
-	#preload("res://Scenes/Levels/level_1_romain.tscn"),
-	#preload("res://Scenes/Levels/level_eline.tscn"),
-	#preload("res://Scenes/Levels/level_sophie.tscn"),
-	#preload("res://Scenes/TESTS/test_sledding_scene.tscn")
-	#]
-
 var levels_info := {
 	"level1" : {
 		"scene" = preload("res://Scenes/Levels/level_1_romain.tscn"),
-		"rotation" = deg_to_rad(0)
+		"rotation" = deg_to_rad(0),
+		"player_mode" = "normal"
 	},
 	"level2" : {
 		"scene" = preload("res://Scenes/Levels/level_eline.tscn"),
-		"rotation" = deg_to_rad(0)
+		"rotation" = deg_to_rad(0),
+		"player_mode" = "normal"
 	}, 
 	"level3" : {
 		"scene" = preload("res://Scenes/Levels/level_sophie.tscn"), 
-		"rotation" = deg_to_rad(0)
+		"rotation" = deg_to_rad(0),
+		"player_mode" = "normal"
 	}, 
 	"level4" : {
 		"scene" = preload("res://Scenes/TESTS/test_sledding_scene.tscn"), 
-		"rotation" = deg_to_rad(15)
+		"rotation" = deg_to_rad(15),
+		"player_mode" = "sled"
 	}
 }
 
@@ -140,10 +136,12 @@ func get_current_level() -> PackedScene :
 	return levels_info[level_name]["scene"]
 
 func get_current_level_rotation() -> float:
-
 	var level_name = levels[current_level_index]
-
 	return levels_info[level_name]["rotation"]
+
+func get_current_level_player_mode() -> String : 
+	var level_name = levels[current_level_index]
+	return levels_info[level_name]["player_mode"]
 
 func go_next_level() : 
 	current_level_index += 1

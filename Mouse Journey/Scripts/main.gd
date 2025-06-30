@@ -1,7 +1,6 @@
 extends Node2D
 
 @onready var playerScene = preload("res://Scenes/player_v_2.tscn")
-const playerSledScene = preload("res://Scenes/player_sled.tscn")
 
 var player : PlayerClass = null
 
@@ -36,11 +35,7 @@ func load_current_level() :
 	# Spawn the player
 	var start = current_level.get_node_or_null("Sign_Start_Level")
 	if start : 
-		if current_level.is_in_group("Sled_Level") : 
-			player = playerSledScene.instantiate()
-			
-		else : 
-			player = playerScene.instantiate()
+		player = playerScene.instantiate()
 		
 		# rotate the player
 		await get_tree().process_frame	

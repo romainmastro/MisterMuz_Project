@@ -1,4 +1,4 @@
-[gd_scene load_steps=150 format=3 uid="uid://cnedwspxo44l3"]
+[gd_scene load_steps=162 format=3 uid="uid://cnedwspxo44l3"]
 
 [ext_resource type="Script" uid="uid://bjtw5iph7mhe" path="res://Scripts/player_v_3.gd" id="1_2tjdf"]
 [ext_resource type="Texture2D" uid="uid://bl388umk28hx6" path="res://Assets/Muz/Muz_JUMP.png" id="1_kw5q3"]
@@ -7,9 +7,12 @@
 [ext_resource type="Texture2D" uid="uid://btpbpewrm561" path="res://Assets/Muz/Muz_IDLE.png" id="4_xqonx"]
 [ext_resource type="Texture2D" uid="uid://du2j1yp66woh6" path="res://Assets/Muz/Muz_RUN.png" id="5_t50i3"]
 [ext_resource type="Texture2D" uid="uid://b1apqiygffyj3" path="res://Assets/Muz/Muz_SLIDE.png" id="6_u6vj6"]
+[ext_resource type="Texture2D" uid="uid://dacar74v5eubm" path="res://Assets/Muz/MUZ_SLED.png" id="7_1q3vp"]
 [ext_resource type="Texture2D" uid="uid://1yqgy2tnpbuq" path="res://Assets/Muz/Boots and gloves/Boots_Gloves_JUMP.png" id="7_mp8rn"]
+[ext_resource type="Texture2D" uid="uid://dhop533kisrkg" path="res://Assets/Muz/MUZ_SLED_HURT.png" id="8_5k6kw"]
 [ext_resource type="Texture2D" uid="uid://bvaxa4rcc7jwc" path="res://Assets/Muz/Boots and gloves/Boots_Gloves_HURT.png" id="8_b24wk"]
 [ext_resource type="Texture2D" uid="uid://duteqhk37auis" path="res://Assets/Muz/Muz_WALL_SLIDE.png" id="8_mp8rn"]
+[ext_resource type="Texture2D" uid="uid://bu10jcgi4swml" path="res://Assets/Muz/MUZ_SLED_JUMP.png" id="9_xsj4j"]
 [ext_resource type="Texture2D" uid="uid://ceksk5y1ki0je" path="res://Assets/Muz/Boots and gloves/Boots_Gloves_IDLE.png" id="9_ybkh6"]
 [ext_resource type="Texture2D" uid="uid://biwn56mwq1d28" path="res://Assets/Muz/Boots and gloves/Boots_Gloves_RUN.png" id="10_gsoni"]
 [ext_resource type="Texture2D" uid="uid://b7ec0jeyooph" path="res://Assets/Muz/Boots and gloves/Boots_Gloves_SLIDE.png" id="11_xefde"]
@@ -40,6 +43,14 @@
 [ext_resource type="Texture2D" uid="uid://dwbqddeq4cdvw" path="res://Assets/Muz/Muffler/Muffler_WALL_SLIDE.png" id="33_xefde"]
 [ext_resource type="Texture2D" uid="uid://dv1kr8b8jyq5t" path="res://Resources/light/point_of_interest_light.tres" id="39_b24wk"]
 [ext_resource type="Script" uid="uid://5btxhk0r3gsc" path="res://Scripts/camera_2d.gd" id="40_ybkh6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_70hv0"]
+atlas = ExtResource("1_kw5q3")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b2s7j"]
+atlas = ExtResource("9_xsj4j")
+region = Rect2(0, 0, 16, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i2e8t"]
 atlas = ExtResource("1_kw5q3")
@@ -81,10 +92,6 @@ region = Rect2(64, 0, 16, 16)
 atlas = ExtResource("4_xqonx")
 region = Rect2(80, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_70hv0"]
-atlas = ExtResource("1_kw5q3")
-region = Rect2(0, 0, 16, 16)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_2tjdf"]
 atlas = ExtResource("5_t50i3")
 region = Rect2(0, 0, 16, 16)
@@ -125,14 +132,50 @@ region = Rect2(16, 0, 16, 16)
 atlas = ExtResource("8_mp8rn")
 region = Rect2(32, 0, 16, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_mjxa4"]
+atlas = ExtResource("8_5k6kw")
+region = Rect2(0, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aqhgd"]
+atlas = ExtResource("7_1q3vp")
+region = Rect2(0, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ogqns"]
+atlas = ExtResource("7_1q3vp")
+region = Rect2(16, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2twrm"]
+atlas = ExtResource("7_1q3vp")
+region = Rect2(32, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ib84"]
+atlas = ExtResource("7_1q3vp")
+region = Rect2(48, 0, 16, 24)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_dewec"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_70hv0")
+}],
+"loop": true,
+"name": &"jump_normal",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b2s7j")
+}],
+"loop": true,
+"name": &"jump_sled",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_i2e8t")
 }],
 "loop": true,
-"name": &"fall",
+"name": &"normal_fall",
 "speed": 5.0
 }, {
 "frames": [{
@@ -143,7 +186,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_jawh0")
 }],
 "loop": true,
-"name": &"glide",
+"name": &"normal_glide",
 "speed": 10.0
 }, {
 "frames": [{
@@ -157,7 +200,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_qidb7")
 }],
 "loop": false,
-"name": &"hurt",
+"name": &"normal_hurt",
 "speed": 10.0
 }, {
 "frames": [{
@@ -180,15 +223,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_arntx")
 }],
 "loop": true,
-"name": &"idle",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_70hv0")
-}],
-"loop": true,
-"name": &"jump",
+"name": &"normal_idle",
 "speed": 5.0
 }, {
 "frames": [{
@@ -211,7 +246,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_mp8rn")
 }],
 "loop": true,
-"name": &"run",
+"name": &"normal_run",
 "speed": 13.0
 }, {
 "frames": [{
@@ -219,7 +254,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_8flut")
 }],
 "loop": true,
-"name": &"slide",
+"name": &"normal_slide",
 "speed": 6.0
 }, {
 "frames": [{
@@ -233,7 +268,44 @@ animations = [{
 "texture": SubResource("AtlasTexture_h8gh7")
 }],
 "loop": true,
-"name": &"wall_slide",
+"name": &"normal_wall_slide",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mjxa4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mjxa4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mjxa4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mjxa4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mjxa4")
+}],
+"loop": false,
+"name": &"sled_hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aqhgd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ogqns")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2twrm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ib84")
+}],
+"loop": true,
+"name": &"sled_run",
 "speed": 10.0
 }]
 
@@ -962,7 +1034,19 @@ offsets = PackedFloat32Array(0.1, 0.9)
 colors = PackedColorArray(1, 1, 1, 1, 0.30182, 0.483237, 0.926032, 1)
 metadata/_snap_enabled = true
 
-[node name="PlayerV2" type="CharacterBody2D" node_paths=PackedStringArray("player_sprite", "boots_gloves_sprite", "snowsuit_sprite", "snowHat_sprite", "muffler_sprite", "wall_ray_right", "wall_ray_left", "stompbox", "terrain_detector", "marker_particles", "marker_wall_sliding", "snow_trail_particles", "sliding_particles", "jumping_particles", "landing_particles", "wall_sliding_particles", "coyote_timer") groups=["player"]]
+[sub_resource type="Curve" id="Curve_1q3vp"]
+_limits = [-200.0, 200.0, 0.0, 1.0]
+_data = [Vector2(0.00436682, -118.064), 0.0, 0.0, 0, 0, Vector2(0.980349, 130.973), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_5k6kw"]
+_data = [Vector2(0.00218341, 1), 0.0, 0.0, 0, 0, Vector2(0.991266, 0.323269), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_xsj4j"]
+colors = PackedColorArray(0.8019, 0.8646, 0.99, 0.670588, 1, 1, 1, 0.188235)
+
+[node name="PlayerV2" type="CharacterBody2D" node_paths=PackedStringArray("player_sprite", "boots_gloves_sprite", "snowsuit_sprite", "snowHat_sprite", "muffler_sprite", "wall_ray_right", "wall_ray_left", "stompbox", "terrain_detector", "marker_particles", "marker_wall_sliding", "snow_trail_particles", "sliding_particles", "jumping_particles", "landing_particles", "wall_sliding_particles", "sledding_particles", "marker_sledding_particles", "coyote_timer") groups=["player"]]
 z_index = 10
 collision_layer = 2
 collision_mask = 525
@@ -988,13 +1072,15 @@ sliding_particles = NodePath("PARTICLES/sliding_particles")
 jumping_particles = NodePath("PARTICLES/jumpingParticles")
 landing_particles = NodePath("PARTICLES/LandingParticles")
 wall_sliding_particles = NodePath("PARTICLES/WallSlidingParticles")
+sledding_particles = NodePath("PARTICLES/sledding_particles")
+marker_sledding_particles = NodePath("MARKER/sledding_particles_marker")
 coyote_timer = NodePath("CoyoteTimer")
 coyote_grace_sec = 0.2
 
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_dewec")
-animation = &"idle"
-autoplay = "idle"
+animation = &"normal_wall_slide"
+autoplay = "normal_idle"
 offset = Vector2(0, -2)
 
 [node name="Boots_and_Gloves" type="AnimatedSprite2D" parent="."]
@@ -1081,6 +1167,20 @@ color_ramp = SubResource("Gradient_mp8rn")
 hue_variation_min = -0.35
 hue_variation_max = 0.57
 
+[node name="sledding_particles" type="CPUParticles2D" parent="PARTICLES"]
+z_index = 11
+emitting = false
+amount = 20
+lifetime = 0.8
+one_shot = true
+gravity = Vector2(-200, -50)
+radial_accel_curve = SubResource("Curve_1q3vp")
+scale_amount_min = 4.0
+scale_amount_max = 6.0
+scale_amount_curve = SubResource("Curve_5k6kw")
+color = Color(0.8019, 0.8646, 0.99, 1)
+color_ramp = SubResource("Gradient_xsj4j")
+
 [node name="MARKER" type="Node2D" parent="."]
 
 [node name="SnowTrailMarker" type="Marker2D" parent="MARKER"]
@@ -1088,6 +1188,9 @@ position = Vector2(0, 5)
 
 [node name="Wall_SlidingMarker" type="Marker2D" parent="MARKER"]
 position = Vector2(4, 3)
+
+[node name="sledding_particles_marker" type="Marker2D" parent="MARKER"]
+position = Vector2(5.65479, 7.46317)
 
 [node name="CoyoteTimer" type="Timer" parent="."]
 one_shot = true

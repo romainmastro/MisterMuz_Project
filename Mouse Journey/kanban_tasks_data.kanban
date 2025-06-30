@@ -1691,6 +1691,18 @@
 				{
 					"details": "player deadzone not working",
 					"done": false
+				},
+				{
+					"details": "rewrite the code in the Player script",
+					"done": false
+				},
+				{
+					"details": "player mode tied to level (in dict)",
+					"done": true
+				},
+				{
+					"details": "player mode : SLED animations + Jump",
+					"done": false
 				}
 			]
 		}
