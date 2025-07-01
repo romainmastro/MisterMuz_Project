@@ -4,13 +4,11 @@ res://Resources/Décor.tres
 res://Resources/Pièges.tres
 res://Resources/Objects.tres
 res://Resources/shader/outline_player.gdshader
-res://Scripts/player_sled.gd
-res://Scripts/player_v_3.gd
-res://Scenes/UI/GlobalMenu.tscn
-res://Scripts/UI/GlobalMenu.gd
 res://Scenes/Levels/level_1_romain.tscn
 res://Scenes/player_sled.tscn
 res://Scenes/TESTS/test_sledding_scene.tscn
 res://Scenes/hurt_box.tscn
 res://Scenes/main.tscn
-res://Scripts/main.gd
+res://Scenes/UI/GlobalMenu.tscn
+res://Resources/colour_ramp_sledding_particles.tres
+res://Scripts/player_v_3.gd

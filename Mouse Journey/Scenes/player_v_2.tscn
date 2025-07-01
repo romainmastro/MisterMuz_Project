@@ -1,4 +1,4 @@
-[gd_scene load_steps=162 format=3 uid="uid://cnedwspxo44l3"]
+[gd_scene load_steps=171 format=3 uid="uid://cnedwspxo44l3"]
 
 [ext_resource type="Script" uid="uid://bjtw5iph7mhe" path="res://Scripts/player_v_3.gd" id="1_2tjdf"]
 [ext_resource type="Texture2D" uid="uid://bl388umk28hx6" path="res://Assets/Muz/Muz_JUMP.png" id="1_kw5q3"]
@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://dhop533kisrkg" path="res://Assets/Muz/MUZ_SLED_HURT.png" id="8_5k6kw"]
 [ext_resource type="Texture2D" uid="uid://bvaxa4rcc7jwc" path="res://Assets/Muz/Boots and gloves/Boots_Gloves_HURT.png" id="8_b24wk"]
 [ext_resource type="Texture2D" uid="uid://duteqhk37auis" path="res://Assets/Muz/Muz_WALL_SLIDE.png" id="8_mp8rn"]
+[ext_resource type="Texture2D" uid="uid://bgjh121cj3xp4" path="res://Assets/Muz/MUZ_SLED_FALL.png" id="9_5k6kw"]
+[ext_resource type="Texture2D" uid="uid://dudtnn2otr7lp" path="res://Assets/Muz/MUZ_SLED_BRAKE.png" id="9_h4t6h"]
 [ext_resource type="Texture2D" uid="uid://bu10jcgi4swml" path="res://Assets/Muz/MUZ_SLED_JUMP.png" id="9_xsj4j"]
 [ext_resource type="Texture2D" uid="uid://ceksk5y1ki0je" path="res://Assets/Muz/Boots and gloves/Boots_Gloves_IDLE.png" id="9_ybkh6"]
 [ext_resource type="Texture2D" uid="uid://biwn56mwq1d28" path="res://Assets/Muz/Boots and gloves/Boots_Gloves_RUN.png" id="10_gsoni"]
@@ -43,14 +45,7 @@
 [ext_resource type="Texture2D" uid="uid://dwbqddeq4cdvw" path="res://Assets/Muz/Muffler/Muffler_WALL_SLIDE.png" id="33_xefde"]
 [ext_resource type="Texture2D" uid="uid://dv1kr8b8jyq5t" path="res://Resources/light/point_of_interest_light.tres" id="39_b24wk"]
 [ext_resource type="Script" uid="uid://5btxhk0r3gsc" path="res://Scripts/camera_2d.gd" id="40_ybkh6"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_70hv0"]
-atlas = ExtResource("1_kw5q3")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_b2s7j"]
-atlas = ExtResource("9_xsj4j")
-region = Rect2(0, 0, 16, 24)
+[ext_resource type="Gradient" uid="uid://bp1ud6vpuclvf" path="res://Resources/colour_ramp_sledding_particles.tres" id="44_h4t6h"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i2e8t"]
 atlas = ExtResource("1_kw5q3")
@@ -92,6 +87,10 @@ region = Rect2(64, 0, 16, 16)
 atlas = ExtResource("4_xqonx")
 region = Rect2(80, 0, 16, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_70hv0"]
+atlas = ExtResource("1_kw5q3")
+region = Rect2(0, 0, 16, 16)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_2tjdf"]
 atlas = ExtResource("5_t50i3")
 region = Rect2(0, 0, 16, 16)
@@ -132,44 +131,56 @@ region = Rect2(16, 0, 16, 16)
 atlas = ExtResource("8_mp8rn")
 region = Rect2(32, 0, 16, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_nhun2"]
+atlas = ExtResource("9_h4t6h")
+region = Rect2(0, 0, 15, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cxu27"]
+atlas = ExtResource("9_h4t6h")
+region = Rect2(15, 0, 15, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fdgql"]
+atlas = ExtResource("9_5k6kw")
+region = Rect2(0, 0, 15, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sg05t"]
+atlas = ExtResource("9_5k6kw")
+region = Rect2(15, 0, 15, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_onda1"]
+atlas = ExtResource("9_5k6kw")
+region = Rect2(30, 0, 15, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_osf3a"]
+atlas = ExtResource("9_5k6kw")
+region = Rect2(45, 0, 15, 17)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_mjxa4"]
 atlas = ExtResource("8_5k6kw")
-region = Rect2(0, 0, 16, 24)
+region = Rect2(0, 0, 15, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b2s7j"]
+atlas = ExtResource("9_xsj4j")
+region = Rect2(0, 0, 15, 17)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aqhgd"]
 atlas = ExtResource("7_1q3vp")
-region = Rect2(0, 0, 16, 24)
+region = Rect2(0, 0, 15, 17)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ogqns"]
 atlas = ExtResource("7_1q3vp")
-region = Rect2(16, 0, 16, 24)
+region = Rect2(15, 0, 15, 17)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2twrm"]
 atlas = ExtResource("7_1q3vp")
-region = Rect2(32, 0, 16, 24)
+region = Rect2(30, 0, 15, 17)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0ib84"]
 atlas = ExtResource("7_1q3vp")
-region = Rect2(48, 0, 16, 24)
+region = Rect2(45, 0, 15, 17)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dewec"]
 animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_70hv0")
-}],
-"loop": true,
-"name": &"jump_normal",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_b2s7j")
-}],
-"loop": true,
-"name": &"jump_sled",
-"speed": 5.0
-}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_i2e8t")
@@ -228,6 +239,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_70hv0")
+}],
+"loop": true,
+"name": &"normal_jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_2tjdf")
 }, {
 "duration": 1.0,
@@ -273,11 +292,33 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_mjxa4")
+"texture": SubResource("AtlasTexture_nhun2")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_mjxa4")
+"texture": SubResource("AtlasTexture_cxu27")
+}],
+"loop": false,
+"name": &"sled_brake",
+"speed": 9.0
 }, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fdgql")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sg05t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_onda1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_osf3a")
+}],
+"loop": false,
+"name": &"sled_fall",
+"speed": 9.0
+}, {
+"frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_mjxa4")
 }, {
@@ -289,6 +330,14 @@ animations = [{
 }],
 "loop": false,
 "name": &"sled_hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b2s7j")
+}],
+"loop": true,
+"name": &"sled_jump",
 "speed": 5.0
 }, {
 "frames": [{
@@ -1043,10 +1092,11 @@ point_count = 2
 _data = [Vector2(0.00218341, 1), 0.0, 0.0, 0, 0, Vector2(0.991266, 0.323269), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="Gradient" id="Gradient_xsj4j"]
-colors = PackedColorArray(0.8019, 0.8646, 0.99, 0.670588, 1, 1, 1, 0.188235)
+[sub_resource type="Curve" id="Curve_h8gh7"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
 
-[node name="PlayerV2" type="CharacterBody2D" node_paths=PackedStringArray("player_sprite", "boots_gloves_sprite", "snowsuit_sprite", "snowHat_sprite", "muffler_sprite", "wall_ray_right", "wall_ray_left", "stompbox", "terrain_detector", "marker_particles", "marker_wall_sliding", "snow_trail_particles", "sliding_particles", "jumping_particles", "landing_particles", "wall_sliding_particles", "sledding_particles", "marker_sledding_particles", "coyote_timer") groups=["player"]]
+[node name="PlayerV2" type="CharacterBody2D" node_paths=PackedStringArray("player_sprite", "boots_gloves_sprite", "snowsuit_sprite", "snowHat_sprite", "muffler_sprite", "wall_ray_right", "wall_ray_left", "stompbox", "terrain_detector", "marker_particles", "marker_wall_sliding", "snow_trail_particles", "sliding_particles", "jumping_particles", "landing_particles", "wall_sliding_particles", "sledding_particles", "sledding_brake_particles", "marker_sledding_particles", "marker_sledding_brake_particles", "coyote_timer") groups=["player"]]
 z_index = 10
 collision_layer = 2
 collision_mask = 525
@@ -1073,13 +1123,15 @@ jumping_particles = NodePath("PARTICLES/jumpingParticles")
 landing_particles = NodePath("PARTICLES/LandingParticles")
 wall_sliding_particles = NodePath("PARTICLES/WallSlidingParticles")
 sledding_particles = NodePath("PARTICLES/sledding_particles")
+sledding_brake_particles = NodePath("PARTICLES/sledding_brake_particles")
 marker_sledding_particles = NodePath("MARKER/sledding_particles_marker")
+marker_sledding_brake_particles = NodePath("MARKER/sledding_brake_particles_marker2")
 coyote_timer = NodePath("CoyoteTimer")
 coyote_grace_sec = 0.2
 
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_dewec")
-animation = &"normal_wall_slide"
+animation = &"sled_brake"
 autoplay = "normal_idle"
 offset = Vector2(0, -2)
 
@@ -1134,6 +1186,7 @@ scale = Vector2(0.999998, 1)
 shape = SubResource("CapsuleShape2D_dewec")
 
 [node name="terrain_detector" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="terrain_detector"]
 position = Vector2(0, 6)
@@ -1179,9 +1232,28 @@ scale_amount_min = 4.0
 scale_amount_max = 6.0
 scale_amount_curve = SubResource("Curve_5k6kw")
 color = Color(0.8019, 0.8646, 0.99, 1)
-color_ramp = SubResource("Gradient_xsj4j")
+color_ramp = ExtResource("44_h4t6h")
+
+[node name="sledding_brake_particles" type="CPUParticles2D" parent="PARTICLES"]
+emitting = false
+amount = 15
+lifetime = 0.5
+one_shot = true
+explosiveness = 0.1
+direction = Vector2(-1, -0.3)
+spread = 12.0
+gravity = Vector2(-600, 300)
+initial_velocity_min = 180.0
+initial_velocity_max = 180.0
+angular_velocity_min = 20.0
+angular_velocity_max = 50.0
+scale_amount_min = 2.0
+scale_amount_max = 3.0
+scale_amount_curve = SubResource("Curve_h8gh7")
+color_ramp = ExtResource("44_h4t6h")
 
 [node name="MARKER" type="Node2D" parent="."]
+visible = false
 
 [node name="SnowTrailMarker" type="Marker2D" parent="MARKER"]
 position = Vector2(0, 5)
@@ -1190,12 +1262,16 @@ position = Vector2(0, 5)
 position = Vector2(4, 3)
 
 [node name="sledding_particles_marker" type="Marker2D" parent="MARKER"]
-position = Vector2(5.65479, 7.46317)
+position = Vector2(5.65479, 6.46317)
+
+[node name="sledding_brake_particles_marker2" type="Marker2D" parent="MARKER"]
+position = Vector2(0, 6)
 
 [node name="CoyoteTimer" type="Timer" parent="."]
 one_shot = true
 
 [node name="Raycasts" type="Node2D" parent="."]
+visible = false
 
 [node name="Wall_ray_Right" type="RayCast2D" parent="Raycasts"]
 target_position = Vector2(10, 0)

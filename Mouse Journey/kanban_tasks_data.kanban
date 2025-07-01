@@ -44,13 +44,15 @@
 			"uuid": "ef4e123f-f6ea-4e30-8896-4ddd7167fd59",
 			"title": "Doing",
 			"tasks": [
-				"89c9c012-4a18-45cd-8f60-30e67d2f0ed2"
+				"e80d6fb7-ed59-49d4-bf52-1a35531c423a"
 			]
 		},
 		{
 			"uuid": "a590c45f-f6e0-4df4-a178-2596b3213350",
 			"title": "Done on the current Branch",
-			"tasks": []
+			"tasks": [
+				"89c9c012-4a18-45cd-8f60-30e67d2f0ed2"
+			]
 		},
 		{
 			"uuid": "9573ce0a-9b5d-4fd9-bb69-4b68a3540b99",
@@ -1666,7 +1668,7 @@
 			"uuid": "89c9c012-4a18-45cd-8f60-30e67d2f0ed2",
 			"title": "Sleigh Level!",
 			"description": "",
-			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
+			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
 			"steps": [
 				{
 					"details": "spawn proper player for levels",
@@ -1686,15 +1688,15 @@
 				},
 				{
 					"details": "player sled : high jump / small jump",
-					"done": false
+					"done": true
 				},
 				{
 					"details": "player deadzone not working",
-					"done": false
+					"done": true
 				},
 				{
 					"details": "rewrite the code in the Player script",
-					"done": false
+					"done": true
 				},
 				{
 					"details": "player mode tied to level (in dict)",
@@ -1702,9 +1704,24 @@
 				},
 				{
 					"details": "player mode : SLED animations + Jump",
-					"done": false
+					"done": true
+				},
+				{
+					"details": "particle BRAKE",
+					"done": true
+				},
+				{
+					"details": "PB : no possibility to jump when braking",
+					"done": true
 				}
 			]
+		},
+		{
+			"uuid": "e80d6fb7-ed59-49d4-bf52-1a35531c423a",
+			"title": "BUG : safe position",
+			"description": "Sometimes : respawn too close to the pit to jump...Maybe there's a delay for the input to respond? \nOr make the respawn position - an offset? ",
+			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
+			"steps": []
 		}
 	],
 	"layout": {

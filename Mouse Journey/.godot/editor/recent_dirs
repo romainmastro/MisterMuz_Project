@@ -1,3 +1,4 @@
+res://Resources
 res://Assets/Muz
 res://Scenes/UI
 res://
@@ -19,4 +20,3 @@ res://Scenes/Environment
 res://Assets/Environment
 res://Resources/shader
 res://Scripts/Traps
-res://Assets/Traps/SnowGeyser
