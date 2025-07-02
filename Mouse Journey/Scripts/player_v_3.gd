@@ -14,6 +14,9 @@ extends CharacterBody2D
 @export var wall_ray_length : int = 6
 @export var stompbox : Area2D
 @export var terrain_detector : Area2D
+@export var safe_behind : RayCast2D
+@export var safe_under : RayCast2D
+@export var safe_front : RayCast2D
 var ice_patch_overlap : int = 0
 
 
@@ -97,9 +100,10 @@ var gliding_offset_hat := -9
 var knockback_timer : float = 0.0
 var knockback_velocity : Vector2 = Vector2.ZERO
 
-var safe_position_sec : float = 2.0
+var safe_position_sec : float = 1.0
 
 var is_braking : bool = false
+var can_save_position : bool = false
 
 
 @export_enum(
@@ -582,7 +586,7 @@ func on_death() :
 ######################################### HURT SYSTEM ########################################
 func respawn_to_last_safe_position() :
 	var safe_position = GlobalPlayerStats.last_safe_position
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(0.2).timeout
 	velocity = Vector2.ZERO
 	hide()
 	global_position = safe_position
@@ -817,10 +821,20 @@ func _on_terrain_detector_body_entered(body: Node2D) -> void:
 		current_speed_multiplier = snow_speed_multiplier
 		print("Player walks snow ground")
 
+func is_ground_safe() -> bool : 
+	return (safe_behind.is_colliding() and 
+			safe_under.is_colliding() and 
+			safe_front.is_colliding()) 
+
 
 func _on_safe_position_timeout() -> void:
+	print("save position? ", is_ground_safe())
 	if GlobalPlayerStats.last_safe_position == Vector2.ZERO : 
 		GlobalPlayerStats.last_safe_position = GlobalPlayerStats.current_checkpoint
-	if is_on_floor() and velocity.x != 0 : 
+	if not is_on_floor() : 
+		return
+	if velocity.length() == 0 : 
+		return 
+	if is_ground_safe() : 
 		GlobalPlayerStats.last_safe_position = global_position
 		print(GlobalPlayerStats.last_safe_position)

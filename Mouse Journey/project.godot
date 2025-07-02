@@ -53,6 +53,7 @@ enemy_spawn_points=""
 traps=""
 enemies=""
 Sled_Level=""
+ground=""
 
 [input]
 
