@@ -100,10 +100,14 @@ var gliding_offset_hat := -9
 var knockback_timer : float = 0.0
 var knockback_velocity : Vector2 = Vector2.ZERO
 
-var safe_position_sec : float = 1.0
+var is_dead : bool = false
 
 var is_braking : bool = false
+
 var can_save_position : bool = false
+var safe_position_sec : float = 0.5
+var safe_positions : Array[Vector2] = []
+var max_number_safe_positions : int = 5
 
 
 @export_enum(
@@ -154,8 +158,10 @@ func _ready() -> void:
 	
 	# Particles
 	current_particles = snow_trail_particles
-	
-	
+	#
+	## safe positions array : 
+	#for i in max_number_safe_positions:
+		#safe_positions.append(Vector2.ZERO)
 ####################################### PHYSICS PROCESS ###########################################
 func _physics_process(delta: float) -> void:
 	handle_gravity(delta)
@@ -537,6 +543,7 @@ func glide(delta : float) :
 
 ######################################## HEALTH SYSTEM #######################################
 func init_health() : 
+	is_dead = false
 	GlobalPlayerStats.player_current_HP = GlobalPlayerStats.player_max_HP
 	print("Init Health : ", GlobalPlayerStats.player_current_HP)
 
@@ -568,9 +575,12 @@ func init_player_after_respawn() :
 		STATE = "SLEDDING"
 	
 func on_death() : 
+	if is_dead : 
+		return
+	is_dead = true
 	GlobalPlayerStats.current_lives_number -= 1
 	GlobalPlayerStats.update_life_number.emit() # to label_lives in main.gd
-	if GlobalPlayerStats.current_lives_number <= 0 : 
+	if GlobalPlayerStats.current_lives_number <= 0 :
 		print("GAME OVER")
 		GlobalMenu.game_transition(func() : GlobalMenu.set_game_state(GlobalMenu.GAME_STATES.GAMEOVER_SCREEN))
 		
@@ -584,8 +594,19 @@ func on_death() :
 		#STATE = "IDLE"
 
 ######################################### HURT SYSTEM ########################################
+
+func get_last_valid_safe_position() -> Vector2:
+	for i in range(safe_positions.size() - 1, -1, -1):
+		var pos = safe_positions[i]
+		if pos == Vector2.ZERO:
+			continue
+		if is_respawn_position_safe(pos):
+			return pos
+	return GlobalPlayerStats.current_checkpoint
+
+
 func respawn_to_last_safe_position() :
-	var safe_position = GlobalPlayerStats.last_safe_position
+	var safe_position = get_last_valid_safe_position()
 	await get_tree().create_timer(0.2).timeout
 	velocity = Vector2.ZERO
 	hide()
@@ -593,6 +614,12 @@ func respawn_to_last_safe_position() :
 	init_player_after_respawn()
 	show()
 
+func add_safe_positions_array(pos : Vector2) : 
+	safe_positions.append(pos)
+	
+	if safe_positions.size() > max_number_safe_positions : 
+		safe_positions.pop_front()
+	
 func start_knockback(knockback_force: float) -> void:
 	# Calculate the knockback direction.
 	var kb_dir = sign(player_sprite.scale.x)
@@ -720,7 +747,8 @@ func handle_animations() :
 
 ############################# PARTICLES SYSTEM ###############################################
 func handle_particles() : 
-	current_particles.direction.x *= input_dir
+	if current_player_mode == "normal" : 
+		current_particles.direction.x *= input_dir
 	
 	match STATE : 
 		"RUN" : 
@@ -777,6 +805,7 @@ func update_boots_gloves_visibility() :
 
 func update_snowHat_visibility() : 
 	snowHat_sprite.visible = true
+
 func can_glide() : 
 	return GlobalPlayerStats.has_snow_hat and Input.is_action_pressed("glide") and not is_touching_wall()
 
@@ -825,16 +854,31 @@ func is_ground_safe() -> bool :
 	return (safe_behind.is_colliding() and 
 			safe_under.is_colliding() and 
 			safe_front.is_colliding()) 
+			
+func is_respawn_position_safe(pos: Vector2) -> bool:
+	var space_state = get_world_2d().direct_space_state
+	
+	var query := PhysicsRayQueryParameters2D.create(pos, pos + Vector2.DOWN * 8)
+	query.exclude = [self]
+	query.collision_mask = get_collision_mask()
+	
+	var result = space_state.intersect_ray(query)
+	return result and result.collider and result.collider.is_in_group("ground")
 
 
 func _on_safe_position_timeout() -> void:
-	print("save position? ", is_ground_safe())
 	if GlobalPlayerStats.last_safe_position == Vector2.ZERO : 
 		GlobalPlayerStats.last_safe_position = GlobalPlayerStats.current_checkpoint
+		#saving the position in the array
+		add_safe_positions_array(GlobalPlayerStats.last_safe_position)
+		
 	if not is_on_floor() : 
 		return
+		
 	if velocity.length() == 0 : 
 		return 
+		
 	if is_ground_safe() : 
 		GlobalPlayerStats.last_safe_position = global_position
-		print(GlobalPlayerStats.last_safe_position)
+		# save positions in Array
+		add_safe_positions_array(GlobalPlayerStats.last_safe_position)

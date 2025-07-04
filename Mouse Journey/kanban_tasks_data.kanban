@@ -49,6 +49,7 @@
 			"uuid": "a590c45f-f6e0-4df4-a178-2596b3213350",
 			"title": "Done on the current Branch",
 			"tasks": [
+				"43606449-076b-49ce-a30e-eb892954dab0",
 				"e80d6fb7-ed59-49d4-bf52-1a35531c423a",
 				"89c9c012-4a18-45cd-8f60-30e67d2f0ed2"
 			]
@@ -1667,7 +1668,7 @@
 			"uuid": "89c9c012-4a18-45cd-8f60-30e67d2f0ed2",
 			"title": "Sleigh Level!",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": [
 				{
 					"details": "spawn proper player for levels",
@@ -1719,6 +1720,13 @@
 			"uuid": "e80d6fb7-ed59-49d4-bf52-1a35531c423a",
 			"title": "BUG : safe position",
 			"description": "Sometimes : respawn too close to the pit to jump...Maybe there's a delay for the input to respond? \nOr make the respawn position - an offset? ",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "43606449-076b-49ce-a30e-eb892954dab0",
+			"title": "BUG with check SpaceState",
+			"description": "",
 			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		}
