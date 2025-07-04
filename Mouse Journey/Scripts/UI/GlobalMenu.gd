@@ -1,6 +1,6 @@
 extends Node
 
-enum GAME_STATES{MAIN_MENU, PLAYING_GAME, LEVEL_COMPLETE_SCREEN, GAMEOVER_SCREEN, QUIT, UNSET}
+enum GAME_STATES{MAIN_MENU, PLAYING_GAME, LEVEL_COMPLETE_SCREEN, GAMEOVER_SCREEN, CONTINUE_SCREEN, QUIT, UNSET}
 @export var current_game_state : GAME_STATES = GAME_STATES.UNSET
 
 
@@ -12,6 +12,8 @@ var congrats_screen_node : Node
 var game_over_screen_node : Node
 @onready var game_states_transition = preload("res://Scenes/UI/transition.tscn")
 var game_states_transition_node = Node
+@onready var continue_game_screen = preload("res://Scenes/UI/continue_screen.tscn")
+var continue_game_screen_node = Node
 
 @onready var main = preload("res://Scenes/main.tscn")
 var main_node : Node
@@ -64,6 +66,10 @@ func set_game_state(new_state : GAME_STATES) :
 			print("Game State = level_complete_screen")
 			show_congrats_screen()
 			
+		GAME_STATES.CONTINUE_SCREEN : 
+			print("Game State = Continue?")
+			show_continue_screen()
+			
 		GAME_STATES.GAMEOVER_SCREEN : 
 			show_game_over_screen()
 			print("Game State = gameover_screen")
@@ -112,6 +118,10 @@ func show_game_over_screen() :
 	# 2 free main
 	if main_node : 
 		main_node.call_deferred("queue_free")
+
+func show_continue_screen() : 
+	continue_game_screen_node = continue_game_screen.instantiate()
+	call_deferred("add_child", continue_game_screen_node)
 
 func game_transition(callback : Callable) : 
 	

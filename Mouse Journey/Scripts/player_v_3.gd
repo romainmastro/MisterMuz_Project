@@ -109,14 +109,13 @@ var safe_position_sec : float = 0.5
 var safe_positions : Array[Vector2] = []
 var max_number_safe_positions : int = 5
 
-
 @export_enum(
 	# Ground States
 	"IDLE", "RUN", "SLIDE", 
 	# Airborne States
 	"JUMP", "COYOTE", "WALL_JUMP","WALL_SLIDE", "SLIDE_JUMP", "FALL", "GLIDE",
 	# Health/Hurt System 
-	"HURT_KNOCKBACK", "HURT_RESPAWN", "DEAD", 
+	"HURT_KNOCKBACK", "HURT_RESPAWN", "DEAD", "WAIT_FOR_RESPAWN",
 	# Player Sled
 	"SLEDDING", "SLEDDING_JUMP", "SLEDDING_HURT", "SLEDDING_BRAKE") 
 
@@ -158,10 +157,7 @@ func _ready() -> void:
 	
 	# Particles
 	current_particles = snow_trail_particles
-	#
-	## safe positions array : 
-	#for i in max_number_safe_positions:
-		#safe_positions.append(Vector2.ZERO)
+	
 ####################################### PHYSICS PROCESS ###########################################
 func _physics_process(delta: float) -> void:
 	handle_gravity(delta)
@@ -232,9 +228,14 @@ func play_animation(base_anim : String) :
 func process_state_machine(delta : float) : 
 
 	if STATE == "DEAD":
-		on_death()
+		if not is_dead : 
+			on_death()
 		return
-
+		
+	if STATE == "WAIT_FOR_RESPAWN" : 
+		return
+		
+		
 	if STATE == "HURT_KNOCKBACK":
 		#deactivate collisions with Stompbox
 		stompbox.monitorable = false
@@ -573,25 +574,42 @@ func init_player_after_respawn() :
 		
 	elif current_player_mode == "sled" : 
 		STATE = "SLEDDING"
+
+func continue_game_use_a_life() : 
+	velocity = Vector2.ZERO
+	if GlobalPlayerStats.current_checkpoint != Vector2.ZERO : 
+		respawn_to_checkpoint()
+	else : 
+		push_error("ERROR : There isn't any checkpoint available!!")
+	init_health()
+	STATE = "WAIT_FOR_RESPAWN"
 	
+	await get_tree().create_timer(0.2).timeout
+	init_player_after_respawn()
+
 func on_death() : 
 	if is_dead : 
 		return
 	is_dead = true
+
 	GlobalPlayerStats.current_lives_number -= 1
-	GlobalPlayerStats.update_life_number.emit() # to label_lives in main.gd
-	if GlobalPlayerStats.current_lives_number <= 0 :
+	# Send message to label_lives in main.gd !! 
+	# I do it in Continue_Screen now to show the player and update at the right time
+	#GlobalPlayerStats.update_life_number.emit() 
+
+	if GlobalPlayerStats.current_lives_number < 0 :
 		print("GAME OVER")
 		GlobalMenu.game_transition(func() : GlobalMenu.set_game_state(GlobalMenu.GAME_STATES.GAMEOVER_SCREEN))
 		
-	else : 
-		velocity = Vector2.ZERO
-		if GlobalPlayerStats.current_checkpoint != Vector2.ZERO : 
-			respawn_to_checkpoint()
-		else : 
-			push_error("ERROR : There isn't any checkpoint available!!")
-		init_health()
-		#STATE = "IDLE"
+	else : # Must make CONTINUE SCREEN APPEAR 
+		
+		
+		get_tree().paused = true
+		
+		GlobalMenu.game_transition(func() : GlobalMenu.set_game_state(GlobalMenu.GAME_STATES.CONTINUE_SCREEN))
+		
+		
+	
 
 ######################################### HURT SYSTEM ########################################
 

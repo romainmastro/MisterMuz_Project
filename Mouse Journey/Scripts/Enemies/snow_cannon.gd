@@ -22,7 +22,7 @@ var direction : int = 1
 
 @export_enum("patroling", "shooting", "dead") var state = "patroling"
 
-@export var ray_offset : int = 10
+@export var ray_offset : int = 14
 @export var ray_detection_offset : int = 8
 @export var ray_detection_target_length : int = 100
 @export var muzzle_offset : int = 10

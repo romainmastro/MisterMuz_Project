@@ -86,7 +86,7 @@ scale = Vector2(0.999999, 0.999999)
 shape = SubResource("RectangleShape2D_xm8g0")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 10.0
+wait_time = 5.0
 autostart = true
 
 [node name="DeadZone" type="Area2D" parent="."]
@@ -137,7 +137,6 @@ debug_color = Color(0.261223, 0.629625, 0.217759, 0.42)
 
 [node name="queue_free_Right" type="CollisionShape2D" parent="Queue_free_area2D_Right"]
 position = Vector2(7.59639, -0.483541)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_artop")
 debug_color = Color(0.508983, 0.577154, 0.0961005, 0.42)
 
@@ -146,7 +145,6 @@ collision_layer = 0
 
 [node name="queue_free_Left" type="CollisionShape2D" parent="Queue_free_area2D_Left"]
 position = Vector2(-7.45905, -0.483541)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_artop")
 debug_color = Color(0.508983, 0.577154, 0.0961005, 0.42)
 

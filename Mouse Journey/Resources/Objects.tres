@@ -1,7 +1,8 @@
-[gd_resource type="TileSet" load_steps=11 format=3 uid="uid://d34uj80lo1ml4"]
+[gd_resource type="TileSet" load_steps=12 format=3 uid="uid://d34uj80lo1ml4"]
 
 [ext_resource type="PackedScene" uid="uid://byc7401bsh3cc" path="res://Scenes/Collectibles/Collect_Heart.tscn" id="1_kgskm"]
 [ext_resource type="PackedScene" uid="uid://bjgf62qew141r" path="res://Scenes/Environment/checkpoint.tscn" id="2_0lc3b"]
+[ext_resource type="PackedScene" uid="uid://byryxbactwrpp" path="res://Scenes/Collectibles/super_frost_berry.tscn" id="2_hmhx2"]
 [ext_resource type="PackedScene" uid="uid://bk6nplv6ettgn" path="res://Scenes/Environment/treasure_chest_muffler.tscn" id="3_o3yof"]
 [ext_resource type="PackedScene" uid="uid://bs425j3t1krem" path="res://Scenes/Environment/treasure_chest_snowhat.tscn" id="4_34hio"]
 [ext_resource type="PackedScene" uid="uid://bs6jgygl6od08" path="res://Scenes/Environment/treasure_chest_suit_boots_gloves.tscn" id="5_34hio"]
@@ -21,6 +22,7 @@ scenes/6/scene = ExtResource("6_rp16i")
 scenes/7/scene = ExtResource("7_rp16i")
 scenes/8/scene = ExtResource("8_8ex8q")
 scenes/9/scene = ExtResource("9_7lyrv")
+scenes/10/scene = ExtResource("2_hmhx2")
 
 [resource]
 sources/0 = SubResource("TileSetScenesCollectionSource_pdsj5")

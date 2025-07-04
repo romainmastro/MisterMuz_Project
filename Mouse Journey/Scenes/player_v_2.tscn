@@ -1097,6 +1097,7 @@ _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [node name="PlayerV2" type="CharacterBody2D" node_paths=PackedStringArray("player_sprite", "boots_gloves_sprite", "snowsuit_sprite", "snowHat_sprite", "muffler_sprite", "wall_ray_right", "wall_ray_left", "stompbox", "terrain_detector", "safe_behind", "safe_under", "safe_front", "marker_particles", "marker_wall_sliding", "snow_trail_particles", "sliding_particles", "jumping_particles", "landing_particles", "wall_sliding_particles", "sledding_particles", "sledding_brake_particles", "marker_sledding_particles", "marker_sledding_brake_particles", "coyote_timer") groups=["player"]]
+process_mode = 1
 z_index = 10
 collision_layer = 2
 collision_mask = 525

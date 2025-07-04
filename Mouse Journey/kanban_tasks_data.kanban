@@ -49,15 +49,17 @@
 			"uuid": "a590c45f-f6e0-4df4-a178-2596b3213350",
 			"title": "Done on the current Branch",
 			"tasks": [
-				"43606449-076b-49ce-a30e-eb892954dab0",
-				"e80d6fb7-ed59-49d4-bf52-1a35531c423a",
-				"89c9c012-4a18-45cd-8f60-30e67d2f0ed2"
+				"c2e72a34-046b-4021-a96f-31243b941236",
+				"0ea93d3f-4264-46d0-899b-8f491bc49e12"
 			]
 		},
 		{
 			"uuid": "9573ce0a-9b5d-4fd9-bb69-4b68a3540b99",
 			"title": "DONE => Main Branch",
 			"tasks": [
+				"43606449-076b-49ce-a30e-eb892954dab0",
+				"e80d6fb7-ed59-49d4-bf52-1a35531c423a",
+				"89c9c012-4a18-45cd-8f60-30e67d2f0ed2",
 				"354dfdaa-586c-4e54-82d2-9dbf582eed7d",
 				"23e2a284-4cf7-4d00-bebf-a183f0f2c062",
 				"afb7433f-58e1-4ae4-89ae-da1bae51fcc3",
@@ -1728,6 +1730,20 @@
 			"title": "BUG with check SpaceState",
 			"description": "",
 			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "0ea93d3f-4264-46d0-899b-8f491bc49e12",
+			"title": "BUG : when lifes and die : should restart from checkpoint",
+			"description": "",
+			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"steps": []
+		},
+		{
+			"uuid": "c2e72a34-046b-4021-a96f-31243b941236",
+			"title": "Show Continue Screen",
+			"description": "",
+			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
 			"steps": []
 		}
 	],

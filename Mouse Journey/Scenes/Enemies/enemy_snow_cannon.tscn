@@ -443,8 +443,8 @@ shape = SubResource("RectangleShape2D_82chp")
 debug_color = Color(0.996541, 0.0506893, 3.85046e-07, 0.42)
 
 [node name="PlatformCheck" type="RayCast2D" parent="."]
-position = Vector2(9, 9)
-target_position = Vector2(0, 32)
+position = Vector2(12, 9)
+target_position = Vector2(0, 16)
 
 [node name="DetectionRight" type="RayCast2D" parent="."]
 position = Vector2(0, 8)

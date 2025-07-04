@@ -1,6 +1,7 @@
+res://Scenes/UI
+res://Scripts/UI
 res://Resources
 res://Assets/Muz
-res://Scenes/UI
 res://
 res://Scenes/TESTS
 res://Scripts
@@ -14,7 +15,6 @@ res://Scenes/Collectibles
 res://Assets/Collectibles
 res://Scenes/Traps
 res://Resources/light
-res://Scripts/UI
 res://Assets/Enemies/SpikeThrower
 res://Scenes/Environment
 res://Assets/Environment
