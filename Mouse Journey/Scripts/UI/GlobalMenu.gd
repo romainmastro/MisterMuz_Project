@@ -35,7 +35,7 @@ var levels_info := {
 	}, 
 	"level4" : {
 		"scene" = preload("res://Scenes/TESTS/test_sledding_scene.tscn"), 
-		"rotation" = deg_to_rad(0),
+		"rotation" = deg_to_rad(15),
 		"player_mode" = "sled"
 	}
 }
