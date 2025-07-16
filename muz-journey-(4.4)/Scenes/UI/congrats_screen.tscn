@@ -1,0 +1,259 @@
+[gd_scene load_steps=19 format=4 uid="uid://dhl1tsd1e3234"]
+
+[ext_resource type="Script" uid="uid://duiumda28874d" path="res://Scripts/UI/congrats_screen.gd" id="1_71jre"]
+[ext_resource type="Theme" uid="uid://ba6rurgdpqsjr" path="res://Resources/font/main_font_theme.tres" id="1_up6sh"]
+[ext_resource type="TileSet" uid="uid://cvn6rtpn15ve6" path="res://Resources/Level_Maker.tres" id="3_ayhqs"]
+[ext_resource type="Script" uid="uid://cjcwcwyojc7bn" path="res://Scripts/UI/end_level_checkpoint_forCongratsScreen.gd" id="3_g0osa"]
+[ext_resource type="TileSet" uid="uid://1x1qpe81qufy" path="res://Resources/Décor.tres" id="4_dy31q"]
+[ext_resource type="Texture2D" uid="uid://dypl1impvax7h" path="res://Assets/Environment/end_level_no_fire.png" id="4_st3vl"]
+[ext_resource type="Texture2D" uid="uid://dnb0wxrmnc6rl" path="res://Assets/Environment/end_level lit_fire.png" id="5_cradt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_807ni"]
+size = Vector2(32, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mrmqi"]
+atlas = ExtResource("5_cradt")
+region = Rect2(0, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6vvqi"]
+atlas = ExtResource("5_cradt")
+region = Rect2(48, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mssoy"]
+atlas = ExtResource("5_cradt")
+region = Rect2(96, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_05r57"]
+atlas = ExtResource("5_cradt")
+region = Rect2(144, 0, 48, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jwqhk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mrmqi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6vvqi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mssoy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_05r57")
+}],
+"loop": true,
+"name": &"fire_lit",
+"speed": 5.0
+}]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_g0osa"]
+load_path = "res://.godot/imported/2d_lights_and_shadows_neutral_point_light.webp-90a52a222c53c29b5175d453f1c65e65.ctex"
+
+[sub_resource type="Animation" id="Animation_st3vl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PointLight2D:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PointLight2D:texture_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PointLight2D:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_g0osa"]
+resource_name = "flicker"
+length = 1.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PointLight2D:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.3, 0.4, 0.566667, 0.733333, 0.9, 1.1, 1.16667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [1.0, 0.5, 0.3, 0.8, 1.5, 0.2, 0.7, 1.0, 1.14274]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PointLight2D:texture_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.5, 0.833333, 1.03333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [1.0, 0.5, 1.3, 1.6, 0.5]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PointLight2D:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.333333, 0.466667, 0.7, 0.933333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1, 2), Vector2(2, 2), Vector2(3, 2), Vector2(2, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cradt"]
+_data = {
+&"RESET": SubResource("Animation_st3vl"),
+&"flicker": SubResource("Animation_g0osa")
+}
+
+[sub_resource type="Environment" id="Environment_g0osa"]
+background_mode = 3
+ambient_light_source = 1
+reflected_light_source = 1
+tonemap_mode = 1
+glow_enabled = true
+glow_levels/1 = 1.06
+glow_levels/2 = 1.12
+glow_intensity = 1.1
+glow_bloom = 0.08
+fog_light_energy = 4.44
+
+[node name="CongratsScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_71jre")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Title" type="Label" parent="UI"]
+offset_left = 72.0
+offset_right = 231.0
+offset_bottom = 28.0
+theme = ExtResource("1_up6sh")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.835294, 0.929412, 0.929412, 1)
+theme_override_font_sizes/font_size = 22
+text = "Level Complete!"
+
+[node name="NextLevel" type="Button" parent="UI"]
+offset_left = 231.0
+offset_top = 40.0
+offset_right = 271.0
+offset_bottom = 50.0
+theme = ExtResource("1_up6sh")
+text = "Next Level"
+
+[node name="Replay" type="Button" parent="UI"]
+offset_left = 32.0
+offset_top = 40.0
+offset_right = 72.0
+offset_bottom = 50.0
+theme = ExtResource("1_up6sh")
+text = "Replay"
+
+[node name="EndLevelCheckpoint" type="Area2D" parent="." node_paths=PackedStringArray("fire_lit")]
+position = Vector2(128, 120)
+script = ExtResource("3_g0osa")
+fire_lit = NodePath("Fire_Lit")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EndLevelCheckpoint"]
+position = Vector2(0, -6.5)
+shape = SubResource("RectangleShape2D_807ni")
+
+[node name="No_Fire" type="Sprite2D" parent="EndLevelCheckpoint"]
+visible = false
+texture = ExtResource("4_st3vl")
+offset = Vector2(0, -8)
+region_enabled = true
+region_rect = Rect2(0, 0, 48, 32)
+
+[node name="Fire_Lit" type="AnimatedSprite2D" parent="EndLevelCheckpoint"]
+sprite_frames = SubResource("SpriteFrames_jwqhk")
+animation = &"fire_lit"
+offset = Vector2(0, -8)
+
+[node name="PointLight2D" type="PointLight2D" parent="EndLevelCheckpoint"]
+position = Vector2(0, -6)
+scale = Vector2(0.125, 0.09375)
+color = Color(0.670839, 0.325605, 0.00396068, 1)
+texture = SubResource("CompressedTexture2D_g0osa")
+
+[node name="animation_bonfire" type="AnimationPlayer" parent="EndLevelCheckpoint"]
+libraries = {
+&"": SubResource("AnimationLibrary_cradt")
+}
+autoplay = "flicker"
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAPAAgAAAADAAEAAAAOAAgAAAAFAAEAAAANAAgAAAADAAEAAAAMAAgAAAAIAAEAAAALAAgAAAAFAAEAAAAKAAgAAAACAAEAAAAJAAgAAAAIAAEAAAAIAAgAAAAHAAEAAAAHAAgAAAABAAEAAAAGAAgAAAAFAAEAAAAFAAgAAAAGAAEAAAAEAAgAAAAIAAEAAAADAAgAAAADAAEAAAACAAgAAAACAAEAAAABAAgAAAACAAEAAAAAAAgAAAAFAAEAAAAEAAkAAAANAAAAAAADAAkAAAANAAAAAAACAAkAAAANAAAAAAABAAkAAAANAAAAAAAAAAkAAAANAAAAAAAPAAkAAAANAAAAAAAOAAkAAAANAAAAAAANAAkAAAANAAAAAAAMAAkAAAANAAAAAAALAAkAAAANAAAAAAAKAAkAAAANAAAAAAAJAAkAAAANAAAAAAAIAAkAAAANAAAAAAAHAAkAAAANAAAAAAAGAAkAAAANAAAAAAAFAAkAAAANAAAAAAAQAAgAAAAEAAEAAAARAAgAAAADAAEAAAASAAgAAAADAAEAAAATAAgAAAAJAAEAAAATAAkAAAAJAAIAAAASAAkAAAANAAAAAAARAAkAAAANAAAAAAAQAAkAAAANAAAAAAD+/woAAAAAAAAAAAD//woAAAAAAAIAAAAAAAoAAAANAAAAAAABAAoAAAANAAAAAAACAAoAAAANAAAAAAADAAoAAAANAAAAAAAEAAoAAAANAAAAAAAFAAoAAAANAAAAAAAGAAoAAAANAAAAAAAHAAoAAAANAAAAAAAIAAoAAAANAAAAAAAIAAsAAAACAAMAAAAJAAsAAAAIAAMAAAAKAAsAAAAIAAMAAAALAAsAAAACAAMAAAAMAAsAAAABAAMAAAANAAsAAAABAAMAAAAOAAsAAAACAAMAAAAPAAsAAAAEAAMAAAAQAAsAAAACAAMAAAARAAsAAAAEAAMAAAASAAsAAAAGAAMAAAATAAsAAAAJAAMAAAATAAoAAAAJAAIAAAASAAoAAAANAAAAAAARAAoAAAANAAAAAAAQAAoAAAANAAAAAAAPAAoAAAANAAAAAAAOAAoAAAANAAAAAAANAAoAAAANAAAAAAAMAAoAAAANAAAAAAALAAoAAAANAAAAAAAKAAoAAAANAAAAAAAJAAoAAAANAAAAAAACAAsAAAACAAMAAAABAAsAAAADAAMAAAAAAAsAAAACAAMAAAADAAsAAAAIAAMAAAAEAAsAAAAGAAMAAAAFAAsAAAAIAAMAAAAGAAsAAAAFAAMAAAAHAAsAAAAIAAMAAAD//wkAAAAAAAIAAAD//wgAAAAAAAEAAAD//wsAAAAAAAMAAAA=")
+tile_set = ExtResource("3_ayhqs")
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAHAAcAAAAWAAAAAAAJAAcAAAAUAAQAAAAWAAcAAAAXAAEAAAAZAAcAAAASAAQAAAAbAAcAAAASAAQAAAAaAAcAAAASAAIAAAAcAAcAAAAWAAEAAAAAAAcAAAAbAAAAAAABAAcAAAAaAAEAAAACAAcAAAAUAAEAAAAEAAcAAAAYAAEAAAAIAAcAAAATAAAAAAAKAAcAAAAbAAAAAAALAAcAAAAeAAIAAAANAAcAAAASAAAAAAAUAAcAAAAVAAIAAAAXAAcAAAAbAAAAAAAYAAcAAAAWAAAAAAAdAAcAAAASAAAAAAAGAAcAAAAcAAIAAAAVAAcAAAAeAAIAAAATAAcAAAAaAAMAAAAfAAcAAAAaAAEAAAAgAAcAAAAeAAIAAAAhAAcAAAAaAAMAAAAkAAcAAAAaAAEAAAAnAAcAAAAZAAEAAAA=")
+tile_set = ExtResource("4_dy31q")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_g0osa")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.479445, 0.600842, 0.834705, 1)
+
+[node name="Congrats_camera" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(96, -64)
+amount = 400
+lifetime = 10.0
+preprocess = 7.0
+speed_scale = 0.5
+lifetime_randomness = 0.3
+emission_shape = 3
+emission_rect_extents = Vector2(180, 1)
+direction = Vector2(1, 1)
+spread = 30.0
+gravity = Vector2(0, 10)
+initial_velocity_min = 20.0
+initial_velocity_max = 20.0
+scale_amount_min = 1.1
+scale_amount_max = 1.6
+color = Color(0.835294, 0.929412, 0.929412, 1)
+hue_variation_min = 0.52
+hue_variation_max = 0.52
+
+[connection signal="pressed" from="UI/NextLevel" to="." method="_on_next_level_pressed"]
+[connection signal="pressed" from="UI/Replay" to="." method="_on_replay_pressed"]

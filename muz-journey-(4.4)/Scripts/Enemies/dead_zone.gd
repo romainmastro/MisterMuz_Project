@@ -1,0 +1,2 @@
+class_name EnemyDeadZoneClass
+extends Area2D

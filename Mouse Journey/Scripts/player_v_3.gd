@@ -11,6 +11,8 @@ extends CharacterBody2D
 @export var muffler_sprite : AnimatedSprite2D
 @export var wall_ray_right : RayCast2D
 @export var wall_ray_left : RayCast2D
+@export var platform_checker_right : RayCast2D
+@export var platform_checker_left : RayCast2D
 @export var wall_ray_length : int = 6
 @export var stompbox : Area2D
 @export var terrain_detector : Area2D
@@ -104,6 +106,8 @@ var is_dead : bool = false
 
 var is_braking : bool = false
 
+var is_dropping_through : bool = false
+
 var can_save_position : bool = false
 var safe_position_sec : float = 0.5
 var safe_positions : Array[Vector2] = []
@@ -113,7 +117,7 @@ var max_number_safe_positions : int = 5
 	# Ground States
 	"IDLE", "RUN", "SLIDE", 
 	# Airborne States
-	"JUMP", "COYOTE", "WALL_JUMP","WALL_SLIDE", "SLIDE_JUMP", "FALL", "GLIDE",
+	"JUMP", "COYOTE", "WALL_JUMP","WALL_SLIDE", "SLIDE_JUMP", "FALL", "GLIDE", "JUMP_THROUGH",
 	# Health/Hurt System 
 	"HURT_KNOCKBACK", "HURT_RESPAWN", "DEAD", "WAIT_FOR_RESPAWN",
 	# Player Sled
@@ -267,11 +271,17 @@ func process_state_machine(delta : float) :
 				# TRANSITIONS
 				if input_dir != 0 : 
 					STATE = "RUN"
-				if Input.is_action_just_pressed("jump") : 
+				if Input.is_action_just_pressed("jump")  : 
 					jump()
 					STATE = "JUMP"
 				if Input.is_action_pressed("slide") and is_on_downward_slope() : 
 					STATE = "SLIDE"
+				if Input.is_action_pressed("down") : 
+					var platform_data = is_platform_droppable()
+					if platform_data["droppable"] : 
+						drop_through_platform(platform_data["body"])
+						STATE = "FALL"
+						return
 					
 			"RUN" : 
 				velocity.x = lerp(velocity.x, input_dir * speed * current_speed_multiplier, accel * current_ground_multiplier * delta)
@@ -279,11 +289,20 @@ func process_state_machine(delta : float) :
 				# TRANSITIONS
 				if input_dir == 0 : 
 					STATE = "IDLE"
-				if Input.is_action_just_pressed("jump"): 
+				if Input.is_action_just_pressed("jump"):
 					jump()
 					STATE = "JUMP"
 				if Input.is_action_pressed("slide") and is_on_downward_slope() : 
 					STATE = "SLIDE"
+				if Input.is_action_pressed("down") :
+
+					var platform_data = is_platform_droppable()
+					print_debug("droppable: %s, body: %s" % [platform_data["droppable"], platform_data["body"]])
+					if platform_data["droppable"]:
+						drop_through_platform(platform_data["body"])
+						STATE = "FALL"
+						return
+
 			
 			"SLIDE" : 
 				slide(delta)
@@ -367,7 +386,7 @@ func process_state_machine(delta : float) :
 					STATE = "WALL_JUMP"
 					wall_jump()
 					
-			"FALL" : 
+			"FALL", "JUMP_THROUGH" : 
 				if input_dir != 0 : 
 					velocity.x = speed * input_dir
 					
@@ -382,7 +401,7 @@ func process_state_machine(delta : float) :
 					STATE = "WALL_JUMP"
 					wall_jump()
 				
-				if is_touching_wall() and wall_direction == input_dir : 
+				if is_touching_wall() and wall_direction == input_dir and not is_dropping_through: 
 					STATE = "WALL_SLIDE"
 					
 			"WALL_JUMP" : 
@@ -542,6 +561,40 @@ func glide(delta : float) :
 	velocity.y += gravity * delta * gliding_gravity_multiplier
 	velocity.y = min(velocity.y, gliding_max_speed)
 
+### drop through Platform
+#func is_platform_droppable() -> bool : 
+	#return (platform_checker.is_colliding() and  
+		#platform_checker.get_collider().is_in_group("jump_through_platform"))
+
+func is_platform_droppable() -> Dictionary:
+	var platform = null
+	if platform_checker_left.is_colliding():
+		platform = platform_checker_left.get_collider()
+	elif platform_checker_right.is_colliding():
+		platform = platform_checker_right.get_collider()
+
+	var droppable = platform != null and platform.is_in_group("jump_through_platform")
+	return {
+		"droppable": droppable,
+		"body": platform
+	}
+
+
+func drop_through_platform(platform : StaticBody2D) : 
+	if is_dropping_through : 
+		return
+	is_dropping_through = true
+	
+	add_collision_exception_with(platform)
+	
+	velocity.y += 10  # even 1–2px can be enough; 10 is safe
+	move_and_slide()  # ← optional: helps apply the change immediately
+	
+	await get_tree().create_timer(0.4).timeout
+	remove_collision_exception_with(platform)
+	
+	is_dropping_through = false
+	
 ######################################## HEALTH SYSTEM #######################################
 func init_health() : 
 	is_dead = false
@@ -608,8 +661,6 @@ func on_death() :
 		
 		GlobalMenu.game_transition(func() : GlobalMenu.set_game_state(GlobalMenu.GAME_STATES.CONTINUE_SCREEN))
 		
-		
-	
 
 ######################################### HURT SYSTEM ########################################
 

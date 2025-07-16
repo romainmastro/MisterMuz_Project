@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://1asc7ato1afb"]
+
+[sub_resource type="Curve" id="Curve_6dipi"]
+_limits = [-200.0, 200.0, 0.0, 1.0]
+_data = [Vector2(0.00436682, -118.064), 0.0, 0.0, 0, 0, Vector2(0.980349, 130.973), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_t1dyl"]
+_data = [Vector2(0.00218341, 1), 0.0, 0.0, 0, 0, Vector2(0.991266, 0.323269), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="sliding_particles" type="CPUParticles2D"]
+z_index = 11
+emitting = false
+amount = 15
+lifetime = 0.31
+one_shot = true
+gravity = Vector2(-200, -50)
+radial_accel_curve = SubResource("Curve_6dipi")
+scale_amount_min = 4.0
+scale_amount_max = 6.0
+scale_amount_curve = SubResource("Curve_t1dyl")
+color = Color(0.796078, 0.858824, 0.988235, 1)

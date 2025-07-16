@@ -1,0 +1,95 @@
+[gd_scene load_steps=10 format=3 uid="uid://bs6jgygl6od08"]
+
+[ext_resource type="Texture2D" uid="uid://bb351c1n2ieyh" path="res://Assets/Environment/closed_chest.png" id="1_2crsg"]
+[ext_resource type="Script" uid="uid://8fjfhlbmqhvc" path="res://Scripts/Environment/treasure_chest_suit_boots_gloves.gd" id="1_ki27y"]
+[ext_resource type="Texture2D" uid="uid://rs7mwcqucuxq" path="res://Assets/Environment/opened_chest.png" id="2_w6mne"]
+[ext_resource type="Texture2D" uid="uid://rc70enu4xxnm" path="res://Resources/light/2d_lights_and_shadows_neutral_point_light.webp" id="4_ki27y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ki27y"]
+size = Vector2(16, 8)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_a7f6g"]
+load_path = "res://.godot/imported/raylight_texture.png-16668d796e0c6ce750865d41bb1a5aec.ctex"
+
+[sub_resource type="Animation" id="Animation_e0shw"]
+resource_name = "glow"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PointLight2D2:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 3.0]
+}
+
+[sub_resource type="Animation" id="Animation_k8bt6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PointLight2D2:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oqtvc"]
+_data = {
+&"RESET": SubResource("Animation_k8bt6"),
+&"glow": SubResource("Animation_e0shw")
+}
+
+[node name="treasure_chest_Boots_gloves_suit" type="Area2D" node_paths=PackedStringArray("closed_chest_sprite", "opened_chest_sprite")]
+collision_mask = 2
+script = ExtResource("1_ki27y")
+closed_chest_sprite = NodePath("closed_chest")
+opened_chest_sprite = NodePath("opened_chest")
+metadata/_custom_type_script = "uid://didfjoqvoqhd4"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_ki27y")
+
+[node name="closed_chest" type="Sprite2D" parent="."]
+texture = ExtResource("1_2crsg")
+offset = Vector2(0, 5)
+
+[node name="opened_chest" type="Sprite2D" parent="."]
+position = Vector2(0, -1)
+texture = ExtResource("2_w6mne")
+offset = Vector2(0, 5)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+visible = false
+scale = Vector2(0.4, 0.2)
+color = Color(0.666838, 0.451852, 0.0116099, 1)
+energy = 0.6
+shadow_color = Color(0, 0, 0, 1)
+texture = ExtResource("4_ki27y")
+height = 99.0
+
+[node name="PointLight2D2" type="PointLight2D" parent="."]
+position = Vector2(2.84217e-14, 4.23501)
+scale = Vector2(0.0282168, 0.0142723)
+color = Color(0.905608, 0.604982, 0.102581, 1)
+energy = 0.0
+texture = SubResource("CompressedTexture2D_a7f6g")
+texture_scale = 1.51
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_oqtvc")
+}
+autoplay = "glow"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

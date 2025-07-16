@@ -1,0 +1,120 @@
+[gd_scene load_steps=11 format=3 uid="uid://cgp5a8xkc4gwi"]
+
+[ext_resource type="Script" uid="uid://cjlrlnqrm2kgw" path="res://Scripts/UI/continue.gd" id="1_mbnpw"]
+[ext_resource type="Theme" uid="uid://ba6rurgdpqsjr" path="res://Resources/font/main_font_theme.tres" id="1_pox0y"]
+[ext_resource type="FontFile" uid="uid://dl3316dpi5lxs" path="res://Resources/font/SuperBakery-3lXyp.ttf" id="2_mbnpw"]
+
+[sub_resource type="Environment" id="Environment_mbnpw"]
+background_mode = 3
+ambient_light_source = 1
+reflected_light_source = 1
+tonemap_mode = 1
+glow_enabled = true
+glow_levels/1 = 1.06
+glow_levels/2 = 1.12
+glow_intensity = 1.1
+glow_bloom = 0.08
+fog_light_energy = 4.44
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h1w1h"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wax0t"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pdrfq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5vlyr"]
+
+[sub_resource type="Theme" id="Theme_fnjyb"]
+default_font = ExtResource("2_mbnpw")
+default_font_size = 8
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(0.835294, 0.929412, 0.929412, 1)
+Button/constants/h_separation = 4
+Button/font_sizes/font_size = 8
+Button/fonts/font = ExtResource("2_mbnpw")
+Button/styles/focus = SubResource("StyleBoxEmpty_h1w1h")
+Button/styles/hover = SubResource("StyleBoxEmpty_wax0t")
+Button/styles/normal = SubResource("StyleBoxEmpty_pdrfq")
+Button/styles/pressed = SubResource("StyleBoxEmpty_5vlyr")
+
+[sub_resource type="Theme" id="Theme_7i874"]
+default_font = ExtResource("2_mbnpw")
+default_font_size = 8
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(0.835294, 0.929412, 0.929412, 1)
+Button/constants/h_separation = 4
+Button/font_sizes/font_size = 8
+Button/fonts/font = ExtResource("2_mbnpw")
+Button/styles/focus = SubResource("StyleBoxEmpty_h1w1h")
+Button/styles/hover = SubResource("StyleBoxEmpty_wax0t")
+Button/styles/normal = SubResource("StyleBoxEmpty_pdrfq")
+Button/styles/pressed = SubResource("StyleBoxEmpty_5vlyr")
+
+[node name="Continue" type="Control"]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mbnpw")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.349065, 0.349065, 0.349065, 0.576471)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="CanvasLayer"]
+environment = SubResource("Environment_mbnpw")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="CanvasLayer"]
+color = Color(0.246437, 0.360611, 0.588285, 1)
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="Menu" type="VBoxContainer" parent="CanvasLayer2"]
+offset_left = 104.0
+offset_top = 88.0
+offset_right = 215.0
+offset_bottom = 141.0
+theme_override_constants/separation = 4
+
+[node name="ContinueButton" type="Button" parent="CanvasLayer2/Menu"]
+layout_mode = 2
+theme = SubResource("Theme_fnjyb")
+theme_override_font_sizes/font_size = 12
+text = "Continue (use a life!)"
+
+[node name="Label" type="Label" parent="CanvasLayer2/Menu"]
+layout_mode = 2
+theme = ExtResource("1_pox0y")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.835294, 0.929412, 0.929412, 1)
+theme_override_font_sizes/font_size = 18
+
+[node name="QuitButton" type="Button" parent="CanvasLayer2/Menu"]
+layout_mode = 2
+theme = SubResource("Theme_7i874")
+theme_override_font_sizes/font_size = 12
+text = "Quit Game"
+
+[node name="Label" type="Label" parent="CanvasLayer2"]
+offset_left = 32.0
+offset_top = 24.0
+offset_right = 284.0
+offset_bottom = 47.0
+theme = ExtResource("1_pox0y")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.835294, 0.929412, 0.929412, 1)
+theme_override_font_sizes/font_size = 18
+text = "Your quest ends here...Or not?"
+
+[connection signal="pressed" from="CanvasLayer2/Menu/ContinueButton" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="CanvasLayer2/Menu/QuitButton" to="." method="_on_quit_button_pressed"]

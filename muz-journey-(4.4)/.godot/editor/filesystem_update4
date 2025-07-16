@@ -1,0 +1,10 @@
+res://Resources/Level_Maker.tres
+res://Resources/Décor.tres
+res://Resources/Pièges.tres
+res://Resources/Objects.tres
+res://Resources/shader/outline_player.gdshader
+res://Scenes/Levels/level_1_romain.tscn
+res://Scenes/Traps/Snowball.tscn
+res://Scenes/Platforms/jump_through_platform.tscn
+res://Scripts/player_v_3.gd
+res://Scenes/player_v_2.tscn

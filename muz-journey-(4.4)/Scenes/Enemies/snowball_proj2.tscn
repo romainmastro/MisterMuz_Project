@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cbnpohmabmil6"]
+
+[ext_resource type="Script" uid="uid://pmcwx48n1sx0" path="res://Scripts/Enemies/snowball_proj.gd" id="1_nlu5w"]
+[ext_resource type="Texture2D" uid="uid://dunf45yg5wrev" path="res://Assets/Enemies/SnowCanon/SnowCannon_SNOWBALL.png" id="2_i3piu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nlu5w"]
+size = Vector2(4, 4)
+
+[node name="Snowball_proj2" type="Area2D"]
+collision_layer = 8
+collision_mask = 17
+script = ExtResource("1_nlu5w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_nlu5w")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_i3piu")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_area_2d_body_entered"]

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxx7sq8x1ny3r"]
+
+[ext_resource type="Texture2D" uid="uid://bo6ap1ajepatl" path="res://Assets/Menus/moon_start_screen.png" id="1_qe7vq"]
+[ext_resource type="Texture2D" uid="uid://dv1kr8b8jyq5t" path="res://Resources/light/point_of_interest_light.tres" id="2_tfws3"]
+
+[node name="moon" type="Node2D"]
+
+[node name="MoonStartScreen" type="Sprite2D" parent="."]
+texture = ExtResource("1_qe7vq")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+scale = Vector2(0.4375, 0.375)
+color = Color(0.561667, 0.520066, 0.149896, 1)
+energy = 1.6
+texture = ExtResource("2_tfws3")

@@ -1,0 +1,1769 @@
+{
+	"categories": [
+		{
+			"uuid": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"title": "Committed on Main",
+			"color": "76fa70"
+		},
+		{
+			"uuid": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"title": "Not committed yet",
+			"color": "d6431a"
+		},
+		{
+			"uuid": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"title": "Committed on transitory branch",
+			"color": "c3c021"
+		},
+		{
+			"uuid": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
+			"title": "Task",
+			"color": "233bcc"
+		}
+	],
+	"stages": [
+		{
+			"uuid": "62dca9c9-52f1-4b12-be5f-b6452adc036e",
+			"title": "Todo",
+			"tasks": [
+				"5a2d37d0-8625-4b33-8f37-0de4814360f7",
+				"50e3d479-db0b-45ef-87fe-fc8f20f67ca5",
+				"df14c301-985a-4287-b3ff-a190f627541f",
+				"6b738e0a-dafc-419f-9e9a-99a2d86368c3",
+				"e3281c13-dbdd-4301-9903-9eac4a13f67f",
+				"e6de74ab-da1e-46d2-ad73-418882192b5a",
+				"f1649e68-55c8-4394-a8a8-903669540d44",
+				"ef9a25df-950f-4d92-baca-77688806a127",
+				"43d1bd7a-eb02-49c2-91c3-1c0e569bac76",
+				"6c4b6b6c-40cd-4056-8abc-d84540898897",
+				"25e39056-f16e-4cb5-88b8-0deaa0e6a02c",
+				"9420965e-1f5b-4225-b84a-f62ee5a4a07b"
+			]
+		},
+		{
+			"uuid": "ef4e123f-f6ea-4e30-8896-4ddd7167fd59",
+			"title": "Doing",
+			"tasks": []
+		},
+		{
+			"uuid": "a590c45f-f6e0-4df4-a178-2596b3213350",
+			"title": "Done on the current Branch",
+			"tasks": [
+				"c2e72a34-046b-4021-a96f-31243b941236",
+				"0ea93d3f-4264-46d0-899b-8f491bc49e12"
+			]
+		},
+		{
+			"uuid": "9573ce0a-9b5d-4fd9-bb69-4b68a3540b99",
+			"title": "DONE => Main Branch",
+			"tasks": [
+				"43606449-076b-49ce-a30e-eb892954dab0",
+				"e80d6fb7-ed59-49d4-bf52-1a35531c423a",
+				"89c9c012-4a18-45cd-8f60-30e67d2f0ed2",
+				"354dfdaa-586c-4e54-82d2-9dbf582eed7d",
+				"23e2a284-4cf7-4d00-bebf-a183f0f2c062",
+				"afb7433f-58e1-4ae4-89ae-da1bae51fcc3",
+				"94a0d064-3f76-4b5f-b538-560865fbc6e3",
+				"ddf6a736-c5a5-477c-af7f-b73a930761a8",
+				"dc07e369-eed8-4971-90d8-5c5d18055007",
+				"90ab2a3a-7d34-41cb-99f6-704629acedc9",
+				"cc1a824d-9731-4bfe-b783-32a295757f3a",
+				"d70debc0-c3c0-4b71-87cd-6f23bb29f8de",
+				"f2df43f3-aab2-4a56-9fa6-798969a50e25",
+				"b23aebfc-e6a5-4d86-8881-6265c6deb40d",
+				"f7f11080-465c-40a8-94cb-5bab8dcf069f",
+				"00cd1f31-6aea-4faf-be9a-509a0b2c9509",
+				"34544e9b-5d4b-4895-92e0-de4f74beb8f7",
+				"97c841d5-cd58-4e53-965d-c88ec9f352a8",
+				"6ca4af24-b6ad-478b-990e-581937db46ad",
+				"2c0adc9d-0212-4e6c-ad48-b30a913bef08",
+				"6b0d8fbc-959c-4d57-9603-1dcc46839721",
+				"ddc4fd00-58cc-4072-b5c8-d1812c1d8f63",
+				"9aeb20f2-4a55-43bc-bd43-55e334445aae",
+				"8e82cbd9-e60c-4121-a3dc-1044880655d9",
+				"993c7f5a-1780-4dbb-bce5-a8f901c38927",
+				"66ed3927-4a0c-483e-b52d-0aae74446177",
+				"290d7423-1974-4607-b656-0c64053f503f",
+				"f63183d9-b7eb-4ab2-83e5-5cb70f0cd183",
+				"21b67a85-e919-4d63-8e6c-818fd3386631",
+				"3ed37afa-e300-4409-9813-66428298beb6",
+				"21a59a3c-50b0-46fc-858b-4b5a4bbb0202",
+				"6cf91bd4-46a9-4812-8127-1535a474b5e0",
+				"a35cc607-7d29-4f3c-9633-2ecfc0337d04",
+				"dd6ef053-6c7b-4e81-9a91-9551d4cdf9aa",
+				"1d935cc9-61b4-42f1-821b-457767f1ff27",
+				"56829527-f6e3-4e1b-9808-94f29cf22761",
+				"c8c7a597-2d5f-408a-a480-d827360de836",
+				"6c3e228a-cd03-4b8b-9eae-897ec041fa82",
+				"d551749a-285e-425f-9d78-79ec14e8f6fe",
+				"fc4904e2-285b-496c-ab4c-0bb839e641fb",
+				"5a9b28ae-b2b7-4c42-bbaf-92f9bb29b137",
+				"78d5f6d7-33e1-4c09-9fb8-0c3f6ad843fe",
+				"a694631a-096b-4d35-8c3c-3aeaf0231ba3",
+				"a1f67e75-dce9-4001-b5e1-557fa377917f",
+				"15a39291-e009-466b-b404-c158c2685ce8",
+				"d51b7aa1-f926-494e-a890-d60158b9b045",
+				"845fd582-a06b-4f2d-aa92-1b505f6966bf",
+				"32dc7578-b58d-4a03-8605-bd90ff90dfe9",
+				"a6a8e93d-8abf-4a1b-806f-a239de6f6c58",
+				"ab33a232-fc26-4768-afa2-3a8f6ff43cce",
+				"3e5fa759-c3bc-4bcf-a47a-04c53ad0c0b0",
+				"b95bc8dc-55d2-454a-954b-b97fc0d81552",
+				"abec2fa3-3772-43d8-89db-ece942c7bc12",
+				"6e54cfb2-28e2-4a51-bcd4-164e7b0e74fa",
+				"bb57965b-6154-4d7f-be50-673de688144c",
+				"701dcdc5-9374-4a49-8cb0-96dcc7d0b9bf",
+				"f1adeab5-e417-47c7-8633-5209d94695ad",
+				"92f4227d-d08f-4741-987c-2b30a66542d7",
+				"aef11ba9-db5e-4885-8427-6d7dc692328a",
+				"0851d9b5-bb2d-4c63-909b-fc4f895f52dc",
+				"8d4b9883-30c8-4b67-a57e-878cd491e94e",
+				"6346eb7a-6639-45d4-9c79-87907c79d812",
+				"04e59212-6cdf-4ea6-ad53-2cd979cff0e7",
+				"f9224b76-3a42-4151-9471-9f46701131a4",
+				"ddf1ca26-4e3e-4352-a9fe-cfff4c150f2f",
+				"62bcc290-c42a-4316-8649-0177a2e9fae5",
+				"90a8a772-7417-46d6-b3fc-2faa4b0aeae6",
+				"784ec9ad-ae00-47df-9d60-c5d68ba660e1",
+				"57c873ff-f5d6-4792-87f7-1b8e1d1b8c1a",
+				"9f4998dd-edc5-4292-91e6-866468bb3714",
+				"a7e48414-8b57-4efd-a95e-51e9acff4388",
+				"c754a410-613f-4203-b562-e3c50d53b3ef",
+				"ca0714b9-0bd7-4619-b563-1a676e3ea349",
+				"ebe1a9ed-d4de-455c-9a7a-f1ba7fbf60c5",
+				"9ee1d74b-39e8-49a4-8951-8ff45fa96470",
+				"21fe0f07-d43c-429c-8c31-b7733617d2d3",
+				"84a65f44-d8ba-4afc-8c6c-1744fd364de7",
+				"8249cc4d-f61c-4fd1-ac9f-90a15e14c74c",
+				"0fc84707-c563-4773-8a6f-21b5e50cf96a",
+				"ae46fa57-87b0-4379-93e6-99a72ba51d16",
+				"c5aa95d7-3772-4e78-bd1c-f8ef148864fb",
+				"86223928-6c22-4490-91be-c9d25f8c908a",
+				"9b9bb209-c94b-416b-bc42-c835bf3e3a46",
+				"90666e2d-746b-454f-8b6e-860193bfe395",
+				"3edc41c8-87e2-416f-afad-64cc11702ba2",
+				"ef08f326-6494-4adb-bb4b-4c6e55fd768d",
+				"ab292ca0-ff5a-46e8-9fa9-f4fca5ddf3d8",
+				"a295d1f6-ceb5-4da7-9794-2205ff0345bf",
+				"6450e2ef-3023-4e71-b482-23a6efbc65d3",
+				"104a5ade-7259-4faa-9986-714c99388e7c",
+				"ddcccdde-a1b1-45c0-b0be-0e62a9732b32",
+				"977a1a7f-0c5e-46c2-881b-d0832387df0f",
+				"15e58b95-794f-44a9-9bca-e215ab43ad85",
+				"459e4cc5-bdca-45af-8bf7-c5d0f49b9cae",
+				"bcc2ae02-8f77-4383-95a2-4a3c86b86da0",
+				"18dfe191-a2d5-4f60-b70a-56f0c2eff096",
+				"6b8b6c3f-5867-4f6f-9d52-a9d3116de9e8",
+				"43a97e77-7d2a-490d-af59-befdca84019e",
+				"9b30e1d4-4f94-4a1c-964b-f3ef97b937e9",
+				"ddc4f679-bdbb-4623-afbf-0c6bc26916ea",
+				"5e68202c-5365-4a2f-b1da-4ec353380f90",
+				"03a0943d-ef71-4cf5-8a74-04136b72877b",
+				"c5f9bd8a-f068-44b4-87ce-d5ed4e948c52",
+				"693a7a71-deb9-4d93-9039-dcafd67f1151",
+				"833c5c32-74fe-4923-9304-2c5719e493cd",
+				"c4845e7c-0d33-407e-bdca-a56c510e8c3b",
+				"19733752-458f-498b-9cc7-c9775811fb40",
+				"a897facb-f36a-4938-b0b9-81fce0bdac38",
+				"930c95ae-7e4f-40e6-bdcf-f369328fa44e",
+				"67bb8bdd-e408-4301-89a0-f7ff8e74fd76",
+				"5d66446b-aa83-4c93-a193-90fabc4d31d0",
+				"76cf4dd4-ff46-49fc-83a3-cc2f0cf0d5ed",
+				"587c9cd2-2eb2-447b-8941-1b10411b13de",
+				"eb493282-215b-426c-be68-82456c28be0c",
+				"350f3b4f-1d45-4202-974f-f3ffc719d704",
+				"ed285062-a716-4b1d-b7d2-db939c56e31d",
+				"f294d3cd-dd16-422f-8059-97eee7ad8449",
+				"17a8f500-0e84-42e4-a214-49137367e69e",
+				"0942ac7d-6ff3-4bfc-acd8-c409752e4a83",
+				"fa890a03-de62-4f8e-be8b-e65caa650d09",
+				"8c6dfec4-eedd-42ea-9f48-199dcbb3e629",
+				"35c387fc-4a7d-4c52-8913-7ef4c5b6f20e",
+				"ed715546-90c9-4ad6-84a6-1a0d42bea220",
+				"874b06ed-716f-40ba-8f20-960ebb9fc5d0",
+				"196e9307-7d96-4344-9559-7f008371794b",
+				"cd204d35-b606-4a0c-b45d-509b197a0013",
+				"2564e2f8-0e47-4e11-8fb8-3f02d818f32a",
+				"7b5f98ab-da4c-4032-a098-b93c51fc56de",
+				"e26c5c03-6565-4734-a649-5b5e44c94863",
+				"c0fc68f7-63a3-4ded-8feb-a019f41a3f64",
+				"7572ee20-a304-4b0a-b228-c47959e25390",
+				"0abb60cb-6cc0-443b-b542-b86ea178f35e",
+				"79ad663c-8479-4f81-ad9e-e6093d5abd3b",
+				"4b2d206f-31d2-4c04-bd95-ee026178d450",
+				"506e5da3-ff98-4e99-bbdc-f9b7006885a3",
+				"3cfadb07-08f7-424f-a447-be4394e2414c",
+				"373293ec-0393-465b-9665-7c3525b90376",
+				"fa52e74f-6f62-4330-9d2b-5662cf848669",
+				"90e659e0-bc90-4de5-b690-88fc18381f31",
+				"f946c95c-6c3e-4efe-b293-93b2c7df05f9",
+				"4c305654-38e5-4c5c-8094-87b8a377be7a"
+			]
+		},
+		{
+			"uuid": "2f4f560c-cf56-4687-bdad-86e9f71d5e9f",
+			"title": "CheatSheet",
+			"tasks": [
+				"a3dbca31-e7bc-44c7-9147-295699869e5d",
+				"37f51636-6211-4f39-b23e-3dd8b8db719d",
+				"45bae00e-fa49-4086-b39c-ef1d74825c71",
+				"a8e8d672-e24b-4c2e-bb09-fa20f0cf6849",
+				"9b59f8f2-d054-45d6-bd9a-6a574d9f6983"
+			]
+		}
+	],
+	"tasks": [
+		{
+			"uuid": "35c387fc-4a7d-4c52-8913-7ef4c5b6f20e",
+			"title": "ASSET HUD : Player HP bar",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "0fc84707-c563-4773-8a6f-21b5e50cf96a",
+			"title": "ASSET collectible : Cheese : collect 3 cheeses / level to gain a max HP",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": [
+				{
+					"details": "Create Sprite",
+					"done": true
+				},
+				{
+					"details": "Create Scene",
+					"done": true
+				},
+				{
+					"details": "Add Hovering Component",
+					"done": true
+				},
+				{
+					"details": "Create script for add 1 max HP when 3 are collected",
+					"done": true
+				}
+			]
+		},
+		{
+			"uuid": "874b06ed-716f-40ba-8f20-960ebb9fc5d0",
+			"title": "CODE : Invincibility frame",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "196e9307-7d96-4344-9559-7f008371794b",
+			"title": "ASSET : Snow Forest Tileset (with slopes)",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "cd204d35-b606-4a0c-b45d-509b197a0013",
+			"title": "ASSET : shrink HP heart by two",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "0942ac7d-6ff3-4bfc-acd8-c409752e4a83",
+			"title": "CAMERA : define values for the map in order to constraint the camera",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "79ad663c-8479-4f81-ad9e-e6093d5abd3b",
+			"title": "ASSET TRAP : Stalagtites",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "4b2d206f-31d2-4c04-bd95-ee026178d450",
+			"title": "ASSET TRAP : Stalagmites",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "7b5f98ab-da4c-4032-a098-b93c51fc56de",
+			"title": "Jump when sliding",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "2564e2f8-0e47-4e11-8fb8-3f02d818f32a",
+			"title": "Sliding",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "e26c5c03-6565-4734-a649-5b5e44c94863",
+			"title": "PARTICLES : Running / Sliding / Jumping / Landing",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "4c305654-38e5-4c5c-8094-87b8a377be7a",
+			"title": "TILESET : long slope : review the physics layer and move the sprite!",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "c0fc68f7-63a3-4ded-8feb-a019f41a3f64",
+			"title": "HURT MECANIC : retain the last position? Necessary?",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "7572ee20-a304-4b0a-b228-c47959e25390",
+			"title": "Checkpoint System",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "fa52e74f-6f62-4330-9d2b-5662cf848669",
+			"title": "Knockback effect : smooth it out with a tween?",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "0abb60cb-6cc0-443b-b542-b86ea178f35e",
+			"title": "ANIMATION : Hurt",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "506e5da3-ff98-4e99-bbdc-f9b7006885a3",
+			"title": "BUG : when dying - respawn doesn't work",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "373293ec-0393-465b-9665-7c3525b90376",
+			"title": "Respawn after falling pit",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "3cfadb07-08f7-424f-a447-be4394e2414c",
+			"title": "ASSET : Hot Chocolate Mug for Checkpoint",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "eb493282-215b-426c-be68-82456c28be0c",
+			"title": "ORGA : add the collectibles to tilemapLayer",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "90e659e0-bc90-4de5-b690-88fc18381f31",
+			"title": "BUG : slide when falling from platform",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "ed715546-90c9-4ad6-84a6-1a0d42bea220",
+			"title": "Checkpoint System with animation",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "350f3b4f-1d45-4202-974f-f3ffc719d704",
+			"title": "Animation to collectibles",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "108ba309-9640-4730-823e-c8b87a439d62",
+			"title": "BUG : camera not smooth when sliding",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "17a8f500-0e84-42e4-a214-49137367e69e",
+			"title": "IDEA : speed increases as sliding",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "f946c95c-6c3e-4efe-b293-93b2c7df05f9",
+			"title": "Stalagmites collision shapes",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "587c9cd2-2eb2-447b-8941-1b10411b13de",
+			"title": "IDEA : Jump force bigger when sliding",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "76cf4dd4-ff46-49fc-83a3-cc2f0cf0d5ed",
+			"title": "TRAP : Stalagtite falling",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "5d66446b-aa83-4c93-a193-90fabc4d31d0",
+			"title": "Review the way Traps are organised : stalagmites should inherited from KnockBackClass, etc and I can add them in the hurt_component",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "f294d3cd-dd16-422f-8059-97eee7ad8449",
+			"title": "Falling Stalatite  : review the sprite to cover",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "104a5ade-7259-4faa-9986-714c99388e7c",
+			"title": "ASSET : Snowboots item",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "ed285062-a716-4b1d-b7d2-db939c56e31d",
+			"title": "Make another layer for traps",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "fa890a03-de62-4f8e-be8b-e65caa650d09",
+			"title": "Prepare Stalagmite Vertical",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "8c6dfec4-eedd-42ea-9f48-199dcbb3e629",
+			"title": "Pit",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "58ff42ce-3cee-4c14-9c08-6882dc5dc134",
+			"title": "Platforms",
+			"description": "",
+			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
+			"steps": []
+		},
+		{
+			"uuid": "833c5c32-74fe-4923-9304-2c5719e493cd",
+			"title": "Moving Platforms component? H and V",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "5e68202c-5365-4a2f-b1da-4ec353380f90",
+			"title": "Sliding without boots",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "ddc4f679-bdbb-4623-afbf-0c6bc26916ea",
+			"title": "Trap : snowballs",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "03a0943d-ef71-4cf5-8a74-04136b72877b",
+			"title": "Another Layer for Embelishment/Decor",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "c5f9bd8a-f068-44b4-87ce-d5ed4e948c52",
+			"title": "Review : respawn initialisation",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "a897facb-f36a-4938-b0b9-81fce0bdac38",
+			"title": "BUG : Respawn after spikes",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "693a7a71-deb9-4d93-9039-dcafd67f1151",
+			"title": "able to move camera up and down : it's bugging : go with 2 STATES",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "57c873ff-f5d6-4792-87f7-1b8e1d1b8c1a",
+			"title": "Start Screen",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "c4845e7c-0d33-407e-bdca-a56c510e8c3b",
+			"title": "Easily editable moving platforms",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "19733752-458f-498b-9cc7-c9775811fb40",
+			"title": "Vertical / Horizontal Moving Platforms",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "930c95ae-7e4f-40e6-bdcf-f369328fa44e",
+			"title": "BUG : tween when hurt => I must stop tween before changing the position",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "67bb8bdd-e408-4301-89a0-f7ff8e74fd76",
+			"title": "ORGA : rearrange the Level System",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "ddcccdde-a1b1-45c0-b0be-0e62a9732b32",
+			"title": "ASSET : Treasure Chest (opened and closed)",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "bcc2ae02-8f77-4383-95a2-4a3c86b86da0",
+			"title": "ASSET : Animation for BOOTS and GLOVES",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "977a1a7f-0c5e-46c2-881b-d0832387df0f",
+			"title": "ASSET : Animation for SNOWHAT",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "15e58b95-794f-44a9-9bca-e215ab43ad85",
+			"title": "ASSET : Animation for SNOWSUIT",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "459e4cc5-bdca-45af-8bf7-c5d0f49b9cae",
+			"title": "ASSET : Animation for MUFFLER",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "18dfe191-a2d5-4f60-b70a-56f0c2eff096",
+			"title": "Add Treasure Chest to game : Scene created",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "6b8b6c3f-5867-4f6f-9d52-a9d3116de9e8",
+			"title": "Chest : open/close",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "43a97e77-7d2a-490d-af59-befdca84019e",
+			"title": "Change decel/accel : Global Signal + Global Bool",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "9b30e1d4-4f94-4a1c-964b-f3ef97b937e9",
+			"title": "Animation : BOOTS/GLOVES added : Global signal + visibility TRUE in Animation component",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "3edc41c8-87e2-416f-afad-64cc11702ba2",
+			"title": "Adding AnimSprite : Muffler",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "ef08f326-6494-4adb-bb4b-4c6e55fd768d",
+			"title": "Adding AnimSprite : SnowHat",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "6450e2ef-3023-4e71-b482-23a6efbc65d3",
+			"title": "Adding AnimSprite : SnowSuit",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "a295d1f6-ceb5-4da7-9794-2205ff0345bf",
+			"title": "Treasure : boots/Gloves/Suit ",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "ab292ca0-ff5a-46e8-9fa9-f4fca5ddf3d8",
+			"title": "Treasure : SnowHat ",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "90666e2d-746b-454f-8b6e-860193bfe395",
+			"title": "Treasure : Muffler",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "9b9bb209-c94b-416b-bc42-c835bf3e3a46",
+			"title": "Added : Instance Dock Plugin",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "21fe0f07-d43c-429c-8c31-b7733617d2d3",
+			"title": "Préparer ASSET fin niveau",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "86223928-6c22-4490-91be-c9d25f8c908a",
+			"title": "Vitesse stalagtite tombante paramétrable",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "c5aa95d7-3772-4e78-bd1c-f8ef148864fb",
+			"title": "BUG : stalagtite tombante disparaissent quand respawn : Cause : On Screen Notifier. 2 solutions : collision with Tilemap OR Timer",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "ae46fa57-87b0-4379-93e6-99a72ba51d16",
+			"title": "Déplacer BouleDeNeige dans Instance Docks pour pouvoir modifier le temps d'apparition",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "8249cc4d-f61c-4fd1-ac9f-90a15e14c74c",
+			"title": "Revoir : BouleDeNeige car quand tombe tout droit : pas de movment au sol",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "84a65f44-d8ba-4afc-8c6c-1744fd364de7",
+			"title": "REvoir B2Neige : changer les paramètre dans le spawner",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "9ee1d74b-39e8-49a4-8951-8ff45fa96470",
+			"title": "Intégrer l'ASSET de fin et de début de niveau",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "ddf1ca26-4e3e-4352-a9fe-cfff4c150f2f",
+			"title": "Congratulation Menu : go from Level1 to Level2",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "04e59212-6cdf-4ea6-ad53-2cd979cff0e7",
+			"title": "Power : hat : can glide",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "f9224b76-3a42-4151-9471-9f46701131a4",
+			"title": "Power : suit : can wall jump when suit on",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "5a2d37d0-8625-4b33-8f37-0de4814360f7",
+			"title": "Power : muffler : ????",
+			"description": "",
+			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
+			"steps": []
+		},
+		{
+			"uuid": "ebe1a9ed-d4de-455c-9a7a-f1ba7fbf60c5",
+			"title": "ASSET : Sign Start Level",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "ca0714b9-0bd7-4619-b563-1a676e3ea349",
+			"title": "Integrate Sign Start Level : handled by Main : spawn the player at the right position",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "c754a410-613f-4203-b562-e3c50d53b3ef",
+			"title": "Change level : global signal handled by Main",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "90a8a772-7417-46d6-b3fc-2faa4b0aeae6",
+			"title": "HUD : Cheese",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "a7e48414-8b57-4efd-a95e-51e9acff4388",
+			"title": "BUG : When player hasn't checked point yet, where does it spawn?",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "9f4998dd-edc5-4292-91e6-866468bb3714",
+			"title": "BUG : Chests : float in the air!!",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "50e3d479-db0b-45ef-87fe-fc8f20f67ca5",
+			"title": "SOUNDS",
+			"description": "",
+			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
+			"steps": []
+		},
+		{
+			"uuid": "df14c301-985a-4287-b3ff-a190f627541f",
+			"title": "MUSIC",
+			"description": "",
+			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
+			"steps": []
+		},
+		{
+			"uuid": "6e54cfb2-28e2-4a51-bcd4-164e7b0e74fa",
+			"title": "Enemy : Snowman",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": [
+				{
+					"details": "mouvement - Patrol",
+					"done": true
+				},
+				{
+					"details": "animation",
+					"done": true
+				},
+				{
+					"details": "hurt module",
+					"done": true
+				},
+				{
+					"details": "kill module",
+					"done": true
+				},
+				{
+					"details": "patrol platform",
+					"done": true
+				}
+			]
+		},
+		{
+			"uuid": "e6de74ab-da1e-46d2-ad73-418882192b5a",
+			"title": "Story",
+			"description": "",
+			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
+			"steps": []
+		},
+		{
+			"uuid": "784ec9ad-ae00-47df-9d60-c5d68ba660e1",
+			"title": "Redo : HUD Heart",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "62bcc290-c42a-4316-8649-0177a2e9fae5",
+			"title": "BUG : Congrats screen is hidden : need to change camera position?",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "6346eb7a-6639-45d4-9c79-87907c79d812",
+			"title": "Glide : only with hat",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "8d4b9883-30c8-4b67-a57e-878cd491e94e",
+			"title": "Gliding hat animation",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "f1adeab5-e417-47c7-8633-5209d94695ad",
+			"title": "BUG : can wall jump while gliding",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "92f4227d-d08f-4741-987c-2b30a66542d7",
+			"title": "BUG : Ajouter Pompom glide",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "aef11ba9-db5e-4885-8427-6d7dc692328a",
+			"title": "Boule de neige disparaissent trop vite",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "f1649e68-55c8-4394-a8a8-903669540d44",
+			"title": "ASSET : parois blanches pour wall jump",
+			"description": "",
+			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
+			"steps": []
+		},
+		{
+			"uuid": "6b738e0a-dafc-419f-9e9a-99a2d86368c3",
+			"title": "Enemy : corbeau",
+			"description": "",
+			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
+			"steps": []
+		},
+		{
+			"uuid": "701dcdc5-9374-4a49-8cb0-96dcc7d0b9bf",
+			"title": "BUG : when releasing up button : should revert to falling animation",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "0851d9b5-bb2d-4c63-909b-fc4f895f52dc",
+			"title": "BUG : Improve wall jump",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "ef9a25df-950f-4d92-baca-77688806a127",
+			"title": "allow wall_jumps on specific surface?",
+			"description": "",
+			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
+			"steps": []
+		},
+		{
+			"uuid": "bb57965b-6154-4d7f-be50-673de688144c",
+			"title": "revoir Function Knockback",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "845fd582-a06b-4f2d-aa92-1b505f6966bf",
+			"title": "Enemy : snowcanon",
+			"description": "Revision du système d'élimination des enemies : \n1. Création d'un StompBox dans Player (AREA2D)\n2. Création groupe Player_StompBox\n3. Chaque enemie check sa propre \"deadzone\" avec le Player_StompBox pour déterminer l'élimination.\n\n=> REBOUND now in Player.gd\n",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": [
+				{
+					"details": "Animation : Move RIght and Move Left",
+					"done": true
+				},
+				{
+					"details": "Animation : hurt",
+					"done": true
+				},
+				{
+					"details": "Animation : shoot",
+					"done": true
+				},
+				{
+					"details": "Animation : Detect\n",
+					"done": true
+				},
+				{
+					"details": "Movement : Patrol",
+					"done": true
+				},
+				{
+					"details": "Shoot snowballs : code\n",
+					"done": true
+				},
+				{
+					"details": "patrol platforms",
+					"done": true
+				},
+				{
+					"details": "Bugs fix",
+					"done": true
+				},
+				{
+					"details": "snowball_proj must hit",
+					"done": true
+				},
+				{
+					"details": "shooting_animation coordonated",
+					"done": true
+				}
+			]
+		},
+		{
+			"uuid": "abec2fa3-3772-43d8-89db-ece942c7bc12",
+			"title": "SEE : Collision Layers (enemies bump into each other)",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "45bae00e-fa49-4086-b39c-ef1d74825c71",
+			"title": "Collision Layers",
+			"description": "Cheat Sheet for Collision Layers and Masks. \nPlayer : 2 \nWorld : 1\nEnemies : 3",
+			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
+			"steps": []
+		},
+		{
+			"uuid": "a8e8d672-e24b-4c2e-bb09-fa20f0cf6849",
+			"title": "Visibility Order",
+			"description": "CheatSheet for Visibility Order : \nPlayer : 10\nEnemies : 5\nTilemaps : \n__Level : 1\n__\tObjects : 2\n__Pièges : 0\n__Décor : -1",
+			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
+			"steps": []
+		},
+		{
+			"uuid": "3e5fa759-c3bc-4bcf-a47a-04c53ad0c0b0",
+			"title": "When enemy dies : scale down",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "b95bc8dc-55d2-454a-954b-b97fc0d81552",
+			"title": "SEE : Visibility order CheatSheet",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "ab33a232-fc26-4768-afa2-3a8f6ff43cce",
+			"title": "BUG : enemies falling from platform when bumping into player",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "a6a8e93d-8abf-4a1b-806f-a239de6f6c58",
+			"title": "BUG : Revoir Level Complete Screen",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "32dc7578-b58d-4a03-8605-bd90ff90dfe9",
+			"title": "BUG : REvoir Start Screen",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "a1f67e75-dce9-4001-b5e1-557fa377917f",
+			"title": "wall slide",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "d51b7aa1-f926-494e-a890-d60158b9b045",
+			"title": "make new collision layers for hurtbox and hitbox",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "15a39291-e009-466b-b404-c158c2685ce8",
+			"title": "REWRITE PLAYER SCENE",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": [
+				{
+					"details": "Move left / right",
+					"done": true
+				},
+				{
+					"details": "Jump",
+					"done": true
+				},
+				{
+					"details": "Coyote Jump",
+					"done": true
+				},
+				{
+					"details": "Jump Buffer",
+					"done": true
+				},
+				{
+					"details": "Slide",
+					"done": true
+				},
+				{
+					"details": "Glide",
+					"done": true
+				},
+				{
+					"details": "Wall Jump",
+					"done": true
+				},
+				{
+					"details": "Wall slide",
+					"done": true
+				},
+				{
+					"details": "Animation",
+					"done": true
+				},
+				{
+					"details": "gravity",
+					"done": true
+				},
+				{
+					"details": "ice_accel / decel",
+					"done": true
+				},
+				{
+					"details": "boots_accel / decel",
+					"done": true
+				},
+				{
+					"details": "Particles",
+					"done": true
+				},
+				{
+					"details": "wall slide animation",
+					"done": true
+				},
+				{
+					"details": "jumping from slide",
+					"done": true
+				},
+				{
+					"details": "hurt animation to implement",
+					"done": true
+				},
+				{
+					"details": "health system",
+					"done": true
+				},
+				{
+					"details": "hurt system",
+					"done": true
+				},
+				{
+					"details": "Invincibility frame after HURT",
+					"done": true
+				},
+				{
+					"details": "safe_position",
+					"done": true
+				}
+			]
+		},
+		{
+			"uuid": "00cd1f31-6aea-4faf-be9a-509a0b2c9509",
+			"title": "GAME OVER Screen",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "78d5f6d7-33e1-4c09-9fb8-0c3f6ad843fe",
+			"title": "Review Moving Platform with Pathfollow",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "9b59f8f2-d054-45d6-bd9a-6a574d9f6983",
+			"title": "Upgrades",
+			"description": "❄️ Player Gear & Abilities Reference\n🥾 Snow Boots\nWall Jump: Enables jumping off walls.\n\nIcy Patch Control: Reduces slipperiness on icy surfaces.\n\nOptional (later): Power Stomp – A downward attack to break floors or stun enemies.\n\n🎩 Snow Hat\nGlide: Slows falling, helps cross long gaps.\n\nWind Navigation (Planned): Allows movement through windy areas or wind puzzles.\n\n🧥 Snowsuit\nCold Resistance: Grants access to harsh/freezing zones.\n\nBasic Dash: A short, straight dash (ground or air). No directional control.\n\n🧣 Snow Muffler\nWind Breath:\n\nEnables 8-directional dash (ground or air).\n\nCan push light objects (optional).\n\nSynergy: Upgrades basic dash from Snowsuit into a flexible mobility/combat tool.\n\n",
+			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
+			"steps": []
+		},
+		{
+			"uuid": "a694631a-096b-4d35-8c3c-3aeaf0231ba3",
+			"title": "Ice_patches!",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "fc4904e2-285b-496c-ab4c-0bb839e641fb",
+			"title": "Review SnowMan",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "5a9b28ae-b2b7-4c42-bbaf-92f9bb29b137",
+			"title": "icy dust on icy_patches",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "d551749a-285e-425f-9d78-79ec14e8f6fe",
+			"title": "safe position update doesn't need to happen if don't move",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "c8c7a597-2d5f-408a-a480-d827360de836",
+			"title": "review SnowCannon Enemy code",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": [
+				{
+					"details": "bug death",
+					"done": true
+				},
+				{
+					"details": "redo particles",
+					"done": true
+				},
+				{
+					"details": "do hit stop",
+					"done": true
+				}
+			]
+		},
+		{
+			"uuid": "6c3e228a-cd03-4b8b-9eae-897ec041fa82",
+			"title": "build SnowMole Enemy",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": [
+				{
+					"details": "1. IDLE : switch between 2 mounds",
+					"done": true
+				},
+				{
+					"details": "2. When detect player : jump",
+					"done": true
+				},
+				{
+					"details": "3. Fall back into mound",
+					"done": true
+				},
+				{
+					"details": "random jumps",
+					"done": true
+				},
+				{
+					"details": "random mounds",
+					"done": true
+				},
+				{
+					"details": "particles",
+					"done": true
+				},
+				{
+					"details": "create Death animation",
+					"done": true
+				},
+				{
+					"details": "implement death",
+					"done": true
+				}
+			]
+		},
+		{
+			"uuid": "25e39056-f16e-4cb5-88b8-0deaa0e6a02c",
+			"title": "deactivate the stompbox when player hit",
+			"description": "",
+			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"steps": []
+		},
+		{
+			"uuid": "7020b763-c45c-43fd-8c31-0938906e67d2",
+			"title": "New task",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "a35cc607-7d29-4f3c-9633-2ecfc0337d04",
+			"title": "Enemies should collide and turn around when touching stalagmites",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "1d935cc9-61b4-42f1-821b-457767f1ff27",
+			"title": "BUG : can be hit while dead so respawn with 2 hearts instead of 3 (FIXED)",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "e3281c13-dbdd-4301-9903-9eac4a13f67f",
+			"title": "enemy : air",
+			"description": "",
+			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
+			"steps": []
+		},
+		{
+			"uuid": "56829527-f6e3-4e1b-9808-94f29cf22761",
+			"title": "BUG : snowball don't hit (FIXED)",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "dd6ef053-6c7b-4e81-9a91-9551d4cdf9aa",
+			"title": "Modifiable statalgmite (see instances)",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "6cf91bd4-46a9-4812-8127-1535a474b5e0",
+			"title": "Problem : enemies don't respawn after the death of the player",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "21a59a3c-50b0-46fc-858b-4b5a4bbb0202",
+			"title": "BUG : enemies spawn multiple times when player dies : need to check if the enemy was killed. Yes? respawn. No? don't",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "f63183d9-b7eb-4ab2-83e5-5cb70f0cd183",
+			"title": "BUG : Snowballs hits multiple times!",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "8e82cbd9-e60c-4121-a3dc-1044880655d9",
+			"title": "Trap : ice geyser",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "993c7f5a-1780-4dbb-bce5-a8f901c38927",
+			"title": "Trap : spikes thrower",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": [
+				{
+					"details": "Kill Throwing Spikes when jump on it",
+					"done": true
+				}
+			]
+		},
+		{
+			"uuid": "66ed3927-4a0c-483e-b52d-0aae74446177",
+			"title": "bug : Fallingstalagtite + spikes don't disappear when hit player",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "290d7423-1974-4607-b656-0c64053f503f",
+			"title": "Added : Geyser - Horizontal",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "3ed37afa-e300-4409-9813-66428298beb6",
+			"title": "Berries : collectibles",
+			"description": "frostberry don't respawn on death\ncheckpoint : save the current number of frostberry",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": [
+				{
+					"details": "Create AREA2D",
+					"done": true
+				},
+				{
+					"details": "can be picked and counted",
+					"done": true
+				},
+				{
+					"details": "HUD",
+					"done": true
+				},
+				{
+					"details": "light effect",
+					"done": true
+				}
+			]
+		},
+		{
+			"uuid": "97c841d5-cd58-4e53-965d-c88ec9f352a8",
+			"title": "Number of Lives System",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": [
+				{
+					"details": "HUD",
+					"done": true
+				},
+				{
+					"details": "If <= 0 : Game Over Screen",
+					"done": true
+				}
+			]
+		},
+		{
+			"uuid": "f2df43f3-aab2-4a56-9fa6-798969a50e25",
+			"title": "Modify SpikeThrower design",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "21b67a85-e919-4d63-8e6c-818fd3386631",
+			"title": "HUD",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "ddc4fd00-58cc-4072-b5c8-d1812c1d8f63",
+			"title": "add light effects to objects",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": [
+				{
+					"details": "chests",
+					"done": true
+				},
+				{
+					"details": "cheese",
+					"done": true
+				},
+				{
+					"details": "checkpoints",
+					"done": true
+				},
+				{
+					"details": "heart",
+					"done": true
+				}
+			]
+		},
+		{
+			"uuid": "9aeb20f2-4a55-43bc-bd43-55e334445aae",
+			"title": "random floating start for bobbing collectibles",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "6b0d8fbc-959c-4d57-9603-1dcc46839721",
+			"title": "endlevelcheckpoint light",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "2c0adc9d-0212-4e6c-ad48-b30a913bef08",
+			"title": "Hide HUD on congrats Screen",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "6ca4af24-b6ad-478b-990e-581937db46ad",
+			"title": "Reveal HUD on start Level",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "34544e9b-5d4b-4895-92e0-de4f74beb8f7",
+			"title": "investigate : CongratsScreen Camera",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "f7f11080-465c-40a8-94cb-5bab8dcf069f",
+			"title": "REWORKED the whole game loop",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "b23aebfc-e6a5-4d86-8881-6265c6deb40d",
+			"title": "Transitions between game states",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": [
+				{
+					"details": "1. Create transitions + Test",
+					"done": true
+				},
+				{
+					"details": "2. Create transitions for End_level_chekpoint to CongratsScreen",
+					"done": true
+				},
+				{
+					"details": "3. Create transitions for CongratsScreen to next_level\n",
+					"done": true
+				},
+				{
+					"details": "4. Create transitions for CongratsScreen to retry",
+					"done": true
+				},
+				{
+					"details": "5. Create transitions from death to game_over",
+					"done": true
+				},
+				{
+					"details": "6. Create transitions from  game_over to retry",
+					"done": true
+				},
+				{
+					"details": "7. Create transitions from  game_over to Start Menu",
+					"done": true
+				}
+			]
+		},
+		{
+			"uuid": "43d1bd7a-eb02-49c2-91c3-1c0e569bac76",
+			"title": "BUG : when hurt : slow mo doesn't stop",
+			"description": "",
+			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
+			"steps": []
+		},
+		{
+			"uuid": "d70debc0-c3c0-4b71-87cd-6f23bb29f8de",
+			"title": "Improvement Start Screen : moon",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "cc1a824d-9731-4bfe-b783-32a295757f3a",
+			"title": "falling icycles : shake",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "37f51636-6211-4f39-b23e-3dd8b8db719d",
+			"title": "LEVEL1 : ",
+			"description": "",
+			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
+			"steps": [
+				{
+					"details": "pits",
+					"done": false
+				},
+				{
+					"details": "spikes",
+					"done": false
+				},
+				{
+					"details": "falling spikes",
+					"done": false
+				},
+				{
+					"details": "Snowball",
+					"done": false
+				},
+				{
+					"details": "ENEMY : Snowman",
+					"done": false
+				},
+				{
+					"details": "ENEMY : Spike Thrower",
+					"done": false
+				},
+				{
+					"details": "Part1 : Introduction - easy",
+					"done": false
+				},
+				{
+					"details": "Part2 - ",
+					"done": false
+				}
+			]
+		},
+		{
+			"uuid": "354dfdaa-586c-4e54-82d2-9dbf582eed7d",
+			"title": "Penguins enemy?",
+			"description": "Behaviour : \n1.Wait and slide on the ground when the player approaches\n2. Slide down slopes? (but same as snowballs)\n3. jump and slide?",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "6c4b6b6c-40cd-4056-8abc-d84540898897",
+			"title": "Level1",
+			"description": "",
+			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
+			"steps": []
+		},
+		{
+			"uuid": "dc07e369-eed8-4971-90d8-5c5d18055007",
+			"title": "Bloc with reward (heart or fruit)",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "afb7433f-58e1-4ae4-89ae-da1bae51fcc3",
+			"title": "BUG : Game_over screen / Retry",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "ddf6a736-c5a5-477c-af7f-b73a930761a8",
+			"title": "BUG : nb of lives when game_over / StartScreen",
+			"description": "Reset : number of lives + number of Fruits + Cheese on game_over",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "a3dbca31-e7bc-44c7-9147-295699869e5d",
+			"title": "Tutorial",
+			"description": "Create signs for : ",
+			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
+			"steps": [
+				{
+					"details": "Jump",
+					"done": false
+				},
+				{
+					"details": "Slide down Slopes",
+					"done": false
+				},
+				{
+					"details": "Kill enemies",
+					"done": false
+				}
+			]
+		},
+		{
+			"uuid": "94a0d064-3f76-4b5f-b538-560865fbc6e3",
+			"title": "Giftbox polish",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": [
+				{
+					"details": "Hoover",
+					"done": true
+				},
+				{
+					"details": "transform heart when full into 5 frostberries",
+					"done": true
+				},
+				{
+					"details": "light",
+					"done": true
+				}
+			]
+		},
+		{
+			"uuid": "90ab2a3a-7d34-41cb-99f6-704629acedc9",
+			"title": "on death enemies give random gift",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "23e2a284-4cf7-4d00-bebf-a183f0f2c062",
+			"title": "enemy : Angry Snowman",
+			"description": "when jump on head : spawn 2 small snowmen enemies",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": [
+				{
+					"details": "1. Create SuperSnowman spawning point to test things",
+					"done": true
+				}
+			]
+		},
+		{
+			"uuid": "9420965e-1f5b-4225-b84a-f62ee5a4a07b",
+			"title": "BUG: on enemy from the left?? Rebound",
+			"description": "",
+			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"steps": []
+		},
+		{
+			"uuid": "89c9c012-4a18-45cd-8f60-30e67d2f0ed2",
+			"title": "Sleigh Level!",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": [
+				{
+					"details": "spawn proper player for levels",
+					"done": true
+				},
+				{
+					"details": "rotate player on spawn\n",
+					"done": true
+				},
+				{
+					"details": "rotate enemies on spawn",
+					"done": true
+				},
+				{
+					"details": "integrate level rotation to system",
+					"done": true
+				},
+				{
+					"details": "player sled : high jump / small jump",
+					"done": true
+				},
+				{
+					"details": "player deadzone not working",
+					"done": true
+				},
+				{
+					"details": "rewrite the code in the Player script",
+					"done": true
+				},
+				{
+					"details": "player mode tied to level (in dict)",
+					"done": true
+				},
+				{
+					"details": "player mode : SLED animations + Jump",
+					"done": true
+				},
+				{
+					"details": "particle BRAKE",
+					"done": true
+				},
+				{
+					"details": "PB : no possibility to jump when braking",
+					"done": true
+				}
+			]
+		},
+		{
+			"uuid": "e80d6fb7-ed59-49d4-bf52-1a35531c423a",
+			"title": "BUG : safe position",
+			"description": "Sometimes : respawn too close to the pit to jump...Maybe there's a delay for the input to respond? \nOr make the respawn position - an offset? ",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "43606449-076b-49ce-a30e-eb892954dab0",
+			"title": "BUG with check SpaceState",
+			"description": "",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
+			"steps": []
+		},
+		{
+			"uuid": "0ea93d3f-4264-46d0-899b-8f491bc49e12",
+			"title": "BUG : when lifes and die : should restart from checkpoint",
+			"description": "",
+			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"steps": []
+		},
+		{
+			"uuid": "c2e72a34-046b-4021-a96f-31243b941236",
+			"title": "Show Continue Screen",
+			"description": "",
+			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"steps": []
+		}
+	],
+	"layout": {
+		"columns": [
+			[
+				"62dca9c9-52f1-4b12-be5f-b6452adc036e"
+			],
+			[
+				"ef4e123f-f6ea-4e30-8896-4ddd7167fd59"
+			],
+			[
+				"a590c45f-f6e0-4df4-a178-2596b3213350"
+			],
+			[
+				"9573ce0a-9b5d-4fd9-bb69-4b68a3540b99"
+			],
+			[
+				"2f4f560c-cf56-4687-bdad-86e9f71d5e9f"
+			]
+		]
+	}
+}

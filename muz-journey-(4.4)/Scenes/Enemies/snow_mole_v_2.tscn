@@ -1,0 +1,245 @@
+[gd_scene load_steps=25 format=3 uid="uid://clfpnmetsqo8h"]
+
+[ext_resource type="Script" uid="uid://bgnjxmtlf2ns4" path="res://Scripts/Enemies/snow_mole_with_mounds_V2.gd" id="1_80r1u"]
+[ext_resource type="Texture2D" uid="uid://crio55m60j1ac" path="res://Assets/Enemies/SnowMole/SnowMoleV2/SnowMole_IDLE.png" id="1_ce5q5"]
+[ext_resource type="Texture2D" uid="uid://c7c8t8fs6qfwe" path="res://Assets/Enemies/SnowMole/SnowMoleV2/SnowMole_JUMP.png" id="2_sp11u"]
+[ext_resource type="Texture2D" uid="uid://bb5lww05fn8lf" path="res://Assets/Enemies/SnowMole/SnowMoleV2/SnowMole_DEATH.png" id="3_patd1"]
+[ext_resource type="Texture2D" uid="uid://cawq62ys23tg7" path="res://Assets/Enemies/SnowMole/mound_V2.png" id="4_80r1u"]
+[ext_resource type="Script" uid="uid://c6dcvl7ynfcrq" path="res://Scripts/Enemies/hitbox.gd" id="5_7tded"]
+[ext_resource type="Script" uid="uid://vd7tu4wfujqn" path="res://Scripts/Enemies/dead_zone.gd" id="5_fw268"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fw268"]
+atlas = ExtResource("2_sp11u")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_patd1"]
+atlas = ExtResource("2_sp11u")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_frktr"]
+atlas = ExtResource("2_sp11u")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xrboh"]
+atlas = ExtResource("2_sp11u")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2euq0"]
+atlas = ExtResource("2_sp11u")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kxp3v"]
+atlas = ExtResource("2_sp11u")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ueyon"]
+atlas = ExtResource("2_sp11u")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nrqho"]
+atlas = ExtResource("3_patd1")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_80r1u"]
+atlas = ExtResource("1_ce5q5")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7tded"]
+atlas = ExtResource("1_ce5q5")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_patd1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fw268")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_patd1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_frktr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xrboh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2euq0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kxp3v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ueyon")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nrqho")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nrqho")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nrqho")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nrqho")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nrqho")
+}],
+"loop": false,
+"name": &"death",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_80r1u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7tded")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ce5q5"]
+radius = 3.93979
+height = 8.07758
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_patd1"]
+size = Vector2(2.3997, 20.3205)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fw268"]
+size = Vector2(2.3997, 20.3205)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xrboh"]
+size = Vector2(13.2906, 1.84592)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_frktr"]
+size = Vector2(8.73735, 3.13806)
+
+[sub_resource type="Gradient" id="Gradient_fw268"]
+offsets = PackedFloat32Array(0, 0.6, 1)
+colors = PackedColorArray(0.372549, 0.803922, 0.894118, 1, 0.601569, 0.84, 1, 0.8, 0.369757, 0.805801, 0.894329, 0)
+metadata/_snap_count = 5
+
+[node name="SnowMoleV2" type="CharacterBody2D" node_paths=PackedStringArray("snow_mole", "snow_mole_anim_sprite", "MOUNDS", "switch_mound_timer", "underground_timer", "attacking_cooldown", "ray_right", "ray_left", "collision_shape", "hitbox", "deadzone", "animated_sprite", "death_particles") groups=["enemies"]]
+script = ExtResource("1_80r1u")
+snow_mole = NodePath("snow_mole")
+snow_mole_anim_sprite = NodePath("snow_mole/AnimatedSprite2D")
+MOUNDS = [NodePath("Mounds/Mound1"), NodePath("Mounds/Mound2")]
+switch_mound_timer = NodePath("switch_mounds_timer")
+underground_timer = NodePath("underground_timer")
+attacking_cooldown = NodePath("attacking_cooldown")
+ray_right = NodePath("snow_mole/RayRight")
+ray_left = NodePath("snow_mole/RayLeft")
+collision_shape = NodePath("snow_mole/CollisionShape2D")
+hitbox = NodePath("snow_mole/EnemyHitboxClass")
+deadzone = NodePath("snow_mole/EnemyDeadZoneClass")
+animated_sprite = NodePath("snow_mole/AnimatedSprite2D")
+death_particles = NodePath("snow_mole/DeathParticles")
+
+[node name="snow_mole" type="CharacterBody2D" parent="."]
+z_index = -1
+collision_layer = 4
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="snow_mole"]
+sprite_frames = SubResource("SpriteFrames_patd1")
+animation = &"death"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="snow_mole"]
+position = Vector2(0.0516853, -2.91225)
+shape = SubResource("CapsuleShape2D_ce5q5")
+
+[node name="RayRight" type="RayCast2D" parent="snow_mole"]
+target_position = Vector2(24, 0)
+collision_mask = 2
+
+[node name="RayLeft" type="RayCast2D" parent="snow_mole"]
+target_position = Vector2(-24, 0)
+collision_mask = 2
+
+[node name="EnemyHitboxClass" type="Area2D" parent="snow_mole"]
+collision_layer = 64
+collision_mask = 80
+script = ExtResource("5_7tded")
+metadata/_custom_type_script = "uid://c6dcvl7ynfcrq"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="snow_mole/EnemyHitboxClass"]
+position = Vector2(-5.50243, 3.31135)
+shape = SubResource("RectangleShape2D_patd1")
+debug_color = Color(0.897202, 0.158826, 0.673321, 0.42)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="snow_mole/EnemyHitboxClass"]
+position = Vector2(5.32696, 2.85756)
+shape = SubResource("RectangleShape2D_fw268")
+debug_color = Color(0.897202, 0.158826, 0.673321, 0.42)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="snow_mole/EnemyHitboxClass"]
+position = Vector2(0.127625, 13.8792)
+shape = SubResource("RectangleShape2D_xrboh")
+debug_color = Color(0.897202, 0.158826, 0.673321, 0.42)
+
+[node name="EnemyDeadZoneClass" type="Area2D" parent="snow_mole"]
+collision_layer = 128
+collision_mask = 32
+script = ExtResource("5_fw268")
+metadata/_custom_type_script = "uid://vd7tu4wfujqn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="snow_mole/EnemyDeadZoneClass"]
+position = Vector2(-0.1185, -7.9949)
+shape = SubResource("RectangleShape2D_frktr")
+debug_color = Color(1.44392e-07, 0.645657, 0.255219, 0.42)
+
+[node name="DeathParticles" type="CPUParticles2D" parent="snow_mole"]
+emitting = false
+amount = 12
+one_shot = true
+explosiveness = 1.0
+randomness = 0.5
+emission_shape = 2
+emission_sphere_radius = 3.0
+direction = Vector2(0, -1)
+gravity = Vector2(0, 200)
+initial_velocity_max = 150.0
+angular_velocity_min = -64.13
+angular_velocity_max = 99.11
+angle_min = -100.0
+angle_max = 100.0
+scale_amount_min = 2.0
+scale_amount_max = 4.0
+color_ramp = SubResource("Gradient_fw268")
+
+[node name="Mounds" type="Node2D" parent="."]
+
+[node name="Mound1" type="Sprite2D" parent="Mounds"]
+position = Vector2(-40, 0)
+texture = ExtResource("4_80r1u")
+
+[node name="Mound2" type="Sprite2D" parent="Mounds"]
+position = Vector2(40, 0)
+texture = ExtResource("4_80r1u")
+
+[node name="switch_mounds_timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="underground_timer" type="Timer" parent="."]
+wait_time = 0.8
+one_shot = true
+
+[node name="attacking_cooldown" type="Timer" parent="."]
+wait_time = 0.8
+one_shot = true
+
+[connection signal="animation_finished" from="snow_mole/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="area_entered" from="snow_mole/EnemyDeadZoneClass" to="." method="_on_enemy_dead_zone_class_area_entered"]
+[connection signal="timeout" from="switch_mounds_timer" to="." method="_on_switch_mounds_timer_timeout"]
+[connection signal="timeout" from="underground_timer" to="." method="_on_underground_timer_timeout"]
+[connection signal="timeout" from="attacking_cooldown" to="." method="_on_attacking_cooldown_timeout"]
