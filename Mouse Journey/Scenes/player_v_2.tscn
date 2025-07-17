@@ -1096,11 +1096,11 @@ point_count = 2
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[node name="PlayerV2" type="CharacterBody2D" node_paths=PackedStringArray("player_sprite", "boots_gloves_sprite", "snowsuit_sprite", "snowHat_sprite", "muffler_sprite", "wall_ray_right", "wall_ray_left", "stompbox", "terrain_detector", "safe_behind", "safe_under", "safe_front", "marker_particles", "marker_wall_sliding", "snow_trail_particles", "sliding_particles", "jumping_particles", "landing_particles", "wall_sliding_particles", "sledding_particles", "sledding_brake_particles", "marker_sledding_particles", "marker_sledding_brake_particles", "coyote_timer") groups=["player"]]
+[node name="PlayerV2" type="CharacterBody2D" node_paths=PackedStringArray("player_sprite", "boots_gloves_sprite", "snowsuit_sprite", "snowHat_sprite", "muffler_sprite", "wall_ray_right", "wall_ray_left", "platform_checker_right", "platform_checker_left", "stompbox", "terrain_detector", "safe_behind", "safe_under", "safe_front", "marker_particles", "marker_wall_sliding", "snow_trail_particles", "sliding_particles", "jumping_particles", "landing_particles", "wall_sliding_particles", "sledding_particles", "sledding_brake_particles", "marker_sledding_particles", "marker_sledding_brake_particles", "coyote_timer") groups=["player"]]
 process_mode = 1
 z_index = 10
 collision_layer = 2
-collision_mask = 525
+collision_mask = 33293
 floor_stop_on_slope = false
 floor_max_angle = 0.872665
 floor_snap_length = 5.0
@@ -1114,6 +1114,8 @@ snowHat_sprite = NodePath("SnowHat")
 muffler_sprite = NodePath("Muffler")
 wall_ray_right = NodePath("Raycasts/Wall_ray_Right")
 wall_ray_left = NodePath("Raycasts/Wall_ray_Left")
+platform_checker_right = NodePath("Raycasts/Terrain_checker_right")
+platform_checker_left = NodePath("Raycasts/Terrain_checker_left")
 stompbox = NodePath("StompBox")
 terrain_detector = NodePath("terrain_detector")
 safe_behind = NodePath("safe_behind")
@@ -1135,7 +1137,7 @@ coyote_grace_sec = 0.2
 
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_dewec")
-animation = &"sled_brake"
+animation = &"normal_run"
 autoplay = "normal_idle"
 offset = Vector2(0, -2)
 
@@ -1274,18 +1276,24 @@ position = Vector2(0, 6)
 one_shot = true
 
 [node name="Raycasts" type="Node2D" parent="."]
-visible = false
 
 [node name="Wall_ray_Right" type="RayCast2D" parent="Raycasts"]
+visible = false
 target_position = Vector2(10, 0)
 
 [node name="Wall_ray_Left" type="RayCast2D" parent="Raycasts"]
+visible = false
 target_position = Vector2(-10, 0)
 
-[node name="Terrain_checker" type="RayCast2D" parent="Raycasts"]
+[node name="Terrain_checker_right" type="RayCast2D" parent="Raycasts"]
+modulate = Color(0.501167, 0.97, 0, 1)
+position = Vector2(6, 0)
 target_position = Vector2(0, 8)
-collide_with_areas = true
-collide_with_bodies = false
+
+[node name="Terrain_checker_left" type="RayCast2D" parent="Raycasts"]
+modulate = Color(0.501167, 0.97, 0, 1)
+position = Vector2(-6, 0)
+target_position = Vector2(0, 8)
 
 [node name="SafePosition" type="Timer" parent="."]
 autostart = true
@@ -1303,14 +1311,17 @@ position_smoothing_speed = 3.0
 script = ExtResource("40_ybkh6")
 
 [node name="safe_behind" type="RayCast2D" parent="."]
+visible = false
 position = Vector2(-50, 4)
 target_position = Vector2(0, 8)
 
 [node name="safe_under" type="RayCast2D" parent="."]
+visible = false
 position = Vector2(0, 4)
 target_position = Vector2(0, 8)
 
 [node name="safe_front" type="RayCast2D" parent="."]
+visible = false
 position = Vector2(50, 4)
 target_position = Vector2(0, 8)
 

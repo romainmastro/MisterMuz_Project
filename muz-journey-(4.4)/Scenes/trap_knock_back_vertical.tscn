@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8fk7sgakytuy"]
+
+[ext_resource type="Script" uid="uid://da5g2tgmvj2m1" path="res://Scripts/trap_knock_back.gd" id="1_02vwi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_itk7v"]
+size = Vector2(8, 16)
+
+[node name="trap_knock_back_vertical" type="Area2D"]
+script = ExtResource("1_02vwi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-8, 0)
+shape = SubResource("RectangleShape2D_itk7v")

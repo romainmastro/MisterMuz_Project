@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3 uid="uid://bsjno6mu2eamt"]
+
+[ext_resource type="Script" uid="uid://q66qlmaujr0o" path="res://Scripts/Enemies/Components/mouvement_patrol_component.gd" id="1_w4pu3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7lbwb"]
+size = Vector2(8, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xtkee"]
+size = Vector2(8, 16)
+
+[node name="mouvement_patrol_component" type="Node" node_paths=PackedStringArray("borne_gauche", "borne_droite")]
+script = ExtResource("1_w4pu3")
+"direction_départ" = "droite"
+borne_gauche = NodePath("BorneGauche")
+borne_droite = NodePath("BorneDroite")
+
+[node name="BorneDroite" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BorneDroite"]
+position = Vector2(20, 8)
+shape = SubResource("RectangleShape2D_7lbwb")
+
+[node name="ColorRect" type="ColorRect" parent="BorneDroite"]
+offset_left = 16.0
+offset_right = 24.0
+offset_bottom = 16.0
+color = Color(0.894118, 0.054902, 0.141176, 1)
+
+[node name="BorneGauche" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BorneGauche"]
+position = Vector2(20, 8)
+shape = SubResource("RectangleShape2D_xtkee")
+
+[node name="ColorRect" type="ColorRect" parent="BorneGauche"]
+offset_left = 16.0
+offset_right = 24.0
+offset_bottom = 16.0
+color = Color(0.895504, 0.0564538, 0.141058, 1)
+
+[connection signal="body_entered" from="BorneDroite" to="." method="_on_borne_droite_body_entered"]
+[connection signal="body_entered" from="BorneGauche" to="." method="_on_borne_gauche_body_entered"]

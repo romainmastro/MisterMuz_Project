@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cio7kt6jhsgrs"]
+
+[ext_resource type="Script" uid="uid://ch45tahbqad8l" path="res://Scripts/trap_respawn.gd" id="1_xte1m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ngqx"]
+size = Vector2(12.875, 6)
+
+[node name="trap_respawn" type="Area2D"]
+script = ExtResource("1_xte1m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_4ngqx")

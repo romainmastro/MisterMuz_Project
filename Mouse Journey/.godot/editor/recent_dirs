@@ -1,8 +1,10 @@
+res://
+res://Assets/TileSet
+res://Scenes/Platforms
 res://Scenes/UI
 res://Scripts/UI
 res://Resources
 res://Assets/Muz
-res://
 res://Scenes/TESTS
 res://Scripts
 res://Scenes
@@ -18,5 +20,3 @@ res://Resources/light
 res://Assets/Enemies/SpikeThrower
 res://Scenes/Environment
 res://Assets/Environment
-res://Resources/shader
-res://Scripts/Traps

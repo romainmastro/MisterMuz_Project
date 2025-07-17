@@ -11,6 +11,8 @@ extends CharacterBody2D
 @export var muffler_sprite : AnimatedSprite2D
 @export var wall_ray_right : RayCast2D
 @export var wall_ray_left : RayCast2D
+@export var platform_checker_right : RayCast2D
+@export var platform_checker_left : RayCast2D
 @export var wall_ray_length : int = 6
 @export var stompbox : Area2D
 @export var terrain_detector : Area2D
@@ -104,6 +106,8 @@ var is_dead : bool = false
 
 var is_braking : bool = false
 
+var is_dropping_through : bool = false
+
 var can_save_position : bool = false
 var safe_position_sec : float = 0.5
 var safe_positions : Array[Vector2] = []
@@ -113,7 +117,7 @@ var max_number_safe_positions : int = 5
 	# Ground States
 	"IDLE", "RUN", "SLIDE", 
 	# Airborne States
-	"JUMP", "COYOTE", "WALL_JUMP","WALL_SLIDE", "SLIDE_JUMP", "FALL", "GLIDE",
+	"JUMP", "COYOTE", "WALL_JUMP","WALL_SLIDE", "SLIDE_JUMP", "FALL", "GLIDE", "JUMP_THROUGH",
 	# Health/Hurt System 
 	"HURT_KNOCKBACK", "HURT_RESPAWN", "DEAD", "WAIT_FOR_RESPAWN",
 	# Player Sled
@@ -267,11 +271,13 @@ func process_state_machine(delta : float) :
 				# TRANSITIONS
 				if input_dir != 0 : 
 					STATE = "RUN"
-				if Input.is_action_just_pressed("jump") : 
+				if Input.is_action_just_pressed("jump")  : 
 					jump()
 					STATE = "JUMP"
 				if Input.is_action_pressed("slide") and is_on_downward_slope() : 
 					STATE = "SLIDE"
+				if Input.is_action_pressed("down") and is_platform_droppable(): 
+					drop_through()
 					
 			"RUN" : 
 				velocity.x = lerp(velocity.x, input_dir * speed * current_speed_multiplier, accel * current_ground_multiplier * delta)
@@ -279,12 +285,13 @@ func process_state_machine(delta : float) :
 				# TRANSITIONS
 				if input_dir == 0 : 
 					STATE = "IDLE"
-				if Input.is_action_just_pressed("jump"): 
+				if Input.is_action_just_pressed("jump"):
 					jump()
 					STATE = "JUMP"
 				if Input.is_action_pressed("slide") and is_on_downward_slope() : 
 					STATE = "SLIDE"
-			
+				if Input.is_action_pressed("down") :
+					pass
 			"SLIDE" : 
 				slide(delta)
 				
@@ -367,7 +374,7 @@ func process_state_machine(delta : float) :
 					STATE = "WALL_JUMP"
 					wall_jump()
 					
-			"FALL" : 
+			"FALL", "JUMP_THROUGH" : 
 				if input_dir != 0 : 
 					velocity.x = speed * input_dir
 					
@@ -382,7 +389,7 @@ func process_state_machine(delta : float) :
 					STATE = "WALL_JUMP"
 					wall_jump()
 				
-				if is_touching_wall() and wall_direction == input_dir : 
+				if is_touching_wall() and wall_direction == input_dir and not is_dropping_through: 
 					STATE = "WALL_SLIDE"
 					
 			"WALL_JUMP" : 
@@ -542,6 +549,29 @@ func glide(delta : float) :
 	velocity.y += gravity * delta * gliding_gravity_multiplier
 	velocity.y = min(velocity.y, gliding_max_speed)
 
+### drop through Platform
+
+func is_platform_droppable() -> bool:
+	var world = get_tree().current_scene.get_node_or_null("Main/WORLD")
+	var tilemap = world.get_child(0).get_node("Level") as TileMapLayer
+	var world_position := global_position + Vector2(0, 6)
+	
+	#get_tree().current_scene.get_node("Main/DebugDrawer").set_debug_point(world_position)
+	
+	var local_pos := tilemap.to_local(world_position)
+	var map_coords := tilemap.local_to_map(local_pos)
+	var tile_data = tilemap.get_cell_tile_data(map_coords)
+	
+	if tile_data and tile_data.get_custom_data("is_droppable"):
+		return true
+
+	return false
+
+func drop_through() : 
+	set_collision_mask_value(16, false)
+	await get_tree().create_timer(0.1).timeout
+	set_collision_mask_value(16, true)
+
 ######################################## HEALTH SYSTEM #######################################
 func init_health() : 
 	is_dead = false
@@ -608,8 +638,6 @@ func on_death() :
 		
 		GlobalMenu.game_transition(func() : GlobalMenu.set_game_state(GlobalMenu.GAME_STATES.CONTINUE_SCREEN))
 		
-		
-	
 
 ######################################### HURT SYSTEM ########################################
 

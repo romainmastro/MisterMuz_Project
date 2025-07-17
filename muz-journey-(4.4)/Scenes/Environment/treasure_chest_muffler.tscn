@@ -1,0 +1,221 @@
+[gd_scene load_steps=14 format=3 uid="uid://bk6nplv6ettgn"]
+
+[ext_resource type="Script" uid="uid://hs1lm3n2yc8s" path="res://Scripts/Environment/treasure_chest_muffler.gd" id="1_qqrxp"]
+[ext_resource type="Texture2D" uid="uid://bb351c1n2ieyh" path="res://Assets/Environment/closed_chest.png" id="2_e51ha"]
+[ext_resource type="Texture2D" uid="uid://rs7mwcqucuxq" path="res://Assets/Environment/opened_chest.png" id="3_xi8u8"]
+[ext_resource type="Texture2D" uid="uid://dv1kr8b8jyq5t" path="res://Resources/light/point_of_interest_light.tres" id="4_qqrxp"]
+[ext_resource type="Texture2D" uid="uid://67f34ernlbbh" path="res://Resources/light/raylight_texture.png" id="5_e51ha"]
+[ext_resource type="Texture2D" uid="uid://dwh0kamfy6rx7" path="res://Resources/light/ray_light.png" id="6_xi8u8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eu2q2"]
+size = Vector2(16, 7)
+
+[sub_resource type="Animation" id="Animation_ay871"]
+length = 2.5
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../PointLight2D2:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 4.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../PointLight2D2:texture_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../PointLight2D2:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_xi8u8"]
+resource_name = "glow"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../PointLight2D2:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 3.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath("../PointLight2D2:texture_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.51]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = false
+tracks/2/path = NodePath("../PointLight2D2:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fsjbr"]
+_data = {
+&"RESET": SubResource("Animation_ay871"),
+&"glow": SubResource("Animation_xi8u8")
+}
+
+[sub_resource type="Animation" id="Animation_fsjbr"]
+resource_name = "Light"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PointLight2D3:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [7.0, 7.24, 7.24, 7.24]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PointLight2D3:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.333333, 0.633333, 1, 1.36667, 1.7, 1.93333, 2.23333, 2.6, 2.96667, 3.3, 3.53333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(0, 0), Vector2(10, 0), Vector2(20, 0), Vector2(30, 0), Vector2(39, 0), Vector2(45, 0), Vector2(40, 0), Vector2(30, 0), Vector2(20, 0), Vector2(15, 0), Vector2(10, 0), Vector2(5, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_qsn8c"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PointLight2D3:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [7.24]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PointLight2D3:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3jw1h"]
+_data = {
+&"Light": SubResource("Animation_fsjbr"),
+&"RESET": SubResource("Animation_qsn8c")
+}
+
+[node name="treasure_chest_muffler" type="Area2D" node_paths=PackedStringArray("closed_chest_sprite", "opened_chest_sprite")]
+collision_mask = 2
+script = ExtResource("1_qqrxp")
+closed_chest_sprite = NodePath("closed_chest")
+opened_chest_sprite = NodePath("opened_chest")
+metadata/_custom_type_script = "uid://didfjoqvoqhd4"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_eu2q2")
+
+[node name="closed_chest" type="Sprite2D" parent="."]
+texture = ExtResource("2_e51ha")
+offset = Vector2(0, 5)
+
+[node name="opened_chest" type="Sprite2D" parent="."]
+position = Vector2(0, -1)
+texture = ExtResource("3_xi8u8")
+offset = Vector2(0, 5)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+visible = false
+scale = Vector2(0.4, 0.2)
+color = Color(0.666838, 0.451852, 0.0116099, 1)
+energy = 0.6
+shadow_color = Color(0, 0, 0, 1)
+texture = ExtResource("4_qqrxp")
+height = 99.0
+
+[node name="PointLight2D2" type="PointLight2D" parent="."]
+position = Vector2(2.84217e-14, 4.23501)
+scale = Vector2(0.0282168, 0.0142723)
+color = Color(0.905608, 0.604982, 0.102581, 1)
+energy = 0.0
+texture = ExtResource("5_e51ha")
+
+[node name="PointLight2D3" type="PointLight2D" parent="."]
+visible = false
+position = Vector2(0, -3)
+scale = Vector2(0.03363, 0.0378143)
+color = Color(0.905608, 0.604982, 0.102581, 1)
+energy = 7.24
+texture = ExtResource("6_xi8u8")
+texture_scale = 1.51
+
+[node name="AnimationSun_Light" type="AnimationPlayer" parent="."]
+root_node = NodePath("../PointLight2D")
+libraries = {
+&"": SubResource("AnimationLibrary_fsjbr")
+}
+autoplay = "glow"
+
+[node name="AnimationRay_Light" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_3jw1h")
+}
+autoplay = "Light"
+speed_scale = 2.687
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

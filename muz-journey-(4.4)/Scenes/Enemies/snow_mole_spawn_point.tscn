@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://ihg74cjny26w"]
+
+[ext_resource type="Script" uid="uid://sr3xf567oasj" path="res://Scripts/Enemies/snow_mole_spawn_point.gd" id="2_fdma3"]
+[ext_resource type="Texture2D" uid="uid://bb5lww05fn8lf" path="res://Assets/Enemies/SnowMole/SnowMoleV2/SnowMole_DEATH.png" id="2_t4kml"]
+
+[node name="snow_mole_spawn_point" type="Marker2D" groups=["enemy_spawn_points"]]
+z_index = 3
+gizmo_extents = 16.0
+script = ExtResource("2_fdma3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 9)
+texture = ExtResource("2_t4kml")

@@ -1,0 +1,24 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://ba6rurgdpqsjr"]
+
+[ext_resource type="FontFile" uid="uid://dl3316dpi5lxs" path="res://Resources/font/SuperBakery-3lXyp.ttf" id="1_h1w1h"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h1w1h"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wax0t"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pdrfq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5vlyr"]
+
+[resource]
+default_font = ExtResource("1_h1w1h")
+default_font_size = 8
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(0.835294, 0.929412, 0.929412, 1)
+Button/constants/h_separation = 4
+Button/font_sizes/font_size = 8
+Button/fonts/font = ExtResource("1_h1w1h")
+Button/styles/focus = SubResource("StyleBoxEmpty_h1w1h")
+Button/styles/hover = SubResource("StyleBoxEmpty_wax0t")
+Button/styles/normal = SubResource("StyleBoxEmpty_pdrfq")
+Button/styles/pressed = SubResource("StyleBoxEmpty_5vlyr")

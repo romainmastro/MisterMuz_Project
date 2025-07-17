@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://iah2f3d4sy1b"]
+
+[ext_resource type="Texture2D" uid="uid://btxk3fe3bc0fj" path="res://Assets/Platforms/Platform1_H.png" id="1_bouvf"]
+[ext_resource type="Script" uid="uid://bapvoxd6wybvi" path="res://Scripts/Platform/moving_platform_path_2d.gd" id="1_ug0bw"]
+
+[sub_resource type="Curve2D" id="Curve2D_0ieeg"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 120, -40, 0, 0, 0, 0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ug0bw"]
+size = Vector2(16, 17)
+
+[node name="MovingPlatform1" type="Path2D" node_paths=PackedStringArray("path")]
+editor_description = "Choisir ON pour des platformes dont le chemin est fermé."
+curve = SubResource("Curve2D_0ieeg")
+script = ExtResource("1_ug0bw")
+path = NodePath("PathFollow2D")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+rotates = false
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="PathFollow2D"]
+remote_path = NodePath("../../AnimatableBody2D")
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+z_index = 11
+
+[node name="Platform1" type="Sprite2D" parent="AnimatableBody2D"]
+texture = ExtResource("1_bouvf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
+shape = SubResource("RectangleShape2D_ug0bw")

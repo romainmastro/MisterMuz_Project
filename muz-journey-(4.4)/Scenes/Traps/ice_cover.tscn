@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmjbvh504bip3"]
+
+[ext_resource type="Texture2D" uid="uid://cmqexc3sxrey1" path="res://Assets/TileSet/ice_cover.png" id="1_s084q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s084q"]
+size = Vector2(16, 7)
+
+[node name="ice_cover" type="Area2D" groups=["ice_cover"]]
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, -4.5)
+shape = SubResource("RectangleShape2D_s084q")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_s084q")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(0, -8)
+amount = 5
+lifetime = 0.2
+preprocess = 1.06
+emission_shape = 3
+emission_rect_extents = Vector2(8, 1)
+spread = 25.51
+gravity = Vector2(0, 0)
+angle_min = -93.3
+angle_max = 70.0
+scale_amount_min = 0.3
+scale_amount_max = 0.5
