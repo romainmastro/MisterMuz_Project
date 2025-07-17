@@ -276,12 +276,8 @@ func process_state_machine(delta : float) :
 					STATE = "JUMP"
 				if Input.is_action_pressed("slide") and is_on_downward_slope() : 
 					STATE = "SLIDE"
-				if Input.is_action_pressed("down") : 
-					var platform_data = is_platform_droppable()
-					if platform_data["droppable"] : 
-						drop_through_platform(platform_data["body"])
-						STATE = "FALL"
-						return
+				if Input.is_action_pressed("down") and is_platform_droppable(): 
+					drop_through()
 					
 			"RUN" : 
 				velocity.x = lerp(velocity.x, input_dir * speed * current_speed_multiplier, accel * current_ground_multiplier * delta)
@@ -295,15 +291,7 @@ func process_state_machine(delta : float) :
 				if Input.is_action_pressed("slide") and is_on_downward_slope() : 
 					STATE = "SLIDE"
 				if Input.is_action_pressed("down") :
-
-					var platform_data = is_platform_droppable()
-					print_debug("droppable: %s, body: %s" % [platform_data["droppable"], platform_data["body"]])
-					if platform_data["droppable"]:
-						drop_through_platform(platform_data["body"])
-						STATE = "FALL"
-						return
-
-			
+					pass
 			"SLIDE" : 
 				slide(delta)
 				
@@ -562,39 +550,28 @@ func glide(delta : float) :
 	velocity.y = min(velocity.y, gliding_max_speed)
 
 ### drop through Platform
-#func is_platform_droppable() -> bool : 
-	#return (platform_checker.is_colliding() and  
-		#platform_checker.get_collider().is_in_group("jump_through_platform"))
 
-func is_platform_droppable() -> Dictionary:
-	var platform = null
-	if platform_checker_left.is_colliding():
-		platform = platform_checker_left.get_collider()
-	elif platform_checker_right.is_colliding():
-		platform = platform_checker_right.get_collider()
+func is_platform_droppable() -> bool:
+	var world = get_tree().current_scene.get_node_or_null("Main/WORLD")
+	var tilemap = world.get_child(0).get_node("Level") as TileMapLayer
+	var world_position := global_position + Vector2(0, 6)
+	
+	#get_tree().current_scene.get_node("Main/DebugDrawer").set_debug_point(world_position)
+	
+	var local_pos := tilemap.to_local(world_position)
+	var map_coords := tilemap.local_to_map(local_pos)
+	var tile_data = tilemap.get_cell_tile_data(map_coords)
+	
+	if tile_data and tile_data.get_custom_data("is_droppable"):
+		return true
 
-	var droppable = platform != null and platform.is_in_group("jump_through_platform")
-	return {
-		"droppable": droppable,
-		"body": platform
-	}
+	return false
 
+func drop_through() : 
+	set_collision_mask_value(16, false)
+	await get_tree().create_timer(0.1).timeout
+	set_collision_mask_value(16, true)
 
-func drop_through_platform(platform : StaticBody2D) : 
-	if is_dropping_through : 
-		return
-	is_dropping_through = true
-	
-	add_collision_exception_with(platform)
-	
-	velocity.y += 10  # even 1–2px can be enough; 10 is safe
-	move_and_slide()  # ← optional: helps apply the change immediately
-	
-	await get_tree().create_timer(0.4).timeout
-	remove_collision_exception_with(platform)
-	
-	is_dropping_through = false
-	
 ######################################## HEALTH SYSTEM #######################################
 func init_health() : 
 	is_dead = false

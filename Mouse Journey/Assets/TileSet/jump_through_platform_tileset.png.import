@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://w85wrgfctet5"
-path="res://.godot/imported/jump_through_platform.png-177c31f2b38e5454535c3e25b31f431f.ctex"
+uid="uid://7ge3wjmqw4j0"
+path="res://.godot/imported/jump_through_platform_tileset.png-aae436d02f4fec39f013ebcffdf17223.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/TileSet/jump_through_platform.png"
-dest_files=["res://.godot/imported/jump_through_platform.png-177c31f2b38e5454535c3e25b31f431f.ctex"]
+source_file="res://Assets/TileSet/jump_through_platform_tileset.png"
+dest_files=["res://.godot/imported/jump_through_platform_tileset.png-aae436d02f4fec39f013ebcffdf17223.ctex"]
 
 [params]
 

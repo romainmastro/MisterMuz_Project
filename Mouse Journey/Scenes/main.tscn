@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://ci35s5hiav38j"]
+[gd_scene load_steps=17 format=3 uid="uid://ci35s5hiav38j"]
 
 [ext_resource type="Script" uid="uid://c6hv8hqxmhb5a" path="res://Scripts/main.gd" id="1_8gbba"]
 [ext_resource type="Texture2D" uid="uid://0a3ptxbf14xd" path="res://Assets/UI/HP Bar/HUD.png" id="3_d1ilt"]
@@ -10,6 +10,7 @@
 [ext_resource type="FontFile" uid="uid://dl3316dpi5lxs" path="res://Resources/font/SuperBakery-3lXyp.ttf" id="9_6iyac"]
 [ext_resource type="Texture2D" uid="uid://mhf4h5626687" path="res://Assets/Collectibles/Collectible - Frostberry.png" id="9_jkdf5"]
 [ext_resource type="Script" uid="uid://cfwllhqikp4k6" path="res://Scripts/UI/label_berry.gd" id="10_fdnlq"]
+[ext_resource type="Script" uid="uid://dkwhsg7i1ht2k" path="res://debug_drawer.gd" id="11_d1ilt"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h1w1h"]
 
@@ -172,3 +173,7 @@ theme_override_font_sizes/font_size = 9
 text = "animation name"
 
 [node name="Enemies_spawn" type="Node2D" parent="."]
+
+[node name="DebugDrawer" type="Node2D" parent="."]
+z_index = 16
+script = ExtResource("11_d1ilt")
