@@ -40,7 +40,7 @@ func load_current_level() :
 		# rotate the player
 		await get_tree().process_frame	
 		player.rotation = GlobalMenu.get_current_level_rotation()
-		player.global_position = start.global_position
+		player.global_position = start.global_position + Vector2(8, 0)
 		
 		add_child(player)
 		GlobalPlayerStats.current_checkpoint = player.global_position
