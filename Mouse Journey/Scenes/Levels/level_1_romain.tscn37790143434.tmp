@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://b36u7cojyu2qd"]
+[gd_scene load_steps=12 format=4 uid="uid://b36u7cojyu2qd"]
 
 [ext_resource type="Script" uid="uid://bmo11cf8nrsbv" path="res://Scenes/Levels/level_1_romain.gd" id="1_nscas"]
 [ext_resource type="PackedScene" uid="uid://b1vi7lh2l2ldh" path="res://Scenes/Environment/sign_Start_Level.tscn" id="1_silvh"]
@@ -8,13 +8,10 @@
 [ext_resource type="TileSet" uid="uid://d34uj80lo1ml4" path="res://Resources/Objects.tres" id="4_2kyff"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6xhj3"]
-size = Vector2(288.00488, 255.83344)
+size = Vector2(128.00978, 191.83342)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nscas"]
-size = Vector2(192, 256)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kaqu4"]
-size = Vector2(160, 248)
+size = Vector2(472.00656, 255.66684)
 
 [sub_resource type="Environment" id="Environment_otrkh"]
 background_mode = 3
@@ -111,7 +108,7 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SECTIONS/Section1"]
-position = Vector2(112, 0)
+position = Vector2(31.99511, 31.91671)
 shape = SubResource("RectangleShape2D_6xhj3")
 debug_color = Color(0.14210647, 0.6330964, 0.37806693, 0.41960785)
 
@@ -121,19 +118,9 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SECTIONS/Section2"]
-position = Vector2(-200, 3.8146973e-06)
+position = Vector2(-3.996704, 0)
 shape = SubResource("RectangleShape2D_nscas")
 debug_color = Color(0.593794, 0.5438905, 0.03937384, 0.41960785)
-
-[node name="Section3" type="Area2D" parent="SECTIONS"]
-position = Vector2(584, 0)
-collision_layer = 0
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SECTIONS/Section3"]
-position = Vector2(-24, 0)
-shape = SubResource("RectangleShape2D_kaqu4")
-debug_color = Color(0.85924864, 0.3545156, 0.17917672, 0.41960785)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_otrkh")
@@ -167,3 +154,21 @@ tile_set = ExtResource("4_2kyff")
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="Moving_Platforms" type="Node2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect_Left" type="ColorRect" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect_Right" type="ColorRect" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect_Top" type="ColorRect" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect_Bottom" type="ColorRect" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0

@@ -15,13 +15,13 @@ extends Camera2D
 var is_lerping := true
 var vertical_offset := 0.0
 
-func _ready() -> void:
-
-	# Set limits
-	limit_bottom = bottom_limit
-	limit_top = top_limit
-	limit_left = left_limit
-	limit_right = right_limit
+#func _ready() -> void:
+#
+	## Set limits
+	#limit_bottom = bottom_limit
+	#limit_top = top_limit
+	#limit_left = left_limit
+	#limit_right = right_limit
 
 func _process(delta: float) -> void:
 	#var target_y_offset := 0.0

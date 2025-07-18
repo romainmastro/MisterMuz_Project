@@ -12,15 +12,17 @@ var current_level : Node = null
 
 func _ready() -> void: 
 	# 1 load level and Player
-	load_current_level()
+	load_current_level_and_player()
 	await get_tree().process_frame
 	# 2 Player initialisation 
 	init_player()
+	
+	current_level.start_section_system()
+	
 	# 3 Spawn enemies on the map
 	GlobalEnemyManager.spawn()
-	
 
-func load_current_level() : 
+func load_current_level_and_player() : 
 	var level_scene = GlobalMenu.get_current_level()
 	
 	await get_tree().process_frame
@@ -37,7 +39,7 @@ func load_current_level() :
 	if start : 
 		player = playerScene.instantiate()
 		
-		# rotate the player
+		# rotate the player [may need for sledding levels]
 		await get_tree().process_frame	
 		player.rotation = GlobalMenu.get_current_level_rotation()
 		player.global_position = start.global_position + Vector2(8, 0)
@@ -47,6 +49,14 @@ func load_current_level() :
 	else:
 		print(" 'Sign_Start_Level' not found in", current_level.name)
 
+	# gives the references to the player and camera to the Level to configure the sections of the level
+	current_level.player = player
+	current_level.player_camera = player.get_node("PlayerCamera")
+	
+	print(current_level.player)
+	print(current_level.player_camera)
+	
+	
 
 func init_player() : 
 	GlobalPlayerStats.player_current_HP = GlobalPlayerStats.player_max_HP
