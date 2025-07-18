@@ -290,8 +290,8 @@ func process_state_machine(delta : float) :
 					STATE = "JUMP"
 				if Input.is_action_pressed("slide") and is_on_downward_slope() : 
 					STATE = "SLIDE"
-				if Input.is_action_pressed("down") :
-					pass
+				if Input.is_action_pressed("down") and is_platform_droppable(): 
+					drop_through()
 			"SLIDE" : 
 				slide(delta)
 				

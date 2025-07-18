@@ -1,5 +1,5 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1752772704
+::res://::1752832899
 debug.gd::GDScript/GDScript::8414093399775197567::1750015051::0::1::::<>CanvasLayer<><>0<>0<><>::
 debug_drawer.gd::GDScript::7907024326260963780::1752772673::0::1::::<>Node2D<><>0<>0<><>::
 game.gd::GDScript/GDScript::2496968683686185476::1749917194::0::1::::<>Node<><>0<>0<><>::
@@ -224,7 +224,7 @@ snow_trail_particle.png::CompressedTexture2D/CompressedTexture2D::84067428938793
 Platform1_H.png::CompressedTexture2D/CompressedTexture2D::3768146843385697207::1740698513::1740776311::1::::<><><>0<>0<>9a9641ff84b1a0e00783fe1d30138a68<>res://.godot/imported/Platform1_H.png-028f59e27764ec349c3009179e235cfe.ctex::
 Platform2_H.png::CompressedTexture2D/CompressedTexture2D::3965676375561491926::1740698513::1740776311::1::::<><><>0<>0<>cdfe7270f834aff267f4a05b5593b021<>res://.godot/imported/Platform2_H.png-d6ded1a2aae2840a87af3812a1fe657f.ctex::
 Platform3_H.png::CompressedTexture2D/CompressedTexture2D::7689488166618106867::1740698513::1740776311::1::::<><><>0<>0<>a3ababe3a13c7dd500d86927ad942750<>res://.godot/imported/Platform3_H.png-6e143c5b593627c8ba69218d3c9260ba.ctex::
-::res://Assets/TileSet/::1752782816
+::res://Assets/TileSet/::1752783263
 ice_cover2.png::CompressedTexture2D/CompressedTexture2D::2899198433497910141::1744807223::1744807269::1::::<><><>0<>0<>128d177c355e941488cadc3c6759a6df<>res://.godot/imported/ice_cover2.png-753d93c9a4777f2219a6b20399f32865.ctex::
 ice_cover.png::CompressedTexture2D/CompressedTexture2D::5648421625488896530::1744807223::1744807269::1::::<><><>0<>0<>0b504dfbe25d732b817467f8d1b45ea1<>res://.godot/imported/ice_cover.png-0eec462a3073db349cca7c23830bb265.ctex::
 jump_through_platform.png::CompressedTexture2D::1614140725565967500::1752772673::1752772707::1::::<><><>0<>0<>287177270637db3a8479e125e30b3e42<>res://.godot/imported/jump_through_platform.png-177c31f2b38e5454535c3e25b31f431f.ctex::
@@ -315,8 +315,8 @@ treasure_chest_suit_boots_gloves.tscn::PackedScene/PackedScene::3714374017622865
 ::res://Scenes/HUD/::1749584570
 cheese_bar.tscn::PackedScene/PackedScene::5839163729488556308::1749584570::0::1::::<><><>0<>0<><>::uid://c6tdbr670cgpk::::res://Assets/Collectibles/Collectible - Cheese.png<>uid://bkkevbret1kkr::::res://Scripts/HUD/cheese_bar.gd
 HP_bar.tscn::PackedScene/PackedScene::812642069212136003::1741873309::0::1::::<><><>0<>0<><>::uid://b823tr72pbcr::::res://Scripts/HUD/hp_bar.gd<>uid://nt7vwvsqg4w6::::res://Assets/Collectibles/Collectible - Heart.png
-::res://Scenes/Levels/::1752782873
-level_1_romain.tscn::PackedScene::4416975628309917647::1752782873::0::1::::<><><>0<>0<><>::uid://b1vi7lh2l2ldh::::res://Scenes/Environment/sign_Start_Level.tscn<>uid://cvn6rtpn15ve6::::res://Resources/Level_Maker.tres<>uid://bskec58c5stx0::::res://Assets/TileSet/Tileset_Winter.png<>uid://cvxyb7jcx6hel::::res://Resources/Pièges.tres<>uid://d34uj80lo1ml4::::res://Resources/Objects.tres
+::res://Scenes/Levels/::1752784113
+level_1_romain.tscn::PackedScene::4416975628309917647::1752784113::0::1::::<><><>0<>0<><>::uid://b1vi7lh2l2ldh::::res://Scenes/Environment/sign_Start_Level.tscn<>uid://cvn6rtpn15ve6::::res://Resources/Level_Maker.tres<>uid://bskec58c5stx0::::res://Assets/TileSet/Tileset_Winter.png<>uid://cvxyb7jcx6hel::::res://Resources/Pièges.tres<>uid://d34uj80lo1ml4::::res://Resources/Objects.tres
 level_eline.tscn::PackedScene/PackedScene::1179943214830683613::1751601149::0::1::::<><><>0<>0<><>::uid://cvn6rtpn15ve6::::res://Resources/Level_Maker.tres<>uid://d34uj80lo1ml4::::res://Resources/Objects.tres<>uid://cvxyb7jcx6hel::::res://Resources/Pièges.tres<>uid://1x1qpe81qufy::::res://Resources/Décor.tres<>uid://be1o8tb502iun::::res://Scenes/Traps/stalagtite_Tombante.tscn<>uid://ddjfmqisn40md::::res://Scenes/Traps/BouleDeNeige_portail.tscn<>uid://b1vi7lh2l2ldh::::res://Scenes/Environment/sign_Start_Level.tscn
 level_sophie.tscn::PackedScene/PackedScene::8829333273565954864::1751601277::0::1::::<><><>0<>0<><>::uid://cvn6rtpn15ve6::::res://Resources/Level_Maker.tres<>uid://d34uj80lo1ml4::::res://Resources/Objects.tres<>uid://cvxyb7jcx6hel::::res://Resources/Pièges.tres<>uid://1x1qpe81qufy::::res://Resources/Décor.tres<>uid://b1vi7lh2l2ldh::::res://Scenes/Environment/sign_Start_Level.tscn
 level_test.tscn::PackedScene/PackedScene::3149480788753182680::1751601240::0::1::::<><><>0<>0<><>::uid://cvn6rtpn15ve6::::res://Resources/Level_Maker.tres<>uid://b1vi7lh2l2ldh::::res://Scenes/Environment/sign_Start_Level.tscn<>uid://cvxyb7jcx6hel::::res://Resources/Pièges.tres<>uid://drkytl5ykatsd::::res://Scenes/Enemies/snowman.tscn<>uid://i0orgaj0vukb::::res://Scenes/MovingPlatforms/moving_platform2.tscn<>uid://iah2f3d4sy1b::::res://Scenes/MovingPlatforms/moving_platform1.tscn<>uid://c6rs8jj1o6baq::::res://Scenes/MovingPlatforms/moving_platform_3.tscn<>uid://7rd2wku4lem::::res://Scenes/Enemies/enemy_snow_cannon.tscn

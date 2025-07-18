@@ -1,8 +1,8 @@
-res://Scenes/Levels/level_1_romain.tscn
+res://Scenes/player_v_2.tscn
 res://Resources/Level_Maker.tres
 res://Resources/Décor.tres
 res://Resources/Pièges.tres
 res://Resources/Objects.tres
 res://Resources/shader/outline_player.gdshader
-res://Scenes/main.tscn
-res://Scripts/main.gd
+res://Scripts/player_v_3.gd
+res://Scenes/Levels/level_1_romain.tscn

@@ -36,21 +36,25 @@
 				"ef9a25df-950f-4d92-baca-77688806a127",
 				"43d1bd7a-eb02-49c2-91c3-1c0e569bac76",
 				"6c4b6b6c-40cd-4056-8abc-d84540898897",
-				"25e39056-f16e-4cb5-88b8-0deaa0e6a02c",
-				"9420965e-1f5b-4225-b84a-f62ee5a4a07b"
+				"ef6acfcf-6d5a-4a49-a636-65e013dd9f1e"
 			]
 		},
 		{
 			"uuid": "ef4e123f-f6ea-4e30-8896-4ddd7167fd59",
 			"title": "Doing",
-			"tasks": []
+			"tasks": [
+				"9420965e-1f5b-4225-b84a-f62ee5a4a07b",
+				"32198406-8e58-445f-8ffc-aac5c03be011"
+			]
 		},
 		{
 			"uuid": "a590c45f-f6e0-4df4-a178-2596b3213350",
 			"title": "Done on the current Branch",
 			"tasks": [
 				"c2e72a34-046b-4021-a96f-31243b941236",
-				"0ea93d3f-4264-46d0-899b-8f491bc49e12"
+				"0ea93d3f-4264-46d0-899b-8f491bc49e12",
+				"25e39056-f16e-4cb5-88b8-0deaa0e6a02c",
+				"6da8879d-00be-4c24-8ccf-c6507d6e9473"
 			]
 		},
 		{
@@ -1249,7 +1253,7 @@
 			"uuid": "25e39056-f16e-4cb5-88b8-0deaa0e6a02c",
 			"title": "deactivate the stompbox when player hit",
 			"description": "",
-			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
 			"steps": []
 		},
 		{
@@ -1744,6 +1748,27 @@
 			"title": "Show Continue Screen",
 			"description": "",
 			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"steps": []
+		},
+		{
+			"uuid": "ef6acfcf-6d5a-4a49-a636-65e013dd9f1e",
+			"title": "ASSET : CAVE tileset",
+			"description": "",
+			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
+			"steps": []
+		},
+		{
+			"uuid": "6da8879d-00be-4c24-8ccf-c6507d6e9473",
+			"title": "JUMP_THROUGH Platforms",
+			"description": "",
+			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"steps": []
+		},
+		{
+			"uuid": "32198406-8e58-445f-8ffc-aac5c03be011",
+			"title": "Level by Section",
+			"description": "",
+			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
 			"steps": []
 		}
 	],

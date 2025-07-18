@@ -91,6 +91,8 @@ sources/3 = SubResource("TileSetAtlasSource_nscas")
 
 [node name="Level1_R" type="Node2D"]
 
+[node name="SECTIONS" type="Node2D" parent="."]
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_otrkh")
 
