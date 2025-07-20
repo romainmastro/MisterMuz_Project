@@ -43,14 +43,14 @@
 			"uuid": "ef4e123f-f6ea-4e30-8896-4ddd7167fd59",
 			"title": "Doing",
 			"tasks": [
-				"9420965e-1f5b-4225-b84a-f62ee5a4a07b",
-				"32198406-8e58-445f-8ffc-aac5c03be011"
+				"9420965e-1f5b-4225-b84a-f62ee5a4a07b"
 			]
 		},
 		{
 			"uuid": "a590c45f-f6e0-4df4-a178-2596b3213350",
 			"title": "Done on the current Branch",
 			"tasks": [
+				"32198406-8e58-445f-8ffc-aac5c03be011",
 				"c2e72a34-046b-4021-a96f-31243b941236",
 				"0ea93d3f-4264-46d0-899b-8f491bc49e12",
 				"25e39056-f16e-4cb5-88b8-0deaa0e6a02c",
@@ -1768,7 +1768,7 @@
 			"uuid": "32198406-8e58-445f-8ffc-aac5c03be011",
 			"title": "Level by Section",
 			"description": "",
-			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
 			"steps": []
 		}
 	],

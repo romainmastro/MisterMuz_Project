@@ -14,10 +14,10 @@ func _ready() -> void:
 	
 	title.position = Vector2(48, -70)
 	menu.position = Vector2(0, -80)
-	muz.position = Vector2(8, 160 )
+	muz.global_position = Vector2(8, 152 )
 	
 	var tween = create_tween()
-	tween.tween_property(muz, "position", Vector2(240, 160), 3).set_trans(Tween.TRANS_SINE)
+	tween.tween_property(muz, "global_position", Vector2(240, 152), 3).set_trans(Tween.TRANS_SINE)
 	tween.tween_callback(update_animation)
 	tween.parallel().tween_property(title, "position", target_title_pos, 3).set_trans(Tween.TRANS_ELASTIC)
 	tween.parallel().tween_property(menu, "position", target_menu_pos, 3).set_trans(Tween.TRANS_ELASTIC)

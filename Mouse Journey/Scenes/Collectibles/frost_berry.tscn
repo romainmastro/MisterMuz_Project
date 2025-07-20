@@ -59,6 +59,7 @@ hoveringObjectComponent = NodePath("HoveringComponent")
 shape = SubResource("CircleShape2D_43mx6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_gbw4s")
 
 [node name="HoveringComponent" parent="." node_paths=PackedStringArray("object") instance=ExtResource("3_2hbtj")]
