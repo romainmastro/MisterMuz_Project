@@ -6,12 +6,12 @@ var hp_empty = preload("res://Assets/Collectibles/Collectible - Heart_empty.png"
 func _ready() -> void:
 	GlobalPlayerStats.max_hp_changed.connect(add_max_hp)
 
-func update_health(value : float) : 
-	for i in get_child_count() : 
-		if value > i : 
-			get_child(i).texture = hp_full
-		else : 
-			get_child(i).texture = hp_empty
+func update_health(value : float) :
+        for i in range(get_child_count()):
+                if value > i :
+                        get_child(i).texture = hp_full
+                else :
+                        get_child(i).texture = hp_empty
 
 func _process(_delta: float) -> void:
 	
