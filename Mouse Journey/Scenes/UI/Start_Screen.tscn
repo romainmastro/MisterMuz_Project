@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://ddo3mx17axu4k"]
+[gd_scene load_steps=30 format=4 uid="uid://ddo3mx17axu4k"]
 
 [ext_resource type="Script" uid="uid://bq6fsl6b3usqu" path="res://Scripts/UI/Start_Screen.gd" id="1_246bo"]
 [ext_resource type="Theme" uid="uid://ba6rurgdpqsjr" path="res://Resources/font/main_font_theme.tres" id="2_nr8uh"]
@@ -8,6 +8,7 @@
 [ext_resource type="TileSet" uid="uid://cvn6rtpn15ve6" path="res://Resources/Level_Maker.tres" id="5_qu7ox"]
 [ext_resource type="TileSet" uid="uid://1x1qpe81qufy" path="res://Resources/Décor.tres" id="6_yslt2"]
 [ext_resource type="PackedScene" uid="uid://bxx7sq8x1ny3r" path="res://Scenes/UI/moon.tscn" id="8_sqpsh"]
+[ext_resource type="AudioStream" uid="uid://dcno5rhqky5da" path="res://Assets/Audio/Music/Muz_StartScreen_V0.mp3" id="9_i67xg"]
 
 [sub_resource type="Curve2D" id="Curve2D_sqpsh"]
 _data = {
@@ -335,6 +336,10 @@ position = Vector2(8, 152)
 sprite_frames = SubResource("SpriteFrames_i4k7f")
 animation = &"idle"
 autoplay = "run"
+
+[node name="StartScreen" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_i67xg")
+bus = &"Music"
 
 [connection signal="timeout" from="ColorRect/Timer" to="ColorRect" method="_on_timer_timeout"]
 [connection signal="pressed" from="UI - 5/Menu/StartButton" to="." method="_on_start_button_pressed"]

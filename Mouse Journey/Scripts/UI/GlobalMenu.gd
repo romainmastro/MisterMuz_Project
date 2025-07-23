@@ -155,3 +155,8 @@ func get_current_level_player_mode() -> String :
 
 func go_next_level() : 
 	current_level_index += 1
+
+func music_fade_out(music : AudioStreamPlayer) : 
+	var tween = create_tween()
+	tween.tween_property(music, "volume_db",-79, 5)
+	await tween.finished
