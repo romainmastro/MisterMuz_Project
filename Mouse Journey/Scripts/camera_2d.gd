@@ -47,4 +47,4 @@ func _process(delta: float) -> void:
 		vertical_offset = lerp(vertical_offset, 0.0, camera_lerp_speed)
 
 	# Apply vertical offset to camera’s local Y only (X follows player naturally)
-	position.y = vertical_offset
+	offset.y = vertical_offset

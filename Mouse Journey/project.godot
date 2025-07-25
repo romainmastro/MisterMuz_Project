@@ -125,6 +125,7 @@ down={
 2d_physics/layer_8="enemy_deadzone"
 2d_physics/layer_9="Moving_platforms"
 2d_physics/layer_10="Collectibles"
+2d_physics/layer_16="Droppable"
 
 [physics]
 

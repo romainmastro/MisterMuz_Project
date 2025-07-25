@@ -4,3 +4,6 @@ res://Resources/Décor.tres
 res://Resources/Pièges.tres
 res://Resources/Objects.tres
 res://Resources/shader/outline_player.gdshader
+res://Scenes/Collectibles/super_frost_berry.tscn
+res://Scenes/Enemies/snowman.tscn
+res://Scripts/camera_2d.gd
