@@ -56,7 +56,9 @@
 				"0ea93d3f-4264-46d0-899b-8f491bc49e12",
 				"25e39056-f16e-4cb5-88b8-0deaa0e6a02c",
 				"6da8879d-00be-4c24-8ccf-c6507d6e9473",
-				"c18df18c-0a19-4168-a5e1-a8899745efdc"
+				"c18df18c-0a19-4168-a5e1-a8899745efdc",
+				"25d0ab89-0f85-4e7d-8067-035fcbd4be60",
+				"eb604c62-ad85-4fc3-ae6b-9aec648bb284"
 			]
 		},
 		{
@@ -1783,6 +1785,20 @@
 		{
 			"uuid": "c18df18c-0a19-4168-a5e1-a8899745efdc",
 			"title": "BUG : enemies don't walk on droppable",
+			"description": "",
+			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"steps": []
+		},
+		{
+			"uuid": "25d0ab89-0f85-4e7d-8067-035fcbd4be60",
+			"title": "Bug with GiftBox : Fixed with AnimationPlayers",
+			"description": "",
+			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"steps": []
+		},
+		{
+			"uuid": "eb604c62-ad85-4fc3-ae6b-9aec648bb284",
+			"title": "Trap Door open with button",
 			"description": "",
 			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
 			"steps": []

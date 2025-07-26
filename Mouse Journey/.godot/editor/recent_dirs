@@ -1,8 +1,9 @@
+res://Scripts/Platform
+res://Assets/TileSet
+res://Scenes/Platforms
 res://Scenes/Levels
 res://Resources
 res://
-res://Assets/TileSet
-res://Scenes/Platforms
 res://Scenes/UI
 res://Scripts/UI
 res://Assets/Muz
@@ -19,4 +20,3 @@ res://Assets/Collectibles
 res://Scenes/Traps
 res://Resources/light
 res://Assets/Enemies/SpikeThrower
-res://Scenes/Environment

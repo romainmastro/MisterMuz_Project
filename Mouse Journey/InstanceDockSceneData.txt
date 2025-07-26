@@ -25,6 +25,8 @@
 &"scene": "res://Scenes/Traps/Horizontal_geyser.tscn"
 }, {
 &"scene": "res://Scenes/Traps/spike_thrower.tscn"
+}, {
+&"scene": "res://Scenes/Platforms/trap_door.tscn"
 }]
 }, {
 "name": "Enemies",
