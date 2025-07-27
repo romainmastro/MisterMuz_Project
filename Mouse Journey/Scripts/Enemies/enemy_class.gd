@@ -46,16 +46,16 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 		death_particles.emitting = true
 		animated_sprite.visible = false
 		await get_tree().create_timer(0.6).timeout
-		
-		roll = randi_range(0, 100)
-		if roll >= 1 and roll <= 20 : 
-			spawn_collectible(heart_scene)
-		elif roll >= 21 and roll <= 40 : 
-			spawn_collectible(fruit_scene)
-		elif roll >= 41 and roll <= 45 : 
-			spawn_collectible(super_fruit_scene)
-		else : 
-			pass
+		if animated_sprite.get_parent() is not Throwing_spikes : 
+			roll = randi_range(0, 100)
+			if roll >= 1 and roll <= 20 : 
+				spawn_collectible(heart_scene)
+			elif roll >= 21 and roll <= 40 : 
+				spawn_collectible(fruit_scene)
+			elif roll >= 41 and roll <= 45 : 
+				spawn_collectible(super_fruit_scene)
+			else : 
+				pass
 		
 		die()
 

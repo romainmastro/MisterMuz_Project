@@ -8,7 +8,7 @@ const THROWING_SPIKES = preload("res://Scenes/Traps/throwing_spikes.tscn")
 @export var particles : CPUParticles2D
 
 @export var speed : float = 50
-@export_enum ("gauche", "droite") var direction_depart := 1
+@export_enum ("gauche", "droite") var direction_depart := 0
 var direction
 var marker_x_offset : int = 10
 var particles_offset : int = 5

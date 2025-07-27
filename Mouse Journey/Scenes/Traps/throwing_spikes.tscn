@@ -56,7 +56,7 @@ colors = PackedColorArray(0.372549, 0.803922, 0.894118, 1, 0.601569, 0.84, 1, 0.
 metadata/_snap_count = 5
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wtxtr"]
-size = Vector2(14.1917, 2.89627)
+size = Vector2(14.1917, 1.0378705)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_artop"]
 size = Vector2(0.883095, 1.03871)
@@ -64,7 +64,7 @@ size = Vector2(0.883095, 1.03871)
 [node name="Throwing_Spikes" type="CharacterBody2D" node_paths=PackedStringArray("queue_free_area_right", "queue_free_area_left", "collision_shape", "hitbox", "deadzone", "animated_sprite", "death_particles") groups=["traps"]]
 scale = Vector2(0.8, 0.8)
 collision_layer = 64
-collision_mask = 17
+collision_mask = 49
 script = ExtResource("1_gnesi")
 queue_free_area_right = NodePath("Queue_free_area2D_Right")
 queue_free_area_left = NodePath("Queue_free_area2D_Left")
@@ -78,6 +78,7 @@ death_particles = NodePath("DeathParticles")
 sprite_frames = SubResource("SpriteFrames_xm8g0")
 animation = &"idle"
 autoplay = "idle"
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.45032, -0.520956)
@@ -95,7 +96,7 @@ collision_mask = 33
 script = ExtResource("3_xm8g0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeadZone"]
-position = Vector2(0.0177181, -3.38656)
+position = Vector2(0.0177181, -4.6365604)
 scale = Vector2(0.999999, 0.999999)
 shape = SubResource("RectangleShape2D_gnesi")
 debug_color = Color(0.994408, 0, 0.222563, 0.42)
@@ -128,8 +129,8 @@ script = ExtResource("4_wtxtr")
 metadata/_custom_type_script = "uid://c6dcvl7ynfcrq"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyHitboxClass"]
-position = Vector2(-0.0159286, -0.34293)
-scale = Vector2(0.999999, 0.999999)
+position = Vector2(-1.8626446e-09, -0.484439)
+scale = Vector2(0.99999875, 0.99999875)
 shape = SubResource("RectangleShape2D_wtxtr")
 debug_color = Color(0.261223, 0.629625, 0.217759, 0.42)
 

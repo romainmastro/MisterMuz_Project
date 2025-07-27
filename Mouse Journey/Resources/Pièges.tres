@@ -1,10 +1,9 @@
-[gd_resource type="TileSet" load_steps=17 format=3 uid="uid://cvxyb7jcx6hel"]
+[gd_resource type="TileSet" load_steps=16 format=3 uid="uid://cvxyb7jcx6hel"]
 
 [ext_resource type="PackedScene" uid="uid://cqsgkagwskqrc" path="res://Scenes/Traps/H_BOTTOM_stalag1_Repousseur.tscn" id="1_isxiw"]
 [ext_resource type="PackedScene" uid="uid://itb374sasgaa" path="res://Scenes/Traps/Trou.tscn" id="2_v66ds"]
 [ext_resource type="PackedScene" uid="uid://k3o34hefx5mr" path="res://Scenes/Traps/h_stalag_tite_1_kb.tscn" id="3_v66ds"]
 [ext_resource type="PackedScene" uid="uid://bl1owrdhpaf8h" path="res://Scenes/Traps/V_L_stalagmite_1_Repousseur.tscn" id="4_lt143"]
-[ext_resource type="PackedScene" uid="uid://dmjbvh504bip3" path="res://Scenes/Traps/ice_cover.tscn" id="4_v66ds"]
 [ext_resource type="PackedScene" uid="uid://dpf8pmvauf1pw" path="res://Scenes/Traps/H_TOP_stalag_1_Repousseur.tscn" id="5_4yf5k"]
 [ext_resource type="PackedScene" uid="uid://b4w7gt12m2681" path="res://Scenes/Traps/H_stalagmite1_Teleporteur.tscn" id="5_isxiw"]
 [ext_resource type="PackedScene" uid="uid://d13jktpqohu73" path="res://Scenes/Traps/H_TOP_stalag_2_Repousseur.tscn" id="6_l3p4o"]
@@ -29,7 +28,6 @@ scenes/8/scene = ExtResource("10_xda6b")
 scenes/9/scene = ExtResource("11_dwlue")
 scenes/10/scene = ExtResource("2_v66ds")
 scenes/11/scene = ExtResource("3_v66ds")
-scenes/12/scene = ExtResource("4_v66ds")
 scenes/13/scene = ExtResource("5_4yf5k")
 scenes/14/scene = ExtResource("6_l3p4o")
 scenes/15/scene = ExtResource("7_aras2")

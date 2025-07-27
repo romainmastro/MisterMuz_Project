@@ -44,7 +44,8 @@
 			"uuid": "ef4e123f-f6ea-4e30-8896-4ddd7167fd59",
 			"title": "Doing",
 			"tasks": [
-				"9420965e-1f5b-4225-b84a-f62ee5a4a07b"
+				"9420965e-1f5b-4225-b84a-f62ee5a4a07b",
+				"50ef9f6d-1bb7-43f9-8e82-8987051e3bce"
 			]
 		},
 		{
@@ -58,7 +59,8 @@
 				"6da8879d-00be-4c24-8ccf-c6507d6e9473",
 				"c18df18c-0a19-4168-a5e1-a8899745efdc",
 				"25d0ab89-0f85-4e7d-8067-035fcbd4be60",
-				"eb604c62-ad85-4fc3-ae6b-9aec648bb284"
+				"eb604c62-ad85-4fc3-ae6b-9aec648bb284",
+				"f32f8ef7-1a3c-4529-9b54-814115ea295f"
 			]
 		},
 		{
@@ -1801,6 +1803,20 @@
 			"title": "Trap Door open with button",
 			"description": "",
 			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"steps": []
+		},
+		{
+			"uuid": "f32f8ef7-1a3c-4529-9b54-814115ea295f",
+			"title": "Farm collect with SpikeThrower",
+			"description": "",
+			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"steps": []
+		},
+		{
+			"uuid": "50ef9f6d-1bb7-43f9-8e82-8987051e3bce",
+			"title": "BUG : when dying on slow down, don't slow up on respawn",
+			"description": "",
+			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
 			"steps": []
 		}
 	],
