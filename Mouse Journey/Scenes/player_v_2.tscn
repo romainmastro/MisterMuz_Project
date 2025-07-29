@@ -1104,7 +1104,7 @@ collision_mask = 33293
 floor_stop_on_slope = false
 floor_max_angle = 0.872665
 floor_snap_length = 5.0
-platform_floor_layers = 4294962690
+platform_floor_layers = 1
 safe_margin = 0.16
 script = ExtResource("1_2tjdf")
 player_sprite = NodePath("PlayerSprite")
@@ -1134,6 +1134,8 @@ marker_sledding_particles = NodePath("MARKER/sledding_particles_marker")
 marker_sledding_brake_particles = NodePath("MARKER/sledding_brake_particles_marker2")
 coyote_timer = NodePath("CoyoteTimer")
 coyote_grace_sec = 0.2
+invincible_frame_sec = 1.5
+medium_knockback_force = 30.0
 
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_dewec")
@@ -1311,19 +1313,19 @@ position_smoothing_speed = 3.0
 script = ExtResource("40_ybkh6")
 
 [node name="safe_behind" type="RayCast2D" parent="."]
-visible = false
-position = Vector2(-50, 4)
+position = Vector2(-25, 4)
 target_position = Vector2(0, 8)
+collision_mask = 32769
 
 [node name="safe_under" type="RayCast2D" parent="."]
-visible = false
 position = Vector2(0, 4)
 target_position = Vector2(0, 8)
+collision_mask = 32769
 
 [node name="safe_front" type="RayCast2D" parent="."]
-visible = false
-position = Vector2(50, 4)
+position = Vector2(25, 4)
 target_position = Vector2(0, 8)
+collision_mask = 32769
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
 [connection signal="body_entered" from="HurtBox" to="." method="body_entered"]

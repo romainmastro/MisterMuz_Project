@@ -1,3 +1,4 @@
+res://default_bus_layout.tres
 res://Scenes/Levels/level_1_romain.tscn
 res://Resources/Level_Maker.tres
 res://Resources/Décor.tres
@@ -5,7 +6,12 @@ res://Resources/Pièges.tres
 res://Resources/Objects.tres
 res://Resources/shader/outline_player.gdshader
 res://Scenes/UI/Start_Screen.tscn
-res://Scenes/Traps/throwing_spikes.tscn
-res://Scripts/Enemies/enemy_class.gd
-res://Scenes/Traps/spike_thrower.tscn
-res://Scripts/Traps/spike_thrower.gd
+res://Scenes/Traps/H_stalagmite2_Teleporteur.tscn
+res://Scenes/Traps/H_stalagmite3_Teleporteur.tscn
+res://Scenes/Traps/H_stalagmite1_Teleporteur.tscn
+res://Scenes/MovingPlatforms/moving_platform2.tscn
+res://Scenes/player_v_2.tscn
+res://Scenes/main.tscn
+res://Scripts/main.gd
+res://Scripts/Platform/moving_platform_path_2d.gd
+res://Scripts/player_v_3.gd

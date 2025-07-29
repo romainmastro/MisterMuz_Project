@@ -44,8 +44,7 @@
 			"uuid": "ef4e123f-f6ea-4e30-8896-4ddd7167fd59",
 			"title": "Doing",
 			"tasks": [
-				"9420965e-1f5b-4225-b84a-f62ee5a4a07b",
-				"50ef9f6d-1bb7-43f9-8e82-8987051e3bce"
+				"9420965e-1f5b-4225-b84a-f62ee5a4a07b"
 			]
 		},
 		{
@@ -60,7 +59,10 @@
 				"c18df18c-0a19-4168-a5e1-a8899745efdc",
 				"25d0ab89-0f85-4e7d-8067-035fcbd4be60",
 				"eb604c62-ad85-4fc3-ae6b-9aec648bb284",
-				"f32f8ef7-1a3c-4529-9b54-814115ea295f"
+				"f32f8ef7-1a3c-4529-9b54-814115ea295f",
+				"37e7801a-d964-4dc4-9959-6c89e741d4d2",
+				"50ef9f6d-1bb7-43f9-8e82-8987051e3bce",
+				"ea156777-2640-46b1-ba7a-3544950d6562"
 			]
 		},
 		{
@@ -1816,7 +1818,21 @@
 			"uuid": "50ef9f6d-1bb7-43f9-8e82-8987051e3bce",
 			"title": "BUG : when dying on slow down, don't slow up on respawn",
 			"description": "",
-			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"steps": []
+		},
+		{
+			"uuid": "37e7801a-d964-4dc4-9959-6c89e741d4d2",
+			"title": "FEATURE CHANGE : invincibility longer",
+			"description": "",
+			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"steps": []
+		},
+		{
+			"uuid": "ea156777-2640-46b1-ba7a-3544950d6562",
+			"title": "BUG : TRAPS not safe place for respawn",
+			"description": "",
+			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
 			"steps": []
 		}
 	],

@@ -230,6 +230,9 @@ func play_animation(base_anim : String) :
 	player_sprite.play(current_player_mode + "_" + base_anim)
 
 func process_state_machine(delta : float) : 
+	if GlobalPlayerStats.player_current_HP <= 0 and STATE != "DEAD":
+		print_debug("FORCE DEAD STATE")
+		STATE = "DEAD"
 
 	if STATE == "DEAD":
 		if not is_dead : 
@@ -579,7 +582,7 @@ func init_health() :
 	print("Init Health : ", GlobalPlayerStats.player_current_HP)
 
 func take_damage(damage_amount : int) :
-	GlobalPlayerStats.player_current_HP -= damage_amount
+	GlobalPlayerStats.player_current_HP = max(GlobalPlayerStats.player_current_HP - damage_amount, 0)
 	print("HP reduced to ", GlobalPlayerStats.player_current_HP)
 
 	if GlobalPlayerStats.player_current_HP <= 0:
@@ -597,6 +600,7 @@ func respawn_to_checkpoint() :
 	await get_tree().create_timer(0.2).timeout
 	global_position = GlobalPlayerStats.current_checkpoint
 	GlobalEnemyManager.spawn()
+	Engine.time_scale = 1.0
 
 func init_player_after_respawn() : 
 	if current_player_mode == "normal" : 
@@ -623,10 +627,7 @@ func on_death() :
 	is_dead = true
 
 	GlobalPlayerStats.current_lives_number -= 1
-	# Send message to label_lives in main.gd !! 
-	# I do it in Continue_Screen now to show the player and update at the right time
-	#GlobalPlayerStats.update_life_number.emit() 
-
+	
 	if GlobalPlayerStats.current_lives_number < 0 :
 		print("GAME OVER")
 		GlobalMenu.game_transition(func() : GlobalMenu.set_game_state(GlobalMenu.GAME_STATES.GAMEOVER_SCREEN))
@@ -648,7 +649,14 @@ func get_last_valid_safe_position() -> Vector2:
 			continue
 		if is_respawn_position_safe(pos):
 			return pos
-	return GlobalPlayerStats.current_checkpoint
+	
+	print_debug("WARNING: No valid safe position found. Falling back to checkpoint.")
+	if is_respawn_position_safe(GlobalPlayerStats.current_checkpoint):
+		return GlobalPlayerStats.current_checkpoint
+
+	print_debug("WARNING: Checkpoint is not safe either. Using emergency position.")
+	return Vector2(32, 32)
+
 
 
 func respawn_to_last_safe_position() :
@@ -676,50 +684,65 @@ func start_knockback(knockback_force: float) -> void:
 	knockback_timer = time_knockback
 
 func _on_hurt_box_area_entered(area: Area2D) -> void:
-	if invincible_timer > 0 : 
-		return
-	
-	if GlobalPlayerStats.player_current_HP <= 0 : return
-	
-	take_damage(area.damage_amount)
-	
 	if STATE == "DEAD":
-		start_knockback(medium_knockback_force)
-		return  # Exit early if we've just died
-	
-	invincible_timer = invincible_frame_sec
-	
-	if area is ClassTrapRespawn: 
-		print("HURT by Trap ReSpawn")
+		return  # No more hurt allowed if dead
+
+	# --------------------------------------------
+	# 1. SPIKES (ClassTrapRespawn)
+	# Always teleport, but don't cause damage if invincible
+	# --------------------------------------------
+	if area is ClassTrapRespawn:
+		if invincible_timer > 0:
+			print("Touched spikes while invincible: teleporting only")
+		else:
+			print("HURT by Trap ReSpawn: lose 1 HP + teleport")
+			take_damage(area.damage_amount)
+
+			if GlobalPlayerStats.player_current_HP <= 0:
+				STATE = "DEAD"
+				return
+
+			invincible_timer = invincible_frame_sec
+		
 		STATE = "HURT_RESPAWN"
 		respawn_to_last_safe_position()
 		return
-		# hurt animation
-		
-	elif area is ClassTrapKnockBack : 
+
+	# --------------------------------------------
+	# 2. Other hazards/enemies respect invincibility
+	# --------------------------------------------
+	if invincible_timer > 0:
+		return
+
+	if GlobalPlayerStats.player_current_HP <= 0:
+		return
+	
+	take_damage(area.damage_amount)
+
+	if GlobalPlayerStats.player_current_HP <= 0:
+		STATE = "DEAD"
+		#start_knockback(medium_knockback_force)
+		return
+	
+	invincible_timer = invincible_frame_sec
+
+	# --------------------------------------------
+	# 3. Set appropriate hurt state
+	# --------------------------------------------
+	if area is ClassTrapKnockBack:
 		print("HURT by Trap KnockBack")
 		STATE = "HURT_KNOCKBACK"
 		start_knockback(medium_knockback_force)
-		return
-		
-	elif area is EnemyHitboxClass : 
-		
-		STATE = "HURT_KNOCKBACK"
-		start_knockback(medium_knockback_force)
-		return
-			
-	elif area is Snowball_proj2 : 
-		STATE = "HURT_KNOCKBACK"
-		start_knockback(medium_knockback_force)
-		return
 
-#func body_entered(body : Node2D) : 
-		#if not invincible_timer > 0 : 
-			#if body is TrapSnowballClass:
-				#print("HURT by Trap Snowball")
-				#STATE = "HURT_KNOCKBACK"
-				#take_damage(body.damage_amount)
-				#velocity = Vector2.ZERO
+	elif area is EnemyHitboxClass:
+		print("HURT by Enemy")
+		STATE = "HURT_KNOCKBACK"
+		start_knockback(medium_knockback_force)
+
+	elif area is Snowball_proj2:
+		print("HURT by Snowball")
+		STATE = "HURT_KNOCKBACK"
+		start_knockback(medium_knockback_force)
 
 ##################################### ANIMATIONS SYSTEM #######################################
 func handle_animations() : 
@@ -896,10 +919,12 @@ func _on_terrain_detector_body_entered(body: Node2D) -> void:
 		current_speed_multiplier = snow_speed_multiplier
 		print("Player walks snow ground")
 
+#TODO : Correct the bug! When in invincibility frame, shouldn't record the position
 func is_ground_safe() -> bool : 
 	return (safe_behind.is_colliding() and 
 			safe_under.is_colliding() and 
-			safe_front.is_colliding()) 
+			safe_front.is_colliding())
+			
 			
 func is_respawn_position_safe(pos: Vector2) -> bool:
 	var space_state = get_world_2d().direct_space_state
@@ -917,7 +942,11 @@ func _on_safe_position_timeout() -> void:
 		GlobalPlayerStats.last_safe_position = GlobalPlayerStats.current_checkpoint
 		#saving the position in the array
 		add_safe_positions_array(GlobalPlayerStats.last_safe_position)
-		
+	
+	if invincible_timer > 0 : 
+		print_debug("Skipping safe position update: invincible")
+		return
+	
 	if not is_on_floor() : 
 		return
 		

@@ -30,9 +30,13 @@ func load_current_level_and_player() :
 	# Spawn the level
 	current_level = level_scene.instantiate()
 	current_level.rotation = GlobalMenu.get_current_level_rotation()
+	if world == null:
+		push_error("WORLD is not assigned in the Inspector!")
+		return
 	world.add_child(current_level)
+
 	
-	await get_tree().process_frame
+	#await get_tree().process_frame
 	
 	# Spawn the player
 	var start = current_level.get_node_or_null("Sign_Start_Level")
