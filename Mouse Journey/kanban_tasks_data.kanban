@@ -44,7 +44,9 @@
 			"uuid": "ef4e123f-f6ea-4e30-8896-4ddd7167fd59",
 			"title": "Doing",
 			"tasks": [
-				"9420965e-1f5b-4225-b84a-f62ee5a4a07b"
+				"9420965e-1f5b-4225-b84a-f62ee5a4a07b",
+				"ec1ea3ed-acdf-4afd-b244-8d1b751de038",
+				"99c0d9f4-8a19-46a5-834d-030b7966701c"
 			]
 		},
 		{
@@ -1833,6 +1835,20 @@
 			"title": "BUG : TRAPS not safe place for respawn",
 			"description": "",
 			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"steps": []
+		},
+		{
+			"uuid": "ec1ea3ed-acdf-4afd-b244-8d1b751de038",
+			"title": "CHANGE : The player should slide by itself on slopes",
+			"description": "",
+			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"steps": []
+		},
+		{
+			"uuid": "99c0d9f4-8a19-46a5-834d-030b7966701c",
+			"title": "ASSET : end for slope",
+			"description": "",
+			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
 			"steps": []
 		}
 	],

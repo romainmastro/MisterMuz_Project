@@ -126,52 +126,6 @@ offset_bottom = 40.0
 texture = ExtResource("9_jkdf5")
 stretch_mode = 3
 
-[node name="DEBUG" type="CanvasLayer" parent="."]
-visible = false
-
-[node name="Control" type="Control" parent="DEBUG"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="DEBUG/Control"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="State" type="Label" parent="DEBUG/Control/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 9
-text = "State"
-
-[node name="Coyote" type="Label" parent="DEBUG/Control/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 9
-text = "Coyote"
-
-[node name="JumpBuffer" type="Label" parent="DEBUG/Control/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 9
-text = "JumpBuffer"
-
-[node name="velocity_x" type="Label" parent="DEBUG/Control/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 9
-text = "velocity_x"
-
-[node name="animation" type="Label" parent="DEBUG/Control/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 9
-text = "animation name"
-
 [node name="Enemies_spawn" type="Node2D" parent="."]
 
 [node name="DebugDrawer" type="Node2D" parent="."]

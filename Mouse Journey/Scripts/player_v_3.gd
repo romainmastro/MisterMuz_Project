@@ -69,7 +69,7 @@ var ground_friction : float = 1.0
 @export_group("Sliding Settings")
 @export var sliding_max_speed : float = 150.0
 @export var sliding_accel : float = 10
-@export var slope_jump_force : float = 300.0
+@export var slope_jump_force : float = 200.0
 
 @export_group("Jump Settings")
 @export var jump_force : int = 210
@@ -97,7 +97,7 @@ var gliding_offset_hat := -9
 @export var vertical_knockback := -60.0
 @export var time_knockback := 0.3
 @export var time_respawn := 0.3
-@export var rebound_speed := -300
+@export var rebound_speed := -150
 
 var knockback_timer : float = 0.0
 var knockback_velocity : Vector2 = Vector2.ZERO
@@ -203,7 +203,7 @@ func _physics_process(delta: float) -> void:
 	
 	handle_particles()
 	
-	if current_player_mode == "normal" :
+	if current_player_mode == "normal" and STATE != "SLIDE":
 		flip_sprites_smooth(input_dir)
 
 
@@ -213,7 +213,7 @@ func apply_mode_settings() :
 		"normal" : 
 			STATE = "IDLE"
 			speed = 55
-			rebound_speed = -300
+			rebound_speed = -200
 			jump_force = 210
 			
 		"sled" : 
@@ -277,8 +277,11 @@ func process_state_machine(delta : float) :
 				if Input.is_action_just_pressed("jump")  : 
 					jump()
 					STATE = "JUMP"
-				if Input.is_action_pressed("slide") and is_on_downward_slope() : 
+				#if Input.is_action_pressed("slide") and is_on_downward_slope() : 
+					#STATE = "SLIDE"
+				if is_on_slide_tile() : 
 					STATE = "SLIDE"
+					
 				if Input.is_action_pressed("down") and is_platform_droppable(): 
 					drop_through()
 					
@@ -291,8 +294,11 @@ func process_state_machine(delta : float) :
 				if Input.is_action_just_pressed("jump"):
 					jump()
 					STATE = "JUMP"
-				if Input.is_action_pressed("slide") and is_on_downward_slope() : 
+				#if Input.is_action_pressed("slide") and is_on_downward_slope() : 
+					#STATE = "SLIDE"
+				if is_on_slide_tile() : 
 					STATE = "SLIDE"
+					
 				if Input.is_action_pressed("down") and is_platform_droppable(): 
 					drop_through()
 			"SLIDE" : 
@@ -304,9 +310,6 @@ func process_state_machine(delta : float) :
 				if Input.is_action_just_pressed("jump") : 
 					slope_jump()
 					STATE = "SLIDE_JUMP"
-					
-				if not is_on_downward_slope() : 
-					STATE = "RUN"
 				
 			"GLIDE", "FALL", "WALL_SLIDE" : 
 				if input_dir == 0 : 
@@ -530,17 +533,27 @@ func wall_slide(delta : float) :
 		velocity.y += gravity * delta * wall_slide_multiplier
 		velocity.y = min(velocity.y, wall_slide_max_speed)
 
-#### Slope Slide
-func is_on_downward_slope() -> bool : 
-	var floor_direction := get_floor_normal()
-	var facing_dir : float = sign(player_sprite.scale.x)
-	if not floor_direction.is_equal_approx(Vector2(0, -1)) : 
-		if floor_direction.x != 0 and sign(floor_direction.x) == facing_dir : 
-			if abs(rad_to_deg(get_floor_angle())) > 15 : 
-				return true
-	return false
-func slide(delta : float) : 
-	velocity.x = lerp(velocity.x, sliding_max_speed * sign(get_floor_normal().x), sliding_accel * delta)
+##### Slope Slide
+#func is_on_downward_slope() -> bool : 
+	#var floor_direction := get_floor_normal()
+	#var facing_dir : float = sign(player_sprite.scale.x)
+	#if not floor_direction.is_equal_approx(Vector2(0, -1)) : 
+		#if floor_direction.x != 0 and sign(floor_direction.x) == facing_dir : 
+			#if abs(rad_to_deg(get_floor_angle())) > 15 : 
+				#return true
+	#return false
+func slide(delta: float) -> void:
+	var dir = sign(get_floor_normal().x)
+	
+	# Only flip if the player isn't already facing the slope direction
+	if sign(player_sprite.scale.x) != dir:
+		player_sprite.scale.x = dir
+		boots_gloves_sprite.scale.x = dir
+		snowsuit_sprite.scale.x = dir
+		snowHat_sprite.scale.x = dir
+		muffler_sprite.scale.x = dir
+	velocity.x = lerp(velocity.x, sliding_max_speed * dir, sliding_accel * delta)
+	
 func slope_jump() : 
 	var floor_direction := get_floor_normal()
 	velocity.x = sliding_max_speed * floor_direction.x
@@ -574,6 +587,28 @@ func drop_through() :
 	set_collision_mask_value(16, false)
 	await get_tree().create_timer(0.1).timeout
 	set_collision_mask_value(16, true)
+	
+### slidable platform
+
+func is_on_slide_tile() -> bool:
+	var world = get_tree().current_scene.get_node_or_null("Main/WORLD")
+	if world == null:
+		return false
+
+	var tilemap = world.get_child(0).get_node_or_null("Level") as TileMapLayer
+	if tilemap == null:
+		return false
+
+	var world_position := global_position + Vector2(0, 6)
+	var local_pos := tilemap.to_local(world_position)
+	var map_coords := tilemap.local_to_map(local_pos)
+
+	var tile_data = tilemap.get_cell_tile_data(map_coords)
+	if tile_data and tile_data.get_custom_data("is_slide_slope"):
+		return true
+
+	return false
+
 
 ######################################## HEALTH SYSTEM #######################################
 func init_health() : 

@@ -1,3 +1,6 @@
+Timer
+Label
+Control
 TileMapLayer
 Node2D
 AnimationPlayer
@@ -9,6 +12,4 @@ Area2D
 AudioStreamPlayer
 ColorRect
 CanvasLayer
-Label
-Control
 RayCast2D
