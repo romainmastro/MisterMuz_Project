@@ -44,9 +44,7 @@
 			"uuid": "ef4e123f-f6ea-4e30-8896-4ddd7167fd59",
 			"title": "Doing",
 			"tasks": [
-				"9420965e-1f5b-4225-b84a-f62ee5a4a07b",
-				"ec1ea3ed-acdf-4afd-b244-8d1b751de038",
-				"99c0d9f4-8a19-46a5-834d-030b7966701c"
+				"9420965e-1f5b-4225-b84a-f62ee5a4a07b"
 			]
 		},
 		{
@@ -64,7 +62,12 @@
 				"f32f8ef7-1a3c-4529-9b54-814115ea295f",
 				"37e7801a-d964-4dc4-9959-6c89e741d4d2",
 				"50ef9f6d-1bb7-43f9-8e82-8987051e3bce",
-				"ea156777-2640-46b1-ba7a-3544950d6562"
+				"ea156777-2640-46b1-ba7a-3544950d6562",
+				"99c0d9f4-8a19-46a5-834d-030b7966701c",
+				"ec1ea3ed-acdf-4afd-b244-8d1b751de038",
+				"69db0ba2-6a8a-4149-b06d-8a9a75ec42a1",
+				"d78ec85b-ec55-4f3a-9fb8-ab505e3eb0ed",
+				"aa258bd1-03b0-4caf-90f0-bdec9bc9b676"
 			]
 		},
 		{
@@ -1841,14 +1844,35 @@
 			"uuid": "ec1ea3ed-acdf-4afd-b244-8d1b751de038",
 			"title": "CHANGE : The player should slide by itself on slopes",
 			"description": "",
-			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
 			"steps": []
 		},
 		{
 			"uuid": "99c0d9f4-8a19-46a5-834d-030b7966701c",
 			"title": "ASSET : end for slope",
 			"description": "",
-			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"steps": []
+		},
+		{
+			"uuid": "69db0ba2-6a8a-4149-b06d-8a9a75ec42a1",
+			"title": "Reviewed design DOOR + BUTTON",
+			"description": "",
+			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"steps": []
+		},
+		{
+			"uuid": "d78ec85b-ec55-4f3a-9fb8-ab505e3eb0ed",
+			"title": "Door Colors",
+			"description": "",
+			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"steps": []
+		},
+		{
+			"uuid": "aa258bd1-03b0-4caf-90f0-bdec9bc9b676",
+			"title": "Vertical Door",
+			"description": "",
+			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
 			"steps": []
 		}
 	],

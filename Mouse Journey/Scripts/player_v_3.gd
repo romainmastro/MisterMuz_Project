@@ -277,8 +277,7 @@ func process_state_machine(delta : float) :
 				if Input.is_action_just_pressed("jump")  : 
 					jump()
 					STATE = "JUMP"
-				#if Input.is_action_pressed("slide") and is_on_downward_slope() : 
-					#STATE = "SLIDE"
+				
 				if is_on_slide_tile() : 
 					STATE = "SLIDE"
 					
@@ -294,8 +293,7 @@ func process_state_machine(delta : float) :
 				if Input.is_action_just_pressed("jump"):
 					jump()
 					STATE = "JUMP"
-				#if Input.is_action_pressed("slide") and is_on_downward_slope() : 
-					#STATE = "SLIDE"
+				
 				if is_on_slide_tile() : 
 					STATE = "SLIDE"
 					
@@ -304,12 +302,12 @@ func process_state_machine(delta : float) :
 			"SLIDE" : 
 				slide(delta)
 				
-				if Input.is_action_just_released("slide") : 
-					STATE = "RUN"
-					
 				if Input.is_action_just_pressed("jump") : 
 					slope_jump()
 					STATE = "SLIDE_JUMP"
+				
+				if not is_on_slide_tile() : 
+					STATE = "IDLE"
 				
 			"GLIDE", "FALL", "WALL_SLIDE" : 
 				if input_dir == 0 : 

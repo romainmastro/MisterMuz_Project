@@ -16,8 +16,13 @@ var anim : String
 const DIRECTiON_DROITE := 1
 const DIRECTION_GAUCHE := 0
 
+var random_offset_sec : float = 0.0
+
 func _ready() -> void:
 	handle_flip_sprite()
+	random_offset_sec = randf_range(0.1,0.6)
+	reload_timer.wait_time += roundf(random_offset_sec*100) / 100
+	reload_timer.start()
 		
 func _on_timer_timeout() -> void:
 	animated_sprite.play("shoot")

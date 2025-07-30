@@ -8,9 +8,12 @@ extends Node2D
 @onready var platform_sprite: Sprite2D = $Platform/Sprite2D
 @onready var platform_animator: AnimationPlayer = $Platform/PlatformAnimator
 
+
+
 var is_activated : bool = false
 
 func _ready() -> void:
+
 	sprite_button_off.visible = true
 	sprite_button_on.visible = false
 	

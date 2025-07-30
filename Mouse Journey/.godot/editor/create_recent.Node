@@ -1,3 +1,4 @@
+ColorRect
 Timer
 Label
 Control
@@ -10,6 +11,4 @@ CollisionShape2D
 StaticBody2D
 Area2D
 AudioStreamPlayer
-ColorRect
 CanvasLayer
-RayCast2D

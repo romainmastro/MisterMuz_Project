@@ -1,6 +1,12 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://cvn6rtpn15ve6"]
+[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://cvn6rtpn15ve6"]
 
 [ext_resource type="Texture2D" uid="uid://bskec58c5stx0" path="res://Assets/TileSet/Tileset_Winter.png" id="1_bdci0"]
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_yvn3o"]
+tile_data = PackedInt32Array(0, 196611, 5, 65536, 196611, 6, 131072, 3, 4, 196608, 327683, 3, 65537, 196611, 5, 131073, 196611, 6, 196609, 131075, 3, 131074, 196611, 5, 196610, 65539, 4, 196611, 131075, 4)
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_xfcpe"]
+tile_data = PackedInt32Array(196608, 196611, 4, 131073, 262147, 5, 196609, 262147, 4, 65538, 262147, 5, 131074, 262147, 6, 196610, 262147, 3, 3, 262147, 5, 65539, 262147, 6, 131075, 65539, 5, 196611, 393219, 3)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bdci0"]
 texture = ExtResource("1_bdci0")
@@ -364,9 +370,9 @@ texture = ExtResource("1_bdci0")
 9:3/0/terrains_peering_bit/top_side = 0
 6:5/0 = 0
 6:5/0/terrain_set = 0
-6:5/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -5, -8, -5)
+6:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:5/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 6:5/0/physics_layer_1/polygon_0/one_way = true
-6:5/0/custom_data_0 = true
 0:8/0 = 0
 0:8/0/terrain_set = 0
 0:8/0/terrain = 0
@@ -382,7 +388,7 @@ texture = ExtResource("1_bdci0")
 7:5/0 = 0
 7:5/0/terrain_set = 0
 7:5/0/terrain = 1
-7:5/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -5, -8, -5)
+7:5/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 7:5/0/physics_layer_1/polygon_0/one_way = true
 7:5/0/terrains_peering_bit/right_side = 1
 7:5/0/terrains_peering_bit/bottom_right_corner = 1
@@ -395,9 +401,27 @@ texture = ExtResource("1_bdci0")
 7:5/0/custom_data_0 = true
 8:5/0 = 0
 8:5/0/terrain_set = 0
-8:5/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -5, -8, -5)
+8:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:5/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 8:5/0/physics_layer_1/polygon_0/one_way = true
-8:5/0/custom_data_0 = true
+3:4/0 = 0
+3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4.5, 4, 8, -8, 8, 8, -4.5, 8)
+3:4/0/custom_data_1 = true
+4:4/0 = 0
+4:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:4/0 = 0
+1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:4/0 = 0
+2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 5, 4.5, 5, 8, -8, 8)
+2:4/0/custom_data_1 = true
+5:4/0 = 0
+5:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:4/0 = 0
+6:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:4/0 = 0
+7:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:4/0 = 0
+8:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [resource]
 physics_layer_0/collision_layer = 1
@@ -414,3 +438,5 @@ custom_data_layer_0/type = 1
 custom_data_layer_1/name = "is_slide_slope"
 custom_data_layer_1/type = 1
 sources/3 = SubResource("TileSetAtlasSource_bdci0")
+pattern_0 = SubResource("TileMapPattern_yvn3o")
+pattern_1 = SubResource("TileMapPattern_xfcpe")

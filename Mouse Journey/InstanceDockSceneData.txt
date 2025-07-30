@@ -25,8 +25,6 @@
 &"scene": "res://Scenes/Traps/Horizontal_geyser.tscn"
 }, {
 &"scene": "res://Scenes/Traps/spike_thrower.tscn"
-}, {
-&"scene": "res://Scenes/Platforms/trap_door.tscn"
 }]
 }, {
 "name": "Enemies",
@@ -40,5 +38,12 @@
 &"scene": "res://Scenes/Enemies/super_snowman_spawn_point.tscn"
 }, {
 &"scene": "res://Scenes/Enemies/penguins_spawn_point.tscn"
+}]
+}, {
+"name": "Doors",
+"scenes": [{
+&"scene": "res://Scenes/Platforms/trap_door_H.tscn"
+}, {
+&"scene": "res://Scenes/Platforms/trap_door_V.tscn"
 }]
 }]

@@ -15,7 +15,7 @@ radius = 8.0
 
 [node name="Snowball" type="RigidBody2D" node_paths=PackedStringArray("timer_life") groups=["traps"]]
 collision_layer = 65
-collision_mask = 17
+collision_mask = 32785
 physics_material_override = SubResource("PhysicsMaterial_1tcfs")
 gravity_scale = 0.35
 script = ExtResource("1_1tcfs")
