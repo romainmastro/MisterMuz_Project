@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dcft2jp2kg0p2"]
+
+[ext_resource type="Script" uid="uid://b8kq6obsefjyu" path="res://Scripts/UI/GlobalMenu.gd" id="1_l4rqx"]
+
+[node name="GlobalMenu" type="Node"]
+process_mode = 3
+script = ExtResource("1_l4rqx")
+current_level_index = 0

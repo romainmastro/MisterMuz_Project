@@ -43,9 +43,7 @@
 		{
 			"uuid": "ef4e123f-f6ea-4e30-8896-4ddd7167fd59",
 			"title": "Doing",
-			"tasks": [
-				"9420965e-1f5b-4225-b84a-f62ee5a4a07b"
-			]
+			"tasks": []
 		},
 		{
 			"uuid": "a590c45f-f6e0-4df4-a178-2596b3213350",
@@ -66,6 +64,7 @@
 				"99c0d9f4-8a19-46a5-834d-030b7966701c",
 				"ec1ea3ed-acdf-4afd-b244-8d1b751de038",
 				"69db0ba2-6a8a-4149-b06d-8a9a75ec42a1",
+				"9420965e-1f5b-4225-b84a-f62ee5a4a07b",
 				"d78ec85b-ec55-4f3a-9fb8-ab505e3eb0ed",
 				"aa258bd1-03b0-4caf-90f0-bdec9bc9b676"
 			]
@@ -1680,7 +1679,7 @@
 			"uuid": "9420965e-1f5b-4225-b84a-f62ee5a4a07b",
 			"title": "BUG: on enemy from the left?? Rebound",
 			"description": "",
-			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
 			"steps": []
 		},
 		{

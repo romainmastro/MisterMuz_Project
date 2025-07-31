@@ -31,7 +31,7 @@ func handle_death():
 		return
 	is_dead = true
 	deactivate_collisions()
-	await do_hit_stop()
+	await GlobalEnemyManager.do_hit_stop()
 
 		## flash 
 	var tween = create_tween()
@@ -77,10 +77,10 @@ func deactivate_collisions() :
 	#deadzone.set_deferred("monitorable", true)
 	#deadzone.set_deferred("monitoring", true)
 
-func do_hit_stop(duration := 0.3, slowdown_factor := 0.5) -> void:
-	Engine.time_scale = slowdown_factor
-	await get_tree().create_timer(duration * slowdown_factor, true).timeout
-	Engine.time_scale = 1.0
+#func do_hit_stop(duration := 0.3, slowdown_factor := 0.5) -> void:
+	#Engine.time_scale = slowdown_factor
+	#await get_tree().create_timer(duration * slowdown_factor, true).timeout
+	#Engine.time_scale = 1.0
 
 func spawn_collectible(collectible_scene : PackedScene) : 
 	var collectible = collectible_scene.instantiate() as Area2D

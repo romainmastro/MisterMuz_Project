@@ -106,7 +106,7 @@ func update_animations() :
 						sprite_wheels.play("wheels_shoot_right")
 						sprite_body.play("shoot_right")
 		"dead" : 
-			await do_hit_stop()
+			await GlobalEnemyManager.do_hit_stop()
 			deactivate_collisions()
 			sprite_wheels.play("death")
 			sprite_body.play("death")

@@ -201,7 +201,7 @@ func handle_death():
 		return
 	is_dead = true
 	deactivate_collisions()
-	await do_hit_stop()
+	await GlobalEnemyManager.do_hit_stop()
 
 		## flash 
 	var tween = create_tween()
