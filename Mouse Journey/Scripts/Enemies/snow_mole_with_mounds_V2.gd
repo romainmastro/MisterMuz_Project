@@ -143,7 +143,7 @@ func handle_death():
 		return
 	is_dead = true
 	
-	await do_hit_stop()
+	await GlobalEnemyManager.do_hit_stop()
 	
 	if snow_mole_collision_enabled : 
 		disable_snow_mole_collision()

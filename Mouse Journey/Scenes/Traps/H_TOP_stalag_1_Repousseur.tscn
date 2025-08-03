@@ -7,16 +7,15 @@
 size = Vector2(16, 9)
 
 [node name="H_TOP_Stalagmite1_KB" type="Area2D" groups=["traps"]]
-position = Vector2(0, -3)
 rotation = 3.14159
 collision_layer = 64
 collision_mask = 16
 script = ExtResource("1_6qsgy")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -8)
+position = Vector2(0, 3)
 texture = ExtResource("2_vtmmp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -4)
+position = Vector2(0.057, 5.559)
 shape = SubResource("RectangleShape2D_s7wn5")

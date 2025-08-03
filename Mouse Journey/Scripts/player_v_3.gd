@@ -11,6 +11,8 @@ extends CharacterBody2D
 @export var muffler_sprite : AnimatedSprite2D
 @export var wall_ray_right : RayCast2D
 @export var wall_ray_left : RayCast2D
+@export var platform_checker_right : RayCast2D
+@export var platform_checker_left : RayCast2D
 @export var wall_ray_length : int = 6
 @export var stompbox : Area2D
 @export var terrain_detector : Area2D
@@ -67,7 +69,7 @@ var ground_friction : float = 1.0
 @export_group("Sliding Settings")
 @export var sliding_max_speed : float = 150.0
 @export var sliding_accel : float = 10
-@export var slope_jump_force : float = 300.0
+@export var slope_jump_force : float = 200.0
 
 @export_group("Jump Settings")
 @export var jump_force : int = 210
@@ -95,7 +97,7 @@ var gliding_offset_hat := -9
 @export var vertical_knockback := -60.0
 @export var time_knockback := 0.3
 @export var time_respawn := 0.3
-@export var rebound_speed := -300
+@export var rebound_speed := -150
 
 var knockback_timer : float = 0.0
 var knockback_velocity : Vector2 = Vector2.ZERO
@@ -104,19 +106,20 @@ var is_dead : bool = false
 
 var is_braking : bool = false
 
+var is_dropping_through : bool = false
+
 var can_save_position : bool = false
 var safe_position_sec : float = 0.5
 var safe_positions : Array[Vector2] = []
 var max_number_safe_positions : int = 5
 
-
 @export_enum(
 	# Ground States
 	"IDLE", "RUN", "SLIDE", 
 	# Airborne States
-	"JUMP", "COYOTE", "WALL_JUMP","WALL_SLIDE", "SLIDE_JUMP", "FALL", "GLIDE",
+	"JUMP", "COYOTE", "WALL_JUMP","WALL_SLIDE", "SLIDE_JUMP", "FALL", "GLIDE", "JUMP_THROUGH",
 	# Health/Hurt System 
-	"HURT_KNOCKBACK", "HURT_RESPAWN", "DEAD", 
+	"HURT_KNOCKBACK", "HURT_RESPAWN", "DEAD", "WAIT_FOR_RESPAWN",
 	# Player Sled
 	"SLEDDING", "SLEDDING_JUMP", "SLEDDING_HURT", "SLEDDING_BRAKE") 
 
@@ -158,10 +161,7 @@ func _ready() -> void:
 	
 	# Particles
 	current_particles = snow_trail_particles
-	#
-	## safe positions array : 
-	#for i in max_number_safe_positions:
-		#safe_positions.append(Vector2.ZERO)
+	
 ####################################### PHYSICS PROCESS ###########################################
 func _physics_process(delta: float) -> void:
 	handle_gravity(delta)
@@ -203,7 +203,7 @@ func _physics_process(delta: float) -> void:
 	
 	handle_particles()
 	
-	if current_player_mode == "normal" :
+	if current_player_mode == "normal" and STATE != "SLIDE":
 		flip_sprites_smooth(input_dir)
 
 
@@ -213,7 +213,7 @@ func apply_mode_settings() :
 		"normal" : 
 			STATE = "IDLE"
 			speed = 55
-			rebound_speed = -300
+			rebound_speed = -200
 			jump_force = 210
 			
 		"sled" : 
@@ -230,11 +230,19 @@ func play_animation(base_anim : String) :
 	player_sprite.play(current_player_mode + "_" + base_anim)
 
 func process_state_machine(delta : float) : 
+	if GlobalPlayerStats.player_current_HP <= 0 and STATE != "DEAD":
+		print_debug("FORCE DEAD STATE")
+		STATE = "DEAD"
 
 	if STATE == "DEAD":
-		on_death()
+		if not is_dead : 
+			on_death()
 		return
-
+		
+	if STATE == "WAIT_FOR_RESPAWN" : 
+		return
+		
+		
 	if STATE == "HURT_KNOCKBACK":
 		#deactivate collisions with Stompbox
 		stompbox.monitorable = false
@@ -266,11 +274,15 @@ func process_state_machine(delta : float) :
 				# TRANSITIONS
 				if input_dir != 0 : 
 					STATE = "RUN"
-				if Input.is_action_just_pressed("jump") : 
+				if Input.is_action_just_pressed("jump")  : 
 					jump()
 					STATE = "JUMP"
-				if Input.is_action_pressed("slide") and is_on_downward_slope() : 
+				
+				if is_on_slide_tile() : 
 					STATE = "SLIDE"
+					
+				if Input.is_action_pressed("down") and is_platform_droppable(): 
+					drop_through()
 					
 			"RUN" : 
 				velocity.x = lerp(velocity.x, input_dir * speed * current_speed_multiplier, accel * current_ground_multiplier * delta)
@@ -278,24 +290,24 @@ func process_state_machine(delta : float) :
 				# TRANSITIONS
 				if input_dir == 0 : 
 					STATE = "IDLE"
-				if Input.is_action_just_pressed("jump"): 
+				if Input.is_action_just_pressed("jump"):
 					jump()
 					STATE = "JUMP"
-				if Input.is_action_pressed("slide") and is_on_downward_slope() : 
+				
+				if is_on_slide_tile() : 
 					STATE = "SLIDE"
-			
+					
+				if Input.is_action_pressed("down") and is_platform_droppable(): 
+					drop_through()
 			"SLIDE" : 
 				slide(delta)
 				
-				if Input.is_action_just_released("slide") : 
-					STATE = "RUN"
-					
 				if Input.is_action_just_pressed("jump") : 
 					slope_jump()
 					STATE = "SLIDE_JUMP"
-					
-				if not is_on_downward_slope() : 
-					STATE = "RUN"
+				
+				if not is_on_slide_tile() : 
+					STATE = "IDLE"
 				
 			"GLIDE", "FALL", "WALL_SLIDE" : 
 				if input_dir == 0 : 
@@ -366,7 +378,7 @@ func process_state_machine(delta : float) :
 					STATE = "WALL_JUMP"
 					wall_jump()
 					
-			"FALL" : 
+			"FALL", "JUMP_THROUGH" : 
 				if input_dir != 0 : 
 					velocity.x = speed * input_dir
 					
@@ -381,7 +393,7 @@ func process_state_machine(delta : float) :
 					STATE = "WALL_JUMP"
 					wall_jump()
 				
-				if is_touching_wall() and wall_direction == input_dir : 
+				if is_touching_wall() and wall_direction == input_dir and not is_dropping_through: 
 					STATE = "WALL_SLIDE"
 					
 			"WALL_JUMP" : 
@@ -519,17 +531,27 @@ func wall_slide(delta : float) :
 		velocity.y += gravity * delta * wall_slide_multiplier
 		velocity.y = min(velocity.y, wall_slide_max_speed)
 
-#### Slope Slide
-func is_on_downward_slope() -> bool : 
-	var floor_direction := get_floor_normal()
-	var facing_dir : float = sign(player_sprite.scale.x)
-	if not floor_direction.is_equal_approx(Vector2(0, -1)) : 
-		if floor_direction.x != 0 and sign(floor_direction.x) == facing_dir : 
-			if abs(rad_to_deg(get_floor_angle())) > 15 : 
-				return true
-	return false
-func slide(delta : float) : 
-	velocity.x = lerp(velocity.x, sliding_max_speed * sign(get_floor_normal().x), sliding_accel * delta)
+##### Slope Slide
+#func is_on_downward_slope() -> bool : 
+	#var floor_direction := get_floor_normal()
+	#var facing_dir : float = sign(player_sprite.scale.x)
+	#if not floor_direction.is_equal_approx(Vector2(0, -1)) : 
+		#if floor_direction.x != 0 and sign(floor_direction.x) == facing_dir : 
+			#if abs(rad_to_deg(get_floor_angle())) > 15 : 
+				#return true
+	#return false
+func slide(delta: float) -> void:
+	var dir = sign(get_floor_normal().x)
+	
+	# Only flip if the player isn't already facing the slope direction
+	if sign(player_sprite.scale.x) != dir:
+		player_sprite.scale.x = dir
+		boots_gloves_sprite.scale.x = dir
+		snowsuit_sprite.scale.x = dir
+		snowHat_sprite.scale.x = dir
+		muffler_sprite.scale.x = dir
+	velocity.x = lerp(velocity.x, sliding_max_speed * dir, sliding_accel * delta)
+	
 func slope_jump() : 
 	var floor_direction := get_floor_normal()
 	velocity.x = sliding_max_speed * floor_direction.x
@@ -541,6 +563,51 @@ func glide(delta : float) :
 	velocity.y += gravity * delta * gliding_gravity_multiplier
 	velocity.y = min(velocity.y, gliding_max_speed)
 
+### drop through Platform
+
+func is_platform_droppable() -> bool:
+	var world = get_tree().current_scene.get_node_or_null("Main/WORLD")
+	var tilemap = world.get_child(0).get_node("Level") as TileMapLayer
+	var world_position := global_position + Vector2(0, 6)
+	
+	#get_tree().current_scene.get_node("Main/DebugDrawer").set_debug_point(world_position)
+	
+	var local_pos := tilemap.to_local(world_position)
+	var map_coords := tilemap.local_to_map(local_pos)
+	var tile_data = tilemap.get_cell_tile_data(map_coords)
+	
+	if tile_data and tile_data.get_custom_data("is_droppable"):
+		return true
+
+	return false
+
+func drop_through() : 
+	set_collision_mask_value(16, false)
+	await get_tree().create_timer(0.1).timeout
+	set_collision_mask_value(16, true)
+	
+### slidable platform
+
+func is_on_slide_tile() -> bool:
+	var world = get_tree().current_scene.get_node_or_null("Main/WORLD")
+	if world == null:
+		return false
+
+	var tilemap = world.get_child(0).get_node_or_null("Level") as TileMapLayer
+	if tilemap == null:
+		return false
+
+	var world_position := global_position + Vector2(0, 6)
+	var local_pos := tilemap.to_local(world_position)
+	var map_coords := tilemap.local_to_map(local_pos)
+
+	var tile_data = tilemap.get_cell_tile_data(map_coords)
+	if tile_data and tile_data.get_custom_data("is_slide_slope"):
+		return true
+
+	return false
+
+
 ######################################## HEALTH SYSTEM #######################################
 func init_health() : 
 	is_dead = false
@@ -548,7 +615,7 @@ func init_health() :
 	print("Init Health : ", GlobalPlayerStats.player_current_HP)
 
 func take_damage(damage_amount : int) :
-	GlobalPlayerStats.player_current_HP -= damage_amount
+	GlobalPlayerStats.player_current_HP = max(GlobalPlayerStats.player_current_HP - damage_amount, 0)
 	print("HP reduced to ", GlobalPlayerStats.player_current_HP)
 
 	if GlobalPlayerStats.player_current_HP <= 0:
@@ -566,6 +633,7 @@ func respawn_to_checkpoint() :
 	await get_tree().create_timer(0.2).timeout
 	global_position = GlobalPlayerStats.current_checkpoint
 	GlobalEnemyManager.spawn()
+	Engine.time_scale = 1.0
 
 func init_player_after_respawn() : 
 	if current_player_mode == "normal" : 
@@ -573,25 +641,35 @@ func init_player_after_respawn() :
 		
 	elif current_player_mode == "sled" : 
 		STATE = "SLEDDING"
+
+func continue_game_use_a_life() : 
+	velocity = Vector2.ZERO
+	if GlobalPlayerStats.current_checkpoint != Vector2.ZERO : 
+		respawn_to_checkpoint()
+	else : 
+		push_error("ERROR : There isn't any checkpoint available!!")
+	init_health()
+	STATE = "WAIT_FOR_RESPAWN"
 	
+	await get_tree().create_timer(0.2).timeout
+	init_player_after_respawn()
+
 func on_death() : 
 	if is_dead : 
 		return
 	is_dead = true
+
 	GlobalPlayerStats.current_lives_number -= 1
-	GlobalPlayerStats.update_life_number.emit() # to label_lives in main.gd
-	if GlobalPlayerStats.current_lives_number <= 0 :
+	
+	if GlobalPlayerStats.current_lives_number < 0 :
 		print("GAME OVER")
 		GlobalMenu.game_transition(func() : GlobalMenu.set_game_state(GlobalMenu.GAME_STATES.GAMEOVER_SCREEN))
 		
-	else : 
-		velocity = Vector2.ZERO
-		if GlobalPlayerStats.current_checkpoint != Vector2.ZERO : 
-			respawn_to_checkpoint()
-		else : 
-			push_error("ERROR : There isn't any checkpoint available!!")
-		init_health()
-		#STATE = "IDLE"
+	else : # Must make CONTINUE SCREEN APPEAR 
+		
+		get_tree().paused = true
+		GlobalMenu.game_transition(func() : GlobalMenu.set_game_state(GlobalMenu.GAME_STATES.CONTINUE_SCREEN))
+
 
 ######################################### HURT SYSTEM ########################################
 
@@ -602,7 +680,14 @@ func get_last_valid_safe_position() -> Vector2:
 			continue
 		if is_respawn_position_safe(pos):
 			return pos
-	return GlobalPlayerStats.current_checkpoint
+	
+	print_debug("WARNING: No valid safe position found. Falling back to checkpoint.")
+	if is_respawn_position_safe(GlobalPlayerStats.current_checkpoint):
+		return GlobalPlayerStats.current_checkpoint
+
+	print_debug("WARNING: Checkpoint is not safe either. Using emergency position.")
+	return Vector2(32, 32)
+
 
 
 func respawn_to_last_safe_position() :
@@ -630,50 +715,65 @@ func start_knockback(knockback_force: float) -> void:
 	knockback_timer = time_knockback
 
 func _on_hurt_box_area_entered(area: Area2D) -> void:
-	if invincible_timer > 0 : 
-		return
-	
-	if GlobalPlayerStats.player_current_HP <= 0 : return
-	
-	take_damage(area.damage_amount)
-	
 	if STATE == "DEAD":
-		start_knockback(medium_knockback_force)
-		return  # Exit early if we've just died
-	
-	invincible_timer = invincible_frame_sec
-	
-	if area is ClassTrapRespawn: 
-		print("HURT by Trap ReSpawn")
+		return  # No more hurt allowed if dead
+
+	# --------------------------------------------
+	# 1. SPIKES (ClassTrapRespawn)
+	# Always teleport, but don't cause damage if invincible
+	# --------------------------------------------
+	if area is ClassTrapRespawn:
+		if invincible_timer > 0:
+			print("Touched spikes while invincible: teleporting only")
+		else:
+			print("HURT by Trap ReSpawn: lose 1 HP + teleport")
+			take_damage(area.damage_amount)
+
+			if GlobalPlayerStats.player_current_HP <= 0:
+				STATE = "DEAD"
+				return
+
+			invincible_timer = invincible_frame_sec
+		
 		STATE = "HURT_RESPAWN"
 		respawn_to_last_safe_position()
 		return
-		# hurt animation
-		
-	elif area is ClassTrapKnockBack : 
+
+	# --------------------------------------------
+	# 2. Other hazards/enemies respect invincibility
+	# --------------------------------------------
+	if invincible_timer > 0:
+		return
+
+	if GlobalPlayerStats.player_current_HP <= 0:
+		return
+	
+	take_damage(area.damage_amount)
+
+	if GlobalPlayerStats.player_current_HP <= 0:
+		STATE = "DEAD"
+		#start_knockback(medium_knockback_force)
+		return
+	
+	invincible_timer = invincible_frame_sec
+
+	# --------------------------------------------
+	# 3. Set appropriate hurt state
+	# --------------------------------------------
+	if area is ClassTrapKnockBack:
 		print("HURT by Trap KnockBack")
 		STATE = "HURT_KNOCKBACK"
 		start_knockback(medium_knockback_force)
-		return
-		
-	elif area is EnemyHitboxClass : 
-		
-		STATE = "HURT_KNOCKBACK"
-		start_knockback(medium_knockback_force)
-		return
-			
-	elif area is Snowball_proj2 : 
-		STATE = "HURT_KNOCKBACK"
-		start_knockback(medium_knockback_force)
-		return
 
-#func body_entered(body : Node2D) : 
-		#if not invincible_timer > 0 : 
-			#if body is TrapSnowballClass:
-				#print("HURT by Trap Snowball")
-				#STATE = "HURT_KNOCKBACK"
-				#take_damage(body.damage_amount)
-				#velocity = Vector2.ZERO
+	elif area is EnemyHitboxClass:
+		print("HURT by Enemy")
+		STATE = "HURT_KNOCKBACK"
+		start_knockback(medium_knockback_force)
+
+	elif area is Snowball_proj2:
+		print("HURT by Snowball")
+		STATE = "HURT_KNOCKBACK"
+		start_knockback(medium_knockback_force)
 
 ##################################### ANIMATIONS SYSTEM #######################################
 func handle_animations() : 
@@ -850,10 +950,12 @@ func _on_terrain_detector_body_entered(body: Node2D) -> void:
 		current_speed_multiplier = snow_speed_multiplier
 		print("Player walks snow ground")
 
+#TODO : Correct the bug! When in invincibility frame, shouldn't record the position
 func is_ground_safe() -> bool : 
 	return (safe_behind.is_colliding() and 
 			safe_under.is_colliding() and 
-			safe_front.is_colliding()) 
+			safe_front.is_colliding())
+			
 			
 func is_respawn_position_safe(pos: Vector2) -> bool:
 	var space_state = get_world_2d().direct_space_state
@@ -871,7 +973,11 @@ func _on_safe_position_timeout() -> void:
 		GlobalPlayerStats.last_safe_position = GlobalPlayerStats.current_checkpoint
 		#saving the position in the array
 		add_safe_positions_array(GlobalPlayerStats.last_safe_position)
-		
+	
+	if invincible_timer > 0 : 
+		print_debug("Skipping safe position update: invincible")
+		return
+	
 	if not is_on_floor() : 
 		return
 		

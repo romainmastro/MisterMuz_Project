@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dpf8pmvauf1pw"]
+
+[ext_resource type="Script" uid="uid://kj2qaxhiyhow" path="res://Scripts/Traps/stalagmite_KB.gd" id="1_6qsgy"]
+[ext_resource type="Texture2D" uid="uid://be58h5ralkjk6" path="res://Assets/Traps/Stalagmites1x.png" id="2_vtmmp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s7wn5"]
+size = Vector2(16, 9)
+
+[node name="H_TOP_Stalagmite1_KB" type="Area2D" groups=["traps"]]
+position = Vector2(0, -3)
+rotation = 3.14159
+collision_layer = 64
+collision_mask = 16
+script = ExtResource("1_6qsgy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -8)
+texture = ExtResource("2_vtmmp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_s7wn5")

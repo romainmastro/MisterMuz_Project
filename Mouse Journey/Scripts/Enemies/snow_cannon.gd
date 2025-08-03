@@ -22,7 +22,7 @@ var direction : int = 1
 
 @export_enum("patroling", "shooting", "dead") var state = "patroling"
 
-@export var ray_offset : int = 10
+@export var ray_offset : int = 14
 @export var ray_detection_offset : int = 8
 @export var ray_detection_target_length : int = 100
 @export var muzzle_offset : int = 10
@@ -106,7 +106,7 @@ func update_animations() :
 						sprite_wheels.play("wheels_shoot_right")
 						sprite_body.play("shoot_right")
 		"dead" : 
-			await do_hit_stop()
+			await GlobalEnemyManager.do_hit_stop()
 			deactivate_collisions()
 			sprite_wheels.play("death")
 			sprite_body.play("death")

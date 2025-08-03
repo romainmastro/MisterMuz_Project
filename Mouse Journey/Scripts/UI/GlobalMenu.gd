@@ -1,6 +1,6 @@
 extends Node
 
-enum GAME_STATES{MAIN_MENU, PLAYING_GAME, LEVEL_COMPLETE_SCREEN, GAMEOVER_SCREEN, QUIT, UNSET}
+enum GAME_STATES{MAIN_MENU, PLAYING_GAME, LEVEL_COMPLETE_SCREEN, GAMEOVER_SCREEN, CONTINUE_SCREEN, QUIT, UNSET}
 @export var current_game_state : GAME_STATES = GAME_STATES.UNSET
 
 
@@ -12,9 +12,13 @@ var congrats_screen_node : Node
 var game_over_screen_node : Node
 @onready var game_states_transition = preload("res://Scenes/UI/transition.tscn")
 var game_states_transition_node = Node
+@onready var continue_game_screen = preload("res://Scenes/UI/continue_screen.tscn")
+var continue_game_screen_node = Node
 
 @onready var main = preload("res://Scenes/main.tscn")
 var main_node : Node
+
+var is_resuming_from_continue : bool = false
 
 
 var levels_info := {
@@ -47,10 +51,11 @@ var levels := ["level1", "level2", "level3", "level4"]
 func set_game_state(new_state : GAME_STATES) : 
 	print("Changing state to:", new_state)
 	if current_game_state == new_state : 
+		print("WARNING : current_game_state == new State")
 		return
 	
 	current_game_state = new_state
-	
+	print("Before Match Statement in Set Game State")
 	match new_state : 
 		GAME_STATES.MAIN_MENU : 
 			print("Game State = main_menu")
@@ -58,11 +63,20 @@ func set_game_state(new_state : GAME_STATES) :
 			
 		GAME_STATES.PLAYING_GAME : 
 			print("Game State = playing_game")
-			start_game()
+			if is_resuming_from_continue : 
+				print("Game is Resuming")
+				is_resuming_from_continue = false
+				#continue_game()
+			else : 
+				start_new_game()
 			
 		GAME_STATES.LEVEL_COMPLETE_SCREEN : 
 			print("Game State = level_complete_screen")
 			show_congrats_screen()
+			
+		GAME_STATES.CONTINUE_SCREEN : 
+			print("Game State = Continue?")
+			show_continue_screen()
 			
 		GAME_STATES.GAMEOVER_SCREEN : 
 			show_game_over_screen()
@@ -81,7 +95,9 @@ func show_main_menu() :
 	if game_over_screen_node : 
 		game_over_screen_node.call_deferred("queue_free")
 
-func start_game() : 
+func start_new_game() : 
+	if main_node : 
+		main_node.call_deferred("queue_free")
 	main_node = main.instantiate()
 	var game_path = get_tree().get_root().get_node("Game")
 	game_path.add_child(main_node)
@@ -94,7 +110,21 @@ func start_game() :
 	
 	if game_over_screen_node : 
 		game_over_screen_node.call_deferred("queue_free")
-		
+
+func continue_game() -> void:
+	is_resuming_from_continue = true
+	var player = get_tree().current_scene.get_node("Main/PlayerV2")
+	if not player:
+		printerr("ERROR: Player not found in current scene.")
+		return
+
+	player.continue_game_use_a_life()
+	GlobalPlayerStats.update_life_number.emit()
+	# remove Continue screen from tree?
+	set_game_state(GAME_STATES.PLAYING_GAME)
+	get_tree().paused = false
+
+	
 func show_congrats_screen() : 
 	#1 add congrats_screen
 	congrats_screen_node = congrats_screen.instantiate()
@@ -112,6 +142,10 @@ func show_game_over_screen() :
 	# 2 free main
 	if main_node : 
 		main_node.call_deferred("queue_free")
+
+func show_continue_screen() : 
+	continue_game_screen_node = continue_game_screen.instantiate()
+	call_deferred("add_child", continue_game_screen_node)
 
 func game_transition(callback : Callable) : 
 	
@@ -145,3 +179,8 @@ func get_current_level_player_mode() -> String :
 
 func go_next_level() : 
 	current_level_index += 1
+
+func music_fade_out(music : AudioStreamPlayer) : 
+	var tween = create_tween()
+	tween.tween_property(music, "volume_db",-79, 5)
+	await tween.finished

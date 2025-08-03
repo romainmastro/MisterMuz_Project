@@ -14,9 +14,9 @@
 }, {
 &"scene": "res://Scenes/Traps/stalagtite_Tombante.tscn"
 }, {
-&"scene": "res://Scenes/Traps/modifiable_stalagmite_1_kb.tscn"
-}, {
 &"scene": "res://Scenes/Traps/V_L_stalagmite_1_Repousseur.tscn"
+}, {
+&"scene": "res://Scenes/Traps/modifiable_stalagmite_1_kb.tscn"
 }, {
 &"scene": "res://Scenes/Traps/V_R_stalagmite_1_Repousseur.tscn"
 }, {
@@ -38,5 +38,12 @@
 &"scene": "res://Scenes/Enemies/super_snowman_spawn_point.tscn"
 }, {
 &"scene": "res://Scenes/Enemies/penguins_spawn_point.tscn"
+}]
+}, {
+"name": "Doors",
+"scenes": [{
+&"scene": "res://Scenes/Platforms/trap_door_H.tscn"
+}, {
+&"scene": "res://Scenes/Platforms/trap_door_V.tscn"
 }]
 }]

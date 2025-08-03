@@ -1,0 +1,256 @@
+[gd_scene load_steps=38 format=3 uid="uid://dtlxte6rijv77"]
+
+[ext_resource type="Script" uid="uid://v6kgu5fottyv" path="res://Scripts/player.gd" id="1_kyqiw"]
+[ext_resource type="Texture2D" uid="uid://bl388umk28hx6" path="res://Assets/Muz/Muz_JUMP.png" id="2_glx4g"]
+[ext_resource type="Texture2D" uid="uid://btpbpewrm561" path="res://Assets/Muz/Muz_IDLE.png" id="2_megsn"]
+[ext_resource type="Texture2D" uid="uid://5qhbsv78fxcn" path="res://Assets/Muz/Muz_HURT.png" id="3_miouo"]
+[ext_resource type="Texture2D" uid="uid://du2j1yp66woh6" path="res://Assets/Muz/Muz_RUN.png" id="3_yoq75"]
+[ext_resource type="PackedScene" uid="uid://bi7lk15xk624v" path="res://Scenes/Components/gravity_component.tscn" id="5_5ixxa"]
+[ext_resource type="PackedScene" uid="uid://doooxpud87nj2" path="res://Scenes/hurt_box.tscn" id="6_miouo"]
+[ext_resource type="PackedScene" uid="uid://dmltd84vx4tiq" path="res://Scenes/Components/input_component.tscn" id="6_nn08x"]
+[ext_resource type="Texture2D" uid="uid://b1apqiygffyj3" path="res://Assets/Muz/Muz_SLIDE.png" id="6_o3h8g"]
+[ext_resource type="PackedScene" uid="uid://c28j3nq07emlu" path="res://Scenes/Components/movement_component_with_slide.tscn" id="8_miouo"]
+[ext_resource type="PackedScene" uid="uid://b0uxrbejuk3ug" path="res://Scenes/Components/animation_component.tscn" id="10_yoq75"]
+[ext_resource type="PackedScene" uid="uid://b7gls8nvptfou" path="res://Scenes/Components/health_component.tscn" id="11_ksbbd"]
+[ext_resource type="PackedScene" uid="uid://blltvlkj6lskc" path="res://Scenes/Components/advanced_jump_component.tscn" id="12_glx4g"]
+[ext_resource type="PackedScene" uid="uid://b5vt1jvxrv0fi" path="res://Scenes/Components/hurtbox_component.tscn" id="12_miouo"]
+[ext_resource type="PackedScene" uid="uid://cve4owe16cpik" path="res://Scenes/Components/snow_trail_component.tscn" id="15_1e7my"]
+[ext_resource type="PackedScene" uid="uid://c1hvsrlq1580c" path="res://Scenes/Particles/snow_trail_particles.tscn" id="16_arntx"]
+[ext_resource type="PackedScene" uid="uid://1asc7ato1afb" path="res://Scenes/Particles/sliding_particles.tscn" id="17_lslt6"]
+[ext_resource type="PackedScene" uid="uid://bwvsn2f5kkyb4" path="res://Scenes/Particles/jumping_particle.tscn" id="18_ulo2v"]
+[ext_resource type="PackedScene" uid="uid://bx4glml3yfsoj" path="res://Scenes/Particles/landing_particles.tscn" id="19_1iu4k"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i2e8t"]
+atlas = ExtResource("2_glx4g")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qidb7"]
+atlas = ExtResource("3_miouo")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ksbbd"]
+atlas = ExtResource("2_megsn")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_glx4g"]
+atlas = ExtResource("2_megsn")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_miouo"]
+atlas = ExtResource("2_megsn")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o3h8g"]
+atlas = ExtResource("2_megsn")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1e7my"]
+atlas = ExtResource("2_megsn")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_arntx"]
+atlas = ExtResource("2_megsn")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_70hv0"]
+atlas = ExtResource("2_glx4g")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lslt6"]
+atlas = ExtResource("3_yoq75")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ulo2v"]
+atlas = ExtResource("3_yoq75")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1iu4k"]
+atlas = ExtResource("3_yoq75")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m0x7a"]
+atlas = ExtResource("3_yoq75")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5v66d"]
+atlas = ExtResource("3_yoq75")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x63xi"]
+atlas = ExtResource("3_yoq75")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8flut"]
+atlas = ExtResource("6_o3h8g")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dewec"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i2e8t")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qidb7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qidb7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qidb7")
+}],
+"loop": false,
+"name": &"hurt",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ksbbd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_glx4g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_miouo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o3h8g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1e7my")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_arntx")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_70hv0")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lslt6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ulo2v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1iu4k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m0x7a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5v66d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x63xi")
+}],
+"loop": true,
+"name": &"run",
+"speed": 13.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8flut")
+}],
+"loop": true,
+"name": &"slide",
+"speed": 6.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dewec"]
+radius = 2.0
+height = 10.0
+
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("gravity_component", "input_component", "movement_component_slide", "advanced_jump_component", "animation_component", "health_component", "hurtbox_component", "snow_trail_component", "camera")]
+floor_max_angle = 0.872665
+floor_snap_length = 10.0
+script = ExtResource("1_kyqiw")
+gravity_component = NodePath("COMPONENTS/gravity_component")
+input_component = NodePath("COMPONENTS/Input_component")
+movement_component_slide = NodePath("COMPONENTS/movement_component_with_slide")
+advanced_jump_component = NodePath("COMPONENTS/advanced_jump_component")
+animation_component = NodePath("COMPONENTS/animation_component")
+health_component = NodePath("COMPONENTS/health_component")
+hurtbox_component = NodePath("COMPONENTS/hurtbox_component")
+snow_trail_component = NodePath("COMPONENTS/snowTrail_component")
+camera = NodePath("Camera2D")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -2)
+sprite_frames = SubResource("SpriteFrames_dewec")
+animation = &"hurt"
+autoplay = "idle"
+
+[node name="HurtBox" parent="." instance=ExtResource("6_miouo")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_dewec")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+process_callback = 0
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+
+[node name="COMPONENTS" type="Node" parent="."]
+
+[node name="gravity_component" parent="COMPONENTS" instance=ExtResource("5_5ixxa")]
+gravity = 500.0
+
+[node name="movement_component_with_slide" parent="COMPONENTS" instance=ExtResource("8_miouo")]
+
+[node name="animation_component" parent="COMPONENTS" node_paths=PackedStringArray("sprite", "hurtbox_component") instance=ExtResource("10_yoq75")]
+sprite = NodePath("../../AnimatedSprite2D")
+hurtbox_component = NodePath("../hurtbox_component")
+
+[node name="Input_component" parent="COMPONENTS" instance=ExtResource("6_nn08x")]
+
+[node name="advanced_jump_component" parent="COMPONENTS" instance=ExtResource("12_glx4g")]
+jump_speed = -180.0
+
+[node name="health_component" parent="COMPONENTS" node_paths=PackedStringArray("hurtbox_component", "player") instance=ExtResource("11_ksbbd")]
+hurtbox_component = NodePath("../hurtbox_component")
+player = NodePath("../..")
+
+[node name="hurtbox_component" parent="COMPONENTS" node_paths=PackedStringArray("hurtbox", "player", "health_component") instance=ExtResource("12_miouo")]
+hurtbox = NodePath("../../HurtBox")
+player = NodePath("../..")
+health_component = NodePath("../health_component")
+
+[node name="snowTrail_component" parent="COMPONENTS" node_paths=PackedStringArray("running_particles", "sliding_particles", "jumping_particles", "landing_particles", "marker", "sprite", "advanced_jump_component") instance=ExtResource("15_1e7my")]
+running_particles = NodePath("../../PARTICLES/SnowTrailParticles")
+sliding_particles = NodePath("../../PARTICLES/sliding_particles")
+jumping_particles = NodePath("../../PARTICLES/jumpingParticles")
+landing_particles = NodePath("../../PARTICLES/LandingParticles")
+marker = NodePath("../../MARKER/SnowTrailMarker")
+sprite = NodePath("../../AnimatedSprite2D")
+advanced_jump_component = NodePath("../advanced_jump_component")
+
+[node name="PARTICLES" type="Node" parent="."]
+
+[node name="SnowTrailParticles" parent="PARTICLES" instance=ExtResource("16_arntx")]
+
+[node name="sliding_particles" parent="PARTICLES" instance=ExtResource("17_lslt6")]
+
+[node name="jumpingParticles" parent="PARTICLES" instance=ExtResource("18_ulo2v")]
+
+[node name="LandingParticles" parent="PARTICLES" instance=ExtResource("19_1iu4k")]
+
+[node name="MARKER" type="Node2D" parent="."]
+
+[node name="SnowTrailMarker" type="Marker2D" parent="MARKER"]
+position = Vector2(0, 5)

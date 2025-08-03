@@ -1,0 +1,217 @@
+[gd_scene load_steps=26 format=3 uid="uid://drkytl5ykatsd"]
+
+[ext_resource type="Texture2D" uid="uid://dntnhku08bx6l" path="res://Assets/Enemies/Snowman/snowman_WALK_LEFT.png" id="1_fbkas"]
+[ext_resource type="Script" uid="uid://bvkokp4wj1aq6" path="res://Scripts/Enemies/snowman.gd" id="1_xtkee"]
+[ext_resource type="Texture2D" uid="uid://ptmalodsbr0" path="res://Assets/Enemies/Snowman/snowman_WALK_RIGHT.png" id="2_whnhr"]
+[ext_resource type="Texture2D" uid="uid://bkpx3ghw3ric6" path="res://Assets/Enemies/Snowman/snowman_HURT.png" id="2_yqlq2"]
+[ext_resource type="Script" uid="uid://c6dcvl7ynfcrq" path="res://Scripts/Enemies/hitbox.gd" id="4_x2qtj"]
+[ext_resource type="Script" uid="uid://vd7tu4wfujqn" path="res://Scripts/Enemies/dead_zone.gd" id="7_x2qtj"]
+[ext_resource type="PackedScene" uid="uid://bi7lk15xk624v" path="res://Scenes/Components/gravity_component.tscn" id="7_yqlq2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dvrkf"]
+atlas = ExtResource("2_yqlq2")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7lbwb"]
+atlas = ExtResource("1_fbkas")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yoj18"]
+atlas = ExtResource("1_fbkas")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x2qtj"]
+atlas = ExtResource("1_fbkas")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yqlq2"]
+atlas = ExtResource("1_fbkas")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2bhf6"]
+atlas = ExtResource("1_fbkas")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wijrq"]
+atlas = ExtResource("1_fbkas")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fcntr"]
+atlas = ExtResource("2_whnhr")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k6fym"]
+atlas = ExtResource("2_whnhr")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_16wvh"]
+atlas = ExtResource("2_whnhr")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qi4kd"]
+atlas = ExtResource("2_whnhr")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pdye4"]
+atlas = ExtResource("2_whnhr")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jk4vb"]
+atlas = ExtResource("2_whnhr")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dvrkf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dvrkf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dvrkf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dvrkf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dvrkf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dvrkf")
+}],
+"loop": false,
+"name": &"death",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7lbwb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yoj18")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x2qtj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yqlq2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2bhf6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wijrq")
+}],
+"loop": true,
+"name": &"walk_left",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fcntr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k6fym")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_16wvh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qi4kd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pdye4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jk4vb")
+}],
+"loop": true,
+"name": &"walk_right",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7lbwb"]
+radius = 3.0
+height = 10.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yoj18"]
+size = Vector2(9, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x2qtj"]
+size = Vector2(12, 1)
+
+[sub_resource type="Gradient" id="Gradient_x2qtj"]
+offsets = PackedFloat32Array(0, 0.6, 1)
+colors = PackedColorArray(0.372549, 0.803922, 0.894118, 1, 0.601569, 0.84, 1, 0.8, 0.369757, 0.805801, 0.894329, 0)
+metadata/_snap_count = 5
+
+[node name="Snowman" type="CharacterBody2D" node_paths=PackedStringArray("gravity_component", "ray", "collision_shape", "hitbox", "deadzone", "animated_sprite", "death_particles") groups=["enemies"]]
+z_index = 5
+collision_layer = 4
+floor_max_angle = 0.523599
+script = ExtResource("1_xtkee")
+gravity_component = NodePath("gravity_component")
+ray = NodePath("RayCast2D")
+collision_shape = NodePath("CollisionShape2D")
+hitbox = NodePath("hitbox")
+deadzone = NodePath("DeadZone")
+animated_sprite = NodePath("AnimatedSprite2D")
+death_particles = NodePath("DeathParticles")
+
+[node name="gravity_component" parent="." node_paths=PackedStringArray("wall_ray") instance=ExtResource("7_yqlq2")]
+wall_ray = NodePath("../RayCast2D")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_dvrkf")
+animation = &"death"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 11)
+shape = SubResource("CapsuleShape2D_7lbwb")
+
+[node name="hitbox" type="Area2D" parent="."]
+collision_layer = 64
+collision_mask = 80
+script = ExtResource("4_x2qtj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+position = Vector2(0.5, 9.5)
+shape = SubResource("RectangleShape2D_yoj18")
+debug_color = Color(0.903797, 0.238957, 0.492976, 0.42)
+
+[node name="DeadZone" type="Area2D" parent="."]
+collision_layer = 128
+collision_mask = 32
+script = ExtResource("7_x2qtj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeadZone"]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_x2qtj")
+debug_color = Color(1.92523e-07, 0.547659, 0.136525, 0.42)
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(8, 15)
+target_position = Vector2(0, 16)
+
+[node name="DeathParticles" type="CPUParticles2D" parent="."]
+position = Vector2(0, 8)
+emitting = false
+amount = 12
+one_shot = true
+explosiveness = 1.0
+randomness = 0.5
+emission_shape = 2
+emission_sphere_radius = 3.0
+direction = Vector2(0, -1)
+gravity = Vector2(0, 200)
+initial_velocity_max = 150.0
+angular_velocity_min = -64.13
+angular_velocity_max = 99.11
+angle_min = -100.0
+angle_max = 100.0
+scale_amount_min = 2.0
+scale_amount_max = 4.0
+color_ramp = SubResource("Gradient_x2qtj")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="area_entered" from="DeadZone" to="." method="_on_dead_zone_area_entered"]

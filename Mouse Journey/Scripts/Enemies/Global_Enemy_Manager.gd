@@ -61,3 +61,9 @@ func spawn() :
 				enemy_node_path.add_child(penguin, true)
 			_ : 
 				printerr("The enemy doesn't exist! See GlobalEnemyManager")
+
+
+func do_hit_stop(duration := 0.3, slowdown_factor := 0.5) -> void:
+	Engine.time_scale = slowdown_factor
+	await get_tree().create_timer(duration * slowdown_factor, true).timeout
+	Engine.time_scale = 1.0

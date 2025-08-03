@@ -9,14 +9,14 @@ var has_fell : bool = false
 
 var current_speed : float = 0
 
-func fall() : # is called in the animation player thanks to a call method track
-	current_speed = falling_speed
-	has_fell = true
-	
 
 func _physics_process(delta: float) -> void:
 	position.y += current_speed * delta
 	
+func fall() : # is called in the animation player thanks to a call method track
+	current_speed = falling_speed
+	has_fell = true
+
 func _on_detector_body_entered(body: Node2D) -> void:
 	if body is PlayerClass : 
 		shaking_timer.stop()

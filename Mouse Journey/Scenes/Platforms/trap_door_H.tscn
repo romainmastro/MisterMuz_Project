@@ -1,0 +1,167 @@
+[gd_scene load_steps=10 format=3 uid="uid://cnfu6l0npqmed"]
+
+[ext_resource type="Script" uid="uid://klu1pmkjfnog" path="res://Scripts/Platform/trap_door.gd" id="1_4mjud"]
+[ext_resource type="Texture2D" uid="uid://dpp2ylbx2drjt" path="res://Assets/TileSet/trap_door.png" id="2_qi56s"]
+[ext_resource type="Texture2D" uid="uid://bu76vpjy2b4wt" path="res://Assets/TileSet/trap_door_button_off.png" id="3_dx1j6"]
+[ext_resource type="Texture2D" uid="uid://d3mcrv4xg0gsi" path="res://Assets/TileSet/trap_door_button_on.png" id="4_0dccs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7neh6"]
+size = Vector2(32, 8)
+
+[sub_resource type="Animation" id="Animation_5rjkp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_s7buy"]
+resource_name = "open_trap"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.5707963267948966]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5001652, 0.6, 0.7333333, 0.8333333, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1.2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5rjkp"]
+_data = {
+&"RESET": SubResource("Animation_5rjkp"),
+&"open_trap": SubResource("Animation_s7buy")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8flyx"]
+size = Vector2(3, 6)
+
+[node name="Trap_door_H" type="Node2D"]
+script = ExtResource("1_4mjud")
+
+[node name="Platform" type="StaticBody2D" parent="."]
+position = Vector2(0, -8)
+collision_mask = 270
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform"]
+position = Vector2(32, 4)
+texture = ExtResource("2_qi56s")
+centered = false
+offset = Vector2(-32, -4)
+
+[node name="color_platform_rect" type="ColorRect" parent="Platform/Sprite2D"]
+offset_left = -23.0
+offset_top = -1.0
+offset_right = -9.0
+offset_bottom = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform"]
+position = Vector2(16, 4)
+shape = SubResource("RectangleShape2D_7neh6")
+
+[node name="PlatformAnimator" type="AnimationPlayer" parent="Platform"]
+libraries = {
+&"": SubResource("AnimationLibrary_5rjkp")
+}
+
+[node name="Button" type="Area2D" parent="."]
+collision_mask = 270
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Button"]
+position = Vector2(1.5, 3)
+shape = SubResource("RectangleShape2D_8flyx")
+
+[node name="Sprite_button_off" type="Sprite2D" parent="Button"]
+texture = ExtResource("3_dx1j6")
+centered = false
+
+[node name="color_button_off_rect" type="ColorRect" parent="Button/Sprite_button_off"]
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 3.0
+offset_bottom = 3.0
+
+[node name="Sprite_button_on" type="Sprite2D" parent="Button"]
+texture = ExtResource("4_0dccs")
+centered = false
+offset = Vector2(0, 2)
+
+[node name="color_button_on_rect" type="ColorRect" parent="Button/Sprite_button_on"]
+offset_left = 6.0
+offset_top = 3.0
+offset_right = 8.0
+offset_bottom = 5.0

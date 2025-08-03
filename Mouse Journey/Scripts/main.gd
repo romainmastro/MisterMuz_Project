@@ -12,15 +12,17 @@ var current_level : Node = null
 
 func _ready() -> void: 
 	# 1 load level and Player
-	load_current_level()
+	load_current_level_and_player()
 	await get_tree().process_frame
 	# 2 Player initialisation 
 	init_player()
+	
+	current_level.start_section_system()
+	
 	# 3 Spawn enemies on the map
 	GlobalEnemyManager.spawn()
-	
 
-func load_current_level() : 
+func load_current_level_and_player() : 
 	var level_scene = GlobalMenu.get_current_level()
 	
 	await get_tree().process_frame
@@ -28,25 +30,36 @@ func load_current_level() :
 	# Spawn the level
 	current_level = level_scene.instantiate()
 	current_level.rotation = GlobalMenu.get_current_level_rotation()
+	if world == null:
+		push_error("WORLD is not assigned in the Inspector!")
+		return
 	world.add_child(current_level)
+
 	
-	await get_tree().process_frame
+	#await get_tree().process_frame
 	
 	# Spawn the player
 	var start = current_level.get_node_or_null("Sign_Start_Level")
 	if start : 
 		player = playerScene.instantiate()
 		
-		# rotate the player
+		# rotate the player [may need for sledding levels]
 		await get_tree().process_frame	
 		player.rotation = GlobalMenu.get_current_level_rotation()
-		player.global_position = start.global_position
+		player.global_position = start.global_position + Vector2(8, 0)
 		
 		add_child(player)
 		GlobalPlayerStats.current_checkpoint = player.global_position
 	else:
 		print(" 'Sign_Start_Level' not found in", current_level.name)
 
+	# gives the references to the player and camera to the Level to configure the sections of the level
+	current_level.player = player
+	current_level.player_camera = player.get_node("PlayerCamera")
+	
+	print(current_level.player)
+	print(current_level.player_camera)
+	
 
 func init_player() : 
 	GlobalPlayerStats.player_current_HP = GlobalPlayerStats.player_max_HP
@@ -54,6 +67,6 @@ func init_player() :
 	GlobalPlayerStats.current_frostberry_number = 0
 	# send signal to update HUD
 	GlobalPlayerStats.update_berry_number.emit()
-	GlobalPlayerStats.current_lives_number = 1
+	GlobalPlayerStats.current_lives_number = GlobalPlayerStats.start_lives_number + 2
 	# send signal to update HUD
 	GlobalPlayerStats.update_life_number.emit()

@@ -12,10 +12,13 @@ var random_off_start : float
 @onready var super_frostberry_scene = preload("res://Scenes/Collectibles/super_frost_berry.tscn") # 71-90
 @onready var cheese_scene = preload("res://Scenes/Collectibles/collect_cheese.tscn") # 91-100
 
+@onready var giftbox_animator: AnimationPlayer = $GiftboxAnimator
+
 @onready var spawning_node : Node
 
 func _ready() -> void:
 	giftbox_sprite.animation_finished.connect(_on_open_animation_finished)
+	#giftbox_animator.animation_finished.connect(_on_reveal_animation_finished)
 	giftbox_sprite.play("idle")
 	spawning_node = get_tree().current_scene
 	
@@ -31,18 +34,11 @@ func _on_collision_area_body_entered(body: Node2D) -> void:
 		
 func _on_open_animation_finished() : 
 	if giftbox_sprite.animation == "open" : 
-		get_random_gift()
-		giftbox_disappear()
-		
+		giftbox_animator.play("reveal")
 
-func giftbox_disappear() : 
-	# flash
-	var tween = create_tween()
-	tween.tween_property(self, "modulate:a",0, 0.1)
-	tween.chain().tween_property(self, "modulate:a",1, 0.1)
-	tween.chain().tween_property(self, "modulate:a", 0, 0.3)
-	await tween.finished
-	call_deferred("queue_free")
+#func _on_reveal_animation_finished():
+	#if giftbox_animator.current_animation == "reveal" : 
+		#get_random_gift()
 
 func get_random_gift() : 
 	var rng = randi_range(1, 100)

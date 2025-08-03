@@ -98,7 +98,7 @@ func spawn_little_snowmen() :
 		for i in range(2) : 
 			var little_snowman = me.instantiate() as SuperSnowmanEnemy
 			little_snowman.global_position = spawn_positions[i].global_position
-			little_snowman.speed = randf_range(30.0, 60.0)
+			little_snowman.speed = randf_range(45.0, 65.0)
 			little_snowman.scale = Vector2(0.7, 0.7)
 			little_snowman.direction_départ = "droite" if i == 0 else "gauche"
 			little_snowman.should_spawn_little_snowmen = false

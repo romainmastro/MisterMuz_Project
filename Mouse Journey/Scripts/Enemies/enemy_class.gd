@@ -31,7 +31,7 @@ func handle_death():
 		return
 	is_dead = true
 	deactivate_collisions()
-	await do_hit_stop()
+	await GlobalEnemyManager.do_hit_stop()
 
 		## flash 
 	var tween = create_tween()
@@ -46,16 +46,16 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 		death_particles.emitting = true
 		animated_sprite.visible = false
 		await get_tree().create_timer(0.6).timeout
-		
-		roll = randi_range(0, 100)
-		if roll >= 1 and roll <= 20 : 
-			spawn_collectible(heart_scene)
-		elif roll >= 21 and roll <= 40 : 
-			spawn_collectible(fruit_scene)
-		elif roll >= 41 and roll <= 45 : 
-			spawn_collectible(super_fruit_scene)
-		else : 
-			pass
+		if animated_sprite.get_parent() is not Throwing_spikes : 
+			roll = randi_range(0, 100)
+			if roll >= 1 and roll <= 20 : 
+				spawn_collectible(heart_scene)
+			elif roll >= 21 and roll <= 40 : 
+				spawn_collectible(fruit_scene)
+			elif roll >= 41 and roll <= 45 : 
+				spawn_collectible(super_fruit_scene)
+			else : 
+				pass
 		
 		die()
 
@@ -77,10 +77,10 @@ func deactivate_collisions() :
 	#deadzone.set_deferred("monitorable", true)
 	#deadzone.set_deferred("monitoring", true)
 
-func do_hit_stop(duration := 0.3, slowdown_factor := 0.5) -> void:
-	Engine.time_scale = slowdown_factor
-	await get_tree().create_timer(duration * slowdown_factor, true).timeout
-	Engine.time_scale = 1.0
+#func do_hit_stop(duration := 0.3, slowdown_factor := 0.5) -> void:
+	#Engine.time_scale = slowdown_factor
+	#await get_tree().create_timer(duration * slowdown_factor, true).timeout
+	#Engine.time_scale = 1.0
 
 func spawn_collectible(collectible_scene : PackedScene) : 
 	var collectible = collectible_scene.instantiate() as Area2D

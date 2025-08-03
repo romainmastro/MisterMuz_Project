@@ -1,0 +1,156 @@
+[gd_scene load_steps=13 format=3 uid="uid://c6866y8qh0ti5"]
+
+[ext_resource type="Script" uid="uid://dlm3d118kg84m" path="res://Scripts/Traps/throwing_spikes.gd" id="1_gnesi"]
+[ext_resource type="Texture2D" uid="uid://bhifx4n78f1ab" path="res://Assets/Traps/throwing_spikes.png" id="1_oe6k5"]
+[ext_resource type="Script" uid="uid://vd7tu4wfujqn" path="res://Scripts/Enemies/dead_zone.gd" id="3_xm8g0"]
+[ext_resource type="Script" uid="uid://c6dcvl7ynfcrq" path="res://Scripts/Enemies/hitbox.gd" id="4_wtxtr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_artop"]
+atlas = ExtResource("1_oe6k5")
+region = Rect2(0, 0, 16, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wtxtr"]
+atlas = ExtResource("1_oe6k5")
+region = Rect2(0, 0, 16, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xm8g0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_artop")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_artop")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_artop")
+}],
+"loop": false,
+"name": &"death",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wtxtr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wtxtr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wtxtr")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xm8g0"]
+size = Vector2(2.9039, 14.927)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gnesi"]
+size = Vector2(16.1567, 1.63028)
+
+[sub_resource type="Gradient" id="Gradient_xm8g0"]
+offsets = PackedFloat32Array(0, 0.6, 1)
+colors = PackedColorArray(0.372549, 0.803922, 0.894118, 1, 0.601569, 0.84, 1, 0.8, 0.369757, 0.805801, 0.894329, 0)
+metadata/_snap_count = 5
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wtxtr"]
+size = Vector2(14.1917, 2.89627)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_artop"]
+size = Vector2(0.883095, 1.03871)
+
+[node name="Throwing_Spikes" type="CharacterBody2D" node_paths=PackedStringArray("queue_free_area_right", "queue_free_area_left", "collision_shape", "hitbox", "deadzone", "animated_sprite", "death_particles") groups=["traps"]]
+scale = Vector2(0.8, 0.8)
+collision_layer = 64
+collision_mask = 17
+script = ExtResource("1_gnesi")
+queue_free_area_right = NodePath("Queue_free_area2D_Right")
+queue_free_area_left = NodePath("Queue_free_area2D_Left")
+collision_shape = NodePath("CollisionShape2D")
+hitbox = NodePath("EnemyHitboxClass")
+deadzone = NodePath("DeadZone")
+animated_sprite = NodePath("AnimatedSprite2D")
+death_particles = NodePath("DeathParticles")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_xm8g0")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.45032, -0.520956)
+rotation = 1.5708
+scale = Vector2(0.999999, 0.999999)
+shape = SubResource("RectangleShape2D_xm8g0")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[node name="DeadZone" type="Area2D" parent="."]
+collision_layer = 128
+collision_mask = 33
+script = ExtResource("3_xm8g0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeadZone"]
+position = Vector2(0.0177181, -3.38656)
+scale = Vector2(0.999999, 0.999999)
+shape = SubResource("RectangleShape2D_gnesi")
+debug_color = Color(0.994408, 0, 0.222563, 0.42)
+
+[node name="DeathParticles" type="CPUParticles2D" parent="."]
+position = Vector2(0, 8)
+emitting = false
+amount = 12
+lifetime = 0.25
+one_shot = true
+explosiveness = 1.0
+randomness = 0.5
+emission_shape = 2
+emission_sphere_radius = 3.0
+direction = Vector2(0, -1)
+gravity = Vector2(0, 200)
+initial_velocity_max = 150.0
+angular_velocity_min = -64.13
+angular_velocity_max = 99.11
+angle_min = -100.0
+angle_max = 100.0
+scale_amount_min = 2.0
+scale_amount_max = 4.0
+color_ramp = SubResource("Gradient_xm8g0")
+
+[node name="EnemyHitboxClass" type="Area2D" parent="."]
+collision_layer = 64
+collision_mask = 16
+script = ExtResource("4_wtxtr")
+metadata/_custom_type_script = "uid://c6dcvl7ynfcrq"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyHitboxClass"]
+position = Vector2(-0.0159286, -0.34293)
+scale = Vector2(0.999999, 0.999999)
+shape = SubResource("RectangleShape2D_wtxtr")
+debug_color = Color(0.261223, 0.629625, 0.217759, 0.42)
+
+[node name="Queue_free_area2D_Right" type="Area2D" parent="."]
+
+[node name="queue_free_Right" type="CollisionShape2D" parent="Queue_free_area2D_Right"]
+position = Vector2(7.59639, -0.483541)
+shape = SubResource("RectangleShape2D_artop")
+debug_color = Color(0.508983, 0.577154, 0.0961005, 0.42)
+
+[node name="Queue_free_area2D_Left" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="queue_free_Left" type="CollisionShape2D" parent="Queue_free_area2D_Left"]
+position = Vector2(-7.45905, -0.483541)
+shape = SubResource("RectangleShape2D_artop")
+debug_color = Color(0.508983, 0.577154, 0.0961005, 0.42)
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="area_entered" from="DeadZone" to="." method="_on_dead_zone_area_entered"]
+[connection signal="area_entered" from="EnemyHitboxClass" to="." method="_on_area_entered"]
+[connection signal="body_entered" from="Queue_free_area2D_Right" to="." method="_on_queue_free_area_2d_body_entered"]
+[connection signal="body_entered" from="Queue_free_area2D_Left" to="." method="_on_queue_free_area_2d_body_entered"]

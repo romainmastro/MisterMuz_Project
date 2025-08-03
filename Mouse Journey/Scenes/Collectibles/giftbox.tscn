@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://nq1wmq5jk5gl"]
+[gd_scene load_steps=16 format=3 uid="uid://nq1wmq5jk5gl"]
 
 [ext_resource type="Script" uid="uid://db8ujxx7r6f3u" path="res://Scripts/Collectibles/giftbox.gd" id="1_esbyr"]
 [ext_resource type="Texture2D" uid="uid://bbr7u6he87hlu" path="res://Assets/Collectibles/giftbox_idle.png" id="2_hfnj1"]
@@ -38,6 +38,21 @@ animations = [{
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hfnj1"]
 load_path = "res://.godot/imported/2d_lights_and_shadows_neutral_point_light.webp-90a52a222c53c29b5175d453f1c65e65.ctex"
 
+[sub_resource type="Animation" id="Animation_5y1ko"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GiftboxGlowLight:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.3]
+}
+
 [sub_resource type="Animation" id="Animation_7kehg"]
 resource_name = "glow"
 length = 2.0
@@ -55,25 +70,63 @@ tracks/0/keys = {
 "values": [0.5, 2.5]
 }
 
-[sub_resource type="Animation" id="Animation_5y1ko"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k0a45"]
+_data = {
+&"RESET": SubResource("Animation_5y1ko"),
+&"glow": SubResource("Animation_7kehg")
+}
+
+[sub_resource type="Animation" id="Animation_hfnj1"]
+resource_name = "reveal"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.1998931, 0.2998931, 0.4024966, 0.5024966),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.7, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"get_random_gift"
+}, {
+"args": [&"queue_free"],
+"method": &"call_deferred"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_k0a45"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("GiftboxGlowLight:energy")
+tracks/0/path = NodePath(".:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.3]
+"values": [Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_k0a45"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7kehg"]
 _data = {
-&"RESET": SubResource("Animation_5y1ko"),
-&"glow": SubResource("Animation_7kehg")
+&"RESET": SubResource("Animation_k0a45"),
+&"reveal": SubResource("Animation_hfnj1")
 }
 
 [node name="Gitfbox" type="Area2D" node_paths=PackedStringArray("collision_area", "giftbox_sprite", "spawning_position", "hoveringObjectComponent")]
@@ -95,6 +148,7 @@ debug_color = Color(0.680567, 0.503483, 5.77569e-07, 0.42)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_r77w5")
 animation = &"open"
+frame_progress = 1.0
 
 [node name="spawning_position" type="Marker2D" parent="."]
 
@@ -115,5 +169,10 @@ libraries = {
 &"": SubResource("AnimationLibrary_k0a45")
 }
 autoplay = "glow"
+
+[node name="GiftboxAnimator" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_7kehg")
+}
 
 [connection signal="body_entered" from="CollisionArea" to="." method="_on_collision_area_body_entered"]

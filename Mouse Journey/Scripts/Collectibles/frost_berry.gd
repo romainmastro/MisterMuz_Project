@@ -8,7 +8,6 @@ var random_off_start : float
 
 func _ready() -> void:
 	deactivate_monitoring()
-	scale = Vector2(1, 1)
 	random_off_start = randf_range(0.0, 0.7)
 	await get_tree().create_timer(random_off_start).timeout
 	hoveringObjectComponent.float_up()

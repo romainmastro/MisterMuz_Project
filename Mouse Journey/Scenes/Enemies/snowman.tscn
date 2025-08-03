@@ -147,6 +147,7 @@ metadata/_snap_count = 5
 [node name="Snowman" type="CharacterBody2D" node_paths=PackedStringArray("gravity_component", "ray", "collision_shape", "hitbox", "deadzone", "animated_sprite", "death_particles") groups=["enemies"]]
 z_index = 5
 collision_layer = 4
+collision_mask = 32769
 floor_max_angle = 0.523599
 script = ExtResource("1_xtkee")
 gravity_component = NodePath("gravity_component")
@@ -191,6 +192,7 @@ debug_color = Color(1.92523e-07, 0.547659, 0.136525, 0.42)
 [node name="RayCast2D" type="RayCast2D" parent="."]
 position = Vector2(8, 15)
 target_position = Vector2(0, 16)
+collision_mask = 32769
 
 [node name="DeathParticles" type="CPUParticles2D" parent="."]
 position = Vector2(0, 8)
