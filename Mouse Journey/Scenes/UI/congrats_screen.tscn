@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://dhl1tsd1e3234"]
+[gd_scene load_steps=20 format=4 uid="uid://dhl1tsd1e3234"]
 
 [ext_resource type="Script" uid="uid://duiumda28874d" path="res://Scripts/UI/congrats_screen.gd" id="1_71jre"]
 [ext_resource type="Theme" uid="uid://ba6rurgdpqsjr" path="res://Resources/font/main_font_theme.tres" id="1_up6sh"]
@@ -7,6 +7,7 @@
 [ext_resource type="TileSet" uid="uid://1x1qpe81qufy" path="res://Resources/Décor.tres" id="4_dy31q"]
 [ext_resource type="Texture2D" uid="uid://dypl1impvax7h" path="res://Assets/Environment/end_level_no_fire.png" id="4_st3vl"]
 [ext_resource type="Texture2D" uid="uid://dnb0wxrmnc6rl" path="res://Assets/Environment/end_level lit_fire.png" id="5_cradt"]
+[ext_resource type="PackedScene" uid="uid://b4m7nqvkk0t7v" path="res://Scenes/UI/Menu_sounds_Manager.tscn" id="8_st3vl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_807ni"]
 size = Vector2(32, 29)
@@ -155,11 +156,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+focus_mode = 2
 script = ExtResource("1_71jre")
 
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="Title" type="Label" parent="UI"]
+anchors_preset = -1
 offset_left = 72.0
 offset_right = 231.0
 offset_bottom = 28.0
@@ -169,21 +172,36 @@ theme_override_colors/font_shadow_color = Color(0.835294, 0.929412, 0.929412, 1)
 theme_override_font_sizes/font_size = 22
 text = "Level Complete!"
 
-[node name="NextLevel" type="Button" parent="UI"]
-offset_left = 231.0
+[node name="HBoxContainer" type="HBoxContainer" parent="UI"]
+anchors_preset = -1
+anchor_right = 1.0
 offset_top = 40.0
-offset_right = 271.0
 offset_bottom = 50.0
-theme = ExtResource("1_up6sh")
-text = "Next Level"
+grow_horizontal = 2
+theme_override_constants/separation = 79
+alignment = 1
 
-[node name="Replay" type="Button" parent="UI"]
-offset_left = 32.0
-offset_top = 40.0
-offset_right = 72.0
-offset_bottom = 50.0
+[node name="Replay" type="Button" parent="UI/HBoxContainer"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../NextLevel")
+focus_neighbor_top = NodePath("../NextLevel")
+focus_neighbor_right = NodePath("../NextLevel")
+focus_neighbor_bottom = NodePath("../NextLevel")
+focus_next = NodePath("../NextLevel")
+focus_previous = NodePath("../NextLevel")
 theme = ExtResource("1_up6sh")
 text = "Replay"
+
+[node name="NextLevel" type="Button" parent="UI/HBoxContainer"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../Replay")
+focus_neighbor_top = NodePath("../Replay")
+focus_neighbor_right = NodePath("../Replay")
+focus_neighbor_bottom = NodePath("../Replay")
+focus_next = NodePath("../Replay")
+focus_previous = NodePath("../Replay")
+theme = ExtResource("1_up6sh")
+text = "Next Level"
 
 [node name="EndLevelCheckpoint" type="Area2D" parent="." node_paths=PackedStringArray("fire_lit")]
 position = Vector2(128, 120)
@@ -223,7 +241,7 @@ tile_map_data = PackedByteArray("AAAPAAgAAwAFAAEAAAAOAAgAAwAFAAEAAAANAAgAAwAHAAE
 tile_set = ExtResource("3_ayhqs")
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAAHAAcAAAAmAAEAAAAbAAcAAAAuAAMAAAAaAAcAAAAhABAAAAAcAAcAAAAwAAMAAAAAAAcAAAAlABAAAAAUAAcAAAAkAAEAAAAdAAcAAAAsAAMAAAAVAAcAAAAlAAEAAAAfAAcAAAAkAAUAAAAhAAcAAAAlABAAAAAnAAcAAAAmAAUAAAD//wcAAAAkAAMAAAAoAAcAAAAyAAMAAAAjAAcAAAAoAAEAAAAeAAcAAAAwAAEAAAAiAAcAAAAmAAUAAAAWAAYAAAA3AAQAAAAYAAYAAAA7AAQAAAAJAAYAAAA3AAQAAAAIAAYAAAAxAAYAAAALAAcAAAAlAAgAAAAgAAcAAAAlAAgAAAAjAAYAAAAoAAYAAAAKAAcAAAAlABAAAAAXAAcAAAAhABAAAAADAAYAAAAoAAYAAAAEAAcAAAAhAAgAAAAPAAgAAAAoAAEAAAAQAAgAAAA0AAMAAAAMAAgAAAAoAAEAAAA=")
+tile_map_data = PackedByteArray("AAAHAAcAAAAtAAYAAAAbAAcAAAAuAAMAAAAaAAcAAAAhABAAAAAcAAcAAAA3AAQAAAAAAAcAAAAlABAAAAAUAAcAAAAkAAEAAAAdAAcAAAAtAAYAAAAVAAcAAAAlAAEAAAAfAAcAAAAkAAUAAAAhAAcAAAAlABAAAAAnAAcAAAAmAAUAAAD//wcAAAAkAAMAAAAoAAcAAAAyAAMAAAAjAAcAAAA7AAQAAAAeAAcAAAAwAAEAAAAiAAcAAAAmAAUAAAALAAcAAAAlAAgAAAAgAAcAAAAlAAgAAAAKAAcAAAAlABAAAAAXAAcAAAAhABAAAAAEAAcAAAAhAAgAAAAPAAgAAAAoAAEAAAAQAAgAAAA0AAMAAAAMAAgAAAAoAAEAAAAYAAcAAAA7AAQAAAACAAcAAAA7AAQAAAAFAAcAAAA3AAQAAAAkAAcAAAA3AAQAAAAWAAcAAAA3AAQAAAA=")
 tile_set = ExtResource("4_dy31q")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -255,5 +273,7 @@ color = Color(0.835294, 0.929412, 0.929412, 1)
 hue_variation_min = 0.52
 hue_variation_max = 0.52
 
-[connection signal="pressed" from="UI/NextLevel" to="." method="_on_next_level_pressed"]
-[connection signal="pressed" from="UI/Replay" to="." method="_on_replay_pressed"]
+[node name="Sounds" parent="." instance=ExtResource("8_st3vl")]
+
+[connection signal="pressed" from="UI/HBoxContainer/Replay" to="." method="_on_replay_pressed"]
+[connection signal="pressed" from="UI/HBoxContainer/NextLevel" to="." method="_on_next_level_pressed"]

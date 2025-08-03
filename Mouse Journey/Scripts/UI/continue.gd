@@ -2,6 +2,8 @@ extends Control
 
 var player : PlayerClass
 
+func _ready() -> void:
+	$CanvasLayer2/Menu/ContinueButton.grab_focus()
 
 func _on_continue_button_pressed() -> void:
 	player = get_tree().current_scene.get_node("Main/PlayerV2")
@@ -9,7 +11,7 @@ func _on_continue_button_pressed() -> void:
 		printerr("ERROR : I can't find the player in the tree!")
 	else : 
 		GlobalMenu.game_transition(func() : 
-			player.continue_game_use_a_life()
+			GlobalMenu.continue_game()
 			# will show the player after the game restarts
 			GlobalPlayerStats.update_life_number.emit()  # to label_lives in main.gd
 			# ___________________________________________#

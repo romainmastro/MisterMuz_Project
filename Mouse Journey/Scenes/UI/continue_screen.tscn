@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://cgp5a8xkc4gwi"]
+[gd_scene load_steps=12 format=3 uid="uid://cgp5a8xkc4gwi"]
 
 [ext_resource type="Script" uid="uid://cjlrlnqrm2kgw" path="res://Scripts/UI/continue.gd" id="1_mbnpw"]
 [ext_resource type="Theme" uid="uid://ba6rurgdpqsjr" path="res://Resources/font/main_font_theme.tres" id="1_pox0y"]
 [ext_resource type="FontFile" uid="uid://dl3316dpi5lxs" path="res://Resources/font/SuperBakery-3lXyp.ttf" id="2_mbnpw"]
+[ext_resource type="PackedScene" uid="uid://b4m7nqvkk0t7v" path="res://Scenes/UI/Menu_sounds_Manager.tscn" id="4_fnjyb"]
 
 [sub_resource type="Environment" id="Environment_mbnpw"]
 background_mode = 3
@@ -80,6 +81,7 @@ color = Color(0.246437, 0.360611, 0.588285, 1)
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 
 [node name="Menu" type="VBoxContainer" parent="CanvasLayer2"]
+anchors_preset = -1
 offset_left = 104.0
 offset_top = 88.0
 offset_right = 215.0
@@ -88,6 +90,12 @@ theme_override_constants/separation = 4
 
 [node name="ContinueButton" type="Button" parent="CanvasLayer2/Menu"]
 layout_mode = 2
+focus_neighbor_left = NodePath("../QuitButton")
+focus_neighbor_top = NodePath("../QuitButton")
+focus_neighbor_right = NodePath("../QuitButton")
+focus_neighbor_bottom = NodePath("../QuitButton")
+focus_next = NodePath("../QuitButton")
+focus_previous = NodePath("../QuitButton")
 theme = SubResource("Theme_fnjyb")
 theme_override_font_sizes/font_size = 12
 text = "Continue (use a life!)"
@@ -101,11 +109,18 @@ theme_override_font_sizes/font_size = 18
 
 [node name="QuitButton" type="Button" parent="CanvasLayer2/Menu"]
 layout_mode = 2
+focus_neighbor_left = NodePath("../ContinueButton")
+focus_neighbor_top = NodePath("../ContinueButton")
+focus_neighbor_right = NodePath("../ContinueButton")
+focus_neighbor_bottom = NodePath("../ContinueButton")
+focus_next = NodePath("../ContinueButton")
+focus_previous = NodePath("../ContinueButton")
 theme = SubResource("Theme_7i874")
 theme_override_font_sizes/font_size = 12
 text = "Quit Game"
 
 [node name="Label" type="Label" parent="CanvasLayer2"]
+anchors_preset = -1
 offset_left = 32.0
 offset_top = 24.0
 offset_right = 284.0
@@ -115,6 +130,8 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0.835294, 0.929412, 0.929412, 1)
 theme_override_font_sizes/font_size = 18
 text = "Your quest ends here...Or not?"
+
+[node name="Sounds" parent="." instance=ExtResource("4_fnjyb")]
 
 [connection signal="pressed" from="CanvasLayer2/Menu/ContinueButton" to="." method="_on_continue_button_pressed"]
 [connection signal="pressed" from="CanvasLayer2/Menu/QuitButton" to="." method="_on_quit_button_pressed"]

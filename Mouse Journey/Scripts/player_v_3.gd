@@ -667,11 +667,9 @@ func on_death() :
 		
 	else : # Must make CONTINUE SCREEN APPEAR 
 		
-		
 		get_tree().paused = true
-		
 		GlobalMenu.game_transition(func() : GlobalMenu.set_game_state(GlobalMenu.GAME_STATES.CONTINUE_SCREEN))
-		
+
 
 ######################################### HURT SYSTEM ########################################
 

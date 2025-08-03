@@ -6,7 +6,8 @@ extends Node
 @export var player_max_HP : float = 3
 @export var is_dead : bool = false
 
-@export var current_lives_number : int = 1
+@export var start_lives_number : int = 1
+@export var current_lives_number : int = 0
 @export var max_lives_number : int = 10
 
 var current_cheese_nb : float = 0

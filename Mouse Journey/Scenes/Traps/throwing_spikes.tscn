@@ -96,7 +96,7 @@ collision_mask = 33
 script = ExtResource("3_xm8g0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeadZone"]
-position = Vector2(0.2980298, -3.3865597)
+position = Vector2(0.2980298, -4.6365595)
 scale = Vector2(0.99999887, 0.99999887)
 shape = SubResource("RectangleShape2D_gnesi")
 debug_color = Color(0.994408, 0, 0.222563, 0.42)

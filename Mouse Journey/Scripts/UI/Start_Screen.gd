@@ -28,6 +28,8 @@ func _ready() -> void:
 	start_screen.volume_db = -6
 	start_screen.play()
 	
+	$"UI - 5/Menu/StartButton".grab_focus()
+	
 func _on_start_button_pressed() -> void:
 	GlobalMenu.music_fade_out(start_screen)
 	GlobalMenu.game_transition(func() : GlobalMenu.set_game_state(GlobalMenu.GAME_STATES.PLAYING_GAME))
@@ -42,3 +44,6 @@ func _on_quit_button_pressed() -> void:
 
 func update_animation() : 
 	muz.play("idle")
+	
+
+		
