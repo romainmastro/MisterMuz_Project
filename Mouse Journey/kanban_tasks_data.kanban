@@ -41,7 +41,8 @@
 			"title": "Doing",
 			"tasks": [
 				"df14c301-985a-4287-b3ff-a190f627541f",
-				"6c37a34a-e78f-4789-aec8-1e9db5d2c292"
+				"6c37a34a-e78f-4789-aec8-1e9db5d2c292",
+				"ab42371c-20a5-4e10-a59b-7b8c2db8fd70"
 			]
 		},
 		{
@@ -1929,6 +1930,34 @@
 				},
 				{
 					"details": "Spike Thrower : Shoot",
+					"done": false
+				},
+				{
+					"details": "open trap / lever activated",
+					"done": false
+				}
+			]
+		},
+		{
+			"uuid": "ab42371c-20a5-4e10-a59b-7b8c2db8fd70",
+			"title": "TUTORIAL",
+			"description": "",
+			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
+			"steps": [
+				{
+					"details": "Jump",
+					"done": false
+				},
+				{
+					"details": "high jump",
+					"done": false
+				},
+				{
+					"details": "low jump",
+					"done": false
+				},
+				{
+					"details": "wall jump",
 					"done": false
 				}
 			]

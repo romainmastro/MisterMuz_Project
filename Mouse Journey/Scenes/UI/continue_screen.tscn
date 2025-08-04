@@ -132,6 +132,7 @@ theme_override_font_sizes/font_size = 18
 text = "Your quest ends here...Or not?"
 
 [node name="Sounds" parent="." instance=ExtResource("4_fnjyb")]
+process_mode = 3
 
 [connection signal="pressed" from="CanvasLayer2/Menu/ContinueButton" to="." method="_on_continue_button_pressed"]
 [connection signal="pressed" from="CanvasLayer2/Menu/QuitButton" to="." method="_on_quit_button_pressed"]

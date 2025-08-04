@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b4m7nqvkk0t7v"]
 
 [ext_resource type="Script" uid="uid://0jsdkjjo1d4h" path="res://Scripts/Sounds/MenuSounds.gd" id="1_ws2a1"]
-[ext_resource type="AudioStream" uid="uid://b02fkr2rn6ehn" path="res://Resources/Sounds/NavMenu.tres" id="2_o3dur"]
+[ext_resource type="AudioStream" uid="uid://cfkd5n68rrejx" path="res://Assets/Audio/Sounds/NavMenu2.wav" id="2_ws2a1"]
 [ext_resource type="AudioStream" uid="uid://cb6f6xsxi5oin" path="res://Resources/Sounds/ConfirmMenu.tres" id="3_ublu5"]
 
 [node name="Sounds" type="Node" node_paths=PackedStringArray("nav_sound", "conf_sound")]
@@ -10,7 +10,7 @@ nav_sound = NodePath("NavMenu")
 conf_sound = NodePath("ConfirmMenu")
 
 [node name="NavMenu" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_o3dur")
+stream = ExtResource("2_ws2a1")
 bus = &"Sounds"
 
 [node name="ConfirmMenu" type="AudioStreamPlayer" parent="."]
