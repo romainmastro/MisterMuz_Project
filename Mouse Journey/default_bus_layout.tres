@@ -1,4 +1,4 @@
-[gd_resource type="AudioBusLayout" load_steps=5 format=3 uid="uid://cr37j8klqe3t8"]
+[gd_resource type="AudioBusLayout" load_steps=6 format=3 uid="uid://cr37j8klqe3t8"]
 
 [sub_resource type="AudioEffectLimiter" id="AudioEffectLimiter_n8wo2"]
 resource_name = "Limiter"
@@ -8,6 +8,10 @@ resource_name = "Reverb"
 
 [sub_resource type="AudioEffectLimiter" id="AudioEffectLimiter_g28q7"]
 resource_name = "Limiter"
+
+[sub_resource type="AudioEffectAmplify" id="AudioEffectAmplify_j3pel"]
+resource_name = "Amplify"
+volume_db = 6.0
 
 [sub_resource type="AudioEffectLimiter" id="AudioEffectLimiter_j3pel"]
 resource_name = "Limiter"
@@ -22,9 +26,11 @@ bus/1/bypass_fx = false
 bus/1/volume_db = -9.632782
 bus/1/send = &"Master"
 bus/1/effect/0/effect = SubResource("AudioEffectReverb_j3pel")
-bus/1/effect/0/enabled = true
+bus/1/effect/0/enabled = false
 bus/1/effect/1/effect = SubResource("AudioEffectLimiter_g28q7")
 bus/1/effect/1/enabled = true
+bus/1/effect/2/effect = SubResource("AudioEffectAmplify_j3pel")
+bus/1/effect/2/enabled = true
 bus/2/name = &"Sounds"
 bus/2/solo = false
 bus/2/mute = false

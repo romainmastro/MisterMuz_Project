@@ -25,7 +25,7 @@ func _ready() -> void:
 	tween.parallel().tween_property(title, "position", target_title_pos, 3).set_trans(Tween.TRANS_ELASTIC)
 	tween.parallel().tween_property(menu, "position", target_menu_pos, 3).set_trans(Tween.TRANS_ELASTIC)
 	
-	start_screen.volume_db = -6
+	#start_screen.volume_db = -6
 	start_screen.play()
 	
 	$"UI - 5/Menu/StartButton".grab_focus()

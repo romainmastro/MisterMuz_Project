@@ -8,7 +8,7 @@
 [ext_resource type="TileSet" uid="uid://cvn6rtpn15ve6" path="res://Resources/Level_Maker.tres" id="5_qu7ox"]
 [ext_resource type="TileSet" uid="uid://1x1qpe81qufy" path="res://Resources/Décor.tres" id="6_yslt2"]
 [ext_resource type="PackedScene" uid="uid://bxx7sq8x1ny3r" path="res://Scenes/UI/moon.tscn" id="8_sqpsh"]
-[ext_resource type="AudioStream" uid="uid://dcno5rhqky5da" path="res://Assets/Audio/Music/Muz_StartScreen_V0.mp3" id="9_i67xg"]
+[ext_resource type="AudioStream" uid="uid://v1qibtal0m8m" path="res://Assets/Audio/Music/Muz_Start_Screen_V5.mp3" id="9_qu7ox"]
 [ext_resource type="PackedScene" uid="uid://b4m7nqvkk0t7v" path="res://Scenes/UI/Menu_sounds_Manager.tscn" id="10_qu7ox"]
 
 [sub_resource type="Curve2D" id="Curve2D_sqpsh"]
@@ -359,7 +359,7 @@ animation = &"idle"
 autoplay = "run"
 
 [node name="StartScreen" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("9_i67xg")
+stream = ExtResource("9_qu7ox")
 bus = &"Music"
 
 [node name="Sounds" parent="." instance=ExtResource("10_qu7ox")]
