@@ -21,6 +21,10 @@ extends CharacterBody2D
 @export var safe_front : RayCast2D
 var ice_patch_overlap : int = 0
 
+#Sounds
+@export var jump_fx : AudioStreamPlayer
+@export var hurt_fx : AudioStreamPlayer
+@export var death_fx : AudioStreamPlayer
 
 #Particles
 @export var marker_particles : Marker2D
@@ -182,9 +186,8 @@ func _physics_process(delta: float) -> void:
 		knockback_timer -= delta
 		# Override the player's velocity with the knockback velocity.
 		velocity = knockback_velocity
-		# Optionally, you could gradually damp the knockback velocity here.
+
 	else:
-		# Run your normal state machine if not in knockback.
 		process_state_machine(delta)
 		
 	if knockback_timer <= 0 and STATE == "HURT_KNOCKBACK":
@@ -200,6 +203,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 	handle_animations()
+	
 	
 	handle_particles()
 	
@@ -479,6 +483,11 @@ func jump() :
 		velocity.x = speed * input_dir
 	velocity.y = -jump_force
 	
+	# sound
+	jump_fx.pitch_scale = randf_range(0.95, 1.05)
+	jump_fx.stop()
+	jump_fx.play()
+	
 func handle_coyote_time() -> void:
 	if was_on_floor and not is_on_floor() and STATE == "RUN":
 		coyote_timer.start()
@@ -617,17 +626,25 @@ func init_health() :
 func take_damage(damage_amount : int) :
 	GlobalPlayerStats.player_current_HP = max(GlobalPlayerStats.player_current_HP - damage_amount, 0)
 	print("HP reduced to ", GlobalPlayerStats.player_current_HP)
-
+	
+	start_knockback(medium_knockback_force)
+	
 	if GlobalPlayerStats.player_current_HP <= 0:
 		print("PLAYER IS DEAD!")
 		STATE = "DEAD"
+		
 
 	# flash Red
 	var tween = create_tween()
 	tween.tween_property(self, "modulate", Color.RED, 0.2)
 	tween.chain().tween_property(self, "modulate", Color.TRANSPARENT, 0.1)
 	tween.chain().tween_property(self, "modulate", Color.WHITE, 0.2)
-	await tween.finished
+	#await tween.finished
+	
+	# play sound
+	hurt_fx.pitch_scale = randf_range(0.95, 1.05)
+	hurt_fx.stop()
+	hurt_fx.play()
 
 func respawn_to_checkpoint() :
 	await get_tree().create_timer(0.2).timeout
@@ -658,11 +675,18 @@ func on_death() :
 	if is_dead : 
 		return
 	is_dead = true
-
+	
+	death_fx.pitch_scale = randf_range(0.95, 1.05)
+	death_fx.stop()
+	death_fx.play()
+	
+	
 	GlobalPlayerStats.current_lives_number -= 1
 	
 	if GlobalPlayerStats.current_lives_number < 0 :
+		#Sound
 		print("GAME OVER")
+		
 		GlobalMenu.game_transition(func() : GlobalMenu.set_game_state(GlobalMenu.GAME_STATES.GAMEOVER_SCREEN))
 		
 	else : # Must make CONTINUE SCREEN APPEAR 
@@ -744,15 +768,11 @@ func _on_hurt_box_area_entered(area: Area2D) -> void:
 	# --------------------------------------------
 	if invincible_timer > 0:
 		return
-
-	if GlobalPlayerStats.player_current_HP <= 0:
-		return
 	
 	take_damage(area.damage_amount)
 
 	if GlobalPlayerStats.player_current_HP <= 0:
 		STATE = "DEAD"
-		#start_knockback(medium_knockback_force)
 		return
 	
 	invincible_timer = invincible_frame_sec
@@ -843,6 +863,7 @@ func handle_animations() :
 		"SLEDDING_BRAKE" : 
 			if player_sprite.animation != "sled_brake" : 
 				play_animation("brake")
+
 
 
 ############################# PARTICLES SYSTEM ###############################################

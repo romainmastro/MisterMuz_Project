@@ -1,4 +1,4 @@
-[gd_scene load_steps=172 format=3 uid="uid://cnedwspxo44l3"]
+[gd_scene load_steps=175 format=3 uid="uid://cnedwspxo44l3"]
 
 [ext_resource type="Script" uid="uid://bjtw5iph7mhe" path="res://Scripts/player_v_3.gd" id="1_2tjdf"]
 [ext_resource type="Texture2D" uid="uid://bl388umk28hx6" path="res://Assets/Muz/Muz_JUMP.png" id="1_kw5q3"]
@@ -47,6 +47,9 @@
 [ext_resource type="Script" uid="uid://5btxhk0r3gsc" path="res://Scripts/camera_2d.gd" id="40_ybkh6"]
 [ext_resource type="Gradient" uid="uid://bp1ud6vpuclvf" path="res://Resources/colour_ramp_sledding_particles.tres" id="44_h4t6h"]
 [ext_resource type="Script" uid="uid://duss7hwfv7hc3" path="res://Scenes/label.gd" id="47_h8gh7"]
+[ext_resource type="AudioStream" uid="uid://cirlf704sfad8" path="res://Assets/Audio/Sounds/Muz/Jump/Jump33.wav" id="48_5eat2"]
+[ext_resource type="AudioStream" uid="uid://bjhrfad1w8v1t" path="res://Assets/Audio/Sounds/Muz/Hurt/Hurt_squeak.wav" id="49_5eat2"]
+[ext_resource type="AudioStream" uid="uid://cfxcc73j2kb1q" path="res://Assets/Audio/Sounds/Muz/Hurt/death.wav" id="50_d5s56"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i2e8t"]
 atlas = ExtResource("1_kw5q3")
@@ -1097,7 +1100,7 @@ point_count = 2
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[node name="PlayerV2" type="CharacterBody2D" node_paths=PackedStringArray("player_sprite", "boots_gloves_sprite", "snowsuit_sprite", "snowHat_sprite", "muffler_sprite", "wall_ray_right", "wall_ray_left", "platform_checker_right", "platform_checker_left", "stompbox", "terrain_detector", "safe_behind", "safe_under", "safe_front", "marker_particles", "marker_wall_sliding", "snow_trail_particles", "sliding_particles", "jumping_particles", "landing_particles", "wall_sliding_particles", "sledding_particles", "sledding_brake_particles", "marker_sledding_particles", "marker_sledding_brake_particles", "coyote_timer") groups=["player"]]
+[node name="PlayerV2" type="CharacterBody2D" node_paths=PackedStringArray("player_sprite", "boots_gloves_sprite", "snowsuit_sprite", "snowHat_sprite", "muffler_sprite", "wall_ray_right", "wall_ray_left", "platform_checker_right", "platform_checker_left", "stompbox", "terrain_detector", "safe_behind", "safe_under", "safe_front", "jump_fx", "hurt_fx", "death_fx", "marker_particles", "marker_wall_sliding", "snow_trail_particles", "sliding_particles", "jumping_particles", "landing_particles", "wall_sliding_particles", "sledding_particles", "sledding_brake_particles", "marker_sledding_particles", "marker_sledding_brake_particles", "coyote_timer") groups=["player"]]
 process_mode = 1
 z_index = 10
 collision_layer = 2
@@ -1123,6 +1126,9 @@ terrain_detector = NodePath("terrain_detector")
 safe_behind = NodePath("safe_behind")
 safe_under = NodePath("safe_under")
 safe_front = NodePath("safe_front")
+jump_fx = NodePath("Sounds/JumpFX")
+hurt_fx = NodePath("Sounds/HurtFxC")
+death_fx = NodePath("Sounds/Death")
 marker_particles = NodePath("MARKER/SnowTrailMarker")
 marker_wall_sliding = NodePath("MARKER/Wall_SlidingMarker")
 snow_trail_particles = NodePath("PARTICLES/SnowTrailParticles")
@@ -1332,7 +1338,6 @@ collision_mask = 32769
 [node name="Control" type="Control" parent="."]
 visible = false
 layout_mode = 3
-anchors_preset = 0
 offset_left = -21.0
 offset_top = -33.0
 offset_right = 19.0
@@ -1344,6 +1349,21 @@ offset_right = 40.0
 offset_bottom = 23.0
 text = "STATE"
 script = ExtResource("47_h8gh7")
+
+[node name="Sounds" type="Node" parent="."]
+
+[node name="JumpFX" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("48_5eat2")
+bus = &"Sounds"
+
+[node name="HurtFxC" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("49_5eat2")
+volume_db = -6.0
+bus = &"Sounds"
+
+[node name="Death" type="AudioStreamPlayer" parent="Sounds"]
+process_mode = 3
+stream = ExtResource("50_d5s56")
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
 [connection signal="body_entered" from="HurtBox" to="." method="body_entered"]

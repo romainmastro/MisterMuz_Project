@@ -11,8 +11,8 @@ conf_sound = NodePath("ConfirmMenu")
 
 [node name="NavMenu" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_ws2a1")
-bus = &"Sounds"
+bus = &"Sounds GUI"
 
 [node name="ConfirmMenu" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_ublu5")
-bus = &"Sounds"
+bus = &"Sounds GUI"

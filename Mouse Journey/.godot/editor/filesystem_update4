@@ -1,0 +1,9 @@
+res://Scenes/player_v_2.tscn
+res://Resources/Level_Maker.tres
+res://Resources/Décor.tres
+res://Resources/Pièges.tres
+res://Resources/Objects.tres
+res://Resources/shader/outline_player.gdshader
+res://Scenes/Collectibles/frost_berry.tscn
+res://Scripts/Collectibles/frost_berry.gd
+res://Scripts/player_v_3.gd

@@ -1,5 +1,7 @@
 extends Node2D
 
+@export var ambiance_drone : AudioStreamPlayer
+
 @export var sections_node : Node2D
 @export var SECTIONS : Array[Area2D] = []
 var player : PlayerClass = null
@@ -7,7 +9,8 @@ var player_camera : Camera2D = null
 
 var current_section_number : int = 0
 
-
+func _ready() -> void:
+	ambiance_drone.play()
 
 func start_section_system():
 	populate_sections()
@@ -24,7 +27,6 @@ func connect_entered_section_signals():
 	for section in SECTIONS:
 			section.body_entered.connect(_on_section_entered.bind(section))
 
-# NOT FINISHED
 func _on_section_entered(body : Node2D, section : Area2D) : 
 	if body is PlayerClass :
 		var index = SECTIONS.find(section)

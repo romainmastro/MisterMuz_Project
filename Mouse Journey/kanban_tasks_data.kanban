@@ -49,6 +49,7 @@
 			"uuid": "a590c45f-f6e0-4df4-a178-2596b3213350",
 			"title": "Done on the current Branch",
 			"tasks": [
+				"18b239ea-b5aa-4f2a-9c5f-3f6611112a35",
 				"dd79b413-024f-457d-91d5-4899940177ad",
 				"6c4b6b6c-40cd-4056-8abc-d84540898897",
 				"db5dcfd2-31a0-47b7-a866-3c1136f56f6b",
@@ -1910,14 +1911,22 @@
 				},
 				{
 					"details": "Muz : Jump",
-					"done": false
+					"done": true
 				},
 				{
 					"details": "Muz : Hurt",
-					"done": false
+					"done": true
 				},
 				{
-					"details": "Muz : pick up Collectible",
+					"details": "Muz : Death",
+					"done": true
+				},
+				{
+					"details": "Muz : pick up Frostberry",
+					"done": true
+				},
+				{
+					"details": "Muz : pick up SuperFrostBerry",
 					"done": false
 				},
 				{
@@ -1961,6 +1970,13 @@
 					"done": false
 				}
 			]
+		},
+		{
+			"uuid": "18b239ea-b5aa-4f2a-9c5f-3f6611112a35",
+			"title": "PROBLEM with hurt_area_entered callback",
+			"description": "",
+			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"steps": []
 		}
 	],
 	"layout": {
