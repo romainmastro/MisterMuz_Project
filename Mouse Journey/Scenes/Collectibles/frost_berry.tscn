@@ -1,9 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://fqh4dqh5t7ln"]
+[gd_scene load_steps=9 format=3 uid="uid://fqh4dqh5t7ln"]
 
 [ext_resource type="Script" uid="uid://tgbimjgs1fyj" path="res://Scripts/Collectibles/frost_berry.gd" id="1_0oghf"]
 [ext_resource type="Texture2D" uid="uid://mhf4h5626687" path="res://Assets/Collectibles/Collectible - Frostberry.png" id="2_gbw4s"]
 [ext_resource type="PackedScene" uid="uid://cm6k6cw4nuqf2" path="res://Scenes/hovering_component.tscn" id="3_2hbtj"]
-[ext_resource type="AudioStream" uid="uid://bu3aa1g80auv0" path="res://Assets/Audio/Sounds/Muz/Pickup/Pickup.wav" id="4_gbw4s"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_43mx6"]
 radius = 5.0
@@ -55,7 +54,7 @@ collision_layer = 512
 collision_mask = 2
 script = ExtResource("1_0oghf")
 hoveringObjectComponent = NodePath("HoveringComponent")
-pickupFX = NodePath("Pickup")
+pickupFX = NodePath("")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_43mx6")
@@ -81,9 +80,4 @@ libraries = {
 }
 autoplay = "glow"
 
-[node name="Pickup" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_gbw4s")
-bus = &"Sounds"
-
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="finished" from="Pickup" to="." method="_on_pickup_finished"]

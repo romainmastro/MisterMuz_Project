@@ -25,6 +25,8 @@ var ice_patch_overlap : int = 0
 @export var jump_fx : AudioStreamPlayer
 @export var hurt_fx : AudioStreamPlayer
 @export var death_fx : AudioStreamPlayer
+@export var frostberry_fx : AudioStreamPlayer
+@export var super_frostberry_fx : AudioStreamPlayer
 
 #Particles
 @export var marker_particles : Marker2D
@@ -155,6 +157,8 @@ func _ready() -> void:
 	GlobalPlayerStats.has_boots_gloves_suit_signal.connect(update_boots_gloves_visibility)
 	GlobalPlayerStats.has_snowHat_signal.connect(update_snowHat_visibility)
 	GlobalPlayerStats.has_muffler_signal.connect(update_muffler_visibility)
+	GlobalPlayerStats.frostberry_picked_up.connect(handle_frostberry_picked_up_sound)
+	GlobalPlayerStats.super_frostberry_picked_up.connect(handle_super_frostberry_picked_up_sound)
 	
 	snowHat_sprite.animation_changed.connect(_on_gliding_animation_changed)
 	
@@ -971,7 +975,6 @@ func _on_terrain_detector_body_entered(body: Node2D) -> void:
 		current_speed_multiplier = snow_speed_multiplier
 		print("Player walks snow ground")
 
-#TODO : Correct the bug! When in invincibility frame, shouldn't record the position
 func is_ground_safe() -> bool : 
 	return (safe_behind.is_colliding() and 
 			safe_under.is_colliding() and 
@@ -1009,3 +1012,14 @@ func _on_safe_position_timeout() -> void:
 		GlobalPlayerStats.last_safe_position = global_position
 		# save positions in Array
 		add_safe_positions_array(GlobalPlayerStats.last_safe_position)
+
+#################################### SOUNDS #########################################
+func handle_frostberry_picked_up_sound() : 
+	frostberry_fx.pitch_scale = randf_range(0.95, 1.05)
+	frostberry_fx.stop()
+	frostberry_fx.play()
+
+func handle_super_frostberry_picked_up_sound() : 
+	super_frostberry_fx.pitch_scale = randf_range(0.95, 1.05)
+	super_frostberry_fx.stop()
+	super_frostberry_fx.play()

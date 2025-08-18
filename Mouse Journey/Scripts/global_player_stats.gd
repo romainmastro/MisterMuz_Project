@@ -43,3 +43,6 @@ signal has_snowHat_signal
 
 signal has_muffler_signal
 @export var has_muffler : bool = false
+
+signal frostberry_picked_up
+signal super_frostberry_picked_up

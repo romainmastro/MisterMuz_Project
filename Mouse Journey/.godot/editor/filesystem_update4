@@ -1,9 +1,13 @@
-res://Scenes/player_v_2.tscn
+res://default_bus_layout.tres
+res://Scenes/Collectibles/frost_berry.tscn
 res://Resources/Level_Maker.tres
 res://Resources/Décor.tres
 res://Resources/Pièges.tres
 res://Resources/Objects.tres
 res://Resources/shader/outline_player.gdshader
-res://Scenes/Collectibles/frost_berry.tscn
+res://Scenes/player_v_2.tscn
+res://Scripts/global_player_stats.gd
 res://Scripts/Collectibles/frost_berry.gd
 res://Scripts/player_v_3.gd
+res://Scenes/Collectibles/super_frost_berry.tscn
+res://Scripts/Collectibles/super_frost_berry.gd

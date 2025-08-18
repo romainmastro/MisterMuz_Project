@@ -19,10 +19,9 @@ func _on_body_entered(body: Node2D) -> void:
 	if body is PlayerClass : 
 		GlobalPlayerStats.current_frostberry_number += 1
 		GlobalPlayerStats.update_berry_number.emit() # for label_berry in main.gd
-		# player Sound
-		pickupFX.pitch_scale = randf_range(0.95, 1.05)
-		pickupFX.stop()
-		pickupFX.play()
+		GlobalPlayerStats.frostberry_picked_up.emit() # for player_V3.gd to play sound
+		
+		call_deferred("queue_free")
 		
 		
 		if GlobalPlayerStats.current_frostberry_number >= GlobalPlayerStats.max_frostberry_number : 
@@ -37,7 +36,3 @@ func deactivate_monitoring() :
 	await get_tree().create_timer(deactivation_time).timeout
 	monitorable = true
 	monitoring = true
-
-
-func _on_pickup_finished() -> void:
-	call_deferred("queue_free")
