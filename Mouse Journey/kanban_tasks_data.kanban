@@ -42,14 +42,14 @@
 			"tasks": [
 				"df14c301-985a-4287-b3ff-a190f627541f",
 				"6c37a34a-e78f-4789-aec8-1e9db5d2c292",
-				"ab42371c-20a5-4e10-a59b-7b8c2db8fd70",
-				"4a7221db-13cf-4c16-ab92-f63b3a70f01a"
+				"ab42371c-20a5-4e10-a59b-7b8c2db8fd70"
 			]
 		},
 		{
 			"uuid": "a590c45f-f6e0-4df4-a178-2596b3213350",
 			"title": "Done on the current Branch",
 			"tasks": [
+				"4a7221db-13cf-4c16-ab92-f63b3a70f01a",
 				"18b239ea-b5aa-4f2a-9c5f-3f6611112a35",
 				"dd79b413-024f-457d-91d5-4899940177ad",
 				"6c4b6b6c-40cd-4056-8abc-d84540898897",
@@ -1931,12 +1931,16 @@
 					"done": true
 				},
 				{
+					"details": "Muz : pick up Heart",
+					"done": true
+				},
+				{
 					"details": "Muz : Pick up Treasure",
 					"done": false
 				},
 				{
 					"details": "Enemies : Hurt",
-					"done": false
+					"done": true
 				},
 				{
 					"details": "Spike Thrower : Shoot",
@@ -1944,6 +1948,14 @@
 				},
 				{
 					"details": "open trap / lever activated",
+					"done": false
+				},
+				{
+					"details": "Fire crackling",
+					"done": false
+				},
+				{
+					"details": "Spike fall",
 					"done": false
 				}
 			]
@@ -1983,7 +1995,7 @@
 			"uuid": "4a7221db-13cf-4c16-ab92-f63b3a70f01a",
 			"title": "RECODE Pickup sounds : in the player through a signal",
 			"description": "",
-			"category": "4eb3e973-fdf7-4990-895d-2eda5b402559",
+			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
 			"steps": []
 		}
 	],

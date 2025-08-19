@@ -21,6 +21,7 @@ func _on_body_entered(body: Node2D) -> void:
 			GlobalPlayerStats.update_berry_number.emit() # for label_berry in main.gd
 			
 			
+			
 			if GlobalPlayerStats.current_frostberry_number >= GlobalPlayerStats.max_frostberry_number : 
 				GlobalPlayerStats.current_lives_number += 1
 				GlobalPlayerStats.update_life_number.emit() # for label_lifes in main.gd
@@ -29,7 +30,8 @@ func _on_body_entered(body: Node2D) -> void:
 
 		else : 
 			GlobalPlayerStats.player_current_HP += 1
-			
+		
+		GlobalPlayerStats.heart_picked_up.emit() # for player_v3.gd for sounds
 		call_deferred("queue_free")
 
 func deactivate_monitoring() : 

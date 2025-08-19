@@ -66,3 +66,7 @@ func update_animation() :
 func _on_hitbox_area_entered(area: Area2D) -> void:
 	if area.is_in_group("traps") : 
 		should_flip = true
+
+
+func _on_ice_shatter_finished() -> void:
+	die()

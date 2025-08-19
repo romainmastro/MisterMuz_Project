@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://7rd2wku4lem"]
+[gd_scene load_steps=63 format=3 uid="uid://7rd2wku4lem"]
 
 [ext_resource type="Script" uid="uid://bpw4t855dxc7d" path="res://Scripts/Enemies/snow_cannon.gd" id="1_d6xxm"]
 [ext_resource type="Texture2D" uid="uid://clmyho5pl1q3p" path="res://Assets/Enemies/SnowCanon/SnowCannon_WHEEL_MOVE_RIGHT.png" id="1_pxm4j"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bx5trs6jsylpi" path="res://Assets/Enemies/SnowCanon/SnowCannon_SHOOT_RIGHT.png" id="7_e1cy4"]
 [ext_resource type="Texture2D" uid="uid://coah8b8xfvoqt" path="res://Assets/Enemies/SnowCanon/SnowCannon_SHOOT_LEFT.png" id="7_frekg"]
 [ext_resource type="Script" uid="uid://c6dcvl7ynfcrq" path="res://Scripts/Enemies/hitbox.gd" id="8_82chp"]
+[ext_resource type="AudioStream" uid="uid://dq4imevhowjvj" path="res://Assets/Audio/Sounds/Enemies/Death/ice_shatter.wav" id="14_oo8xe"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g173n"]
 atlas = ExtResource("2_r7jm4")
@@ -391,7 +392,7 @@ offsets = PackedFloat32Array(0, 0.6, 1)
 colors = PackedColorArray(0.372549, 0.803922, 0.894118, 1, 0.601569, 0.84, 1, 0.8, 0.369757, 0.805801, 0.894329, 0)
 metadata/_snap_count = 5
 
-[node name="SnowCanon" type="CharacterBody2D" node_paths=PackedStringArray("me", "sprite_body", "sprite_wheels", "ray", "ray_detectionRight", "ray_detectionLeft", "muzzle", "shooting_timer", "gravity_component", "collision_shape", "hitbox", "deadzone", "animated_sprite", "death_particles") groups=["enemies"]]
+[node name="SnowCanon" type="CharacterBody2D" node_paths=PackedStringArray("me", "sprite_body", "sprite_wheels", "ray", "ray_detectionRight", "ray_detectionLeft", "muzzle", "shooting_timer", "gravity_component", "collision_shape", "hitbox", "deadzone", "animated_sprite", "death_particles", "ice_shatter_fx") groups=["enemies"]]
 collision_layer = 4
 floor_max_angle = 0.523599
 script = ExtResource("1_d6xxm")
@@ -409,6 +410,7 @@ hitbox = NodePath("Hitbox")
 deadzone = NodePath("DeadZone")
 animated_sprite = NodePath("AnimatedSprite_Wheels")
 death_particles = NodePath("DeathParticles")
+ice_shatter_fx = NodePath("IceShatter")
 
 [node name="AnimatedSprite_Wheels" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_gb3tx")
@@ -484,6 +486,9 @@ color_ramp = SubResource("Gradient_d6xxm")
 
 [node name="gravity_component" parent="." node_paths=PackedStringArray("wall_ray") instance=ExtResource("6_rq6ld")]
 wall_ray = NodePath("../PlatformCheck")
+
+[node name="IceShatter" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_oo8xe")
 
 [connection signal="animation_finished" from="AnimatedSprite_Wheels" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="DeadZone" to="." method="_on_dead_zone_area_entered"]

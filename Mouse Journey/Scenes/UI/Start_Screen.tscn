@@ -8,7 +8,7 @@
 [ext_resource type="TileSet" uid="uid://cvn6rtpn15ve6" path="res://Resources/Level_Maker.tres" id="5_qu7ox"]
 [ext_resource type="TileSet" uid="uid://1x1qpe81qufy" path="res://Resources/Décor.tres" id="6_yslt2"]
 [ext_resource type="PackedScene" uid="uid://bxx7sq8x1ny3r" path="res://Scenes/UI/moon.tscn" id="8_sqpsh"]
-[ext_resource type="AudioStream" uid="uid://c7qr7pkisa262" path="res://Assets/Audio/Music/Muz_StartScreen_V6.2.ogg" id="9_qu7ox"]
+[ext_resource type="AudioStream" uid="uid://bu8ui1h23rnq3" path="res://Assets/Audio/Music/Muz_StartScreen_V6.2_LOOPABLE.wav" id="9_qu7ox"]
 [ext_resource type="PackedScene" uid="uid://b4m7nqvkk0t7v" path="res://Scenes/UI/Menu_sounds_Manager.tscn" id="10_qu7ox"]
 
 [sub_resource type="Curve2D" id="Curve2D_sqpsh"]
@@ -69,10 +69,6 @@ glow_levels/2 = 1.12
 glow_intensity = 1.1
 glow_bloom = 0.08
 fog_light_energy = 4.44
-
-[sub_resource type="Curve" id="Curve_i67xg"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 2
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i4k7f"]
 atlas = ExtResource("3_sqpsh")
@@ -168,8 +164,12 @@ animations = [{
 }],
 "loop": true,
 "name": &"run",
-"speed": 12.0
+"speed": 5.0
 }]
+
+[sub_resource type="Curve" id="Curve_i67xg"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [node name="MainMenu" type="Control" node_paths=PackedStringArray("title", "menu", "muz")]
 layout_mode = 3
@@ -181,7 +181,7 @@ grow_vertical = 2
 script = ExtResource("1_246bo")
 title = NodePath("UI - 5/Title")
 menu = NodePath("UI - 5/Menu")
-muz = NodePath("UI - 5/Muz")
+muz = NodePath("1/Muz")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
@@ -260,6 +260,13 @@ environment = SubResource("Environment_246bo")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="1"]
 color = Color(0.478431, 0.6, 0.835294, 1)
+
+[node name="Muz" type="AnimatedSprite2D" parent="1"]
+position = Vector2(8, 152)
+sprite_frames = SubResource("SpriteFrames_i4k7f")
+animation = &"run"
+autoplay = "run"
+frame_progress = 0.92009455
 
 [node name="2" type="CanvasLayer" parent="."]
 layer = 2
@@ -351,12 +358,6 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0.835294, 0.929412, 0.929412, 1)
 theme_override_font_sizes/font_size = 18
 text = "MuZ Winter Adventure"
-
-[node name="Muz" type="AnimatedSprite2D" parent="UI - 5"]
-position = Vector2(8, 152)
-sprite_frames = SubResource("SpriteFrames_i4k7f")
-animation = &"idle"
-autoplay = "run"
 
 [node name="StartScreen" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_qu7ox")

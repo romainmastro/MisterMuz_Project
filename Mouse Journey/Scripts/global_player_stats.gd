@@ -46,3 +46,4 @@ signal has_muffler_signal
 
 signal frostberry_picked_up
 signal super_frostberry_picked_up
+signal heart_picked_up

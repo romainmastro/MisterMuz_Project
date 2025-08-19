@@ -20,15 +20,15 @@ func _ready() -> void:
 	muz.global_position = Vector2(8, 152 )
 	
 	var tween = create_tween()
-	tween.tween_property(muz, "global_position", Vector2(240, 152), 3).set_trans(Tween.TRANS_SINE)
+	tween.tween_property(muz, "global_position", Vector2(240, 152), 8)#.set_trans(Tween.TRANS_SINE)
 	tween.tween_callback(update_animation)
-	tween.parallel().tween_property(title, "position", target_title_pos, 3).set_trans(Tween.TRANS_ELASTIC)
-	tween.parallel().tween_property(menu, "position", target_menu_pos, 3).set_trans(Tween.TRANS_ELASTIC)
+	var tween2 = create_tween()
+	tween2.parallel().tween_property(title, "position", target_title_pos, 3).set_trans(Tween.TRANS_ELASTIC)
+	tween2.parallel().tween_property(menu, "position", target_menu_pos, 4).set_trans(Tween.TRANS_ELASTIC)
+	tween2.tween_callback(timing_grab_focus)
 	
-	#start_screen.volume_db = -6
 	start_screen.play()
 	
-	$"UI - 5/Menu/StartButton".grab_focus()
 	
 func _on_start_button_pressed() -> void:
 	GlobalMenu.music_fade_out(start_screen)
@@ -44,6 +44,9 @@ func _on_quit_button_pressed() -> void:
 
 func update_animation() : 
 	muz.play("idle")
+
+func timing_grab_focus() : 
+	$"UI - 5/Menu/StartButton".grab_focus()
 	
 
 		

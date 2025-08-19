@@ -27,6 +27,7 @@ var ice_patch_overlap : int = 0
 @export var death_fx : AudioStreamPlayer
 @export var frostberry_fx : AudioStreamPlayer
 @export var super_frostberry_fx : AudioStreamPlayer
+@export var heart_fx : AudioStreamPlayer
 
 #Particles
 @export var marker_particles : Marker2D
@@ -157,8 +158,11 @@ func _ready() -> void:
 	GlobalPlayerStats.has_boots_gloves_suit_signal.connect(update_boots_gloves_visibility)
 	GlobalPlayerStats.has_snowHat_signal.connect(update_snowHat_visibility)
 	GlobalPlayerStats.has_muffler_signal.connect(update_muffler_visibility)
+	
+	# signal connects for pickups
 	GlobalPlayerStats.frostberry_picked_up.connect(handle_frostberry_picked_up_sound)
 	GlobalPlayerStats.super_frostberry_picked_up.connect(handle_super_frostberry_picked_up_sound)
+	GlobalPlayerStats.heart_picked_up.connect(handle_heart_picked_up_sound)
 	
 	snowHat_sprite.animation_changed.connect(_on_gliding_animation_changed)
 	
@@ -945,6 +949,12 @@ func _on_gliding_animation_changed() -> void:
 
 func _on_stomp_box_area_entered(area: Area2D) -> void:
 	if area is EnemyDeadZoneClass : 
+		
+		# higher pitch than "simple" jump for rebound
+		jump_fx.pitch_scale = randf_range(1.45, 1.55)
+		jump_fx.stop()
+		jump_fx.play()
+		
 		rebound()
 func rebound() : 
 	if velocity.y > 0 : 
@@ -1023,3 +1033,8 @@ func handle_super_frostberry_picked_up_sound() :
 	super_frostberry_fx.pitch_scale = randf_range(0.95, 1.05)
 	super_frostberry_fx.stop()
 	super_frostberry_fx.play()
+	
+func handle_heart_picked_up_sound() : 
+	heart_fx.pitch_scale = randf_range(0.95, 1.05)
+	heart_fx.stop()
+	heart_fx.play()
