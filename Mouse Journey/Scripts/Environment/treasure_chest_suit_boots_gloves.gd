@@ -1,5 +1,6 @@
 extends TreasureClass
 
+
 func _on_body_entered(body: Node2D) -> void:
 	if body is PlayerClass :
 		show_opened_chest()

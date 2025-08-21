@@ -304,7 +304,6 @@ color = Color(0.478431, 0.6, 0.835294, 1)
 layer = 5
 
 [node name="Menu" type="VBoxContainer" parent="UI - 5"]
-anchors_preset = -1
 offset_left = 32.0
 offset_top = 88.0
 offset_right = 88.0
@@ -348,7 +347,6 @@ theme_override_font_sizes/font_size = 12
 text = "Quit Game"
 
 [node name="Title" type="Label" parent="UI - 5"]
-anchors_preset = -1
 offset_left = 64.0
 offset_top = 24.0
 offset_right = 252.0

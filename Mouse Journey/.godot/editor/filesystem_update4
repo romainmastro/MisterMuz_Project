@@ -1,7 +1,14 @@
 res://default_bus_layout.tres
-res://Scenes/UI/Start_Screen.tscn
+res://Scenes/Traps/stalagtite_Tombante.tscn
 res://Resources/Level_Maker.tres
 res://Resources/Décor.tres
 res://Resources/Pièges.tres
 res://Resources/Objects.tres
 res://Resources/shader/outline_player.gdshader
+res://Scripts/Traps/falling_stalagtite.gd
+res://Scripts/Environment/treasure_chest_class.gd
+res://Scenes/Environment/treasure_chest_suit_boots_gloves.tscn
+res://Scenes/Environment/treasure_chest_snowhat.tscn
+res://Scenes/Environment/treasure_chest_muffler.tscn
+res://Scripts/Environment/treasure_chest_suit_boots_gloves.gd
+res://Scenes/Levels/level_1_romain.tscn

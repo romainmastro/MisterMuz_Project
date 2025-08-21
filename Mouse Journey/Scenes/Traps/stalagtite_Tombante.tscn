@@ -1,7 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://be1o8tb502iun"]
+[gd_scene load_steps=12 format=4 uid="uid://be1o8tb502iun"]
 
 [ext_resource type="Script" uid="uid://b6wttk1jhqvpf" path="res://Scripts/Traps/falling_stalagtite.gd" id="1_ta62a"]
 [ext_resource type="Texture2D" uid="uid://cpws0vy0xq4au" path="res://Assets/Traps/FallingStalagmite5.png" id="2_ta62a"]
+[ext_resource type="AudioStream" uid="uid://dvy6vfkulq8rp" path="res://Assets/Audio/Sounds/Enemies/Falling_Stalag/crashingFX2.wav" id="3_7mp3c"]
+[ext_resource type="AudioStream" uid="uid://dm4fawr4ufiui" path="res://Assets/Audio/Sounds/Enemies/Falling_Stalag/Shaking3.wav" id="3_n4fwv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ta62a"]
 size = Vector2(16, 8)
@@ -36,9 +38,13 @@ tracks/1/keys = {
 "values": [0.0]
 }
 
+[sub_resource type="AudioStreamWAV" id="AudioStreamWAV_dh2km"]
+data = PackedByteArray("cW9hZgAAGqsBAKxEFAAIGAAAAAAAAAAAAAAAAOAAQABgSMWGSCggQUPdJSSgjLrrNpZRO330qbZICWaGksIgXUNYMEUBDrrYOSZB33uqTbQ0za2pNtoX3z5CWmgDv/tQPKIvv9kSbaBCS2CopAga2zqEkyQd/9oSPBE3v1pTbRFCwyYcJABW2TZkkiTvv9KURIhs1khRKAA22wJNsoHfazKGUgVf/tBwPAF221CabBEy2Slptkzb3TCEWSDt/7aSOBM3u0CTZYo2aGlltgjb3TJUUiAt/tqEOJE13llTZZI2KGVJNsU7bToCUkAL9/bQOLNN19tCaaIwRSwlNpEqfTrDiWSIff9aNKKEt91hKbQ0AWW0pNMI2z9bAUWMLfvfQgBAEmlsgJI9EAyyRJJsiDrvFCEiSDt7P0hJQCmvllQ5lkAWWDFNhjBb7pIEUSDbP+0tQKMOu0s0pMpGmWQFljkhNPdDSUSRM231spRAMu06GlJlAiWSVDUywRrtbASiNBU320tQJAs3a2CpJhAGGzCEkmCDrtLQNKIIu23hhKIwC3XQ0pMJCTJLCEmUSLdrNlFRJBju90AxFCCa6aiplDUIJYaUUyUZOt1kpJJAN2826EFCmW62QDiyiQJLBSiyOQlnmkgJJIE27eaSoFGqaTrISkkQBJLROKSRAtutgoI4Ema7a2BEgjDZtDIkUkKDMMkKJZQEU8U2AgoES3a+STCgADdNLRkUOIJqgkKKLBExW6w0EkgC3TfbJSQSbFbbNGKRQAFhgIQ1hEC3WamkhDAJb55bQSAIOi0shCSIRpkySgosIAW26DJSEARZtdoYNBBMNttkCKI1ACGSUEosYSXvt6cUmSJvOuttFJEBtmsw0IolGiSwQjUUSRJppYKCNJEM1vigoIImLb7W4ttskCLbJS222QN7OlgowJAh02kvQpEkXX/WTCm2yiYrJKm0OJJht0FoBJImq//7wBJAiyr/bYk20wCpJ0ASbbYg9+sqQlMoA3f/6SCkkALvdrQkLbYIMuhpTTYska++aEJJECDt/74KigQdJ+1sJbTRINkqShltsEx33SYCiwiJt9/NJJRYgV3t0CQptIEy2yBFtC0RD7toBikUIh23+toRRAMjz6y0tJpACSbbQU00kJPdJ0lCSJJiv+0qSlEgmbX2yCUk2CRLbJCWJbLNG180AKIpAA6/3ywIICQbrtdAUWmCJFislGTLSBUh262gookAbSt7rRiiQJdtJthKZZQAltkiksthEy7aaCAUUSBNt75ZJJJIim2ukCItIoEy2WEFpCygBr44YQiiJAGvv1spKJIiy+bQxFMshCYbZJSkyySLJ2tsowYREGsvbWwYkoSW7SdJCWWUQDFLIgKSZSAl11siUlFAgzbe6yaCUABZ7fDKJSTCIBsstBQplkky662ChCUSTDr9rqcEJQAs2usgxTIpAiWWyAotIizTNrdAKSkCIB129tkKBQgmXa6wRFlMUiLFLBEUkySDJu0tgJKJJMsrbzWQkIiBWyfNIMUkkATYKlopRbCIFusnSSklEkGXzytZISSQJbfLKkpRTJJEltgiEpJJECzaaSaKUSSTNPr5JkwKBAs12lsklFligGWWQCSw0iCZrdZaIISJAEu22tgilAgmW66y0CUwmMILYoBUJSSREGtusAokokgGbX3WSSSQQLLtboaCKYSJEhthhCIsNEgTTxWQVCCiQDL57tDQJIQkM2t0kpQlhjAQy2CBFCkiiJZtLZASKCIJh122lhAkkkwabTWAFCWGCAJbJKKiLKRIht1mgFIlBAiKbX22ACSgRVDtNYaEJSRQoktktIQllFAGK6y2iiSUQRDp7rrBJBQwkl1uskIhJFIUCyywDCEkiiBLdNYJJBRCIgt2u1sgAIEUS6a3SCKSkiSTVDLIJGLDCRo0utsgCkoIAA3XbSZaKSSAYbprJkoRSRIIkssiQjIpIgg2ayoZKCUChBLrK2mgoJJAFism6WCoJhEECSYoacSWUSSoJumkkoKCBJgm3a7QygkEmCLdNbJCSikQJBqigkIRSKIkCW26SSEhEiCBLdrrbICQJJottuskhKIpBEUyS2mElCUigAZdZoJAKGQwAk118Vkk4EgmC23WWSRgwkQQIZZLJBCRRRIkttsmSihBEEQW6yrrJISCRAbZKuippJYKJEEiyWCEIopEESYprLIKCgSSJg012mkFBJAgQaLS6GgIoiggALDYJAUGISIIMt0ssAwjBEEQW3XXSSIRSRBJpdbYJoxKRIIAslkiAEoookCG2ybJICCUCCLDKuumggJBIhgm23RU0kookiKYZLJBgUUgKAAtttkkIwIoEiC2ea2yQiCSABYpdZZKIJRRJFENhkkgkIpBEAWK2SoIKMSEATDbKt1sEIIJAkkqXS2QAlFEISRJLLBAQiiiIQkl0tktAJIkkACW3W6w0ShghRJLbbZJJBRKJIANUlgiUElIIkQw3SFJJRSSQhBDJutulgBAQogmHRWyyiklFCCAIYbDTSSUJKJEEttsMgIjAkkAQ2a62SZASCQALFLbJsEIKJRBAEkiyWijEljEACYpbZYBCSECIJgtut0lgoIggCGWzWW00CUSUCCabDJDJIJRQRFEstsiyCAkhAgAwybdbZIASEKIIUNtssgIRJQVsgxbXSRJtiighQJbZbJBIBJCGFEsVt0fawlpskmLfSdDZBSESghRIBlhhooKCKIRtTff7WwItiQgCBLFbppYFiZaKEN3+/8mAQoFEkgCGAEArEQGqwLIA00E0wYGByYA5P+u3xg/8CLYIISSUEQRFm/+10o5TbYkiU2K3TQ2gB00gQdt/v/BIBCJQJIghlgmCAEklEgiBRH/9YaUmm2kIEFtm0ssgIAdoUy7/f66UiQiSgQTRZJYIgoJKJCAAsUX722kpNtMsSINFbbbIIRSFIJuv3/8siYhElAgACww2iIAUCiSCJDYKsUEEBBJBBEiSzWaywQgIBWCZr7//LCWJJJQJFMEskskQgklAkiQ2CpZYaIQQhhQIMM0umhkAIIRoCHX7/bWBCCUCgQABDYLIEAJCIRIAgsX+/SSFJltpCAIZbbbbIIAHLBJh29/+tkgEIFEEgCQWSJJKAQiEQSaHnv3tloRZbYkUmmWaW6GSBi0mSRDr99vIkgIJJJIBNMgwyQQAkkkkByDb7/NZIUiJIJAAElmmlsayFFook1XzyZbIaKCUCSCEoimuktKLbYoIUiCWxSWGBQimmkkTDt/JtthgopGEJomGWyyw0QhBCCSAKJYLBJRIJJCIJEAthsbWyEItJtFACIbLbbYYBSKHZwBt2+3tsAghAkoUAAWCSZBBQCgSQhAEWv8+sMIYaQkgEQQ2WayyxRSkmGKJNffIssNAwwQJIAUmW22yEJltigSCKYYobDJGFDLLaKIg20f//62CpJIkBAbdvfrpIUmHbbTCIhmmlkgQggkkkiiQxH7tZZQimWkHCAGn3//2sEUspkoiWXefxNoag222mwgIEMMFphEJIQgkigGQ2wySRQEUy0kSTFfIttslgFFIoAUGzX33aW4JBm2mwkIDFbbENFRZabLKIgWXW3SwQkIpBUUCILddfdbFghJJJBEMM0TXSySEIooohSBTJZZbAIQFKCJKFEAlkkWQQCggkEEARTJJbLDJIIRDbbZNVu//2sGClNtttBHqA7btY6IBSAQAABqgAAAAAA=")
+format = 3
+
 [sub_resource type="Animation" id="Animation_xn1vh"]
 resource_name = "shake"
-length = 0.25
+length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -77,6 +83,21 @@ tracks/2/keys = {
 "update": 0,
 "values": [0.0, 0.0872665, 0.0, -0.0872665, 0.0]
 }
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sounds/FallingFx")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": SubResource("AudioStreamWAV_dh2km")
+}],
+"times": PackedFloat32Array(0.25)
+}
+tracks/3/use_blend = true
 
 [sub_resource type="Animation" id="Animation_dh2km"]
 resource_name = "shake_idle"
@@ -104,6 +125,20 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [0.0, 0.0872665, 0.0, -0.0872665, 0.0]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"play_shaking"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_w320k"]
@@ -145,6 +180,23 @@ libraries = {
 [node name="shaking_timer" type="Timer" parent="."]
 wait_time = 2.0
 autostart = true
+
+[node name="Sounds" type="Node2D" parent="."]
+
+[node name="FallingFx" type="AudioStreamPlayer2D" parent="Sounds"]
+max_distance = 500.0
+bus = &"Sounds"
+
+[node name="CrashingFx" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource("3_7mp3c")
+volume_db = -3.0
+max_distance = 500.0
+bus = &"Sounds"
+
+[node name="Shaking3" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource("3_n4fwv")
+volume_db = -15.0
+max_distance = 250.0
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1935,6 +1935,18 @@
 					"done": true
 				},
 				{
+					"details": "Falling Spikes : Shaking",
+					"done": true
+				},
+				{
+					"details": "Falling Spikes : Falling",
+					"done": true
+				},
+				{
+					"details": "Falling Spikes : Crashing",
+					"done": true
+				},
+				{
 					"details": "Muz : Pick up Treasure",
 					"done": false
 				},
@@ -1952,10 +1964,6 @@
 				},
 				{
 					"details": "Fire crackling",
-					"done": false
-				},
-				{
-					"details": "Spike fall",
 					"done": false
 				}
 			]

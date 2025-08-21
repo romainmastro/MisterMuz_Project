@@ -67,3 +67,13 @@ func do_hit_stop(duration := 0.3, slowdown_factor := 0.5) -> void:
 	Engine.time_scale = slowdown_factor
 	await get_tree().create_timer(duration * slowdown_factor, true).timeout
 	Engine.time_scale = 1.0
+	
+func play_sound_1D(fx : AudioStreamPlayer ) :
+	fx.pitch_scale = randf_range(0.95, 1.05)
+	fx.stop()
+	fx.play()
+	
+func play_sound_2D(fx : AudioStreamPlayer2D ) :
+	fx.pitch_scale = randf_range(0.95, 1.05)
+	fx.stop()
+	fx.play()

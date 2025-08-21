@@ -24,9 +24,10 @@ func _on_detector_body_entered(body: Node2D) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is TileMapLayer and has_fell : 
-		await get_tree().create_timer(0.05).timeout
+		GlobalEnemyManager.play_sound_2D($Sounds/CrashingFx)
+		#await get_tree().create_timer(0.05).timeout
+		await $Sounds/CrashingFx.finished
 		call_deferred("queue_free")
-
 
 func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("player_hurtbox") : 
@@ -34,4 +35,9 @@ func _on_area_entered(area: Area2D) -> void:
 
 
 func _on_shaking_timer_timeout() -> void:
+	await get_tree().create_timer(randf_range(0.2, 0.5)).timeout
 	animation_player.play("shake_idle")
+	shaking_timer.wait_time = randf_range(2.0, 2.5)
+
+func play_shaking() : 
+	GlobalEnemyManager.play_sound_2D($Sounds/Shaking3)

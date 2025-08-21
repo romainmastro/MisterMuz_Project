@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bk6nplv6ettgn"]
+[gd_scene load_steps=16 format=3 uid="uid://bk6nplv6ettgn"]
 
 [ext_resource type="Script" uid="uid://hs1lm3n2yc8s" path="res://Scripts/Environment/treasure_chest_muffler.gd" id="1_qqrxp"]
 [ext_resource type="Texture2D" uid="uid://bb351c1n2ieyh" path="res://Assets/Environment/closed_chest.png" id="2_e51ha"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://dv1kr8b8jyq5t" path="res://Resources/light/point_of_interest_light.tres" id="4_qqrxp"]
 [ext_resource type="Texture2D" uid="uid://67f34ernlbbh" path="res://Resources/light/raylight_texture.png" id="5_e51ha"]
 [ext_resource type="Texture2D" uid="uid://dwh0kamfy6rx7" path="res://Resources/light/ray_light.png" id="6_xi8u8"]
+[ext_resource type="AudioStream" uid="uid://c5cd221v0ird5" path="res://Assets/Audio/Sounds/Environment/TreasureChests/TreasureOpen.wav" id="7_ay871"]
+[ext_resource type="AudioStream" uid="uid://dwdy2k0hb87ep" path="res://Assets/Audio/Sounds/Environment/TreasureChests/treasure_open_click.wav" id="8_fsjbr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eu2q2"]
 size = Vector2(16, 7)
@@ -159,11 +161,12 @@ _data = {
 &"RESET": SubResource("Animation_qsn8c")
 }
 
-[node name="treasure_chest_muffler" type="Area2D" node_paths=PackedStringArray("closed_chest_sprite", "opened_chest_sprite")]
+[node name="treasure_chest_muffler" type="Area2D" node_paths=PackedStringArray("closed_chest_sprite", "opened_chest_sprite", "treasure_open_fx")]
 collision_mask = 2
 script = ExtResource("1_qqrxp")
 closed_chest_sprite = NodePath("closed_chest")
 opened_chest_sprite = NodePath("opened_chest")
+treasure_open_fx = NodePath("TreasureOpen")
 metadata/_custom_type_script = "uid://didfjoqvoqhd4"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -180,7 +183,6 @@ texture = ExtResource("3_xi8u8")
 offset = Vector2(0, 5)
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-visible = false
 scale = Vector2(0.4, 0.2)
 color = Color(0.666838, 0.451852, 0.0116099, 1)
 energy = 0.6
@@ -196,7 +198,6 @@ energy = 0.0
 texture = ExtResource("5_e51ha")
 
 [node name="PointLight2D3" type="PointLight2D" parent="."]
-visible = false
 position = Vector2(0, -3)
 scale = Vector2(0.03363, 0.0378143)
 color = Color(0.905608, 0.604982, 0.102581, 1)
@@ -217,5 +218,12 @@ libraries = {
 }
 autoplay = "Light"
 speed_scale = 2.687
+
+[node name="TreasureOpen" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_ay871")
+volume_db = 5.0
+
+[node name="TreasureOpenClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_fsjbr")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
