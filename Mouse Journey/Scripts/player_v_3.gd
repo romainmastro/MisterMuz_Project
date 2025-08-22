@@ -28,6 +28,8 @@ var ice_patch_overlap : int = 0
 @export var frostberry_fx : AudioStreamPlayer
 @export var super_frostberry_fx : AudioStreamPlayer
 @export var heart_fx : AudioStreamPlayer
+@export var giftbox_fx : AudioStreamPlayer
+@export var cheese_fx : AudioStreamPlayer
 
 #Particles
 @export var marker_particles : Marker2D
@@ -163,6 +165,9 @@ func _ready() -> void:
 	GlobalPlayerStats.frostberry_picked_up.connect(handle_frostberry_picked_up_sound)
 	GlobalPlayerStats.super_frostberry_picked_up.connect(handle_super_frostberry_picked_up_sound)
 	GlobalPlayerStats.heart_picked_up.connect(handle_heart_picked_up_sound)
+	GlobalPlayerStats.giftbox_picked_up.connect(handle_giftbox_picked_up_sound)
+	GlobalPlayerStats.cheese_picked_up.connect(handle_cheese_picked_up_sound)
+	
 	
 	snowHat_sprite.animation_changed.connect(_on_gliding_animation_changed)
 	
@@ -1038,3 +1043,9 @@ func handle_heart_picked_up_sound() :
 	heart_fx.pitch_scale = randf_range(0.95, 1.05)
 	heart_fx.stop()
 	heart_fx.play()
+
+func handle_giftbox_picked_up_sound() : 
+	GlobalEnemyManager.play_sound_1D(giftbox_fx)
+
+func handle_cheese_picked_up_sound() : 
+	GlobalEnemyManager.play_sound_1D(cheese_fx)

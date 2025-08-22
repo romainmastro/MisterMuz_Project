@@ -33,4 +33,9 @@ func _on_timer_timeout() -> void:
 
 func _on_queue_free_area_2d_body_entered(body: Node2D) -> void:
 	if body is TileMapLayer : 
-		call_deferred("queue_free")
+		GlobalEnemyManager.play_sound_2D($CrashingFx2)
+		animated_sprite.visible = false
+		
+
+func _on_crashing_fx_2_finished() -> void:
+	die()

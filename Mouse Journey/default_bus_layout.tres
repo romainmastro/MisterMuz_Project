@@ -1,4 +1,4 @@
-[gd_resource type="AudioBusLayout" load_steps=7 format=3 uid="uid://cr37j8klqe3t8"]
+[gd_resource type="AudioBusLayout" load_steps=10 format=3 uid="uid://cr37j8klqe3t8"]
 
 [sub_resource type="AudioEffectLimiter" id="AudioEffectLimiter_n8wo2"]
 resource_name = "Limiter"
@@ -21,6 +21,17 @@ tap2_level_db = -18.0
 
 [sub_resource type="AudioEffectLimiter" id="AudioEffectLimiter_5t1r3"]
 resource_name = "Limiter"
+
+[sub_resource type="AudioEffectPitchShift" id="AudioEffectPitchShift_j3pel"]
+resource_name = "PitchShift"
+pitch_scale = 1.2
+
+[sub_resource type="AudioEffectDelay" id="AudioEffectDelay_g28q7"]
+resource_name = "Delay"
+
+[sub_resource type="AudioEffectLowPassFilter" id="AudioEffectLowPassFilter_j3pel"]
+resource_name = "LowPassFilter"
+cutoff_hz = 1579.0
 
 [resource]
 bus/0/effect/0/effect = SubResource("AudioEffectLimiter_n8wo2")
@@ -53,3 +64,15 @@ bus/3/volume_db = 0.0
 bus/3/send = &"Master"
 bus/3/effect/0/effect = SubResource("AudioEffectLimiter_5t1r3")
 bus/3/effect/0/enabled = true
+bus/4/name = &"LevelComplete"
+bus/4/solo = false
+bus/4/mute = false
+bus/4/bypass_fx = false
+bus/4/volume_db = -5.9307528
+bus/4/send = &"Master"
+bus/4/effect/0/effect = SubResource("AudioEffectPitchShift_j3pel")
+bus/4/effect/0/enabled = true
+bus/4/effect/1/effect = SubResource("AudioEffectDelay_g28q7")
+bus/4/effect/1/enabled = true
+bus/4/effect/2/effect = SubResource("AudioEffectLowPassFilter_j3pel")
+bus/4/effect/2/enabled = true

@@ -18,7 +18,6 @@ var random_off_start : float
 
 func _ready() -> void:
 	giftbox_sprite.animation_finished.connect(_on_open_animation_finished)
-	#giftbox_animator.animation_finished.connect(_on_reveal_animation_finished)
 	giftbox_sprite.play("idle")
 	spawning_node = get_tree().current_scene
 	
@@ -31,6 +30,7 @@ func _on_collision_area_body_entered(body: Node2D) -> void:
 	if body is PlayerClass : 
 		if giftbox_sprite.animation != "open" : 
 			giftbox_sprite.play("open")
+			GlobalPlayerStats.giftbox_picked_up.emit() #sent to player_v3.gd for sounds
 		
 func _on_open_animation_finished() : 
 	if giftbox_sprite.animation == "open" : 

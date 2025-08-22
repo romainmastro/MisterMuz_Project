@@ -151,7 +151,7 @@ _data = {
 [node name="FallingStalagtite" type="Area2D" node_paths=PackedStringArray("shaking_timer") groups=["traps"]]
 z_index = -1
 collision_layer = 64
-collision_mask = 17
+collision_mask = 32785
 script = ExtResource("1_ta62a")
 shaking_timer = NodePath("shaking_timer")
 metadata/_custom_type_script = "uid://da5g2tgmvj2m1"
@@ -196,7 +196,7 @@ bus = &"Sounds"
 [node name="Shaking3" type="AudioStreamPlayer2D" parent="Sounds"]
 stream = ExtResource("3_n4fwv")
 volume_db = -15.0
-max_distance = 250.0
+max_distance = 150.0
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

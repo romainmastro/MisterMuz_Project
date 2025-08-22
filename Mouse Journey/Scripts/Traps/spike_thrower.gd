@@ -25,7 +25,8 @@ func _ready() -> void:
 	reload_timer.wait_time += roundf(random_offset_sec*100) / 100
 	reload_timer.wait_time = shoot_cooldown
 	reload_timer.start()
-		
+	
+
 func _on_timer_timeout() -> void:
 	animated_sprite.play("shoot")
 	
@@ -52,3 +53,4 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 	spike.direction = direction
 	spike.flip_sprite(direction)
 	add_child(spike)
+	GlobalEnemyManager.play_sound_2D($SpikeThrowerShoot9)

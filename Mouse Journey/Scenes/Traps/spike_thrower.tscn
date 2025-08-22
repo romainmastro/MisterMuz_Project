@@ -1,7 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://c0qusm8c2nny0"]
+[gd_scene load_steps=11 format=3 uid="uid://c0qusm8c2nny0"]
 
 [ext_resource type="Script" uid="uid://0icsb7agupe5" path="res://Scripts/Traps/spike_thrower.gd" id="1_weejn"]
 [ext_resource type="Texture2D" uid="uid://d1r2f6rdkcfub" path="res://Assets/Enemies/SpikeThrower/spike_thrower_SHOOT_RIGHT_V2.png" id="2_5x8wk"]
+[ext_resource type="AudioStream" uid="uid://dvy6vfkulq8rp" path="res://Assets/Audio/Sounds/Enemies/Falling_Stalag/crashingFX2.wav" id="3_ibjk0"]
+[ext_resource type="AudioStream" uid="uid://cejyoq5unq5s3" path="res://Assets/Audio/Sounds/Enemies/Spike_thrower/spike_thrower_Shoot9.wav" id="4_cht3v"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ibjk0"]
 atlas = ExtResource("2_5x8wk")
@@ -84,6 +86,16 @@ scale_amount_max = 4.0
 color_ramp = SubResource("Gradient_5x8wk")
 hue_variation_min = -0.3
 hue_variation_max = 0.36
+
+[node name="CrashingFx2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_ibjk0")
+max_distance = 156.0
+bus = &"Sounds"
+
+[node name="SpikeThrowerShoot9" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_cht3v")
+max_distance = 200.0
+bus = &"Sounds"
 
 [connection signal="timeout" from="reload_timer" to="." method="_on_timer_timeout"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

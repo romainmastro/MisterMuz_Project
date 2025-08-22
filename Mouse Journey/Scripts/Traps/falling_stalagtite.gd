@@ -26,7 +26,9 @@ func _on_body_entered(body: Node2D) -> void:
 	if body is TileMapLayer and has_fell : 
 		GlobalEnemyManager.play_sound_2D($Sounds/CrashingFx)
 		#await get_tree().create_timer(0.05).timeout
+		$Sprite2D.visible = false
 		await $Sounds/CrashingFx.finished
+		
 		call_deferred("queue_free")
 
 func _on_area_entered(area: Area2D) -> void:

@@ -46,9 +46,9 @@ func handle_death():
 	
 	
 func _on_animated_sprite_2d_animation_finished() -> void:
-	if animated_sprite.animation == "death":
+	if animated_sprite.animation == "death" :
+	
 		
-		#sound
 		ice_shatter_fx.pitch_scale = randf_range(0.95, 1.05)
 		ice_shatter_fx.stop()
 		ice_shatter_fx.play()

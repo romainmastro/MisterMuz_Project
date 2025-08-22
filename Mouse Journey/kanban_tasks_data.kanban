@@ -41,14 +41,15 @@
 			"title": "Doing",
 			"tasks": [
 				"df14c301-985a-4287-b3ff-a190f627541f",
-				"6c37a34a-e78f-4789-aec8-1e9db5d2c292",
-				"ab42371c-20a5-4e10-a59b-7b8c2db8fd70"
+				"ab42371c-20a5-4e10-a59b-7b8c2db8fd70",
+				"39238938-378d-413c-bb3a-69defb416556"
 			]
 		},
 		{
 			"uuid": "a590c45f-f6e0-4df4-a178-2596b3213350",
 			"title": "Done on the current Branch",
 			"tasks": [
+				"6c37a34a-e78f-4789-aec8-1e9db5d2c292",
 				"4a7221db-13cf-4c16-ab92-f63b3a70f01a",
 				"18b239ea-b5aa-4f2a-9c5f-3f6611112a35",
 				"dd79b413-024f-457d-91d5-4899940177ad",
@@ -820,7 +821,7 @@
 			"steps": [
 				{
 					"details": "Start Screen Loop\n",
-					"done": false
+					"done": true
 				},
 				{
 					"details": "Level1 Loop",
@@ -1900,7 +1901,7 @@
 			"uuid": "6c37a34a-e78f-4789-aec8-1e9db5d2c292",
 			"title": "SOUNDS",
 			"description": "",
-			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
+			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
 			"steps": [
 				{
 					"details": "Menu Navigation",
@@ -1931,6 +1932,10 @@
 					"done": true
 				},
 				{
+					"details": "Muz : pick up Present",
+					"done": true
+				},
+				{
 					"details": "Muz : pick up Heart",
 					"done": true
 				},
@@ -1948,7 +1953,7 @@
 				},
 				{
 					"details": "Muz : Pick up Treasure",
-					"done": false
+					"done": true
 				},
 				{
 					"details": "Enemies : Hurt",
@@ -1956,15 +1961,27 @@
 				},
 				{
 					"details": "Spike Thrower : Shoot",
-					"done": false
+					"done": true
 				},
 				{
 					"details": "open trap / lever activated",
-					"done": false
+					"done": true
 				},
 				{
 					"details": "Fire crackling",
-					"done": false
+					"done": true
+				},
+				{
+					"details": "end_level_checkpoint fire",
+					"done": true
+				},
+				{
+					"details": "Level Complete : Fire Crackling + Music?",
+					"done": true
+				},
+				{
+					"details": "Muz : pick up Cheese",
+					"done": true
 				}
 			]
 		},
@@ -2004,6 +2021,13 @@
 			"title": "RECODE Pickup sounds : in the player through a signal",
 			"description": "",
 			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"steps": []
+		},
+		{
+			"uuid": "39238938-378d-413c-bb3a-69defb416556",
+			"title": "Check All EXTRA Traps for SOUNDS",
+			"description": "",
+			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
 			"steps": []
 		}
 	],

@@ -16,6 +16,7 @@ func _ready() -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body is PlayerClass : 
 		GlobalPlayerStats.current_cheese_nb += 1
+		GlobalPlayerStats.cheese_picked_up.emit() # listened by player_v2.gd for sound
 		
 		call_deferred("queue_free")
 		

@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://dhq03yilhu6wj"]
+[gd_scene load_steps=11 format=3 uid="uid://dhq03yilhu6wj"]
 
 [ext_resource type="Texture2D" uid="uid://dypl1impvax7h" path="res://Assets/Environment/end_level_no_fire.png" id="1_imorp"]
 [ext_resource type="Script" uid="uid://cs5wj02pbvngm" path="res://Scripts/Environment/end_level_checkpoint.gd" id="1_mrmqi"]
 [ext_resource type="Texture2D" uid="uid://dnb0wxrmnc6rl" path="res://Assets/Environment/end_level lit_fire.png" id="2_53u4k"]
+[ext_resource type="AudioStream" uid="uid://bqfaf0ftcg8m0" path="res://Assets/Audio/Sounds/Environment/Fire/fire_starting.wav" id="5_05r57"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_807ni"]
 size = Vector2(32, 29)
@@ -43,10 +44,12 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="EndLevelCheckpoint" type="Area2D" node_paths=PackedStringArray("fire_lit")]
+[node name="EndLevelCheckpoint" type="Area2D" node_paths=PackedStringArray("fire_lit", "fire_starting", "fire_crackling")]
 collision_mask = 2
 script = ExtResource("1_mrmqi")
 fire_lit = NodePath("Fire_Lit")
+fire_starting = NodePath("FireStarting")
+fire_crackling = NodePath("")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -6.5)
@@ -63,4 +66,9 @@ sprite_frames = SubResource("SpriteFrames_jwqhk")
 animation = &"fire_lit"
 offset = Vector2(0, -8)
 
+[node name="FireStarting" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_05r57")
+bus = &"Sounds"
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="finished" from="FireStarting" to="." method="_on_fire_starting_finished"]

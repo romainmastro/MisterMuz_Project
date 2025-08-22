@@ -1,9 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://bye1st6l366h1"]
+[gd_scene load_steps=12 format=3 uid="uid://bye1st6l366h1"]
 
 [ext_resource type="Script" uid="uid://klu1pmkjfnog" path="res://Scripts/Platform/trap_door.gd" id="1_sqljs"]
 [ext_resource type="Texture2D" uid="uid://enkaq3jx7w7a" path="res://Assets/TileSet/trap_door_V.png" id="2_avn1l"]
 [ext_resource type="Texture2D" uid="uid://bu76vpjy2b4wt" path="res://Assets/TileSet/trap_door_button_off.png" id="3_5h4am"]
 [ext_resource type="Texture2D" uid="uid://d3mcrv4xg0gsi" path="res://Assets/TileSet/trap_door_button_on.png" id="4_hxaa5"]
+[ext_resource type="AudioStream" uid="uid://bx5st5okd6jf0" path="res://Assets/Audio/Sounds/Environment/trap_door/lever_actioned.wav" id="5_avn1l"]
+[ext_resource type="AudioStream" uid="uid://dwroitdfbh5r2" path="res://Assets/Audio/Sounds/Environment/trap_door/door_opening.wav" id="6_5h4am"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sqljs"]
 size = Vector2(8, 32)
@@ -61,6 +63,7 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id="Animation_sqljs"]
 resource_name = "open_trap"
+length = 1.6
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -104,7 +107,7 @@ tracks/3/path = NodePath(".")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(1),
+"times": PackedFloat32Array(1.6),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -123,6 +126,21 @@ tracks/4/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
+tracks/5/type = "audio"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../DoorOpening")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("6_5h4am")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/5/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_avn1l"]
 _data = {
@@ -190,3 +208,10 @@ offset_left = 6.0
 offset_top = 3.0
 offset_right = 8.0
 offset_bottom = 5.0
+
+[node name="LeverActioned" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_avn1l")
+bus = &"Sounds"
+
+[node name="DoorOpening" type="AudioStreamPlayer" parent="."]
+bus = &"Sounds"

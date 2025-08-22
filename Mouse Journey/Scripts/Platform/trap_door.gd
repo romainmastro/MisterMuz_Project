@@ -27,4 +27,7 @@ func _on_body_entered(body : Node2D) :
 func open_the_trap_door() : 
 	sprite_button_off.visible = false
 	sprite_button_on.visible = true
+	#sound
+	$LeverActioned.play()
+	
 	platform_animator.play("open_trap")
