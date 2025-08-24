@@ -23,6 +23,7 @@ var ice_patch_overlap : int = 0
 
 #Sounds
 @export var jump_fx : AudioStreamPlayer
+
 @export var hurt_fx : AudioStreamPlayer
 @export var death_fx : AudioStreamPlayer
 @export var frostberry_fx : AudioStreamPlayer
@@ -30,6 +31,21 @@ var ice_patch_overlap : int = 0
 @export var heart_fx : AudioStreamPlayer
 @export var giftbox_fx : AudioStreamPlayer
 @export var cheese_fx : AudioStreamPlayer
+
+@export var slide_slope_fx : AudioStreamPlayer
+@export var slide_pitch_min := 0.90
+@export var slide_pitch_max := 1.20
+@export var slide_vol_min_db := -18.0   # quiet
+@export var slide_vol_max_db := -6.0    # full 
+@export var slide_fade_in := 0.08       # seconds
+@export var slide_fade_out := 0.12 
+	 # seconds
+
+var _slide_target_db := -80.0
+var _slide_current_db := -80.0
+var _slide_target_pitch := 1.0
+var _slide_current_pitch := 1.0
+var intensity := 2
 
 #Particles
 @export var marker_particles : Marker2D
@@ -217,8 +233,9 @@ func _physics_process(delta: float) -> void:
 	
 	handle_animations()
 	
-	
 	handle_particles()
+	
+	handle_slide_slope_fx()
 	
 	if current_player_mode == "normal" and STATE != "SLIDE":
 		flip_sprites_smooth(input_dir)
@@ -321,10 +338,14 @@ func process_state_machine(delta : float) :
 				
 				if Input.is_action_just_pressed("jump") : 
 					slope_jump()
+					#sound
+					slide_slope_fx.stop()
 					STATE = "SLIDE_JUMP"
 				
 				if not is_on_slide_tile() : 
+					slide_slope_fx.stop()
 					STATE = "IDLE"
+					
 				
 			"GLIDE", "FALL", "WALL_SLIDE" : 
 				if input_dir == 0 : 
@@ -544,6 +565,11 @@ func wall_jump() :
 		velocity.y = -wall_jump_force
 		flip_lock_timer = flip_lock_duration
 		
+		# sound
+		jump_fx.pitch_scale = randf_range(0.95, 1.05)
+		jump_fx.stop()
+		jump_fx.play()
+		
 func is_touching_wall() : 
 	return wall_ray_left.is_colliding() or wall_ray_right.is_colliding()
 
@@ -553,15 +579,6 @@ func wall_slide(delta : float) :
 		velocity.y += gravity * delta * wall_slide_multiplier
 		velocity.y = min(velocity.y, wall_slide_max_speed)
 
-##### Slope Slide
-#func is_on_downward_slope() -> bool : 
-	#var floor_direction := get_floor_normal()
-	#var facing_dir : float = sign(player_sprite.scale.x)
-	#if not floor_direction.is_equal_approx(Vector2(0, -1)) : 
-		#if floor_direction.x != 0 and sign(floor_direction.x) == facing_dir : 
-			#if abs(rad_to_deg(get_floor_angle())) > 15 : 
-				#return true
-	#return false
 func slide(delta: float) -> void:
 	var dir = sign(get_floor_normal().x)
 	
@@ -574,10 +591,16 @@ func slide(delta: float) -> void:
 		muffler_sprite.scale.x = dir
 	velocity.x = lerp(velocity.x, sliding_max_speed * dir, sliding_accel * delta)
 	
+	
 func slope_jump() : 
 	var floor_direction := get_floor_normal()
 	velocity.x = sliding_max_speed * floor_direction.x
 	velocity.y = -slope_jump_force
+	
+	# sound
+	jump_fx.pitch_scale = randf_range(0.95, 1.05)
+	jump_fx.stop()
+	jump_fx.play()
 
 #### Glide
 func glide(delta : float) : 
@@ -1049,3 +1072,35 @@ func handle_giftbox_picked_up_sound() :
 
 func handle_cheese_picked_up_sound() : 
 	GlobalEnemyManager.play_sound_1D(cheese_fx)
+	
+func handle_slide_slope_fx() : 
+	var is_sliding := (STATE == "SLIDE") and is_on_floor()
+	
+	if is_sliding : 
+				# Targets
+		_slide_target_pitch = lerp(slide_pitch_min, slide_pitch_max, intensity)
+		var lin = lerp(db_to_linear(slide_vol_min_db), db_to_linear(slide_vol_max_db), intensity)
+		_slide_target_db = linear_to_db(lin)
+
+		# Ensure playing; start from very low volume to avoid pop-in.
+		if !slide_slope_fx.playing:
+			slide_slope_fx.volume_db = -80.0
+			slide_slope_fx.pitch_scale = _slide_target_pitch
+			slide_slope_fx.play()
+	else:
+		# Fade out to silence
+		_slide_target_db = -80.0
+		
+		# Smooth towards targets. Faster when fading in, a bit slower when fading out.
+	var tau = (slide_fade_in if is_sliding else slide_fade_out)
+	var t = 0.0 if tau <= 0.0 else clamp(0.016 / tau, 0.0, 1.0)
+
+	_slide_current_db = lerp(_slide_current_db, _slide_target_db, t)
+	_slide_current_pitch = lerp(_slide_current_pitch, _slide_target_pitch, clamp(0.016 * 6.0, 0.0, 1.0))
+
+	slide_slope_fx.volume_db = _slide_current_db
+	slide_slope_fx.pitch_scale = _slide_current_pitch
+
+	# Fully stop once inaudible to release the voice.
+	if !is_sliding and slide_slope_fx.playing and _slide_current_db <= -79.0:
+		slide_slope_fx.stop()

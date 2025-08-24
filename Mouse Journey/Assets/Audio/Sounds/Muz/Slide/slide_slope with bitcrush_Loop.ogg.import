@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://crxip3tho8ief"
+path="res://.godot/imported/slide_slope with bitcrush_Loop.ogg-38ee96a1de7c61d365c888d30614aa36.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Sounds/Muz/Slide/slide_slope with bitcrush_Loop.ogg"
+dest_files=["res://.godot/imported/slide_slope with bitcrush_Loop.ogg-38ee96a1de7c61d365c888d30614aa36.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=2.0
+bpm=0
+beat_count=0
+bar_beats=4

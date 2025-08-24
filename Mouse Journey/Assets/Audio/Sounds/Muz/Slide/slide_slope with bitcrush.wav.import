@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b7seafbxk3637"
+path="res://.godot/imported/slide_slope with bitcrush.wav-0861455fb74ae657b9c9bb15830bf146.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/Sounds/Muz/Slide/slide_slope with bitcrush.wav"
+dest_files=["res://.godot/imported/slide_slope with bitcrush.wav-0861455fb74ae657b9c9bb15830bf146.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

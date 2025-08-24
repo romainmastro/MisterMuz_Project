@@ -1,4 +1,4 @@
-[gd_resource type="AudioBusLayout" load_steps=10 format=3 uid="uid://cr37j8klqe3t8"]
+[gd_resource type="AudioBusLayout" load_steps=11 format=3 uid="uid://cr37j8klqe3t8"]
 
 [sub_resource type="AudioEffectLimiter" id="AudioEffectLimiter_n8wo2"]
 resource_name = "Limiter"
@@ -33,6 +33,9 @@ resource_name = "Delay"
 resource_name = "LowPassFilter"
 cutoff_hz = 1579.0
 
+[sub_resource type="AudioEffectLimiter" id="AudioEffectLimiter_cenje"]
+resource_name = "Limiter"
+
 [resource]
 bus/0/effect/0/effect = SubResource("AudioEffectLimiter_n8wo2")
 bus/0/effect/0/enabled = true
@@ -46,7 +49,7 @@ bus/1/effect/0/effect = SubResource("AudioEffectLimiter_g28q7")
 bus/1/effect/0/enabled = true
 bus/1/effect/1/effect = SubResource("AudioEffectReverb_j3pel")
 bus/1/effect/1/enabled = false
-bus/2/name = &"Sounds"
+bus/2/name = &"Sounds World"
 bus/2/solo = false
 bus/2/mute = false
 bus/2/bypass_fx = false
@@ -76,3 +79,11 @@ bus/4/effect/1/effect = SubResource("AudioEffectDelay_g28q7")
 bus/4/effect/1/enabled = true
 bus/4/effect/2/effect = SubResource("AudioEffectLowPassFilter_j3pel")
 bus/4/effect/2/enabled = true
+bus/5/name = &"MuzSounds"
+bus/5/solo = false
+bus/5/mute = false
+bus/5/bypass_fx = false
+bus/5/volume_db = -6.1430097
+bus/5/send = &"Master"
+bus/5/effect/0/effect = SubResource("AudioEffectLimiter_cenje")
+bus/5/effect/0/enabled = true
