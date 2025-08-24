@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://3d538vse2smr"]
+
+[ext_resource type="Script" uid="uid://b787j8vixcei3" path="res://Scripts/Environment/sign_tut.gd" id="1_60vde"]
+[ext_resource type="Texture2D" uid="uid://dygvq1ra6coyp" path="res://Assets/Environment/Sign_Tut.png" id="2_4b3nj"]
+[ext_resource type="PackedScene" uid="uid://cf8hojgbx15rb" path="res://Scenes/HUD/tut_jump_popup.tscn" id="2_60vde"]
+[ext_resource type="Theme" uid="uid://ba6rurgdpqsjr" path="res://Resources/font/main_font_theme.tres" id="3_1h3y6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n5rj0"]
+size = Vector2(16, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_q4q45"]
+load_path = "res://.godot/imported/2d_lights_and_shadows_neutral_point_light.webp-90a52a222c53c29b5175d453f1c65e65.ctex"
+
+[node name="SignTut" type="Area2D" node_paths=PackedStringArray("press_info_jump")]
+process_mode = 3
+collision_mask = 2
+script = ExtResource("1_60vde")
+tutorial_panel = ExtResource("2_60vde")
+press_info_jump = NodePath("press_jump_info")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_n5rj0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_4b3nj")
+
+[node name="press_jump_info" type="Label" parent="."]
+offset_left = -20.0
+offset_top = -16.0
+offset_right = 25.0
+offset_bottom = -7.0
+theme = ExtResource("3_1h3y6")
+theme_override_font_sizes/font_size = 5
+text = "Press Jump for info"
+
+[node name="HeartGlowLight" type="PointLight2D" parent="."]
+light_mask = 2
+position = Vector2(-2, -1.5)
+scale = Vector2(0.78124994, 0.5078125)
+color = Color(0.96220344, 0.78115344, 0.33193457, 1)
+energy = 0.6
+texture = SubResource("CompressedTexture2D_q4q45")
+texture_scale = 0.1
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

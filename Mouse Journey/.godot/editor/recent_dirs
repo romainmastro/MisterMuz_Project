@@ -1,8 +1,9 @@
+res://Scenes/HUD
+res://Scripts/Environment
+res://Scenes/Environment
 res://Scenes/UI
 res://Resources/Sounds
 res://Scripts/Sounds
-res://Scenes/Sounds
-res://Scripts/Environment
 res://Scenes/Platforms
 res://Resources
 res://Scripts/Platform
@@ -19,4 +20,3 @@ res://Scripts/Enemies
 res://Scenes/Enemies
 res://Assets/Enemies/SuperSnowman
 res://Scripts/Collectibles
-res://Scenes/Collectibles
