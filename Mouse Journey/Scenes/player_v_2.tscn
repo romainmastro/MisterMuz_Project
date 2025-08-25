@@ -1,4 +1,4 @@
-[gd_scene load_steps=181 format=3 uid="uid://cnedwspxo44l3"]
+[gd_scene load_steps=184 format=3 uid="uid://cnedwspxo44l3"]
 
 [ext_resource type="Script" uid="uid://bjtw5iph7mhe" path="res://Scripts/player_v_3.gd" id="1_2tjdf"]
 [ext_resource type="Texture2D" uid="uid://bl388umk28hx6" path="res://Assets/Muz/Muz_JUMP.png" id="1_kw5q3"]
@@ -56,6 +56,9 @@
 [ext_resource type="AudioStream" uid="uid://cok133fwmxmew" path="res://Assets/Audio/Sounds/Muz/Pickup/giftbox_picked_up.ogg" id="54_3v470"]
 [ext_resource type="AudioStream" uid="uid://bytgrxmls2flm" path="res://Assets/Audio/Sounds/Muz/Pickup/pick_up_cheese.wav" id="55_4yptn"]
 [ext_resource type="AudioStream" uid="uid://crxip3tho8ief" path="res://Assets/Audio/Sounds/Muz/Slide/slide_slope with bitcrush_Loop.ogg" id="56_w3se3"]
+[ext_resource type="AudioStream" uid="uid://maf7k2q64eey" path="res://Assets/Audio/Sounds/Muz/Slide/wall_slide_LOOPABLE.ogg" id="57_rhohj"]
+[ext_resource type="AudioStream" uid="uid://dqfsc664j1hau" path="res://Assets/Audio/Sounds/Muz/Jump/Wall_Jump_FX.ogg" id="58_xmump"]
+[ext_resource type="AudioStream" uid="uid://seavgrga8y0i" path="res://Assets/Audio/Sounds/Muz/Pickup/life.ogg" id="59_l0oiw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i2e8t"]
 atlas = ExtResource("1_kw5q3")
@@ -1106,7 +1109,7 @@ point_count = 2
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[node name="PlayerV2" type="CharacterBody2D" node_paths=PackedStringArray("player_sprite", "boots_gloves_sprite", "snowsuit_sprite", "snowHat_sprite", "muffler_sprite", "wall_ray_right", "wall_ray_left", "platform_checker_right", "platform_checker_left", "stompbox", "terrain_detector", "safe_behind", "safe_under", "safe_front", "jump_fx", "hurt_fx", "death_fx", "frostberry_fx", "super_frostberry_fx", "heart_fx", "giftbox_fx", "cheese_fx", "slide_slope_fx", "marker_particles", "marker_wall_sliding", "snow_trail_particles", "sliding_particles", "jumping_particles", "landing_particles", "wall_sliding_particles", "sledding_particles", "sledding_brake_particles", "marker_sledding_particles", "marker_sledding_brake_particles", "coyote_timer") groups=["player"]]
+[node name="PlayerV2" type="CharacterBody2D" node_paths=PackedStringArray("player_sprite", "boots_gloves_sprite", "snowsuit_sprite", "snowHat_sprite", "muffler_sprite", "wall_ray_right", "wall_ray_left", "platform_checker_right", "platform_checker_left", "stompbox", "terrain_detector", "safe_behind", "safe_under", "safe_front", "jump_fx", "wall_jump_fx", "hurt_fx", "death_fx", "frostberry_fx", "super_frostberry_fx", "heart_fx", "giftbox_fx", "cheese_fx", "life_fx", "slide_slope_fx", "wall_slide_fx", "marker_particles", "marker_wall_sliding", "snow_trail_particles", "sliding_particles", "jumping_particles", "landing_particles", "wall_sliding_particles", "sledding_particles", "sledding_brake_particles", "marker_sledding_particles", "marker_sledding_brake_particles", "coyote_timer") groups=["player"]]
 process_mode = 1
 z_index = 10
 collision_layer = 2
@@ -1133,6 +1136,7 @@ safe_behind = NodePath("safe_behind")
 safe_under = NodePath("safe_under")
 safe_front = NodePath("safe_front")
 jump_fx = NodePath("Sounds/JumpFX")
+wall_jump_fx = NodePath("Sounds/WallJumpFx")
 hurt_fx = NodePath("Sounds/HurtFxC")
 death_fx = NodePath("Sounds/Death")
 frostberry_fx = NodePath("Sounds/PickupFrostberry")
@@ -1140,7 +1144,9 @@ super_frostberry_fx = NodePath("Sounds/PickupSuperFrost")
 heart_fx = NodePath("Sounds/PickUpHeart")
 giftbox_fx = NodePath("Sounds/GiftboxPickedUp")
 cheese_fx = NodePath("Sounds/PickUpCheese")
+life_fx = NodePath("Sounds/Life")
 slide_slope_fx = NodePath("Sounds/SlideSlopeWithBitcrushLoop")
+wall_slide_fx = NodePath("Sounds/WallSlideLoopable")
 marker_particles = NodePath("MARKER/SnowTrailMarker")
 marker_wall_sliding = NodePath("MARKER/Wall_SlidingMarker")
 snow_trail_particles = NodePath("PARTICLES/SnowTrailParticles")
@@ -1403,6 +1409,18 @@ bus = &"MuzSounds"
 
 [node name="SlideSlopeWithBitcrushLoop" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("56_w3se3")
+bus = &"MuzSounds"
+
+[node name="WallSlideLoopable" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("57_rhohj")
+bus = &"MuzSounds"
+
+[node name="WallJumpFx" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("58_xmump")
+bus = &"MuzSounds"
+
+[node name="Life" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("59_l0oiw")
 bus = &"MuzSounds"
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]

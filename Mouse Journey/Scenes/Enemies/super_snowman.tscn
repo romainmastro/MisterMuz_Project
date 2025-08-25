@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://cm6y3b3por0rv"]
+[gd_scene load_steps=28 format=3 uid="uid://cm6y3b3por0rv"]
 
 [ext_resource type="Script" uid="uid://bdiepv5cxk2qq" path="res://Scripts/Enemies/super_snowman.gd" id="1_r7tae"]
 [ext_resource type="PackedScene" uid="uid://bi7lk15xk624v" path="res://Scenes/Components/gravity_component.tscn" id="2_rkclu"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://c6dcvl7ynfcrq" path="res://Scripts/Enemies/hitbox.gd" id="6_ig41a"]
 [ext_resource type="Script" uid="uid://vd7tu4wfujqn" path="res://Scripts/Enemies/dead_zone.gd" id="7_0ke61"]
 [ext_resource type="AudioStream" uid="uid://dq4imevhowjvj" path="res://Assets/Audio/Sounds/Enemies/Death/ice_shatter.wav" id="8_rkclu"]
+[ext_resource type="AudioStream" uid="uid://nyp8k5btpveb" path="res://Assets/Audio/Sounds/Enemies/SuperSnowman/PopUp.wav" id="9_v5e8n"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ofqdy"]
 atlas = ExtResource("3_r7tae")
@@ -145,12 +146,13 @@ offsets = PackedFloat32Array(0, 0.6, 1)
 colors = PackedColorArray(0.372549, 0.803922, 0.894118, 1, 0.601569, 0.84, 1, 0.8, 0.369757, 0.805801, 0.894329, 0)
 metadata/_snap_count = 5
 
-[node name="SuperSnowman" type="CharacterBody2D" node_paths=PackedStringArray("gravity_component", "ray", "spawn_positions", "collision_shape", "hitbox", "deadzone", "animated_sprite", "death_particles", "ice_shatter_fx") groups=["enemies"]]
+[node name="SuperSnowman" type="CharacterBody2D" node_paths=PackedStringArray("popup_fx", "gravity_component", "ray", "spawn_positions", "collision_shape", "hitbox", "deadzone", "animated_sprite", "death_particles", "ice_shatter_fx") groups=["enemies"]]
 z_index = 5
 collision_layer = 4
 collision_mask = 3
 floor_max_angle = 0.523599
 script = ExtResource("1_r7tae")
+popup_fx = NodePath("PopUp")
 gravity_component = NodePath("gravity_component")
 ray = NodePath("RayCast2D")
 spawn_positions = [NodePath("spawn_left"), NodePath("spawn_right")]
@@ -166,7 +168,7 @@ wall_ray = NodePath("../RayCast2D")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_dvrkf")
-animation = &"walk_right"
+animation = &"death"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 11)
@@ -224,7 +226,17 @@ position = Vector2(5, -4)
 
 [node name="IceShatter" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_rkclu")
+volume_db = -3.0
+bus = &"Sounds World"
+
+[node name="PopUp" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_v5e8n")
+volume_db = 6.0
+pitch_scale = 0.82
+bus = &"Sounds World"
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="area_entered" from="DeadZone" to="." method="_on_dead_zone_area_entered"]
+[connection signal="finished" from="IceShatter" to="." method="_on_ice_shatter_finished"]
+[connection signal="finished" from="PopUp" to="." method="_on_pop_up_finished"]

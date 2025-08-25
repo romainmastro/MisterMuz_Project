@@ -7,3 +7,15 @@ res://Resources/Objects.tres
 res://Resources/shader/outline_player.gdshader
 res://Scripts/player_v_3.gd
 res://Scenes/Levels/level_1_romain.tscn
+res://Scenes/Enemies/super_snowman.tscn
+res://Scenes/Enemies/snowman.tscn
+res://Scripts/Enemies/super_snowman.gd
+res://Scenes/Collectibles/frost_berry.tscn
+res://Scripts/Collectibles/frost_berry.gd
+res://Scripts/global_player_stats.gd
+res://Scenes/Collectibles/super_frost_berry.tscn
+res://Scripts/Collectibles/super_frost_berry.gd
+res://Scenes/main.tscn
+res://Scripts/main.gd
+res://Scenes/Collectibles/Collect_Heart.tscn
+res://Scripts/Collectibles/collect_heart.gd

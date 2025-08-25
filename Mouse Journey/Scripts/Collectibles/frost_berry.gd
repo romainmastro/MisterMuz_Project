@@ -27,6 +27,9 @@ func _on_body_entered(body: Node2D) -> void:
 		if GlobalPlayerStats.current_frostberry_number >= GlobalPlayerStats.max_frostberry_number : 
 			GlobalPlayerStats.current_lives_number += 1
 			GlobalPlayerStats.update_life_number.emit() # for label_lifes in main.gd
+			GlobalPlayerStats.gain_one_life_fx.emit() # for player.gd
+			
+			
 			GlobalPlayerStats.current_frostberry_number = 0
 			GlobalPlayerStats.update_berry_number.emit() # for label_berry in main.gd
 

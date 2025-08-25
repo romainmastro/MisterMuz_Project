@@ -48,13 +48,12 @@ _data = {
 &"glow": SubResource("Animation_yef6y")
 }
 
-[node name="FrostBerry" type="Area2D" node_paths=PackedStringArray("hoveringObjectComponent", "pickupFX")]
+[node name="FrostBerry" type="Area2D" node_paths=PackedStringArray("hoveringObjectComponent")]
 light_mask = 8
 collision_layer = 512
 collision_mask = 2
 script = ExtResource("1_0oghf")
 hoveringObjectComponent = NodePath("HoveringComponent")
-pickupFX = NodePath("")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_43mx6")

@@ -49,3 +49,4 @@ signal super_frostberry_picked_up
 signal heart_picked_up
 signal giftbox_picked_up
 signal cheese_picked_up
+signal gain_one_life_fx

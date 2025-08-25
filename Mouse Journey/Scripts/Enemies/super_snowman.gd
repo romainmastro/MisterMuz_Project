@@ -2,7 +2,7 @@ class_name SuperSnowmanEnemy
 extends enemy_class
 
 @onready var me = preload("res://Scenes/Enemies/super_snowman.tscn")
-
+@export var popup_fx : AudioStreamPlayer
 @export var gravity_component : ClassGravityComponent
 @export var ray : RayCast2D
 @export var spawn_positions : Array[Marker2D]
@@ -75,6 +75,9 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if animated_sprite.animation == "death":
+		
+		GlobalEnemyManager.play_sound_1D(ice_shatter_fx)
+			
 		death_particles.emitting = true
 		animated_sprite.visible = false
 		await get_tree().create_timer(0.6).timeout
@@ -89,10 +92,6 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 		else : 
 			pass
 		
-		# here : spawn 2 little snowmen (angry! quicker?)
-		spawn_little_snowmen()
-		die()
-		
 func spawn_little_snowmen() : 
 	if should_spawn_little_snowmen : 
 		for i in range(2) : 
@@ -102,5 +101,11 @@ func spawn_little_snowmen() :
 			little_snowman.scale = Vector2(0.7, 0.7)
 			little_snowman.direction_départ = "droite" if i == 0 else "gauche"
 			little_snowman.should_spawn_little_snowmen = false
-			
 			get_parent().add_child(little_snowman, true)
+			
+func _on_ice_shatter_finished() -> void:
+	if should_spawn_little_snowmen : 
+		GlobalEnemyManager.play_sound_1D(popup_fx)
+
+func _on_pop_up_finished() -> void:
+	spawn_little_snowmen()	

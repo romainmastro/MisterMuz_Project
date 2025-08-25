@@ -23,7 +23,7 @@ var ice_patch_overlap : int = 0
 
 #Sounds
 @export var jump_fx : AudioStreamPlayer
-
+@export var wall_jump_fx : AudioStreamPlayer
 @export var hurt_fx : AudioStreamPlayer
 @export var death_fx : AudioStreamPlayer
 @export var frostberry_fx : AudioStreamPlayer
@@ -31,21 +31,35 @@ var ice_patch_overlap : int = 0
 @export var heart_fx : AudioStreamPlayer
 @export var giftbox_fx : AudioStreamPlayer
 @export var cheese_fx : AudioStreamPlayer
-
+@export var life_fx : AudioStreamPlayer
+# FOR SLIDING SLOPES SOUND FX
 @export var slide_slope_fx : AudioStreamPlayer
 @export var slide_pitch_min := 0.90
 @export var slide_pitch_max := 1.20
-@export var slide_vol_min_db := -18.0   # quiet
-@export var slide_vol_max_db := -6.0    # full 
+@export var slide_vol_min_db := -12.0   # quiet
+@export var slide_vol_max_db := 0.0    # full 
 @export var slide_fade_in := 0.08       # seconds
-@export var slide_fade_out := 0.12 
-	 # seconds
+@export var slide_fade_out := 0.12  # seconds
 
 var _slide_target_db := -80.0
 var _slide_current_db := -80.0
 var _slide_target_pitch := 1.0
 var _slide_current_pitch := 1.0
-var intensity := 2
+var intensity := 0.6
+
+# FOR WALL_SLIDE SOUND FX
+@export var wall_slide_fx : AudioStreamPlayer
+@export var wall_slide_pitch_min := 0.90
+@export var wall_slide_pitch_max := 1.20
+@export var wall_slide_vol_min_db := -10.0   # quiet
+@export var wall_slide_vol_max_db := 2.0    # full 
+@export var wall_slide_fade_in := 0.08       # seconds
+@export var wall_slide_fade_out := 0.12  # seconds
+var wall_slide_target_db := -80.0
+var wall_slide_current_db := -80.0
+var wall_slide_target_pitch := 1.0
+var wall_slide_current_pitch := 1.0
+var wall_slide_intensity := 0.9
 
 #Particles
 @export var marker_particles : Marker2D
@@ -183,7 +197,7 @@ func _ready() -> void:
 	GlobalPlayerStats.heart_picked_up.connect(handle_heart_picked_up_sound)
 	GlobalPlayerStats.giftbox_picked_up.connect(handle_giftbox_picked_up_sound)
 	GlobalPlayerStats.cheese_picked_up.connect(handle_cheese_picked_up_sound)
-	
+	GlobalPlayerStats.gain_one_life_fx.connect(handle_gain_one_life_fx)
 	
 	snowHat_sprite.animation_changed.connect(_on_gliding_animation_changed)
 	
@@ -234,6 +248,8 @@ func _physics_process(delta: float) -> void:
 	handle_animations()
 	
 	handle_particles()
+	
+	handle_wall_slide_fx()
 	
 	handle_slide_slope_fx()
 	
@@ -443,10 +459,12 @@ func process_state_machine(delta : float) :
 				wall_slide(delta)
 				
 				# TRANSITIONS 
-				if not is_touching_wall() : 
+				if not is_touching_wall() :
+					wall_slide_fx.stop() 
 					STATE = "FALL"
 					
 				if input_dir != wall_direction : 
+					wall_slide_fx.stop()
 					STATE = "FALL"
 			
 			"GLIDE" :
@@ -566,9 +584,9 @@ func wall_jump() :
 		flip_lock_timer = flip_lock_duration
 		
 		# sound
-		jump_fx.pitch_scale = randf_range(0.95, 1.05)
-		jump_fx.stop()
-		jump_fx.play()
+		wall_jump_fx.pitch_scale = randf_range(0.95, 1.05)
+		wall_jump_fx.stop()
+		wall_jump_fx.play()
 		
 func is_touching_wall() : 
 	return wall_ray_left.is_colliding() or wall_ray_right.is_colliding()
@@ -1072,6 +1090,9 @@ func handle_giftbox_picked_up_sound() :
 
 func handle_cheese_picked_up_sound() : 
 	GlobalEnemyManager.play_sound_1D(cheese_fx)
+
+func handle_gain_one_life_fx() : 
+	GlobalEnemyManager.play_sound_1D(life_fx)
 	
 func handle_slide_slope_fx() : 
 	var is_sliding := (STATE == "SLIDE") and is_on_floor()
@@ -1104,3 +1125,38 @@ func handle_slide_slope_fx() :
 	# Fully stop once inaudible to release the voice.
 	if !is_sliding and slide_slope_fx.playing and _slide_current_db <= -79.0:
 		slide_slope_fx.stop()
+		
+func handle_wall_slide_fx(delta: float = 0.016) -> void:
+	var is_wall_sliding = (STATE == "WALL_SLIDE")
+
+	if is_wall_sliding:
+		# Keep intensity in [0..1] (yours was 2, which overshoots).
+		var inten = clamp(wall_slide_intensity, 0.0, 1.0)
+
+		# Targets based on intensity
+		wall_slide_target_pitch = lerp(wall_slide_pitch_min, wall_slide_pitch_max, inten)
+		var lin = lerp(db_to_linear(wall_slide_vol_min_db), db_to_linear(wall_slide_vol_max_db), inten)
+		wall_slide_target_db = linear_to_db(lin)
+
+		# Ensure playing; start faded so no pop
+		if !wall_slide_fx.playing:
+			wall_slide_fx.volume_db = -80.0
+			wall_slide_fx.pitch_scale = wall_slide_target_pitch
+			wall_slide_fx.play()
+	else:
+		# Fade out to silence when not wall-sliding
+		wall_slide_target_db = -80.0
+
+	# Smooth towards targets
+	var tau := (wall_slide_fade_in if is_wall_sliding else wall_slide_fade_out)
+	var t = (0.0 if tau <= 0.0 else clamp(delta / tau, 0.0, 1.0))
+
+	wall_slide_current_db = lerp(wall_slide_current_db, wall_slide_target_db, t)
+	wall_slide_current_pitch = lerp(wall_slide_current_pitch, wall_slide_target_pitch, clamp(delta * 6.0, 0.0, 1.0))
+
+	wall_slide_fx.volume_db = wall_slide_current_db
+	wall_slide_fx.pitch_scale = wall_slide_current_pitch
+
+	# Stop once inaudible
+	if !is_wall_sliding and wall_slide_fx.playing and wall_slide_current_db <= -79.0:
+		wall_slide_fx.stop()
