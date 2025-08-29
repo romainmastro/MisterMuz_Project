@@ -1,4 +1,3 @@
-res://Assets/TileSet
 res://Scenes/HUD
 res://Scripts/Environment
 res://Scenes/Environment
@@ -8,6 +7,7 @@ res://Scripts/Sounds
 res://Scenes/Platforms
 res://Resources
 res://Scripts/Platform
+res://Assets/TileSet
 res://Scenes/Levels
 res://
 res://Scripts/UI

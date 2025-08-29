@@ -1,7 +1,10 @@
-res://default_bus_layout.tres
-res://Scenes/Levels/level_1_romain.tscn
+res://Scenes/Platforms/trap_door_H.tscn
 res://Resources/Level_Maker.tres
 res://Resources/Décor.tres
 res://Resources/Pièges.tres
 res://Resources/Objects.tres
 res://Resources/shader/outline_player.gdshader
+res://Scripts/Platform/trap_door.gd
+res://Scenes/Levels/level_1_romain.tscn
+res://Scenes/Platforms/trap_door_V.tscn
+res://Scenes/UI/congrats_screen.tscn
