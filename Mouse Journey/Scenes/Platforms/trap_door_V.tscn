@@ -169,6 +169,7 @@ centered = false
 offset = Vector2(-4, 0)
 
 [node name="color_platform_rect" type="ColorRect" parent="Platform/Sprite2D"]
+anchors_preset = -1
 offset_left = -3.0
 offset_top = 9.0
 offset_right = -1.0
@@ -192,6 +193,7 @@ centered = false
 
 [node name="color_button_off_rect" type="ColorRect" parent="Button/Sprite_button_off"]
 z_index = 1
+anchors_preset = -1
 offset_left = 1.0
 offset_top = 1.0
 offset_right = 3.0
@@ -204,6 +206,7 @@ offset = Vector2(0, 2)
 
 [node name="color_button_on_rect" type="ColorRect" parent="Button/Sprite_button_on"]
 z_index = 1
+anchors_preset = -1
 offset_left = 6.0
 offset_top = 3.0
 offset_right = 8.0
@@ -211,7 +214,7 @@ offset_bottom = 5.0
 
 [node name="LeverActioned" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_avn1l")
-bus = &"Sounds"
+bus = &"Sounds World"
 
 [node name="DoorOpening" type="AudioStreamPlayer" parent="."]
-bus = &"Sounds"
+bus = &"Sounds World"

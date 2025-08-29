@@ -22,12 +22,14 @@ func _ready() -> void:
 func _on_body_entered(body : Node2D) : 
 	if body is PlayerClass and not is_activated : 
 		is_activated = true
-		open_the_trap_door()
+		#sound 
+		$LeverActioned.play()
+
+func _on_lever_actioned_finished() -> void:
+	open_the_trap_door()
 
 func open_the_trap_door() : 
 	sprite_button_off.visible = false
 	sprite_button_on.visible = true
-	#sound
-	$LeverActioned.play()
 	
 	platform_animator.play("open_trap")
