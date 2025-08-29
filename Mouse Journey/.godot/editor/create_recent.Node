@@ -1,3 +1,4 @@
+TileMapLayer
 ColorRect
 VBoxContainer
 CanvasLayer
@@ -11,4 +12,3 @@ AudioStreamPlayer
 AudioStreamPlayer2D
 Node2D
 Node
-HBoxContainer
