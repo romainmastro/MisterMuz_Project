@@ -31,7 +31,6 @@
 				"e3281c13-dbdd-4301-9903-9eac4a13f67f",
 				"e6de74ab-da1e-46d2-ad73-418882192b5a",
 				"f1649e68-55c8-4394-a8a8-903669540d44",
-				"ef9a25df-950f-4d92-baca-77688806a127",
 				"ef6acfcf-6d5a-4a49-a636-65e013dd9f1e",
 				"39282582-646e-4916-aa71-4810c05e90fe"
 			]
@@ -46,6 +45,11 @@
 		{
 			"uuid": "a590c45f-f6e0-4df4-a178-2596b3213350",
 			"title": "Done on the current Branch",
+			"tasks": []
+		},
+		{
+			"uuid": "9573ce0a-9b5d-4fd9-bb69-4b68a3540b99",
+			"title": "DONE => Main Branch",
 			"tasks": [
 				"59c8d1f3-34ee-4b86-af4b-ae7abdcb585b",
 				"ab42371c-20a5-4e10-a59b-7b8c2db8fd70",
@@ -65,8 +69,6 @@
 				"c18df18c-0a19-4168-a5e1-a8899745efdc",
 				"25d0ab89-0f85-4e7d-8067-035fcbd4be60",
 				"eb604c62-ad85-4fc3-ae6b-9aec648bb284",
-				"f32f8ef7-1a3c-4529-9b54-814115ea295f",
-				"37e7801a-d964-4dc4-9959-6c89e741d4d2",
 				"50ef9f6d-1bb7-43f9-8e82-8987051e3bce",
 				"ea156777-2640-46b1-ba7a-3544950d6562",
 				"99c0d9f4-8a19-46a5-834d-030b7966701c",
@@ -74,13 +76,9 @@
 				"69db0ba2-6a8a-4149-b06d-8a9a75ec42a1",
 				"9420965e-1f5b-4225-b84a-f62ee5a4a07b",
 				"d78ec85b-ec55-4f3a-9fb8-ab505e3eb0ed",
-				"aa258bd1-03b0-4caf-90f0-bdec9bc9b676"
-			]
-		},
-		{
-			"uuid": "9573ce0a-9b5d-4fd9-bb69-4b68a3540b99",
-			"title": "DONE => Main Branch",
-			"tasks": [
+				"37e7801a-d964-4dc4-9959-6c89e741d4d2",
+				"aa258bd1-03b0-4caf-90f0-bdec9bc9b676",
+				"f32f8ef7-1a3c-4529-9b54-814115ea295f",
 				"43606449-076b-49ce-a30e-eb892954dab0",
 				"e80d6fb7-ed59-49d4-bf52-1a35531c423a",
 				"89c9c012-4a18-45cd-8f60-30e67d2f0ed2",
@@ -230,7 +228,6 @@
 			"tasks": [
 				"a3dbca31-e7bc-44c7-9147-295699869e5d",
 				"37f51636-6211-4f39-b23e-3dd8b8db719d",
-				"45bae00e-fa49-4086-b39c-ef1d74825c71",
 				"a8e8d672-e24b-4c2e-bb09-fa20f0cf6849",
 				"9b59f8f2-d054-45d6-bd9a-6a574d9f6983"
 			]
@@ -943,13 +940,6 @@
 			"steps": []
 		},
 		{
-			"uuid": "ef9a25df-950f-4d92-baca-77688806a127",
-			"title": "allow wall_jumps on specific surface?",
-			"description": "",
-			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
-			"steps": []
-		},
-		{
 			"uuid": "bb57965b-6154-4d7f-be50-673de688144c",
 			"title": "revoir Function Knockback",
 			"description": "",
@@ -1009,13 +999,6 @@
 			"title": "SEE : Collision Layers (enemies bump into each other)",
 			"description": "",
 			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
-			"steps": []
-		},
-		{
-			"uuid": "45bae00e-fa49-4086-b39c-ef1d74825c71",
-			"title": "Collision Layers",
-			"description": "Cheat Sheet for Collision Layers and Masks. \nPlayer : 2 \nWorld : 1\nEnemies : 3",
-			"category": "21ebf47a-f324-470f-b3a9-bd29d4bc0392",
 			"steps": []
 		},
 		{
@@ -1275,7 +1258,7 @@
 			"uuid": "25e39056-f16e-4cb5-88b8-0deaa0e6a02c",
 			"title": "deactivate the stompbox when player hit",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
@@ -1595,7 +1578,7 @@
 			"uuid": "6c4b6b6c-40cd-4056-8abc-d84540898897",
 			"title": "Level1",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
@@ -1682,7 +1665,7 @@
 			"uuid": "9420965e-1f5b-4225-b84a-f62ee5a4a07b",
 			"title": "BUG: on enemy from the left?? Rebound",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
@@ -1755,14 +1738,14 @@
 			"uuid": "0ea93d3f-4264-46d0-899b-8f491bc49e12",
 			"title": "BUG : when lifes and die : should restart from checkpoint",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "c2e72a34-046b-4021-a96f-31243b941236",
 			"title": "Show Continue Screen",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
@@ -1776,105 +1759,105 @@
 			"uuid": "6da8879d-00be-4c24-8ccf-c6507d6e9473",
 			"title": "JUMP_THROUGH Platforms",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "32198406-8e58-445f-8ffc-aac5c03be011",
 			"title": "Level by Section",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "db5dcfd2-31a0-47b7-a866-3c1136f56f6b",
 			"title": "Doors and locks",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "c18df18c-0a19-4168-a5e1-a8899745efdc",
 			"title": "BUG : enemies don't walk on droppable",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "25d0ab89-0f85-4e7d-8067-035fcbd4be60",
 			"title": "Bug with GiftBox : Fixed with AnimationPlayers",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "eb604c62-ad85-4fc3-ae6b-9aec648bb284",
 			"title": "Trap Door open with button",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "f32f8ef7-1a3c-4529-9b54-814115ea295f",
 			"title": "Farm collect with SpikeThrower",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "50ef9f6d-1bb7-43f9-8e82-8987051e3bce",
 			"title": "BUG : when dying on slow down, don't slow up on respawn",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "37e7801a-d964-4dc4-9959-6c89e741d4d2",
 			"title": "FEATURE CHANGE : invincibility longer",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "ea156777-2640-46b1-ba7a-3544950d6562",
 			"title": "BUG : TRAPS not safe place for respawn",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "ec1ea3ed-acdf-4afd-b244-8d1b751de038",
 			"title": "CHANGE : The player should slide by itself on slopes",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "99c0d9f4-8a19-46a5-834d-030b7966701c",
 			"title": "ASSET : end for slope",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "69db0ba2-6a8a-4149-b06d-8a9a75ec42a1",
 			"title": "Reviewed design DOOR + BUTTON",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "d78ec85b-ec55-4f3a-9fb8-ab505e3eb0ed",
 			"title": "Door Colors",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "aa258bd1-03b0-4caf-90f0-bdec9bc9b676",
 			"title": "Vertical Door",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
@@ -1888,21 +1871,21 @@
 			"uuid": "26879c4d-d5ce-430e-9c0c-2437b03c1399",
 			"title": "BUG : CONTINUE DOESN'T Work after 1 life!",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "dd79b413-024f-457d-91d5-4899940177ad",
 			"title": "navigate the menus with gamepad",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "6c37a34a-e78f-4789-aec8-1e9db5d2c292",
 			"title": "SOUNDS",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": [
 				{
 					"details": "Menu Navigation",
@@ -1990,7 +1973,7 @@
 			"uuid": "ab42371c-20a5-4e10-a59b-7b8c2db8fd70",
 			"title": "TUTORIAL",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": [
 				{
 					"details": "Jump",
@@ -2022,14 +2005,14 @@
 			"uuid": "18b239ea-b5aa-4f2a-9c5f-3f6611112a35",
 			"title": "PROBLEM with hurt_area_entered callback",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
 			"uuid": "4a7221db-13cf-4c16-ab92-f63b3a70f01a",
 			"title": "RECODE Pickup sounds : in the player through a signal",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
@@ -2043,7 +2026,7 @@
 			"uuid": "7dfb1201-dd8a-4e8a-995a-3ccd5c9ed2ed",
 			"title": "Change/bind keys to close Tut",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": []
 		},
 		{
@@ -2057,7 +2040,7 @@
 			"uuid": "59c8d1f3-34ee-4b86-af4b-ae7abdcb585b",
 			"title": "Sound : ",
 			"description": "",
-			"category": "1e571a90-678b-4545-bccc-dd77dde242d6",
+			"category": "e74d7625-cbc6-4c32-a734-216323e9822b",
 			"steps": [
 				{
 					"details": "Sound for wall Sliding",

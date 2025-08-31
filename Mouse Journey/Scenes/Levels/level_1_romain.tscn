@@ -965,14 +965,32 @@ position = Vector2(-36, -34)
 [node name="Platform" parent="Doors_manager/Trap_door_H" index="0"]
 position = Vector2(-16, -8)
 
+[node name="color_platform_rect" parent="Doors_manager/Trap_door_H/Platform/Sprite2D" index="0"]
+anchors_preset = 0
+
 [node name="Button" parent="Doors_manager/Trap_door_H" index="1"]
 position = Vector2(36, 31)
+
+[node name="color_button_off_rect" parent="Doors_manager/Trap_door_H/Button/Sprite_button_off" index="0"]
+anchors_preset = 0
+
+[node name="color_button_on_rect" parent="Doors_manager/Trap_door_H/Button/Sprite_button_on" index="0"]
+anchors_preset = 0
 
 [node name="Trap_door_H2" parent="Doors_manager" instance=ExtResource("9_2kyff")]
 position = Vector2(2636, -82)
 
+[node name="color_platform_rect" parent="Doors_manager/Trap_door_H2/Platform/Sprite2D" index="0"]
+anchors_preset = 0
+
 [node name="Button" parent="Doors_manager/Trap_door_H2" index="1"]
 position = Vector2(-232, 544)
+
+[node name="color_button_off_rect" parent="Doors_manager/Trap_door_H2/Button/Sprite_button_off" index="0"]
+anchors_preset = 0
+
+[node name="color_button_on_rect" parent="Doors_manager/Trap_door_H2/Button/Sprite_button_on" index="0"]
+anchors_preset = 0
 
 [node name="Trap_door_H3" parent="Doors_manager" instance=ExtResource("16_igduu")]
 position = Vector2(2698, 438)
@@ -980,14 +998,32 @@ position = Vector2(2698, 438)
 [node name="Platform" parent="Doors_manager/Trap_door_H3" index="0"]
 position = Vector2(-158, -80)
 
+[node name="color_platform_rect" parent="Doors_manager/Trap_door_H3/Platform/Sprite2D" index="0"]
+anchors_preset = 0
+
 [node name="Button" parent="Doors_manager/Trap_door_H3" index="1"]
 position = Vector2(-1054, 87)
+
+[node name="color_button_off_rect" parent="Doors_manager/Trap_door_H3/Button/Sprite_button_off" index="0"]
+anchors_preset = 0
+
+[node name="color_button_on_rect" parent="Doors_manager/Trap_door_H3/Button/Sprite_button_on" index="0"]
+anchors_preset = 0
 
 [node name="Trap_door_H4" parent="Doors_manager" instance=ExtResource("9_2kyff")]
 position = Vector2(1260, 46)
 
+[node name="color_platform_rect" parent="Doors_manager/Trap_door_H4/Platform/Sprite2D" index="0"]
+anchors_preset = 0
+
 [node name="Button" parent="Doors_manager/Trap_door_H4" index="1"]
 position = Vector2(-64, 79)
+
+[node name="color_button_off_rect" parent="Doors_manager/Trap_door_H4/Button/Sprite_button_off" index="0"]
+anchors_preset = 0
+
+[node name="color_button_on_rect" parent="Doors_manager/Trap_door_H4/Button/Sprite_button_on" index="0"]
+anchors_preset = 0
 
 [node name="Moving_Platforms" type="Node2D" parent="."]
 
@@ -1008,7 +1044,42 @@ curve = SubResource("Curve2D_xnx22")
 stream = ExtResource("20_xnx22")
 
 [connection signal="body_entered" from="Objects/FrostBerry" to="Objects/FrostBerry" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@29861" to="Objects/@Area2D@29861" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@29827" to="Objects/@Area2D@29827" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@29828" to="Objects/@Area2D@29828" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@29829" to="Objects/@Area2D@29829" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@29830" to="Objects/@Area2D@29830" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@29831" to="Objects/@Area2D@29831" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@29832" to="Objects/@Area2D@29832" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@29833" to="Objects/@Area2D@29833" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@29834" to="Objects/@Area2D@29834" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@29835" to="Objects/@Area2D@29835" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@29836" to="Objects/@Area2D@29836" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@29837" to="Objects/@Area2D@29837" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@29838" to="Objects/@Area2D@29838" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@29839" to="Objects/@Area2D@29839" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@29840" to="Objects/@Area2D@29840" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@29841" to="Objects/@Area2D@29841" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@29842" to="Objects/@Area2D@29842" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/SuperFrostBerry" to="Objects/SuperFrostBerry" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@29843" to="Objects/@Area2D@29843" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/collectible_heart" to="Objects/collectible_heart" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@29844" to="Objects/@Area2D@29844" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@29845" to="Objects/@Area2D@29845" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@29846" to="Objects/@Area2D@29846" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@29847" to="Objects/@Area2D@29847" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@29848" to="Objects/@Area2D@29848" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@29849" to="Objects/@Area2D@29849" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@29850" to="Objects/@Area2D@29850" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@29851" to="Objects/@Area2D@29851" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@29852" to="Objects/@Area2D@29852" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@29853" to="Objects/@Area2D@29853" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@29854" to="Objects/@Area2D@29854" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@29855" to="Objects/@Area2D@29855" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@29856" to="Objects/@Area2D@29856" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@29857" to="Objects/@Area2D@29857" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@29858" to="Objects/@Area2D@29858" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@29859" to="Objects/@Area2D@29859" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@29860" to="Objects/@Area2D@29860" method="_on_body_entered"]
 [connection signal="body_entered" from="Objects/@Area2D@29862" to="Objects/@Area2D@29862" method="_on_body_entered"]
 [connection signal="body_entered" from="Objects/@Area2D@29863" to="Objects/@Area2D@29863" method="_on_body_entered"]
 [connection signal="body_entered" from="Objects/@Area2D@29864" to="Objects/@Area2D@29864" method="_on_body_entered"]
@@ -1024,16 +1095,14 @@ stream = ExtResource("20_xnx22")
 [connection signal="body_entered" from="Objects/@Area2D@29874" to="Objects/@Area2D@29874" method="_on_body_entered"]
 [connection signal="body_entered" from="Objects/@Area2D@29875" to="Objects/@Area2D@29875" method="_on_body_entered"]
 [connection signal="body_entered" from="Objects/@Area2D@29876" to="Objects/@Area2D@29876" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/SuperFrostBerry" to="Objects/SuperFrostBerry" method="_on_body_entered"]
 [connection signal="body_entered" from="Objects/@Area2D@29877" to="Objects/@Area2D@29877" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/collectible_heart" to="Objects/collectible_heart" method="_on_body_entered"]
 [connection signal="body_entered" from="Objects/@Area2D@29878" to="Objects/@Area2D@29878" method="_on_body_entered"]
 [connection signal="body_entered" from="Objects/@Area2D@29879" to="Objects/@Area2D@29879" method="_on_body_entered"]
 [connection signal="body_entered" from="Objects/@Area2D@29880" to="Objects/@Area2D@29880" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@29881" to="Objects/@Area2D@29881" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/Checkpoint" to="Objects/Checkpoint" method="_on_body_entered"]
 [connection signal="body_entered" from="Objects/@Area2D@29882" to="Objects/@Area2D@29882" method="_on_body_entered"]
 [connection signal="body_entered" from="Objects/@Area2D@29883" to="Objects/@Area2D@29883" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@29884" to="Objects/@Area2D@29884" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/EndLevelCheckpoint" to="Objects/EndLevelCheckpoint" method="_on_body_entered"]
 [connection signal="body_entered" from="Objects/@Area2D@29885" to="Objects/@Area2D@29885" method="_on_body_entered"]
 [connection signal="body_entered" from="Objects/@Area2D@29886" to="Objects/@Area2D@29886" method="_on_body_entered"]
 [connection signal="body_entered" from="Objects/@Area2D@29887" to="Objects/@Area2D@29887" method="_on_body_entered"]
@@ -1042,47 +1111,14 @@ stream = ExtResource("20_xnx22")
 [connection signal="body_entered" from="Objects/@Area2D@29890" to="Objects/@Area2D@29890" method="_on_body_entered"]
 [connection signal="body_entered" from="Objects/@Area2D@29891" to="Objects/@Area2D@29891" method="_on_body_entered"]
 [connection signal="body_entered" from="Objects/@Area2D@29892" to="Objects/@Area2D@29892" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@29893" to="Objects/@Area2D@29893" method="_on_body_entered"]
 [connection signal="body_entered" from="Objects/@Area2D@29894" to="Objects/@Area2D@29894" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@29895" to="Objects/@Area2D@29895" method="_on_body_entered"]
 [connection signal="body_entered" from="Objects/@Area2D@29896" to="Objects/@Area2D@29896" method="_on_body_entered"]
 [connection signal="body_entered" from="Objects/@Area2D@29897" to="Objects/@Area2D@29897" method="_on_body_entered"]
 [connection signal="body_entered" from="Objects/@Area2D@29898" to="Objects/@Area2D@29898" method="_on_body_entered"]
 [connection signal="body_entered" from="Objects/@Area2D@29899" to="Objects/@Area2D@29899" method="_on_body_entered"]
 [connection signal="body_entered" from="Objects/@Area2D@29900" to="Objects/@Area2D@29900" method="_on_body_entered"]
 [connection signal="body_entered" from="Objects/@Area2D@29901" to="Objects/@Area2D@29901" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@29902" to="Objects/@Area2D@29902" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@29903" to="Objects/@Area2D@29903" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@29904" to="Objects/@Area2D@29904" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@29905" to="Objects/@Area2D@29905" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@29906" to="Objects/@Area2D@29906" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@29907" to="Objects/@Area2D@29907" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@29908" to="Objects/@Area2D@29908" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@29909" to="Objects/@Area2D@29909" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@29910" to="Objects/@Area2D@29910" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@29911" to="Objects/@Area2D@29911" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@29912" to="Objects/@Area2D@29912" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@29913" to="Objects/@Area2D@29913" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@29914" to="Objects/@Area2D@29914" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/Checkpoint" to="Objects/Checkpoint" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@29916" to="Objects/@Area2D@29916" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@29917" to="Objects/@Area2D@29917" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/EndLevelCheckpoint" to="Objects/EndLevelCheckpoint" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@29919" to="Objects/@Area2D@29919" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@29920" to="Objects/@Area2D@29920" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@29921" to="Objects/@Area2D@29921" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@29922" to="Objects/@Area2D@29922" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@29923" to="Objects/@Area2D@29923" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@29924" to="Objects/@Area2D@29924" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@29925" to="Objects/@Area2D@29925" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@29926" to="Objects/@Area2D@29926" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@29928" to="Objects/@Area2D@29928" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@29929" to="Objects/@Area2D@29929" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@29930" to="Objects/@Area2D@29930" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@29931" to="Objects/@Area2D@29931" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@29932" to="Objects/@Area2D@29932" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@29933" to="Objects/@Area2D@29933" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@29934" to="Objects/@Area2D@29934" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@29935" to="Objects/@Area2D@29935" method="_on_body_entered"]
 [connection signal="body_entered" from="Objects/Collect_Cheese" to="Objects/Collect_Cheese" method="_on_body_entered"]
 [connection signal="body_entered" from="Objects/treasure_chest_Boots_gloves_suit" to="Objects/treasure_chest_Boots_gloves_suit" method="_on_body_entered"]
 [connection signal="area_entered" from="Extra_Traps/FallingStalagtite6" to="Extra_Traps/FallingStalagtite6" method="_on_area_entered"]
