@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=4 uid="uid://b36u7cojyu2qd"]
+[gd_scene load_steps=80 format=4 uid="uid://b36u7cojyu2qd"]
 
 [ext_resource type="Script" uid="uid://bmo11cf8nrsbv" path="res://Scenes/Levels/level_1_romain.gd" id="1_nscas"]
 [ext_resource type="PackedScene" uid="uid://b1vi7lh2l2ldh" path="res://Scenes/Environment/sign_Start_Level.tscn" id="1_silvh"]
@@ -14,7 +14,6 @@
 [ext_resource type="TileSet" uid="uid://1x1qpe81qufy" path="res://Resources/Décor.tres" id="6_5fd2y"]
 [ext_resource type="PackedScene" uid="uid://be1o8tb502iun" path="res://Scenes/Traps/stalagtite_Tombante.tscn" id="7_kaqu4"]
 [ext_resource type="PackedScene" uid="uid://bwfqouvfqxvk5" path="res://Scenes/Enemies/snowman_spawn_point.tscn" id="8_valtc"]
-[ext_resource type="PackedScene" uid="uid://cnfu6l0npqmed" path="res://Scenes/Platforms/trap_door_H.tscn" id="9_2kyff"]
 [ext_resource type="Texture2D" uid="uid://b0joh1vhwqdnp" path="res://Assets/TileSet/Tileset_Winter_with_cavern.png" id="10_6l3yg"]
 [ext_resource type="Script" uid="uid://b6wttk1jhqvpf" path="res://Scripts/Traps/falling_stalagtite.gd" id="10_f43ge"]
 [ext_resource type="Texture2D" uid="uid://cpws0vy0xq4au" path="res://Assets/Traps/FallingStalagmite5.png" id="11_75fmd"]
@@ -24,10 +23,17 @@
 [ext_resource type="AudioStream" uid="uid://dm4fawr4ufiui" path="res://Assets/Audio/Sounds/Enemies/Falling_Stalag/Shaking3.wav" id="13_qae7n"]
 [ext_resource type="PackedScene" uid="uid://bvkxa1n51jsm0" path="res://Scenes/Enemies/super_snowman_spawn_point.tscn" id="14_djfeo"]
 [ext_resource type="Script" uid="uid://dngau14vh11s7" path="res://Scripts/Environment/doors_manager.gd" id="15_iqob5"]
-[ext_resource type="PackedScene" uid="uid://bye1st6l366h1" path="res://Scenes/Platforms/trap_door_V.tscn" id="16_igduu"]
 [ext_resource type="PackedScene" uid="uid://iah2f3d4sy1b" path="res://Scenes/MovingPlatforms/moving_platform1.tscn" id="20_alf1c"]
 [ext_resource type="AudioStream" uid="uid://b30ysuvh86tq5" path="res://Assets/Audio/Sounds/Ambiance/Ambiance drone.ogg" id="20_xnx22"]
-[ext_resource type="Texture2D" uid="uid://vdbew07aey61" path="res://Assets/TileSet/background.png" id="28_7ni3a"]
+[ext_resource type="Script" uid="uid://klu1pmkjfnog" path="res://Scripts/Platform/trap_door.gd" id="23_5gsfe"]
+[ext_resource type="Texture2D" uid="uid://dpp2ylbx2drjt" path="res://Assets/TileSet/trap_door.png" id="24_ykl1a"]
+[ext_resource type="AudioStream" uid="uid://dwroitdfbh5r2" path="res://Assets/Audio/Sounds/Environment/trap_door/door_opening.wav" id="25_mkhpe"]
+[ext_resource type="Texture2D" uid="uid://bu76vpjy2b4wt" path="res://Assets/TileSet/trap_door_button_off.png" id="26_7is6b"]
+[ext_resource type="Texture2D" uid="uid://d3mcrv4xg0gsi" path="res://Assets/TileSet/trap_door_button_on.png" id="27_ndaci"]
+[ext_resource type="AudioStream" uid="uid://bx5st5okd6jf0" path="res://Assets/Audio/Sounds/Environment/trap_door/lever_actioned.wav" id="28_hrvh0"]
+[ext_resource type="Texture2D" uid="uid://bof3wrxm5luyl" path="res://Assets/TileSet/Background/Sky.png" id="28_os1su"]
+[ext_resource type="Texture2D" uid="uid://dhdrk707av0ih" path="res://Assets/TileSet/Background/clouds.png" id="29_g1omv"]
+[ext_resource type="Texture2D" uid="uid://enkaq3jx7w7a" path="res://Assets/TileSet/trap_door_V.png" id="29_lp7nn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6xhj3"]
 size = Vector2(330, 208)
@@ -462,6 +468,294 @@ size = Vector2(16, 189)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3p8t1"]
 size = Vector2(16, 216)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7neh6"]
+size = Vector2(32, 8)
+
+[sub_resource type="Animation" id="Animation_5rjkp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D/color_platform_rect:color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_s7buy"]
+resource_name = "open_trap"
+length = 1.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.5707963267948966]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5001652, 0.6, 0.7333333, 0.8333333, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1.6),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+tracks/4/type = "audio"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../DoorOpening")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("25_mkhpe")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/4/use_blend = true
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sprite2D/color_platform_rect:color")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5001652, 0.6, 0.7333333, 0.8333333, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5rjkp"]
+_data = {
+&"RESET": SubResource("Animation_5rjkp"),
+&"open_trap": SubResource("Animation_s7buy")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8flyx"]
+size = Vector2(3, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sqljs"]
+size = Vector2(8, 32)
+
+[sub_resource type="Animation" id="Animation_lgv63"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D/color_platform_rect:color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_sqljs"]
+resource_name = "open_trap"
+length = 1.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -1.5707963267948966]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5001652, 0.6, 0.7333333, 0.8333333, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1.6),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite2D/color_platform_rect:color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5001652, 0.6, 0.7333333, 0.8333333, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/5/type = "audio"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../DoorOpening")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("25_mkhpe")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/5/use_blend = true
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_avn1l"]
+_data = {
+&"RESET": SubResource("Animation_lgv63"),
+&"open_trap": SubResource("Animation_sqljs")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5gsfe"]
+size = Vector2(3, 6)
+
 [sub_resource type="Curve2D" id="Curve2D_vofmm"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 16, 2, 0, 0, 0, 0, 16, -138, 0, 0, 0, 0, 16, 2)
@@ -625,7 +919,7 @@ position = Vector2(4612, -296)
 tutorial_panel = ExtResource("3_bilws")
 
 [node name="Sign_Start_Level" parent="." instance=ExtResource("1_silvh")]
-position = Vector2(0, -128)
+position = Vector2(4016, 144)
 
 [node name="Objects" type="TileMapLayer" parent="."]
 z_index = 4
@@ -653,7 +947,7 @@ tile_set = ExtResource("3_silvh")
 
 [node name="decor" type="TileMapLayer" parent="."]
 z_index = -1
-tile_map_data = PackedByteArray("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")
+tile_map_data = PackedByteArray("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")
 tile_set = ExtResource("6_5fd2y")
 
 [node name="background" type="TileMapLayer" parent="."]
@@ -960,119 +1254,266 @@ position = Vector2(4104, 256)
 position = Vector2(1652, -198)
 script = ExtResource("15_iqob5")
 
-[node name="Trap_door_H" parent="Doors_manager" instance=ExtResource("9_2kyff")]
+[node name="Trap_door_H" type="Node2D" parent="Doors_manager"]
 position = Vector2(-36, -34)
+script = ExtResource("23_5gsfe")
 
-[node name="Platform" parent="Doors_manager/Trap_door_H" index="0"]
+[node name="Platform" type="StaticBody2D" parent="Doors_manager/Trap_door_H"]
 position = Vector2(-16, -8)
+collision_mask = 270
 
-[node name="color_platform_rect" parent="Doors_manager/Trap_door_H/Platform/Sprite2D" index="0"]
-anchors_preset = 0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 14.0
-offset_bottom = 2.0
+[node name="Sprite2D" type="Sprite2D" parent="Doors_manager/Trap_door_H/Platform"]
+position = Vector2(32, 4)
+texture = ExtResource("24_ykl1a")
+centered = false
+offset = Vector2(-32, -4)
 
-[node name="Button" parent="Doors_manager/Trap_door_H" index="1"]
+[node name="color_platform_rect" type="ColorRect" parent="Doors_manager/Trap_door_H/Platform/Sprite2D"]
+z_index = -1
+offset_left = -23.0
+offset_top = -2.0
+offset_right = -9.0
+offset_bottom = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Doors_manager/Trap_door_H/Platform"]
+position = Vector2(16, 4)
+shape = SubResource("RectangleShape2D_7neh6")
+
+[node name="PlatformAnimator" type="AnimationPlayer" parent="Doors_manager/Trap_door_H/Platform"]
+libraries = {
+&"": SubResource("AnimationLibrary_5rjkp")
+}
+
+[node name="Button" type="Area2D" parent="Doors_manager/Trap_door_H"]
 position = Vector2(36, 31)
+collision_mask = 270
 
-[node name="color_button_off_rect" parent="Doors_manager/Trap_door_H/Button/Sprite_button_off" index="0"]
-anchors_preset = 0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 2.0
-offset_bottom = 2.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Doors_manager/Trap_door_H/Button"]
+position = Vector2(1.5, 3)
+shape = SubResource("RectangleShape2D_8flyx")
 
-[node name="color_button_on_rect" parent="Doors_manager/Trap_door_H/Button/Sprite_button_on" index="0"]
-anchors_preset = 0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 2.0
-offset_bottom = 2.0
+[node name="Sprite_button_off" type="Sprite2D" parent="Doors_manager/Trap_door_H/Button"]
+texture = ExtResource("26_7is6b")
+centered = false
 
-[node name="Trap_door_H2" parent="Doors_manager" instance=ExtResource("9_2kyff")]
+[node name="color_button_off_rect" type="ColorRect" parent="Doors_manager/Trap_door_H/Button/Sprite_button_off"]
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 3.0
+offset_bottom = 3.0
+
+[node name="Sprite_button_on" type="Sprite2D" parent="Doors_manager/Trap_door_H/Button"]
+texture = ExtResource("27_ndaci")
+centered = false
+offset = Vector2(0, 2)
+
+[node name="color_button_on_rect" type="ColorRect" parent="Doors_manager/Trap_door_H/Button/Sprite_button_on"]
+offset_left = 6.0
+offset_top = 3.0
+offset_right = 8.0
+offset_bottom = 5.0
+
+[node name="LeverActioned" type="AudioStreamPlayer" parent="Doors_manager/Trap_door_H"]
+stream = ExtResource("28_hrvh0")
+bus = &"Sounds World"
+
+[node name="DoorOpening" type="AudioStreamPlayer" parent="Doors_manager/Trap_door_H"]
+bus = &"Sounds World"
+
+[node name="Trap_door_H2" type="Node2D" parent="Doors_manager"]
 position = Vector2(2636, -82)
+script = ExtResource("23_5gsfe")
 
-[node name="color_platform_rect" parent="Doors_manager/Trap_door_H2/Platform/Sprite2D" index="0"]
-anchors_preset = 0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 14.0
-offset_bottom = 2.0
+[node name="Platform" type="StaticBody2D" parent="Doors_manager/Trap_door_H2"]
+position = Vector2(0, -8)
+collision_mask = 270
 
-[node name="Button" parent="Doors_manager/Trap_door_H2" index="1"]
+[node name="Sprite2D" type="Sprite2D" parent="Doors_manager/Trap_door_H2/Platform"]
+position = Vector2(32, 4)
+texture = ExtResource("24_ykl1a")
+centered = false
+offset = Vector2(-32, -4)
+
+[node name="color_platform_rect" type="ColorRect" parent="Doors_manager/Trap_door_H2/Platform/Sprite2D"]
+z_index = -1
+offset_left = -23.0
+offset_top = -1.0
+offset_right = -9.0
+offset_bottom = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Doors_manager/Trap_door_H2/Platform"]
+position = Vector2(16, 4)
+shape = SubResource("RectangleShape2D_7neh6")
+
+[node name="PlatformAnimator" type="AnimationPlayer" parent="Doors_manager/Trap_door_H2/Platform"]
+libraries = {
+&"": SubResource("AnimationLibrary_5rjkp")
+}
+
+[node name="Button" type="Area2D" parent="Doors_manager/Trap_door_H2"]
 position = Vector2(-232, 544)
+collision_mask = 270
 
-[node name="color_button_off_rect" parent="Doors_manager/Trap_door_H2/Button/Sprite_button_off" index="0"]
-anchors_preset = 0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 2.0
-offset_bottom = 2.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Doors_manager/Trap_door_H2/Button"]
+position = Vector2(1.5, 3)
+shape = SubResource("RectangleShape2D_8flyx")
 
-[node name="color_button_on_rect" parent="Doors_manager/Trap_door_H2/Button/Sprite_button_on" index="0"]
-anchors_preset = 0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 2.0
-offset_bottom = 2.0
+[node name="Sprite_button_off" type="Sprite2D" parent="Doors_manager/Trap_door_H2/Button"]
+texture = ExtResource("26_7is6b")
+centered = false
 
-[node name="Trap_door_H3" parent="Doors_manager" instance=ExtResource("16_igduu")]
-position = Vector2(2698, 438)
+[node name="color_button_off_rect" type="ColorRect" parent="Doors_manager/Trap_door_H2/Button/Sprite_button_off"]
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 3.0
+offset_bottom = 3.0
 
-[node name="Platform" parent="Doors_manager/Trap_door_H3" index="0"]
-position = Vector2(-158, -80)
+[node name="Sprite_button_on" type="Sprite2D" parent="Doors_manager/Trap_door_H2/Button"]
+texture = ExtResource("27_ndaci")
+centered = false
+offset = Vector2(0, 2)
 
-[node name="color_platform_rect" parent="Doors_manager/Trap_door_H3/Platform/Sprite2D" index="0"]
-anchors_preset = 0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 2.0
-offset_bottom = 14.0
+[node name="color_button_on_rect" type="ColorRect" parent="Doors_manager/Trap_door_H2/Button/Sprite_button_on"]
+offset_left = 6.0
+offset_top = 3.0
+offset_right = 8.0
+offset_bottom = 5.0
 
-[node name="Button" parent="Doors_manager/Trap_door_H3" index="1"]
+[node name="LeverActioned" type="AudioStreamPlayer" parent="Doors_manager/Trap_door_H2"]
+stream = ExtResource("28_hrvh0")
+bus = &"Sounds World"
+
+[node name="DoorOpening" type="AudioStreamPlayer" parent="Doors_manager/Trap_door_H2"]
+bus = &"Sounds World"
+
+[node name="Trap_door_H3" type="Node2D" parent="Doors_manager"]
+position = Vector2(2548, 358)
+script = ExtResource("23_5gsfe")
+
+[node name="Platform" type="StaticBody2D" parent="Doors_manager/Trap_door_H3"]
+collision_mask = 270
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Doors_manager/Trap_door_H3/Platform"]
+position = Vector2(4, 16)
+shape = SubResource("RectangleShape2D_sqljs")
+
+[node name="Sprite2D" type="Sprite2D" parent="Doors_manager/Trap_door_H3/Platform"]
+position = Vector2(4, 0)
+texture = ExtResource("29_lp7nn")
+centered = false
+offset = Vector2(-4, 0)
+
+[node name="color_platform_rect" type="ColorRect" parent="Doors_manager/Trap_door_H3/Platform/Sprite2D"]
+z_index = -1
+offset_left = -3.0
+offset_top = 9.0
+offset_right = -1.0
+offset_bottom = 23.0
+
+[node name="PlatformAnimator" type="AnimationPlayer" parent="Doors_manager/Trap_door_H3/Platform"]
+libraries = {
+&"": SubResource("AnimationLibrary_avn1l")
+}
+
+[node name="Button" type="Area2D" parent="Doors_manager/Trap_door_H3"]
 position = Vector2(-1054, 87)
+collision_mask = 270
 
-[node name="color_button_off_rect" parent="Doors_manager/Trap_door_H3/Button/Sprite_button_off" index="0"]
-anchors_preset = 0
-offset_left = 0.0
-offset_top = 0.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Doors_manager/Trap_door_H3/Button"]
+position = Vector2(1.5, 3)
+shape = SubResource("RectangleShape2D_5gsfe")
+
+[node name="Sprite_button_off" type="Sprite2D" parent="Doors_manager/Trap_door_H3/Button"]
+texture = ExtResource("26_7is6b")
+centered = false
+
+[node name="color_button_off_rect" type="ColorRect" parent="Doors_manager/Trap_door_H3/Button/Sprite_button_off"]
+z_index = 1
 offset_right = 2.0
 offset_bottom = 2.0
 
-[node name="color_button_on_rect" parent="Doors_manager/Trap_door_H3/Button/Sprite_button_on" index="0"]
-anchors_preset = 0
-offset_left = 0.0
-offset_top = 0.0
+[node name="Sprite_button_on" type="Sprite2D" parent="Doors_manager/Trap_door_H3/Button"]
+texture = ExtResource("27_ndaci")
+centered = false
+offset = Vector2(0, 2)
+
+[node name="color_button_on_rect" type="ColorRect" parent="Doors_manager/Trap_door_H3/Button/Sprite_button_on"]
+z_index = 1
 offset_right = 2.0
 offset_bottom = 2.0
 
-[node name="Trap_door_H4" parent="Doors_manager" instance=ExtResource("9_2kyff")]
+[node name="LeverActioned" type="AudioStreamPlayer" parent="Doors_manager/Trap_door_H3"]
+stream = ExtResource("28_hrvh0")
+bus = &"Sounds World"
+
+[node name="DoorOpening" type="AudioStreamPlayer" parent="Doors_manager/Trap_door_H3"]
+bus = &"Sounds World"
+
+[node name="Trap_door_H4" type="Node2D" parent="Doors_manager"]
 position = Vector2(1260, 46)
+script = ExtResource("23_5gsfe")
 
-[node name="color_platform_rect" parent="Doors_manager/Trap_door_H4/Platform/Sprite2D" index="0"]
-anchors_preset = 0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 14.0
-offset_bottom = 2.0
+[node name="Platform" type="StaticBody2D" parent="Doors_manager/Trap_door_H4"]
+position = Vector2(0, -8)
+collision_mask = 270
 
-[node name="Button" parent="Doors_manager/Trap_door_H4" index="1"]
+[node name="Sprite2D" type="Sprite2D" parent="Doors_manager/Trap_door_H4/Platform"]
+position = Vector2(32, 4)
+texture = ExtResource("24_ykl1a")
+centered = false
+offset = Vector2(-32, -4)
+
+[node name="color_platform_rect" type="ColorRect" parent="Doors_manager/Trap_door_H4/Platform/Sprite2D"]
+z_index = -1
+offset_left = -23.0
+offset_top = -1.0
+offset_right = -9.0
+offset_bottom = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Doors_manager/Trap_door_H4/Platform"]
+position = Vector2(16, 4)
+shape = SubResource("RectangleShape2D_7neh6")
+
+[node name="PlatformAnimator" type="AnimationPlayer" parent="Doors_manager/Trap_door_H4/Platform"]
+libraries = {
+&"": SubResource("AnimationLibrary_5rjkp")
+}
+
+[node name="Button" type="Area2D" parent="Doors_manager/Trap_door_H4"]
 position = Vector2(-64, 79)
+collision_mask = 270
 
-[node name="color_button_off_rect" parent="Doors_manager/Trap_door_H4/Button/Sprite_button_off" index="0"]
-anchors_preset = 0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 2.0
-offset_bottom = 2.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Doors_manager/Trap_door_H4/Button"]
+position = Vector2(1.5, 3)
+shape = SubResource("RectangleShape2D_8flyx")
 
-[node name="color_button_on_rect" parent="Doors_manager/Trap_door_H4/Button/Sprite_button_on" index="0"]
-anchors_preset = 0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 2.0
-offset_bottom = 2.0
+[node name="Sprite_button_off" type="Sprite2D" parent="Doors_manager/Trap_door_H4/Button"]
+texture = ExtResource("26_7is6b")
+centered = false
+
+[node name="color_button_off_rect" type="ColorRect" parent="Doors_manager/Trap_door_H4/Button/Sprite_button_off"]
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 3.0
+offset_bottom = 3.0
+
+[node name="Sprite_button_on" type="Sprite2D" parent="Doors_manager/Trap_door_H4/Button"]
+texture = ExtResource("27_ndaci")
+centered = false
+offset = Vector2(0, 2)
+
+[node name="color_button_on_rect" type="ColorRect" parent="Doors_manager/Trap_door_H4/Button/Sprite_button_on"]
+offset_left = 6.0
+offset_top = 3.0
+offset_right = 8.0
+offset_bottom = 5.0
+
+[node name="LeverActioned" type="AudioStreamPlayer" parent="Doors_manager/Trap_door_H4"]
+stream = ExtResource("28_hrvh0")
+bus = &"Sounds World"
+
+[node name="DoorOpening" type="AudioStreamPlayer" parent="Doors_manager/Trap_door_H4"]
+bus = &"Sounds World"
 
 [node name="Moving_Platforms" type="Node2D" parent="."]
 
@@ -1096,92 +1537,122 @@ volume_db = -17.916
 [node name="BACKGROUND" type="Node2D" parent="."]
 
 [node name="Sky" type="Parallax2D" parent="BACKGROUND"]
-repeat_size = Vector2(320, 900)
-repeat_times = 10
+modulate = Color(1, 1, 1, 0.6117647)
+scroll_offset = Vector2(0, 250)
+repeat_size = Vector2(960, 0)
+repeat_times = 5
 
 [node name="Sprite2D" type="Sprite2D" parent="BACKGROUND/Sky"]
 z_index = -100
 position = Vector2(-128, 160)
-texture = ExtResource("28_7ni3a")
+texture = ExtResource("28_os1su")
+centered = false
+offset = Vector2(0, -900)
+
+[node name="Clouds_back" type="Parallax2D" parent="BACKGROUND"]
+modulate = Color(1, 1, 1, 0.85882354)
+z_index = -80
+scroll_offset = Vector2(0, 250)
+repeat_size = Vector2(960, 0)
+autoscroll = Vector2(3, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="BACKGROUND/Clouds_back"]
+position = Vector2(-128, 160)
+texture = ExtResource("29_g1omv")
+centered = false
+offset = Vector2(0, -900)
+
+[node name="Clouds_front" type="Parallax2D" parent="BACKGROUND"]
+modulate = Color(1, 1, 1, 0.68235296)
+z_index = 100
+scroll_offset = Vector2(0, 210)
+repeat_size = Vector2(960, 0)
+autoscroll = Vector2(7, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="BACKGROUND/Clouds_front"]
+position = Vector2(-128, 160)
+texture = ExtResource("29_g1omv")
 centered = false
 offset = Vector2(0, -900)
 
 [connection signal="body_entered" from="Objects/FrostBerry" to="Objects/FrostBerry" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@38787" to="Objects/@Area2D@38787" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@38788" to="Objects/@Area2D@38788" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@38789" to="Objects/@Area2D@38789" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@38790" to="Objects/@Area2D@38790" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@38791" to="Objects/@Area2D@38791" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@38792" to="Objects/@Area2D@38792" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@38793" to="Objects/@Area2D@38793" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@38794" to="Objects/@Area2D@38794" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@38795" to="Objects/@Area2D@38795" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@38796" to="Objects/@Area2D@38796" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@38797" to="Objects/@Area2D@38797" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@38798" to="Objects/@Area2D@38798" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@38799" to="Objects/@Area2D@38799" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@38800" to="Objects/@Area2D@38800" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@38801" to="Objects/@Area2D@38801" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@38802" to="Objects/@Area2D@38802" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@62885" to="Objects/@Area2D@62885" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@62886" to="Objects/@Area2D@62886" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@62887" to="Objects/@Area2D@62887" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@62888" to="Objects/@Area2D@62888" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@62889" to="Objects/@Area2D@62889" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@62890" to="Objects/@Area2D@62890" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@62891" to="Objects/@Area2D@62891" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@62892" to="Objects/@Area2D@62892" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@62893" to="Objects/@Area2D@62893" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@62894" to="Objects/@Area2D@62894" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@62895" to="Objects/@Area2D@62895" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@62896" to="Objects/@Area2D@62896" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@62897" to="Objects/@Area2D@62897" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@62898" to="Objects/@Area2D@62898" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@62899" to="Objects/@Area2D@62899" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@62900" to="Objects/@Area2D@62900" method="_on_body_entered"]
 [connection signal="body_entered" from="Objects/SuperFrostBerry" to="Objects/SuperFrostBerry" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@38803" to="Objects/@Area2D@38803" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@62901" to="Objects/@Area2D@62901" method="_on_body_entered"]
 [connection signal="body_entered" from="Objects/collectible_heart" to="Objects/collectible_heart" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@38804" to="Objects/@Area2D@38804" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@38805" to="Objects/@Area2D@38805" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@38806" to="Objects/@Area2D@38806" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@38807" to="Objects/@Area2D@38807" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@38808" to="Objects/@Area2D@38808" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@38809" to="Objects/@Area2D@38809" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@38810" to="Objects/@Area2D@38810" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@38811" to="Objects/@Area2D@38811" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@38812" to="Objects/@Area2D@38812" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@38813" to="Objects/@Area2D@38813" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@38814" to="Objects/@Area2D@38814" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@38815" to="Objects/@Area2D@38815" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@38816" to="Objects/@Area2D@38816" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@38817" to="Objects/@Area2D@38817" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@38818" to="Objects/@Area2D@38818" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@38819" to="Objects/@Area2D@38819" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@38820" to="Objects/@Area2D@38820" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@38822" to="Objects/@Area2D@38822" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@38823" to="Objects/@Area2D@38823" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@38824" to="Objects/@Area2D@38824" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@38825" to="Objects/@Area2D@38825" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@38826" to="Objects/@Area2D@38826" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@38827" to="Objects/@Area2D@38827" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@38828" to="Objects/@Area2D@38828" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@38829" to="Objects/@Area2D@38829" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@38830" to="Objects/@Area2D@38830" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@38831" to="Objects/@Area2D@38831" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@38832" to="Objects/@Area2D@38832" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@38833" to="Objects/@Area2D@38833" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@38834" to="Objects/@Area2D@38834" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@38835" to="Objects/@Area2D@38835" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@38836" to="Objects/@Area2D@38836" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@38837" to="Objects/@Area2D@38837" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@38838" to="Objects/@Area2D@38838" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@38839" to="Objects/@Area2D@38839" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@38840" to="Objects/@Area2D@38840" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@62902" to="Objects/@Area2D@62902" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@62903" to="Objects/@Area2D@62903" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@62904" to="Objects/@Area2D@62904" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@62905" to="Objects/@Area2D@62905" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@62906" to="Objects/@Area2D@62906" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@62907" to="Objects/@Area2D@62907" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@62908" to="Objects/@Area2D@62908" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@62909" to="Objects/@Area2D@62909" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@62910" to="Objects/@Area2D@62910" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@62911" to="Objects/@Area2D@62911" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@62912" to="Objects/@Area2D@62912" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@62913" to="Objects/@Area2D@62913" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@62914" to="Objects/@Area2D@62914" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@62915" to="Objects/@Area2D@62915" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@62916" to="Objects/@Area2D@62916" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@62917" to="Objects/@Area2D@62917" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@62918" to="Objects/@Area2D@62918" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@62920" to="Objects/@Area2D@62920" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@62921" to="Objects/@Area2D@62921" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@62922" to="Objects/@Area2D@62922" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@62923" to="Objects/@Area2D@62923" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@62924" to="Objects/@Area2D@62924" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@62925" to="Objects/@Area2D@62925" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@62926" to="Objects/@Area2D@62926" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@62927" to="Objects/@Area2D@62927" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@62928" to="Objects/@Area2D@62928" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@62929" to="Objects/@Area2D@62929" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@62930" to="Objects/@Area2D@62930" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@62931" to="Objects/@Area2D@62931" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@62932" to="Objects/@Area2D@62932" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@62933" to="Objects/@Area2D@62933" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@62934" to="Objects/@Area2D@62934" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@62935" to="Objects/@Area2D@62935" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@62936" to="Objects/@Area2D@62936" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@62937" to="Objects/@Area2D@62937" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@62938" to="Objects/@Area2D@62938" method="_on_body_entered"]
 [connection signal="body_entered" from="Objects/Checkpoint" to="Objects/Checkpoint" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@38842" to="Objects/@Area2D@38842" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@38843" to="Objects/@Area2D@38843" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@62940" to="Objects/@Area2D@62940" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@62941" to="Objects/@Area2D@62941" method="_on_body_entered"]
 [connection signal="body_entered" from="Objects/EndLevelCheckpoint" to="Objects/EndLevelCheckpoint" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@38845" to="Objects/@Area2D@38845" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@38846" to="Objects/@Area2D@38846" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@38847" to="Objects/@Area2D@38847" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@38848" to="Objects/@Area2D@38848" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@38849" to="Objects/@Area2D@38849" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@38850" to="Objects/@Area2D@38850" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@38851" to="Objects/@Area2D@38851" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@38852" to="Objects/@Area2D@38852" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@38854" to="Objects/@Area2D@38854" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@38855" to="Objects/@Area2D@38855" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@38856" to="Objects/@Area2D@38856" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@38857" to="Objects/@Area2D@38857" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@38858" to="Objects/@Area2D@38858" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@38859" to="Objects/@Area2D@38859" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@38860" to="Objects/@Area2D@38860" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@38861" to="Objects/@Area2D@38861" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@62943" to="Objects/@Area2D@62943" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@62944" to="Objects/@Area2D@62944" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@62945" to="Objects/@Area2D@62945" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@62946" to="Objects/@Area2D@62946" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@62947" to="Objects/@Area2D@62947" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@62948" to="Objects/@Area2D@62948" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@62949" to="Objects/@Area2D@62949" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@62950" to="Objects/@Area2D@62950" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@62952" to="Objects/@Area2D@62952" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@62953" to="Objects/@Area2D@62953" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@62954" to="Objects/@Area2D@62954" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@62955" to="Objects/@Area2D@62955" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@62956" to="Objects/@Area2D@62956" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@62957" to="Objects/@Area2D@62957" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@62958" to="Objects/@Area2D@62958" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@62959" to="Objects/@Area2D@62959" method="_on_body_entered"]
 [connection signal="body_entered" from="Objects/Collect_Cheese" to="Objects/Collect_Cheese" method="_on_body_entered"]
 [connection signal="body_entered" from="Objects/treasure_chest_Boots_gloves_suit" to="Objects/treasure_chest_Boots_gloves_suit" method="_on_body_entered"]
 [connection signal="area_entered" from="Extra_Traps/FallingStalagtite6" to="Extra_Traps/FallingStalagtite6" method="_on_area_entered"]
@@ -1192,6 +1663,9 @@ offset = Vector2(0, -900)
 [connection signal="body_entered" from="Extra_Traps/FallingStalagtite7" to="Extra_Traps/FallingStalagtite7" method="_on_body_entered"]
 [connection signal="body_entered" from="Extra_Traps/FallingStalagtite7/Detector" to="Extra_Traps/FallingStalagtite7" method="_on_detector_body_entered"]
 [connection signal="timeout" from="Extra_Traps/FallingStalagtite7/shaking_timer" to="Extra_Traps/FallingStalagtite7" method="_on_shaking_timer_timeout"]
+[connection signal="finished" from="Doors_manager/Trap_door_H/LeverActioned" to="Doors_manager/Trap_door_H" method="_on_lever_actioned_finished"]
+[connection signal="finished" from="Doors_manager/Trap_door_H2/LeverActioned" to="Doors_manager/Trap_door_H2" method="_on_lever_actioned_finished"]
+[connection signal="finished" from="Doors_manager/Trap_door_H4/LeverActioned" to="Doors_manager/Trap_door_H4" method="_on_lever_actioned_finished"]
 
 [editable path="Extra_Traps/FallingStalagtite11"]
 [editable path="Extra_Traps/FallingStalagtite13"]
@@ -1199,7 +1673,3 @@ offset = Vector2(0, -900)
 [editable path="Extra_Traps/FallingStalagtite15"]
 [editable path="Extra_Traps/FallingStalagtite18"]
 [editable path="Extra_Traps/FallingStalagtite19"]
-[editable path="Doors_manager/Trap_door_H"]
-[editable path="Doors_manager/Trap_door_H2"]
-[editable path="Doors_manager/Trap_door_H3"]
-[editable path="Doors_manager/Trap_door_H4"]
