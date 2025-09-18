@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var ambiance_drone : AudioStreamPlayer
+@export var music_level1 : AudioStreamPlayer
 
 @export var sections_node : Node2D
 @export var SECTIONS : Array[Area2D] = []
@@ -10,7 +10,7 @@ var player_camera : Camera2D = null
 var current_section_number : int = 0
 
 func _ready() -> void:
-	ambiance_drone.play()
+	GlobalMenu.music_fade_in_and_play(music_level1)
 
 func start_section_system():
 	populate_sections()

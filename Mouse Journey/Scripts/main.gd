@@ -64,7 +64,7 @@ func load_current_level_and_player() :
 func init_player() : 
 	GlobalPlayerStats.player_current_HP = GlobalPlayerStats.player_max_HP
 	GlobalPlayerStats.current_cheese_nb = 0
-	GlobalPlayerStats.current_frostberry_number = 99
+	GlobalPlayerStats.current_frostberry_number = 0
 	# send signal to update HUD
 	GlobalPlayerStats.update_berry_number.emit()
 	GlobalPlayerStats.current_lives_number = GlobalPlayerStats.start_lives_number + 2

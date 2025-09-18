@@ -38,14 +38,14 @@
 		{
 			"uuid": "ef4e123f-f6ea-4e30-8896-4ddd7167fd59",
 			"title": "Doing",
-			"tasks": [
-				"df14c301-985a-4287-b3ff-a190f627541f"
-			]
+			"tasks": []
 		},
 		{
 			"uuid": "a590c45f-f6e0-4df4-a178-2596b3213350",
 			"title": "Done on the current Branch",
-			"tasks": []
+			"tasks": [
+				"df14c301-985a-4287-b3ff-a190f627541f"
+			]
 		},
 		{
 			"uuid": "9573ce0a-9b5d-4fd9-bb69-4b68a3540b99",
@@ -823,7 +823,7 @@
 				},
 				{
 					"details": "Level1 Loop",
-					"done": false
+					"done": true
 				}
 			]
 		},

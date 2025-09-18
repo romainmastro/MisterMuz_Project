@@ -1,4 +1,4 @@
-[gd_resource type="AudioBusLayout" load_steps=11 format=3 uid="uid://cr37j8klqe3t8"]
+[gd_resource type="AudioBusLayout" load_steps=12 format=3 uid="uid://cr37j8klqe3t8"]
 
 [sub_resource type="AudioEffectLimiter" id="AudioEffectLimiter_n8wo2"]
 resource_name = "Limiter"
@@ -18,6 +18,13 @@ tap1_delay_ms = 50.0
 tap1_level_db = -12.0
 tap2_delay_ms = 100.0
 tap2_level_db = -18.0
+
+[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_g28q7"]
+resource_name = "Reverb"
+room_size = 0.15
+damping = 0.2
+spread = 0.45
+wet = 0.1
 
 [sub_resource type="AudioEffectLimiter" id="AudioEffectLimiter_5t1r3"]
 resource_name = "Limiter"
@@ -43,7 +50,7 @@ bus/1/name = &"Music"
 bus/1/solo = false
 bus/1/mute = false
 bus/1/bypass_fx = false
-bus/1/volume_db = -5.9342504
+bus/1/volume_db = -5.9307528
 bus/1/send = &"Master"
 bus/1/effect/0/effect = SubResource("AudioEffectLimiter_g28q7")
 bus/1/effect/0/enabled = true
@@ -59,6 +66,8 @@ bus/2/effect/0/effect = SubResource("AudioEffectLimiter_j3pel")
 bus/2/effect/0/enabled = true
 bus/2/effect/1/effect = SubResource("AudioEffectDelay_j3pel")
 bus/2/effect/1/enabled = false
+bus/2/effect/2/effect = SubResource("AudioEffectReverb_g28q7")
+bus/2/effect/2/enabled = true
 bus/3/name = &"Sounds GUI"
 bus/3/solo = false
 bus/3/mute = false

@@ -184,3 +184,10 @@ func music_fade_out(music : AudioStreamPlayer) :
 	var tween = create_tween()
 	tween.tween_property(music, "volume_db",-79, 5)
 	await tween.finished
+
+func music_fade_in_and_play(music : AudioStreamPlayer) : 
+	music.volume_db = -25
+	music.play()
+	var tween = create_tween()
+	tween.tween_property(music, "volume_db",-5, 3)
+	await tween.finished

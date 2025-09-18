@@ -185,18 +185,19 @@ autostart = true
 
 [node name="FallingFx" type="AudioStreamPlayer2D" parent="Sounds"]
 max_distance = 500.0
-bus = &"Sounds"
+bus = &"Sounds World"
 
 [node name="CrashingFx" type="AudioStreamPlayer2D" parent="Sounds"]
 stream = ExtResource("3_7mp3c")
 volume_db = -3.0
 max_distance = 500.0
-bus = &"Sounds"
+bus = &"Sounds World"
 
 [node name="Shaking3" type="AudioStreamPlayer2D" parent="Sounds"]
 stream = ExtResource("3_n4fwv")
 volume_db = -15.0
 max_distance = 150.0
+bus = &"Sounds World"
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

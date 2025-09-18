@@ -90,12 +90,12 @@ hue_variation_max = 0.36
 [node name="CrashingFx2" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_ibjk0")
 max_distance = 156.0
-bus = &"Sounds"
+bus = &"Sounds World"
 
 [node name="SpikeThrowerShoot9" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_cht3v")
 max_distance = 200.0
-bus = &"Sounds"
+bus = &"Sounds World"
 
 [connection signal="timeout" from="reload_timer" to="." method="_on_timer_timeout"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
